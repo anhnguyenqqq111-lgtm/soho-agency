@@ -2,6 +2,7 @@ import {ArrowRight, CheckCircle2} from 'lucide-react';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import {servicePages} from '../../components/servicePagesData';
+import {sitePath} from '../../components/paths';
 
 export const metadata = {
   title: 'Dịch vụ Digital Marketing | SOHO Agency',
@@ -28,7 +29,7 @@ export default function ServicesIndexPage(){
                 <li key={outcome}><CheckCircle2 size={16}/> {outcome}</li>
               ))}
             </ul>
-            <a href={`/dich-vu/${service.slug}`}>Xem landing page <ArrowRight size={16}/></a>
+            <a href={sitePath(`/dich-vu/${service.slug}`)}>Xem landing page <ArrowRight size={16}/></a>
           </article>
         ))}
       </section>

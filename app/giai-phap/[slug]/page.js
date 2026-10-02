@@ -3,6 +3,7 @@ import {ArrowRight, CheckCircle2} from 'lucide-react';
 import Header from '../../../components/Header';
 import Footer from '../../../components/Footer';
 import {getSolutionPage, solutionPages} from '../../../components/solutionPagesData';
+import {sitePath} from '../../../components/paths';
 
 export function generateStaticParams(){
   return solutionPages.map(solution => ({slug: solution.slug}));
@@ -36,7 +37,7 @@ export default async function SolutionDetailPage({params}){
           <p className="eyebrow">{solution.eyebrow}</p>
           <h1>{solution.title}</h1>
           <p>{solution.desc}</p>
-          <a className="btn primary btnGlow" href="/lien-he">
+          <a className="btn primary btnGlow" href={sitePath('/lien-he')}>
             <span>Trao đổi giải pháp</span>
             <ArrowRight size={18}/>
             <span className="btnSweep"></span>

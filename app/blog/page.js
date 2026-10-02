@@ -12,6 +12,7 @@ import {
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import {articles, categories} from '../../components/blogData';
+import {sitePath} from '../../components/paths';
 
 export const metadata = {
   title: 'Blog Marketing SOHO | Kiến thức SEO, Ads, Content & AI Search',
@@ -41,7 +42,7 @@ export default function BlogPage(){
             được biên tập cho đội ngũ muốn biến marketing thành tăng trưởng có thể đo lường.
           </p>
           <div className="blogHeroActions">
-            <a className="btn primary btnGlow" href={`/blog/${featuredArticle.slug}`}>
+            <a className="btn primary btnGlow" href={sitePath(`/blog/${featuredArticle.slug}`)}>
               <span>Đọc bài nổi bật</span>
               <ArrowRight size={18}/>
               <span className="btnSweep"></span>
@@ -98,7 +99,7 @@ export default function BlogPage(){
               <span><Eye size={15}/> {featuredArticle.views}</span>
               <span>{featuredArticle.date}</span>
             </div>
-            <a className="featuredPostLink" href={`/blog/${featuredArticle.slug}`}>
+            <a className="featuredPostLink" href={sitePath(`/blog/${featuredArticle.slug}`)}>
               Đọc phân tích đầy đủ <ArrowRight size={17}/>
             </a>
           </div>
@@ -134,7 +135,7 @@ export default function BlogPage(){
                 <span><Clock3 size={14}/> {article.readTime}</span>
                 <span>{article.date}</span>
               </div>
-              <a href={`/blog/${article.slug}`}>
+              <a href={sitePath(`/blog/${article.slug}`)}>
                 Đọc bài viết <ArrowRight size={16}/>
               </a>
             </article>

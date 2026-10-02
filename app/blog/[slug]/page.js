@@ -3,6 +3,7 @@ import {ArrowLeft, ArrowRight, Clock3, Eye} from 'lucide-react';
 import Header from '../../../components/Header';
 import Footer from '../../../components/Footer';
 import {articles} from '../../../components/blogData';
+import {sitePath} from '../../../components/paths';
 
 export function generateStaticParams(){
   return articles.map(article => ({slug: article.slug}));
@@ -41,7 +42,7 @@ export default async function BlogDetailPage({params}){
       <Header activeNav="blog" />
       <article className="postPage">
         <div className="postShell">
-          <a className="backToBlog" href="/blog">
+          <a className="backToBlog" href={sitePath('/blog')}>
             <ArrowLeft size={17}/> Quay lại Blog Marketing
           </a>
           <div className="postHeader">
@@ -65,7 +66,7 @@ export default async function BlogDetailPage({params}){
               <strong>{article.author}</strong>
               <span>{article.authorRole}</span>
             </div>
-            <a href="/#contact">Tư vấn chiến lược <ArrowRight size={15}/></a>
+            <a href={sitePath('/#contact')}>Tư vấn chiến lược <ArrowRight size={15}/></a>
           </div>
           <div
             className="postContent"
@@ -88,7 +89,7 @@ export default async function BlogDetailPage({params}){
               <span className="postKicker">{item.category}</span>
               <h3>{item.title}</h3>
               <p>{item.excerpt}</p>
-              <a href={`/blog/${item.slug}`}>Đọc bài viết <ArrowRight size={16}/></a>
+              <a href={sitePath(`/blog/${item.slug}`)}>Đọc bài viết <ArrowRight size={16}/></a>
             </article>
           ))}
         </div>

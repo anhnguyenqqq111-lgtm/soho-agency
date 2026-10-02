@@ -2,6 +2,7 @@ import {ArrowRight} from 'lucide-react';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import {solutionPages} from '../../components/solutionPagesData';
+import {sitePath} from '../../components/paths';
 
 export const metadata = {
   title: 'Giải pháp Digital Marketing | SOHO Agency',
@@ -24,7 +25,7 @@ export default function SolutionsPage(){
             <span>{solution.eyebrow}</span>
             <h2>{solution.title}</h2>
             <p>{solution.desc}</p>
-            <a href={`/giai-phap/${solution.slug}`}>Xem chi tiết <ArrowRight size={16}/></a>
+            <a href={sitePath(`/giai-phap/${solution.slug}`)}>Xem chi tiết <ArrowRight size={16}/></a>
           </article>
         ))}
       </section>

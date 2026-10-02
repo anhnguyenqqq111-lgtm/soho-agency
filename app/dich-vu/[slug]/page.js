@@ -12,6 +12,7 @@ import {
 import Header from '../../../components/Header';
 import Footer from '../../../components/Footer';
 import {getServicePage, servicePages} from '../../../components/servicePagesData';
+import {sitePath} from '../../../components/paths';
 
 export function generateStaticParams(){
   return servicePages.map(service => ({slug: service.slug}));
@@ -48,7 +49,7 @@ export default async function ServiceLandingPage({params}){
           <h1>{service.title}</h1>
           <p>{service.intro}</p>
           <div className="serviceHeroActions">
-            <a className="btn primary btnGlow" href="/#contact">
+            <a className="btn primary btnGlow" href={sitePath('/#contact')}>
               <span>Nhận đề xuất cho dịch vụ này</span>
               <ArrowRight size={18}/>
               <span className="btnSweep"></span>
@@ -140,7 +141,7 @@ export default async function ServiceLandingPage({params}){
           <h2>Muốn biết dịch vụ này có phù hợp với bài toán hiện tại?</h2>
           <p>SOHO sẽ xem nhanh website, kênh hiện có và mục tiêu kinh doanh để đề xuất hướng triển khai ưu tiên.</p>
         </div>
-        <a className="btn primary btnGlow" href="/#contact">
+        <a className="btn primary btnGlow" href={sitePath('/#contact')}>
           <span>Trao đổi với SOHO</span>
           <ArrowRight size={18}/>
           <span className="btnSweep"></span>

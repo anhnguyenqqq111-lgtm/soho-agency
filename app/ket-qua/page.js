@@ -1,6 +1,7 @@
 import {ArrowRight, BarChart3, Target, TrendingUp} from 'lucide-react';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import {sitePath} from '../../components/paths';
 
 export const metadata = {
   title: 'Kết quả Digital Marketing | SOHO Agency',
@@ -38,7 +39,7 @@ export default function ResultsPage(){
           <h2>Muốn biết kênh nào đang tạo ra doanh thu?</h2>
           <p>SOHO có thể audit nhanh tracking, dashboard và phễu chuyển đổi hiện tại để chỉ ra điểm nghẽn cần ưu tiên.</p>
         </div>
-        <a className="btn primary btnGlow" href="/lien-he">
+        <a className="btn primary btnGlow" href={sitePath('/lien-he')}>
           <span>Nhận audit</span>
           <ArrowRight size={18}/>
           <span className="btnSweep"></span>

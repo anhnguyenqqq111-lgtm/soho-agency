@@ -20,6 +20,7 @@ import {
   ShieldCheck,
   BookOpen
 } from 'lucide-react';
+import {sitePath} from './paths';
 
 const megaServices = [
   {
@@ -209,8 +210,8 @@ export default function Header({activeNav}){
         <span>SOHO AGENCY • Data-Driven Marketing • SEO • Ads • Content • AI Search</span>
       </div>
       <header className={activeMega ? 'hasActiveMega' : ''}>
-        <a className="logo logoBrand" href="/" onClick={closeAll}>
-          <img src="/brand/soho-logo.png" alt="SOHO Agency" className="logoImg" />
+        <a className="logo logoBrand" href={sitePath('/')} onClick={closeAll}>
+          <img src={sitePath('/brand/soho-logo.png')} alt="SOHO Agency" className="logoImg" />
         </a>
 
         {/* Desktop Navigation */}
@@ -243,13 +244,13 @@ export default function Header({activeNav}){
             </button>
           </div>
 
-          <a href="/ket-qua" className={activeNav === 'results' ? 'navActive' : ''} onClick={closeAll}>Kết quả</a>
-          <a href="/blog" className={activeNav === 'blog' ? 'navActive' : ''} onClick={closeAll}>
+          <a href={sitePath('/ket-qua')} className={activeNav === 'results' ? 'navActive' : ''} onClick={closeAll}>Kết quả</a>
+          <a href={sitePath('/blog')} className={activeNav === 'blog' ? 'navActive' : ''} onClick={closeAll}>
             <span>Kiến thức</span>
             <span className="blogPillTag">Blog</span>
           </a>
-          <a href="/ve-soho" className={activeNav === 'about' ? 'navActive' : ''} onClick={closeAll}>Về SOHO</a>
-          <a className="mobileCta" href="/lien-he" onClick={closeAll}>Nhận tư vấn ngay</a>
+          <a href={sitePath('/ve-soho')} className={activeNav === 'about' ? 'navActive' : ''} onClick={closeAll}>Về SOHO</a>
+          <a className="mobileCta" href={sitePath('/lien-he')} onClick={closeAll}>Nhận tư vấn ngay</a>
 
           {/* Mobile Accordion inside drawer */}
           <div className="mobileAccordion">
@@ -267,7 +268,7 @@ export default function Header({activeNav}){
                   <div key={cat.category} className="mobileSubGroup">
                     <span>{cat.category}</span>
                     {cat.items.map(item => (
-                      <a key={item.title} href={item.href} onClick={closeAll}>
+                      <a key={item.title} href={sitePath(item.href)} onClick={closeAll}>
                         <item.icon size={15} /> {item.title}
                       </a>
                     ))}
@@ -290,7 +291,7 @@ export default function Header({activeNav}){
                   <div key={cat.category} className="mobileSubGroup">
                     <span>{cat.category}</span>
                     {cat.items.map(item => (
-                      <a key={item.title} href={item.href} onClick={closeAll}>
+                      <a key={item.title} href={sitePath(item.href)} onClick={closeAll}>
                         <item.icon size={15} /> {item.title}
                       </a>
                     ))}
@@ -301,7 +302,7 @@ export default function Header({activeNav}){
           </div>
         </nav>
 
-        <a className="headerCta" href="/lien-he" onClick={closeAll}>
+        <a className="headerCta" href={sitePath('/lien-he')} onClick={closeAll}>
           Nhận đề xuất <ArrowRight size={17}/>
         </a>
         <button className="hamb" onClick={()=>setOpen(!open)} aria-label="Toggle menu">
@@ -338,13 +339,13 @@ export default function Header({activeNav}){
                   <div className="megaColHead servicePanelHead">
                     <span className={`colDot ${activeServiceGroup.dotColor}`}></span>
                     <h4>{activeServiceGroup.category}</h4>
-                    <a href="/dich-vu" className="megaMenuAllLink" onClick={closeAll}>Tất cả dịch vụ</a>
+                    <a href={sitePath('/dich-vu')} className="megaMenuAllLink" onClick={closeAll}>Tất cả dịch vụ</a>
                   </div>
                   <div className="serviceMegaList">
                     {activeServiceGroup.items.map(item => (
                       <a 
                         key={item.title} 
-                        href={item.href} 
+                        href={sitePath(item.href)} 
                         className="megaItem serviceMegaItem" 
                         onClick={closeAll}
                       >
@@ -382,7 +383,7 @@ export default function Header({activeNav}){
                         <span>Hài lòng</span>
                       </div>
                     </div>
-                    <a href="/lien-he" className="promoBtn" onClick={closeAll}>
+                    <a href={sitePath('/lien-he')} className="promoBtn" onClick={closeAll}>
                       <span>Đăng ký Audit 0đ</span>
                       <ArrowRight size={15}/>
                     </a>
@@ -402,7 +403,7 @@ export default function Header({activeNav}){
                     <span>Báo cáo dữ liệu thời gian thực 24/7</span>
                   </div>
                 </div>
-                <a href="/lien-he" className="megaFooterLink" onClick={closeAll}>
+                <a href={sitePath('/lien-he')} className="megaFooterLink" onClick={closeAll}>
                   Trao đổi bài toán riêng của bạn <ArrowRight size={14}/>
                 </a>
               </div>
@@ -424,13 +425,13 @@ export default function Header({activeNav}){
                     <div className="megaColHead">
                       <span className={`colDot ${cat.dotColor}`}></span>
                       <h4>{cat.category}</h4>
-                      {cat === megaSolutions[0] && <a href="/giai-phap" className="megaMenuAllLink" onClick={closeAll}>Tất cả giải pháp</a>}
+                      {cat === megaSolutions[0] && <a href={sitePath('/giai-phap')} className="megaMenuAllLink" onClick={closeAll}>Tất cả giải pháp</a>}
                     </div>
                     <div className="megaLinks">
                       {cat.items.map(item => (
                         <a 
                           key={item.title} 
-                          href={item.href} 
+                          href={sitePath(item.href)} 
                           className="megaItem" 
                           onClick={closeAll}
                         >
@@ -461,7 +462,7 @@ export default function Header({activeNav}){
                       <span>Dữ liệu</span>
                       <span>Tối ưu</span>
                     </div>
-                    <a href="/giai-phap/quy-trinh-sprint-5-buoc" className="promoBtn secondaryBtn" onClick={closeAll}>
+                    <a href={sitePath('/giai-phap/quy-trinh-sprint-5-buoc')} className="promoBtn secondaryBtn" onClick={closeAll}>
                       <span>Khám phá cách SOHO làm</span>
                       <ArrowRight size={15}/>
                     </a>
@@ -477,7 +478,7 @@ export default function Header({activeNav}){
                     <span>Tập trung vào doanh thu & lợi nhuận biên</span>
                   </div>
                 </div>
-                <a href="/giai-phap/quy-trinh-sprint-5-buoc" className="megaFooterLink" onClick={closeAll}>
+                <a href={sitePath('/giai-phap/quy-trinh-sprint-5-buoc')} className="megaFooterLink" onClick={closeAll}>
                   Xem chi tiết quy trình 5 bước <ArrowRight size={14}/>
                 </a>
               </div>

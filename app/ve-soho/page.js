@@ -1,6 +1,7 @@
 import {ArrowRight, CheckCircle2} from 'lucide-react';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import {sitePath} from '../../components/paths';
 
 export const metadata = {
   title: 'Về SOHO Agency | Digital Marketing dựa trên dữ liệu',
@@ -30,7 +31,7 @@ export default function AboutPage(){
           <h2>Bắt đầu bằng một cuộc trao đổi về mục tiêu kinh doanh</h2>
           <p>Cho SOHO biết website, thị trường và điều bạn muốn cải thiện trong quý tới.</p>
         </div>
-        <a className="btn primary btnGlow" href="/lien-he">
+        <a className="btn primary btnGlow" href={sitePath('/lien-he')}>
           <span>Liên hệ SOHO</span>
           <ArrowRight size={18}/>
           <span className="btnSweep"></span>

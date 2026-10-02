@@ -21,6 +21,7 @@ import {
   ShieldCheck,
   Activity
 } from 'lucide-react';
+import {sitePath} from '../components/paths';
 
 const services=[
  {icon:Search,title:'SEO tổng thể',text:'Xây nền tảng tăng trưởng organic bền vững từ kỹ thuật, nội dung đến độ uy tín của website.'},
@@ -219,8 +220,8 @@ function Header(){
         <span>SOHO AGENCY • Data-Driven Marketing • SEO • Ads • Content • AI Search</span>
       </div>
       <header className={activeMega ? 'hasActiveMega' : ''}>
-        <a className="logo logoBrand" href="/" onClick={closeAll}>
-          <img src="/brand/soho-logo.png" alt="SOHO Agency" className="logoImg" />
+        <a className="logo logoBrand" href={sitePath('/')} onClick={closeAll}>
+          <img src={sitePath('/brand/soho-logo.png')} alt="SOHO Agency" className="logoImg" />
         </a>
 
         {/* Desktop Navigation */}
@@ -253,10 +254,10 @@ function Header(){
             </button>
           </div>
 
-          <a href="/ket-qua" onClick={closeAll}>Kết quả</a>
-          <a href="/blog" onClick={closeAll}>Kiến thức</a>
-          <a href="/ve-soho" onClick={closeAll}>Về SOHO</a>
-          <a className="mobileCta" href="/lien-he" onClick={closeAll}>Nhận tư vấn ngay</a>
+          <a href={sitePath('/ket-qua')} onClick={closeAll}>Kết quả</a>
+          <a href={sitePath('/blog')} onClick={closeAll}>Kiến thức</a>
+          <a href={sitePath('/ve-soho')} onClick={closeAll}>Về SOHO</a>
+          <a className="mobileCta" href={sitePath('/lien-he')} onClick={closeAll}>Nhận tư vấn ngay</a>
 
           {/* Mobile Accordion inside drawer */}
           <div className="mobileAccordion">
@@ -274,7 +275,7 @@ function Header(){
                   <div key={cat.category} className="mobileSubGroup">
                     <span>{cat.category}</span>
                     {cat.items.map(item => (
-                      <a key={item.title} href={item.href} onClick={closeAll}>
+                      <a key={item.title} href={sitePath(item.href)} onClick={closeAll}>
                         <item.icon size={15} /> {item.title}
                       </a>
                     ))}
@@ -297,7 +298,7 @@ function Header(){
                   <div key={cat.category} className="mobileSubGroup">
                     <span>{cat.category}</span>
                     {cat.items.map(item => (
-                      <a key={item.title} href={item.href} onClick={closeAll}>
+                      <a key={item.title} href={sitePath(item.href)} onClick={closeAll}>
                         <item.icon size={15} /> {item.title}
                       </a>
                     ))}
@@ -308,7 +309,7 @@ function Header(){
           </div>
         </nav>
 
-        <a className="headerCta" href="/lien-he" onClick={closeAll}>
+        <a className="headerCta" href={sitePath('/lien-he')} onClick={closeAll}>
           Nhận đề xuất <ArrowRight size={17}/>
         </a>
         <button className="hamb" onClick={()=>setOpen(!open)} aria-label="Toggle menu">
@@ -345,13 +346,13 @@ function Header(){
                   <div className="megaColHead servicePanelHead">
                     <span className={`colDot ${activeServiceGroup.dotColor}`}></span>
                     <h4>{activeServiceGroup.category}</h4>
-                    <a href="/dich-vu" className="megaMenuAllLink" onClick={closeAll}>Tất cả dịch vụ</a>
+                    <a href={sitePath('/dich-vu')} className="megaMenuAllLink" onClick={closeAll}>Tất cả dịch vụ</a>
                   </div>
                   <div className="serviceMegaList">
                     {activeServiceGroup.items.map(item => (
                       <a 
                         key={item.title} 
-                        href={item.href} 
+                        href={sitePath(item.href)} 
                         className="megaItem serviceMegaItem" 
                         onClick={closeAll}
                       >
@@ -389,7 +390,7 @@ function Header(){
                         <span>Hài lòng</span>
                       </div>
                     </div>
-                    <a href="/lien-he" className="promoBtn" onClick={closeAll}>
+                    <a href={sitePath('/lien-he')} className="promoBtn" onClick={closeAll}>
                       <span>Đăng ký Audit 0đ</span>
                       <ArrowRight size={15}/>
                     </a>
@@ -409,7 +410,7 @@ function Header(){
                     <span>Báo cáo dữ liệu thời gian thực 24/7</span>
                   </div>
                 </div>
-                <a href="/lien-he" className="megaFooterLink" onClick={closeAll}>
+                <a href={sitePath('/lien-he')} className="megaFooterLink" onClick={closeAll}>
                   Trao đổi bài toán riêng của bạn <ArrowRight size={14}/>
                 </a>
               </div>
@@ -431,13 +432,13 @@ function Header(){
                     <div className="megaColHead">
                       <span className={`colDot ${cat.dotColor}`}></span>
                       <h4>{cat.category}</h4>
-                      {cat === megaSolutions[0] && <a href="/giai-phap" className="megaMenuAllLink" onClick={closeAll}>Tất cả giải pháp</a>}
+                      {cat === megaSolutions[0] && <a href={sitePath('/giai-phap')} className="megaMenuAllLink" onClick={closeAll}>Tất cả giải pháp</a>}
                     </div>
                     <div className="megaLinks">
                       {cat.items.map(item => (
                         <a 
                           key={item.title} 
-                          href={item.href} 
+                          href={sitePath(item.href)} 
                           className="megaItem" 
                           onClick={closeAll}
                         >
@@ -468,7 +469,7 @@ function Header(){
                       <span>Dữ liệu</span>
                       <span>Tối ưu</span>
                     </div>
-                    <a href="/giai-phap/quy-trinh-sprint-5-buoc" className="promoBtn secondaryBtn" onClick={closeAll}>
+                    <a href={sitePath('/giai-phap/quy-trinh-sprint-5-buoc')} className="promoBtn secondaryBtn" onClick={closeAll}>
                       <span>Khám phá cách SOHO làm</span>
                       <ArrowRight size={15}/>
                     </a>
@@ -484,7 +485,7 @@ function Header(){
                     <span>Tập trung vào doanh thu & lợi nhuận biên</span>
                   </div>
                 </div>
-                <a href="/giai-phap/quy-trinh-sprint-5-buoc" className="megaFooterLink" onClick={closeAll}>
+                <a href={sitePath('/giai-phap/quy-trinh-sprint-5-buoc')} className="megaFooterLink" onClick={closeAll}>
                   Xem chi tiết quy trình 5 bước <ArrowRight size={14}/>
                 </a>
               </div>
@@ -863,19 +864,19 @@ export default function Home(){
               <span>SEO & AI</span>
               <h3>SEO trong kỷ nguyên AI Search cần thay đổi điều gì?</h3>
               <p>Cách xây nội dung và tín hiệu thương hiệu khi hành vi tìm kiếm không còn chỉ diễn ra trên Google.</p>
-              <a href="/blog/seo-ky-nguyen-ai-search">Đọc bài viết <ArrowRight size={16}/></a>
+              <a href={sitePath('/blog/seo-ky-nguyen-ai-search')}>Đọc bài viết <ArrowRight size={16}/></a>
             </article>
             <article>
               <span>PERFORMANCE</span>
               <h3>Đừng chỉ nhìn CPC khi đánh giá quảng cáo</h3>
               <p>Một framework đơn giản để nối dữ liệu quảng cáo với lead, pipeline và doanh thu.</p>
-              <a href="/blog/toi-uu-roas-performance-ads">Đọc bài viết <ArrowRight size={16}/></a>
+              <a href={sitePath('/blog/toi-uu-roas-performance-ads')}>Đọc bài viết <ArrowRight size={16}/></a>
             </article>
             <article>
               <span>STRATEGY</span>
               <h3>Khi nào doanh nghiệp nên đầu tư SEO và Ads cùng lúc?</h3>
               <p>Phân vai hai kênh theo nhu cầu ngắn hạn, dài hạn và mức độ trưởng thành của thị trường.</p>
-              <a href="/blog/chien-luoc-seo-ads-song-hanh">Đọc bài viết <ArrowRight size={16}/></a>
+              <a href={sitePath('/blog/chien-luoc-seo-ads-song-hanh')}>Đọc bài viết <ArrowRight size={16}/></a>
             </article>
           </div>
         </div>
@@ -904,8 +905,8 @@ export default function Home(){
       </section>
       <footer>
         <div className="footerTop">
-          <a className="logo lightLogo logoBrand" href="#">
-            <img src="/brand/soho-logo-white.png" alt="SOHO Agency" className="logoImg footerLogoImg" />
+          <a className="logo lightLogo logoBrand" href={sitePath('/')}>
+            <img src={sitePath('/brand/soho-logo-white.png')} alt="SOHO Agency" className="logoImg footerLogoImg" />
           </a>
           <p>SOHO Agency - Digital Marketing tập trung vào tăng trưởng có thể đo lường.</p>
         </div>
