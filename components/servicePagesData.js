@@ -1,0 +1,132 @@
+export const servicePages = [
+  {
+    slug: 'seo-tong-the',
+    eyebrow: 'SEO TONG THE',
+    title: 'SEO tong the cho doanh nghiep can tang truong organic ben vung',
+    menuTitle: 'SEO Tong The',
+    category: 'Toi uu tim kiem & AI',
+    intro: 'Danh cho doanh nghiep da co website, co san pham ro rang nhung organic traffic chua tao duoc dong lead hoac doanh thu on dinh.',
+    promise: 'SOHO xay lai nen tang SEO tu ky thuat, noi dung, entity den do uy tin de website co the tang truong an toan va do luong duoc.',
+    insight: 'Van de khong nam o viec viet them that nhieu bai. Phan lon website mat co hoi vi cau truc tu khoa roi rac, landing page khong dung y dinh tim kiem, va noi dung khong chung minh duoc chuyen mon.',
+    outcomes: ['Tang visibility theo nhom tu khoa co kha nang tao nhu cau', 'Cai thien organic lead thay vi chi nhin traffic', 'Giam phu thuoc vao ngan sach ads dai han'],
+    pains: ['Da viet content nhieu nhung tu khoa khong len top', 'Traffic co nhung khong tao form, call hoac don hang', 'Website bi loi ky thuat lam Google crawl va index kem'],
+    process: ['Audit ky thuat, index va cau truc website', 'Lap ban do tu khoa theo hanh trinh mua hang', 'Xay pillar page, cluster content va internal link', 'Toi uu entity, schema va tin hieu E-E-A-T', 'Bao cao visibility, lead va doanh thu organic theo thang'],
+    proof: 'Phu hop voi B2B, dich vu chuyen mon, ecommerce va SME muon co kenh tang truong dai han.'
+  },
+  {
+    slug: 'seo-ai-overview',
+    eyebrow: 'SEO & AI OVERVIEW',
+    title: 'Toi uu SEO cho Google AI Overviews va hanh vi tim kiem moi',
+    menuTitle: 'SEO & AI Overview',
+    category: 'Toi uu tim kiem & AI',
+    intro: 'Danh cho thuong hieu muon duoc AI Search hieu dung, trich dan dung va xuat hien trong cac cau tra loi tong hop.',
+    promise: 'SOHO chuyen he thong noi dung sang entity-first: cau tra loi ro, ngu canh day du, tac gia dang tin va du lieu co the xac minh.',
+    insight: 'AI khong chi doc mot bai viet. No tong hop dau hieu tu toan bo website, tac gia, schema, noi dung hoi dap va cac nguon nhac den thuong hieu.',
+    outcomes: ['Tang kha nang duoc trich dan trong cau tra loi AI', 'Giam noi dung mong, trung lap, thieu ngu canh', 'Xay authority cho chuyen gia va thuong hieu'],
+    pains: ['Bai viet len top nhung mat click vi AI tra loi ngay tren SERP', 'Noi dung chua co cau truc hoi dap truc tiep', 'Thuong hieu chua duoc Google hieu nhu mot thuc the ro rang'],
+    process: ['Audit entity thuong hieu, tac gia va chu de', 'Tai cau truc noi dung theo cau hoi that cua nguoi dung', 'Them schema, FAQ, author va organization signals', 'Bo sung bang du lieu, quy trinh, vi du thuc te', 'Theo doi truy van co AI Overview va co hoi trich dan'],
+    proof: 'Phu hop voi nganh can niem tin cao: tai chinh, giao duc, y te, B2B, phap ly, cong nghe.'
+  },
+  {
+    slug: 'local-seo-google-maps',
+    eyebrow: 'LOCAL SEO & MAPS',
+    title: 'Local SEO va Google Maps cho doanh nghiep can khach hang khu vuc',
+    menuTitle: 'Local SEO & Maps',
+    category: 'Toi uu tim kiem & AI',
+    intro: 'Danh cho nha hang, phong kham, showroom, trung tam dao tao, dich vu tai nha va chuoi diem ban.',
+    promise: 'SOHO toi uu Google Business Profile, landing page dia phuong va review signal de tang hien dien khi khach hang tim gan minh.',
+    insight: 'Nguoi dung local thuong co y dinh cao va quyet dinh nhanh. Neu Maps, review, hinh anh va thong tin NAP khong dong nhat, ban mat khach vao doi thu gan nhat.',
+    outcomes: ['Tang luot goi, chi duong va truy cap tu Google Maps', 'Cai thien thu hang theo cum tu khoa gan khu vuc', 'Dong bo thong tin dia diem tren website va ho so doanh nghiep'],
+    pains: ['Ho so Google Maps co nhieu view nhung it cuoc goi', 'Bi doi thu co review tot hon vuot qua', 'Nhieu chi nhanh nhung thong tin khong dong nhat'],
+    process: ['Audit Google Business Profile va NAP consistency', 'Toi uu danh muc, dich vu, anh va bai dang Maps', 'Xay landing page theo dia diem va dich vu', 'Thiet ke quy trinh xin review dung thoi diem', 'Theo doi call, direction, booking va ranking local'],
+    proof: 'Phu hop voi doanh nghiep co diem ban vat ly hoac phuc vu theo khu vuc.'
+  },
+  {
+    slug: 'google-ads-shopping',
+    eyebrow: 'GOOGLE ADS & SHOPPING',
+    title: 'Google Ads va Shopping toi uu theo lead chat luong va ROAS that',
+    menuTitle: 'Google Ads & Shopping',
+    category: 'Paid Ads & Performance',
+    intro: 'Danh cho doanh nghiep can dong khach hang ngay nhung khong muon dot ngan sach vao click re va lead rac.',
+    promise: 'SOHO thiet lap Search, Shopping va Performance Max theo cau truc y dinh mua hang, du lieu chuyen doi va bien loi nhuan.',
+    insight: 'Tai khoan Google Ads that bai khi toi uu theo conversion de dat, khong phan biet lead tot, don co loi nhuan va truy van chi dang tham khao.',
+    outcomes: ['Giam chi phi cho truy van kem chat luong', 'Tang ROAS theo nhom san pham/dich vu co loi nhuan', 'Dong bo du lieu CRM hoac ecommerce ve chien dich'],
+    pains: ['Nhieu click nhung sale bao lead khong dung nhu cau', 'Performance Max tieu tien nhung khong biet search term nao hieu qua', 'ROAS tren Ads dep nhung loi nhuan that khong ro'],
+    process: ['Audit tracking, conversion va cau truc tai khoan', 'Phan nhom tu khoa theo y dinh va gia tri kinh doanh', 'Viet mau quang cao va landing page theo insight tim kiem', 'Toi uu bidding bang du lieu lead/don hang chat luong', 'Bao cao CPA, ROAS, CAC va loi nhuan gop'],
+    proof: 'Phu hop voi ecommerce, B2B lead-gen, dich vu gia tri cao va doanh nghiep dang scale ads.'
+  },
+  {
+    slug: 'meta-tiktok-ads',
+    eyebrow: 'META & TIKTOK ADS',
+    title: 'Meta va TikTok Ads cho thuong hieu can tao nhu cau va chuyen doi',
+    menuTitle: 'Meta & TikTok Ads',
+    category: 'Paid Ads & Performance',
+    intro: 'Danh cho san pham can giao tiep bang insight, hinh anh, video va bang chung xa hoi truoc khi khach hang quyet dinh.',
+    promise: 'SOHO xay he thong creative testing, audience signal va funnel remarketing de bien media spend thanh don hang hoac lead co kha nang chot.',
+    insight: 'Meta va TikTok khong thang bang viec doi target lien tuc. Tai san that su la goc nhin creative, offer, landing page va du lieu phan hoi tu sale.',
+    outcomes: ['Co he thong test creative lien tuc', 'Giam phu thuoc vao mot mau quang cao dang thang', 'Ket noi tin hieu tu form, inbox, CRM va website'],
+    pains: ['Ads nhanh fatigue, gia lead tang sau vai ngay', 'Nhieu inbox nhung khong mua', 'Khong biet creative nao tao khach hang tot'],
+    process: ['Phan tich avatar, objection va trigger mua hang', 'Lap ma tran creative theo hook, offer, proof va format', 'Chay test ngan de tim tin hieu thang', 'Mo rong ngan sach theo cohort co chat luong', 'Bao cao creative, CPA, lead quality va revenue'],
+    proof: 'Phu hop voi D2C, giao duc, lam dep, bat dong san, dich vu dia phuong va san pham can nuoi duong nhu cau.'
+  },
+  {
+    slug: 'cro-landing-page',
+    eyebrow: 'CRO LANDING PAGE',
+    title: 'Toi uu ty le chuyen doi de bien traffic thanh lead va doanh thu',
+    menuTitle: 'Toi uu Chuyen doi (CRO)',
+    category: 'Paid Ads & Performance',
+    intro: 'Danh cho doanh nghiep dang co traffic tu SEO hoac Ads nhung ty le dien form, goi dien, dat lich con thap.',
+    promise: 'SOHO phan tich hanh vi nguoi dung, thong diep, form, proof va toc do tai de tang conversion ma khong can tang ngan sach media.',
+    insight: 'Landing page thuong khong thieu thong tin, ma thieu thu tu uu tien. Khach hang can thay dung van de, dung loi hua, dung bang chung va hanh dong tiep theo that ro.',
+    outcomes: ['Tang conversion rate tren traffic hien co', 'Giam CPL/CPA ma khong can tang bid', 'Tim duoc thong diep va offer co kha nang scale'],
+    pains: ['Traffic cao nhung form it', 'Nguoi dung roi trang o mobile', 'Landing page noi nhieu ve doanh nghiep nhung it noi dung dieu khach can'],
+    process: ['Audit analytics, heatmap va hanh trinh form', 'Xac dinh friction va objection tren tung man hinh', 'Viet lai thong diep hero, CTA va proof', 'Thiet ke A/B test uu tien theo tac dong', 'Bao cao uplift theo conversion va lead quality'],
+    proof: 'Phu hop voi moi doanh nghiep dang mua traffic hoac co SEO traffic nhung chua khai thac het.'
+  },
+  {
+    slug: 'content-marketing-pr',
+    eyebrow: 'CONTENT MARKETING & PR',
+    title: 'Content Marketing va PR tao niem tin truoc khi khach hang mua',
+    menuTitle: 'Content Marketing & PR',
+    category: 'Content & Du lieu',
+    intro: 'Danh cho thuong hieu can noi dung co chien luoc, khong chi dang bai deu ma phai ho tro SEO, sales va niem tin.',
+    promise: 'SOHO xay content hub, bai chuyen sau, case study va goc nhin PR de nuoi duong nhu cau tren toan bo hanh trinh mua.',
+    insight: 'Khach hang khong doc content de nghe quang cao. Ho doc de giam rui ro truoc khi mua: so sanh lua chon, hieu chi phi, thay bang chung va tin vao nang luc.',
+    outcomes: ['Co he thong noi dung phu hop tung giai doan nhan thuc', 'Tang uy tin chuyen mon cho thuong hieu', 'Ho tro sale bang tai san noi dung co the gui cho khach'],
+    pains: ['Dang bai deu nhung khong tao lead', 'Content giong doi thu va thieu quan diem rieng', 'Sale khong co case study, guide, so sanh de thuyet phuc khach'],
+    process: ['Mapping intent va objection cua khach hang', 'Xay pillar, cluster, case study va sales enablement content', 'Bien du lieu noi bo thanh insight co gia tri', 'Toi uu SEO, social snippet va PR angle', 'Do luong assisted conversion va engagement chat luong'],
+    proof: 'Phu hop voi B2B, dich vu chuyen mon, giao duc, cong nghe va thuong hieu can xay long tin dai han.'
+  },
+  {
+    slug: 'ga4-looker-dashboard',
+    eyebrow: 'GA4 & LOOKER',
+    title: 'GA4 va Looker Dashboard giup marketing thay duoc dong tien',
+    menuTitle: 'Do luong & Phan tich GA4',
+    category: 'Content & Du lieu',
+    intro: 'Danh cho doi ngu dang co nhieu kenh marketing nhung khong tin duoc so lieu hoac khong biet kenh nao that su tao ket qua.',
+    promise: 'SOHO thiet lap tracking, event, conversion va dashboard de ket noi traffic, lead, sale va doanh thu trong mot goc nhin de ra quyet dinh.',
+    insight: 'Dashboard tot khong phai la nhieu bieu do. Dashboard tot tra loi duoc: kenh nao dang tao co hoi, chi phi nao dang lang phi, va viec nao can lam tiep.',
+    outcomes: ['Co bo chi so chung cho marketing va sales', 'Giam tranh luan vi moi kenh bao mot so', 'Ra quyet dinh ngan sach theo CPA, CAC va revenue'],
+    pains: ['GA4 bi mat conversion hoac event sai', 'Bao cao Ads, CRM va website khong khop', 'Founder/manager mat qua nhieu thoi gian gom so lieu'],
+    process: ['Audit tracking plan va luong du lieu hien tai', 'Dinh nghia event, conversion va naming convention', 'Cai dat GA4/GTM/CAPI neu can', 'Thiet ke Looker dashboard theo vai tro nguoi xem', 'Kiem tra du lieu va huong dan doc bao cao hang tuan'],
+    proof: 'Phu hop voi doanh nghiep co nhieu kenh, nhieu landing page, nhieu team cung can mot su that du lieu.'
+  },
+  {
+    slug: 'tu-van-chien-luoc-sprint',
+    eyebrow: 'GROWTH STRATEGY SPRINT',
+    title: 'Sprint chien luoc marketing de biet nen lam gi truoc',
+    menuTitle: 'Tu van Chien luoc Sprint',
+    category: 'Content & Du lieu',
+    intro: 'Danh cho founder, marketing manager hoac sales leader can mot lo trinh uu tien ro truoc khi dau tu SEO, Ads, Content hay Data.',
+    promise: 'SOHO chay sprint chan doan ngan gon de tim diem nghen tang truong, uoc luong tac dong va sap xep viec nen lam trong 30-90 ngay.',
+    insight: 'Doanh nghiep thuong khong thieu y tuong marketing. Cai thieu la thu tu uu tien dua tren bien loi nhuan, hanh vi khach hang, nang luc noi bo va du lieu hien co.',
+    outcomes: ['Co roadmap 30-90 ngay ro viec, ro KPI, ro nguon luc', 'Biet kenh nao nen dau tu truoc va kenh nao nen tam dung', 'Giam rui ro dot tien vao chien dich chua san sang'],
+    pains: ['Khong biet nen chon SEO, Ads hay Content truoc', 'Da doi agency nhieu lan nhung khong co he thong', 'Team noi bo ban ron nhung tac dong kinh doanh khong ro'],
+    process: ['Phong van nhanh ve muc tieu, bien loi nhuan va quy trinh sale', 'Audit website, ads, content va data hien tai', 'Phan tich thi truong, doi thu va co hoi uu tien', 'Thiet ke roadmap sprint 30-90 ngay', 'Ban giao KPI, backlog va cach do luong'],
+    proof: 'Phu hop voi SME dang tang toc, B2B co chu ky ban hang dai va doi ngu muon ra quyet dinh marketing tinh gon.'
+  }
+];
+
+export function getServicePage(slug){
+  return servicePages.find(service => service.slug === slug);
+}
