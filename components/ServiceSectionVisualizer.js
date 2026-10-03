@@ -15,9 +15,7 @@ import {
   Layers3,
   BrainCircuit,
   TrendingUp,
-  Target,
   TableProperties,
-  FileCheck2,
   Clock,
   CircleDollarSign,
   ChevronRight
@@ -44,12 +42,12 @@ function renderInlineFormatting(text) {
 
 // Subnav section definitions matching URL anchors
 const navItems = [
-  { id: 'thuc-trang', label: 'Thực trạng & Bẫy', icon: AlertTriangle, badge: 'CẢNH BÁO' },
-  { id: 'giai-phap', label: 'Giải pháp & Trụ cột', icon: Lightbulb, badge: 'CHIẾN LƯỢC' },
-  { id: 'quy-trinh', label: 'Quy trình Sprint', icon: Zap, badge: 'LỘ TRÌNH' },
-  { id: 'so-sanh-roi', label: 'So sánh & ROI', icon: BarChart3, badge: 'ĐỊNH LƯỢNG' },
-  { id: 'checklist', label: 'Checklist nghiệm thu', icon: CheckSquare, badge: 'TIÊU CHUẨN' },
-  { id: 'faq', label: 'Hỏi đáp FAQ', icon: HelpCircle, badge: 'GIẢI ĐÁP' }
+  { id: 'thuc-trang', label: 'Thực trạng & Bẫy', icon: AlertTriangle },
+  { id: 'giai-phap', label: 'Giải pháp & Trụ cột', icon: Lightbulb },
+  { id: 'quy-trinh', label: 'Quy trình Sprint', icon: Zap },
+  { id: 'so-sanh-roi', label: 'So sánh & ROI', icon: BarChart3 },
+  { id: 'checklist', label: 'Checklist nghiệm thu', icon: CheckSquare },
+  { id: 'faq', label: 'Hỏi đáp FAQ', icon: HelpCircle }
 ];
 
 export default function ServiceSectionVisualizer({ article, serviceTitle }) {
@@ -108,13 +106,6 @@ export default function ServiceSectionVisualizer({ article, serviceTitle }) {
 
   if (!article || !article.sections) return null;
 
-  // Map article sections:
-  // sec0: Thực trạng, sec1: Chi phí cơ hội
-  // sec2: Bản chất, sec3: 4 Trụ cột
-  // sec4: Quy trình Sprint
-  // sec5: So sánh & ROI
-  // sec6: Checklist
-  // sec7: FAQ
   const sec0 = article.sections[0] || {};
   const sec1 = article.sections[1] || {};
   const sec2 = article.sections[2] || {};
@@ -249,7 +240,7 @@ export default function ServiceSectionVisualizer({ article, serviceTitle }) {
 
   return (
     <div className="serviceVisualizerContainer">
-      {/* 1. STICKY SUBNAV BAR */}
+      {/* 1. STICKY SUBNAV BAR WITH ANIMATED LINE ON HOVER */}
       <nav className="serviceSubnavBar" aria-label="Điều hướng các khối dịch vụ">
         <div className="serviceSubnavInner">
           <div className="serviceSubnavTabs">
@@ -265,29 +256,29 @@ export default function ServiceSectionVisualizer({ article, serviceTitle }) {
                 >
                   <Icon size={16} className="subnavIcon" />
                   <span className="subnavLabel">{item.label}</span>
-                  {isActive && <span className="subnavActiveGlow" />}
                 </a>
               );
             })}
           </div>
           <div className="serviceSubnavAction">
-            <a href={sitePath('/#contact')} className="btn primary btnSubnavCta">
+            <a href={sitePath('/#contact')} className="btn primary btnGlow btnSubnavCta">
               <span>Đăng ký Audit 0đ</span>
               <ArrowRight size={14} />
+              <span className="btnSweep"></span>
             </a>
           </div>
         </div>
       </nav>
 
-      {/* 2. MAIN VISUAL SECTIONS */}
+      {/* 2. MAIN VISUAL SECTIONS (SOHO BRAND THEME) */}
       <div className="serviceVisualContentWrapper">
         {/* ============================================================
             SECTION 1: #thuc-trang (Thực trạng & Bẫy chi phí)
             ============================================================ */}
-        <section id="thuc-trang" className="visualSectionBlock visualSectionAlert">
+        <section id="thuc-trang" className="visualSectionBlock">
           <div className="visualSectionHeader">
-            <div className="visualSectionBadge alert">
-              <AlertTriangle size={14} />
+            <div className="visualSectionBadge badgeFlame">
+              <AlertTriangle size={13} />
               <span>KHỐI 01 • THỰC TRẠNG & BẪY CHI PHÍ</span>
             </div>
             <h2 className="visualSectionTitle">Vì sao phương pháp cũ làm ngân sách tăng vọt nhưng doanh số dậm chân tại chỗ?</h2>
@@ -298,16 +289,16 @@ export default function ServiceSectionVisualizer({ article, serviceTitle }) {
 
           <div className="painAgitateGrid">
             {/* Card 1: Thực trạng bẫy chỉ số ảo */}
-            <div className="painAgitateCard painCard">
-              <div className="cardTopBadge red">
-                <span className="dotAlert" />
+            <div className="painAgitateCard painCardFlame">
+              <div className="cardTopBadge badgeFlame">
+                <span className="dotFlame" />
                 <span>ĐIỂM MÙ TRIỂN KHAI</span>
               </div>
               <h3>1.1. Nghịch lý & Bẫy "Chỉ số ảo" (Vanity Metrics)</h3>
               <p className="cardSummaryText">
                 Traffic biểu đồ tăng vọt, báo cáo xếp hạng từ khóa xanh mướt, nhưng tỷ lệ chuyển đổi thành khách hàng thực tế (Qualified Leads) dưới 0.2%.
               </p>
-              <ul className="visualAlertList">
+              <ul className="visualAlertList listFlame">
                 <li>
                   <strong>Bẫy từ khóa rác:</strong> Tập trung vào truy vấn thông tin chung chung, không có ý định mua hàng (Zero Commercial Intent).
                 </li>
@@ -321,16 +312,16 @@ export default function ServiceSectionVisualizer({ article, serviceTitle }) {
             </div>
 
             {/* Card 2: Chi phí cơ hội & Thiệt hại */}
-            <div className="painAgitateCard agitateCard">
-              <div className="cardTopBadge amber">
-                <span className="dotAlert amber" />
+            <div className="painAgitateCard agitateCardGold">
+              <div className="cardTopBadge badgeGold">
+                <span className="dotGold" />
                 <span>THIỆT HẠI KINH DOANH</span>
               </div>
               <h3>1.2. Chi phí cơ hội & Thiệt hại tài chính thực tế</h3>
               <p className="cardSummaryText">
                 Giá thầu quảng cáo leo thang không ngừng, trong khi thương hiệu đánh mất vị thế tìm kiếm thương mại vào tay đối thủ tiên phong.
               </p>
-              <ul className="visualAlertList">
+              <ul className="visualAlertList listGold">
                 <li>
                   <strong>Bão giá thầu CAC & CPA:</strong> Giá click trong các ngành B2B tăng 35%–80%, tạo áp lực nặng nề lên biên lợi nhuận.
                 </li>
@@ -344,7 +335,7 @@ export default function ServiceSectionVisualizer({ article, serviceTitle }) {
             </div>
           </div>
 
-          {/* Key Insight Visual Banner */}
+          {/* Key Insight Visual Banner (Deep Midnight + Cyber Gold) */}
           <div className="visualInsightBanner">
             <div className="bannerGlowIcon">
               <Lightbulb size={24} />
@@ -361,10 +352,10 @@ export default function ServiceSectionVisualizer({ article, serviceTitle }) {
         {/* ============================================================
             SECTION 2: #giai-phap (Bản chất & 4 Trụ cột chiến lược)
             ============================================================ */}
-        <section id="giai-phap" className="visualSectionBlock visualSectionPrimary">
+        <section id="giai-phap" className="visualSectionBlock">
           <div className="visualSectionHeader">
-            <div className="visualSectionBadge primary">
-              <Lightbulb size={14} />
+            <div className="visualSectionBadge badgePurple">
+              <Lightbulb size={13} />
               <span>KHỐI 02 • BẢN CHẤT GIẢI PHÁP ĐỘT PHÁ</span>
             </div>
             <h2 className="visualSectionTitle">Bản chất giải pháp định hướng doanh thu & 4 Trụ cột cốt lõi của SOHO</h2>
@@ -378,9 +369,11 @@ export default function ServiceSectionVisualizer({ article, serviceTitle }) {
             {pillarsList.length > 0 ? (
               pillarsList.map((pillar, idx) => {
                 const icons = [Layers3, BrainCircuit, ShieldCheck, TrendingUp];
+                const themeClasses = ['themeIndigo', 'themePurple', 'themeGold', 'themeFlame'];
                 const IconComp = icons[idx % icons.length];
+                const themeClass = themeClasses[idx % themeClasses.length];
                 return (
-                  <div key={idx} className="pillarVisualCard">
+                  <div key={idx} className={`pillarVisualCard ${themeClass}`}>
                     <div className="pillarCardHeader">
                       <div className="pillarIndexTag">0{idx + 1}</div>
                       <div className="pillarIconWrap">
@@ -392,7 +385,7 @@ export default function ServiceSectionVisualizer({ article, serviceTitle }) {
                     <ul className="pillarPointsList">
                       {pillar.points.map((pt, pIdx) => (
                         <li key={pIdx}>
-                          <CheckCircle2 size={15} className="pillarCheckIcon" />
+                          <CheckCircle2 size={16} className="pillarCheckIcon" />
                           <span>{renderInlineFormatting(pt)}</span>
                         </li>
                       ))}
@@ -401,7 +394,7 @@ export default function ServiceSectionVisualizer({ article, serviceTitle }) {
                 );
               })
             ) : (
-              <div className="pillarVisualCard">
+              <div className="pillarVisualCard themeIndigo">
                 <p>Nội dung giải pháp chuyên sâu đang được đồng bộ hóa.</p>
               </div>
             )}
@@ -411,11 +404,11 @@ export default function ServiceSectionVisualizer({ article, serviceTitle }) {
         {/* ============================================================
             SECTION 3: #quy-trinh (Quy trình triển khai Sprint 5 bước)
             ============================================================ */}
-        <section id="quy-trinh" className="visualSectionBlock visualSectionSoft">
+        <section id="quy-trinh" className="visualSectionBlock">
           <div className="visualSectionHeader">
-            <div className="visualSectionBadge accent">
-              <Zap size={14} />
-              <span>KHỐI 03 • LỘ TRÌNH THỰC THI THỰC CHIẾN</span>
+            <div className="visualSectionBadge badgeGold">
+              <Zap size={13} />
+              <span>KHỐI 03 • LỘ TRÌNH THỰC THI SPRINT</span>
             </div>
             <h2 className="visualSectionTitle">Quy trình vận hành Sprint 5 bước rõ ràng & minh bạch</h2>
             <p className="visualSectionSubtitle">
@@ -466,10 +459,10 @@ export default function ServiceSectionVisualizer({ article, serviceTitle }) {
         {/* ============================================================
             SECTION 4: #so-sanh-roi (So sánh toàn diện & Bài toán ROI)
             ============================================================ */}
-        <section id="so-sanh-roi" className="visualSectionBlock visualSectionHighlight">
+        <section id="so-sanh-roi" className="visualSectionBlock">
           <div className="visualSectionHeader">
-            <div className="visualSectionBadge gold">
-              <BarChart3 size={14} />
+            <div className="visualSectionBadge badgeChampagne">
+              <BarChart3 size={13} />
               <span>KHỐI 04 • ĐỊNH LƯỢNG HIỆU QUẢ & ROI</span>
             </div>
             <h2 className="visualSectionTitle">So sánh toàn diện & Bài toán kinh tế điểm hòa vốn</h2>
@@ -513,7 +506,7 @@ export default function ServiceSectionVisualizer({ article, serviceTitle }) {
           {/* Financial Simulation / ROI Visual Card */}
           <div className="roiSimulationCard">
             <div className="roiSimHead">
-              <CircleDollarSign size={22} className="textEmerald" />
+              <CircleDollarSign size={24} className="textBrandGold" />
               <div>
                 <strong>Mô phỏng Điểm hòa vốn & Lợi nhuận tích lũy</strong>
                 <span>So sánh trực quan giữa kênh Ads trả phí thuần túy và Hệ thống Tăng trưởng SOHO</span>
@@ -525,14 +518,14 @@ export default function ServiceSectionVisualizer({ article, serviceTitle }) {
                 <strong>CPA cố định & đắt dần</strong>
                 <p>Tắt ngân sách là tắt dòng khách hàng. Doanh nghiệp chịu áp lực liên tục lên biên lợi nhuận.</p>
               </div>
-              <div className="roiMetricBox highlight">
+              <div className="roiMetricBox highlightSOHO">
                 <small>Chiến dịch Tăng trưởng SOHO</small>
-                <strong className="textEmerald">CAC giảm 4x từ tháng thứ 9</strong>
+                <strong className="textBrandGold">CAC giảm 4x từ tháng 9</strong>
                 <p>Website trở thành tài sản số tích lũy, tiếp tục tạo ra Qualified Leads tự nhiên với chi phí 0đ.</p>
               </div>
               <div className="roiMetricBox">
                 <small>Tỷ lệ Đạt cam kết KPI</small>
-                <strong className="textGold">99.2% Hợp đồng</strong>
+                <strong className="textBrandFlame">99.2% Hợp đồng</strong>
                 <p>Ký cam kết KPI định lượng bằng văn bản pháp lý và Thỏa thuận bảo mật thông tin (NDA).</p>
               </div>
             </div>
@@ -542,10 +535,10 @@ export default function ServiceSectionVisualizer({ article, serviceTitle }) {
         {/* ============================================================
             SECTION 5: #checklist (Checklist nghiệm thu cho CEO / CMO)
             ============================================================ */}
-        <section id="checklist" className="visualSectionBlock visualSectionChecklist">
+        <section id="checklist" className="visualSectionBlock">
           <div className="visualSectionHeader">
-            <div className="visualSectionBadge emerald">
-              <CheckSquare size={14} />
+            <div className="visualSectionBadge badgePrimary">
+              <CheckSquare size={13} />
               <span>KHỐI 05 • TIÊU CHUẨN NGHIỆM THU CHO CEO / CMO</span>
             </div>
             <h2 className="visualSectionTitle">Bộ Checklist tiêu chí kiểm toán & nghiệm thu chất lượng</h2>
@@ -556,7 +549,7 @@ export default function ServiceSectionVisualizer({ article, serviceTitle }) {
 
           <div className="checklistProgressTracker">
             <div className="trackerInfo">
-              <Sparkles size={16} className="textEmerald" />
+              <Sparkles size={16} className="textBrandGold" />
               <span>Tiến độ nghiệm thu thử nghiệm: <strong>{checkedCount} / {totalChecklist}</strong> tiêu chí hoàn thành</span>
             </div>
             <div className="progressBarBg">
@@ -596,10 +589,10 @@ export default function ServiceSectionVisualizer({ article, serviceTitle }) {
         {/* ============================================================
             SECTION 6: #faq (Hỏi đáp chuyên sâu FAQ)
             ============================================================ */}
-        <section id="faq" className="visualSectionBlock visualSectionFaq">
+        <section id="faq" className="visualSectionBlock">
           <div className="visualSectionHeader">
-            <div className="visualSectionBadge lavender">
-              <HelpCircle size={14} />
+            <div className="visualSectionBadge badgeOrange">
+              <HelpCircle size={13} />
               <span>KHỐI 06 • GIẢI ĐÁP BĂN KHOĂN (FAQ)</span>
             </div>
             <h2 className="visualSectionTitle">Câu hỏi thường gặp về cam kết, chi phí & thời gian hoàn vốn</h2>

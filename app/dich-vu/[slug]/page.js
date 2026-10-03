@@ -75,22 +75,22 @@ export default async function ServiceLandingPage({ params }) {
           {/* Core Trust Indicators Bar */}
           <div className="serviceHeroTrustBar">
             <div className="trustPill">
-              <Target size={15} className="textEmerald" />
+              <Target size={16} className="iconBrandIndigo" />
               <span>Đúng insight khách hàng</span>
             </div>
             <div className="trustDivider" />
             <div className="trustPill">
-              <LineChart size={15} className="textGold" />
+              <LineChart size={16} className="iconBrandGold" />
               <span>Đo theo Qualified Leads</span>
             </div>
             <div className="trustDivider" />
             <div className="trustPill">
-              <ShieldCheck size={15} className="textOrange" />
+              <ShieldCheck size={16} className="iconBrandFlame" />
               <span>Sở hữu 100% raw data</span>
             </div>
             <div className="trustDivider" />
             <div className="trustPill">
-              <Zap size={15} className="textPrimary" />
+              <Zap size={16} className="iconBrandPurple" />
               <span>Sprint 2 tuần linh hoạt</span>
             </div>
           </div>
