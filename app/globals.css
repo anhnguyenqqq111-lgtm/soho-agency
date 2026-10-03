@@ -3697,4 +3697,967 @@ footer{
   }
 }
 
+/* ============================================================
+   STREAMLINED SERVICE LANDING HERO
+   ============================================================ */
+.servicePageMain {
+  background: #fcfbfe;
+}
+
+.serviceCleanHero {
+  padding: 80px 24px 64px;
+  background: radial-gradient(circle at 50% 0%, #f4efff 0%, #ffffff 70%);
+  border-bottom: 1px solid #ede8fd;
+  text-align: center;
+}
+
+.serviceCleanHeroInner {
+  max-width: 880px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.serviceHeroH1 {
+  font-size: 46px;
+  font-weight: 850;
+  line-height: 1.2;
+  letter-spacing: -1.6px;
+  color: #120b38;
+  margin: 18px 0 20px;
+}
+
+.serviceHeroLead {
+  font-size: 19px;
+  color: #554a7d;
+  line-height: 1.65;
+  margin: 0 0 36px;
+  max-width: 760px;
+}
+
+.serviceHeroActionRow {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.serviceHeroSecondaryLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--soho-primary);
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: 99px;
+  background: #f0ecfc;
+  border: 1px solid #ddd5fc;
+  transition: all .2s ease;
+}
+
+.serviceHeroSecondaryLink:hover {
+  background: #e6e0fb;
+  transform: translateY(-2px);
+  color: #2c1a96;
+}
+
+.serviceHeroTrustBar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid #ede8fd;
+  box-shadow: 0 4px 18px rgba(57, 36, 191, 0.04);
+  padding: 10px 22px;
+  border-radius: 99px;
+}
+
+.trustPill {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12.5px;
+  font-weight: 650;
+  color: #473c72;
+}
+
+.trustDivider {
+  width: 1px;
+  height: 14px;
+  background: #ddd8f2;
+}
+
+/* ============================================================
+   STICKY SUBNAV BAR (URL SECTION ANCHORS)
+   ============================================================ */
+.serviceVisualizerContainer {
+  position: relative;
+  width: 100%;
+}
+
+.serviceSubnavBar {
+  position: sticky;
+  top: 72px;
+  z-index: 50;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid #ede8fd;
+  box-shadow: 0 4px 20px rgba(17, 11, 56, 0.04);
+  padding: 8px 24px;
+}
+
+.serviceSubnavInner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.serviceSubnavTabs {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  overflow-x: auto;
+  padding: 4px 0;
+  scrollbar-width: none;
+}
+
+.serviceSubnavTabs::-webkit-scrollbar {
+  display: none;
+}
+
+.serviceSubnavTab {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 14px;
+  border-radius: 99px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #63578c;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all .2s ease;
+  position: relative;
+}
+
+.serviceSubnavTab:hover {
+  color: var(--soho-primary);
+  background: #f0ecfd;
+}
+
+.serviceSubnavTab.active {
+  color: #120b38;
+  background: #ede8fc;
+  font-weight: 800;
+}
+
+.serviceSubnavTab .subnavIcon {
+  color: #8c82b4;
+  transition: color .2s ease;
+}
+
+.serviceSubnavTab.active .subnavIcon {
+  color: var(--soho-primary);
+}
+
+.subnavActiveGlow {
+  position: absolute;
+  bottom: -4px;
+  left: 20%;
+  right: 20%;
+  height: 2px;
+  background: var(--soho-primary);
+  border-radius: 99px;
+}
+
+.btnSubnavCta {
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 750;
+  white-space: nowrap;
+}
+
+/* ============================================================
+   MAIN VISUAL CONTENT WRAPPER & SECTIONS
+   ============================================================ */
+.serviceVisualContentWrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 56px 24px 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 84px;
+}
+
+.visualSectionBlock {
+  scroll-margin-top: 136px;
+  background: #ffffff;
+  border: 1px solid #eae5fc;
+  border-radius: 24px;
+  padding: 48px 42px;
+  box-shadow: 0 10px 35px rgba(57, 36, 191, 0.03);
+}
+
+.visualSectionHeader {
+  margin-bottom: 36px;
+}
+
+.visualSectionBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 99px;
+  font-size: 11px;
+  font-weight: 850;
+  letter-spacing: 0.06em;
+  margin-bottom: 12px;
+}
+
+.visualSectionBadge.alert {
+  background: #fef2f2;
+  color: #dc2626;
+  border: 1px solid #fecaca;
+}
+
+.visualSectionBadge.primary {
+  background: #f0ecfd;
+  color: var(--soho-primary);
+  border: 1px solid #ddd5fc;
+}
+
+.visualSectionBadge.accent {
+  background: #fff7ed;
+  color: #ea580c;
+  border: 1px solid #ffedd5;
+}
+
+.visualSectionBadge.gold {
+  background: #fffbeb;
+  color: #b45309;
+  border: 1px solid #fef3c7;
+}
+
+.visualSectionBadge.emerald {
+  background: #ecfdf5;
+  color: #059669;
+  border: 1px solid #a7f3d0;
+}
+
+.visualSectionBadge.lavender {
+  background: #faf5ff;
+  color: #7e22ce;
+  border: 1px solid #f3e8ff;
+}
+
+.visualSectionTitle {
+  font-size: 32px;
+  font-weight: 850;
+  letter-spacing: -1px;
+  color: #120b38;
+  line-height: 1.28;
+  margin: 0 0 12px;
+}
+
+.visualSectionSubtitle {
+  font-size: 16.5px;
+  color: #5c5283;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 900px;
+}
+
+/* 1. KHỐI THỰC TRẠNG: PAIN VS AGITATE GRID */
+.painAgitateGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  margin-bottom: 28px;
+}
+
+.painAgitateCard {
+  background: #faf9fe;
+  border-radius: 18px;
+  padding: 30px 28px;
+  border: 1px solid #ece7fc;
+  display: flex;
+  flex-direction: column;
+}
+
+.painAgitateCard.painCard {
+  border-top: 3px solid #ef4444;
+}
+
+.painAgitateCard.agitateCard {
+  border-top: 3px solid #f59e0b;
+}
+
+.cardTopBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  padding: 3px 8px;
+  border-radius: 4px;
+  margin-bottom: 14px;
+  width: fit-content;
+}
+
+.cardTopBadge.red {
+  background: #fef2f2;
+  color: #b91c1c;
+}
+
+.cardTopBadge.amber {
+  background: #fffbeb;
+  color: #92400e;
+}
+
+.dotAlert {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ef4444;
+}
+
+.dotAlert.amber {
+  background: #f59e0b;
+}
+
+.painAgitateCard h3 {
+  font-size: 20px;
+  font-weight: 800;
+  color: #120b38;
+  margin: 0 0 12px;
+  line-height: 1.35;
+}
+
+.cardSummaryText {
+  font-size: 15px;
+  color: #504477;
+  line-height: 1.6;
+  margin: 0 0 18px;
+}
+
+.visualAlertList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.visualAlertList li {
+  font-size: 14.5px;
+  color: #403666;
+  line-height: 1.55;
+  padding-left: 18px;
+  position: relative;
+}
+
+.visualAlertList li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #dc2626;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.agitateCard .visualAlertList li::before {
+  color: #d97706;
+}
+
+.visualInsightBanner {
+  background: linear-gradient(135deg, #170f44 0%, #291b72 100%);
+  color: #ffffff;
+  border-radius: 16px;
+  padding: 24px 30px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 0 12px 30px rgba(23, 15, 68, 0.15);
+}
+
+.bannerGlowIcon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: rgba(254, 188, 1, 0.2);
+  color: var(--soho-gold);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  box-shadow: 0 0 20px rgba(254, 188, 1, 0.3);
+}
+
+.visualInsightBanner strong {
+  display: block;
+  font-size: 13.5px;
+  color: var(--soho-gold);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.visualInsightBanner p {
+  margin: 0;
+  font-size: 15.5px;
+  line-height: 1.6;
+  color: #e5e0fb;
+  font-style: italic;
+}
+
+/* 2. KHỐI GIẢI PHÁP: 4 PILLARS INFOGRAPHIC GRID */
+.pillarsInfographicGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.pillarVisualCard {
+  background: #faf9fe;
+  border: 1px solid #ece7fc;
+  border-radius: 18px;
+  padding: 30px 28px;
+  display: flex;
+  flex-direction: column;
+  transition: all .25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.pillarVisualCard:hover {
+  transform: translateY(-4px);
+  border-color: #cfc2fa;
+  box-shadow: 0 14px 40px rgba(57, 36, 191, 0.08);
+}
+
+.pillarCardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.pillarIndexTag {
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  color: var(--soho-primary);
+  background: #ede8fc;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+.pillarIconWrap {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: #ffffff;
+  border: 1px solid #e2dbfc;
+  color: var(--soho-primary);
+  display: grid;
+  place-items: center;
+}
+
+.pillarCardTitle {
+  font-size: 20px;
+  font-weight: 800;
+  color: #120b38;
+  margin: 0 0 10px;
+  line-height: 1.35;
+}
+
+.pillarCardIntro {
+  font-size: 14.5px;
+  color: #5d5382;
+  line-height: 1.6;
+  margin: 0 0 18px;
+}
+
+.pillarPointsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pillarPointsList li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14px;
+  color: #403666;
+  line-height: 1.5;
+}
+
+.pillarCheckIcon {
+  color: #059669;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+/* 3. KHỐI QUY TRÌNH: SPRINT ROADMAP FLOW */
+.sprintRoadmapFlow {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 18px;
+}
+
+.sprintStepCard {
+  background: #faf9fe;
+  border: 1px solid #ede8fd;
+  border-radius: 16px;
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: all .2s ease;
+}
+
+.sprintStepCard:hover {
+  border-color: #d1c5fc;
+  background: #ffffff;
+  box-shadow: 0 10px 30px rgba(57, 36, 191, 0.05);
+}
+
+.stepTopRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.stepBadgeCircle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--soho-primary);
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 850;
+  display: grid;
+  place-items: center;
+}
+
+.stepDurationPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11.5px;
+  font-weight: 750;
+  color: #6c6096;
+  background: #ffffff;
+  border: 1px solid #e8e3fb;
+  padding: 3px 8px;
+  border-radius: 99px;
+}
+
+.stepCardTitle {
+  font-size: 16.5px;
+  font-weight: 800;
+  color: #120b38;
+  margin: 0 0 10px;
+  line-height: 1.35;
+}
+
+.stepCardDesc {
+  font-size: 13.5px;
+  color: #5e5485;
+  line-height: 1.55;
+  margin: 0 0 16px;
+}
+
+.stepDeliverablesBox {
+  margin-top: auto;
+  border-top: 1px dashed #e5dffc;
+  padding-top: 12px;
+}
+
+.stepDeliverablesBox strong {
+  display: block;
+  font-size: 12px;
+  color: #3f356b;
+  margin-bottom: 8px;
+}
+
+.stepDeliverablesBox ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.stepDeliverablesBox li {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  font-size: 12.5px;
+  color: #554a7c;
+  line-height: 1.45;
+}
+
+.stepArrowIcon {
+  color: var(--soho-orange);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* 4. KHỐI SO SÁNH & BÀI TOÁN ROI */
+.visualComparisonWrap {
+  margin-bottom: 32px;
+  overflow-x: auto;
+}
+
+.visualComparisonTable {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid #ede8fd;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.visualComparisonTable th,
+.visualComparisonTable td {
+  padding: 18px 20px;
+  font-size: 14.5px;
+  line-height: 1.6;
+  text-align: left;
+  border-bottom: 1px solid #f0ebfc;
+}
+
+.visualComparisonTable th {
+  background: #f7f5fd;
+  color: #261d54;
+  font-weight: 800;
+  font-size: 15px;
+}
+
+.visualComparisonTable th.sohoHead {
+  background: linear-gradient(135deg, #170f44 0%, #301f80 100%);
+  color: #ffffff;
+  font-weight: 850;
+  position: relative;
+}
+
+.sohoRecommendTag {
+  display: inline-block;
+  margin-left: 8px;
+  font-size: 10px;
+  font-weight: 850;
+  color: #047857;
+  background: #d1fae5;
+  padding: 2px 7px;
+  border-radius: 4px;
+}
+
+.visualComparisonTable td.sohoCell {
+  background: #faf8ff;
+  color: #120b38;
+  font-weight: 650;
+  border-left: 2px solid #ddd5fc;
+  border-right: 2px solid #ddd5fc;
+}
+
+.roiSimulationCard {
+  background: #ffffff;
+  border: 1px solid #d1fae5;
+  border-radius: 18px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(5, 150, 105, 0.05);
+}
+
+.roiSimHead {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid #ecfdf5;
+  padding-bottom: 18px;
+}
+
+.roiSimHead strong {
+  display: block;
+  font-size: 18px;
+  color: #065f46;
+  font-weight: 800;
+}
+
+.roiSimHead span {
+  font-size: 13.5px;
+  color: #6b7280;
+}
+
+.roiMetricsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.roiMetricBox {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.roiMetricBox.highlight {
+  background: #ecfdf5;
+  border-color: #a7f3d0;
+}
+
+.roiMetricBox small {
+  display: block;
+  font-size: 12px;
+  font-weight: 750;
+  color: #6b7280;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.roiMetricBox strong {
+  display: block;
+  font-size: 20px;
+  font-weight: 850;
+  color: #1f2937;
+  margin-bottom: 8px;
+}
+
+.roiMetricBox p {
+  margin: 0;
+  font-size: 13px;
+  color: #4b5563;
+  line-height: 1.5;
+}
+
+/* 5. KHỐI CHECKLIST NGHIỆM THU */
+.checklistProgressTracker {
+  background: #f9fafb;
+  border: 1px solid #ede8fd;
+  border-radius: 14px;
+  padding: 16px 22px;
+  margin-bottom: 28px;
+}
+
+.trackerInfo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 650;
+  color: #374151;
+  margin-bottom: 10px;
+}
+
+.trackerInfo strong {
+  color: #059669;
+}
+
+.progressBarBg {
+  width: 100%;
+  height: 8px;
+  background: #e5e7eb;
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.progressBarFill {
+  height: 100%;
+  background: linear-gradient(90deg, #10b981 0%, #059669 100%);
+  border-radius: 99px;
+  transition: width .3s ease;
+}
+
+.interactiveChecklistGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.interactiveCheckCard {
+  background: #faf9fe;
+  border: 1px solid #ede8fd;
+  border-radius: 14px;
+  padding: 16px 18px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  cursor: pointer;
+  transition: all .2s ease;
+  user-select: none;
+}
+
+.interactiveCheckCard:hover {
+  background: #ffffff;
+  border-color: #cfc2fa;
+  transform: translateY(-2px);
+}
+
+.interactiveCheckCard.checked {
+  background: #ecfdf5;
+  border-color: #a7f3d0;
+}
+
+.checkCardBox {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.checkIconActive {
+  color: #059669;
+}
+
+.checkIconEmpty {
+  color: #cbd5e1;
+}
+
+.checkCategoryBadge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 750;
+  color: #63578c;
+  background: #f0ecfc;
+  padding: 2px 7px;
+  border-radius: 4px;
+  margin-bottom: 6px;
+}
+
+.interactiveCheckCard.checked .checkCategoryBadge {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.checkCardContent p {
+  margin: 0;
+  font-size: 14px;
+  color: #374151;
+  line-height: 1.5;
+}
+
+/* 6. KHỐI FAQ GIẢI ĐÁP */
+.interactiveFaqList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.visualFaqItem {
+  background: #faf9fe;
+  border: 1px solid #ede8fd;
+  border-radius: 14px;
+  overflow: hidden;
+  transition: all .2s ease;
+}
+
+.visualFaqItem.open {
+  background: #ffffff;
+  border-color: #cfc2fa;
+  box-shadow: 0 6px 24px rgba(57, 36, 191, 0.05);
+}
+
+.visualFaqQuestion {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 22px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+}
+
+.faqNum {
+  font-size: 13px;
+  font-weight: 850;
+  color: var(--soho-primary);
+  background: #ede8fc;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.faqQuestionText {
+  font-size: 16.5px;
+  font-weight: 750;
+  color: #120b38;
+  flex: 1;
+}
+
+.faqChevronIcon {
+  color: #8c82b4;
+  transition: transform .25s ease;
+  flex-shrink: 0;
+}
+
+.faqChevronIcon.rotated {
+  transform: rotate(180deg);
+  color: var(--soho-orange);
+}
+
+.visualFaqAnswer {
+  border-top: 1px solid #f0ebfc;
+  padding: 18px 24px 24px 68px;
+}
+
+.faqAnswerContent {
+  font-size: 15px;
+  color: #403666;
+  line-height: 1.7;
+}
+
+/* RESPONSIVE DESIGN FOR VISUAL SECTIONS */
+@media (max-width: 960px) {
+  .serviceHeroH1 {
+    font-size: 34px;
+  }
+  .visualSectionBlock {
+    padding: 32px 20px;
+  }
+  .visualSectionTitle {
+    font-size: 26px;
+  }
+  .painAgitateGrid,
+  .pillarsInfographicGrid,
+  .interactiveChecklistGrid,
+  .roiMetricsGrid {
+    grid-template-columns: 1fr;
+  }
+  .sprintRoadmapFlow {
+    grid-template-columns: 1fr;
+  }
+  .visualFaqAnswer {
+    padding-left: 20px;
+  }
+  .serviceSubnavAction {
+    display: none;
+  }
+}
+
+
 
