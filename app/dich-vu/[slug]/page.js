@@ -7,11 +7,14 @@ import {
   ShieldCheck,
   Sparkles,
   Target,
-  Zap
+  Zap,
+  BookOpen
 } from 'lucide-react';
 import Header from '../../../components/Header';
 import Footer from '../../../components/Footer';
 import {getServicePage, servicePages} from '../../../components/servicePagesData';
+import {getServiceArticle} from '../../../components/serviceArticlesData';
+import ArticleRenderer from '../../../components/ArticleRenderer';
 import {sitePath} from '../../../components/paths';
 
 export function generateStaticParams(){
@@ -21,20 +24,22 @@ export function generateStaticParams(){
 export async function generateMetadata({params}){
   const {slug} = await params;
   const service = getServicePage(slug);
+  const article = getServiceArticle(slug);
 
   if(!service){
-    return {title: 'Dich vu khong ton tai | SOHO Agency'};
+    return {title: 'Dịch vụ không tồn tại | SOHO Agency'};
   }
 
   return {
-    title: `${service.menuTitle} | SOHO Agency`,
-    description: service.intro
+    title: article?.metaTitle || `${service.menuTitle} | SOHO Agency`,
+    description: article?.metaDesc || service.intro
   };
 }
 
 export default async function ServiceLandingPage({params}){
   const {slug} = await params;
   const service = getServicePage(slug);
+  const article = getServiceArticle(slug);
 
   if(!service){
     notFound();
@@ -54,10 +59,17 @@ export default async function ServiceLandingPage({params}){
               <ArrowRight size={18}/>
               <span className="btnSweep"></span>
             </a>
-            <a className="previewLink" href="#service-process">
-              <span>Xem cách triển khai</span>
-              <ArrowRight size={18} className="linkArrow"/>
-            </a>
+            {article ? (
+              <a className="previewLink" href="#chuyen-khao-seo">
+                <span>Đọc chuyên khảo SEO (~3.000 từ)</span>
+                <ArrowRight size={18} className="linkArrow"/>
+              </a>
+            ) : (
+              <a className="previewLink" href="#service-process">
+                <span>Xem cách triển khai</span>
+                <ArrowRight size={18} className="linkArrow"/>
+              </a>
+            )}
           </div>
         </div>
         <div className="serviceHeroPanel">
@@ -134,6 +146,87 @@ export default async function ServiceLandingPage({params}){
           <p>{service.proof}</p>
         </div>
       </section>
+
+      {/* IN-DEPTH SEO GUIDE / ARTICLE SECTION (PAS + COMMERCIAL INTENT) */}
+      {article && (
+        <section className="section serviceDeepArticleSection" id="chuyen-khao-seo">
+          <div className="articleIntroBlock">
+            <div className="articleBadgeRow">
+              <span className="articleEyebrowBadge">
+                <Sparkles size={14} className="textOrange"/>
+                CHUYÊN KHẢO TĂNG TRƯỞNG & CHIẾN LƯỢC SEO 2026
+              </span>
+              <span className="frameworkBadge">FRAMEWORK: PAS + B2B COMMERCIAL INTENT</span>
+            </div>
+            <h2 className="articleMainTitle">{article.metaTitle}</h2>
+            <p className="articleLeadSubtitle">{article.metaDesc}</p>
+            
+            <div className="articleAuthorBar">
+              <div className="authorProfile">
+                <div className="authorAvatarWrap">
+                  <img src={sitePath(article.author.avatar)} alt={article.author.name} className="authorAvatarImg" />
+                </div>
+                <div>
+                  <strong>{article.author.name}</strong>
+                  <span>{article.author.role}</span>
+                </div>
+              </div>
+              <div className="articleMetaPills">
+                <span className="metaPill">🕒 {article.readingTime}</span>
+                <span className="metaPill">📅 Cập nhật: {article.updatedDate}</span>
+                <span className="metaPill verifiedPill">
+                  <ShieldCheck size={14}/> Đã thẩm định E-E-A-T
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div className="articleLayoutGrid">
+            {/* STICKY TOC SIDEBAR */}
+            <aside className="articleSidebarCol">
+              <div className="stickyTocWrapper">
+                <div className="tocHead">
+                  <BookOpen size={16} className="textPrimary"/>
+                  <span>MỤC LỤC CHUYÊN SÂU</span>
+                </div>
+                <nav className="tocNavList">
+                  {article.toc.map(item => (
+                    <a key={item.id} href={`#${item.id}`} className="tocNavItem">
+                      <span>{item.title}</span>
+                    </a>
+                  ))}
+                </nav>
+
+                <div className="sidebarConsultCard">
+                  <div className="sidebarConsultHead">
+                    <Zap size={20} className="textOrange"/>
+                    <strong>Audit Website 0đ</strong>
+                  </div>
+                  <p>Nhận báo cáo rà soát lỗ hổng SEO và tiềm năng tăng trưởng doanh thu cùng chuyên gia SOHO.</p>
+                  <a href={sitePath('/#contact')} className="btn primary btnGlow sidebarConsultBtn">
+                    <span>Đăng ký Audit</span>
+                    <ArrowRight size={14}/>
+                    <span className="btnSweep"></span>
+                  </a>
+                </div>
+              </div>
+            </aside>
+
+            {/* MAIN ARTICLE BODY */}
+            <article className="articleContentCol">
+              {article.sections.map((section, idx) => (
+                <section key={section.id} id={section.id} className="articleContentBlock">
+                  <div className="sectionAnchorHeader">
+                    <span className="sectionIdxBadge">CHƯƠNG 0{idx + 1}</span>
+                    <h2 className="sectionMainHeading">{section.heading}</h2>
+                  </div>
+                  <ArticleRenderer section={section} />
+                </section>
+              ))}
+            </article>
+          </div>
+        </section>
+      )}
 
       <section className="serviceFinalCta">
         <div>
