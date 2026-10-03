@@ -2645,3 +2645,522 @@ footer{
   .footerGrid{grid-template-columns:1fr 1fr;gap:30px}
   .footerGrid>div:last-child{grid-column:1/-1}
 }
+
+/* ============================================================
+   CLIENT LOGOS & SOCIAL PROOF TRUST BAR
+   ============================================================ */
+.clientTrustSection {
+  background: #faf9fe;
+  border-top: 1px solid #ebe5fd;
+  border-bottom: 1px solid #ebe5fd;
+  padding: 46px 28px 52px;
+  position: relative;
+  z-index: 2;
+}
+
+.clientTrustInner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.clientTrustHeading {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.clientTrustBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: #f0ecfd;
+  color: var(--soho-primary);
+  border: 1px solid #ddd5fc;
+  padding: 5px 14px;
+  border-radius: 99px;
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.clientTrustHeading p {
+  margin: 0;
+  color: #4a3e75;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+}
+
+.clientLogoGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 18px;
+}
+
+.clientLogoCard {
+  background: #ffffff;
+  border: 1px solid #eae5fc;
+  border-radius: 14px;
+  padding: 22px 16px 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+  transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+  position: relative;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.clientLogoCard:hover {
+  transform: translateY(-4px);
+  border-color: var(--soho-secondary);
+  box-shadow: 0 16px 36px rgba(57, 36, 191, 0.09);
+}
+
+.clientLogoImgWrapper {
+  height: 52px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.clientLogoImg {
+  max-height: 44px;
+  max-width: 135px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: grayscale(100%) opacity(0.8);
+  transition: filter .28s ease, transform .28s ease;
+}
+
+.clientLogoCard:hover .clientLogoImg {
+  filter: grayscale(0%) opacity(1);
+  transform: scale(1.06);
+}
+
+.clientLogoMeta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  width: 100%;
+}
+
+.clientName {
+  font-size: 13.5px;
+  font-weight: 750;
+  color: #170f3f;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.clientExtIcon {
+  color: #9d94c2;
+  opacity: 0;
+  transition: opacity .2s ease, transform .2s ease;
+}
+
+.clientLogoCard:hover .clientExtIcon {
+  opacity: 1;
+  transform: translate(1px, -1px);
+  color: var(--soho-orange);
+}
+
+.clientField {
+  font-size: 11px;
+  color: #766d9c;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.clientTag {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--soho-orange);
+  background: #fff3ea;
+  border: 1px solid #ffe1cd;
+  border-radius: 6px;
+  padding: 2px 7px;
+  margin-top: 3px;
+  letter-spacing: 0.01em;
+}
+
+/* ============================================================
+   COMPARISON TABLE: SOHO VS TRADITIONAL AGENCY
+   ============================================================ */
+.comparisonSection {
+  background: #ffffff;
+  padding: 100px 28px 90px;
+}
+
+.comparisonTableWrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  border: 1px solid #e5defe;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(57, 36, 191, 0.06);
+  background: #ffffff;
+}
+
+.comparisonTableHead {
+  display: grid;
+  grid-template-columns: 260px 1fr 1.15fr;
+  background: #f8f6ff;
+  border-bottom: 2px solid #ede8fd;
+}
+
+.compColHead {
+  padding: 22px 24px;
+  font-size: 14.5px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+}
+
+.compColHead.colCrit {
+  color: #554a85;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  border-right: 1px solid #ede8fd;
+  background: #fbf9ff;
+}
+
+.compColHead.colTrad {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #5a537d;
+  border-right: 1px solid #ede8fd;
+  background: #faf9fe;
+}
+
+.compColHead.colTrad strong {
+  display: block;
+  font-size: 15px;
+  color: #352c5c;
+}
+
+.compColHead.colTrad small {
+  display: block;
+  font-size: 11.5px;
+  color: #877fa6;
+  font-weight: 500;
+  margin-top: 2px;
+}
+
+.compHeadDot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.compHeadDot.redDot {
+  background: #ef4444;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.18);
+}
+
+.compColHead.colSoho {
+  background: linear-gradient(135deg, #3924BF 0%, #1f1270 100%);
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  position: relative;
+}
+
+.sohoHeadBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(254, 188, 1, 0.22);
+  color: #febc01;
+  border: 1px solid rgba(254, 188, 1, 0.45);
+  padding: 3px 9px;
+  border-radius: 99px;
+  font-size: 10px;
+  font-weight: 850;
+  letter-spacing: 0.05em;
+}
+
+.sohoHeadTitleRow strong {
+  font-size: 16.5px;
+  color: #ffffff;
+  letter-spacing: -0.2px;
+}
+
+.sohoHeadTitleRow small {
+  font-size: 12px;
+  color: #dcd7ff;
+  font-weight: 500;
+  margin-top: 1px;
+  display: block;
+}
+
+.comparisonTableBody {
+  display: flex;
+  flex-direction: column;
+}
+
+.comparisonRow {
+  display: grid;
+  grid-template-columns: 260px 1fr 1.15fr;
+  border-bottom: 1px solid #eeeaff;
+  transition: background .2s ease;
+}
+
+.comparisonRow:last-child {
+  border-bottom: 0;
+}
+
+.comparisonRow:hover {
+  background: #faf8ff;
+}
+
+.compCell {
+  padding: 24px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.compCritCell {
+  border-right: 1px solid #ede8fd;
+  flex-direction: column;
+  gap: 6px;
+  justify-content: center;
+  background: #fcfbff;
+}
+
+.compIndex {
+  font-size: 11px;
+  font-weight: 850;
+  color: #9c92c5;
+  letter-spacing: 0.05em;
+}
+
+.compCategoryTitle {
+  font-size: 14.5px;
+  font-weight: 750;
+  color: #160f38;
+  line-height: 1.4;
+}
+
+.compTradCell {
+  border-right: 1px solid #ede8fd;
+  background: #fffcfc;
+}
+
+.compTradCell .cellContent {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.iconTradFail {
+  color: #ef4444;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.compTradCell p {
+  margin: 0;
+  font-size: 13.5px;
+  color: #5f577a;
+  line-height: 1.6;
+}
+
+.compSohoCell {
+  background: #fbfaff;
+  position: relative;
+}
+
+.compSohoCell .cellContent {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.iconSohoSuccess {
+  color: #10b981;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.compSohoCell p {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #150d3a;
+  line-height: 1.6;
+}
+
+.sohoPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: #fff1e8;
+  color: var(--soho-orange);
+  border: 1px solid #fed8c0;
+  padding: 3px 9px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 750;
+  margin-top: 9px;
+}
+
+.cellMobileLabel {
+  display: none;
+}
+
+.comparisonFooter {
+  background: #f8f6ff;
+  border-top: 1px solid #eae5fc;
+  padding: 26px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.compFooterText {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.compFooterIcon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: #ece7fd;
+  color: var(--soho-primary);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.compFooterText strong {
+  display: block;
+  font-size: 15.5px;
+  color: #170f3f;
+  margin-bottom: 3px;
+  font-weight: 750;
+}
+
+.compFooterText p {
+  margin: 0;
+  font-size: 13.5px;
+  color: #695e8f;
+  line-height: 1.45;
+}
+
+/* Responsive Comparison and Logos */
+@media (max-width: 1024px) {
+  .clientLogoGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .clientLogoCard:last-child {
+    grid-column: span 3;
+    max-width: 320px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .comparisonTableHead,
+  .comparisonRow {
+    grid-template-columns: 210px 1fr 1fr;
+  }
+}
+
+@media (max-width: 860px) {
+  .clientTrustSection {
+    padding: 36px 18px 42px;
+  }
+  .clientLogoGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  .clientLogoCard:last-child {
+    grid-column: span 2;
+    max-width: 100%;
+  }
+  .comparisonSection {
+    padding: 70px 18px;
+  }
+  .comparisonTableHead {
+    display: none;
+  }
+  .comparisonRow {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border-bottom: 1px solid #ede8fd;
+    gap: 14px;
+  }
+  .compCell {
+    padding: 0;
+  }
+  .compCritCell {
+    border-right: none;
+    background: transparent;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px dashed #e3dcfa;
+    padding-bottom: 12px;
+  }
+  .compTradCell,
+  .compSohoCell {
+    border-right: none;
+    border-radius: 12px;
+    padding: 16px;
+  }
+  .compTradCell {
+    background: #fff8f8;
+    border: 1px solid #fee2e2;
+  }
+  .compSohoCell {
+    background: #f7f4ff;
+    border: 1px solid #e2dbfc;
+  }
+  .cellMobileLabel {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .cellMobileLabel.tradLabel {
+    color: #dc2626;
+  }
+  .cellMobileLabel.sohoLabel {
+    color: var(--soho-primary);
+  }
+  .comparisonFooter {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+    padding: 22px 18px;
+  }
+  .compFooterText {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+

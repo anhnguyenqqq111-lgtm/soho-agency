@@ -19,7 +19,9 @@ import {
   Sparkles,
   Zap,
   ShieldCheck,
-  Activity
+  Activity,
+  XCircle,
+  ExternalLink
 } from 'lucide-react';
 import {sitePath} from '../components/paths';
 
@@ -685,6 +687,83 @@ function HeroVisual(){
   );
 }
 
+const clientLogos = [
+  {
+    name: 'May Mặc CTH',
+    field: 'Sản xuất May mặc B2B & Xuất khẩu',
+    tag: 'SEO B2B & Google Ads',
+    logo: sitePath('/clients/cth.png'),
+    url: 'https://maymaccth.com'
+  },
+  {
+    name: 'ICADO',
+    field: 'Thời trang Thể thao & Activewear',
+    tag: 'E-Commerce & Ads Chuyển đổi',
+    logo: sitePath('/clients/icado.png'),
+    url: 'https://icado.vn'
+  },
+  {
+    name: 'Studio 1 Nhà',
+    field: 'Studio Nhiếp ảnh & Dịch vụ Cưới',
+    tag: 'Local SEO & Meta Ads',
+    logo: sitePath('/clients/studio1nha.png'),
+    url: 'https://studio1nha.vn'
+  },
+  {
+    name: 'Everlog',
+    field: 'Vận tải Logistics & Chuỗi cung ứng',
+    tag: 'SEO B2B & Inbound Pipeline',
+    logo: sitePath('/clients/everlog-dark.png'),
+    url: 'https://everlog.com.vn'
+  },
+  {
+    name: 'Fitfood VN',
+    field: 'Healthy Meal Prep & Healthy Food',
+    tag: 'Paid Social & Tối ưu CRO',
+    logo: sitePath('/clients/fitfood-dark.png'),
+    url: 'https://fitfood.vn'
+  }
+];
+
+const comparisonData = [
+  {
+    category: 'Mục tiêu & Đo lường',
+    traditional: 'Tập trung vào chỉ số bề nổi (Impressions, Clicks, Traffic ảo). Thường né tránh trách nhiệm khi doanh thu thực tế của doanh nghiệp không tăng.',
+    soho: 'Gắn liền trực tiếp với Qualified Leads, Doanh thu & ROAS. Đo lường tỷ lệ chuyển đổi cuối cùng và hiệu quả trên từng đồng ngân sách chi tiêu.',
+    highlight: 'Doanh thu & Lead thực'
+  },
+  {
+    category: 'Quyền sở hữu & Dữ liệu',
+    traditional: 'Nắm giữ tài khoản quảng cáo và tệp dữ liệu khách hàng. Chỉ gửi báo cáo file PDF tĩnh cuối tháng, khó kiểm chứng chi tiêu thực.',
+    soho: 'Khách hàng sở hữu 100% tài nguyên, tài khoản & raw data. Cung cấp Live Dashboard (Looker Studio / GA4) truy cập theo dõi 24/7.',
+    highlight: 'Minh bạch 100% tài nguyên'
+  },
+  {
+    category: 'Đội ngũ trực tiếp thực thi',
+    traditional: 'Bán hàng bởi Senior/Account dày dạn kinh nghiệm, nhưng sau khi ký hợp đồng lại chuyển giao cho nhân sự Junior hoặc thực tập sinh.',
+    soho: 'Senior Growth Strategist trực tiếp phân tích, lập chiến lược và triển khai. Phối hợp nhịp nhàng như phòng marketing in-house tinh nhuệ.',
+    highlight: 'Senior thực chiến trực tiếp'
+  },
+  {
+    category: 'Mô hình & Tính linh hoạt',
+    traditional: 'Kế hoạch rập khuôn, khóa hợp đồng cứng 6-12 tháng. Mất nhiều tuần họp hành để xin duyệt một thay đổi nhỏ về chiến thuật.',
+    soho: 'Vận hành theo Sprint 2 tuần (Agile Growth). Thử nghiệm nhanh, tối ưu liên tục và chủ động dịch chuyển ngân sách sang kênh hiệu quả nhất.',
+    highlight: 'Sprint 2 tuần linh hoạt'
+  },
+  {
+    category: 'Đón đầu xu hướng & AI',
+    traditional: 'Làm SEO theo phương pháp cũ (spam từ khóa, mua backlink kém chất lượng), dễ bị Google phạt thuật toán và không bắt kịp AI.',
+    soho: 'Tối ưu chuẩn đón đầu Google AI Overviews, Gemini & ChatGPT Search. Xây dựng tín hiệu thực thể thương hiệu (E-E-A-T) bền vững lâu dài.',
+    highlight: 'Chuẩn đón đầu AI Search'
+  },
+  {
+    category: 'Cam kết & Thỏa thuận rủi ro',
+    traditional: 'Hứa hẹn "Top 1 sau 30 ngày" thiếu căn cứ; hợp đồng điều khoản lỏng lẻo, không có ràng buộc hay phương án bù đắp khi không đạt kết quả.',
+    soho: 'Ký cam kết KPI rõ ràng & Thỏa thuận bảo mật dữ liệu (NDA). Lộ trình nghiệm thu minh bạch dựa trên số liệu chẩn đoán thực tế trước triển khai.',
+    highlight: 'Cam kết KPI & Ký NDA'
+  }
+];
+
 export default function Home(){
   return (
     <main>
@@ -744,6 +823,49 @@ export default function Home(){
         </div>
         <HeroVisual/>
       </section>
+
+      {/* Social Proof / Client Logos Trust Bar */}
+      <section className="clientTrustSection">
+        <div className="clientTrustInner">
+          <div className="clientTrustHeading">
+            <span className="clientTrustBadge">
+              <ShieldCheck size={14} className="textOrange"/>
+              KHÁCH HÀNG & ĐỐI TÁC TIÊU BIỂU
+            </span>
+            <p>Được tin tưởng đồng hành cùng các thương hiệu & doanh nghiệp tăng trưởng tại Việt Nam</p>
+          </div>
+          <div className="clientLogoGrid">
+            {clientLogos.map((client) => (
+              <a
+                key={client.name}
+                href={client.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="clientLogoCard"
+                title={`${client.name} — ${client.field}`}
+              >
+                <div className="clientLogoImgWrapper">
+                  <img
+                    src={client.logo}
+                    alt={client.name}
+                    className="clientLogoImg"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="clientLogoMeta">
+                  <strong className="clientName">
+                    {client.name}
+                    <ExternalLink size={11} className="clientExtIcon"/>
+                  </strong>
+                  <span className="clientField">{client.field}</span>
+                  <span className="clientTag">{client.tag}</span>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="strip">
         <p>Không dùng một công thức rập khuôn cho mọi doanh nghiệp.</p>
         <b>Chiến lược SOHO được may đo theo mục tiêu, dữ liệu và thị trường của bạn.</b>
@@ -764,6 +886,97 @@ export default function Home(){
               <a href="#contact">Tìm hiểu thêm <ArrowRight size={16}/></a>
             </article>
           ))}
+        </div>
+      </section>
+
+      {/* COMPARISON TABLE: SOHO VS TRADITIONAL AGENCY */}
+      <section className="section comparisonSection" id="comparison">
+        <div className="sectionHead">
+          <p className="eyebrow gold">ĐỊNH HƯỚNG KHÁC BIỆT</p>
+          <h2>SOHO Agency vs Agency truyền thống: <em>Vì sao khác biệt?</em></h2>
+          <p>
+            Chúng tôi xóa bỏ mô hình báo cáo hình thức, hợp đồng rập khuôn và các chỉ số ảo. 
+            Mọi chiến lược tại SOHO đều hướng tới giá trị kinh doanh thực tế: khách hàng tiềm năng, doanh thu và biên lợi nhuận.
+          </p>
+        </div>
+
+        <div className="comparisonTableWrap">
+          {/* Desktop Table Header */}
+          <div className="comparisonTableHead">
+            <div className="compColHead colCrit">Tiêu chí đánh giá</div>
+            <div className="compColHead colTrad">
+              <span className="compHeadDot redDot"></span>
+              <div>
+                <strong>Agency truyền thống</strong>
+                <small>Mô hình cũ nhiều rủi ro</small>
+              </div>
+            </div>
+            <div className="compColHead colSoho">
+              <div className="sohoHeadBadge">
+                <Sparkles size={13}/>
+                <span>GROWTH STANDARD</span>
+              </div>
+              <div className="sohoHeadTitleRow">
+                <strong>SOHO Agency</strong>
+                <small>Đối tác tăng trưởng thực chiến</small>
+              </div>
+            </div>
+          </div>
+
+          {/* Table Body */}
+          <div className="comparisonTableBody">
+            {comparisonData.map((item, idx) => (
+              <div className="comparisonRow" key={item.category}>
+                <div className="compCell compCritCell">
+                  <span className="compIndex">0{idx + 1}</span>
+                  <strong className="compCategoryTitle">{item.category}</strong>
+                </div>
+
+                <div className="compCell compTradCell">
+                  <div className="cellMobileLabel tradLabel">
+                    <span className="compHeadDot redDot"></span> Agency truyền thống
+                  </div>
+                  <div className="cellContent">
+                    <XCircle size={18} className="iconTradFail" />
+                    <p>{item.traditional}</p>
+                  </div>
+                </div>
+
+                <div className="compCell compSohoCell">
+                  <div className="cellMobileLabel sohoLabel">
+                    <Sparkles size={13} /> SOHO Agency
+                  </div>
+                  <div className="cellContent">
+                    <CheckCircle2 size={18} className="iconSohoSuccess" />
+                    <div>
+                      <p>{item.soho}</p>
+                      <span className="sohoPill">
+                        <Zap size={12}/> {item.highlight}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Comparison Footer CTA */}
+          <div className="comparisonFooter">
+            <div className="compFooterText">
+              <div className="compFooterIcon">
+                <ShieldCheck size={26}/>
+              </div>
+              <div>
+                <strong>Bạn đang tìm kiếm một đối tác thực chiến và minh bạch?</strong>
+                <p>Nhận phân tích đánh giá hiện trạng website, tài khoản quảng cáo và phễu chuyển đổi miễn phí từ chuyên gia SOHO.</p>
+              </div>
+            </div>
+            <a href="#contact" className="btn primary btnGlow">
+              <span>Đăng ký Audit 0đ</span>
+              <ArrowRight size={16}/>
+              <span className="btnSweep"></span>
+            </a>
+          </div>
         </div>
       </section>
       <section className="dark" id="approach">
