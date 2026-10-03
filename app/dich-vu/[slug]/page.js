@@ -13,6 +13,7 @@ import Footer from '../../../components/Footer';
 import { getServicePage, servicePages } from '../../../components/servicePagesData';
 import { getServiceArticle } from '../../../components/serviceArticlesData';
 import ServiceSectionVisualizer from '../../../components/ServiceSectionVisualizer';
+import { cleanPunctuation } from '../../../components/cleanPunctuation';
 import { sitePath } from '../../../components/paths';
 
 export function generateStaticParams() {
@@ -29,8 +30,8 @@ export async function generateMetadata({ params }) {
   }
 
   return {
-    title: article?.metaTitle || `${service.menuTitle} | SOHO Agency`,
-    description: article?.metaDesc || service.intro
+    title: cleanPunctuation(article?.metaTitle || `${service.menuTitle} SOHO Agency`),
+    description: cleanPunctuation(article?.metaDesc || service.intro)
   };
 }
 
@@ -54,11 +55,11 @@ export default async function ServiceLandingPage({ params }) {
             <span className="radarPulse">
               <span className="radarCore"></span>
             </span>
-            <span>{service.eyebrow || 'DỊCH VỤ SOHO GROWTH ENGINE • 2026'}</span>
+            <span>{cleanPunctuation(service.eyebrow || 'DỊCH VỤ SOHO GROWTH ENGINE 2026')}</span>
           </div>
 
-          <h1 className="serviceHeroH1">{service.title}</h1>
-          <p className="serviceHeroLead">{service.intro}</p>
+          <h1 className="serviceHeroH1">{cleanPunctuation(service.title)}</h1>
+          <p className="serviceHeroLead">{cleanPunctuation(service.intro)}</p>
 
           <div className="serviceHeroActionRow">
             <a className="btn primary btnGlow" href={sitePath('/#contact')}>
@@ -67,7 +68,7 @@ export default async function ServiceLandingPage({ params }) {
               <span className="btnSweep"></span>
             </a>
             <a className="serviceHeroSecondaryLink" href="#giai-phap">
-              <span>Khám phá giải pháp & trụ cột</span>
+              <span>Khám phá giải pháp và trụ cột</span>
               <ArrowRight size={16} />
             </a>
           </div>

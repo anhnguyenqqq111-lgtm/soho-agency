@@ -134,7 +134,7 @@ const megaSolutions = [
         href: '/giai-phap/b2b-dich-vu-chuyen-nghiep'
       },
       {
-        title: 'E-Commerce & Bán lẻ',
+        title: 'E Commerce và Bán lẻ',
         desc: 'Tăng doanh thu đơn hàng, ROAS và giá trị trọn đời (LTV)',
         icon: TrendingUp,
         iconTheme: 'orange',
@@ -207,7 +207,7 @@ export default function Header({activeNav}){
   return (
     <>
       <div className="topbar">
-        <span>SOHO AGENCY • Data-Driven Marketing • SEO • Ads • Content • AI Search</span>
+        <span>SOHO AGENCY • Data Driven Marketing • SEO • Ads • Content • AI Search</span>
       </div>
       <header className={activeMega ? 'hasActiveMega' : ''}>
         <a className="logo logoBrand" href={sitePath('/')} onClick={closeAll}>
