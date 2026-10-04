@@ -100,7 +100,7 @@ export default async function ServiceLandingPage({ params }) {
 
       {/* 2. DEDICATED VISUAL SECTIONS WITH STICKY SUBNAV */}
       {article && (
-        <ServiceSectionVisualizer article={article} serviceTitle={service.title} />
+        <ServiceSectionVisualizer service={service} article={article} serviceTitle={service.title} />
       )}
 
       {/* 3. FINAL ACTION CTA */}

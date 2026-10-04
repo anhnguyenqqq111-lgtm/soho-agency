@@ -4102,14 +4102,14 @@ footer{
 .dotFlame {
   width: 6px;
   height: 6px;
-  border-radius: 50%;
+  border-radius: 0px;
   background: #F26716;
 }
 
 .dotGold {
   width: 6px;
   height: 6px;
-  border-radius: 50%;
+  border-radius: 0px;
   background: #FEBC01;
 }
 
@@ -4311,7 +4311,7 @@ footer{
   height: 22px;
   background: #110B38;
   color: #FEBC01;
-  border-radius: 50%;
+  border-radius: 0px;
   display: grid;
   place-items: center;
   font-size: 11px;
@@ -4329,7 +4329,7 @@ footer{
 .sprintFlowNode {
   background: #ffffff;
   border: 1.5px solid #ded7f7;
-  border-radius: 2px;
+  border-radius: 0px;
   padding: 20px 16px;
   display: flex;
   flex-direction: column;
@@ -4355,7 +4355,7 @@ footer{
   color: #ffffff;
   background: #3924BF;
   padding: 2px 7px;
-  border-radius: 2px;
+  border-radius: 0px;
 }
 
 .sprintWeek {
@@ -4412,7 +4412,7 @@ footer{
   height: 18px;
   background: #110B38;
   color: #FEBC01;
-  border-radius: 50%;
+  border-radius: 0px;
   display: grid;
   place-items: center;
   font-size: 10px;
@@ -4615,11 +4615,11 @@ footer{
   color: #e5e0fb;
 }
 
-/* 5. KHỐI CHECKLIST NGHIỆM THU */
+/* 5. KHỐI CHECKLIST NGHIỆM THU (MA TRẬN KIỂM SOÁT CHẤT LƯỢNG 3 CẤP ĐỘ) */
 .checklistProgressTracker {
   background: #ffffff;
   border: 1.5px solid #ded7f7;
-  border-radius: 2px;
+  border-radius: 0px;
   padding: 16px 20px;
   margin-bottom: 24px;
 }
@@ -4642,84 +4642,123 @@ footer{
   width: 100%;
   height: 8px;
   background: #ede8fd;
-  border-radius: 2px;
+  border-radius: 0px;
   overflow: hidden;
 }
 
 .progressBarFill {
   height: 100%;
   background: linear-gradient(90deg, #3924BF 0%, #7B77F2 50%, #FEBC01 100%);
-  border-radius: 2px;
+  border-radius: 0px;
   transition: width .3s ease;
 }
 
-.interactiveChecklistGrid {
+.qualityGateGrid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
 }
 
-.interactiveCheckCard {
+.qualityGateCard {
   background: #ffffff;
   border: 1.5px solid #ded7f7;
-  border-radius: 2px;
-  padding: 16px 18px;
+  border-radius: 0px;
+  display: flex;
+  flex-direction: column;
+  transition: all .2s ease;
+}
+
+.qualityGateCard:hover {
+  border-color: #3924BF;
+  box-shadow: 0 8px 24px rgba(57, 36, 191, 0.08);
+}
+
+.qualityGateCard.themeIndigo { border-top: 3.5px solid #3924BF; }
+.qualityGateCard.themePurple { border-top: 3.5px solid #7B77F2; }
+.qualityGateCard.themeGold { border-top: 3.5px solid #FEBC01; }
+
+.gateHead {
+  padding: 18px 20px 14px;
+  border-bottom: 1px solid #ebe5fb;
+}
+
+.gateBadge {
+  display: inline-block;
+  font-size: 10.5px;
+  font-weight: 850;
+  color: #110B38;
+  background: #F2D272;
+  padding: 2px 7px;
+  border-radius: 0px;
+  margin-bottom: 8px;
+  letter-spacing: 0.05em;
+}
+
+.gateTitle {
+  font-size: 16px;
+  font-weight: 850;
+  color: #110b38;
+  margin: 0;
+  line-height: 1.35;
+}
+
+.gateItemList {
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.gateItemRow {
   display: flex;
   align-items: flex-start;
-  gap: 12px;
+  gap: 10px;
+  padding: 10px 12px;
+  background: #faf9fe;
+  border: 1px solid #ede8fd;
+  border-radius: 0px;
   cursor: pointer;
   transition: all .2s ease;
   user-select: none;
 }
 
-.interactiveCheckCard:hover {
-  border-color: #3924BF;
-  box-shadow: 0 4px 16px rgba(57, 36, 191, 0.08);
+.gateItemRow:hover {
+  background: #ffffff;
+  border-color: #7B77F2;
 }
 
-.interactiveCheckCard.checked {
+.gateItemRow.checked {
   background: rgba(57, 36, 191, 0.04);
   border-color: #3924BF;
 }
 
-.checkCardBox {
+.gateCheckbox {
   flex-shrink: 0;
   margin-top: 2px;
 }
 
-.checkIconActive {
+.checkActive {
   color: #3924BF;
 }
 
-.checkIconEmpty {
+.checkEmpty {
   color: #b8aee4;
 }
 
-.checkCategoryBadge {
-  display: inline-block;
-  font-size: 10.5px;
-  font-weight: 850;
-  color: #F2D272;
-  background: #110B38;
-  padding: 2px 7px;
-  border-radius: 2px;
-  margin-bottom: 6px;
-}
-
-.interactiveCheckCard.checked .checkCategoryBadge {
-  background: #3924BF;
-  color: #FEBC01;
-}
-
-.checkCardContent p {
-  margin: 0;
-  font-size: 13.5px;
+.gateItemText {
+  font-size: 13px;
   color: #2b1f5e;
-  line-height: 1.5;
+  line-height: 1.45;
   font-weight: 550;
 }
 
-/* 6. KHỐI FAQ GIẢI ĐÁP */
+.gateItemRow.checked .gateItemText {
+  color: #110b38;
+  font-weight: 650;
+}
+
+/* 6. KHỐI FAQ GIẢI ĐÁP (EXECUTIVE Q&A) */
 .interactiveFaqList {
   display: flex;
   flex-direction: column;
@@ -4729,7 +4768,7 @@ footer{
 .visualFaqItem {
   background: #ffffff;
   border: 1.5px solid #ded7f7;
-  border-radius: 2px;
+  border-radius: 0px;
   overflow: hidden;
   transition: all .2s ease;
 }
@@ -4759,7 +4798,7 @@ footer{
   background: #3924BF;
   width: 28px;
   height: 28px;
-  border-radius: 2px;
+  border-radius: 0px;
   display: grid;
   place-items: center;
   flex-shrink: 0;
@@ -4794,7 +4833,8 @@ footer{
   padding: 18px 22px 20px 62px;
 }
 
-.faqAnswerContent {
+.faqAnswerText {
+  margin: 0;
   font-size: 14.5px;
   color: #31266b;
   line-height: 1.65;
@@ -4814,7 +4854,7 @@ footer{
   .trackFlow,
   .frameworkPipelineWrap,
   .sprintFlowchartWrap,
-  .interactiveChecklistGrid,
+  .qualityGateGrid,
   .roiMetricsGrid,
   .roiFormulaDiagram {
     grid-template-columns: 1fr;
@@ -4839,6 +4879,43 @@ footer{
 .iconBrandChampagne { color: #F2D272; }
 .iconBrandGold { color: #FEBC01; }
 .iconBrandFlame { color: #F26716; }
+
+/* ABSOLUTE FLAT ARCHITECTURAL CORNERS (ZERO ROUNDED BLOCKS) */
+.servicePageMain *,
+.serviceVisualizerContainer *,
+.visualSectionBlock,
+.diagramTrack,
+.diagramNode,
+.pipelineStage,
+.sprintFlowNode,
+.formulaBlock,
+.visualComparisonTable,
+.visualComparisonTable th,
+.visualComparisonTable td,
+.roiMetricBox,
+.qualityGateCard,
+.gateItemRow,
+.visualFaqItem,
+.visualFaqQuestion,
+.faqNum,
+.serviceHeroTrustBar,
+.trustPill,
+.serviceSubnavTab,
+.serviceSubnavTab::after,
+.heroEyebrowBadge,
+.btnSubnavCta,
+.visualSectionBadge,
+.trackBadge,
+.stageNumber,
+.sprintBadge,
+.gateBadge,
+.sohoRecommendTag,
+.squareDot,
+.progressBarBg,
+.progressBarFill {
+  border-radius: 0px !important;
+}
+
 
 
 

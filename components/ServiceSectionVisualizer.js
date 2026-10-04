@@ -11,38 +11,15 @@ import {
   CheckCircle2,
   ChevronDown,
   Sparkles,
-  ShieldCheck,
   Layers3,
-  BrainCircuit,
-  TrendingUp,
-  TableProperties,
-  Clock,
   CircleDollarSign,
   ChevronRight,
+  ShieldCheck,
   Target
 } from 'lucide-react';
 import { sitePath } from './paths';
 import { cleanPunctuation } from './cleanPunctuation';
 export { cleanPunctuation };
-
-// Clean inline text without markdown punctuation
-function renderCleanInline(text) {
-  if (!text) return '';
-  const cleaned = cleanPunctuation(text);
-  const boldParts = cleaned.split(/(\*\*.*?\*\*)/g);
-  return boldParts.map((part, i) => {
-    if (part.startsWith('**') && part.endsWith('**')) {
-      return <strong key={i}>{cleanPunctuation(part.slice(2, -2))}</strong>;
-    }
-    const italicParts = part.split(/(\*.*?\*)/g);
-    return italicParts.map((sub, j) => {
-      if (sub.startsWith('*') && sub.endsWith('*')) {
-        return <em key={`${i}-${j}`}>{cleanPunctuation(sub.slice(1, -1))}</em>;
-      }
-      return cleanPunctuation(sub);
-    });
-  });
-}
 
 // Subnav section definitions matching URL anchors (zero forbidden punctuation)
 const navItems = [
@@ -54,9 +31,14 @@ const navItems = [
   { id: 'faq', label: 'Hỏi đáp FAQ', icon: HelpCircle }
 ];
 
-export default function ServiceSectionVisualizer({ article, serviceTitle }) {
+export default function ServiceSectionVisualizer({ service, article, serviceTitle }) {
   const [activeSection, setActiveSection] = useState('thuc-trang');
-  const [checkedItems, setCheckedItems] = useState({});
+  const [checkedItems, setCheckedItems] = useState({
+    'c1-0': true,
+    'c1-1': true,
+    'c2-0': true,
+    'c3-0': true
+  });
   const [openFaqIdx, setOpenFaqIdx] = useState(0);
 
   // Sync active section with scroll & hash
@@ -103,156 +85,73 @@ export default function ServiceSectionVisualizer({ article, serviceTitle }) {
     }
   };
 
-  const toggleCheck = (idx) => {
-    setCheckedItems(prev => ({ ...prev, [idx]: !prev[idx] }));
+  const toggleCheck = (key) => {
+    setCheckedItems(prev => ({ ...prev, [key]: !prev[key] }));
   };
 
-  if (!article || !article.sections) return null;
-
-  const sec0 = article.sections[0] || {};
-  const sec1 = article.sections[1] || {};
-  const sec2 = article.sections[2] || {};
-  const sec3 = article.sections[3] || {};
-  const sec4 = article.sections[4] || {};
-  const sec5 = article.sections[5] || {};
-  const sec6 = article.sections[6] || {};
-  const sec7 = article.sections[7] || {};
-
-  // Extract table from sec5
-  const parseTable = (content) => {
-    if (!content) return null;
-    const lines = content.split('\n');
-    const tableRows = [];
-    for (const line of lines) {
-      const trimmed = line.trim();
-      if (trimmed.startsWith('|') && trimmed.endsWith('|') && !trimmed.includes('---')) {
-        const cells = trimmed
-          .split('|')
-          .slice(1, -1)
-          .map(c => cleanPunctuation(c));
-        tableRows.push(cells);
-      }
+  // 3-Tier Quality Gate Checklist Items (Crisp, sharp, zero punctuation)
+  const qualityGates = [
+    {
+      id: 'c1',
+      title: 'Tầng 01 Nền tảng Kỹ thuật',
+      badge: 'CẤP ĐỘ 01',
+      theme: 'themeIndigo',
+      items: [
+        'Tốc độ tải trang đạt chuẩn xuất sắc trên cả thiết bị di động',
+        'Cấu trúc website phân cấp logic và thân thiện với thuật toán tìm kiếm',
+        'Hệ thống đo lường chuyển đổi ghi nhận dữ liệu hoàn toàn chuẩn xác'
+      ]
+    },
+    {
+      id: 'c2',
+      title: 'Tầng 02 Thẩm quyền Nội dung',
+      badge: 'CẤP ĐỘ 02',
+      theme: 'themePurple',
+      items: [
+        'Nội dung giải quyết đúng băn khoăn và nhu cầu của khách hàng',
+        'Thông tin chuyên gia và tổ chức được chứng thực uy tín rõ ràng',
+        'Cấu trúc thông tin trực diện sẵn sàng cho tìm kiếm bằng AI'
+      ]
+    },
+    {
+      id: 'c3',
+      title: 'Tầng 03 Hiệu quả Doanh thu',
+      badge: 'CẤP ĐỘ 03',
+      theme: 'themeGold',
+      items: [
+        'Tỷ lệ khách hàng tiềm năng liên hệ đạt tiêu chuẩn chất lượng',
+        'Chi phí trên mỗi cơ hội bán hàng giảm dần theo từng chu kỳ',
+        'Báo cáo dữ liệu thời gian thực minh bạch không giấu giếm'
+      ]
     }
-    return tableRows.length >= 2 ? tableRows : null;
-  };
+  ];
 
-  // Extract checklist from sec6
-  const parseChecklist = (content) => {
-    if (!content) return [];
-    const lines = content.split('\n');
-    const items = [];
-    let currentCategory = 'Tiêu chuẩn kiểm toán';
+  const totalCheckCount = 9;
+  const currentCheckedCount = Object.values(checkedItems).filter(Boolean).length;
 
-    for (const line of lines) {
-      const trimmed = line.trim();
-      if (trimmed.startsWith('#### Nhóm') || trimmed.startsWith('### Nhóm')) {
-        currentCategory = cleanPunctuation(trimmed.replace(/^#+\s*/, ''));
-      } else if (trimmed.startsWith('- [ ]') || trimmed.startsWith('* [ ]')) {
-        const text = cleanPunctuation(trimmed.replace(/^[-*]\s*\[[ x]\]\s*/, ''));
-        items.push({ text, category: currentCategory });
-      }
+  // 4 Executive FAQs (Concise, direct, zero forbidden marks)
+  const executiveFaqs = [
+    {
+      q: 'Bao lâu thì chiến dịch bắt đầu tạo ra doanh thu?',
+      a: 'Hệ thống bắt đầu tạo nguồn khách hàng ổn định từ tháng 3 và tăng tốc mạnh mẽ từ tháng 6 trở đi'
+    },
+    {
+      q: 'Doanh nghiệp có sở hữu toàn bộ dữ liệu không?',
+      a: 'Toàn bộ tài khoản quảng cáo website mã nguồn và dữ liệu khách hàng đều thuộc quyền sở hữu tuyệt đối của bạn'
+    },
+    {
+      q: 'Chính sách bảo đảm kết quả cam kết như thế nào?',
+      a: 'SOHO cam kết tiếp tục triển khai không thu phí hoặc hoàn trả ngân sách nếu không đạt đúng chỉ tiêu hợp đồng'
+    },
+    {
+      q: 'Mô hình Sprint 2 tuần vận hành ra sao?',
+      a: 'Cứ mỗi 2 tuần hai bên sẽ cùng đánh giá kết quả nghiệm thu và thống nhất mục tiêu triển khai cho chu kỳ tiếp theo'
     }
-    return items;
-  };
-
-  // Extract FAQ from sec7
-  const parseFaq = (content) => {
-    if (!content) return [];
-    const lines = content.split('\n');
-    const faqs = [];
-    let currentQ = '';
-    let currentA = '';
-
-    for (const line of lines) {
-      const trimmed = line.trim();
-      if (trimmed.startsWith('### Câu hỏi') || trimmed.startsWith('### Câu ')) {
-        if (currentQ) {
-          faqs.push({
-            question: cleanPunctuation(currentQ),
-            answer: cleanPunctuation(currentA)
-          });
-        }
-        currentQ = trimmed.replace(/^###\s*/, '');
-        currentA = '';
-      } else if (currentQ) {
-        if (trimmed.startsWith('**Trả lời:**') || trimmed.startsWith('Trả lời:')) {
-          currentA += ' ' + trimmed.replace(/^\*\*Trả lời:\*\*\s*/, '').replace(/^Trả lời:\s*/, '');
-        } else if (!trimmed.startsWith('### ') && !trimmed.startsWith('## ')) {
-          if (trimmed) currentA += ' ' + trimmed;
-        }
-      }
-    }
-    if (currentQ) {
-      faqs.push({
-        question: cleanPunctuation(currentQ),
-        answer: cleanPunctuation(currentA)
-      });
-    }
-    return faqs;
-  };
-
-  // Parse 4 pillars from sec3
-  const parsePillars = (content) => {
-    if (!content) return [];
-    const lines = content.split('\n');
-    const pillars = [];
-    let currentPillar = null;
-
-    for (const line of lines) {
-      const trimmed = line.trim();
-      if (trimmed.startsWith('### Trụ cột') || trimmed.startsWith('### Trụ Cột')) {
-        if (currentPillar) pillars.push(currentPillar);
-        const title = cleanPunctuation(trimmed.replace(/^###\s*/, ''));
-        currentPillar = { title, points: [], intro: '' };
-      } else if (currentPillar) {
-        if (trimmed.startsWith('* ') || trimmed.startsWith('- ')) {
-          currentPillar.points.push(cleanPunctuation(trimmed.replace(/^[*|-]\s*/, '')));
-        } else if (trimmed && !currentPillar.intro) {
-          currentPillar.intro = cleanPunctuation(trimmed);
-        }
-      }
-    }
-    if (currentPillar) pillars.push(currentPillar);
-    return pillars;
-  };
-
-  // Parse Sprint steps from sec4
-  const parseSprintSteps = (content) => {
-    if (!content) return [];
-    const lines = content.split('\n');
-    const steps = [];
-    let currentStep = null;
-
-    for (const line of lines) {
-      const trimmed = line.trim();
-      if (trimmed.startsWith('### Bước') || trimmed.startsWith('### Sprint')) {
-        if (currentStep) steps.push(currentStep);
-        const title = cleanPunctuation(trimmed.replace(/^###\s*/, ''));
-        currentStep = { title, points: [], desc: '' };
-      } else if (currentStep) {
-        if (trimmed.startsWith('* ') || trimmed.startsWith('- ')) {
-          currentStep.points.push(cleanPunctuation(trimmed.replace(/^[*|-]\s*/, '')));
-        } else if (trimmed && !currentStep.desc) {
-          currentStep.desc = cleanPunctuation(trimmed);
-        }
-      }
-    }
-    if (currentStep) steps.push(currentStep);
-    return steps;
-  };
-
-  const comparisonTable = parseTable(sec5.content);
-  const checklistItems = parseChecklist(sec6.content);
-  const faqList = parseFaq(sec7.content);
-  const pillarsList = parsePillars(sec3.content);
-  const sprintSteps = parseSprintSteps(sec4.content);
-
-  const totalChecklist = checklistItems.length;
-  const checkedCount = Object.values(checkedItems).filter(Boolean).length;
+  ];
 
   return (
     <div className="serviceVisualizerContainer">
-      {/* 1. STICKY SUBNAV BAR WITH ANIMATED LINE ON HOVER */}
+      {/* 1. STICKY SUBNAV BAR (FLAT ARCHITECTURAL TABS - RUNNING LINE HOVER) */}
       <nav className="serviceSubnavBar" aria-label="Điều hướng các khối dịch vụ">
         <div className="serviceSubnavInner">
           <div className="serviceSubnavTabs">
@@ -266,7 +165,7 @@ export default function ServiceSectionVisualizer({ article, serviceTitle }) {
                   onClick={(e) => handleNavClick(e, item.id)}
                   className={`serviceSubnavTab ${isActive ? 'active' : ''}`}
                 >
-                  <Icon size={16} className="subnavIcon" />
+                  <Icon size={15} className="subnavIcon" />
                   <span className="subnavLabel">{item.label}</span>
                 </a>
               );
@@ -282,10 +181,10 @@ export default function ServiceSectionVisualizer({ article, serviceTitle }) {
         </div>
       </nav>
 
-      {/* 2. MAIN VISUAL SECTIONS (SOHO BRAND THEME - NO ROUNDED BLOCKS - MINIMALIST DIAGRAMS) */}
+      {/* 2. MAIN FRAMEWORK DIAGRAM SECTIONS (100% FLAT SHARP EDGES - MINIMAL TEXT) */}
       <div className="serviceVisualContentWrapper">
         {/* ============================================================
-            SECTION 1: #thuc-trang (Sơ đồ chẩn đoán đối chiếu)
+            SECTION 1: #thuc-trang (Sơ đồ Đối Chiếu Khoảng Trống)
             ============================================================ */}
         <section id="thuc-trang" className="visualSectionBlock">
           <div className="visualSectionHeader">
@@ -293,85 +192,71 @@ export default function ServiceSectionVisualizer({ article, serviceTitle }) {
               <AlertTriangle size={13} />
               <span>KHỐI 01 THỰC TRẠNG VÀ BẪY CHI PHÍ</span>
             </div>
-            <h2 className="visualSectionTitle">Vì sao phương pháp cũ làm ngân sách tăng vọt nhưng doanh số dậm chân tại chỗ</h2>
+            <h2 className="visualSectionTitle">Nhận diện điểm nghẽn và bẫy chi phí phổ biến</h2>
             <p className="visualSectionSubtitle">
-              Sơ đồ chẩn đoán đối chiếu giữa bẫy chỉ số ảo và chuẩn mực tăng trưởng thực tế giúp nhận diện ngay điểm nghẽn
+              Sơ đồ đối chiếu giữa cách làm cũ nhiều rủi ro và mô hình tăng trưởng thực chất
             </p>
           </div>
 
-          {/* SƠ ĐỒ MINH HỌA ĐỐI CHIẾU FLOWCHART */}
           <div className="frameworkDiagramWrap">
-            {/* Track 1: Mô hình cũ nhiều rủi ro */}
+            {/* Làn 1: Cảnh báo Mô hình cũ */}
             <div className="diagramTrack trackOld">
               <div className="trackBadge flameTag">
-                <span className="dotFlame" />
+                <span className="squareDot dotFlame" />
                 <span>Mô hình cũ nhiều rủi ro</span>
               </div>
               <div className="trackFlow">
                 <div className="diagramNode nodeProblem">
                   <span className="nodeStep">01</span>
                   <strong>Tín hiệu ảo</strong>
-                  <p>Tập trung từ khóa chung chung không có ý định mua hàng thực tế</p>
+                  <p>Chạy theo lượt xem và từ khóa không tạo nhu cầu mua hàng</p>
                 </div>
                 <div className="diagramArrow arrowFlame">➔</div>
                 <div className="diagramNode nodeProblem">
                   <span className="nodeStep">02</span>
                   <strong>Đốt ngân sách</strong>
-                  <p>Giá thầu quảng cáo tăng cao trong khi chuyển đổi không bù nổi chi phí</p>
+                  <p>Giá thầu quảng cáo tăng cao không kiểm soát được chuyển đổi</p>
                 </div>
                 <div className="diagramArrow arrowFlame">➔</div>
                 <div className="diagramNode nodeProblem">
                   <span className="nodeStep">03</span>
                   <strong>Hụt dòng tiền</strong>
-                  <p>Báo cáo tăng trưởng ảo nhưng doanh thu thực và lợi nhuận dậm chân</p>
+                  <p>Báo cáo tăng trưởng ảo nhưng doanh thu thực tế dậm chân</p>
                 </div>
               </div>
             </div>
 
-            {/* Track 2: Chuẩn mực SOHO tăng trưởng thực */}
+            {/* Làn 2: Chuẩn mực SOHO */}
             <div className="diagramTrack trackSoho">
               <div className="trackBadge sohoTag">
-                <span className="dotGold" />
+                <span className="squareDot dotGold" />
                 <span>Chuẩn mực SOHO tăng trưởng thực</span>
               </div>
               <div className="trackFlow">
                 <div className="diagramNode nodeSolution">
                   <span className="nodeStep">01</span>
-                  <strong>Đúng nhu cầu</strong>
-                  <p>Bao phủ chuẩn tệp khách hàng có ý định chuyển đổi và sẵn sàng chi trả</p>
+                  <strong>Đúng tệp khách</strong>
+                  <p>Tập trung đúng người dùng có nhu cầu thực và sẵn sàng chi trả</p>
                 </div>
                 <div className="diagramArrow arrowIndigo">➔</div>
                 <div className="diagramNode nodeSolution">
                   <span className="nodeStep">02</span>
-                  <strong>Phễu liền mạch</strong>
-                  <p>Nối liền tìm kiếm với trang đích chuyển đổi có thông điệp thuyết phục</p>
+                  <strong>Phễu chuyển đổi</strong>
+                  <p>Trang đích sắc nét kết nối trực tiếp với lời hứa giá trị</p>
                 </div>
                 <div className="diagramArrow arrowIndigo">➔</div>
                 <div className="diagramNode nodeSolution">
                   <span className="nodeStep">03</span>
                   <strong>Dòng tiền thực</strong>
-                  <p>Tạo khách hàng tiềm năng chất lượng cao và tích lũy tài sản số bền vững</p>
+                  <p>Khách hàng tiềm năng chất lượng cao và tích lũy tài sản số</p>
                 </div>
               </div>
-            </div>
-          </div>
-
-          {/* Key Insight Visual Banner (Sharp corners, Zero Quotes) */}
-          <div className="visualInsightBanner">
-            <div className="bannerGlowIcon">
-              <Lightbulb size={24} />
-            </div>
-            <div>
-              <strong>Thông điệp từ Chuyên gia SOHO</strong>
-              <p>
-                Một chiến dịch thành công không đo bằng lượt xem hay lượt nhấp chuột. Giá trị thực tế duy nhất là số lượng Qualified Leads và Doanh thu thực đổ về tài khoản doanh nghiệp.
-              </p>
             </div>
           </div>
         </section>
 
         {/* ============================================================
-            SECTION 2: #giai-phap (Sơ đồ chuỗi 4 trụ cột chiến lược)
+            SECTION 2: #giai-phap (Sơ đồ Pipeline 4 Trụ Cột Chiến Lược)
             ============================================================ */}
         <section id="giai-phap" className="visualSectionBlock">
           <div className="visualSectionHeader">
@@ -379,54 +264,108 @@ export default function ServiceSectionVisualizer({ article, serviceTitle }) {
               <Lightbulb size={13} />
               <span>KHỐI 02 TRỤ CỘT CHIẾN LƯỢC</span>
             </div>
-            <h2 className="visualSectionTitle">Bản chất giải pháp định hướng doanh thu và 4 trụ cột SOHO</h2>
+            <h2 className="visualSectionTitle">Chuỗi giá trị tăng trưởng 4 trụ cột SOHO Engine</h2>
             <p className="visualSectionSubtitle">
-              Sơ đồ chuỗi giá trị tăng trưởng số kết nối trực tiếp với 4 giai đoạn nhận biết cân nhắc quyết định và duy trì
+              Sơ đồ quy trình 4 giai đoạn kết nối từ tối ưu nền tảng đến bứt phá doanh số
             </p>
           </div>
 
-          {/* 4 PILLARS STRATEGIC PIPELINE DIAGRAM */}
           <div className="frameworkPipelineWrap">
-            {pillarsList.length > 0 ? (
-              pillarsList.map((pillar, idx) => {
-                const pTitle = cleanPunctuation(pillar.title.replace(/^Trụ cột \d+\s*/i, ''));
-                const pPoints = pillar.points.slice(0, 3).map(pt => cleanPunctuation(pt));
-                const themeClasses = ['themeIndigo', 'themePurple', 'themeGold', 'themeFlame'];
-                const themeClass = themeClasses[idx % themeClasses.length];
-                return (
-                  <div key={idx} className={`pipelineStage ${themeClass}`}>
-                    <div className="stageHeader">
-                      <span className="stageNumber">0{idx + 1}</span>
-                      <span className="stagePhaseTag">Trụ cột 0{idx + 1}</span>
-                    </div>
-                    <h3 className="stageTitle">{pTitle}</h3>
-                    {pillar.intro && (
-                      <p className="stageDesc">{cleanPunctuation(pillar.intro)}</p>
-                    )}
-                    <div className="stageTags">
-                      {pPoints.map((pt, pIdx) => (
-                        <div key={pIdx} className="stageTagItem">
-                          <CheckCircle2 size={14} className="pillarCheckIcon" />
-                          <span>{pt}</span>
-                        </div>
-                      ))}
-                    </div>
-                    {idx < pillarsList.length - 1 && (
-                      <div className="pipelineConnectorArrow">➔</div>
-                    )}
-                  </div>
-                );
-              })
-            ) : (
-              <div className="pipelineStage themeIndigo">
-                <p>Nội dung giải pháp chuyên sâu đang được đồng bộ hóa</p>
+            <div className="pipelineStage themeIndigo">
+              <div className="stageHeader">
+                <span className="stageNumber">01</span>
+                <span className="stagePhaseTag">TRỤ CỘT 01</span>
               </div>
-            )}
+              <h3 className="stageTitle">Nền tảng Kỹ thuật</h3>
+              <div className="stageTags">
+                <div className="stageTagItem">
+                  <CheckCircle2 size={13} className="pillarCheckIcon" />
+                  <span>Audit kỹ thuật toàn diện</span>
+                </div>
+                <div className="stageTagItem">
+                  <CheckCircle2 size={13} className="pillarCheckIcon" />
+                  <span>Tối ưu tốc độ tải trang</span>
+                </div>
+                <div className="stageTagItem">
+                  <CheckCircle2 size={13} className="pillarCheckIcon" />
+                  <span>Chuẩn hóa cấu trúc dữ liệu</span>
+                </div>
+              </div>
+              <div className="pipelineConnectorArrow">➔</div>
+            </div>
+
+            <div className="pipelineStage themePurple">
+              <div className="stageHeader">
+                <span className="stageNumber">02</span>
+                <span className="stagePhaseTag">TRỤ CỘT 02</span>
+              </div>
+              <h3 className="stageTitle">Nội dung Chuyên sâu</h3>
+              <div className="stageTags">
+                <div className="stageTagItem">
+                  <CheckCircle2 size={13} className="pillarCheckIcon" />
+                  <span>Đúng ý định tìm kiếm</span>
+                </div>
+                <div className="stageTagItem">
+                  <CheckCircle2 size={13} className="pillarCheckIcon" />
+                  <span>Thẩm quyền thực thể số</span>
+                </div>
+                <div className="stageTagItem">
+                  <CheckCircle2 size={13} className="pillarCheckIcon" />
+                  <span>Sẵn sàng cho tìm kiếm AI</span>
+                </div>
+              </div>
+              <div className="pipelineConnectorArrow">➔</div>
+            </div>
+
+            <div className="pipelineStage themeGold">
+              <div className="stageHeader">
+                <span className="stageNumber">03</span>
+                <span className="stagePhaseTag">TRỤ CỘT 03</span>
+              </div>
+              <h3 className="stageTitle">Tối ưu Chuyển đổi</h3>
+              <div className="stageTags">
+                <div className="stageTagItem">
+                  <CheckCircle2 size={13} className="pillarCheckIcon" />
+                  <span>Trang đích thuyết phục</span>
+                </div>
+                <div className="stageTagItem">
+                  <CheckCircle2 size={13} className="pillarCheckIcon" />
+                  <span>Lời hứa giá trị sắc nét</span>
+                </div>
+                <div className="stageTagItem">
+                  <CheckCircle2 size={13} className="pillarCheckIcon" />
+                  <span>Lời kêu gọi hành động rõ</span>
+                </div>
+              </div>
+              <div className="pipelineConnectorArrow">➔</div>
+            </div>
+
+            <div className="pipelineStage themeFlame">
+              <div className="stageHeader">
+                <span className="stageNumber">04</span>
+                <span className="stagePhaseTag">TRỤ CỘT 04</span>
+              </div>
+              <h3 className="stageTitle">Đo lường Doanh thu</h3>
+              <div className="stageTags">
+                <div className="stageTagItem">
+                  <CheckCircle2 size={13} className="pillarCheckIcon" />
+                  <span>Theo dõi chuyển đổi thực</span>
+                </div>
+                <div className="stageTagItem">
+                  <CheckCircle2 size={13} className="pillarCheckIcon" />
+                  <span>Tối ưu chi phí tạo lead</span>
+                </div>
+                <div className="stageTagItem">
+                  <CheckCircle2 size={13} className="pillarCheckIcon" />
+                  <span>Tăng trưởng doanh thu bền</span>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
         {/* ============================================================
-            SECTION 3: #quy-trinh (Sơ đồ lộ trình Sprint 2 tuần)
+            SECTION 3: #quy-trinh (Sơ đồ Lộ Trình 5 Chu Kỳ Sprint)
             ============================================================ */}
         <section id="quy-trinh" className="visualSectionBlock">
           <div className="visualSectionHeader">
@@ -434,52 +373,116 @@ export default function ServiceSectionVisualizer({ article, serviceTitle }) {
               <Zap size={13} />
               <span>KHỐI 03 LỘ TRÌNH SPRINT</span>
             </div>
-            <h2 className="visualSectionTitle">Quy trình vận hành Sprint 2 tuần rõ ràng và minh bạch</h2>
+            <h2 className="visualSectionTitle">Lộ trình triển khai Sprint 2 tuần minh bạch</h2>
             <p className="visualSectionSubtitle">
-              Sơ đồ lộ trình chia nhỏ hạng mục theo chu kỳ 2 tuần giúp kiểm soát tiến độ và đo lường kết quả cụ thể
+              Sơ đồ 5 chu kỳ thực chiến giúp doanh nghiệp kiểm soát tiến độ và đo lường kết quả cụ thể
             </p>
           </div>
 
-          {/* SPRINT ROADMAP FLOWCHART DIAGRAM */}
           <div className="sprintFlowchartWrap">
-            {sprintSteps.length > 0 ? (
-              sprintSteps.map((step, idx) => {
-                const sTitle = cleanPunctuation(
-                  step.title.replace(/^Bước \d+\s*(\(.*?\))?\s*/i, '').replace(/^Sprint \d+\s*/i, '')
-                );
-                const sDesc = cleanPunctuation(step.desc);
-                const sPoints = step.points.slice(0, 2).map(pt => cleanPunctuation(pt));
-                const weeks = ['Tuần 1 2', 'Tuần 3 4', 'Tuần 5 8', 'Tuần 9 12', 'Tuần 13 trở đi'];
-                return (
-                  <div key={idx} className="sprintFlowNode">
-                    <div className="sprintNodeHead">
-                      <span className="sprintBadge">S0{idx + 1}</span>
-                      <span className="sprintWeek">{weeks[idx] || 'Chu kỳ tiếp'}</span>
-                    </div>
-                    <h4 className="sprintNodeTitle">{sTitle}</h4>
-                    {sDesc && <p className="sprintNodeDesc">{sDesc}</p>}
-                    <div className="sprintDeliverableTags">
-                      {sPoints.map((pt, pIdx) => (
-                        <div key={pIdx} className="sprintTagRow">
-                          <ChevronRight size={13} className="stepArrowIcon" />
-                          <span>{pt}</span>
-                        </div>
-                      ))}
-                    </div>
-                    {idx < sprintSteps.length - 1 && (
-                      <div className="sprintNodeArrow">➔</div>
-                    )}
-                  </div>
-                );
-              })
-            ) : (
-              <p>Quy trình triển khai Sprint đang được cập nhật</p>
-            )}
+            <div className="sprintFlowNode">
+              <div className="sprintNodeHead">
+                <span className="sprintBadge">S01</span>
+                <span className="sprintWeek">Tuần 1 2</span>
+              </div>
+              <h4 className="sprintNodeTitle">Khảo sát toàn diện</h4>
+              <p className="sprintNodeDesc">Thu thập dữ liệu hiện trạng và xác định mục tiêu kinh doanh trọng tâm</p>
+              <div className="sprintDeliverableTags">
+                <div className="sprintTagRow">
+                  <ChevronRight size={13} className="stepArrowIcon" />
+                  <span>Báo cáo kiểm toán kênh</span>
+                </div>
+                <div className="sprintTagRow">
+                  <ChevronRight size={13} className="stepArrowIcon" />
+                  <span>Kế hoạch hành động 90 ngày</span>
+                </div>
+              </div>
+              <div className="sprintNodeArrow">➔</div>
+            </div>
+
+            <div className="sprintFlowNode">
+              <div className="sprintNodeHead">
+                <span className="sprintBadge">S02</span>
+                <span className="sprintWeek">Tuần 3 4</span>
+              </div>
+              <h4 className="sprintNodeTitle">Chuẩn hóa nền tảng</h4>
+              <p className="sprintNodeDesc">Gỡ bỏ điểm nghẽn kỹ thuật và cài đặt hệ thống đo lường chuyển đổi</p>
+              <div className="sprintDeliverableTags">
+                <div className="sprintTagRow">
+                  <ChevronRight size={13} className="stepArrowIcon" />
+                  <span>Sửa toàn bộ lỗi kỹ thuật</span>
+                </div>
+                <div className="sprintTagRow">
+                  <ChevronRight size={13} className="stepArrowIcon" />
+                  <span>Bảng đo lường chuyển đổi</span>
+                </div>
+              </div>
+              <div className="sprintNodeArrow">➔</div>
+            </div>
+
+            <div className="sprintFlowNode">
+              <div className="sprintNodeHead">
+                <span className="sprintBadge">S03</span>
+                <span className="sprintWeek">Tuần 5 8</span>
+              </div>
+              <h4 className="sprintNodeTitle">Triển khai quy mô</h4>
+              <p className="sprintNodeDesc">Đẩy mạnh sản xuất nội dung trụ cột và mở rộng độ phủ thương hiệu</p>
+              <div className="sprintDeliverableTags">
+                <div className="sprintTagRow">
+                  <ChevronRight size={13} className="stepArrowIcon" />
+                  <span>Cụm nội dung chuyên sâu</span>
+                </div>
+                <div className="sprintTagRow">
+                  <ChevronRight size={13} className="stepArrowIcon" />
+                  <span>Kích hoạt các chiến dịch</span>
+                </div>
+              </div>
+              <div className="sprintNodeArrow">➔</div>
+            </div>
+
+            <div className="sprintFlowNode">
+              <div className="sprintNodeHead">
+                <span className="sprintBadge">S04</span>
+                <span className="sprintWeek">Tuần 9 12</span>
+              </div>
+              <h4 className="sprintNodeTitle">Kích hoạt phễu</h4>
+              <p className="sprintNodeDesc">Tinh chỉnh trang đích và tối ưu hóa tỷ lệ chuyển đổi khách tiềm năng</p>
+              <div className="sprintDeliverableTags">
+                <div className="sprintTagRow">
+                  <ChevronRight size={13} className="stepArrowIcon" />
+                  <span>Tối ưu trang đích chính</span>
+                </div>
+                <div className="sprintTagRow">
+                  <ChevronRight size={13} className="stepArrowIcon" />
+                  <span>Gia tăng lượng lead thực</span>
+                </div>
+              </div>
+              <div className="sprintNodeArrow">➔</div>
+            </div>
+
+            <div className="sprintFlowNode">
+              <div className="sprintNodeHead">
+                <span className="sprintBadge">S05</span>
+                <span className="sprintWeek">Tuần 13 trở đi</span>
+              </div>
+              <h4 className="sprintNodeTitle">Bứt phá doanh số</h4>
+              <p className="sprintNodeDesc">Tối ưu hóa lợi nhuận ròng và bàn giao toàn bộ tài sản số cho khách hàng</p>
+              <div className="sprintDeliverableTags">
+                <div className="sprintTagRow">
+                  <ChevronRight size={13} className="stepArrowIcon" />
+                  <span>Giảm chi phí tạo lead</span>
+                </div>
+                <div className="sprintTagRow">
+                  <ChevronRight size={13} className="stepArrowIcon" />
+                  <span>Bàn giao quyền quản trị</span>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
         {/* ============================================================
-            SECTION 4: #so-sanh-roi (Sơ đồ công thức ROI & Bảng đối chiếu)
+            SECTION 4: #so-sanh-roi (Sơ đồ Phương Trình Tài Chính & Đối Chiếu)
             ============================================================ */}
         <section id="so-sanh-roi" className="visualSectionBlock">
           <div className="visualSectionHeader">
@@ -487,98 +490,95 @@ export default function ServiceSectionVisualizer({ article, serviceTitle }) {
               <BarChart3 size={13} />
               <span>KHỐI 04 ĐỊNH LƯỢNG HIỆU QUẢ VÀ ROI</span>
             </div>
-            <h2 className="visualSectionTitle">So sánh toàn diện và bài toán điểm hòa vốn</h2>
+            <h2 className="visualSectionTitle">Phương trình tài chính và bài toán điểm hòa vốn</h2>
             <p className="visualSectionSubtitle">
-              Sơ đồ tính toán dòng tiền và bảng ma trận đối chiếu 3 mô hình triển khai thực tế
+              Sơ đồ công thức tính toán dòng tiền và ma trận đối chiếu 4 tiêu chí cốt lõi
             </p>
           </div>
 
-          {/* SƠ ĐỒ CÔNG THỨC ROI TINH GỌN */}
+          {/* SƠ ĐỒ PHƯƠNG TRÌNH TÀI CHÍNH */}
           <div className="roiFormulaDiagram">
             <div className="formulaBlock">
               <span className="formulaLabel">Ngân sách đầu tư</span>
-              <strong>Tối ưu chi phí tạo lead</strong>
+              <strong>Kiểm soát chi phí</strong>
             </div>
             <span className="formulaSign">➔</span>
             <div className="formulaBlock">
-              <span className="formulaLabel">Tỷ lệ chuyển đổi</span>
-              <strong>Gia tăng khách sẵn sàng mua</strong>
+              <span className="formulaLabel">Khách đúng nhu cầu</span>
+              <strong>Tiếp cận chuẩn tệp</strong>
             </div>
             <span className="formulaSign">x</span>
             <div className="formulaBlock">
-              <span className="formulaLabel">Giá trị vòng đời</span>
-              <strong>Tích lũy tài nguyên số lâu dài</strong>
+              <span className="formulaLabel">Tỷ lệ chuyển đổi</span>
+              <strong>Trang đích sắc nét</strong>
             </div>
             <span className="formulaSign">=</span>
             <div className="formulaBlock highlightResult">
               <span className="formulaLabel">Lợi nhuận ròng</span>
-              <strong>Điểm hòa vốn nhanh và bền vững</strong>
+              <strong>Điểm hòa vốn nhanh</strong>
             </div>
           </div>
 
-          {/* Comparison Table (Sharp corners) */}
-          {comparisonTable && (
-            <div className="visualComparisonWrap">
-              <div className="tableNotice">
-                <TableProperties size={14} /> Cuộn ngang để xem đầy đủ bảng so sánh
-              </div>
-              <table className="visualComparisonTable">
-                <thead>
-                  <tr>
-                    {comparisonTable[0].map((col, cIdx) => (
-                      <th key={cIdx} className={cIdx === comparisonTable[0].length - 1 ? 'sohoHead' : ''}>
-                        {cleanPunctuation(col)}
-                        {cIdx === comparisonTable[0].length - 1 && <span className="sohoRecommendTag">KHUYÊN DÙNG</span>}
-                      </th>
-                    ))}
-                  </tr>
-                </thead>
-                <tbody>
-                  {comparisonTable.slice(1).map((row, rIdx) => (
-                    <tr key={rIdx}>
-                      {row.map((cell, cIdx) => (
-                        <td key={cIdx} className={cIdx === row.length - 1 ? 'sohoCell' : ''}>
-                          {renderCleanInline(cell)}
-                        </td>
-                      ))}
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          )}
+          {/* BẢNG MA TRẬN ĐỐI CHIẾU 4 TIÊU CHÍ */}
+          <div className="visualComparisonWrap">
+            <table className="visualComparisonTable">
+              <thead>
+                <tr>
+                  <th>Tiêu chí đối chiếu</th>
+                  <th>Cách làm truyền thống</th>
+                  <th className="sohoHead">
+                    Chuẩn mực SOHO Engine
+                    <span className="sohoRecommendTag">KHUYÊN DÙNG</span>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Trọng tâm theo dõi</strong></td>
+                  <td>Lượt xem và nhấp chuột ảo</td>
+                  <td className="sohoCell"><strong>Khách tiềm năng có nhu cầu thực</strong></td>
+                </tr>
+                <tr>
+                  <td><strong>Quyền sở hữu tài nguyên</strong></td>
+                  <td>Phụ thuộc nền tảng bên ngoài</td>
+                  <td className="sohoCell"><strong>Doanh nghiệp làm chủ 100% tài sản</strong></td>
+                </tr>
+                <tr>
+                  <td><strong>Đo lường hiệu quả</strong></td>
+                  <td>Số liệu chung chung khó kiểm chứng</td>
+                  <td className="sohoCell"><strong>Kết nối trực tiếp với doanh số thực tế</strong></td>
+                </tr>
+                <tr>
+                  <td><strong>Cam kết trách nhiệm</strong></td>
+                  <td>Hứa hẹn bằng lời nói</td>
+                  <td className="sohoCell"><strong>Ký cam kết KPI bằng văn bản pháp lý</strong></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
 
-          {/* 3 Metric Cards Định lượng */}
-          <div className="roiSimulationCard">
-            <div className="roiSimHead">
-              <CircleDollarSign size={24} className="textBrandGold" />
-              <div>
-                <strong>Mô phỏng Điểm hòa vốn và Lợi nhuận tích lũy</strong>
-                <span>So sánh trực quan giữa kênh Ads trả phí thuần túy và Hệ thống Tăng trưởng SOHO</span>
-              </div>
+          {/* 3 HỘP ĐỊNH LƯỢNG ROI */}
+          <div className="roiMetricsGrid">
+            <div className="roiMetricBox">
+              <small>Chi phí tạo khách tiềm năng</small>
+              <strong>Giảm 4 lần từ tháng 9</strong>
+              <p>Hệ thống tự nhiên tiếp tục tạo chuyển đổi không phụ thuộc hoàn toàn vào quảng cáo trả phí</p>
             </div>
-            <div className="roiMetricsGrid">
-              <div className="roiMetricBox">
-                <small>Kịch bản Chạy Ads đơn thuần</small>
-                <strong>CPA cố định và đắt dần</strong>
-                <p>Tắt ngân sách là tắt dòng khách hàng Doanh nghiệp chịu áp lực liên tục lên biên lợi nhuận</p>
-              </div>
-              <div className="roiMetricBox highlightSOHO">
-                <small>Chiến dịch Tăng trưởng SOHO</small>
-                <strong className="textBrandGold">CAC giảm 4x từ tháng 9</strong>
-                <p>Website trở thành tài sản số tích lũy tiếp tục tạo ra Qualified Leads tự nhiên với chi phí 0đ</p>
-              </div>
-              <div className="roiMetricBox">
-                <small>Tỷ lệ Đạt cam kết KPI</small>
-                <strong className="textBrandFlame">99.2% Hợp đồng</strong>
-                <p>Ký cam kết KPI định lượng bằng văn bản pháp lý và Thỏa thuận bảo mật thông tin NDA</p>
-              </div>
+            <div className="roiMetricBox highlightSOHO">
+              <small>Lưu lượng truy cập chất lượng</small>
+              <strong className="textBrandGold">Tăng trưởng 3 lần</strong>
+              <p>Tập trung toàn diện vào tệp người dùng đang có nhu cầu giải pháp và sẵn sàng chi trả</p>
+            </div>
+            <div className="roiMetricBox">
+              <small>Tỷ lệ đạt cam kết hợp đồng</small>
+              <strong className="textBrandFlame">99.2% Dự án</strong>
+              <p>Ràng buộc pháp lý bằng văn bản nghiệm thu và hợp đồng bảo mật thông tin tuyệt đối</p>
             </div>
           </div>
         </section>
 
         {/* ============================================================
-            SECTION 5: #checklist (Ma trận tiêu chuẩn nghiệm thu)
+            SECTION 5: #checklist (Ma Trận Kiểm Soát Chất Lượng 3 Cấp Độ)
             ============================================================ */}
         <section id="checklist" className="visualSectionBlock">
           <div className="visualSectionHeader">
@@ -586,53 +586,62 @@ export default function ServiceSectionVisualizer({ article, serviceTitle }) {
               <CheckSquare size={13} />
               <span>KHỐI 05 TIÊU CHUẨN NGHIỆM THU</span>
             </div>
-            <h2 className="visualSectionTitle">Bộ Checklist tiêu chí kiểm toán và nghiệm thu chất lượng</h2>
+            <h2 className="visualSectionTitle">Ma trận kiểm toán chất lượng 3 cấp độ</h2>
             <p className="visualSectionSubtitle">
-              Bộ tiêu chuẩn kiểm toán thực tế giúp ban lãnh đạo dễ dàng kiểm chứng chất lượng và tính minh bạch
+              Bộ tiêu chí rõ ràng giúp ban lãnh đạo dễ dàng nghiệm thu kết quả công việc
             </p>
           </div>
 
+          {/* THANH TIẾN ĐỘ NGHIỆM THU */}
           <div className="checklistProgressTracker">
             <div className="trackerInfo">
               <Sparkles size={16} className="textBrandGold" />
-              <span>Tiến độ nghiệm thu thử nghiệm <strong>{checkedCount} trên {totalChecklist}</strong> tiêu chí hoàn thành</span>
+              <span>Tiến độ nghiệm thu thử nghiệm <strong>{currentCheckedCount} trên {totalCheckCount}</strong> tiêu chí hoàn thành</span>
             </div>
             <div className="progressBarBg">
               <div
                 className="progressBarFill"
-                style={{ width: `${totalChecklist > 0 ? (checkedCount / totalChecklist) * 100 : 0}%` }}
+                style={{ width: `${(currentCheckedCount / totalCheckCount) * 100}%` }}
               />
             </div>
           </div>
 
-          {/* Interactive Checklist Grid */}
-          <div className="interactiveChecklistGrid">
-            {checklistItems.map((item, idx) => {
-              const isChecked = !!checkedItems[idx];
-              return (
-                <div
-                  key={idx}
-                  className={`interactiveCheckCard ${isChecked ? 'checked' : ''}`}
-                  onClick={() => toggleCheck(idx)}
-                  role="checkbox"
-                  aria-checked={isChecked}
-                  tabIndex={0}
-                >
-                  <div className="checkCardBox">
-                    <CheckCircle2 size={18} className={isChecked ? 'checkIconActive' : 'checkIconEmpty'} />
-                  </div>
-                  <div className="checkCardContent">
-                    <span className="checkCategoryBadge">{cleanPunctuation(item.category)}</span>
-                    <p>{renderCleanInline(item.text)}</p>
-                  </div>
+          {/* 3 KHỐI KIỂM TOÁN PHẲNG */}
+          <div className="qualityGateGrid">
+            {qualityGates.map((gate) => (
+              <div key={gate.id} className={`qualityGateCard ${gate.theme}`}>
+                <div className="gateHead">
+                  <span className="gateBadge">{gate.badge}</span>
+                  <h3 className="gateTitle">{gate.title}</h3>
                 </div>
-              );
-            })}
+                <div className="gateItemList">
+                  {gate.items.map((itemText, idx) => {
+                    const itemKey = `${gate.id}-${idx}`;
+                    const isChecked = !!checkedItems[itemKey];
+                    return (
+                      <div
+                        key={itemKey}
+                        className={`gateItemRow ${isChecked ? 'checked' : ''}`}
+                        onClick={() => toggleCheck(itemKey)}
+                        role="checkbox"
+                        aria-checked={isChecked}
+                        tabIndex={0}
+                      >
+                        <div className="gateCheckbox">
+                          <CheckCircle2 size={16} className={isChecked ? 'checkActive' : 'checkEmpty'} />
+                        </div>
+                        <span className="gateItemText">{itemText}</span>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            ))}
           </div>
         </section>
 
         {/* ============================================================
-            SECTION 6: #faq (Hỏi đáp chuyên sâu FAQ)
+            SECTION 6: #faq (Khối Hỏi Đáp Ban Lãnh Đạo FAQ)
             ============================================================ */}
         <section id="faq" className="visualSectionBlock">
           <div className="visualSectionHeader">
@@ -640,14 +649,14 @@ export default function ServiceSectionVisualizer({ article, serviceTitle }) {
               <HelpCircle size={13} />
               <span>KHỐI 06 GIẢI ĐÁP FAQ</span>
             </div>
-            <h2 className="visualSectionTitle">Câu hỏi thường gặp về cam kết chi phí và thời gian hoàn vốn</h2>
+            <h2 className="visualSectionTitle">Những câu hỏi thường gặp của ban lãnh đạo</h2>
             <p className="visualSectionSubtitle">
-              Giải đáp minh bạch thắc mắc trước khi quyết định đồng hành cùng SOHO Agency
+              Giải đáp minh bạch thắc mắc trước khi quyết định đồng hành cùng SOHO
             </p>
           </div>
 
           <div className="interactiveFaqList">
-            {faqList.map((faq, idx) => {
+            {executiveFaqs.map((faq, idx) => {
               const isOpen = openFaqIdx === idx;
               return (
                 <div key={idx} className={`visualFaqItem ${isOpen ? 'open' : ''}`}>
@@ -658,14 +667,12 @@ export default function ServiceSectionVisualizer({ article, serviceTitle }) {
                     aria-expanded={isOpen}
                   >
                     <span className="faqNum">0{idx + 1}</span>
-                    <span className="faqQuestionText">{cleanPunctuation(faq.question)}</span>
+                    <span className="faqQuestionText">{faq.q}</span>
                     <ChevronDown size={18} className={`faqChevronIcon ${isOpen ? 'rotated' : ''}`} />
                   </button>
                   {isOpen && (
                     <div className="visualFaqAnswer">
-                      <div className="faqAnswerContent">
-                        {renderCleanInline(faq.answer)}
-                      </div>
+                      <p className="faqAnswerText">{faq.a}</p>
                     </div>
                   )}
                 </div>
