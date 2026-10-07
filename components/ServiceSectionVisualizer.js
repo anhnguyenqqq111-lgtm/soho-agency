@@ -15,7 +15,9 @@ import {
   CircleDollarSign,
   ChevronRight,
   ShieldCheck,
-  Target
+  Target,
+  Search,
+  LineChart
 } from 'lucide-react';
 import { sitePath } from './paths';
 import { cleanPunctuation } from './cleanPunctuation';
@@ -23,13 +25,130 @@ export { cleanPunctuation };
 
 // Subnav section definitions matching URL anchors (zero forbidden punctuation)
 const navItems = [
-  { id: 'thuc-trang', label: 'Thực trạng và Bẫy', icon: AlertTriangle },
-  { id: 'giai-phap', label: 'Giải pháp và Trụ cột', icon: Lightbulb },
+  { id: 'thuc-trang', label: 'Điểm nghẽn', icon: AlertTriangle },
+  { id: 'giai-phap', label: 'Framework', icon: Lightbulb },
   { id: 'quy-trinh', label: 'Quy trình Sprint', icon: Zap },
-  { id: 'so-sanh-roi', label: 'So sánh và ROI', icon: BarChart3 },
-  { id: 'checklist', label: 'Checklist nghiệm thu', icon: CheckSquare },
-  { id: 'faq', label: 'Hỏi đáp FAQ', icon: HelpCircle }
+  { id: 'so-sanh-roi', label: 'ROI', icon: BarChart3 },
+  { id: 'checklist', label: 'Nghiệm thu', icon: CheckSquare },
+  { id: 'faq', label: 'FAQ', icon: HelpCircle }
 ];
+
+const serviceBlueprints = {
+  'seo-tong-the': {
+    kicker: 'ORGANIC GROWTH SYSTEM',
+    title: 'Từ nhu cầu tìm kiếm đến lead organic',
+    input: 'Nhu cầu tìm kiếm',
+    inputMeta: 'Query + intent',
+    engine: 'Entity + content',
+    engineMeta: 'Cấu trúc + authority',
+    output: 'Lead organic',
+    outputMeta: 'Visibility + conversion',
+    metrics: [['Visibility', 'Nhóm từ khóa'], ['Organic lead', 'Lead đủ chuẩn'], ['CAC', 'Chi phí tạo lead']],
+    iconSet: [Search, Layers3, Target]
+  },
+  'seo-ai-overview': {
+    kicker: 'ENTITY-FIRST SEARCH',
+    title: 'Để Google và AI hiểu đúng thương hiệu',
+    input: 'Câu hỏi người dùng',
+    inputMeta: 'Question graph',
+    engine: 'Entity + proof',
+    engineMeta: 'Schema + author + data',
+    output: 'Citation signal',
+    outputMeta: 'AI answer + trust',
+    metrics: [['Entity', 'Độ rõ thực thể'], ['Citation', 'Cơ hội được trích dẫn'], ['Trust', 'Tín hiệu chuyên môn']],
+    iconSet: [Search, ShieldCheck, BarChart3]
+  },
+  'local-seo-google-maps': {
+    kicker: 'LOCAL DEMAND ENGINE',
+    title: 'Từ tìm kiếm gần đây đến cuộc gọi',
+    input: 'Local intent',
+    inputMeta: 'Near me + khu vực',
+    engine: 'Maps + review',
+    engineMeta: 'GBP + NAP + proof',
+    output: 'Call / direction',
+    outputMeta: 'Booking tại điểm bán',
+    metrics: [['Map pack', 'Vị trí theo khu vực'], ['Calls', 'Cuộc gọi đủ nhu cầu'], ['Review', 'Tín hiệu tin cậy']],
+    iconSet: [Target, ShieldCheck, LineChart]
+  },
+  'google-ads-shopping': {
+    kicker: 'PAID PERFORMANCE LOOP',
+    title: 'Từ ngân sách đến doanh thu có thể kiểm chứng',
+    input: 'Budget + query',
+    inputMeta: 'Search + product feed',
+    engine: 'Bidding + signal',
+    engineMeta: 'Conversion + margin',
+    output: 'Revenue / ROAS',
+    outputMeta: 'Lead và đơn có lời',
+    metrics: [['CPA', 'Chi phí / cơ hội'], ['ROAS', 'Doanh thu / chi phí'], ['Margin', 'Biên lợi nhuận']],
+    iconSet: [CircleDollarSign, Zap, BarChart3]
+  },
+  'meta-tiktok-ads': {
+    kicker: 'CREATIVE TESTING LOOP',
+    title: 'Từ insight thành creative tạo nhu cầu',
+    input: 'Insight + hook',
+    inputMeta: 'Pain + trigger + offer',
+    engine: 'Test creative',
+    engineMeta: 'Audience + cohort',
+    output: 'Qualified demand',
+    outputMeta: 'Lead + revenue signal',
+    metrics: [['Hook rate', 'Mức hút 3 giây'], ['Lead quality', 'Tỷ lệ đủ chuẩn'], ['Fatigue', 'Tuổi thọ creative']],
+    iconSet: [Lightbulb, Zap, Target]
+  },
+  'cro-landing-page': {
+    kicker: 'CONVERSION SYSTEM',
+    title: 'Từ traffic hiện có đến hành động rõ ràng',
+    input: 'Existing traffic',
+    inputMeta: 'SEO + Ads + referral',
+    engine: 'Friction audit',
+    engineMeta: 'Message + proof + CTA',
+    output: 'Conversion uplift',
+    outputMeta: 'Form / call / booking',
+    metrics: [['CVR', 'Tỷ lệ chuyển đổi'], ['CPL', 'Chi phí / lead'], ['Uplift', 'Mức tăng sau test']],
+    iconSet: [BarChart3, Search, Target]
+  },
+  'content-marketing-pr': {
+    kicker: 'TRUST CONTENT SYSTEM',
+    title: 'Từ câu hỏi của khách hàng đến tài sản bán hàng',
+    input: 'Question + objection',
+    inputMeta: 'Intent + sales insight',
+    engine: 'Pillar + proof',
+    engineMeta: 'Case + PR + expert',
+    output: 'Trust + assisted lead',
+    outputMeta: 'Authority + sales enablement',
+    metrics: [['Coverage', 'Độ phủ chủ đề'], ['Engagement', 'Tương tác chất lượng'], ['Assist', 'Lead có hỗ trợ content']],
+    iconSet: [Lightbulb, Layers3, ShieldCheck]
+  },
+  'ga4-looker-dashboard': {
+    kicker: 'MEASUREMENT OPERATING SYSTEM',
+    title: 'Từ dữ liệu rời rạc đến một sự thật chung',
+    input: 'Events + CRM',
+    inputMeta: 'Website + Ads + sales',
+    engine: 'Tracking + model',
+    engineMeta: 'GA4 + CRM + Looker',
+    output: 'Decision signal',
+    outputMeta: 'Budget + CAC + revenue',
+    metrics: [['Data quality', 'Độ sạch dữ liệu'], ['CAC', 'Chi phí thu hút'], ['Revenue', 'Doanh thu theo kênh']],
+    iconSet: [BarChart3, Layers3, LineChart]
+  },
+  'tu-van-chien-luoc-sprint': {
+    kicker: 'GROWTH PRIORITY MAP',
+    title: 'Từ nhiều ý tưởng đến đúng việc cần làm trước',
+    input: 'Goal + constraint',
+    inputMeta: 'Mục tiêu + nguồn lực',
+    engine: 'Audit + priority',
+    engineMeta: 'Impact + effort + risk',
+    output: '90D roadmap',
+    outputMeta: 'Backlog + KPI + owner',
+    metrics: [['Priority', 'Việc tác động cao'], ['Speed', 'Thời gian ra tín hiệu'], ['Focus', 'Nguồn lực được gom']],
+    iconSet: [Target, Lightbulb, Zap]
+  }
+};
+
+const defaultBlueprint = serviceBlueprints['tu-van-chien-luoc-sprint'];
+
+function getServiceBlueprint(service) {
+  return serviceBlueprints[service?.slug] || defaultBlueprint;
+}
 
 export default function ServiceSectionVisualizer({ service, article, serviceTitle }) {
   const [activeSection, setActiveSection] = useState('thuc-trang');
@@ -40,6 +159,7 @@ export default function ServiceSectionVisualizer({ service, article, serviceTitl
     'c3-0': true
   });
   const [openFaqIdx, setOpenFaqIdx] = useState(0);
+  const blueprint = getServiceBlueprint(service);
 
   // Sync active section with scroll & hash
   useEffect(() => {
@@ -192,10 +312,8 @@ export default function ServiceSectionVisualizer({ service, article, serviceTitl
               <AlertTriangle size={13} />
               <span>KHỐI 01 THỰC TRẠNG VÀ BẪY CHI PHÍ</span>
             </div>
-            <h2 className="visualSectionTitle">Nhận diện điểm nghẽn và bẫy chi phí phổ biến</h2>
-            <p className="visualSectionSubtitle">
-              Sơ đồ đối chiếu giữa cách làm cũ nhiều rủi ro và mô hình tăng trưởng thực chất
-            </p>
+            <h2 className="visualSectionTitle">Điểm nghẽn cần xử lý trước</h2>
+            <p className="visualSectionSubtitle">Nhìn nhanh sự khác biệt giữa tín hiệu ảo và tăng trưởng có thể nghiệm thu.</p>
           </div>
 
           <div className="frameworkDiagramWrap">
@@ -264,10 +382,42 @@ export default function ServiceSectionVisualizer({ service, article, serviceTitl
               <Lightbulb size={13} />
               <span>KHỐI 02 TRỤ CỘT CHIẾN LƯỢC</span>
             </div>
-            <h2 className="visualSectionTitle">Chuỗi giá trị tăng trưởng 4 trụ cột SOHO Engine</h2>
-            <p className="visualSectionSubtitle">
-              Sơ đồ quy trình 4 giai đoạn kết nối từ tối ưu nền tảng đến bứt phá doanh số
-            </p>
+            <h2 className="visualSectionTitle">{blueprint.title}</h2>
+            <p className="visualSectionSubtitle">4 lớp framework được sắp theo đúng điểm vào, cơ chế xử lý và đầu ra cần nghiệm thu.</p>
+          </div>
+
+          <div className="serviceBlueprintBoard">
+            <div className="blueprintBoardTopline">
+              <span className="blueprintKicker">{blueprint.kicker}</span>
+              <span className="blueprintLegend"><span className="blueprintLegendDot" /> INPUT <span className="blueprintLegendLine" /> ENGINE <span className="blueprintLegendDot output" /> OUTPUT</span>
+            </div>
+            <div className="blueprintFlow" aria-label={`Framework ${blueprint.title}`}>
+              {[blueprint.input, blueprint.engine, blueprint.output].map((label, index) => {
+                const Icon = blueprint.iconSet[index];
+                const meta = [blueprint.inputMeta, blueprint.engineMeta, blueprint.outputMeta][index];
+                const stage = ['INPUT', 'ENGINE', 'OUTPUT'][index];
+                return (
+                  <div key={stage} className={`blueprintFlowStage blueprintStage${stage.charAt(0) + stage.slice(1).toLowerCase()}`}>
+                    <div className="blueprintStageTop">
+                      <span className="blueprintStageIndex">0{index + 1}</span>
+                      <Icon size={18} />
+                    </div>
+                    <span className="blueprintStageLabel">{stage}</span>
+                    <strong>{label}</strong>
+                    <small>{meta}</small>
+                    {index < 2 && <span className="blueprintFlowArrow" aria-hidden="true">→</span>}
+                  </div>
+                );
+              })}
+            </div>
+            <div className="blueprintMetricStrip">
+              {blueprint.metrics.map(([label, value]) => (
+                <div className="blueprintMetric" key={label}>
+                  <span>{label}</span>
+                  <strong>{value}</strong>
+                </div>
+              ))}
+            </div>
           </div>
 
           <div className="frameworkPipelineWrap">
@@ -373,10 +523,8 @@ export default function ServiceSectionVisualizer({ service, article, serviceTitl
               <Zap size={13} />
               <span>KHỐI 03 LỘ TRÌNH SPRINT</span>
             </div>
-            <h2 className="visualSectionTitle">Lộ trình triển khai Sprint 2 tuần minh bạch</h2>
-            <p className="visualSectionSubtitle">
-              Sơ đồ 5 chu kỳ thực chiến giúp doanh nghiệp kiểm soát tiến độ và đo lường kết quả cụ thể
-            </p>
+            <h2 className="visualSectionTitle">Sprint 2 tuần, rõ đầu việc</h2>
+            <p className="visualSectionSubtitle">Mỗi chu kỳ có output, người phụ trách và chỉ số kiểm tra.</p>
           </div>
 
           <div className="sprintFlowchartWrap">
@@ -490,10 +638,8 @@ export default function ServiceSectionVisualizer({ service, article, serviceTitl
               <BarChart3 size={13} />
               <span>KHỐI 04 ĐỊNH LƯỢNG HIỆU QUẢ VÀ ROI</span>
             </div>
-            <h2 className="visualSectionTitle">Phương trình tài chính và bài toán điểm hòa vốn</h2>
-            <p className="visualSectionSubtitle">
-              Sơ đồ công thức tính toán dòng tiền và ma trận đối chiếu 4 tiêu chí cốt lõi
-            </p>
+            <h2 className="visualSectionTitle">Cách đọc ROI</h2>
+            <p className="visualSectionSubtitle">Không tách marketing khỏi dòng tiền, lead quality và biên lợi nhuận.</p>
           </div>
 
           {/* SƠ ĐỒ PHƯƠNG TRÌNH TÀI CHÍNH */}
@@ -586,10 +732,8 @@ export default function ServiceSectionVisualizer({ service, article, serviceTitl
               <CheckSquare size={13} />
               <span>KHỐI 05 TIÊU CHUẨN NGHIỆM THU</span>
             </div>
-            <h2 className="visualSectionTitle">Ma trận kiểm toán chất lượng 3 cấp độ</h2>
-            <p className="visualSectionSubtitle">
-              Bộ tiêu chí rõ ràng giúp ban lãnh đạo dễ dàng nghiệm thu kết quả công việc
-            </p>
+            <h2 className="visualSectionTitle">Checklist nghiệm thu</h2>
+            <p className="visualSectionSubtitle">3 tầng kiểm tra để biết việc nào đã xong, việc nào còn rủi ro.</p>
           </div>
 
           {/* THANH TIẾN ĐỘ NGHIỆM THU */}
@@ -649,10 +793,8 @@ export default function ServiceSectionVisualizer({ service, article, serviceTitl
               <HelpCircle size={13} />
               <span>KHỐI 06 GIẢI ĐÁP FAQ</span>
             </div>
-            <h2 className="visualSectionTitle">Những câu hỏi thường gặp của ban lãnh đạo</h2>
-            <p className="visualSectionSubtitle">
-              Giải đáp minh bạch thắc mắc trước khi quyết định đồng hành cùng SOHO
-            </p>
+            <h2 className="visualSectionTitle">FAQ trước khi bắt đầu</h2>
+            <p className="visualSectionSubtitle">Các điểm cần rõ trước khi ký phạm vi và KPI.</p>
           </div>
 
           <div className="interactiveFaqList">

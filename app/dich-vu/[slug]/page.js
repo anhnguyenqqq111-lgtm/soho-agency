@@ -4,9 +4,11 @@ import {
   ShieldCheck,
   LineChart,
   Target,
-  Sparkles,
   Zap,
-  CheckCircle2
+  CheckCircle2,
+  BarChart3,
+  Search,
+  Layers3
 } from 'lucide-react';
 import Header from '../../../components/Header';
 import Footer from '../../../components/Footer';
@@ -51,50 +53,64 @@ export default async function ServiceLandingPage({ params }) {
       {/* 1. CLEAN & EXECUTIVE SERVICE HERO */}
       <section className="serviceCleanHero">
         <div className="serviceCleanHeroInner">
-          <div className="heroEyebrowBadge">
-            <span className="radarPulse">
-              <span className="radarCore"></span>
-            </span>
-            <span>{cleanPunctuation(service.eyebrow || 'DỊCH VỤ SOHO GROWTH ENGINE 2026')}</span>
+          <div className="serviceHeroCopyBlock">
+            <div className="heroEyebrowBadge">
+              <span className="radarPulse">
+                <span className="radarCore"></span>
+              </span>
+              <span>{cleanPunctuation(service.eyebrow || 'DỊCH VỤ SOHO GROWTH ENGINE 2026')}</span>
+            </div>
+
+            <h1 className="serviceHeroH1">{cleanPunctuation(service.title)}</h1>
+            <p className="serviceHeroLead">{cleanPunctuation(service.intro)}</p>
+
+            <div className="serviceHeroActionRow">
+              <a className="btn primary btnGlow" href={sitePath('/#contact')}>
+                <span>Nhận đề xuất</span>
+                <ArrowRight size={18} />
+                <span className="btnSweep"></span>
+              </a>
+              <a className="serviceHeroSecondaryLink" href="#giai-phap">
+                <span>Xem framework</span>
+                <ArrowRight size={16} />
+              </a>
+            </div>
           </div>
 
-          <h1 className="serviceHeroH1">{cleanPunctuation(service.title)}</h1>
-          <p className="serviceHeroLead">{cleanPunctuation(service.intro)}</p>
-
-          <div className="serviceHeroActionRow">
-            <a className="btn primary btnGlow" href={sitePath('/#contact')}>
-              <span>Nhận đề xuất cho dịch vụ này</span>
-              <ArrowRight size={18} />
-              <span className="btnSweep"></span>
-            </a>
-            <a className="serviceHeroSecondaryLink" href="#giai-phap">
-              <span>Khám phá giải pháp và trụ cột</span>
-              <ArrowRight size={16} />
-            </a>
-          </div>
-
-          {/* Core Trust Indicators Bar */}
-          <div className="serviceHeroTrustBar">
-            <div className="trustPill">
-              <Target size={16} className="iconBrandIndigo" />
-              <span>Đúng insight khách hàng</span>
+          <div className="serviceHeroMosaic" aria-label="Các tín hiệu chính của dịch vụ">
+            <div className="serviceMosaicTile darkTile">
+              <span>01</span>
+              <strong>Audit trước</strong>
+              <small>{cleanPunctuation(service.pains?.[0] || 'Tìm đúng điểm nghẽn')}</small>
             </div>
-            <div className="trustDivider" />
-            <div className="trustPill">
-              <LineChart size={16} className="iconBrandGold" />
-              <span>Đo theo Qualified Leads</span>
+            <div className="serviceMosaicTile iconTile">
+              <Search size={28} />
+              <strong>{cleanPunctuation(service.category)}</strong>
+              <small>Đúng intent, đúng tệp</small>
             </div>
-            <div className="trustDivider" />
-            <div className="trustPill">
-              <ShieldCheck size={16} className="iconBrandFlame" />
-              <span>Sở hữu 100% raw data</span>
+            <div className="serviceMosaicTile statTile">
+              <span>90D</span>
+              <strong>Roadmap</strong>
+              <small>Việc ưu tiên theo tác động</small>
             </div>
-            <div className="trustDivider" />
-            <div className="trustPill">
-              <Zap size={16} className="iconBrandPurple" />
-              <span>Sprint 2 tuần linh hoạt</span>
+            <div className="serviceMosaicTile softTile">
+              <BarChart3 size={27} />
+              <strong>Lead & ROI</strong>
+              <small>Đo bằng dữ liệu kinh doanh</small>
             </div>
           </div>
+        </div>
+
+        <div className="serviceHeroTrustBar">
+          <div className="trustPill"><Target size={16} /> Đúng insight</div>
+          <div className="trustDivider" />
+          <div className="trustPill"><LineChart size={16} /> Qualified leads</div>
+          <div className="trustDivider" />
+          <div className="trustPill"><ShieldCheck size={16} /> Sở hữu raw data</div>
+          <div className="trustDivider" />
+          <div className="trustPill"><Zap size={16} /> Sprint 2 tuần</div>
+          <div className="trustDivider" />
+          <div className="trustPill"><Layers3 size={16} /> Framework rõ</div>
         </div>
       </section>
 

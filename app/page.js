@@ -28,12 +28,12 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 const services=[
- {icon:Search,title:'SEO tổng thể',text:'Xây nền tảng tăng trưởng organic bền vững từ kỹ thuật, nội dung đến độ uy tín của website.'},
- {icon:BrainCircuit,title:'SEO & AI Search',text:'Tối ưu khả năng xuất hiện trên Google và các nền tảng tìm kiếm, trả lời bằng AI.'},
- {icon:MousePointerClick,title:'Google & Social Ads',text:'Tiếp cận đúng nhu cầu, kiểm soát chi phí và tối ưu chuyển đổi theo dữ liệu thực tế.'},
- {icon:PenTool,title:'Content Marketing',text:'Xây hệ thống nội dung hỗ trợ tìm kiếm, nuôi dưỡng nhu cầu và tạo niềm tin trước khi mua.'},
- {icon:MapPin,title:'Local SEO',text:'Tăng khả năng được tìm thấy tại khu vực doanh nghiệp đang phục vụ và thu hút khách hàng gần bạn.'},
- {icon:BarChart3,title:'Đo lường & tối ưu',text:'Kết nối dữ liệu marketing với lead, cơ hội bán hàng và doanh thu để biết kênh nào thực sự hiệu quả.'}
+ {icon:Search,title:'SEO tổng thể',text:'Audit kỹ thuật, intent map, content hub, internal link.',metric:'Organic lead'},
+ {icon:BrainCircuit,title:'SEO & AI Search',text:'Entity, schema, FAQ, author signal, AI citation.',metric:'AI visibility'},
+ {icon:MousePointerClick,title:'Google & Social Ads',text:'Search intent, creative test, landing page, CRM feedback.',metric:'CPA / ROAS'},
+ {icon:PenTool,title:'Content Marketing',text:'Pillar, case study, sales asset, PR angle.',metric:'Trust asset'},
+ {icon:MapPin,title:'Local SEO',text:'Google Maps, review flow, local page, call tracking.',metric:'Call & route'},
+ {icon:BarChart3,title:'Đo lường & tối ưu',text:'GA4, GTM, Looker, event, lead quality dashboard.',metric:'Revenue view'}
 ];
 const process=[['01','Hiểu bài toán kinh doanh','Làm rõ mục tiêu, khách hàng, biên lợi nhuận và cách doanh nghiệp đang tạo doanh thu.'],['02','Phân tích dữ liệu & cơ hội','Đánh giá website, thị trường, đối thủ, hành trình tìm kiếm và hiệu suất các kênh hiện tại.'],['03','Xây chiến lược ưu tiên','Chọn đúng kênh, thông điệp và hạng mục cần triển khai trước thay vì dàn trải ngân sách.'],['04','Triển khai & thử nghiệm','SEO, quảng cáo và nội dung được triển khai theo sprint, có giả thuyết và chỉ số theo dõi rõ ràng.'],['05','Đo lường & mở rộng','Dựa trên dữ liệu để tối ưu chi phí, tăng chuyển đổi và nhân rộng những hoạt động tạo kết quả tốt.']];
 
@@ -407,8 +407,8 @@ export default function Home(){
       <section className="section services" id="services">
         <div className="sectionHead">
           <p className="eyebrow">DỊCH VỤ CHUYÊN SÂU</p>
-          <h2>Một hệ thống marketing kết nối từ <em>hiện diện</em> đến <em>doanh thu</em></h2>
-          <p>Thay vì vận hành từng kênh rời rạc, SOHO thiết kế các hoạt động hỗ trợ lẫn nhau xuyên suốt hành trình khách hàng.</p>
+          <h2>Từ hiện diện đến doanh thu</h2>
+          <p>Chọn đòn bẩy theo điểm nghẽn. Mỗi dịch vụ có output, dữ liệu nghiệm thu và nhịp tối ưu riêng.</p>
         </div>
         <div className="serviceGrid">
           {services.map((s,i)=>(
@@ -417,6 +417,10 @@ export default function Home(){
               <span>0{i+1}</span>
               <h3>{s.title}</h3>
               <p>{s.text}</p>
+              <div className="serviceCardMetric">
+                <small>Signal</small>
+                <strong>{s.metric}</strong>
+              </div>
               <a href="#contact">Tìm hiểu thêm <ArrowRight size={16}/></a>
             </article>
           ))}
@@ -427,11 +431,8 @@ export default function Home(){
       <section className="section comparisonSection" id="comparison">
         <div className="sectionHead">
           <p className="eyebrow gold">ĐỊNH HƯỚNG KHÁC BIỆT</p>
-          <h2>SOHO Agency vs Agency truyền thống: <em>Vì sao khác biệt?</em></h2>
-          <p>
-            Chúng tôi xóa bỏ mô hình báo cáo hình thức, hợp đồng rập khuôn và các chỉ số ảo. 
-            Mọi chiến lược tại SOHO đều hướng tới giá trị kinh doanh thực tế: khách hàng tiềm năng, doanh thu và biên lợi nhuận.
-          </p>
+          <h2>So sánh nhanh trước khi chọn agency</h2>
+          <p>Không đo bằng slide đẹp. Đo bằng quyền sở hữu, tốc độ ra quyết định và kết quả kinh doanh.</p>
         </div>
 
         <div className="comparisonTableWrap">
@@ -542,23 +543,23 @@ export default function Home(){
       <section className="section" id="results">
         <div className="sectionHead left">
           <p className="eyebrow">HIỆU QUẢ THỰC TẾ</p>
-          <h2>Đo những gì <em>thực sự có ý nghĩa</em> với doanh nghiệp</h2>
+          <h2>3 nhóm số cần nhìn mỗi tuần</h2>
         </div>
         <div className="metricGrid">
           <div>
             <strong>SEO</strong>
             <h3>Tăng khả năng được tìm thấy</h3>
-            <p>Theo dõi visibility, organic traffic, nhóm từ khóa tạo nhu cầu và chuyển đổi từ tìm kiếm.</p>
+            <p>Visibility, trang tạo lead, truy vấn có ý định mua.</p>
           </div>
           <div>
             <strong>ADS</strong>
             <h3>Tối ưu chi phí tạo khách hàng</h3>
-            <p>Đánh giá hiệu quả dựa trên lead chất lượng, CPA, ROAS và đóng góp của quảng cáo vào pipeline.</p>
+            <p>CPA, ROAS, lead quality, nhóm truy vấn lãng phí.</p>
           </div>
           <div>
             <strong>CRO</strong>
             <h3>Biến traffic thành cơ hội bán hàng</h3>
-            <p>Cải thiện thông điệp, landing page và hành trình để nhiều người dùng phù hợp thực hiện hành động hơn.</p>
+            <p>CTA, form, mobile friction, tỷ lệ booking/call.</p>
           </div>
         </div>
         <p className="note">* Kết quả phụ thuộc vào ngành, ngân sách, nền tảng hiện tại và thời gian triển khai. Các chỉ số cụ thể sẽ được xác lập sau giai đoạn phân tích.</p>
