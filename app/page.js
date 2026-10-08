@@ -12,6 +12,7 @@ import JourneyGrid from '../components/diagrams/JourneyGrid';
 import Track from '../components/diagrams/Track';
 import ProjectCarousel from '../components/proof/ProjectCarousel';
 import BlogCard from '../components/BlogCard';
+import LogoMarquee from '../components/proof/LogoMarquee';
 import {clients} from '../components/data/clients';
 import {getServicesByGroup} from '../components/servicePagesData';
 import {getLatestArticles} from '../components/blogData';
@@ -72,10 +73,9 @@ export default function Home(){
               <ImageSlot src={null} need="Ảnh hoặc video đội SOHO đang làm việc (ảnh thật, không stock)" size="1200×1200" ratio="1/1"/>
             </div>
           </div>
-          <div className={`container ${styles.heroLogos}`} data-reveal="" style={{'--reveal-delay': '300ms'}}>
-            <ul>{clients.map(c => <li key={c.slug}><img src={sitePath(c.logo)} alt={c.name} loading="lazy"/></li>)}</ul>
-          </div>
         </section>
+
+        <LogoMarquee clients={clients}/>
 
         {/* Bảng hành trình */}
         <Section
