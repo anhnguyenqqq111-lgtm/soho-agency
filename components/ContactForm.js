@@ -65,7 +65,7 @@ export default function ContactForm({compact = false}){
         <textarea id="cf-note" name="note" rows={compact ? 2 : 3} placeholder="Ngân sách hiện tại, kênh đang chạy, mục tiêu quý tới..." />
       </div>
       <div className={styles.actions}>
-        <button type="submit" className={styles.submit}>Gửi yêu cầu <span aria-hidden="true">✉</span></button>
+        <button type="submit" className={styles.submit}><span>Gửi yêu cầu</span><span aria-hidden="true">→</span></button>
         <p className={styles.consent}>
           Khi gửi form, bạn đồng ý để SOHO dùng thông tin này để liên hệ lại, theo <a href={sitePath('/chinh-sach-bao-mat')}>Chính sách bảo mật</a>.
         </p>

@@ -1,7 +1,6 @@
 import styles from './page.module.css';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import HeroGlow from '../components/HeroGlow';
 import Section from '../components/ui/Section';
 import Button from '../components/ui/Button';
 import SplitWords from '../components/ui/SplitWords';
@@ -44,37 +43,31 @@ export default function Home(){
     <>
       <Header activeNav="home"/>
       <main>
-        {/* Hero: chữ bên trái, 3 chặng bên phải */}
-        <section className={`${styles.hero} dark`}>
-          <HeroGlow/>
+        {/* Hero */}
+        <section className={styles.hero}>
           <div className={`container ${styles.heroInner}`}>
             <div className={styles.heroCopy}>
-              <p className="kicker" data-reveal="">Performance marketing cho doanh nghiệp Việt Nam</p>
               <h1 className={styles.heroTitle}>
-                <SplitWords segments={[{text: 'Marketing được đo bằng '}, {text: 'lead và doanh thu', em: true}]}/>
+                <SplitWords segments={[{text: 'Marketing đo bằng lead và doanh thu'}]}/>
               </h1>
-              <p className={styles.heroLead} data-reveal="" style={{'--reveal-delay': '450ms'}}>
-                SEO, quảng cáo, content và đo lường, làm theo sprint 2 tuần, báo cáo bằng số liệu bán hàng.
+              <p className={styles.heroLead} data-reveal="" style={{'--reveal-delay': '350ms'}}>
+                SOHO lập kế hoạch và trực tiếp triển khai SEO, quảng cáo, content và đo lường cho doanh nghiệp Việt Nam.
               </p>
+              <ul className={styles.heroBullets} data-reveal="" style={{'--reveal-delay': '450ms'}}>
+                {['SEO, quảng cáo, content và đo lường trong một đội', 'Sprint 2 tuần, báo cáo bằng số liệu bán hàng', 'Doanh nghiệp sở hữu tài khoản và dữ liệu'].map(b => (
+                  <li key={b}><span className={styles.check} aria-hidden="true">✓</span>{b}</li>
+                ))}
+              </ul>
               <div className={styles.heroActions} data-reveal="" style={{'--reveal-delay': '550ms'}}>
-                <Button href="#lien-he" onDark arrow="up">Liên hệ ngay</Button>
-                <Button href="/dich-vu" variant="text" onDark>Xem dịch vụ</Button>
+                <Button href="#lien-he" variant="secondary">Đặt lịch trao đổi</Button>
+                <Button href="/dich-vu" variant="text">Xem dịch vụ</Button>
               </div>
             </div>
-            <ol className={styles.heroStages} data-reveal="" style={{'--reveal-delay': '400ms'}}>
-              {groups.map(({group, items}, i) => (
-                <li key={group}>
-                  <span className={styles.stageNum}>0{i + 1}</span>
-                  <div>
-                    <p className={styles.stageGroup}>{group}</p>
-                    <p className={styles.stageLinks}>{items.map((s, k) => <a key={s.slug} href={sitePath(`/dich-vu/${s.slug}`)}>{s.menuTitle}{k < items.length - 1 ? ', ' : ''}</a>)}</p>
-                  </div>
-                </li>
-              ))}
-            </ol>
+            <div className={styles.heroMedia} data-reveal="" style={{'--reveal-delay': '300ms'}}>
+              <ImageSlot src={null} need="Ảnh hoặc video đội SOHO đang làm việc (ảnh thật, không stock)" size="1200×1200" ratio="1/1"/>
+            </div>
           </div>
-          <div className={`container ${styles.heroLogos}`} data-reveal="" style={{'--reveal-delay': '700ms'}}>
-            <p>Đang làm cùng</p>
+          <div className={`container ${styles.heroLogos}`} data-reveal="" style={{'--reveal-delay': '650ms'}}>
             <ul>{clients.map(c => <li key={c.slug}><img src={sitePath(c.logo)} alt={c.name} loading="lazy"/></li>)}</ul>
           </div>
         </section>
@@ -90,7 +83,7 @@ export default function Home(){
         </Section>
 
         {/* Dự án */}
-        <Section id="du-an" tone="gray" kicker="Dự án" title={<>Từ điểm nghẽn đến kết quả: <span className="hl">hành trình</span> của khách hàng SOHO</>} aside={<Button href="/ket-qua" variant="text">Xem tất cả dự án</Button>}>
+        <Section id="du-an" tone="white" kicker="Dự án" title={<>Từ điểm nghẽn đến kết quả: <span className="hl">hành trình</span> của khách hàng SOHO</>} aside={<Button href="/ket-qua" variant="text">Xem tất cả dự án</Button>}>
           <ProjectCarousel clients={clients}/>
         </Section>
 
@@ -120,7 +113,7 @@ export default function Home(){
         </Section>
 
         {/* Blog */}
-        <Section tone="gray" title={<>Những bài viết <span className="hl">mới nhất</span></>} aside={<Button href="/blog" variant="text">Xem thêm</Button>}>
+        <Section tone="white" title={<>Những bài viết <span className="hl">mới nhất</span></>} aside={<Button href="/blog" variant="text">Xem thêm</Button>}>
           <div className={styles.blogGrid}>{latest.map((post, i) => <BlogCard key={post.slug} post={post} delay={i * 100}/>)}</div>
         </Section>
 

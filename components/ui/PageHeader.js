@@ -1,19 +1,13 @@
 import styles from './PageHeader.module.css';
 import {sitePath} from '../paths';
 import SplitWords from './SplitWords';
-import HeroGlow from '../HeroGlow';
 
 /*
-  Banner tối cho trang con (theo hero trang dịch vụ GOHA).
-  crumbs: [{label, href?}]
-  bullets: 3 ý ngắn có dấu ✓
-  aside: khối bên phải (form, sơ đồ...)
-  children: nút
+  Đầu trang con trên nền sáng: breadcrumb, H1 lớn, lead, 3 ý có dấu ✓, nút; khối aside bên phải.
 */
 export default function PageHeader({crumbs = [], title, lead, bullets, aside, children, compact = false}){
   return (
-    <header className={`${styles.wrap} dark ${compact ? styles.compact : ''}`}>
-      <HeroGlow className={styles.rings}/>
+    <header className={`${styles.wrap} ${compact ? styles.compact : ''}`}>
       <div className={`container ${styles.grid}`}>
         <div className={styles.main}>
           {crumbs.length > 0 && (

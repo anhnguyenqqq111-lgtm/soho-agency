@@ -57,41 +57,45 @@ Trang chủ mới: Hero → Khách hàng → Dịch vụ → Cách làm việc �
 
 ---
 
-## 2. Hướng thiết kế (bản 3, tháng 10/2026)
+## 2. Hướng thiết kế (bản 4, tháng 10/2026)
 
 ### 2.1. Ý tưởng
 
-Lấy cảm hứng từ nhịp section tối xen sáng và hình khối bo tròn của goha.vn, nhưng mọi thành phần nhận diện được làm khác để tránh vấn đề pháp lý: hero dùng vầng sáng và đường chân trời (không vòng 3D), ma trận chặng × kênh với phễu mũi tên chỉ xuống (GOHA dùng mũi tên ngang), băng chuyền dự án có nút và chấm tiến trình đặt phía trên (GOHA đặt mũi tên hai mép và tab logo), quy trình dạng đường ray (không accordion cạnh ảnh), thẻ blog không ảnh bìa, FAQ kẻ dòng dấu cộng, form liên hệ trên nền sáng, header trắng, footer phẳng. Không dùng nội dung, ảnh, logo khách hàng hay chứng nhận của GOHA.
+Nền sáng kem, chữ nâu đen rất to, nhấn đỏ gạch. Đầu trang theo phong cách growthcurve.co: header trắng gọn, nút viên thuốc có mũi tên trong ô riêng ngăn bằng vạch, hero chữ to bên trái với 3 ý ✓ tròn, ảnh bo góc lớn bên phải, hàng logo dưới. Không còn hero tối, gradient hay hình trang trí, nên khác hẳn goha.vn.
 
-### 2.2. Màu (token trong `app/styles/tokens.css`)
+### 2.2. Màu (`app/styles/tokens.css`)
 
-| GOHA | SOHO | Dùng cho |
+| Token | Giá trị | Dùng cho |
 |---|---|---|
-| Navy `#011624`, tím `#210788` | `--night #150C08`, `--night-2 #2E1109`, `--night-3 #4A1709` | Nền tối, header, footer |
-| Xanh `#1863dc` → cyan `#39c0ff` | `--red #A82E10` → `--accent #D2401A` → `--orange #F26716` → `--gold #FEBC01` | Gradient hero (`--grad-hero`), gradient thương hiệu (`--grad-brand`) |
-| Cyan nhấn trong tiêu đề | `--gold` trên nền tối, `--accent` trên nền sáng (class `.hl`) | Cụm từ nhấn trong H1, H2 |
-| Nút tím | Nút `--red`, hover `--accent`; trên nền tối: nút trắng chữ đỏ | Mọi CTA |
-| Xám `#f4f4f4` | `--gray #F4F3F1`, `--paper #F7F4EE` | Section phụ, thẻ FAQ, case study |
+| `--paper` | `#F7F3EC` | Nền trang |
+| `--white` | `#FFFFFF` | Section xen kẽ, thẻ |
+| `--ink` | `#1B1611` | Chữ, nút header |
+| `--red` | `#A82E10` | Nút chính, dấu check |
+| `--accent` | `#C9391A` | Chữ nhấn `.hl`, hover |
+| `--gold` | `#E8A800` | Chữ nhấn trên nền tối, chi tiết nhỏ |
+| `--night` | `#231A14` | Chỉ footer và 1 section quy trình trên trang chủ |
+
+Gradient thương hiệu chỉ còn ở phễu chặng × kênh và viền trên thẻ blog.
 
 ### 2.3. Chữ
 
-Chỉ một font: Be Vietnam Pro (400, 500, 600, 700, 800). Tiêu đề 700–800, thân 400. Không còn serif Newsreader.
+Be Vietnam Pro, H1 800 cỡ tới 76px, thân 400.
 
-### 2.4. Hình khối
+### 2.4. Nút
 
-Nút viên thuốc 100px, thẻ 16px, input 100px (textarea 12px). Bóng mềm `--shadow-card`. Hero và banner trang con dùng `components/HeroGlow.js`: vầng sáng ấm góc dưới phải và các đường chân trời mảnh tự vẽ, thuần SVG.
+`Button`: viên thuốc, phần chữ và mũi tên tách bằng vạch dọc. `primary` nền đỏ, `secondary` viền đỏ (dùng ở hero), `text` chữ kèm mũi tên.
 
-### 2.5. Cấu trúc trang chủ (theo thứ tự GOHA)
+### 2.5. Trang chủ
 
-Hero (chữ trái, 3 nhóm dịch vụ phải, hàng logo) → ma trận chặng × kênh (`FunnelMatrix`) → băng chuyền dự án (`ProjectCarousel`) → quy trình đường ray trên nền tối (`Track`) → 4 nguyên tắc dạng thẻ + ảnh đội → blog 3 thẻ tối giản (`BlogCard`) → form liên hệ trên nền giấy (`CtaBand`) → FAQ kẻ dòng (`Faq`).
+Hero sáng (chữ, 3 ✓, nút viền, ảnh thật) → hàng logo → phễu chặng × kênh mũi tên xuống (`FunnelMatrix`) → băng chuyền dự án (`ProjectCarousel`) → quy trình đường ray trên nền tối → 4 nguyên tắc dạng thẻ + ảnh đội → blog → form trên nền kem → FAQ kẻ dòng.
 
-### 2.6. Trang dịch vụ
+### 2.6. Trang con
 
-Hero tối: H1, 3 ý có dấu ✓, nút; sơ đồ SVG riêng của dịch vụ trong thẻ trắng bên phải. Tiếp theo: quy trình đường ray, khối "dấu hiệu / kết quả", danh sách bàn giao, bài viết dài trong thẻ trắng, dịch vụ cùng nhóm, khối liên hệ.
+`PageHeader` nền kem: breadcrumb, H1, lead, 3 ✓, nút; aside bên phải (sơ đồ dịch vụ trong thẻ trắng, form ở trang Liên hệ).
 
 ### 2.7. Chuyển động và ảnh
 
-Giữ như bản 2: chữ hiện từng từ, nội dung hiện mờ dần khi cuộn, sơ đồ tự vẽ, tắt khi bật giảm chuyển động. Ảnh tạm còn 2 tấm ở trang chủ; ảnh đội ngũ, văn phòng, dự án dùng `ImageSlot` chờ ảnh thật.
+Chữ hiện từng từ, nội dung hiện mờ dần, sơ đồ tự vẽ, tắt khi bật giảm chuyển động. Không còn ảnh stock; mọi ảnh dùng `ImageSlot` chờ ảnh thật của SOHO.
 
 ---
 

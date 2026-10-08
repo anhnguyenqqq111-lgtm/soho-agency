@@ -30,7 +30,7 @@ export default async function SolutionDetailPage({params}){
       <Header activeNav="solutions"/>
       <main>
         <PageHeader crumbs={[{label: 'Giải pháp', href: '/giai-phap'}, {label: solution.group}]} title={solution.title} lead={solution.desc}>
-          <Button href="#lien-he" onDark arrow="up">Trao đổi về giải pháp này</Button>
+          <Button href="#lien-he">Trao đổi về giải pháp này</Button>
         </PageHeader>
         <Section title={<>SOHO <span className="hl">ưu tiên làm gì</span></>}>
           <NumberedList items={solution.outcomes.map(text => ({title: text}))}/>

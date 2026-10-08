@@ -1,21 +1,17 @@
-/* Hero */
-.hero{position:relative;overflow:hidden;background:var(--night)}
-.heroInner{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:48px var(--gap);align-items:center;padding-block:clamp(64px,8vw,112px) clamp(40px,5vw,64px)}
-.heroCopy{display:grid;gap:20px;justify-items:start}
-.heroTitle{color:var(--white);font-size:clamp(40px,5.2vw,68px);max-width:14ch}
-.heroTitle em{font-style:normal;color:var(--gold)}
-.heroLead{font-size:var(--fs-lead);line-height:1.55;color:var(--on-dark-2);max-width:46ch}
-.heroActions{display:flex;flex-wrap:wrap;gap:14px 28px;align-items:center;margin-top:6px}
-.heroStages{list-style:none;margin:0;padding:0;display:grid;gap:12px}
-.heroStages li{display:grid;grid-template-columns:44px minmax(0,1fr);gap:14px;align-items:start;padding:18px 20px;border:1px solid var(--line-dark);border-radius:var(--r-card);background:rgba(21,12,8,.72);backdrop-filter:blur(6px)}
-.stageNum{font-size:13px;font-weight:700;color:var(--gold);padding-top:2px}
-.stageGroup{font-weight:700;font-size:16px;color:var(--white);margin-bottom:4px}
-.stageLinks{font-size:13.5px;line-height:1.5;color:var(--on-dark-2)}
-.stageLinks a:hover{color:var(--gold)}
-.heroLogos{position:relative;z-index:1;display:flex;flex-wrap:wrap;align-items:center;gap:20px 48px;padding-block:22px 40px;border-top:1px solid var(--line-dark)}
-.heroLogos p{font-size:var(--fs-meta);font-weight:600;color:var(--on-dark-3)}
-.heroLogos ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:20px 48px;align-items:center}
-.heroLogos img{height:28px;width:auto;max-width:130px;object-fit:contain;filter:brightness(0) invert(1);opacity:.75}
+/* Hero kiểu Growthcurve: nền sáng, chữ to bên trái, ảnh bo góc bên phải */
+.hero{background:var(--paper);padding-top:clamp(24px,3vw,40px)}
+.heroInner{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:48px var(--gap);align-items:center;padding-bottom:clamp(40px,5vw,64px)}
+.heroCopy{display:grid;gap:22px;justify-items:start}
+.heroTitle{max-width:11ch}
+.heroLead{font-size:var(--fs-lead);line-height:1.55;color:var(--ink-2);max-width:48ch}
+.heroBullets{list-style:none;margin:0;padding:0;display:grid;gap:10px;font-size:16px}
+.heroBullets li{display:grid;grid-template-columns:26px minmax(0,1fr);gap:10px;align-items:center}
+.check{width:22px;height:22px;border-radius:50%;background:var(--red);color:var(--white);display:grid;place-items:center;font-size:12px;font-weight:700}
+.heroActions{display:flex;flex-wrap:wrap;gap:14px 28px;align-items:center;margin-top:8px}
+.heroMedia{min-width:0}
+.heroLogos{padding-block:8px 40px}
+.heroLogos ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:20px 56px;align-items:center}
+.heroLogos img{height:30px;width:auto;max-width:130px;object-fit:contain;filter:grayscale(1);opacity:.7}
 
 /* Về SOHO */
 .values{list-style:none;margin:0 0 48px;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--gap)}
@@ -36,4 +32,4 @@
   .aboutRow,.blogGrid{grid-template-columns:minmax(0,1fr)}
   .aboutCta{padding-left:0}
 }
-@media (max-width:560px){.values{grid-template-columns:minmax(0,1fr)}.heroTitle{font-size:clamp(34px,10vw,44px)}}
+@media (max-width:560px){.values{grid-template-columns:minmax(0,1fr)}.heroTitle{font-size:clamp(36px,11vw,46px)}}

@@ -23,7 +23,7 @@ function MenuPanel({id, menu, onNavigate}){
             </ul>
           </div>
         ))}
-        <p className={styles.panelAll}><a href={menu.allHref} onClick={onNavigate}>{menu.allLabel} ↗</a></p>
+        <p className={styles.panelAll}><a href={menu.allHref} onClick={onNavigate}>{menu.allLabel} →</a></p>
       </div>
     </div>
   );
@@ -79,7 +79,7 @@ export default function NavMenu({activeNav, menus, links, contactHref}){
           {rest.map(renderLink)}
         </ul>
         <a href={contactHref} className={styles.cta}>
-          Liên hệ ngay <span className={styles.ctaIcon} aria-hidden="true">↗</span>
+          <span>Liên hệ ngay</span><span className={styles.ctaIcon} aria-hidden="true">→</span>
         </a>
       </nav>
 
@@ -116,7 +116,7 @@ export default function NavMenu({activeNav, menus, links, contactHref}){
             })}
             {rest.map(link => <li key={link.key}><a className={styles.mobileItem} href={link.href} onClick={closeAll}>{link.label}</a></li>)}
           </ul>
-          <a href={contactHref} className={styles.mobileCta} onClick={closeAll}>Liên hệ ngay ↗</a>
+          <a href={contactHref} className={styles.mobileCta} onClick={closeAll}>Liên hệ ngay →</a>
         </nav>
       )}
     </div>

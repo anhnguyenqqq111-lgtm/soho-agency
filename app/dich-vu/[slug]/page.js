@@ -54,7 +54,7 @@ export default async function ServicePage({params}){
           bullets={service.outcomes}
           aside={<div className={styles.heroDiagram}><ServiceDiagram slug={service.slug} card/></div>}
         >
-          <Button href="#lien-he" onDark arrow="up">Nhận audit {service.menuTitle}</Button>
+          <Button href="#lien-he">Nhận audit {service.menuTitle}</Button>
         </PageHeader>
 
         {/* Quy trình + sơ đồ */}

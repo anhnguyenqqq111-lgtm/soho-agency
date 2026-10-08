@@ -11,7 +11,7 @@ export default function Button({
   children,
   variant = 'primary',
   size = 'md',
-  arrow = variant === 'text' ? 'up' : 'right',
+  arrow = 'right',
   onDark = false,
   className = '',
   ...rest

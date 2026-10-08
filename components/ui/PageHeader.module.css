@@ -1,23 +1,17 @@
-.wrap{position:relative;overflow:hidden;background:var(--night);padding-block:clamp(56px,7vw,96px) clamp(56px,7vw,88px)}
-.compact{padding-block:clamp(44px,5vw,64px)}
-.rings{opacity:.8}
-.grid{position:relative;z-index:1;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gap);row-gap:40px;align-items:center}
+.wrap{background:var(--paper);padding-block:clamp(40px,5vw,64px) clamp(56px,7vw,88px)}
+.compact{padding-block:clamp(32px,4vw,48px) clamp(40px,5vw,56px)}
+.grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gap);row-gap:40px;align-items:center}
 .main{grid-column:1 / span 7}
-.main:only-child{grid-column:1 / span 8}
+.main:only-child{grid-column:1 / span 9}
 .aside{grid-column:8 / -1}
-
-.crumbs ol{list-style:none;margin:0 0 22px;padding:0;display:flex;flex-wrap:wrap;gap:6px;font-size:var(--fs-meta);color:var(--on-dark-3)}
-.crumbs li + li::before{content:'/';margin-right:6px;color:var(--on-dark-3)}
-.crumbs a{color:var(--on-dark-2)}
-.crumbs a:hover{color:var(--gold)}
-
-.title{max-width:18ch;color:var(--white)}
-.lead{margin-top:20px;font-size:var(--fs-lead);line-height:1.55;color:var(--on-dark-2);max-width:56ch}
-.bullets{list-style:none;margin:22px 0 0;padding:0;display:grid;gap:8px;font-size:15px;color:var(--on-dark-2)}
-.bullets li{display:grid;grid-template-columns:22px minmax(0,1fr);gap:8px;align-items:start}
-.check{color:var(--gold);font-weight:700}
-.extra{margin-top:28px;display:flex;flex-wrap:wrap;gap:14px 24px;align-items:center}
-
-@media (max-width:900px){
-  .main,.main:only-child,.aside{grid-column:1 / -1}
-}
+.crumbs ol{list-style:none;margin:0 0 22px;padding:0;display:flex;flex-wrap:wrap;gap:6px;font-size:var(--fs-meta);color:var(--ink-3)}
+.crumbs li + li::before{content:'/';margin-right:6px;color:var(--gray-2)}
+.crumbs a{color:var(--ink-2)}
+.crumbs a:hover{color:var(--accent)}
+.title{max-width:16ch}
+.lead{margin-top:22px;font-size:var(--fs-lead);line-height:1.55;color:var(--ink-2);max-width:56ch}
+.bullets{list-style:none;margin:24px 0 0;padding:0;display:grid;gap:10px;font-size:16px;color:var(--ink)}
+.bullets li{display:grid;grid-template-columns:26px minmax(0,1fr);gap:10px;align-items:center}
+.check{width:22px;height:22px;border-radius:50%;background:var(--red);color:var(--white);display:grid;place-items:center;font-size:12px;font-weight:700}
+.extra{margin-top:30px;display:flex;flex-wrap:wrap;gap:14px 24px;align-items:center}
+@media (max-width:900px){.main,.main:only-child,.aside{grid-column:1 / -1}}

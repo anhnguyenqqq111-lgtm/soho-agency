@@ -25,14 +25,10 @@
 .actions{display:grid;gap:12px;justify-items:start}
 .consent{font-size:12.5px;color:var(--ink-3);max-width:52ch}
 .consent a{color:var(--accent);text-decoration:underline}
-.submit{
-  display:inline-flex;align-items:center;gap:10px;
-  background:var(--red);color:var(--white);border:0;border-radius:var(--r-pill);
-  padding:12px 8px 12px 22px;font-size:15px;font-weight:600;cursor:pointer;
-  transition:background-color var(--t-fast),transform var(--t-fast),box-shadow var(--t-fast);
-}
-.submit span{width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,.18);display:grid;place-items:center;font-size:13px}
-.submit:hover{background:var(--accent);transform:translateY(-1px);box-shadow:0 8px 24px rgba(210,64,26,.28)}
+.submit{display:inline-flex;align-items:stretch;background:var(--red);color:var(--white);border:1.5px solid var(--red);border-radius:var(--r-pill);overflow:hidden;padding:0;font-size:15px;font-weight:600;cursor:pointer;transition:background-color var(--t-fast),transform var(--t-fast)}
+.submit > span:first-child{display:flex;align-items:center;padding:12px 22px}
+.submit span:last-child{display:flex;align-items:center;padding-inline:16px;border-left:1.5px solid rgba(255,255,255,.35)}
+.submit:hover{background:var(--accent);border-color:var(--accent);transform:translateY(-1px)}
 
 .done{display:grid;gap:8px;color:var(--ink-2);padding:8px 0}
 .doneTitle{font-size:24px;font-weight:700;color:var(--ink)}
