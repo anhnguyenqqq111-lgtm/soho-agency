@@ -1,6 +1,8 @@
 import styles from './page.module.css';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import Hero from '../../components/hero/Hero';
+import {BlogVisual} from '../../components/hero/Visuals';
 import PageHeader from '../../components/ui/PageHeader';
 import Section from '../../components/ui/Section';
 import BlogCard from '../../components/BlogCard';
@@ -20,6 +22,7 @@ export default function BlogPage(){
     <>
       <Header activeNav="blog"/>
       <main>
+        <Hero tone="blog" crumbs={[{label: 'Blog'}]} eyebrow="Blog" title="Ghi chép từ đội SOHO" tagline="SEO, quảng cáo, đo lường, viết lại để đội marketing của bạn dùng được." visual={<BlogVisual/>}/>
         <PageHeader compact crumbs={[{label: 'Blog'}]} title="Ghi chép từ đội SOHO" lead="Những gì SOHO học được khi làm SEO, quảng cáo và đo lường cho khách hàng, viết lại để đội marketing của bạn dùng được."/>
         <Section tone="fade" title={<>Những bài viết <span className="hl">mới nhất</span></>} aside={
           <nav aria-label="Danh mục" className={styles.cats}>

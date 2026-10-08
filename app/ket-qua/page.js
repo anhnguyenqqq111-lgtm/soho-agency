@@ -1,6 +1,8 @@
 import styles from './page.module.css';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import Hero from '../../components/hero/Hero';
+import {ResultsVisual} from '../../components/hero/Visuals';
 import PageHeader from '../../components/ui/PageHeader';
 import Section from '../../components/ui/Section';
 import CtaBand from '../../components/ui/CtaBand';
@@ -29,7 +31,8 @@ export default function ResultsPage(){
     <>
       <Header activeNav="results"/>
       <main>
-        <PageHeader crumbs={[{label: 'Dự án'}]} title="Đo những con số có ý nghĩa với doanh nghiệp" lead="Traffic và lượt click vẫn được theo dõi, nhưng không phải thước đo chính. SOHO nối dữ liệu marketing với lead và doanh thu."/>
+        <Hero tone="results" crumbs={[{label: 'Dự án'}]} eyebrow="Dự án" title="Đo bằng doanh thu" tagline="Các dự án SOHO đang làm và cách SOHO đo kết quả." visual={<ResultsVisual/>}/>
+        <PageHeader title="Đo những con số có ý nghĩa với doanh nghiệp" lead="Traffic và lượt click vẫn được theo dõi, nhưng không phải thước đo chính. SOHO nối dữ liệu marketing với lead và doanh thu."/>
 
         <Section kicker="Dự án" title={<>Doanh nghiệp SOHO <span className="hl">đang làm cùng</span></>} intro="Số liệu từng dự án chỉ công bố khi khách hàng đồng ý.">
           <ProjectGrid projects={clients}/>

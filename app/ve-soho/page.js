@@ -1,6 +1,8 @@
 import styles from './page.module.css';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import Hero from '../../components/hero/Hero';
+import {AboutVisual} from '../../components/hero/Visuals';
 import PageHeader from '../../components/ui/PageHeader';
 import Section from '../../components/ui/Section';
 import NumberedList from '../../components/ui/NumberedList';
@@ -33,7 +35,8 @@ export default function AboutPage(){
     <>
       <Header activeNav="about"/>
       <main>
-        <PageHeader crumbs={[{label: 'Giới thiệu'}]} title="Marketing đo được, từ chiến lược đến triển khai" lead="SOHO đồng hành từ chiến lược đến triển khai, ưu tiên những việc tạo tác động rõ tới lead, doanh thu và lợi nhuận."/>
+        <Hero tone="about" crumbs={[{label: 'Giới thiệu'}]} eyebrow="Về SOHO" title="Đội marketing nói bằng số" tagline="Hà Nội và TP. Hồ Chí Minh." visual={<AboutVisual/>}/>
+        <PageHeader title="Marketing đo được, từ chiến lược đến triển khai" lead="SOHO đồng hành từ chiến lược đến triển khai, ưu tiên những việc tạo tác động rõ tới lead, doanh thu và lợi nhuận."/>
         <Section title={<>SOHO là <span className="hl">ai</span></>}>
           <div className={styles.split}>
             <div className="prose" data-reveal="">

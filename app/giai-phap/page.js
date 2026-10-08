@@ -1,5 +1,7 @@
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import Hero from '../../components/hero/Hero';
+import {SolutionsVisual} from '../../components/hero/Visuals';
 import PageHeader from '../../components/ui/PageHeader';
 import Section from '../../components/ui/Section';
 import LinkRows from '../../components/ui/LinkRows';
@@ -22,7 +24,8 @@ export default function SolutionsPage(){
     <>
       <Header activeNav="solutions"/>
       <main>
-        <PageHeader crumbs={[{label: 'Giải pháp'}]} title="Bắt đầu từ mô hình kinh doanh của bạn" lead="Mỗi giải pháp xuất phát từ thị trường, biên lợi nhuận, chu kỳ bán hàng và năng lực vận hành hiện có, rồi mới chọn kênh."/>
+        <Hero tone="solutions" crumbs={[{label: 'Giải pháp'}]} eyebrow="Giải pháp" title="Theo mô hình của bạn" tagline="B2B, bán lẻ hay SME, mỗi mô hình một thứ tự ưu tiên." visual={<SolutionsVisual/>}/>
+        <PageHeader title="Bắt đầu từ mô hình kinh doanh của bạn" lead="Mỗi giải pháp xuất phát từ thị trường, biên lợi nhuận, chu kỳ bán hàng và năng lực vận hành hiện có, rồi mới chọn kênh."/>
         {groups.map(({group, items}, i) => (
           <Section key={group} tone={i ? 'gray' : 'white'} kicker={group} title={copy[group].title} intro={copy[group].intro}>
             <LinkRows items={items.map(s => ({title: s.title, desc: s.desc, href: `/giai-phap/${s.slug}`}))}/>

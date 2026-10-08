@@ -1,6 +1,8 @@
 import {notFound} from 'next/navigation';
 import Header from '../../../components/Header';
 import Footer from '../../../components/Footer';
+import Hero from '../../../components/hero/Hero';
+import {SolutionsVisual} from '../../../components/hero/Visuals';
 import PageHeader from '../../../components/ui/PageHeader';
 import Section from '../../../components/ui/Section';
 import NumberedList from '../../../components/ui/NumberedList';
@@ -29,7 +31,8 @@ export default async function SolutionDetailPage({params}){
     <>
       <Header activeNav="solutions"/>
       <main>
-        <PageHeader crumbs={[{label: 'Giải pháp', href: '/giai-phap'}, {label: solution.group}]} title={solution.title} lead={solution.desc}>
+        <Hero tone="solutions" crumbs={[{label: 'Giải pháp', href: '/giai-phap'}, {label: solution.group}]} eyebrow={solution.group} title={solution.title} tagline={solution.menuDesc} visual={<SolutionsVisual/>}/>
+        <PageHeader title={solution.title} lead={solution.desc}>
           <Button href="#lien-he">Trao đổi về giải pháp này</Button>
         </PageHeader>
         <Section title={<>SOHO <span className="hl">ưu tiên làm gì</span></>}>

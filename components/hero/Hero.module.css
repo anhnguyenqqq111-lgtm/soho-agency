@@ -1,0 +1,98 @@
+.hero{position:relative;min-height:calc(100svh - var(--header-h));display:grid;overflow:hidden;color:var(--hero-ink,var(--ink));background:var(--hero-bg,var(--paper))}
+.inner{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:40px var(--gap);align-items:center;padding-block:clamp(40px,6vh,72px)}
+.visual{min-width:0;display:grid;place-items:center}
+.svg{width:100%;height:auto;max-height:calc(100svh - var(--header-h) - 160px)}
+.content{display:grid;gap:12px;justify-items:start}
+.crumbs ol{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px;font-size:var(--fs-meta);opacity:.7}
+.crumbs li + li::before{content:'/';margin-right:6px}
+.crumbs a{color:inherit}
+.eyebrow{font-size:var(--fs-meta);font-weight:700;letter-spacing:.08em;text-transform:uppercase;opacity:.75}
+.title{font-size:clamp(40px,5.2vw,72px);line-height:1.02;letter-spacing:-.03em;max-width:12ch;color:inherit}
+.tagline{font-size:var(--fs-lead);max-width:44ch;opacity:.85}
+.scroll{margin-top:18px;width:28px;height:44px;border:1.5px solid currentColor;border-radius:14px;opacity:.6;position:relative}
+.scroll span{position:absolute;left:50%;top:8px;width:4px;height:8px;margin-left:-2px;border-radius:2px;background:currentColor;animation:scrollHint 1.6s ease-in-out infinite}
+@keyframes scrollHint{0%{transform:translateY(0);opacity:1}100%{transform:translateY(16px);opacity:0}}
+
+/* Phối màu từng trang */
+.home{--hero-bg:#1B1611;--hero-ink:#F7F3EC;--c1:#E8A800;--c2:#C9391A;--c3:rgba(247,243,236,.1)}
+.services{--hero-bg:#F3E7D3;--hero-ink:#1B1611;--c1:#C9391A;--c2:#FFFFFF;--c3:rgba(27,22,17,.08)}
+.solutions{--hero-bg:#2B3A33;--hero-ink:#F7F3EC;--c1:#E8A800;--c2:#F26716;--c3:rgba(247,243,236,.12)}
+.results{--hero-bg:#FBF1E6;--hero-ink:#1B1611;--c1:#F26716;--c2:#A82E10;--c3:rgba(27,22,17,.08)}
+.blog{--hero-bg:#F7F3EC;--hero-ink:#1B1611;--c1:#C9391A;--c2:#FFFFFF;--c3:rgba(27,22,17,.08)}
+.about{--hero-bg:#3A1F16;--hero-ink:#F7F3EC;--c1:#E8A800;--c2:#C9391A;--c3:rgba(247,243,236,.12)}
+.contact{--hero-bg:#1E2A3A;--hero-ink:#F7F3EC;--c1:#E8A800;--c2:#F26716;--c3:rgba(247,243,236,.12)}
+
+/* Hình chung */
+.grid{stroke:var(--c3);stroke-width:1}
+.axisLabel{font-family:var(--font-text);font-size:14px;fill:currentColor;opacity:.6}
+.end{text-anchor:end}
+.mid{text-anchor:middle}
+.sideLabel{font-family:var(--font-text);font-size:16px;font-weight:600;fill:currentColor;opacity:.8}
+.draw{stroke-dasharray:1 1;stroke-dashoffset:1;animation:draw 2200ms cubic-bezier(.65,0,.35,1) 300ms forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.pulse{fill:var(--c1);transform-box:fill-box;transform-origin:center;animation:pulse 2.4s ease-in-out infinite}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.25);opacity:.7}}
+.orbit{animation:spin 14s linear infinite}
+.orbitSlow{animation:spin 26s linear infinite reverse}
+@keyframes spin{to{transform:rotate(360deg)}}
+.orbitRing{fill:none;stroke:var(--c3);stroke-width:1.5}
+
+/* Trang chủ */
+.curveShadow{fill:none;stroke:var(--c3);stroke-width:14;stroke-linecap:round}
+.curve{fill:none;stroke:url(#hv-line);stroke-width:4;stroke-linecap:round}
+.node{fill:var(--hero-bg);stroke:var(--c1);stroke-width:2.5;opacity:0;animation:fadeIn 500ms ease forwards;animation-delay:calc(var(--i) * 260ms + 500ms)}
+@keyframes fadeIn{to{opacity:1}}
+
+/* Dịch vụ */
+.tileBg{fill:var(--c2);stroke:var(--c3);stroke-width:1}
+.tileDot{fill:var(--c1)}
+.tileText{font-family:var(--font-text);font-size:17px;font-weight:600;fill:var(--hero-ink)}
+.tile{opacity:0;animation:tileIn 600ms cubic-bezier(.2,.7,.2,1) forwards,tileGlow 6s ease-in-out infinite;animation-delay:calc(var(--i) * 90ms + 200ms),calc(var(--i) * 660ms + 1500ms)}
+@keyframes tileIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes tileGlow{0%,8%,100%{filter:none}4%{filter:drop-shadow(0 10px 24px rgba(201,57,26,.35))}}
+.tileLink{stroke:var(--c3);stroke-width:2;stroke-dasharray:4 6}
+
+/* Giải pháp */
+.layerBody{fill:var(--c3);stroke:var(--c1);stroke-width:1.5}
+.layerTop{fill:var(--c1);opacity:.9}
+.layer{animation:floatLayer 5s ease-in-out infinite;animation-delay:calc(var(--i) * -600ms)}
+@keyframes floatLayer{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+
+/* Kết quả */
+.bar{fill:var(--c1);opacity:.85;transform:scaleY(0);animation:grow 900ms cubic-bezier(.2,.7,.2,1) forwards;animation-delay:calc(var(--i) * 90ms + 200ms)}
+.bar:nth-of-type(even){fill:var(--c2)}
+@keyframes grow{to{transform:scaleY(1)}}
+.resultLine{fill:none;stroke:var(--hero-ink);stroke-width:3;stroke-linecap:round;stroke-linejoin:round;animation-delay:1400ms}
+
+/* Blog */
+.pageBg{fill:var(--c2);stroke:var(--c3);stroke-width:1.5}
+.page{animation:pageFloat 6s ease-in-out infinite;animation-delay:calc(var(--i) * -900ms)}
+@keyframes pageFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.textLine{fill:var(--c3);transform:scaleX(0);transform-origin:left center;animation:growX 700ms ease forwards;animation-delay:calc(var(--k) * 140ms + 400ms)}
+.textTitle{fill:var(--c1)}
+@keyframes growX{to{transform:scaleX(1)}}
+
+/* Về SOHO */
+.ringA{fill:none;stroke:var(--c2);stroke-width:2}
+.ringB{fill:none;stroke:var(--c1);stroke-width:2}
+.lens{fill:var(--c1);opacity:.18}
+
+/* Liên hệ */
+.wave{fill:none;stroke:var(--c1);stroke-width:1.5;opacity:0;transform-box:fill-box;transform-origin:center;animation:wave 4s ease-out infinite;animation-delay:calc(var(--i) * 800ms)}
+@keyframes wave{0%{opacity:.7;transform:scale(.6)}100%{opacity:0;transform:scale(1.15)}}
+.beam{fill:none;stroke:var(--c2);stroke-width:2.5;stroke-linecap:round}
+
+@media (max-width:900px){
+  .hero{min-height:auto}
+  .inner{grid-template-columns:minmax(0,1fr);padding-block:32px 40px}
+  .visual{order:-1}
+  .svg{max-height:52vh}
+  .title{font-size:clamp(38px,11vw,54px)}
+  .scroll{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  .draw{stroke-dasharray:none;animation:none}
+  .pulse,.orbit,.orbitSlow,.tile,.layer,.page,.wave,.scroll span{animation:none}
+  .bar,.textLine,.node,.tile{transform:none;opacity:1}
+  .wave{opacity:.5}
+}

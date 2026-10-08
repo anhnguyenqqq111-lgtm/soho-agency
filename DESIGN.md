@@ -85,15 +85,19 @@ Be Vietnam Pro, H1 800 cỡ tới 76px, thân 400.
 
 `Button`: viên thuốc, phần chữ và mũi tên tách bằng vạch dọc. `primary` nền đỏ, `secondary` viền đỏ (dùng ở hero), `text` chữ kèm mũi tên.
 
-### 2.5. Trang chủ
+### 2.5. Hero (`components/hero/Hero.js`)
 
-Hero sáng (chữ, 3 ✓, nút viền, ảnh thật) → hàng logo → dòng chảy 3 chặng (`JourneyFlow`): 3 thẻ bậc thang, câu hỏi của khách ở mỗi chặng, chỉ số gắn chấm màu kênh, dải chảy thu hẹp phía sau → băng chuyền dự án (`ProjectCarousel`) → quy trình đường ray trên nền tối → 4 nguyên tắc dạng thẻ + ảnh đội → blog → form trên nền kem → FAQ kẻ dòng.
+Mỗi trang mở đầu bằng hero cao gần một màn hình, chia 2 cột: trái là breadcrumb, eyebrow, H1 ngắn (tối đa 4 từ), một dòng tagline và gợi ý cuộn; phải là minh họa SVG lớn có chuyển động (`Visuals.js`). Mỗi trang một phối màu và một hình riêng: trang chủ nền nâu đen với đường tăng trưởng và điểm sáng chạy; Dịch vụ nền kem đậm với 9 ô sáng luân phiên; Giải pháp nền xanh rêu với 4 lớp nổi; Dự án nền kem hồng với cột mọc lên; Blog nền kem với trang giấy xếp lớp; Giới thiệu nền nâu đỏ với hai vòng giao nhau; Liên hệ nền xanh đêm với sóng tín hiệu. Trang dịch vụ con dùng sơ đồ riêng của dịch vụ. Nội dung chi tiết (lead, 3 ✓, nút) chuyển xuống khối `#noi-dung` ngay dưới, tiêu đề ở đó là h2.
 
-### 2.6. Trang con
+### 2.6. Trang chủ
 
-`PageHeader` nền kem: breadcrumb, H1, lead, 3 ✓, nút; aside bên phải (sơ đồ dịch vụ trong thẻ trắng, form ở trang Liên hệ).
+Hero → khối mở đầu (chữ, 3 ✓, nút viền, ảnh thật) → hàng logo → dòng chảy 3 chặng (`JourneyFlow`): 3 thẻ bậc thang, câu hỏi của khách ở mỗi chặng, chỉ số gắn chấm màu kênh, dải chảy thu hẹp phía sau → băng chuyền dự án (`ProjectCarousel`) → quy trình đường ray trên nền tối → 4 nguyên tắc dạng thẻ + ảnh đội → blog → form trên nền kem → FAQ kẻ dòng.
 
-### 2.7. Chuyển động và ảnh
+### 2.7. Trang con
+
+Hero riêng → `PageHeader` thành khối mở đầu nền kem với h2, lead, 3 ✓, nút; aside bên phải (form ở trang Liên hệ).
+
+### 2.8. Chuyển động và ảnh
 
 Chữ hiện từng từ, nội dung hiện mờ dần, sơ đồ tự vẽ, tắt khi bật giảm chuyển động. Không còn ảnh stock; mọi ảnh dùng `ImageSlot` chờ ảnh thật của SOHO.
 

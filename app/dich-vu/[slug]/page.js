@@ -2,6 +2,7 @@ import {notFound} from 'next/navigation';
 import styles from './page.module.css';
 import Header from '../../../components/Header';
 import Footer from '../../../components/Footer';
+import Hero from '../../../components/hero/Hero';
 import PageHeader from '../../../components/ui/PageHeader';
 import Section from '../../../components/ui/Section';
 import Button from '../../../components/ui/Button';
@@ -47,12 +48,11 @@ export default async function ServicePage({params}){
     <>
       <Header activeNav="services"/>
       <main>
+        <Hero tone="services" crumbs={[{label: 'Dịch vụ', href: '/dich-vu'}, {label: service.menuTitle}]} eyebrow={service.category} title={service.menuTitle} tagline={service.menuDesc} visual={<div className={styles.heroDiagram}><ServiceDiagram slug={service.slug} card/></div>}/>
         <PageHeader
-          crumbs={[{label: 'Dịch vụ', href: '/dich-vu'}, {label: service.menuTitle}]}
           title={service.menuTitle}
           lead={service.intro}
           bullets={service.outcomes}
-          aside={<div className={styles.heroDiagram}><ServiceDiagram slug={service.slug} card/></div>}
         >
           <Button href="#lien-he">Nhận audit {service.menuTitle}</Button>
         </PageHeader>

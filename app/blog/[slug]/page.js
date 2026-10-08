@@ -2,6 +2,8 @@ import {notFound} from 'next/navigation';
 import styles from './page.module.css';
 import Header from '../../../components/Header';
 import Footer from '../../../components/Footer';
+import Hero from '../../../components/hero/Hero';
+import {BlogVisual} from '../../../components/hero/Visuals';
 import PageHeader from '../../../components/ui/PageHeader';
 import Section from '../../../components/ui/Section';
 import BlogCard from '../../../components/BlogCard';
@@ -34,7 +36,8 @@ export default async function BlogPostPage({params}){
     <>
       <Header activeNav="blog"/>
       <main>
-        <PageHeader compact crumbs={[{label: 'Blog', href: '/blog'}, {label: article.category}]} title={article.title} lead={article.excerpt}>
+        <Hero tone="blog" crumbs={[{label: 'Blog', href: '/blog'}, {label: article.category}]} eyebrow={article.category} title={article.title} tagline={`${article.author} · ${article.date} · ${article.readTime}`} visual={<BlogVisual/>}/>
+        <PageHeader compact title={article.title} lead={article.excerpt}>
           <p className={styles.byline}><strong>{article.author}</strong>, {role} · <time dateTime={toISODate(article.date)}>{article.date}</time> · {article.readTime}</p>
         </PageHeader>
         <section className={styles.wrap}>

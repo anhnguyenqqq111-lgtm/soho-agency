@@ -1,6 +1,8 @@
 import styles from './page.module.css';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import Hero from '../../components/hero/Hero';
+import {ContactVisual} from '../../components/hero/Visuals';
 import PageHeader from '../../components/ui/PageHeader';
 import Section from '../../components/ui/Section';
 import ContactForm from '../../components/ContactForm';
@@ -23,8 +25,8 @@ export default function ContactPage(){
     <>
       <Header activeNav="contact"/>
       <main>
+        <Hero tone="contact" crumbs={[{label: 'Liên hệ'}]} eyebrow="Liên hệ" title="Kể cho SOHO bài toán" tagline="Website và vài dòng về mục tiêu là đủ để bắt đầu." visual={<ContactVisual/>}/>
         <PageHeader
-          crumbs={[{label: 'Liên hệ'}]}
           title="Kể cho SOHO bài toán hiện tại"
           lead="Không cần chuẩn bị brief. Website và vài dòng về mục tiêu là đủ để bắt đầu."
           bullets={steps}

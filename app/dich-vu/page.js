@@ -1,6 +1,8 @@
 import styles from './page.module.css';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import Hero from '../../components/hero/Hero';
+import {ServicesVisual} from '../../components/hero/Visuals';
 import PageHeader from '../../components/ui/PageHeader';
 import Section from '../../components/ui/Section';
 import LinkRows from '../../components/ui/LinkRows';
@@ -26,8 +28,8 @@ export default function ServicesIndexPage(){
     <>
       <Header activeNav="services"/>
       <main>
+        <Hero tone="services" crumbs={[{label: 'Dịch vụ'}]} eyebrow="Dịch vụ" title="Chín việc SOHO làm" tagline="Chọn theo điểm nghẽn, không theo gói." visual={<ServicesVisual labels={groups.flatMap(g => g.items.map(s => s.menuTitle))}/>}/>
         <PageHeader
-          crumbs={[{label: 'Dịch vụ'}]}
           title="Chọn dịch vụ theo điểm nghẽn, không theo gói"
           lead="Mỗi doanh nghiệp tắc ở một chỗ khác nhau: không ai tìm thấy, có người tìm thấy nhưng không mua, hoặc có mua nhưng không biết kênh nào mang lại."
         />

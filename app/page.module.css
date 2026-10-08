@@ -1,14 +1,14 @@
-/* Hero kiểu Growthcurve: nền sáng, chữ to bên trái, ảnh bo góc bên phải */
-.hero{background:var(--paper);padding-top:clamp(24px,3vw,40px)}
-.heroInner{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:48px var(--gap);align-items:center;padding-bottom:clamp(40px,5vw,64px)}
-.heroCopy{display:grid;gap:22px;justify-items:start}
-.heroTitle{max-width:11ch}
+/* Mở đầu sau hero */
+.intro{background:var(--paper);padding-top:var(--space-md)}
+.introGrid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:48px var(--gap);align-items:center;padding-bottom:clamp(40px,5vw,64px)}
+.introCopy{display:grid;gap:22px;justify-items:start}
+.introTitle{font-size:clamp(30px,3.6vw,46px);max-width:16ch}
 .heroLead{font-size:var(--fs-lead);line-height:1.55;color:var(--ink-2);max-width:48ch}
 .heroBullets{list-style:none;margin:0;padding:0;display:grid;gap:10px;font-size:16px}
 .heroBullets li{display:grid;grid-template-columns:26px minmax(0,1fr);gap:10px;align-items:center}
 .check{width:22px;height:22px;border-radius:50%;background:var(--red);color:var(--white);display:grid;place-items:center;font-size:12px;font-weight:700}
 .heroActions{display:flex;flex-wrap:wrap;gap:14px 28px;align-items:center;margin-top:8px}
-.heroMedia{min-width:0}
+.introMedia{min-width:0}
 .heroLogos{padding-block:8px 40px}
 .heroLogos ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:20px 56px;align-items:center}
 .heroLogos img{height:30px;width:auto;max-width:130px;object-fit:contain;filter:grayscale(1);opacity:.7}
@@ -27,9 +27,9 @@
 .faqWrap{max-width:860px}
 
 @media (max-width:900px){
-  .heroInner{grid-template-columns:minmax(0,1fr)}
+  .introGrid{grid-template-columns:minmax(0,1fr)}
   .values{grid-template-columns:repeat(2,minmax(0,1fr))}
   .aboutRow,.blogGrid{grid-template-columns:minmax(0,1fr)}
   .aboutCta{padding-left:0}
 }
-@media (max-width:560px){.values{grid-template-columns:minmax(0,1fr)}.heroTitle{font-size:clamp(36px,11vw,46px)}}
+@media (max-width:560px){.values{grid-template-columns:minmax(0,1fr)}}

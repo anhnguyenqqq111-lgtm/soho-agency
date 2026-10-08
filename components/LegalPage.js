@@ -1,6 +1,8 @@
 import Header from './Header';
 import Footer from './Footer';
 import PageHeader from './ui/PageHeader';
+import Hero from './hero/Hero';
+import {ContactVisual} from './hero/Visuals';
 import Fill from './ui/Fill';
 
 // Khung chung cho trang pháp lý. sections: [{id, title, body: ReactNode}]
@@ -9,7 +11,8 @@ export default function LegalPage({title, lead, updated, sections}){
     <>
       <Header/>
       <main>
-        <PageHeader compact crumbs={[{label: title}]} title={title} lead={lead}>
+        <Hero tone="blog" crumbs={[{label: title}]} eyebrow="Pháp lý" title={title} visual={<ContactVisual/>}/>
+        <PageHeader compact title="Nội dung" lead={lead}>
           <p style={{fontSize: 13, color: 'var(--on-dark-2)'}}>Cập nhật lần cuối: <Fill value={updated} need="CẦN NGÀY HIỆU LỰC"/></p>
         </PageHeader>
         <div className="container" style={{paddingBlock: 'var(--space-md) var(--space-lg)'}}>
