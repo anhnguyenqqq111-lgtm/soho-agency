@@ -9,6 +9,7 @@
   align-items:end;
 }
 .main{grid-column:1 / span 9}
+.image{grid-column:1 / -1;margin-top:8px}
 .aside{grid-column:10 / -1}
 
 .crumbs ol{
@@ -32,4 +33,6 @@
 
 @media (max-width:900px){
   .main,.aside{grid-column:1 / -1}
+  .image{margin-top:0}
+  .image :global(.reveal-frame){aspect-ratio:16/10!important}
 }

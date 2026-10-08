@@ -1,6 +1,7 @@
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import PageHeader from '../../components/ui/PageHeader';
+import {images} from '../../components/data/images';
 import Section from '../../components/ui/Section';
 import LinkRows from '../../components/ui/LinkRows';
 import CtaBand from '../../components/ui/CtaBand';
@@ -29,6 +30,7 @@ export default function SolutionsPage(){
       <Header activeNav="solutions"/>
       <main>
         <PageHeader
+          image={images.pageSolutions}
           crumbs={[{label: 'Giải pháp'}]}
           title="Bắt đầu từ mô hình kinh doanh của bạn"
           lead="Mỗi giải pháp xuất phát từ thị trường, biên lợi nhuận, chu kỳ bán hàng và năng lực vận hành hiện có, rồi mới chọn kênh."

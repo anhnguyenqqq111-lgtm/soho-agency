@@ -2,6 +2,7 @@ import styles from './page.module.css';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import PageHeader from '../../components/ui/PageHeader';
+import {images} from '../../components/data/images';
 import CtaBand from '../../components/ui/CtaBand';
 import {getServicesByGroup} from '../../components/servicePagesData';
 import {sitePath} from '../../components/paths';
@@ -25,6 +26,7 @@ export default function ServicesIndexPage(){
       <Header activeNav="services"/>
       <main>
         <PageHeader
+          image={images.pageServices}
           crumbs={[{label: 'Dịch vụ'}]}
           title="Chọn dịch vụ theo điểm nghẽn, không theo gói"
           lead="Mỗi doanh nghiệp tắc ở một chỗ khác nhau: không ai tìm thấy, có người tìm thấy nhưng không mua, hoặc có mua nhưng không biết kênh nào mang lại. Bắt đầu từ chỗ tắc đó."

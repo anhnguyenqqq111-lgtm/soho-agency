@@ -31,6 +31,10 @@
 }
 .heroFocus a:hover{color:var(--accent-ink)}
 
+/* Ảnh hero */
+.heroImage{grid-column:1 / -1;margin-top:24px}
+.heroMarquee{grid-column:1 / -1;margin-top:8px}
+
 /* Dòng bằng chứng dưới hero */
 .heroProof{
   grid-column:1 / -1;
@@ -135,6 +139,7 @@
   .heroFocus{margin-top:8px}
 
   .heroProof{grid-template-columns:1fr;gap:12px}
+  .heroImage :global(.reveal-frame){aspect-ratio:4/3!important}
 
   .serviceGroupName,.serviceList{grid-column:1 / -1}
   .serviceGroupName{padding-top:0}

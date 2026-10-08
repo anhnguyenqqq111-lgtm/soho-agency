@@ -1,6 +1,7 @@
 import {Newsreader, Be_Vietnam_Pro} from 'next/font/google';
 import './styles/tokens.css';
 import './styles/base.css';
+import RevealObserver from '../components/RevealObserver';
 
 const newsreader = Newsreader({
   subsets: ['latin', 'vietnamese'],
@@ -27,8 +28,15 @@ export const metadata = {
 
 export default function RootLayout({children}){
   return (
-    <html lang="vi" className={`${newsreader.variable} ${beVietnam.variable}`}>
-      <body id="top">{children}</body>
+    <html lang="vi" className={`${newsreader.variable} ${beVietnam.variable}`} suppressHydrationWarning>
+      <head>
+        {/* Bật hiệu ứng hé lộ trước khi trang vẽ; không có JS thì nội dung vẫn hiện. */}
+        <script dangerouslySetInnerHTML={{__html: "document.documentElement.classList.add('js')"}}/>
+      </head>
+      <body id="top">
+        {children}
+        <RevealObserver/>
+      </body>
     </html>
   );
 }

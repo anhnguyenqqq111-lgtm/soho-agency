@@ -52,6 +52,8 @@
 .split .main{grid-column:7 / -1}
 
 .sticky{position:sticky;top:calc(var(--header-h) + 32px)}
+.asideMedia{margin-top:32px;max-width:420px}
+.default .asideMedia{max-width:300px}
 
 @media (max-width:900px){
   .grid{row-gap:20px}
@@ -59,6 +61,7 @@
   .wide .aside,.wide .main,.wide .full,
   .split .aside,.split .main{grid-column:1 / -1}
   .sticky{position:static}
+  .asideMedia,.default .asideMedia{max-width:none;margin-top:24px}
   .heading{margin-bottom:36px}
   .wide .full{margin-top:16px}
   .split .main{margin-top:12px}

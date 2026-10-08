@@ -120,15 +120,21 @@ Không dùng eyebrow viết HOA. Nhãn section là số thứ tự + tên viết
 - **Header:** logo + 6 link chữ + nút "Liên hệ". Mega menu chỉ là danh sách link chia cột theo nhóm, không icon, không tag "Hot / Xu hướng 2026", không promo box.
 - **Footer:** nền `night`, logo trắng, 3 cột link, dòng bản quyền.
 
-### 2.6. Chuyển động
+### 2.6. Chuyển động (mức "tinh tế", cập nhật theo yêu cầu)
 
-- Chỉ transition `color`, `background-color`, `text-decoration-color` trong 150ms.
-- Không có animation khi cuộn, không hover nâng card.
-- Có `prefers-reduced-motion` (đặt `scroll-behavior: auto`).
+- Tiêu đề hero và H1 trang con hiện dần theo từng từ khi tải trang (`SplitWords`, khoảng 0,9 giây).
+- Ảnh hé lộ từ dưới lên kèm thu nhỏ nhẹ khi cuộn tới (`Photo`, `data-reveal="image"`). Đoạn văn, danh sách, thẻ dự án hiện mờ dần và trượt 20px (`data-reveal`).
+- Ảnh phóng 3% khi hover. Dải logo khách hàng chạy ngang, dừng khi hover.
+- Không parallax, không đếm số, không con trỏ tùy biến, không hover nâng card.
+- `prefers-reduced-motion`: tắt toàn bộ hiệu ứng, nội dung hiện ngay. Không có JS: nội dung hiện bình thường (CSS chỉ ẩn khi `<html>` có class `js`).
 
-### 2.7. Minh họa
+### 2.7. Ảnh
 
-Mặc định không có hình. Chỉ thêm khi giúp giải thích quy trình: SVG nét 1.5px màu `ink`, một điểm `accent`, không fill gradient. Ảnh `public/images/seo-tong-the/seo-ecosystem-infographic.jpg` dùng lại trong bài viết SEO tổng thể nếu bài có nhắc tới.
+- Ảnh tạm: ảnh Unsplash (giấy phép Unsplash), chỉ chụp bàn làm việc, không gian, đồ vật. Không dùng ảnh có người để tránh bị hiểu là đội ngũ SOHO. Mỗi ảnh tạm hiện nhãn `[ẢNH TẠM]` và tên tác giả.
+- Danh sách ảnh và nguồn trong `components/data/images.js`. Thay bằng ảnh thật thì đổi `src` và đặt `temporary: false`.
+- Tỉ lệ: hero 12:5 (mobile 4:3), banner trang con 21:9 (mobile 16:10), ảnh cột trái 4:3 hoặc 4:5.
+- Ảnh dự án và ảnh sản phẩm bàn giao dùng `ImageSlot`: chưa có ảnh thì hiện khung chờ ghi rõ cần ảnh gì.
+- Ảnh `public/images/seo-tong-the/seo-ecosystem-infographic.jpg` chưa dùng.
 
 ---
 

@@ -5,6 +5,8 @@ import ContactForm from '../../components/ContactForm';
 import {sitePath} from '../../components/paths';
 import Fill from '../../components/ui/Fill';
 import {company} from '../../components/data/company';
+import Photo from '../../components/ui/Photo';
+import {images} from '../../components/data/images';
 
 export const metadata = {
   title: 'Liên hệ',
@@ -44,6 +46,10 @@ export default function ContactPage(){
               <div><dt>Khu vực</dt><dd>{company.regions}</dd></div>
               <div><dt>Giờ làm việc</dt><dd><Fill value={company.hours} need="CẦN GIỜ LÀM VIỆC"/></dd></div>
             </dl>
+
+            <div className={styles.photo}>
+              <Photo image={images.pageContact} ratio="4/3"/>
+            </div>
           </div>
           <div className={styles.form}>
             <ContactForm/>

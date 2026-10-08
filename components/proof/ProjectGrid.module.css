@@ -7,8 +7,9 @@
 .item{grid-column:span 3}
 .featured{grid-column:span 6;grid-row:span 2}
 .link{display:grid;gap:14px;text-decoration:none;color:inherit}
-.media{transition:opacity var(--t-fast)}
-a.link:hover .media{opacity:.9}
+.mediaWrap{overflow:hidden}
+.media{transition:transform 900ms cubic-bezier(.2,.7,.2,1)}
+a.link:hover .media{transform:scale(1.03)}
 a.link:hover .name{color:var(--accent-ink)}
 
 .meta{display:grid;gap:3px;border-top:1px solid var(--ink);padding-top:12px}

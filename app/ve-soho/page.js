@@ -2,6 +2,7 @@ import styles from './page.module.css';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import PageHeader from '../../components/ui/PageHeader';
+import {images} from '../../components/data/images';
 import Section from '../../components/ui/Section';
 import NumberedList from '../../components/ui/NumberedList';
 import CtaBand from '../../components/ui/CtaBand';
@@ -47,6 +48,7 @@ export default function AboutPage(){
       <Header activeNav="about"/>
       <main>
         <PageHeader
+          image={images.pageAbout}
           crumbs={[{label: 'Về SOHO'}]}
           title="Marketing đo được, từ chiến lược đến triển khai"
           lead="SOHO đồng hành từ chiến lược đến triển khai, ưu tiên những việc tạo tác động rõ tới lead, doanh thu và lợi nhuận."

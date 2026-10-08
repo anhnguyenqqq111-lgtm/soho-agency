@@ -18,6 +18,7 @@ export default function Section({
   spacing = 'md',
   tone = 'paper',
   rule = true,
+  asideMedia,
   className = ''
 }){
   const head = (index || label) && (
@@ -28,7 +29,7 @@ export default function Section({
   );
 
   const heading = (title || intro) && (
-    <div className={styles.heading}>
+    <div className={styles.heading} data-reveal="">
       {title && <h2 className={styles.title}>{title}</h2>}
       {intro && <div className={styles.intro}>{intro}</div>}
     </div>
@@ -49,7 +50,12 @@ export default function Section({
         <div className={`${styles.grid} ${styles[variant]}`}>
           {variant === 'default' && (
             <>
-              <div className={styles.aside}><div className={styles.sticky}>{head}</div></div>
+              <div className={styles.aside}>
+                <div className={styles.sticky}>
+                  {head}
+                  {asideMedia && <div className={styles.asideMedia}>{asideMedia}</div>}
+                </div>
+              </div>
               <div className={styles.main}>
                 {heading}
                 {children}
@@ -69,6 +75,7 @@ export default function Section({
                 <div className={styles.sticky}>
                   {head}
                   {heading}
+                  {asideMedia && <div className={styles.asideMedia}>{asideMedia}</div>}
                 </div>
               </div>
               <div className={styles.main}>{children}</div>

@@ -36,6 +36,7 @@
 .info div{display:grid;grid-template-columns:120px minmax(0,1fr);gap:16px}
 .info dt{font-size:var(--fs-meta);font-weight:500;color:var(--ink-3);padding-top:2px}
 .info dd{margin:0}
+.photo{margin-top:48px}
 
 @media (max-width:900px){
   .intro,.form{grid-column:1 / -1}

@@ -110,7 +110,37 @@ mark[data-verify]{
 .prose .tasks li[data-done] .box{background:var(--ink-2)}
 .prose li > p{margin-top:.4em}
 
+/* Hiệu ứng hé lộ khi cuộn (RevealObserver gắn .is-in) */
+html.js [data-reveal]{
+  opacity:0;
+  transform:translateY(20px);
+  transition:opacity 800ms cubic-bezier(.2,.7,.2,1) var(--reveal-delay,0ms),transform 800ms cubic-bezier(.2,.7,.2,1) var(--reveal-delay,0ms);
+}
+html.js [data-reveal].is-in{opacity:1;transform:none}
+html.js [data-reveal="image"]{opacity:1;transform:none}
+html.js [data-reveal="image"] .reveal-frame{
+  clip-path:inset(100% 0 0 0);
+  transition:clip-path 1100ms cubic-bezier(.65,0,.15,1) var(--reveal-delay,0ms);
+}
+html.js [data-reveal="image"] .reveal-frame img{transform:scale(1.12);transition:transform 1600ms cubic-bezier(.2,.7,.2,1) var(--reveal-delay,0ms)}
+html.js [data-reveal="image"].is-in .reveal-frame{clip-path:inset(0 0 0 0)}
+html.js [data-reveal="image"].is-in .reveal-frame img{transform:scale(1)}
+html.js [data-reveal="image"].is-in:hover .reveal-frame img{transform:scale(1.03);transition-duration:900ms;transition-delay:0ms}
+
+/* Chữ hiện dần theo từng từ (SplitWords) */
+.word{display:inline-block;white-space:pre;padding-block:.25em;margin-block:-.25em}
+.word > span{
+  display:inline-block;
+  animation:wordUp 900ms cubic-bezier(.2,.7,.2,1) backwards;
+  animation-delay:calc(var(--i) * 45ms + 120ms);
+}
+@keyframes wordUp{from{opacity:0;transform:translateY(.45em)}to{opacity:1;transform:none}}
+
 @media (prefers-reduced-motion:reduce){
+  html.js [data-reveal]{opacity:1;transform:none}
+  html.js [data-reveal="image"] .reveal-frame{clip-path:none}
+  html.js [data-reveal="image"] .reveal-frame img{transform:none}
+  .word > span{animation:none}
   html{scroll-behavior:auto}
   *,*::before,*::after{transition-duration:0s!important;animation-duration:0s!important}
 }

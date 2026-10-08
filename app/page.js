@@ -6,6 +6,10 @@ import NumberedList from '../components/ui/NumberedList';
 import Button from '../components/ui/Button';
 import ContactForm from '../components/ContactForm';
 import Fill from '../components/ui/Fill';
+import Photo from '../components/ui/Photo';
+import SplitWords from '../components/ui/SplitWords';
+import LogoMarquee from '../components/proof/LogoMarquee';
+import {images} from '../components/data/images';
 import ProjectGrid from '../components/proof/ProjectGrid';
 import PartnerStrip from '../components/proof/PartnerStrip';
 import Testimonials from '../components/proof/Testimonials';
@@ -72,9 +76,13 @@ export default function Home(){
         <section className={styles.hero}>
           <div className={`container ${styles.heroGrid}`}>
             <h1 className={styles.heroTitle}>
-              Marketing được đo bằng <em>lead và doanh thu</em>, không bằng lượt click.
+              <SplitWords segments={[
+                {text: 'Marketing được đo bằng '},
+                {text: 'lead và doanh thu', em: true},
+                {text: ', không bằng lượt click.'}
+              ]}/>
             </h1>
-            <div className={styles.heroLead}>
+            <div className={styles.heroLead} data-reveal="" style={{'--reveal-delay': '500ms'}}>
               <p>
                 SOHO lập kế hoạch và trực tiếp triển khai SEO, quảng cáo, content và tracking cho doanh nghiệp Việt Nam. Mỗi sprint 2 tuần đều có giả thuyết, việc cần làm và chỉ số nghiệm thu.
               </p>
@@ -83,7 +91,7 @@ export default function Home(){
                 <Button href="#cach-lam-viec" variant="text">Xem cách SOHO làm việc</Button>
               </div>
             </div>
-            <nav className={styles.heroFocus} aria-label="Lĩnh vực chính">
+            <nav className={styles.heroFocus} aria-label="Lĩnh vực chính" data-reveal="" style={{'--reveal-delay': '650ms'}}>
               <p className={styles.heroFocusLabel}>SOHO làm gì</p>
               <ul>
                 {focusAreas.map(area => (
@@ -91,11 +99,17 @@ export default function Home(){
                 ))}
               </ul>
             </nav>
-            <dl className={styles.heroProof}>
+            <div className={styles.heroImage} style={{'--reveal-delay': '300ms'}}>
+              <Photo image={images.homeHero} ratio="12/5" eager/>
+            </div>
+            <dl className={styles.heroProof} data-reveal="">
               <div><dt>Thành lập</dt><dd><Fill value={company.foundedYear} need="CẦN NĂM"/></dd></div>
               <div><dt>Khách hàng đã làm</dt><dd><Fill value={company.clientCount} need="CẦN SỐ THẬT"/></dd></div>
               <div><dt>Văn phòng</dt><dd>{company.regions}</dd></div>
             </dl>
+            <div className={styles.heroMarquee}>
+              <LogoMarquee clients={clients}/>
+            </div>
           </div>
         </section>
 
@@ -150,6 +164,7 @@ export default function Home(){
           label="Cách làm việc"
           variant="split"
           title="Bốn điều SOHO giữ trong mọi hợp đồng"
+          asideMedia={<Photo image={images.homeMeeting} ratio="4/3"/>}
           intro="Không có công thức chung cho mọi doanh nghiệp, nhưng cách làm việc thì giống nhau ở mọi dự án."
         >
           <ol className={styles.principles}>
@@ -181,6 +196,7 @@ export default function Home(){
           label="Quy trình"
           tone="paper2"
           title="Từ buổi gọi đầu tiên đến sprint thứ ba"
+          asideMedia={<Photo image={images.homeDesk} ratio="4/5"/>}
           intro={<p>Sprint đầu tiên thường bắt đầu sau 2 tuần audit <span className="placeholder">[CẦN XÁC NHẬN]</span>.</p>}
         >
           <NumberedList items={steps}/>

@@ -2,6 +2,7 @@ import styles from './page.module.css';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import PageHeader from '../../components/ui/PageHeader';
+import {images} from '../../components/data/images';
 import {getLatestArticles, categorySlug} from '../../components/blogData';
 import {sitePath} from '../../components/paths';
 
@@ -32,6 +33,7 @@ export default function BlogPage(){
       <Header activeNav="blog"/>
       <main>
         <PageHeader
+          image={images.pageBlog}
           compact
           crumbs={[{label: 'Blog'}]}
           title="Ghi chép từ đội SOHO"

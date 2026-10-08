@@ -14,6 +14,7 @@ export default function ProjectGrid({projects, linkBase}){
         const featured = i === 0;
         const body = (
           <>
+            <div className={styles.mediaWrap}>
             <ImageSlot
               src={p.image}
               alt={`Dự án ${p.name}`}
@@ -22,6 +23,7 @@ export default function ProjectGrid({projects, linkBase}){
               ratio={featured ? '4/3' : '4/3'}
               className={styles.media}
             />
+            </div>
             <div className={styles.meta}>
               <p className={styles.scope}>{p.scope}</p>
               <h3 className={styles.name}>{p.name}</h3>
@@ -33,7 +35,7 @@ export default function ProjectGrid({projects, linkBase}){
           </>
         );
         return (
-          <li key={p.slug} className={`${styles.item} ${featured ? styles.featured : ''}`}>
+          <li key={p.slug} className={`${styles.item} ${featured ? styles.featured : ''}`} data-reveal="" style={{'--reveal-delay': `${i * 90}ms`}}>
             {linkBase
               ? <a href={sitePath(`${linkBase}#${p.slug}`)} className={styles.link}>{body}</a>
               : <div className={styles.link}>{body}</div>}

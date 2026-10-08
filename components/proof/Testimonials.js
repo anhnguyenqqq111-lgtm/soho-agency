@@ -6,7 +6,7 @@ export default function Testimonials(){
   return (
     <ul className={styles.list}>
       {testimonials.map((t, i) => (
-        <li key={i} className={styles.item}>
+        <li key={i} className={styles.item} data-reveal="" style={{'--reveal-delay': `${i * 90}ms`}}>
           <blockquote className={styles.quote}>
             <p><Fill value={t.quote} need="CẦN NHẬN XÉT THẬT, tiếng Việt, 2 đến 4 câu"/></p>
           </blockquote>

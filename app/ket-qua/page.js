@@ -2,6 +2,7 @@ import styles from './page.module.css';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import PageHeader from '../../components/ui/PageHeader';
+import {images} from '../../components/data/images';
 import Section from '../../components/ui/Section';
 import CtaBand from '../../components/ui/CtaBand';
 import Fill from '../../components/ui/Fill';
@@ -55,6 +56,7 @@ export default function ResultsPage(){
       <Header activeNav="results"/>
       <main>
         <PageHeader
+          image={images.pageResults}
           crumbs={[{label: 'Kết quả'}]}
           title="Đo những con số có ý nghĩa với doanh nghiệp"
           lead="Traffic và lượt click vẫn được theo dõi, nhưng không phải thước đo chính. SOHO nối dữ liệu marketing với lead, cơ hội bán hàng và doanh thu để biết việc nào đáng làm tiếp."
