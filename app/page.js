@@ -79,6 +79,7 @@ export default function Home(){
 
         {/* Bảng hành trình */}
         <Section
+          tone="gray"
           kicker="Cách SOHO đo"
           title={<>Mỗi chặng hành trình, <span className="hl">một bộ chỉ số</span></>}
           intro="Khách hàng đi từ chưa biết đến mua qua ba chặng. Ở mỗi chặng họ hỏi một câu khác nhau, nên SOHO theo dõi một bộ chỉ số khác nhau."
