@@ -159,3 +159,15 @@ export const articles = [
     `
   }
 ];
+
+// date dạng dd/mm/yyyy
+export function toISODate(date){
+  const [d, m, y] = date.split('/');
+  return `${y}-${m}-${d}`;
+}
+
+export function getLatestArticles(limit = articles.length){
+  return [...articles]
+    .sort((a, b) => toISODate(b.date).localeCompare(toISODate(a.date)))
+    .slice(0, limit);
+}

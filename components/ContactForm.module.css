@@ -1,0 +1,46 @@
+.form{display:grid;gap:28px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:var(--gap)}
+.field{display:grid;gap:6px}
+.field label{font-size:var(--fs-meta);font-weight:500;color:var(--ink-2)}
+.optional{color:var(--ink-3);font-weight:400}
+.field input,.field select,.field textarea{
+  width:100%;
+  background:transparent;
+  border:0;
+  border-bottom:1px solid var(--ink);
+  border-radius:var(--radius-input) var(--radius-input) 0 0;
+  padding:10px 0;
+  font-size:17px;
+  color:var(--ink);
+  transition:border-color var(--t-fast);
+}
+.field textarea{resize:vertical;min-height:80px;line-height:1.5}
+.field select{appearance:none;cursor:pointer;
+  background-image:linear-gradient(45deg,transparent 50%,var(--ink) 50%),linear-gradient(135deg,var(--ink) 50%,transparent 50%);
+  background-position:calc(100% - 10px) 52%,calc(100% - 5px) 52%;
+  background-size:5px 5px;background-repeat:no-repeat;
+}
+.field input::placeholder,.field textarea::placeholder{color:var(--ink-3)}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-bottom-color:var(--accent);border-bottom-width:2px;padding-bottom:9px}
+
+.submit{
+  justify-self:start;
+  background:var(--ink);
+  color:var(--paper);
+  border:0;
+  border-radius:var(--radius-input);
+  padding:15px 28px;
+  font-size:16px;
+  font-weight:500;
+  cursor:pointer;
+  transition:background-color var(--t-fast);
+}
+.submit:hover{background:var(--accent-ink)}
+
+.done{border-top:1px solid var(--ink);padding-top:24px;display:grid;gap:8px;color:var(--ink-2)}
+.doneTitle{font-family:var(--font-display);font-size:28px;color:var(--ink)}
+
+@media (max-width:640px){
+  .row{grid-template-columns:1fr;gap:28px}
+  .submit{justify-self:stretch}
+}
