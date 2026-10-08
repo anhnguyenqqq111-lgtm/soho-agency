@@ -1,53 +1,65 @@
-/* SOHO design tokens. Xem DESIGN.md mục 2. */
+/* SOHO design tokens, bố cục theo goha.vn, màu theo logo SOHO. Xem DESIGN.md. */
 :root{
-  /* Màu, lấy từ logo */
-  --paper:#F7F4EE;
-  --paper-2:#EFEAE0;
-  --ink:#16130F;
-  --ink-2:#4A443B;
-  --ink-3:#6E665A;
-  --rule:#D9D2C5;
-  --rule-strong:#B9B0A1;
+  /* Nền tối (thay navy của GOHA) */
+  --night:#150C08;
+  --night-2:#2E1109;
+  --night-3:#4A1709;
+  /* Màu thương hiệu từ logo */
+  --red:#A82E10;
   --accent:#D2401A;
-  --accent-ink:#A82E10;
-  --gold:#F2A900;
-  --night:#16130F;
-  --on-night:#F7F4EE;
-  --on-night-2:#B8B0A3;
-  --rule-night:#3A342C;
-
+  --orange:#F26716;
+  --gold:#FEBC01;
+  --gold-light:#F2D272;
+  /* Nền sáng */
+  --white:#FFFFFF;
+  --paper:#F7F4EE;
+  --gray:#F4F3F1;
+  --gray-2:#E9E6E1;
+  --line:#E2DED7;
   /* Chữ */
-  --font-display:var(--font-newsreader),Georgia,'Times New Roman',serif;
+  --ink:#16130F;
+  --ink-2:#4E4A44;
+  --ink-3:#6E6860;
+  --on-dark:#FFFFFF;
+  --on-dark-2:rgba(255,255,255,.78);
+  --on-dark-3:rgba(255,255,255,.55);
+  --line-dark:rgba(255,255,255,.14);
+
+  /* Gradient chữ ký */
+  --grad-hero:linear-gradient(118deg,#150C08 0%,#2E1109 32%,#7A2210 62%,#C7471A 88%,#F0781F 100%);
+  --grad-dark:linear-gradient(160deg,#150C08 0%,#2E1109 55%,#7A2210 100%);
+  --grad-brand:linear-gradient(90deg,#FEBC01 0%,#F26716 50%,#D2401A 100%);
+  --grad-fade:linear-gradient(180deg,#FFFFFF 0%,#FFFFFF 38%,#F5D9C4 100%);
+
   --font-text:var(--font-be-vietnam),system-ui,-apple-system,'Segoe UI',Arial,sans-serif;
 
-  --fs-h1:clamp(40px,6.2vw,76px);
-  --fs-h2:clamp(30px,3.6vw,46px);
-  --fs-h3:clamp(20px,1.9vw,24px);
-  --fs-h4:18px;
-  --fs-lead:clamp(18px,1.6vw,21px);
-  --fs-body:17px;
-  --fs-small:15px;
+  --fs-h1:clamp(36px,4.6vw,60px);
+  --fs-h2:clamp(28px,3.2vw,42px);
+  --fs-h3:clamp(19px,1.6vw,22px);
+  --fs-lead:clamp(16px,1.3vw,19px);
+  --fs-body:16px;
+  --fs-small:14px;
   --fs-meta:13px;
 
-  --lh-tight:1.04;
-  --lh-head:1.14;
-  --lh-body:1.65;
-
-  /* Lưới */
-  --container:1240px;
+  --container:1180px;
   --gutter:24px;
   --gap:24px;
-  --header-h:68px;
+  --header-h:72px;
 
-  /* Nhịp section: cố ý không đều */
-  --space-sm:clamp(48px,6vw,64px);
+  --space-sm:clamp(48px,6vw,72px);
   --space-md:clamp(64px,8vw,96px);
-  --space-lg:clamp(80px,10vw,128px);
+  --space-lg:clamp(80px,10vw,120px);
 
-  --radius-input:2px;
-  --t-fast:150ms ease;
+  --r-pill:100px;
+  --r-card:16px;
+  --r-md:12px;
+  --r-sm:8px;
+
+  --shadow-card:0 10px 40px rgba(21,12,8,.08);
+  --shadow-pop:0 20px 60px rgba(21,12,8,.18);
+  --t-fast:160ms ease;
+  --t-med:320ms cubic-bezier(.2,.7,.2,1);
 }
-
 @media (max-width:640px){
-  :root{ --gutter:16px; --gap:16px; --fs-body:16.5px; }
+  :root{ --gutter:16px; --gap:16px; --header-h:64px; }
 }

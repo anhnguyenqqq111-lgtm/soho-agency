@@ -1,18 +1,19 @@
 import styles from './PageHeader.module.css';
 import {sitePath} from '../paths';
-import Photo from './Photo';
 import SplitWords from './SplitWords';
+import HeroRings from '../HeroRings';
 
 /*
-  Phần đầu trang con.
-  crumbs: [{label, href?}]  phần tử cuối không cần href
-  aside: nội dung cột phải (tùy chọn)
-  children: meta hoặc nút, đặt dưới lead
-  image: ảnh banner dưới phần chữ (mục trong components/data/images.js)
+  Banner tối cho trang con (theo hero trang dịch vụ GOHA).
+  crumbs: [{label, href?}]
+  bullets: 3 ý ngắn có dấu ✓
+  aside: khối bên phải (form, sơ đồ...)
+  children: nút
 */
-export default function PageHeader({crumbs = [], title, lead, aside, children, image, compact = false}){
+export default function PageHeader({crumbs = [], title, lead, bullets, aside, children, compact = false}){
   return (
-    <header className={`${styles.wrap} ${compact ? styles.compact : ''}`}>
+    <header className={`${styles.wrap} dark ${compact ? styles.compact : ''}`}>
+      <HeroRings className={styles.rings}/>
       <div className={`container ${styles.grid}`}>
         <div className={styles.main}>
           {crumbs.length > 0 && (
@@ -21,26 +22,22 @@ export default function PageHeader({crumbs = [], title, lead, aside, children, i
                 <li><a href={sitePath('/')}>Trang chủ</a></li>
                 {crumbs.map(crumb => (
                   <li key={crumb.label}>
-                    {crumb.href
-                      ? <a href={sitePath(crumb.href)}>{crumb.label}</a>
-                      : <span aria-current="page">{crumb.label}</span>}
+                    {crumb.href ? <a href={sitePath(crumb.href)}>{crumb.label}</a> : <span aria-current="page">{crumb.label}</span>}
                   </li>
                 ))}
               </ol>
             </nav>
           )}
-          <h1 className={styles.title}>
-            {typeof title === 'string' ? <SplitWords segments={[{text: title}]}/> : title}
-          </h1>
-          {lead && <p className={styles.lead} data-reveal="" style={{'--reveal-delay': '350ms'}}>{lead}</p>}
-          {children && <div className={styles.extra} data-reveal="" style={{'--reveal-delay': '450ms'}}>{children}</div>}
+          <h1 className={styles.title}>{typeof title === 'string' ? <SplitWords segments={[{text: title}]}/> : title}</h1>
+          {lead && <p className={styles.lead} data-reveal="" style={{'--reveal-delay': '300ms'}}>{lead}</p>}
+          {bullets && (
+            <ul className={styles.bullets} data-reveal="" style={{'--reveal-delay': '380ms'}}>
+              {bullets.map(b => <li key={b}><span className={styles.check} aria-hidden="true">✓</span>{b}</li>)}
+            </ul>
+          )}
+          {children && <div className={styles.extra} data-reveal="" style={{'--reveal-delay': '460ms'}}>{children}</div>}
         </div>
-        {aside && <div className={styles.aside}>{aside}</div>}
-        {image && (
-          <div className={styles.image} style={{'--reveal-delay': '200ms'}}>
-            <Photo image={image} ratio="21/9" eager/>
-          </div>
-        )}
+        {aside && <div className={styles.aside} data-reveal="" style={{'--reveal-delay': '250ms'}}>{aside}</div>}
       </div>
     </header>
   );

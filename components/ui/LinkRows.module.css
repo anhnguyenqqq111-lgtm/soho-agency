@@ -1,26 +1,23 @@
-.list{list-style:none;margin:0;padding:0;border-top:1px solid var(--ink)}
-.list li{border-bottom:1px solid var(--rule)}
+.list{list-style:none;margin:0;padding:0;display:grid;gap:14px}
 .row{
-  display:grid;
-  grid-template-columns:minmax(0,5fr) minmax(0,6fr) 24px;
-  gap:6px var(--gap);
-  align-items:baseline;
-  padding:22px 0;
-  text-decoration:none;
+  display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr) 36px;gap:6px var(--gap);align-items:center;
+  padding:22px 26px;background:var(--white);border:1px solid var(--line);border-radius:var(--r-card);
+  text-decoration:none;transition:box-shadow var(--t-fast),transform var(--t-fast),border-color var(--t-fast);
 }
-.meta{grid-column:1 / -1;font-size:var(--fs-meta);font-weight:500;color:var(--ink-3)}
-.title{grid-column:1;font-family:var(--font-display);font-size:clamp(22px,2.2vw,28px);line-height:1.2}
+.row:hover{box-shadow:var(--shadow-card);transform:translateY(-2px);border-color:transparent;color:inherit}
+.meta{grid-column:1 / -1;font-size:var(--fs-meta);font-weight:600;color:var(--ink-3)}
+.title{grid-column:1;font-size:clamp(18px,1.7vw,21px);font-weight:700;line-height:1.25}
 .desc{grid-column:2;color:var(--ink-2);font-size:var(--fs-small)}
-.arrow{grid-column:3;justify-self:end;color:var(--ink-3);transition:transform var(--t-fast),color var(--t-fast)}
-.row:hover .title{color:var(--accent-ink)}
-.row:hover .arrow{color:var(--accent-ink);transform:translateX(3px)}
-
-.sm .row{padding:16px 0}
-.sm .title{font-size:21px}
-
-@media (max-width:900px){
-  .row{grid-template-columns:minmax(0,1fr) 20px}
-  .title{grid-column:1}
-  .desc{grid-column:1}
-  .arrow{grid-column:2;grid-row:1 / span 3;align-self:start}
+.arrow{grid-column:3;width:36px;height:36px;border-radius:50%;background:var(--gray);display:grid;place-items:center;color:var(--ink);transition:background-color var(--t-fast),color var(--t-fast)}
+.row:hover .arrow{background:var(--red);color:var(--white)}
+.row:hover .title{color:var(--accent)}
+.sm .row{padding:16px 20px}
+.sm .title{font-size:17px}
+:global(.dark) .row{background:rgba(255,255,255,.05);border-color:var(--line-dark)}
+:global(.dark) .desc{color:var(--on-dark-2)}
+:global(.dark) .arrow{background:rgba(255,255,255,.1);color:var(--white)}
+@media (max-width:760px){
+  .row{grid-template-columns:minmax(0,1fr) 36px}
+  .title,.desc{grid-column:1}
+  .arrow{grid-column:2;grid-row:1 / span 3;align-self:center}
 }

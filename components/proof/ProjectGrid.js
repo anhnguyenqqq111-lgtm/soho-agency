@@ -11,7 +11,7 @@ export default function ProjectGrid({projects, linkBase}){
   return (
     <ul className={styles.grid}>
       {projects.map((p, i) => {
-        const featured = i === 0;
+        const featured = false;
         const body = (
           <>
             <div className={styles.mediaWrap}>

@@ -4,9 +4,9 @@
 */
 const delay = d => ({'--d': `${d}ms`});
 
-export function Figure({id, title, desc, caption, viewBox, children, bleed = true}){
+export function Figure({id, title, desc, caption, viewBox, children, bleed = false, card = false}){
   return (
-    <figure className={`dg ${bleed ? 'bleed' : ''}`} data-reveal="draw">
+    <figure className={`dg ${bleed ? 'bleed' : ''} ${card ? 'card' : ''}`} data-reveal="draw">
       <svg viewBox={viewBox} role="img" aria-labelledby={`${id}-t ${id}-d`}>
         <title id={`${id}-t`}>{title}</title>
         <desc id={`${id}-d`}>{desc}</desc>

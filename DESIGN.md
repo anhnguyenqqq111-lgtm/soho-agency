@@ -57,84 +57,41 @@ Trang chủ mới: Hero → Khách hàng → Dịch vụ → Cách làm việc �
 
 ---
 
-## 2. Hướng thiết kế
+## 2. Hướng thiết kế (bản 3, tháng 10/2026)
 
 ### 2.1. Ý tưởng
 
-**"Báo cáo tư vấn in giấy."** SOHO bán sự rõ ràng và dữ liệu thật, nên web nên trông giống một bản báo cáo chiến lược được dàn trang cẩn thận, không giống dashboard SaaS. Logo serif cổ điển là điểm neo: chữ serif làm tiêu đề, nền giấy ngà, mực đen, màu cam đỏ của logo dùng như bút đánh dấu.
+Clone bố cục goha.vn (web của công ty), thay toàn bộ màu và chữ ký thương hiệu bằng SOHO. Giữ cấu trúc trang, nhịp section tối xen sáng, hình khối bo tròn và nút viên thuốc của GOHA; không dùng nội dung, ảnh đội ngũ, logo khách hàng hay chứng nhận của GOHA.
 
-### 2.2. Màu (lấy từ logo)
+### 2.2. Màu (token trong `app/styles/tokens.css`)
 
-```css
---paper:      #F7F4EE;  /* nền chính, giấy ngà */
---paper-2:    #EFEAE0;  /* nền section phụ */
---ink:        #16130F;  /* chữ chính, gần đen ấm */
---ink-2:      #4A443B;  /* chữ phụ */
---ink-3:      #6E665A;  /* meta, caption (đạt AA trên cả paper và paper-2) */
---rule:       #D9D2C5;  /* đường kẻ */
---rule-strong:#B9B0A1;  /* đường kẻ đậm, gạch chân link */
---accent:     #D2401A;  /* cam đỏ giữa gradient logo: link, điểm nhấn */
---accent-ink: #A82E10;  /* chữ nhỏ màu accent, hover (6.2:1 trên paper) */
---gold:       #F2A900;  /* chỉ dùng cho đánh dấu nhỏ (gạch chân, số thứ tự) */
---night:      #16130F;  /* section nền tối (footer, CTA): nền mực + chữ giấy */
-```
-
-Quy tắc:
-- 90% diện tích là `paper` / `ink` / `rule`.
-- `accent` (4.3:1) chỉ dùng cho chữ từ 24px trở lên hoặc chi tiết trang trí: cụm từ nhấn trong hero, số thứ tự lớn, marker danh sách. Chữ nhỏ màu đỏ cam dùng `accent-ink`. Mỗi màn hình có tối đa 2 điểm accent.
-- Không gradient, trừ logo. Không shadow màu.
-- Chỉ dùng một section nền tối: footer + CTA cuối trang.
+| GOHA | SOHO | Dùng cho |
+|---|---|---|
+| Navy `#011624`, tím `#210788` | `--night #150C08`, `--night-2 #2E1109`, `--night-3 #4A1709` | Nền tối, header, footer |
+| Xanh `#1863dc` → cyan `#39c0ff` | `--red #A82E10` → `--accent #D2401A` → `--orange #F26716` → `--gold #FEBC01` | Gradient hero (`--grad-hero`), gradient thương hiệu (`--grad-brand`) |
+| Cyan nhấn trong tiêu đề | `--gold` trên nền tối, `--accent` trên nền sáng (class `.hl`) | Cụm từ nhấn trong H1, H2 |
+| Nút tím | Nút `--red`, hover `--accent`; trên nền tối: nút trắng chữ đỏ | Mọi CTA |
+| Xám `#f4f4f4` | `--gray #F4F3F1`, `--paper #F7F4EE` | Section phụ, thẻ FAQ, case study |
 
 ### 2.3. Chữ
 
-| Vai trò | Font | Ghi chú |
-|---|---|---|
-| Display (H1–H3, số lớn) | **Newsreader** (Google Fonts, subset `vietnamese`) | Serif editorial, hợp với logo, dấu tiếng Việt đẹp ở cỡ lớn. Dùng weight 400–500, có italic để nhấn |
-| Text, UI | **Be Vietnam Pro** (subset `vietnamese`) | Do người Việt thiết kế, dấu chuẩn. Weight 400 / 500 / 600 |
+Chỉ một font: Be Vietnam Pro (400, 500, 600, 700, 800). Tiêu đề 700–800, thân 400. Không còn serif Newsreader.
 
-Thang chữ (desktop / mobile):
-- H1: 72 / 40px, line-height 1.02, letter-spacing −0.02em, Newsreader 400
-- H2: 44 / 30px, line-height 1.1
-- H3: 24 / 20px
-- Lead: 21 / 18px, Be Vietnam Pro, `ink-2`
-- Body: 17px, line-height 1.65, tối đa 68ch
-- Meta/label: 13px, Be Vietnam Pro 500, viết thường (không VIẾT HOA), `ink-3`
-- Số: `font-variant-numeric: tabular-nums`
+### 2.4. Hình khối
 
-Không dùng eyebrow viết HOA. Nhãn section là số thứ tự + tên viết thường, ví dụ `02 — Dịch vụ`, đặt bên trái ngang hàng tiêu đề.
+Nút viên thuốc 100px, thẻ 16px, input 100px (textarea 12px). Bóng mềm `--shadow-card`. Vòng gradient vàng cam ở hero và khối liên hệ (`components/HeroRings.js`, thuần SVG) thay cho vòng 3D xanh của GOHA.
 
-### 2.4. Lưới và nhịp
+### 2.5. Cấu trúc trang chủ (theo thứ tự GOHA)
 
-- Container 1240px, padding hai bên 24px (mobile 16px).
-- Lưới 12 cột, gap 24px. Mặc định bố cục **4/8**: cột trái 4 là nhãn section (sticky trên desktop), cột phải 8 là nội dung. Một số section phá lưới, full-width hoặc 6/6, để tạo nhịp.
-- Khoảng cách section thay đổi theo nội dung: 96px / 128px / 64px, không cố định một giá trị.
-- Phân tách bằng đường kẻ 1px `rule`, không dùng card có nền và shadow.
-- Góc vuông (radius 0) cho mọi thứ, chỉ input và nút có 2px.
+Hero tối + dải logo → ma trận chặng × kênh (`FunnelMatrix`) → 2 thẻ ảnh → case study có mũi tên và hàng logo (`CaseShowcase`) → quy trình accordion trên nền tối (`Accordion`) → về SOHO → blog 3 thẻ → form liên hệ trên nền tối (`CtaBand`) → FAQ.
 
-### 2.5. Thành phần
+### 2.6. Trang dịch vụ
 
-- **Nút chính:** nền `ink`, chữ `paper`, hover chuyển nền sang `accent`. Không icon, hoặc chỉ có một mũi tên → dạng ký tự.
-- **Link:** gạch chân 1px, offset 4px, hover đổi màu sang `accent`.
-- **Danh sách đánh số:** số Newsreader cỡ lớn màu `accent` + tiêu đề + mô tả, mỗi dòng cách nhau bằng đường kẻ.
-- **Bảng:** đường kẻ ngang, không viền dọc, header viết thường 13px.
-- **Header:** logo + 6 link chữ + nút "Liên hệ". Mega menu chỉ là danh sách link chia cột theo nhóm, không icon, không tag "Hot / Xu hướng 2026", không promo box.
-- **Footer:** nền `night`, logo trắng, 3 cột link, dòng bản quyền.
+Hero tối: H1, 3 ý có dấu ✓, nút; form trắng bên phải. Tiếp theo: quy trình accordion + sơ đồ SVG trong thẻ trắng, khối "dấu hiệu / kết quả", danh sách bàn giao, bài viết dài trong thẻ trắng, dịch vụ cùng nhóm, khối liên hệ.
 
-### 2.6. Chuyển động (mức "tinh tế", cập nhật theo yêu cầu)
+### 2.7. Chuyển động và ảnh
 
-- Tiêu đề hero và H1 trang con hiện dần theo từng từ khi tải trang (`SplitWords`, khoảng 0,9 giây).
-- Ảnh hé lộ từ dưới lên kèm thu nhỏ nhẹ khi cuộn tới (`Photo`, `data-reveal="image"`). Đoạn văn, danh sách, thẻ dự án hiện mờ dần và trượt 20px (`data-reveal`).
-- Ảnh phóng 3% khi hover. Dải logo khách hàng chạy ngang, dừng khi hover.
-- Không parallax, không đếm số, không con trỏ tùy biến, không hover nâng card.
-- `prefers-reduced-motion`: tắt toàn bộ hiệu ứng, nội dung hiện ngay. Không có JS: nội dung hiện bình thường (CSS chỉ ẩn khi `<html>` có class `js`).
-
-### 2.7. Ảnh
-
-- Ảnh tạm: ảnh Unsplash (giấy phép Unsplash), chỉ chụp bàn làm việc, không gian, đồ vật. Không dùng ảnh có người để tránh bị hiểu là đội ngũ SOHO. Mỗi ảnh tạm hiện nhãn `[ẢNH TẠM]` và tên tác giả.
-- Danh sách ảnh và nguồn trong `components/data/images.js`. Thay bằng ảnh thật thì đổi `src` và đặt `temporary: false`.
-- Tỉ lệ: hero 12:5 (mobile 4:3), banner trang con 21:9 (mobile 16:10), ảnh cột trái 4:3 hoặc 4:5.
-- Ảnh dự án và ảnh sản phẩm bàn giao dùng `ImageSlot`: chưa có ảnh thì hiện khung chờ ghi rõ cần ảnh gì.
-- Ảnh `public/images/seo-tong-the/seo-ecosystem-infographic.jpg` chưa dùng.
+Giữ như bản 2: chữ hiện từng từ, nội dung hiện mờ dần khi cuộn, sơ đồ tự vẽ, tắt khi bật giảm chuyển động. Ảnh tạm còn 2 tấm ở trang chủ; ảnh đội ngũ, văn phòng, dự án dùng `ImageSlot` chờ ảnh thật.
 
 ---
 

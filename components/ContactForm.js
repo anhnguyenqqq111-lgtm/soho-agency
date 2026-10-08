@@ -13,7 +13,7 @@ const GOALS = [
   'Chưa rõ, cần tư vấn thứ tự ưu tiên'
 ];
 
-export default function ContactForm(){
+export default function ContactForm({compact = false}){
   const [sent, setSent] = useState(false);
 
   const onSubmit = e => {
@@ -61,11 +61,11 @@ export default function ContactForm(){
         </select>
       </div>
       <div className={styles.field}>
-        <label htmlFor="cf-note">Ghi chú <span className={styles.optional}>không bắt buộc</span></label>
-        <textarea id="cf-note" name="note" rows={3} placeholder="Ngân sách hiện tại, kênh đang chạy, mục tiêu quý tới..." />
+        <label htmlFor="cf-note">Lời nhắn <span className={styles.optional}>không bắt buộc</span></label>
+        <textarea id="cf-note" name="note" rows={compact ? 2 : 3} placeholder="Ngân sách hiện tại, kênh đang chạy, mục tiêu quý tới..." />
       </div>
       <div className={styles.actions}>
-        <button type="submit" className={styles.submit}>Gửi thông tin</button>
+        <button type="submit" className={styles.submit}>Gửi yêu cầu <span aria-hidden="true">✉</span></button>
         <p className={styles.consent}>
           Khi gửi form, bạn đồng ý để SOHO dùng thông tin này để liên hệ lại, theo <a href={sitePath('/chinh-sach-bao-mat')}>Chính sách bảo mật</a>.
         </p>

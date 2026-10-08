@@ -3,32 +3,30 @@
 .dg svg{display:block;width:100%;height:auto;overflow:visible}
 .dg figcaption{font-size:var(--fs-meta);color:var(--ink-2);max-width:56ch}
 
-.dg .ln{fill:none;stroke:var(--ink);stroke-width:1.25;stroke-linecap:round;stroke-linejoin:round}
-.dg .ln.soft{stroke:var(--rule-strong)}
-.dg .ln.acc{stroke:var(--accent);stroke-width:1.75}
-.dg .ln.fill{fill:var(--paper)}
-.dg .ln.fill2{fill:var(--paper-2)}
+.dg .ln{fill:none;stroke:var(--ink);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.dg .ln.soft{stroke:var(--gray-2)}
+.dg .ln.acc{stroke:var(--accent);stroke-width:2}
+.dg .ln.fill{fill:var(--white)}
+.dg .ln.fill2{fill:var(--gray)}
 .dg .ln.fillAcc{fill:var(--accent)}
-.dg .dash{fill:none;stroke:var(--rule-strong);stroke-width:1;stroke-dasharray:3 5}
+.dg .dash{fill:none;stroke:var(--gray-2);stroke-width:1;stroke-dasharray:3 5}
 .dg .shade{fill:var(--accent);opacity:.12}
 .dg .dot{fill:var(--ink)}
 .dg .dotAcc{fill:var(--accent)}
 
-.dg .tx{font-family:var(--font-text);font-size:15px;fill:var(--ink-2)}
-.dg .tx.b{fill:var(--ink);font-weight:600}
-.dg .tx.d{font-family:var(--font-display);font-size:19px;fill:var(--ink)}
-.dg .tx.acc{fill:var(--accent-ink);font-weight:600}
-.dg .tx.light{fill:var(--paper)}
+.dg .tx{font-family:var(--font-text);font-size:14px;fill:var(--ink-2)}
+.dg .tx.b{fill:var(--ink);font-weight:700}
+.dg .tx.d{font-size:18px;fill:var(--ink);font-weight:700}
+.dg .tx.acc{fill:var(--accent);font-weight:700}
+.dg .tx.light{fill:var(--white)}
 .dg .tx.mid{text-anchor:middle}
 .dg .tx.end{text-anchor:end}
 
-/* Hiệu ứng tự vẽ khi cuộn tới (RevealObserver gắn .is-in) */
+/* Thẻ trắng để đặt sơ đồ trên nền tối */
+.dg.card{background:var(--white);color:var(--ink);border-radius:var(--r-card);padding:28px;box-shadow:var(--shadow-card)}
+
 html.js .dg[data-reveal="draw"]{opacity:1;transform:none}
-html.js .dg[data-reveal="draw"] .ln{
-  stroke-dasharray:1 1;
-  stroke-dashoffset:1;
-  transition:stroke-dashoffset 1400ms cubic-bezier(.65,0,.35,1) var(--d,0ms),fill-opacity 600ms ease var(--d,0ms);
-}
+html.js .dg[data-reveal="draw"] .ln{stroke-dasharray:1 1;stroke-dashoffset:1;transition:stroke-dashoffset 1400ms cubic-bezier(.65,0,.35,1) var(--d,0ms),fill-opacity 600ms ease var(--d,0ms)}
 html.js .dg[data-reveal="draw"] .ln.fillAcc,html.js .dg[data-reveal="draw"] .ln.fill2{fill-opacity:0}
 html.js .dg[data-reveal="draw"].is-in .ln{stroke-dashoffset:0;fill-opacity:1}
 html.js .dg[data-reveal="draw"] .fd{opacity:0;transition:opacity 700ms ease var(--d,0ms)}
@@ -36,15 +34,9 @@ html.js .dg[data-reveal="draw"].is-in .fd{opacity:1}
 html.js .dg[data-reveal="draw"] .shade.fd{opacity:0}
 html.js .dg[data-reveal="draw"].is-in .shade.fd{opacity:.12}
 
-@media (max-width:640px){
-  .dg.bleed{margin-inline:calc(var(--gutter) * -1)}
-  .dg.bleed figcaption{padding-inline:var(--gutter)}
-}
-
+@media (max-width:640px){.dg.card{padding:16px}}
 @media (prefers-reduced-motion:reduce){
-  html.js .dg[data-reveal="draw"] .ln,
-  html.js .dg[data-reveal="draw"] .ln.fillAcc,
-  html.js .dg[data-reveal="draw"] .ln.fill2{stroke-dasharray:none;fill-opacity:1}
+  html.js .dg[data-reveal="draw"] .ln,html.js .dg[data-reveal="draw"] .ln.fillAcc,html.js .dg[data-reveal="draw"] .ln.fill2{stroke-dasharray:none;fill-opacity:1}
   html.js .dg[data-reveal="draw"] .fd{opacity:1}
   html.js .dg[data-reveal="draw"] .shade.fd{opacity:.12}
 }

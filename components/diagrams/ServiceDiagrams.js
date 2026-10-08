@@ -3,7 +3,7 @@ import {Figure, L, P, C, R, T, TL, Dot, Arrow} from './svg';
 /* Mỗi dịch vụ một sơ đồ. viewBox rộng 480 để chữ vẫn đọc được trên mobile. */
 
 // SEO tổng thể: cụm chủ đề quanh trang trụ cột
-function SeoCluster(){
+function SeoCluster({card}){
   const cx = 240, cy = 178;
   const nodes = [
     {x: 240, y: 52, label: 'Câu hỏi', ty: -16},
@@ -15,6 +15,7 @@ function SeoCluster(){
   ];
   return (
     <Figure
+      card={card}
       id="dg-seo"
       viewBox="0 0 480 350"
       title="Sơ đồ cụm chủ đề SEO"
@@ -38,10 +39,11 @@ function SeoCluster(){
 }
 
 // SEO & AI Overview: đồ thị thực thể
-function AiEntity(){
+function AiEntity({card}){
   const left = ['Tác giả', 'Schema', 'FAQ', 'Báo chí nhắc tên'];
   return (
     <Figure
+      card={card}
       id="dg-ai"
       viewBox="0 0 480 330"
       title="Sơ đồ thực thể thương hiệu cho AI Search"
@@ -73,10 +75,11 @@ function AiEntity(){
 }
 
 // Local SEO: bản đồ bán kính
-function LocalMap(){
+function LocalMap({card}){
   const cx = 200, cy = 190;
   return (
     <Figure
+      card={card}
       id="dg-local"
       viewBox="0 0 480 340"
       title="Sơ đồ bán kính tìm kiếm địa phương"
@@ -107,7 +110,7 @@ function LocalMap(){
 }
 
 // Google Ads: phễu
-function AdsFunnel(){
+function AdsFunnel({card}){
   const layers = [
     {w: 300, label: 'Truy vấn', note: 'Lọc từ khóa phủ định'},
     {w: 230, label: 'Click', note: 'Landing đúng ý định'},
@@ -117,6 +120,7 @@ function AdsFunnel(){
   const cx = 160, h = 58, gap = 12, top = 20;
   return (
     <Figure
+      card={card}
       id="dg-ads"
       viewBox="0 0 480 300"
       title="Phễu Google Ads từ truy vấn đến đơn có lợi nhuận"
@@ -142,13 +146,14 @@ function AdsFunnel(){
 }
 
 // Meta & TikTok: ma trận creative
-function CreativeMatrix(){
+function CreativeMatrix({card}){
   const x0 = 100, y0 = 52, cw = 88, ch = 66;
   const hooks = ['Hook A', 'Hook B', 'Hook C'];
   const offers = ['Offer 1', 'Offer 2', 'Offer 3'];
   const bars = [[40, 22, 30], [28, 18, 66], [16, 34, 26]];
   return (
     <Figure
+      card={card}
       id="dg-creative"
       viewBox="0 0 480 300"
       title="Ma trận test creative"
@@ -175,7 +180,7 @@ function CreativeMatrix(){
 }
 
 // CRO: wireframe landing page có đánh dấu
-function CroWireframe(){
+function CroWireframe({card}){
   const marks = [
     {y: 92, label: 'Thông điệp rõ'},
     {y: 150, label: 'CTA nổi bật'},
@@ -184,6 +189,7 @@ function CroWireframe(){
   ];
   return (
     <Figure
+      card={card}
       id="dg-cro"
       viewBox="0 0 480 340"
       title="Landing page với bốn điểm cần tối ưu"
@@ -213,7 +219,7 @@ function CroWireframe(){
 }
 
 // Content: hành trình nội dung
-function ContentJourney(){
+function ContentJourney({card}){
   const stages = [
     {x: 85, name: 'Nhận biết', cards: ['Bài hướng dẫn', 'Bài chuyên gia']},
     {x: 240, name: 'Cân nhắc', cards: ['So sánh', 'Hỏi đáp']},
@@ -221,6 +227,7 @@ function ContentJourney(){
   ];
   return (
     <Figure
+      card={card}
       id="dg-content"
       viewBox="0 0 480 300"
       title="Nội dung theo hành trình mua"
@@ -248,10 +255,11 @@ function ContentJourney(){
 }
 
 // GA4: luồng dữ liệu
-function DataFlow(){
+function DataFlow({card}){
   const sources = ['Website', 'Quảng cáo', 'CRM'];
   return (
     <Figure
+      card={card}
       id="dg-data"
       viewBox="0 0 480 330"
       title="Luồng dữ liệu từ nguồn đến quyết định"
@@ -284,12 +292,13 @@ function DataFlow(){
 }
 
 // Sprint: dòng thời gian 90 ngày
-function SprintTimeline(){
+function SprintTimeline({card}){
   const x0 = 30, x1 = 450, span = x1 - x0;
   const dx = day => x0 + (span * day) / 90;
   const sprints = [14, 28, 42, 56, 70];
   return (
     <Figure
+      card={card}
       id="dg-sprint"
       viewBox="0 0 480 270"
       title="Dòng thời gian sprint 90 ngày"
@@ -331,7 +340,7 @@ const MAP = {
   'tu-van-chien-luoc-sprint': SprintTimeline
 };
 
-export default function ServiceDiagram({slug}){
+export default function ServiceDiagram({slug, card = false}){
   const Comp = MAP[slug];
-  return Comp ? <Comp/> : null;
+  return Comp ? <Comp card={card}/> : null;
 }

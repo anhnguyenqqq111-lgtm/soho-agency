@@ -1,69 +1,46 @@
 .track{position:relative}
-.label{font-family:var(--font-text);font-size:var(--fs-meta);font-weight:500;line-height:1.5;letter-spacing:0;color:var(--ink-2);margin:0 0 20px}
-.list{
-  list-style:none;margin:0;padding:0;
-  display:grid;
-  grid-template-columns:repeat(var(--n),minmax(0,1fr));
-  gap:var(--gap);
-  position:relative;
-}
-/* đường ray nối các nút */
-.list::before{
-  content:'';
-  position:absolute;
-  left:0;right:0;
-  top:20px;
-  height:1px;
-  background:var(--ink);
-  transform-origin:left center;
-}
-.item{position:relative;display:grid;gap:18px;align-content:start}
+.label{font-size:var(--fs-meta);font-weight:600;color:var(--ink-3);margin:0 0 20px}
+:global(.dark) .label{color:var(--on-dark-3)}
+.list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(var(--n),minmax(0,1fr));gap:var(--gap);position:relative}
+.list::before{content:'';position:absolute;left:0;right:0;top:22px;height:2px;background:var(--grad-brand);transform-origin:left center;opacity:.5}
+.item{position:relative;display:grid;gap:16px;align-content:start}
 .node{
-  position:relative;
-  z-index:1;
-  width:40px;height:40px;
-  border-radius:50%;
-  border:1.25px solid var(--ink);
-  background:var(--paper);
-  display:grid;place-items:center;
-  font-family:var(--font-display);
-  font-size:16px;
-  font-variant-numeric:tabular-nums lining-nums;
+  position:relative;z-index:1;width:44px;height:44px;border-radius:50%;
+  border:2px solid var(--accent);background:var(--white);color:var(--accent);
+  display:grid;place-items:center;font-weight:700;font-size:14px;
 }
-.acc .node{border-color:var(--accent);background:var(--accent);color:var(--paper)}
+.acc .node{background:var(--grad-brand);border-color:transparent;color:var(--white)}
+:global(.dark) .node{background:var(--night-2);border-color:var(--gold);color:var(--gold)}
+:global(.dark) .acc .node{background:var(--grad-brand);color:var(--white);border-color:transparent}
 .body{display:grid;gap:6px;padding-right:8px}
-.meta{font-size:var(--fs-meta);font-weight:500;color:var(--ink-3)}
-.title{font-size:clamp(18px,1.6vw,21px);line-height:1.25}
-.acc .title{color:var(--accent-ink)}
+.meta{font-size:var(--fs-meta);font-weight:600;color:var(--ink-3)}
+:global(.dark) .meta{color:var(--on-dark-3)}
+.title{font-size:clamp(17px,1.5vw,20px);line-height:1.25;font-weight:700}
+.acc .title{color:var(--accent)}
+:global(.dark) .acc .title{color:var(--gold)}
 .text{font-size:var(--fs-small);color:var(--ink-2);line-height:1.5}
+:global(.dark) .text{color:var(--on-dark-2)}
 .links{list-style:none;margin:6px 0 0;padding:0;display:grid;gap:4px;font-size:var(--fs-small)}
-.links a{text-decoration-color:var(--rule-strong)}
+.links a{color:var(--accent);font-weight:500}
+:global(.dark) .links a{color:var(--on-dark)}
 
-/* Hiệu ứng: đường ray chạy từ trái sang, nút và chữ hiện lần lượt */
 :global(html.js) .track[data-reveal="track"]{opacity:1;transform:none}
-:global(html.js) .track[data-reveal="track"] .list::before{transform:scaleX(0);transition:transform 1400ms cubic-bezier(.65,0,.35,1)}
+:global(html.js) .track[data-reveal="track"] .list::before{transform:scaleX(0);transition:transform 1200ms cubic-bezier(.65,0,.35,1)}
 :global(html.js) .track[data-reveal="track"] .node,
-:global(html.js) .track[data-reveal="track"] .body{
-  opacity:0;
-  transform:translateY(10px);
-  transition:opacity 600ms ease,transform 600ms cubic-bezier(.2,.7,.2,1);
-  transition-delay:calc(var(--i) * 220ms + 200ms);
-}
-:global(html.js) .track[data-reveal="track"] .body{transition-delay:calc(var(--i) * 220ms + 350ms)}
+:global(html.js) .track[data-reveal="track"] .body{opacity:0;transform:translateY(10px);transition:opacity 600ms ease,transform 600ms cubic-bezier(.2,.7,.2,1);transition-delay:calc(var(--i) * 200ms + 200ms)}
+:global(html.js) .track[data-reveal="track"] .body{transition-delay:calc(var(--i) * 200ms + 330ms)}
 :global(html.js) .track[data-reveal="track"]:global(.is-in) .list::before{transform:scaleX(1)}
 :global(html.js) .track[data-reveal="track"]:global(.is-in) .node,
 :global(html.js) .track[data-reveal="track"]:global(.is-in) .body{opacity:1;transform:none}
 
 @media (max-width:760px){
-  .list{grid-template-columns:1fr;gap:28px}
-  .list::before{left:20px;right:auto;top:0;bottom:0;width:1px;height:auto;transform-origin:center top}
-  .item{grid-template-columns:40px minmax(0,1fr);gap:16px}
+  .list{grid-template-columns:1fr;gap:26px}
+  .list::before{left:21px;right:auto;top:0;bottom:0;width:2px;height:auto;transform-origin:center top}
+  .item{grid-template-columns:44px minmax(0,1fr);gap:16px}
   :global(html.js) .track[data-reveal="track"] .list::before{transform:scaleY(0)}
   :global(html.js) .track[data-reveal="track"]:global(.is-in) .list::before{transform:scaleY(1)}
 }
-
 @media (prefers-reduced-motion:reduce){
   :global(html.js) .track[data-reveal="track"] .list::before{transform:none!important}
-  :global(html.js) .track[data-reveal="track"] .node,
-  :global(html.js) .track[data-reveal="track"] .body{opacity:1;transform:none}
+  :global(html.js) .track[data-reveal="track"] .node,:global(html.js) .track[data-reveal="track"] .body{opacity:1;transform:none}
 }
