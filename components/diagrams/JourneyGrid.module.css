@@ -1,0 +1,49 @@
+.wrap{position:relative}
+.grid{display:grid;grid-template-columns:150px repeat(3,minmax(0,1fr));gap:10px 14px;align-items:stretch}
+.row{display:contents}
+.rowLabel{display:flex;align-items:center;gap:8px;font-size:13.5px;font-weight:600;color:var(--ink-3);padding:10px 0}
+
+/* Hàng phụ trách: 2 pill, Marketing chiếm 2 cột */
+.owner{display:flex;align-items:center;justify-content:center;padding:8px 14px;border-radius:var(--r-pill);font-size:13px;font-weight:700}
+.ownerMk{grid-column:2 / span 2;background:var(--paper-2);color:var(--ink-2)}
+.ownerSales{grid-column:4;background:var(--gold-light);color:var(--red)}
+
+/* Hàng giai đoạn */
+.stage{position:relative;display:flex;align-items:center;gap:12px;padding:14px 18px;background:var(--white);border:1.5px solid var(--line);border-radius:var(--r-md);font-size:17px;font-weight:700}
+.stage.acc{border-color:var(--red);background:var(--ink);color:var(--on-dark)}
+.num{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-size:13px;font-weight:700;background:var(--paper);color:var(--red);border:1.5px solid var(--gold-light);flex:none}
+.acc .num{background:var(--grad-brand);color:var(--white);border-color:transparent}
+.arrow{position:absolute;right:-16px;top:50%;transform:translateY(-50%);width:18px;text-align:center;color:var(--accent);font-size:16px;background:var(--paper)}
+
+/* Ô nội dung */
+.cell{padding:14px 18px;background:var(--white);border:1px solid var(--line);border-radius:var(--r-md);font-size:14.5px;line-height:1.5;color:var(--ink)}
+.cellAcc{border-color:rgba(168,46,16,.35);background:#FBF4EC}
+.quote{font-weight:600;font-style:italic;color:var(--ink)}
+.text{color:var(--ink-2)}
+.list{list-style:none;margin:0;padding:0}
+.list li + li{margin-top:8px;padding-top:8px;border-top:1px dashed var(--line)}
+
+.dot{width:9px;height:9px;border-radius:50%;flex:none}
+.cSeo{background:#C9391A}.cAds{background:#F26716}.cContent{background:#E8A800}.cData{background:#8A8178}
+
+/* Mobile: thẻ theo chặng */
+.cards{display:none;list-style:none;margin:0;padding:0;gap:16px}
+.card{display:grid;gap:12px;padding:20px;background:var(--white);border:1px solid var(--line);border-radius:var(--r-card)}
+.card.acc{background:var(--ink);color:var(--on-dark);border-color:transparent}
+.cardHead{display:grid;grid-template-columns:34px minmax(0,1fr);gap:12px;align-items:center}
+.cardHead > div{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center}
+.name{font-size:18px;font-weight:700}
+.ownerTag{font-size:11px;font-weight:700;padding:3px 9px;border-radius:var(--r-pill)}
+.cardRow{display:grid;gap:4px;padding-top:10px;border-top:1px solid var(--line)}
+.acc .cardRow{border-top-color:var(--line-dark)}
+.cardLabel{display:flex;align-items:center;gap:7px;font-size:12px;font-weight:700;color:var(--ink-3)}
+.acc .cardLabel{color:var(--on-dark-3)}
+.acc .quote,.acc .text,.acc .list{color:var(--on-dark)}
+.acc .list li + li{border-top-color:var(--line-dark)}
+
+/* Hiệu ứng: cột hiện lần lượt */
+:global(html.js) .wrap[data-reveal] .stage,:global(html.js) .wrap[data-reveal] .cell,:global(html.js) .wrap[data-reveal] .card{opacity:0;transform:translateY(10px);transition:opacity 500ms ease,transform 500ms cubic-bezier(.2,.7,.2,1);transition-delay:calc(var(--i) * 160ms + 100ms)}
+:global(html.js) .wrap[data-reveal]:global(.is-in) .stage,:global(html.js) .wrap[data-reveal]:global(.is-in) .cell,:global(html.js) .wrap[data-reveal]:global(.is-in) .card{opacity:1;transform:none}
+
+@media (max-width:900px){.grid{display:none}.cards{display:grid}}
+@media (prefers-reduced-motion:reduce){:global(html.js) .wrap[data-reveal] .stage,:global(html.js) .wrap[data-reveal] .cell,:global(html.js) .wrap[data-reveal] .card{opacity:1;transform:none}}

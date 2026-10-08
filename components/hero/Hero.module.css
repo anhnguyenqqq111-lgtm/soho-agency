@@ -1,4 +1,4 @@
-.hero{position:relative;min-height:calc(100svh - var(--header-h));display:grid;overflow:hidden;color:var(--hero-ink,var(--ink));background:var(--hero-bg,var(--paper))}
+.hero{position:relative;min-height:min(calc(100svh - var(--header-h)),820px);display:grid;overflow:hidden;color:var(--hero-ink,var(--ink));background:var(--hero-bg,var(--paper))}
 .inner{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:40px var(--gap);align-items:center;padding-block:clamp(40px,6vh,72px)}
 .visual{min-width:0;display:grid;place-items:center}
 .svg{width:100%;height:auto;max-height:calc(100svh - var(--header-h) - 160px)}
