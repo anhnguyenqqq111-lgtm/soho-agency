@@ -1,35 +1,54 @@
-import {ArrowRight} from 'lucide-react';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
-import {solutionPages} from '../../components/solutionPagesData';
-import {sitePath} from '../../components/paths';
+import PageHeader from '../../components/ui/PageHeader';
+import Section from '../../components/ui/Section';
+import LinkRows from '../../components/ui/LinkRows';
+import CtaBand from '../../components/ui/CtaBand';
+import {getSolutionsByGroup} from '../../components/solutionPagesData';
 
 export const metadata = {
-  title: 'Giải pháp Digital Marketing | SOHO Agency',
-  description: 'Giải pháp tăng trưởng theo mô hình kinh doanh, phương pháp sprint và dữ liệu doanh thu của SOHO Agency.'
+  title: 'Giải pháp',
+  description: 'Giải pháp tăng trưởng của SOHO Agency theo mô hình kinh doanh B2B, ecommerce, SME và cách SOHO vận hành theo sprint, đo theo doanh thu.'
+};
+
+const copy = {
+  'Theo mô hình kinh doanh': {label: 'Mô hình kinh doanh', title: 'Ba mô hình, ba thứ tự ưu tiên khác nhau'},
+  'Cách SOHO làm việc': {label: 'Cách làm việc', title: 'Phần giống nhau ở mọi dự án'}
+};
+
+const intros = {
+  'Theo mô hình kinh doanh': 'Cùng là SEO hay quảng cáo, nhưng doanh nghiệp B2B, cửa hàng online và SME mới tăng tốc cần thứ tự ưu tiên rất khác nhau.',
+  'Cách SOHO làm việc': 'Chia việc theo sprint, đo theo doanh thu, báo cáo để cả founder và đội vận hành đọc được.'
 };
 
 export default function SolutionsPage(){
+  const groups = getSolutionsByGroup();
+
   return (
-    <main>
-      <Header activeNav="solutions" />
-      <section className="menuPageHero">
-        <p className="eyebrow">GIẢI PHÁP</p>
-        <h1>Chọn hướng tăng trưởng theo mô hình kinh doanh</h1>
-        <p>SOHO không dùng một công thức cho mọi doanh nghiệp. Mỗi giải pháp bắt đầu từ thị trường, biên lợi nhuận, chu kỳ bán hàng và năng lực vận hành hiện tại.</p>
-      </section>
-      <section className="section solutionIndexGrid">
-        {solutionPages.map(solution => (
-          <article className="solutionIndexCard" key={solution.slug}>
-            <div className="solutionIcon"><solution.icon size={24}/></div>
-            <span>{solution.eyebrow}</span>
-            <h2>{solution.title}</h2>
-            <p>{solution.desc}</p>
-            <a href={sitePath(`/giai-phap/${solution.slug}`)}>Xem chi tiết <ArrowRight size={16}/></a>
-          </article>
+    <>
+      <Header activeNav="solutions"/>
+      <main>
+        <PageHeader
+          crumbs={[{label: 'Giải pháp'}]}
+          title="Bắt đầu từ mô hình kinh doanh của bạn"
+          lead="Mỗi giải pháp xuất phát từ thị trường, biên lợi nhuận, chu kỳ bán hàng và năng lực vận hành hiện có, rồi mới chọn kênh."
+        />
+        {groups.map(({group, items}, i) => (
+          <Section
+            key={group}
+            index={String(i + 1).padStart(2, '0')}
+            label={copy[group].label}
+            title={copy[group].title}
+            intro={intros[group]}
+            spacing={i === 0 ? 'sm' : 'md'}
+            tone={i === 1 ? 'paper2' : 'paper'}
+          >
+            <LinkRows items={items.map(s => ({title: s.title, desc: s.desc, href: `/giai-phap/${s.slug}`}))}/>
+          </Section>
         ))}
-      </section>
-      <Footer />
-    </main>
+        <CtaBand/>
+      </main>
+      <Footer/>
+    </>
   );
 }

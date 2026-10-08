@@ -1,9 +1,14 @@
 import {notFound} from 'next/navigation';
-import {ArrowRight, CheckCircle2} from 'lucide-react';
 import Header from '../../../components/Header';
 import Footer from '../../../components/Footer';
+import PageHeader from '../../../components/ui/PageHeader';
+import Section from '../../../components/ui/Section';
+import NumberedList from '../../../components/ui/NumberedList';
+import LinkRows from '../../../components/ui/LinkRows';
+import Button from '../../../components/ui/Button';
+import CtaBand from '../../../components/ui/CtaBand';
 import {getSolutionPage, solutionPages} from '../../../components/solutionPagesData';
-import {sitePath} from '../../../components/paths';
+import {getServicePage} from '../../../components/servicePagesData';
 
 export function generateStaticParams(){
   return solutionPages.map(solution => ({slug: solution.slug}));
@@ -12,58 +17,42 @@ export function generateStaticParams(){
 export async function generateMetadata({params}){
   const {slug} = await params;
   const solution = getSolutionPage(slug);
-  if(!solution){
-    return {title: 'Giải pháp không tồn tại | SOHO Agency'};
-  }
-  return {
-    title: `${solution.title} | SOHO Agency`,
-    description: solution.desc
-  };
+  if (!solution) return {title: 'Không tìm thấy giải pháp'};
+  return {title: solution.title, description: solution.desc};
 }
 
 export default async function SolutionDetailPage({params}){
   const {slug} = await params;
   const solution = getSolutionPage(slug);
+  if (!solution) notFound();
 
-  if(!solution){
-    notFound();
-  }
+  const services = (solution.relatedServices || []).map(getServicePage).filter(Boolean);
 
   return (
-    <main>
-      <Header activeNav="solutions" />
-      <section className="solutionDetailHero">
-        <div>
-          <p className="eyebrow">{solution.eyebrow}</p>
-          <h1>{solution.title}</h1>
-          <p>{solution.desc}</p>
-          <a className="btn primary btnGlow" href={sitePath('/lien-he')}>
-            <span>Trao đổi giải pháp</span>
-            <ArrowRight size={18}/>
-            <span className="btnSweep"></span>
-          </a>
-        </div>
-        <div className="solutionDetailVisual">
-          <solution.icon size={68}/>
-          <b>SOHO Growth System</b>
-          <small>Insight • Sprint • Data • Revenue</small>
-        </div>
-      </section>
-      <section className="section solutionOutcomeList">
-        <div className="sectionHead left">
-          <p className="eyebrow">TRỌNG TÂM TRIỂN KHAI</p>
-          <h2>Những việc SOHO ưu tiên để tạo tác động rõ</h2>
-        </div>
-        <div className="serviceOutcomeGrid">
-          {solution.outcomes.map(outcome => (
-            <article key={outcome}>
-              <CheckCircle2/>
-              <h3>{outcome}</h3>
-            </article>
-          ))}
-        </div>
-      </section>
-      <Footer />
-    </main>
+    <>
+      <Header activeNav="solutions"/>
+      <main>
+        <PageHeader
+          crumbs={[{label: 'Giải pháp', href: '/giai-phap'}, {label: solution.group}]}
+          title={solution.title}
+          lead={solution.desc}
+        >
+          <Button href="/lien-he">Trao đổi về giải pháp này</Button>
+        </PageHeader>
+
+        <Section index="01" label="Trọng tâm" title="SOHO ưu tiên làm gì">
+          <NumberedList items={solution.outcomes.map(text => ({title: text}))}/>
+        </Section>
+
+        {services.length > 0 && (
+          <Section index="02" label="Dịch vụ" tone="paper2" title="Dịch vụ thường dùng trong giải pháp này">
+            <LinkRows items={services.map(s => ({title: s.menuTitle, desc: s.menuDesc, href: `/dich-vu/${s.slug}`}))}/>
+          </Section>
+        )}
+
+        <CtaBand/>
+      </main>
+      <Footer/>
+    </>
   );
 }
