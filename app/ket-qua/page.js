@@ -1,51 +1,122 @@
-import {ArrowRight, BarChart3, Target, TrendingUp} from 'lucide-react';
+import styles from './page.module.css';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import PageHeader from '../../components/ui/PageHeader';
+import Section from '../../components/ui/Section';
+import CtaBand from '../../components/ui/CtaBand';
+import {clients} from '../../components/data/clients';
 import {sitePath} from '../../components/paths';
 
 export const metadata = {
-  title: 'Kết quả Digital Marketing | SOHO Agency',
-  description: 'Cách SOHO đo lường kết quả SEO, Ads, CRO và tăng trưởng bằng chỉ số gắn với doanh thu.'
+  title: 'Cách SOHO đo kết quả',
+  description: 'SOHO đo SEO, quảng cáo, CRO, content và tracking bằng chỉ số gắn với lead và doanh thu. Bảng chỉ số theo kênh và các dự án đang triển khai.'
 };
 
-const metrics = [
-  {icon: TrendingUp, label: 'SEO', title: 'Tăng khả năng được tìm thấy', text: 'Theo dõi visibility, nhóm từ khóa tạo nhu cầu, organic lead và đóng góp vào pipeline.'},
-  {icon: Target, label: 'ADS', title: 'Tối ưu chi phí tạo khách hàng', text: 'Đo CPA, ROAS, lead quality và doanh thu thay vì chỉ nhìn CPC hoặc CTR.'},
-  {icon: BarChart3, label: 'CRO', title: 'Biến traffic thành cơ hội', text: 'Cải thiện landing page, form, thông điệp và hành trình chuyển đổi.'}
+const channels = [
+  {
+    name: 'SEO',
+    weekly: 'Visibility của nhóm từ khóa có ý định mua, lỗi index mới',
+    monthly: 'Lead từ trang organic, doanh thu có nguồn organic',
+    notKpi: 'Tổng traffic, số bài đăng, số backlink'
+  },
+  {
+    name: 'Quảng cáo',
+    weekly: 'CPA, ROAS, tỷ lệ lead đạt chuẩn, truy vấn lãng phí',
+    monthly: 'CAC, lợi nhuận gộp theo chiến dịch',
+    notKpi: 'CPC, CTR, lượt hiển thị'
+  },
+  {
+    name: 'CRO',
+    weekly: 'Tỷ lệ chuyển đổi theo trang và thiết bị',
+    monthly: 'Mức tăng sau mỗi lượt test, CPL sau tối ưu',
+    notKpi: 'Thời gian trên trang'
+  },
+  {
+    name: 'Content',
+    weekly: 'Tiến độ theo kế hoạch, tương tác có chất lượng',
+    monthly: 'Assisted conversion, lead có chạm vào nội dung',
+    notKpi: 'Lượt xem, lượt thích'
+  },
+  {
+    name: 'Đo lường',
+    weekly: 'Event thiếu hoặc sai, conversion bị trùng',
+    monthly: 'Độ khớp số liệu giữa Ads, GA4 và CRM',
+    notKpi: 'Số biểu đồ trên dashboard'
+  }
 ];
+
+const Placeholder = ({children}) => <span className="placeholder">{children}</span>;
 
 export default function ResultsPage(){
   return (
-    <main>
-      <Header activeNav="results" />
-      <section className="menuPageHero">
-        <p className="eyebrow">KẾT QUẢ</p>
-        <h1>Đo những gì thực sự có ý nghĩa với doanh nghiệp</h1>
-        <p>Kết quả tốt không chỉ là traffic hay lượt click. SOHO kết nối dữ liệu marketing với lead, cơ hội bán hàng và doanh thu để biết hoạt động nào đáng mở rộng.</p>
-      </section>
-      <section className="section solutionIndexGrid">
-        {metrics.map(metric => (
-          <article className="solutionIndexCard" key={metric.label}>
-            <div className="solutionIcon"><metric.icon size={24}/></div>
-            <span>{metric.label}</span>
-            <h2>{metric.title}</h2>
-            <p>{metric.text}</p>
-          </article>
-        ))}
-      </section>
-      <section className="serviceFinalCta">
-        <div>
-          <p className="eyebrow gold">BÁO CÁO MINH BẠCH</p>
-          <h2>Muốn biết kênh nào đang tạo ra doanh thu?</h2>
-          <p>SOHO có thể audit nhanh tracking, dashboard và phễu chuyển đổi hiện tại để chỉ ra điểm nghẽn cần ưu tiên.</p>
-        </div>
-        <a className="btn primary btnGlow" href={sitePath('/lien-he')}>
-          <span>Nhận audit</span>
-          <ArrowRight size={18}/>
-          <span className="btnSweep"></span>
-        </a>
-      </section>
-      <Footer />
-    </main>
+    <>
+      <Header activeNav="results"/>
+      <main>
+        <PageHeader
+          crumbs={[{label: 'Kết quả'}]}
+          title="Đo những con số có ý nghĩa với doanh nghiệp"
+          lead="Traffic và lượt click vẫn được theo dõi, nhưng không phải thước đo chính. SOHO nối dữ liệu marketing với lead, cơ hội bán hàng và doanh thu để biết việc nào đáng làm tiếp."
+        />
+
+        <Section index="01" label="Chỉ số" variant="wide" spacing="sm" title="Mỗi kênh, SOHO xem gì">
+          <div className={styles.tableWrap}>
+            <table className={styles.table}>
+              <thead>
+                <tr>
+                  <th scope="col">Kênh</th>
+                  <th scope="col">Hằng tuần</th>
+                  <th scope="col">Hằng tháng</th>
+                  <th scope="col">Không dùng làm KPI chính</th>
+                </tr>
+              </thead>
+              <tbody>
+                {channels.map(c => (
+                  <tr key={c.name}>
+                    <th scope="row">{c.name}</th>
+                    <td data-label="Hằng tuần">{c.weekly}</td>
+                    <td data-label="Hằng tháng">{c.monthly}</td>
+                    <td data-label="Không dùng làm KPI chính" className={styles.muted}>{c.notKpi}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </Section>
+
+        <Section
+          index="02"
+          label="Dự án"
+          variant="wide"
+          tone="paper2"
+          title="Dự án đang triển khai"
+          intro="Số liệu từng dự án chỉ công bố khi khách hàng đồng ý."
+        >
+          <ul className={styles.cases}>
+            {clients.map(client => (
+              <li key={client.name} className={styles.case}>
+                <div className={styles.caseHead}>
+                  <img src={sitePath(client.logo)} alt="" loading="lazy" className={styles.caseLogo}/>
+                  <h3 className={styles.caseName}>{client.name}</h3>
+                  <p className={styles.caseField}>{client.field}</p>
+                  <p className={styles.caseScope}>{client.scope}</p>
+                </div>
+                <dl className={styles.caseBody}>
+                  <div><dt>Bối cảnh</dt><dd><Placeholder>[CẦN CASE STUDY THẬT]</Placeholder></dd></div>
+                  <div><dt>Việc đã làm</dt><dd><Placeholder>[CẦN CASE STUDY THẬT]</Placeholder></dd></div>
+                  <div><dt>Kết quả</dt><dd><Placeholder>[CẦN SỐ LIỆU THẬT]</Placeholder></dd></div>
+                </dl>
+              </li>
+            ))}
+          </ul>
+        </Section>
+
+        <CtaBand
+          title="Muốn biết kênh nào đang tạo ra doanh thu?"
+          text="SOHO audit nhanh tracking, dashboard và phễu chuyển đổi hiện tại để chỉ ra chỗ số liệu đang sai hoặc thiếu."
+          label="Đặt lịch audit"
+        />
+      </main>
+      <Footer/>
+    </>
   );
 }
