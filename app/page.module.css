@@ -6,7 +6,6 @@
   column-gap:var(--gap);
   row-gap:40px;
 }
-.heroMeta{grid-column:1 / -1}
 .heroTitle{
   grid-column:1 / span 10;
   font-size:clamp(44px,7.4vw,104px);
@@ -32,22 +31,22 @@
 }
 .heroFocus a:hover{color:var(--accent-ink)}
 
-/* Khách hàng */
-.clients{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule)}
-.client{
+/* Dòng bằng chứng dưới hero */
+.heroProof{
+  grid-column:1 / -1;
+  margin:16px 0 0;
   display:grid;
-  grid-template-columns:minmax(0,2fr) minmax(0,3fr) minmax(0,4fr) minmax(0,3fr);
+  grid-template-columns:repeat(3,minmax(0,1fr));
   gap:var(--gap);
-  align-items:center;
-  padding:16px 0;
-  border-bottom:1px solid var(--rule);
+  border-top:1px solid var(--ink);
+  padding-top:16px;
 }
-.clientLogo{display:flex;align-items:center;height:36px}
-.clientLogo img{max-height:36px;max-width:120px;width:auto;object-fit:contain;filter:grayscale(1);opacity:.85;transition:filter var(--t-fast),opacity var(--t-fast)}
-.client:hover .clientLogo img{filter:none;opacity:1}
-.clientName{font-family:var(--font-display);font-size:21px;text-decoration:none}
-.clientField{color:var(--ink-2);font-size:var(--fs-small)}
-.clientScope{font-size:var(--fs-meta);color:var(--ink-3);font-weight:500}
+.heroProof dt{font-size:var(--fs-meta);font-weight:500;color:var(--ink-3)}
+.heroProof dd{margin:4px 0 0;font-family:var(--font-display);font-size:clamp(22px,2.2vw,30px);line-height:1.2}
+.heroProof dd :global(.placeholder){font-family:var(--font-text);font-size:var(--fs-small)}
+
+/* Dự án */
+.partners{margin-top:56px}
 
 /* Dịch vụ */
 .serviceGroups{display:grid;gap:56px}
@@ -135,10 +134,7 @@
   .heroTitle,.heroLead,.heroFocus{grid-column:1 / -1}
   .heroFocus{margin-top:8px}
 
-  .client{grid-template-columns:96px minmax(0,1fr);row-gap:4px;align-items:start}
-  .clientLogo{grid-row:span 3;height:auto;padding-top:6px}
-  .clientLogo img{max-width:80px;max-height:28px}
-  .clientField,.clientScope{grid-column:2}
+  .heroProof{grid-template-columns:1fr;gap:12px}
 
   .serviceGroupName,.serviceList{grid-column:1 / -1}
   .serviceGroupName{padding-top:0}

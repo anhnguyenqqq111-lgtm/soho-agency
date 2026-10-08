@@ -2,8 +2,8 @@ import styles from './Footer.module.css';
 import {sitePath} from './paths';
 import {servicePages} from './servicePagesData';
 import {solutionPages} from './solutionPagesData';
-
-const EMAIL = 'hello@sohoagency.vn';
+import {company} from './data/company';
+import Fill from './ui/Fill';
 
 export default function Footer(){
   const year = new Date().getFullYear();
@@ -54,15 +54,32 @@ export default function Footer(){
           <div>
             <h2 className={styles.colTitle}>Liên hệ</h2>
             <ul className={styles.list}>
-              <li><a href={`mailto:${EMAIL}`}>{EMAIL}</a></li>
-              <li className={styles.plain}>Hà Nội và TP. Hồ Chí Minh</li>
+              <li><a href={`mailto:${company.email}`}>{company.email}</a></li>
+              <li className={styles.plain}>
+                {company.phone ? <a href={`tel:${company.phone.replace(/\s/g, '')}`}>{company.phone}</a> : <Fill value={null} need="CẦN SỐ ĐIỆN THOẠI"/>}
+              </li>
+              <li className={styles.plain}><Fill value={company.address} need="CẦN ĐỊA CHỈ VĂN PHÒNG"/></li>
+            </ul>
+            <h2 className={`${styles.colTitle} ${styles.colTitleGap}`}>Theo dõi</h2>
+            <ul className={styles.list}>
+              {company.socials.map(s => (
+                <li key={s.label}>
+                  {s.url
+                    ? <a href={s.url} target="_blank" rel="noopener noreferrer">{s.label}</a>
+                    : <span className={styles.plain}>{s.label} <Fill value={null} need="CẦN LINK"/></span>}
+                </li>
+              ))}
             </ul>
           </div>
         </div>
 
         <div className={styles.bottom}>
-          <p>© {year} SOHO Agency</p>
-          <a href="#top">Lên đầu trang ↑</a>
+          <p>© {year} <Fill value={company.legalName} need="CẦN TÊN PHÁP NHÂN"/></p>
+          <nav aria-label="Pháp lý" className={styles.legal}>
+            <a href={sitePath('/chinh-sach-bao-mat')}>Chính sách bảo mật</a>
+            <a href={sitePath('/dieu-khoan-su-dung')}>Điều khoản sử dụng</a>
+            <a href="#top">Lên đầu trang ↑</a>
+          </nav>
         </div>
       </div>
     </footer>

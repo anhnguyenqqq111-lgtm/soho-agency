@@ -23,8 +23,9 @@
 .field input::placeholder,.field textarea::placeholder{color:var(--ink-3)}
 .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-bottom-color:var(--accent);border-bottom-width:2px;padding-bottom:9px}
 
+.actions{display:grid;gap:14px;justify-items:start}
+.consent{font-size:var(--fs-meta);color:var(--ink-2);max-width:52ch}
 .submit{
-  justify-self:start;
   background:var(--ink);
   color:var(--paper);
   border:0;
@@ -42,5 +43,5 @@
 
 @media (max-width:640px){
   .row{grid-template-columns:1fr;gap:28px}
-  .submit{justify-self:stretch}
+  .actions{justify-items:stretch}
 }

@@ -5,6 +5,8 @@ import PageHeader from '../../components/ui/PageHeader';
 import Section from '../../components/ui/Section';
 import NumberedList from '../../components/ui/NumberedList';
 import CtaBand from '../../components/ui/CtaBand';
+import Fill from '../../components/ui/Fill';
+import {company} from '../../components/data/company';
 
 export const metadata = {
   title: 'Về SOHO',
@@ -53,13 +55,13 @@ export default function AboutPage(){
         <Section index="01" label="Giới thiệu" spacing="sm">
           <div className="prose">
             <p>
-              SOHO Agency được thành lập năm <span className="placeholder">[CẦN THÔNG TIN THẬT]</span>, hiện làm việc tại Hà Nội và TP. Hồ Chí Minh với đội ngũ <span className="placeholder">[CẦN THÔNG TIN THẬT]</span> người.
+              SOHO Agency được thành lập năm <Fill value={company.foundedYear} need="CẦN NĂM THÀNH LẬP"/>, hiện làm việc tại {company.regions} với đội ngũ <Fill value={company.teamSize} need="CẦN QUY MÔ ĐỘI NGŨ"/> người.
             </p>
             <p>
               Khách hàng của SOHO thường là doanh nghiệp đã có sản phẩm và doanh thu, đã thử SEO hoặc quảng cáo nhưng chưa thấy rõ kênh nào đang mang lại khách hàng. Việc đầu tiên SOHO làm luôn là đo cho đúng, sau đó mới tăng ngân sách.
             </p>
             <p>
-              Văn phòng: <span className="placeholder">[CẦN ĐỊA CHỈ THẬT]</span>
+              Văn phòng: <Fill value={company.address} need="CẦN ĐỊA CHỈ"/>
             </p>
           </div>
         </Section>

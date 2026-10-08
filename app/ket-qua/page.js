@@ -4,6 +4,10 @@ import Footer from '../../components/Footer';
 import PageHeader from '../../components/ui/PageHeader';
 import Section from '../../components/ui/Section';
 import CtaBand from '../../components/ui/CtaBand';
+import Fill from '../../components/ui/Fill';
+import ProjectGrid from '../../components/proof/ProjectGrid';
+import PartnerStrip from '../../components/proof/PartnerStrip';
+import Testimonials from '../../components/proof/Testimonials';
 import {clients} from '../../components/data/clients';
 import {sitePath} from '../../components/paths';
 
@@ -44,8 +48,6 @@ const channels = [
     notKpi: 'Số biểu đồ trên dashboard'
   }
 ];
-
-const Placeholder = ({children}) => <span className="placeholder">{children}</span>;
 
 export default function ResultsPage(){
   return (
@@ -91,23 +93,36 @@ export default function ResultsPage(){
           title="Dự án đang triển khai"
           intro="Số liệu từng dự án chỉ công bố khi khách hàng đồng ý."
         >
+          <ProjectGrid projects={clients}/>
+          <div className={styles.partners}><PartnerStrip/></div>
+        </Section>
+
+        <Section index="03" label="Chi tiết" variant="wide" title="Từng dự án, SOHO đã làm gì">
           <ul className={styles.cases}>
             {clients.map(client => (
-              <li key={client.name} className={styles.case}>
+              <li key={client.slug} id={client.slug} className={styles.case}>
                 <div className={styles.caseHead}>
                   <img src={sitePath(client.logo)} alt="" loading="lazy" className={styles.caseLogo}/>
                   <h3 className={styles.caseName}>{client.name}</h3>
                   <p className={styles.caseField}>{client.field}</p>
                   <p className={styles.caseScope}>{client.scope}</p>
+                  <a href={client.url} target="_blank" rel="noopener noreferrer" className={styles.caseSite}>
+                    {client.url.replace(/^https?:\/\//, '')}
+                    <span className="visually-hidden"> (mở tab mới)</span>
+                  </a>
                 </div>
                 <dl className={styles.caseBody}>
-                  <div><dt>Bối cảnh</dt><dd><Placeholder>[CẦN CASE STUDY THẬT]</Placeholder></dd></div>
-                  <div><dt>Việc đã làm</dt><dd><Placeholder>[CẦN CASE STUDY THẬT]</Placeholder></dd></div>
-                  <div><dt>Kết quả</dt><dd><Placeholder>[CẦN SỐ LIỆU THẬT]</Placeholder></dd></div>
+                  <div><dt>Bối cảnh</dt><dd><Fill value={client.context} need="CẦN CASE STUDY THẬT"/></dd></div>
+                  <div><dt>Việc đã làm</dt><dd><Fill value={client.work} need="CẦN CASE STUDY THẬT"/></dd></div>
+                  <div><dt>Kết quả</dt><dd><Fill value={client.result} need="CẦN SỐ LIỆU THẬT"/></dd></div>
                 </dl>
               </li>
             ))}
           </ul>
+        </Section>
+
+        <Section index="04" label="Khách hàng nói gì" variant="wide" tone="paper2" title="Nhận xét từ khách hàng">
+          <Testimonials/>
         </Section>
 
         <CtaBand

@@ -8,6 +8,8 @@ export const servicePages = [
   {
     slug: 'seo-tong-the',
     menuDesc: 'Kỹ thuật, nội dung và entity để tạo organic lead',
+    deliverables: ['Báo cáo audit kỹ thuật', 'Bản đồ từ khóa theo hành trình mua', 'Cấu trúc pillar và cluster', 'Content brief cho từng trang', 'Kế hoạch internal link', 'Báo cáo SEO hằng tháng'],
+    artifact: {image: null, need: 'Bản đồ từ khóa thật của một dự án, đã che tên khách hàng'},
     eyebrow: 'SEO tổng thể',
     title: 'SEO tổng thể cho doanh nghiệp cần tăng trưởng organic bền vững',
     menuTitle: 'SEO tổng thể',
@@ -23,6 +25,8 @@ export const servicePages = [
   {
     slug: 'seo-ai-overview',
     menuDesc: 'Để Google và AI Search hiểu, trích dẫn đúng thương hiệu',
+    deliverables: ['Audit entity thương hiệu và tác giả', 'Danh sách câu hỏi theo chủ đề', 'Schema Organization, Author, FAQ', 'Mẫu trang trả lời trực tiếp', 'Theo dõi truy vấn có AI Overview'],
+    artifact: {image: null, need: 'Ảnh chụp AI Overview có trích dẫn website khách hàng'},
     eyebrow: 'SEO & AI Overview',
     title: 'Tối ưu SEO cho Google AI Overviews và hành vi tìm kiếm mới',
     menuTitle: 'SEO & AI Overview',
@@ -38,6 +42,8 @@ export const servicePages = [
   {
     slug: 'local-seo-google-maps',
     menuDesc: 'Google Maps, review và trang theo khu vực',
+    deliverables: ['Audit Google Business Profile', 'Bảng chuẩn hóa NAP', 'Landing page theo khu vực', 'Quy trình xin review', 'Báo cáo cuộc gọi, chỉ đường, ranking local'],
+    artifact: {image: null, need: 'Báo cáo Google Business Profile trước và sau tối ưu'},
     eyebrow: 'Local SEO & Maps',
     title: 'Local SEO và Google Maps cho doanh nghiệp cần khách hàng khu vực',
     menuTitle: 'Local SEO & Maps',
@@ -53,6 +59,8 @@ export const servicePages = [
   {
     slug: 'google-ads-shopping',
     menuDesc: 'Search, Shopping, Performance Max theo lợi nhuận',
+    deliverables: ['Audit tài khoản và tracking', 'Cấu trúc chiến dịch theo ý định', 'Bộ mẫu quảng cáo', 'Danh sách từ khóa phủ định', 'Feed sản phẩm đã tối ưu', 'Báo cáo CPA, ROAS, lợi nhuận gộp'],
+    artifact: {image: null, need: 'Cấu trúc chiến dịch hoặc báo cáo ROAS theo nhóm sản phẩm, đã che số nhạy cảm'},
     eyebrow: 'Google Ads & Shopping',
     title: 'Google Ads và Shopping tối ưu theo lead chất lượng và ROAS thật',
     menuTitle: 'Google Ads & Shopping',
@@ -68,6 +76,8 @@ export const servicePages = [
   {
     slug: 'meta-tiktok-ads',
     menuDesc: 'Hệ thống test creative và remarketing',
+    deliverables: ['Chân dung khách hàng và phản đối', 'Ma trận creative', 'Kế hoạch test', 'Cấu hình pixel và CAPI', 'Báo cáo creative và chất lượng lead'],
+    artifact: {image: null, need: 'Ma trận creative thật cùng các mẫu quảng cáo đã chạy'},
     eyebrow: 'Meta & TikTok Ads',
     title: 'Meta và TikTok Ads cho thương hiệu cần tạo nhu cầu và chuyển đổi',
     menuTitle: 'Meta & TikTok Ads',
@@ -83,6 +93,8 @@ export const servicePages = [
   {
     slug: 'cro-landing-page',
     menuDesc: 'Tăng tỷ lệ chuyển đổi trên traffic đang có',
+    deliverables: ['Audit phễu và heatmap', 'Danh sách điểm ma sát theo màn hình', 'Bản viết lại hero, CTA, bằng chứng', 'Kế hoạch A/B test', 'Báo cáo kết quả từng test'],
+    artifact: {image: null, need: 'Landing page trước và sau khi viết lại'},
     eyebrow: 'CRO landing page',
     title: 'Tối ưu tỷ lệ chuyển đổi để biến traffic thành lead và doanh thu',
     menuTitle: 'Tối ưu chuyển đổi (CRO)',
@@ -98,6 +110,8 @@ export const servicePages = [
   {
     slug: 'content-marketing-pr',
     menuDesc: 'Content hub, case study và góc PR',
+    deliverables: ['Bản đồ chủ đề và câu hỏi', 'Lịch nội dung', 'Bài pillar và cluster', 'Case study', 'Bộ tài liệu cho sales', 'Báo cáo assisted conversion'],
+    artifact: {image: null, need: 'Sơ đồ topic cluster thật của một dự án'},
     eyebrow: 'Content marketing & PR',
     title: 'Content Marketing và PR tạo niềm tin trước khi khách hàng mua',
     menuTitle: 'Content Marketing & PR',
@@ -113,6 +127,8 @@ export const servicePages = [
   {
     slug: 'ga4-looker-dashboard',
     menuDesc: 'Tracking, GA4 và Looker dashboard',
+    deliverables: ['Tracking plan', 'Quy tắc đặt tên event', 'Cấu hình GA4, GTM, CAPI', 'Looker dashboard theo vai trò', 'Tài liệu hướng dẫn đọc báo cáo'],
+    artifact: {image: null, need: 'Một trang Looker dashboard thật, đã che số nhạy cảm'},
     eyebrow: 'GA4 & Looker',
     title: 'GA4 và Looker Dashboard giúp marketing thấy được dòng tiền',
     menuTitle: 'Đo lường & phân tích GA4',
@@ -128,6 +144,8 @@ export const servicePages = [
   {
     slug: 'tu-van-chien-luoc-sprint',
     menuDesc: 'Lộ trình ưu tiên cho 30 đến 90 ngày tới',
+    deliverables: ['Biên bản phỏng vấn', 'Báo cáo audit đa kênh', 'Phân tích đối thủ', 'Roadmap 30 đến 90 ngày', 'Backlog và KPI'],
+    artifact: {image: null, need: 'Một trang roadmap sprint đã bàn giao, đã che tên khách hàng'},
     eyebrow: 'Growth strategy sprint',
     title: 'Sprint chiến lược marketing để biết nên làm gì trước',
     menuTitle: 'Tư vấn chiến lược sprint',

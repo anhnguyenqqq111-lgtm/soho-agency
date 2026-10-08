@@ -5,6 +5,7 @@ import Footer from '../../../components/Footer';
 import PageHeader from '../../../components/ui/PageHeader';
 import Button from '../../../components/ui/Button';
 import CtaBand from '../../../components/ui/CtaBand';
+import ImageSlot from '../../../components/ui/ImageSlot';
 import ArticleBody from '../../../components/article/ArticleBody';
 import {getServicePage, servicePages} from '../../../components/servicePagesData';
 import {getServiceArticle} from '../../../components/serviceArticlesData';
@@ -91,6 +92,24 @@ export default async function ServicePage({params}){
               </div>
             </div>
             <p className={styles.proof}>{service.proof}</p>
+
+            <div className={styles.deliver}>
+              <div>
+                <h2 className={styles.colTitle}>Bạn nhận được gì</h2>
+                <ul className={`${styles.list} ${styles.deliverList}`}>
+                  {service.deliverables.map(item => <li key={item}>{item}</li>)}
+                </ul>
+              </div>
+              <figure className={styles.artifact}>
+                <ImageSlot
+                  src={service.artifact.image}
+                  alt={service.artifact.need}
+                  need={service.artifact.need}
+                  size="1600×1000"
+                />
+                <figcaption>Ví dụ sản phẩm bàn giao: {service.artifact.need.charAt(0).toLowerCase() + service.artifact.need.slice(1)}.</figcaption>
+              </figure>
+            </div>
           </div>
         </section>
 

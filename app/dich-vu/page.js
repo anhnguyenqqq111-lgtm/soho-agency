@@ -50,6 +50,7 @@ export default function ServicesIndexPage(){
                     <tr key={service.slug}>
                       <th scope="row">
                         <a href={sitePath(`/dich-vu/${service.slug}`)}>{service.menuTitle}</a>
+                        <span className={styles.deliver}>Bàn giao: {service.deliverables.slice(0, 3).map(d => d.charAt(0).toLowerCase() + d.slice(1)).join(', ')}…</span>
                       </th>
                       <td data-label="Dành cho">{forWhom(service.intro)}</td>
                       <td data-label="Kết quả đo">{service.outcomes[0]}</td>

@@ -33,6 +33,7 @@
   text-decoration:none;
 }
 .table tbody th a:hover{color:var(--accent-ink)}
+.deliver{display:block;margin-top:8px;font-size:var(--fs-meta);color:var(--ink-3);line-height:1.45;max-width:30ch}
 .table td{font-size:var(--fs-small);color:var(--ink-2)}
 .table td:last-child{width:30%;color:var(--ink)}
 

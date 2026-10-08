@@ -36,3 +36,7 @@
   .caseHead,.caseBody{grid-column:1 / -1}
   .caseBody{grid-template-columns:1fr;gap:14px}
 }
+
+.partners{margin-top:56px}
+.case{scroll-margin-top:calc(var(--header-h) + 24px)}
+.caseSite{font-size:var(--fs-meta);margin-top:6px;color:var(--ink-2)}

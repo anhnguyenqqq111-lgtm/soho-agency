@@ -34,6 +34,19 @@
 .steps li::before{content:counter(s, decimal-leading-zero);color:var(--accent-ink);font-variant-numeric:tabular-nums;font-size:var(--fs-meta);padding-top:2px}
 .proof{margin-top:32px;font-size:var(--fs-small);color:var(--ink-2);max-width:68ch}
 
+/* Sản phẩm bàn giao */
+.deliver{
+  margin-top:64px;
+  display:grid;
+  grid-template-columns:repeat(12,minmax(0,1fr));
+  gap:32px var(--gap);
+  align-items:start;
+}
+.deliver > div{grid-column:1 / span 4}
+.deliverList li{font-family:var(--font-display);font-size:19px}
+.artifact{grid-column:6 / -1;margin:0;display:grid;gap:10px}
+.artifact figcaption{font-size:var(--fs-meta);color:var(--ink-2)}
+
 /* Bài viết */
 .article{padding-block:var(--space-lg)}
 
@@ -60,5 +73,7 @@
   .cols{grid-template-columns:1fr;gap:40px}
   .insight{margin-bottom:48px}
   .relatedTitle,.relatedList{grid-column:1 / -1}
+  .deliver > div,.artifact{grid-column:1 / -1}
+  .deliver{margin-top:48px}
   .relatedList a{grid-template-columns:1fr;gap:4px}
 }

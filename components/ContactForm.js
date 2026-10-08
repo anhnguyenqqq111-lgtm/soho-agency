@@ -1,6 +1,9 @@
 'use client';
 import {useState} from 'react';
 import styles from './ContactForm.module.css';
+import Fill from './ui/Fill';
+import {company} from './data/company';
+import {sitePath} from './paths';
 
 const GOALS = [
   'Tăng trưởng SEO và AI Search',
@@ -24,8 +27,7 @@ export default function ContactForm(){
       <div className={styles.done} role="status">
         <p className={styles.doneTitle}>Đã nhận thông tin.</p>
         <p>
-          SOHO sẽ phản hồi qua email trong 1 ngày làm việc{' '}
-          <span className="placeholder">[CẦN XÁC NHẬN]</span>.
+          SOHO sẽ phản hồi qua email trong <Fill value={company.responseTime} need="CẦN THỜI GIAN PHẢN HỒI"/>.
         </p>
       </div>
     );
@@ -62,7 +64,12 @@ export default function ContactForm(){
         <label htmlFor="cf-note">Ghi chú <span className={styles.optional}>không bắt buộc</span></label>
         <textarea id="cf-note" name="note" rows={3} placeholder="Ngân sách hiện tại, kênh đang chạy, mục tiêu quý tới..." />
       </div>
-      <button type="submit" className={styles.submit}>Gửi thông tin</button>
+      <div className={styles.actions}>
+        <button type="submit" className={styles.submit}>Gửi thông tin</button>
+        <p className={styles.consent}>
+          Khi gửi form, bạn đồng ý để SOHO dùng thông tin này để liên hệ lại, theo <a href={sitePath('/chinh-sach-bao-mat')}>Chính sách bảo mật</a>.
+        </p>
+      </div>
     </form>
   );
 }

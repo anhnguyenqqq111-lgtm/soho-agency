@@ -5,7 +5,12 @@ import Section from '../components/ui/Section';
 import NumberedList from '../components/ui/NumberedList';
 import Button from '../components/ui/Button';
 import ContactForm from '../components/ContactForm';
+import Fill from '../components/ui/Fill';
+import ProjectGrid from '../components/proof/ProjectGrid';
+import PartnerStrip from '../components/proof/PartnerStrip';
+import Testimonials from '../components/proof/Testimonials';
 import {clients} from '../components/data/clients';
+import {company} from '../components/data/company';
 import {getServicesByGroup} from '../components/servicePagesData';
 import {getLatestArticles} from '../components/blogData';
 import {sitePath} from '../components/paths';
@@ -66,7 +71,6 @@ export default function Home(){
         {/* Hero */}
         <section className={styles.hero}>
           <div className={`container ${styles.heroGrid}`}>
-            <p className={`meta ${styles.heroMeta}`}>SOHO Agency, Hà Nội và TP. Hồ Chí Minh</p>
             <h1 className={styles.heroTitle}>
               Marketing được đo bằng <em>lead và doanh thu</em>, không bằng lượt click.
             </h1>
@@ -87,26 +91,26 @@ export default function Home(){
                 ))}
               </ul>
             </nav>
+            <dl className={styles.heroProof}>
+              <div><dt>Thành lập</dt><dd><Fill value={company.foundedYear} need="CẦN NĂM"/></dd></div>
+              <div><dt>Khách hàng đã làm</dt><dd><Fill value={company.clientCount} need="CẦN SỐ THẬT"/></dd></div>
+              <div><dt>Văn phòng</dt><dd>{company.regions}</dd></div>
+            </dl>
           </div>
         </section>
 
-        {/* Khách hàng */}
-        <Section index="01" label="Khách hàng" variant="wide" spacing="sm" title="Một số doanh nghiệp SOHO đang làm cùng">
-          <ul className={styles.clients}>
-            {clients.map(client => (
-              <li key={client.name} className={styles.client}>
-                <span className={styles.clientLogo}>
-                  <img src={sitePath(client.logo)} alt="" loading="lazy"/>
-                </span>
-                <a href={client.url} target="_blank" rel="noopener noreferrer" className={styles.clientName}>
-                  {client.name}
-                  <span className="visually-hidden"> (mở tab mới)</span>
-                </a>
-                <span className={styles.clientField}>{client.field}</span>
-                <span className={styles.clientScope}>{client.scope}</span>
-              </li>
-            ))}
-          </ul>
+        {/* Dự án */}
+        <Section
+          id="du-an"
+          index="01"
+          label="Dự án"
+          variant="wide"
+          spacing="md"
+          title="Một số doanh nghiệp SOHO đang làm cùng"
+        >
+          <ProjectGrid projects={clients} linkBase="/ket-qua"/>
+          <div className={styles.partners}><PartnerStrip/></div>
+          <p className={styles.more}><Button href="/ket-qua" variant="text">Xem chi tiết từng dự án</Button></p>
         </Section>
 
         {/* Dịch vụ */}
@@ -182,8 +186,13 @@ export default function Home(){
           <NumberedList items={steps}/>
         </Section>
 
+        {/* Nhận xét */}
+        <Section index="05" label="Khách hàng nói gì" variant="wide" title="Nhận xét từ khách hàng">
+          <Testimonials/>
+        </Section>
+
         {/* Bài viết */}
-        <Section index="05" label="Bài viết" variant="wide" spacing="md" title="Ghi chép từ đội SOHO">
+        <Section index="06" label="Bài viết" variant="wide" spacing="md" title="Ghi chép từ đội SOHO">
           <ul className={styles.posts}>
             {latest.map(post => (
               <li key={post.slug}>
@@ -201,7 +210,7 @@ export default function Home(){
         {/* Liên hệ */}
         <Section
           id="lien-he"
-          index="06"
+          index="07"
           label="Liên hệ"
           variant="split"
           spacing="lg"

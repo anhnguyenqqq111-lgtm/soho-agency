@@ -32,7 +32,8 @@ h1{font-size:var(--fs-h1);line-height:var(--lh-tight);letter-spacing:-.025em}
 h2{font-size:var(--fs-h2);line-height:var(--lh-head);letter-spacing:-.018em}
 h3{font-size:var(--fs-h3);line-height:1.25;letter-spacing:-.01em}
 h4{font-size:var(--fs-h4);line-height:1.3;font-family:var(--font-text);font-weight:600}
-p{margin:0}
+p{margin:0;text-wrap:pretty}
+li,dd,blockquote{text-wrap:pretty}
 em{font-style:italic}
 
 a{

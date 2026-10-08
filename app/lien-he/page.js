@@ -3,13 +3,15 @@ import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import ContactForm from '../../components/ContactForm';
 import {sitePath} from '../../components/paths';
+import Fill from '../../components/ui/Fill';
+import {company} from '../../components/data/company';
 
 export const metadata = {
   title: 'Liên hệ',
   description: 'Gửi website và mục tiêu hiện tại cho SOHO Agency. SOHO xem các kênh bạn đang chạy và đề xuất việc nên làm trước.'
 };
 
-const EMAIL = 'hello@sohoagency.vn';
+const EMAIL = company.email;
 
 const steps = [
   'SOHO xem website và các kênh bạn đang chạy.',
@@ -37,8 +39,10 @@ export default function ContactPage(){
 
             <dl className={styles.info}>
               <div><dt>Email</dt><dd><a href={`mailto:${EMAIL}`}>{EMAIL}</a></dd></div>
-              <div><dt>Khu vực</dt><dd>Hà Nội và TP. Hồ Chí Minh</dd></div>
-              <div><dt>Giờ làm việc</dt><dd><span className="placeholder">[CẦN XÁC NHẬN]</span></dd></div>
+              <div><dt>Điện thoại</dt><dd><Fill value={company.phone} need="CẦN SỐ ĐIỆN THOẠI"/></dd></div>
+              <div><dt>Văn phòng</dt><dd><Fill value={company.address} need="CẦN ĐỊA CHỈ"/></dd></div>
+              <div><dt>Khu vực</dt><dd>{company.regions}</dd></div>
+              <div><dt>Giờ làm việc</dt><dd><Fill value={company.hours} need="CẦN GIỜ LÀM VIỆC"/></dd></div>
             </dl>
           </div>
           <div className={styles.form}>
