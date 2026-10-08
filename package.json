@@ -1,1 +1,21 @@
-{"scripts":{"dev":"next dev","build":"next build","start":"next start"},"dependencies":{"next":"15.5.4","react":"19.1.1","react-dom":"19.1.1"}}
+{
+  "name": "soho-agency",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Website SOHO Agency, Next.js 15 xuất tĩnh",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "build:pages": "GITHUB_PAGES=true next build",
+    "start": "next start",
+    "serve": "npx serve out"
+  },
+  "dependencies": {
+    "next": "15.5.4",
+    "react": "19.1.1",
+    "react-dom": "19.1.1"
+  }
+}
