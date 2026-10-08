@@ -1,0 +1,69 @@
+.layout{
+  display:grid;
+  grid-template-columns:repeat(12,minmax(0,1fr));
+  column-gap:var(--gap);
+}
+.toc{grid-column:1 / span 3}
+.body{grid-column:5 / -1;min-width:0}
+
+/* Mục lục */
+.tocDesktop{position:sticky;top:calc(var(--header-h) + 32px);max-height:calc(100vh - var(--header-h) - 64px);overflow-y:auto}
+.tocLabel{font-size:var(--fs-meta);font-weight:500;color:var(--ink-3);margin-bottom:12px}
+.tocList{list-style:none;margin:0;padding:0;border-top:1px solid var(--ink)}
+.tocList li{border-bottom:1px solid var(--rule)}
+.tocList a{
+  display:grid;
+  grid-template-columns:28px minmax(0,1fr);
+  gap:6px;
+  padding:10px 0;
+  font-size:14px;
+  line-height:1.4;
+  color:var(--ink-2);
+  text-decoration:none;
+}
+.tocList a:hover{color:var(--accent-ink)}
+.tocIndex{font-variant-numeric:tabular-nums;color:var(--ink-3)}
+.tocActive{color:var(--ink)!important;font-weight:500}
+.tocActive .tocIndex{color:var(--accent-ink)}
+
+.tocMobile{display:none}
+
+/* Nội dung */
+.section{padding-bottom:64px;margin-bottom:64px;border-bottom:1px solid var(--rule)}
+.section:last-child{border-bottom:0;margin-bottom:0}
+.index{font-size:var(--fs-meta);font-weight:500;color:var(--accent-ink);font-variant-numeric:tabular-nums;margin-bottom:12px}
+.heading{font-size:clamp(28px,3vw,40px);line-height:1.15;max-width:24ch;margin-bottom:32px}
+
+/* FAQ */
+.faq{border-top:1px solid var(--ink);max-width:68ch}
+.faqItem{border-bottom:1px solid var(--rule)}
+.faqItem summary{
+  list-style:none;
+  cursor:pointer;
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 20px;
+  gap:16px;
+  padding:20px 0;
+  font-family:var(--font-display);
+  font-size:21px;
+  line-height:1.3;
+}
+.faqItem summary::-webkit-details-marker{display:none}
+.faqItem summary::after{content:'+';color:var(--accent);font-family:var(--font-text);text-align:right}
+.faqItem[open] summary::after{content:'−'}
+.faqItem summary:hover{color:var(--accent-ink)}
+.faqItem > div{padding-bottom:24px}
+
+@media (max-width:900px){
+  .toc,.body{grid-column:1 / -1}
+  .tocDesktop{display:none}
+  .tocMobile{
+    display:block;
+    margin-bottom:48px;
+    border-top:1px solid var(--ink);
+    border-bottom:1px solid var(--rule);
+  }
+  .tocMobile summary{cursor:pointer;padding:14px 0;font-weight:500;font-size:15px}
+  .tocMobile .tocList{border-top-color:var(--rule)}
+  .section{padding-bottom:48px;margin-bottom:48px}
+}
