@@ -17,8 +17,8 @@ function toMenu(groups, base){
 
 export default function Header({activeNav}){
   const menus = {
-    services: {label: 'Dịch vụ', allLabel: 'Tất cả dịch vụ', allHref: sitePath('/dich-vu'), groups: toMenu(getServicesByGroup(), '/dich-vu')},
-    solutions: {label: 'Giải pháp', allLabel: 'Tất cả giải pháp', allHref: sitePath('/giai-phap'), groups: toMenu(getSolutionsByGroup(), '/giai-phap')}
+    services: {label: 'Dịch vụ', allLabel: 'Tất cả dịch vụ', allHref: sitePath('/dich-vu'), sideTitle: 'Chưa biết chọn gì?', sideText: 'Gửi website, SOHO chỉ ra việc nên làm trước.', groups: toMenu(getServicesByGroup(), '/dich-vu')},
+    solutions: {label: 'Giải pháp', allLabel: 'Tất cả giải pháp', allHref: sitePath('/giai-phap'), sideTitle: 'Theo mô hình của bạn', sideText: 'B2B, bán lẻ hay SME, mỗi mô hình một thứ tự ưu tiên.', groups: toMenu(getSolutionsByGroup(), '/giai-phap')}
   };
   const links = [
     {key: 'about', label: 'Giới thiệu', href: sitePath('/ve-soho'), first: true},

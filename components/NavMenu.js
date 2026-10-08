@@ -6,24 +6,23 @@ const MENU_KEYS = ['services', 'solutions'];
 
 function MenuPanel({id, menu, onNavigate}){
   return (
-    <div id={id} className={styles.panel}>
-      <div className={`container ${styles.panelInner}`}>
-        {menu.groups.map(({group, items}) => (
-          <div key={group}>
-            <p className={styles.panelGroup}>{group}</p>
+    <div id={id} className={styles.panel} style={{'--cols': menu.groups.length, '--panel-w': menu.groups.length === 3 ? '1040px' : '800px'}}>
+      <div className={styles.panelInner}>
+        {menu.groups.map(({group, items}, gi) => (
+          <div key={group} className={styles.panelCol}>
+            <p className={styles.panelGroup}><span>{String(gi + 1).padStart(2, '0')}</span>{group}</p>
             <ul className={styles.panelList}>
               {items.map(item => (
-                <li key={item.href}>
-                  <a href={item.href} onClick={onNavigate}>
-                    <span className={styles.panelTitle}>{item.title}</span>
-                    {item.desc && <span className={styles.panelDesc}>{item.desc}</span>}
-                  </a>
-                </li>
+                <li key={item.href}><a href={item.href} onClick={onNavigate}>{item.title}<span aria-hidden="true">→</span></a></li>
               ))}
             </ul>
           </div>
         ))}
-        <p className={styles.panelAll}><a href={menu.allHref} onClick={onNavigate}>{menu.allLabel} →</a></p>
+        <div className={styles.panelSide}>
+          <p className={styles.panelSideTitle}>{menu.sideTitle}</p>
+          <p className={styles.panelSideText}>{menu.sideText}</p>
+          <a href={menu.allHref} onClick={onNavigate} className={styles.panelAll}>{menu.allLabel}<span aria-hidden="true">→</span></a>
+        </div>
       </div>
     </div>
   );
