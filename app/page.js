@@ -8,7 +8,7 @@ import Button from '../components/ui/Button';
 import ImageSlot from '../components/ui/ImageSlot';
 import Faq from '../components/ui/Faq';
 import CtaBand from '../components/ui/CtaBand';
-import JourneyTimeline from '../components/diagrams/JourneyTimeline';
+import JourneyGrid from '../components/diagrams/JourneyGrid';
 import Track from '../components/diagrams/Track';
 import ProjectCarousel from '../components/proof/ProjectCarousel';
 import BlogCard from '../components/BlogCard';
@@ -84,7 +84,7 @@ export default function Home(){
           intro="Khách hàng đi từ chưa biết đến mua qua ba chặng. Ở mỗi chặng họ hỏi một câu khác nhau, nên SOHO theo dõi một bộ chỉ số khác nhau."
           spacing="lg"
         >
-          <JourneyTimeline/>
+          <JourneyGrid/>
         </Section>
 
         {/* Dự án */}

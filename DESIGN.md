@@ -91,7 +91,7 @@ Mỗi trang mở đầu bằng hero cao gần một màn hình, chia 2 cột: tr
 
 ### 2.6. Trang chủ
 
-Hero → khối mở đầu (chữ, 3 ✓, nút viền, ảnh thật) → hàng logo → dòng thời gian zigzag (`JourneyTimeline`): trục giữa tự vẽ, 3 khối lệch trái/phải, mỗi khối có thanh tiêu đề đỏ, câu khách hỏi, mục tiêu và chỉ số theo kênh; mobile trục lệch trái → băng chuyền dự án (`ProjectCarousel`) → quy trình đường ray trên nền tối → 4 nguyên tắc dạng thẻ + ảnh đội → blog → form trên nền kem → FAQ kẻ dòng.
+Hero → khối mở đầu (chữ, 3 ✓, nút viền, ảnh thật) → hàng logo → lưới hành trình (`JourneyGrid`): hàng là tiêu chí (phụ trách, giai đoạn, khách hỏi, mục tiêu, 4 kênh), cột là 3 chặng; cột 3 là khối tối liền viền gradient; mobile thành 3 thẻ dọc → băng chuyền dự án (`ProjectCarousel`) → quy trình đường ray trên nền tối → 4 nguyên tắc dạng thẻ + ảnh đội → blog → form trên nền kem → FAQ kẻ dòng.
 
 ### 2.7. Trang con
 
