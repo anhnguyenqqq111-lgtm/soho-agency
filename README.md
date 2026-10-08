@@ -34,11 +34,13 @@ Sau đó mỗi lần push `main` Vercel tự deploy lại; mỗi branch hoặc P
 
 Cách 2, qua CLI:
 
+Chạy từng lệnh một. Lệnh `vercel` tạo bản preview và lần đầu sẽ hỏi link project. Lệnh `vercel --prod` deploy bản chính.
+
 ```bash
 npm i -g vercel
 vercel login
-vercel          # deploy preview, lần đầu sẽ hỏi link project
-vercel --prod   # deploy production
+vercel
+vercel --prod
 ```
 
 Không thêm biến môi trường nào trên Vercel. Nếu lỡ đặt `GITHUB_PAGES=true`, mọi link sẽ thừa `/soho-agency` và hỏng.
