@@ -24,6 +24,25 @@ Workflow đặt `GITHUB_PAGES=true` để `next.config.js` thêm basePath `/soho
 
 Mọi link nội bộ và đường dẫn ảnh phải đi qua `sitePath()` trong `components/paths.js`, nếu không sẽ hỏng khi có basePath.
 
+### Demo trên Vercel
+
+Không cần cấu hình gì thêm: không đặt `GITHUB_PAGES` nên basePath rỗng, site chạy ở root domain.
+
+Cách 1, qua web: vào <https://vercel.com/new>, chọn Import Git Repository, trỏ tới repo GitHub này.
+Vercel tự nhận Next.js, giữ nguyên Build Command `next build` và Output Directory mặc định, bấm Deploy.
+Sau đó mỗi lần push `main` Vercel tự deploy lại; mỗi branch hoặc PR có link preview riêng.
+
+Cách 2, qua CLI:
+
+```bash
+npm i -g vercel
+vercel login
+vercel          # deploy preview, lần đầu sẽ hỏi link project
+vercel --prod   # deploy production
+```
+
+Không thêm biến môi trường nào trên Vercel. Nếu lỡ đặt `GITHUB_PAGES=true`, mọi link sẽ thừa `/soho-agency` và hỏng.
+
 ## Cấu trúc
 
 ```text
