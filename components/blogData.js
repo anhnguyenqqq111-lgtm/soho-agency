@@ -21,7 +21,7 @@ export const articles = [
     content: `
       <h2>1. AI Search đang thay đổi hành vi tìm kiếm như thế nào?</h2>
       <p>Năm 2026 đánh dấu bước ngoặt lớn nhất trong lịch sử công cụ tìm kiếm kể từ khi Google ra đời. Sự phổ biến của <strong>Google AI Overviews</strong>, <strong>Perplexity</strong> và <strong>SearchGPT</strong> đã định hình lại thói quen của người dùng: từ "tìm danh sách liên kết xanh" sang "nhận câu trả lời tổng hợp tức thì".</p>
-      <p>Điều này không có nghĩa là SEO đã chết, mà là SEO đang tiến hóa thành <strong>GEO (Generative Engine Optimization)</strong> – Tối ưu hóa cho các công cụ tạo sinh.</p>
+      <p>Điều này không có nghĩa là SEO đã chết, mà là SEO đang tiến hóa thành <strong>GEO (Generative Engine Optimization)</strong>: tối ưu hóa cho các công cụ tạo sinh.</p>
       
       <blockquote>
         "Doanh nghiệp không còn cạnh tranh chỉ để nằm ở vị trí #1 của trang tìm kiếm, mà cạnh tranh để trở thành Nguồn Trích Dẫn Đáng Tin Cậy Nhất trong câu trả lời tổng hợp của AI."
@@ -36,7 +36,7 @@ export const articles = [
       </ul>
 
       <h2>3. Lời khuyên hành động cho quý tới</h2>
-      <p>Đội ngũ SOHO Agency khuyến nghị các doanh nghiệp rà soát lại toàn bộ hệ thống bài viết cũ, cập nhật Schema Organization & Author chuyên sâu, đồng thời tái cấu trúc nội dung theo mô hình hỏi - đáp thực chiến.</p>
+      <p>Đội ngũ SOHO Agency khuyến nghị các doanh nghiệp rà soát lại toàn bộ hệ thống bài viết cũ, cập nhật Schema Organization & Author chuyên sâu, đồng thời tái cấu trúc nội dung theo mô hình hỏi đáp thực chiến.</p>
     `
   },
   {
@@ -51,15 +51,15 @@ export const articles = [
     featured: false,
     content: `
       <h2>1. Chi phí click rẻ (CPC) có thực sự là một chỉ số tốt?</h2>
-      <p>Rất nhiều chiến dịch quảng cáo khoe CPC chỉ 500đ - 1.000đ và CTR trên 15%, nhưng khi đối chiếu với số đơn chốt thực tế tại bộ phận Sale thì tỷ lệ hủy đơn hoặc lead rác lên tới 80%. Đây là cái bẫy tối ưu hóa số lượng thay vì chất lượng.</p>
+      <p>Rất nhiều chiến dịch quảng cáo khoe CPC chỉ 500đ đến 1.000đ và CTR trên 15%, nhưng khi đối chiếu với số đơn chốt thực tế tại bộ phận Sale thì tỷ lệ hủy đơn hoặc lead rác lên tới 80%. Đây là cái bẫy tối ưu hóa số lượng thay vì chất lượng.</p>
 
       <h2>2. Mô hình đo lường 4 tầng của SOHO Agency</h2>
       <p>Thay vì dừng lại ở dashboard của Meta hay Google Ads, SOHO đồng bộ số liệu quảng cáo với hệ thống CRM của doanh nghiệp:</p>
       <ol>
-        <li><strong>Tầng 1 - Kênh hiển thị:</strong> CPC, CTR, CPM (Kiểm soát chi phí tiếp cận).</li>
-        <li><strong>Tầng 2 - Chuyển đổi trang:</strong> Conversion Rate, Cost Per Lead (CPL).</li>
-        <li><strong>Tầng 3 - Chất lượng cơ hội:</strong> MQL (Marketing Qualified Lead) và SQL (Sales Qualified Lead).</li>
-        <li><strong>Tầng 4 - Tài chính kinh doanh:</strong> Customer Acquisition Cost (CAC), Return on Ad Spend (ROAS) và Lợi nhuận gộp.</li>
+        <li><strong>Tầng 1. Kênh hiển thị:</strong> CPC, CTR, CPM (Kiểm soát chi phí tiếp cận).</li>
+        <li><strong>Tầng 2. Chuyển đổi trang:</strong> Conversion Rate, Cost Per Lead (CPL).</li>
+        <li><strong>Tầng 3. Chất lượng cơ hội:</strong> MQL (Marketing Qualified Lead) và SQL (Sales Qualified Lead).</li>
+        <li><strong>Tầng 4. Tài chính kinh doanh:</strong> Customer Acquisition Cost (CAC), Return on Ad Spend (ROAS) và Lợi nhuận gộp.</li>
       </ol>
 
       <h2>3. Tối ưu theo tín hiệu giá trị cao</h2>
@@ -139,7 +139,7 @@ export const articles = [
     authorRole: 'Technical Director @ SOHO',
     featured: false,
     content: `
-      <h2>1. Thất thoát dữ liệu - Kẻ thù giấu mặt của các chiến dịch Ads</h2>
+      <h2>1. Thất thoát dữ liệu, Kẻ thù giấu mặt của các chiến dịch Ads</h2>
       <p>Với các tính năng bảo mật trên iOS, Safari ITP và trình duyệt chặn quảng cáo, các thẻ script Pixel chạy trên trình duyệt (Client-side) đang bị chặn lên tới 30-40%. Thuật toán quảng cáo vì thế bị "mù", không nhận được tín hiệu ai vừa mua hàng để tối ưu tiếp.</p>
 
       <h2>2. Giải pháp Server-side Tracking toàn diện</h2>

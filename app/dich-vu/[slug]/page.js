@@ -6,6 +6,9 @@ import PageHeader from '../../../components/ui/PageHeader';
 import Button from '../../../components/ui/Button';
 import CtaBand from '../../../components/ui/CtaBand';
 import ImageSlot from '../../../components/ui/ImageSlot';
+import ServiceDiagram from '../../../components/diagrams/ServiceDiagrams';
+import Track from '../../../components/diagrams/Track';
+import BeforeAfter from '../../../components/diagrams/BeforeAfter';
 import ArticleBody from '../../../components/article/ArticleBody';
 import {getServicePage, servicePages} from '../../../components/servicePagesData';
 import {getServiceArticle} from '../../../components/serviceArticlesData';
@@ -68,30 +71,32 @@ export default async function ServicePage({params}){
         {/* Tóm tắt */}
         <section className={styles.summary} aria-label="Tóm tắt dịch vụ">
           <div className="container">
-            <blockquote className={styles.insight}>
-              <p>{service.insight}</p>
-            </blockquote>
-            <div className={styles.cols}>
+            <div className={styles.intro}>
               <div>
-                <h2 className={styles.colTitle}>Dấu hiệu bạn cần dịch vụ này</h2>
-                <ul className={styles.list}>
-                  {service.pains.map(item => <li key={item}>{item}</li>)}
-                </ul>
+                <blockquote className={styles.insight}>
+                  <p>{service.insight}</p>
+                </blockquote>
+                <p className={styles.proof}>{service.proof}</p>
               </div>
-              <div>
-                <h2 className={styles.colTitle}>Kết quả cần đạt</h2>
-                <ul className={styles.list}>
-                  {service.outcomes.map(item => <li key={item}>{item}</li>)}
-                </ul>
-              </div>
-              <div>
-                <h2 className={styles.colTitle}>SOHO làm gì</h2>
-                <ol className={`${styles.list} ${styles.steps}`}>
-                  {service.process.map(item => <li key={item}>{item}</li>)}
-                </ol>
+              <div className={styles.diagram}>
+                <ServiceDiagram slug={service.slug}/>
               </div>
             </div>
-            <p className={styles.proof}>{service.proof}</p>
+
+            <div className={styles.block}>
+              <h2 className={styles.blockTitle}>Từ chỗ đang vướng đến kết quả cần đạt</h2>
+              <BeforeAfter
+                before={service.pains}
+                after={service.outcomes}
+                beforeLabel="Dấu hiệu bạn đang gặp"
+                afterLabel="Kết quả cần đạt"
+              />
+            </div>
+
+            <div className={styles.block}>
+              <h2 className={styles.blockTitle}>SOHO làm gì</h2>
+              <Track items={service.process.map(title => ({title}))}/>
+            </div>
 
             <div className={styles.deliver}>
               <div>

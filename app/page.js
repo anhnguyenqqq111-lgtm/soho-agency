@@ -2,7 +2,7 @@ import styles from './page.module.css';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Section from '../components/ui/Section';
-import NumberedList from '../components/ui/NumberedList';
+import Track from '../components/diagrams/Track';
 import Button from '../components/ui/Button';
 import ContactForm from '../components/ContactForm';
 import Fill from '../components/ui/Fill';
@@ -28,19 +28,19 @@ const focusAreas = [
 const principles = [
   {
     title: 'Doanh nghiệp sở hữu tài khoản và dữ liệu',
-    text: 'Tài khoản quảng cáo, GA4, GTM, Search Console và dashboard đứng tên doanh nghiệp. SOHO được cấp quyền để làm việc, không giữ tài khoản. Dừng hợp tác thì toàn bộ dữ liệu vẫn ở lại với bạn.'
+    text: 'Tài khoản quảng cáo, GA4 và dashboard đứng tên bạn. Dừng hợp tác, dữ liệu vẫn ở lại.'
   },
   {
     title: 'Người lập chiến lược là người trực tiếp làm',
-    text: 'Người phân tích và đề xuất ở buổi đầu cũng là người vận hành tài khoản, viết brief và trình bày báo cáo. Không có bước chuyển giao xuống một đội khác sau khi ký hợp đồng.'
+    text: 'Người đề xuất ở buổi đầu cũng là người vận hành tài khoản và trình bày báo cáo.'
   },
   {
     title: 'Làm theo sprint 2 tuần',
-    text: 'Mỗi sprint bắt đầu bằng giả thuyết và danh sách việc, kết thúc bằng một buổi xem số liệu. Việc nào không tạo tín hiệu thì dừng, ngân sách chuyển sang việc đang hiệu quả.'
+    text: 'Hai tuần một lần xem số liệu. Việc không tạo tín hiệu thì dừng.'
   },
   {
     title: 'Báo cáo theo lead và doanh thu',
-    text: 'Traffic, lượt hiển thị và CTR vẫn được theo dõi, nhưng không dùng làm KPI chính. Mỗi kênh có một nhóm chỉ số xem hằng tuần:'
+    text: 'Traffic và CTR vẫn được theo dõi, nhưng mỗi kênh có một nhóm chỉ số chính:'
   }
 ];
 
@@ -51,11 +51,11 @@ const weeklyMetrics = [
 ];
 
 const steps = [
-  {title: 'Hiểu bài toán kinh doanh', text: 'Làm rõ mục tiêu, khách hàng, biên lợi nhuận và cách doanh nghiệp đang tạo ra doanh thu.'},
-  {title: 'Audit dữ liệu và kênh hiện có', text: 'Xem website, tracking, tài khoản quảng cáo, đối thủ và hành trình tìm kiếm để biết đang mất cơ hội ở đâu.'},
-  {title: 'Chọn việc làm trước', text: 'Xếp hạng việc theo tác động và độ khó. Chọn ít kênh, làm kỹ, thay vì dàn trải ngân sách.'},
-  {title: 'Triển khai theo sprint', text: 'SEO, quảng cáo và nội dung chạy theo sprint 2 tuần, mỗi sprint có giả thuyết và chỉ số theo dõi.'},
-  {title: 'Đo, giữ, sửa hoặc dừng', text: 'Nhân rộng việc tạo kết quả, sửa việc có tín hiệu, dừng việc không hiệu quả. Lặp lại.'}
+  {title: 'Hiểu bài toán kinh doanh', text: 'Mục tiêu, khách hàng, biên lợi nhuận.'},
+  {title: 'Audit kênh hiện có', text: 'Website, tracking, quảng cáo, đối thủ.'},
+  {title: 'Chọn việc làm trước', text: 'Xếp theo tác động và độ khó.'},
+  {title: 'Triển khai theo sprint', text: '2 tuần một vòng, có giả thuyết và chỉ số.'},
+  {title: 'Giữ, sửa hoặc dừng', text: 'Nhân rộng việc hiệu quả, dừng việc không.'}
 ];
 
 const afterSubmit = [
@@ -195,11 +195,11 @@ export default function Home(){
           index="04"
           label="Quy trình"
           tone="paper2"
+          variant="wide"
           title="Từ buổi gọi đầu tiên đến sprint thứ ba"
-          asideMedia={<Photo image={images.homeDesk} ratio="4/5"/>}
           intro={<p>Sprint đầu tiên thường bắt đầu sau 2 tuần audit <span className="placeholder">[CẦN XÁC NHẬN]</span>.</p>}
         >
-          <NumberedList items={steps}/>
+          <Track items={steps}/>
         </Section>
 
         {/* Nhận xét */}

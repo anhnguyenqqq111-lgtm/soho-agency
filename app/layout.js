@@ -1,6 +1,7 @@
 import {Newsreader, Be_Vietnam_Pro} from 'next/font/google';
 import './styles/tokens.css';
 import './styles/base.css';
+import './styles/diagram.css';
 import RevealObserver from '../components/RevealObserver';
 
 const newsreader = Newsreader({

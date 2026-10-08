@@ -44,7 +44,7 @@ Tại sao hồ sơ doanh nghiệp của bạn có mặt trên Google Maps nhiề
    Tên doanh nghiệp, Địa chỉ và Số điện thoại (NAP) trên website một đằng, trên Google Maps một nẻo, và trên Fanpage/Zalo lại là một số khác. Thuật toán của Google bị bối rối và đánh giá thấp độ tin cậy của địa điểm, khiến vị trí của bạn bị đẩy xuống dưới Top 10.
 
 3. **Chiến lược đánh giá (Reviews) thụ động và thiếu kiểm soát:**
-   Doanh nghiệp không có quy trình chủ động xin đánh giá 5 sao từ khách hàng hài lòng, nhưng khi gặp 1–2 đánh giá tiêu cực (1 sao) từ đối thủ chơi xấu thì lại lúng túng không biết cách xử lý khủng hoảng. Kết quả là điểm đánh giá trung bình tụt xuống dưới 4.0 sao, khiến khách hàng lập tức quay xe chọn bên khác.
+   Doanh nghiệp không có quy trình chủ động xin đánh giá 5 sao từ khách hàng hài lòng, nhưng khi gặp 1 đến 2 đánh giá tiêu cực (1 sao) từ đối thủ chơi xấu thì lại lúng túng không biết cách xử lý khủng hoảng. Kết quả là điểm đánh giá trung bình tụt xuống dưới 4.0 sao, khiến khách hàng lập tức quay xe chọn bên khác.
 `
     },
     {
@@ -107,7 +107,7 @@ Tại SOHO Agency, chúng tôi không làm Local SEO bằng cách "spam từ kh�
 * **Cập nhật bài đăng (GBP Updates) định kỳ:** Đăng tải tin tức ưu đãi, sự kiện và góc nhìn chuyên môn hàng tuần để giữ tín hiệu hoạt động (Freshness Signal) ở mức cao nhất.
 
 ### Trụ cột 2: Đồng nhất Dữ liệu Toàn mạng (NAP Consistency & Local Citations)
-* Đồng bộ hóa chính xác từng dấu chấm, dấu phẩy của bộ thông tin cốt lõi **Tên - Địa chỉ - Điện thoại (NAP)** trên hơn 40 danh bạ doanh nghiệp uy tín hàng đầu tại Việt Nam (Trang Vàng, Cốc Cốc Map, Thongtindoanhnghiep, Toplist, v.v.).
+* Đồng bộ hóa chính xác từng dấu chấm, dấu phẩy của bộ thông tin cốt lõi **Tên, Địa chỉ, Điện thoại (NAP)** trên hơn 40 danh bạ doanh nghiệp uy tín hàng đầu tại Việt Nam (Trang Vàng, Cốc Cốc Map, Thongtindoanhnghiep, Toplist, v.v.).
 * Xóa bỏ hoàn toàn các hồ sơ trùng lặp (Duplicate Listings), sửa chữa các thông tin sai lệch cũ do nhân viên trước để lại.
 * Xây dựng mạng lưới trích dẫn địa phương (Local Citations) có liên kết thực thể (Entity) chặt chẽ với website chính thức.
 
@@ -127,7 +127,7 @@ Nếu doanh nghiệp có nhiều chi nhánh hoặc phục vụ nhiều quận/hu
       id: 'quy-trinh-5-buoc-local-seo',
       heading: '5. Quy trình 5 bước triển khai Local SEO thực chiến',
       content: `
-Dự án Local SEO tại SOHO được triển khai theo lộ trình 5 bước tinh gọn, mang lại kết quả tăng trưởng rõ rệt về số cuộc gọi và lượt chỉ đường sau 60–90 ngày:
+Dự án Local SEO tại SOHO được triển khai theo lộ trình 5 bước tinh gọn, mang lại kết quả tăng trưởng rõ rệt về số cuộc gọi và lượt chỉ đường sau 60 đến 90 ngày:
 
 ### Bước 1: Khảo sát Hiện Trạng & Phân Tích Lưới Địa Lý (Geo-Grid Audit)
 * Sử dụng công cụ quét lưới địa lý (Local Falcon / Geo-Grid Tracker) để đo lường chính xác thứ hạng hồ sơ Maps của bạn trên từng bán kính 500m, 1km, 3km, 5km xung quanh địa điểm.
@@ -160,7 +160,7 @@ Nhiều doanh nghiệp tự tạo hồ sơ Maps nhưng không đạt được hi
 
 | Hạng mục so sánh | Doanh nghiệp Tự làm / Nhân viên Part-time | Dịch vụ Local SEO Chuyên sâu @ SOHO |
 | :--- | :--- | :--- |
-| **Phạm vi hiển thị** | Chỉ xuất hiện khi người dùng đứng ngay sát cửa hàng (< 500m) | **Mở rộng bán kính phủ sóng toàn quận, huyện và thành phố (3km – 10km)** |
+| **Phạm vi hiển thị** | Chỉ xuất hiện khi người dùng đứng ngay sát cửa hàng (< 500m) | **Mở rộng bán kính phủ sóng toàn quận, huyện và thành phố (3km đến 10km)** |
 | **Tối ưu kỹ thuật** | Chỉ điền các thông tin cơ bản nhìn thấy bằng mắt thường | **Tối ưu toàn diện từ mã Schema, Geotag hình ảnh, Geo-Grid và Silo Landing Page** |
 | **Bảo vệ tài khoản** | Dễ bị đối thủ đề xuất chỉnh sửa địa chỉ, cướp quyền hoặc bị khóa oan | **Quy trình bảo mật tài khoản chính chủ, có phương án mở khóa và kháng nghị chuyên nghiệp** |
 | **Xử lý đánh giá xấu** | Bức xúc cãi tay đôi với khách hoặc bất lực nhìn điểm tụt | **Quy trình xử lý khủng hoảng truyền thông bài bản, báo cáo gỡ bỏ đánh giá vi phạm chính sách** |
@@ -182,13 +182,13 @@ Hãy kiểm tra hồ sơ Google Maps của doanh nghiệp bạn ngay hôm nay th
 
 #### Nhóm 2: Nội dung & Trải nghiệm Hình ảnh (Media & Engagement)
 - [ ] **6. Ảnh bìa & Logo thương hiệu sắc nét:** Tải lên hình ảnh logo chuẩn kích thước và ảnh bìa thể hiện rõ quy mô không gian kinh doanh.
-- [ ] **7. Tối thiểu 15–20 ảnh thực tế chất lượng cao:** Có đầy đủ ảnh mặt tiền nhìn từ đường phố, ảnh không gian bên trong, ảnh đội ngũ nhân viên và hình ảnh sản phẩm/dịch vụ thực tế.
+- [ ] **7. Tối thiểu 15 đến 20 ảnh thực tế chất lượng cao:** Có đầy đủ ảnh mặt tiền nhìn từ đường phố, ảnh không gian bên trong, ảnh đội ngũ nhân viên và hình ảnh sản phẩm/dịch vụ thực tế.
 - [ ] **8. Cập nhật cây dịch vụ chi tiết:** Khai báo từng dịch vụ cụ thể kèm mô tả ngắn gọn và mức giá tham khảo.
 - [ ] **9. Đăng bài viết GBP Updates hàng tuần:** Tối thiểu 1 bài đăng mỗi tuần cập nhật tin tức, kinh nghiệm hoặc chương trình ưu đãi mới nhất.
 - [ ] **10. Kích hoạt tính năng nhắn tin (Messaging):** Cài đặt ứng dụng trên điện thoại để phản hồi tin nhắn của khách hàng trong vòng 15 phút.
 
 #### Nhóm 3: Tín hiệu Uy tín & Kết nối Website (Reputation & Sync)
-- [ ] **11. Điểm đánh giá trung bình đạt từ 4.5 sao trở lên:** Có tối thiểu 30–50 đánh giá tích cực từ khách hàng thật có kèm hình ảnh và nội dung nhận xét chi tiết.
+- [ ] **11. Điểm đánh giá trung bình đạt từ 4.5 sao trở lên:** Có tối thiểu 30 đến 50 đánh giá tích cực từ khách hàng thật có kèm hình ảnh và nội dung nhận xét chi tiết.
 - [ ] **12. Tỷ lệ phản hồi đánh giá đạt 100%:** Mọi đánh giá của khách hàng đều nhận được lời cảm ơn hoặc giải đáp thấu đáo từ chủ doanh nghiệp.
 - [ ] **13. Đồng bộ thông tin NAP trên website chính thức:** Thông tin ở chân trang (Footer) và trang liên hệ của website trùng khớp 100% với Google Maps.
 - [ ] **14. Nhúng bản đồ Google Maps tương tác vào website:** Tích hợp iframe bản đồ chính thức của chi nhánh vào trang liên hệ để tạo liên kết ngữ nghĩa vững chắc.
@@ -203,10 +203,10 @@ Hãy kiểm tra hồ sơ Google Maps của doanh nghiệp bạn ngay hôm nay th
 **Trả lời:** Không có "phím tắt ma thuật" nào có thể đưa địa điểm lên Top ngay lập tức mà an toàn bền vững. Tuy nhiên, thời gian để thấy hiệu quả rõ rệt thường từ **30 đến 60 ngày** nếu doanh nghiệp thực hiện chuẩn xác 3 việc:
 1. Chuẩn hóa 100% thông tin hồ sơ và tối ưu danh mục ngành nghề.
 2. Tích hợp mã Schema LocalBusiness và đồng bộ thông tin NAP trên website.
-3. Kích hoạt chiến dịch thu thập từ 15–25 đánh giá 5 sao có chứa từ khóa dịch vụ và hình ảnh thực tế từ các khách hàng thân thiết.
+3. Kích hoạt chiến dịch thu thập từ 15 đến 25 đánh giá 5 sao có chứa từ khóa dịch vụ và hình ảnh thực tế từ các khách hàng thân thiết.
 
 ### Câu hỏi 2: Doanh nghiệp của tôi cung cấp dịch vụ online hoặc đến tận nhà khách hàng (không có cửa hàng mặt tiền) thì có làm Local SEO được không?
-**Trả lời:** **Hoàn toàn được!** Google cung cấp loại hình hồ sơ đặc biệt gọi là **Doanh nghiệp phục vụ theo khu vực (Service Area Business - SAB)**:
+**Trả lời:** **Hoàn toàn được!** Google cung cấp loại hình hồ sơ đặc biệt gọi là **Doanh nghiệp phục vụ theo khu vực (Service Area Business, SAB)**:
 * Doanh nghiệp có thể ẩn địa chỉ nhà riêng hoặc văn phòng nội bộ để bảo vệ sự riêng tư.
 * Thay vào đó, bạn khai báo các khu vực phục vụ cụ thể (các quận, huyện hoặc bán kính thành phố bạn có thể cung cấp dịch vụ). Hồ sơ của bạn vẫn sẽ xuất hiện nổi bật trên Google Maps khi người dùng trong các khu vực đó tìm kiếm dịch vụ của bạn.
 

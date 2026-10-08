@@ -9,9 +9,9 @@ export const growthStrategySprintArticle = {
     avatar: '/brand/soho-logo.png'
   },
   toc: [
-    { id: 'tham-kich-dan-trai-nguon-luc', title: '1. Thực trạng: Thảm kịch "Dàn trải nguồn lực" - Làm đủ mọi kênh nhưng không kênh nào ra tiền' },
+    { id: 'tham-kich-dan-trai-nguon-luc', title: '1. Thực trạng: Thảm kịch "Dàn trải nguồn lực", làm đủ mọi kênh nhưng không kênh nào ra tiền' },
     { id: 'chi-phi-co-hoi-loay-hoay-doi-agency', title: '2. Chi phí cơ hội: Vòng xoáy đổi agency liên tục và cái giá của sự thiếu chiến lược' },
-    { id: 'ban-chat-growth-sprint-soho', title: '3. Bản chất Phương pháp luận Growth Sprint 30–90 Ngày của SOHO' },
+    { id: 'ban-chat-growth-sprint-soho', title: '3. Bản chất Phương pháp luận Growth Sprint 30 đến 90 Ngày của SOHO' },
     { id: '4-tru-cot-chan-doan-chien-luoc', title: '4. 4 Trụ cột chẩn đoán sức khỏe doanh nghiệp & xác định đòn bẩy tăng trưởng' },
     { id: 'quy-trinh-5-buoc-growth-sprint', title: '5. Quy trình 5 bước vận hành Sprint chiến lược thực chiến' },
     { id: 'bang-so-sanh-growth-sprint', title: '6. So sánh: Bản kế hoạch tư vấn lý thuyết 100 trang vs Growth Sprint SOHO' },
@@ -21,14 +21,14 @@ export const growthStrategySprintArticle = {
   sections: [
     {
       id: 'tham-kich-dan-trai-nguon-luc',
-      heading: '1. Thực trạng: Thảm kịch "Dàn trải nguồn lực" - Làm đủ mọi kênh nhưng không kênh nào ra tiền',
+      heading: '1. Thực trạng: Thảm kịch "Dàn trải nguồn lực", làm đủ mọi kênh nhưng không kênh nào ra tiền',
       content: `
 ### 1.1. Căn bệnh phổ biến nhất của các doanh nghiệp SME & Scale-up
 
 Trong quá trình tư vấn chiến lược cho hàng trăm nhà sáng lập (Founders) và Giám đốc điều hành (CEOs), chúng tôi thường nghe thấy cùng một tiếng thở dài ngao ngán:
 * *"Công ty tôi cái gì cũng làm: vừa chạy Google Ads, vừa thuê người chạy Facebook, vừa xây kênh TikTok, vừa thuê viết bài SEO, lại vừa làm email marketing."*
 * *"Nhân viên marketing lúc nào cũng bận rộn tối mắt tối mũi từ sáng đến đêm, các cuộc họp báo cáo diễn ra liên tục."*
-* *"Nhưng khi nhìn vào kết quả kinh doanh cuối quý: Doanh thu vẫn đi ngang, chi phí vận hành ngày càng phình to, và không một ai trong công ty — kể cả trưởng phòng marketing — có thể trả lời được chính xác: Kênh nào thực sự là động lực tăng trưởng chính của doanh nghiệp!"*
+* *"Nhưng khi nhìn vào kết quả kinh doanh cuối quý: Doanh thu vẫn đi ngang, chi phí vận hành ngày càng phình to, và không một ai trong công ty, kể cả trưởng phòng marketing, có thể trả lời được chính xác: Kênh nào thực sự là động lực tăng trưởng chính của doanh nghiệp!"*
 
 Đây chính là căn bệnh kinh điển mang tên **"Dàn trải nguồn lực" (Resource Dilution Trap)**. Doanh nghiệp có ngân sách tiếp thị giới hạn nhưng lại cố gắng xuất hiện trên mọi mặt trận chỉ vì thấy đối thủ đang làm hoặc nghe theo những lời khuyên chung chung trên mạng. 
 
@@ -68,16 +68,16 @@ Trước khi chi một đồng nào cho SEO, Ads hay Content, việc đầu tư 
     },
     {
       id: 'ban-chat-growth-sprint-soho',
-      heading: '3. Bản chất Phương pháp luận Growth Sprint 30–90 Ngày của SOHO',
+      heading: '3. Bản chất Phương pháp luận Growth Sprint 30 đến 90 Ngày của SOHO',
       content: `
 ### 3.1. Growth Strategy Sprint là gì?
 
-**Growth Strategy Sprint (Sprint Chiến Lược Tăng Trưởng)** tại SOHO Agency là chương trình tư vấn và chẩn đoán chuyên sâu kéo dài từ 2 đến 4 tuần nhằm mục tiêu: **giúp Ban lãnh đạo doanh nghiệp nhìn rõ toàn cảnh bức tranh kinh doanh, xác định chính xác nút thắt cổ chai (Bottleneck) đang kìm hãm doanh số, và thiết lập một lộ trình hành động tinh gọn 30–90 ngày rõ việc, rõ người, rõ KPI và gắn liền với dòng tiền thực tế**.
+**Growth Strategy Sprint (Sprint Chiến Lược Tăng Trưởng)** tại SOHO Agency là chương trình tư vấn và chẩn đoán chuyên sâu kéo dài từ 2 đến 4 tuần nhằm mục tiêu: **giúp Ban lãnh đạo doanh nghiệp nhìn rõ toàn cảnh bức tranh kinh doanh, xác định chính xác nút thắt cổ chai (Bottleneck) đang kìm hãm doanh số, và thiết lập một lộ trình hành động tinh gọn 30 đến 90 ngày rõ việc, rõ người, rõ KPI và gắn liền với dòng tiền thực tế**.
 
 Chúng tôi không mang đến những lý thuyết hàn lâm từ sách vở nước ngoài. Phương pháp luận Growth Sprint của SOHO dựa trên 3 nguyên tắc thực chiến:
 1. **Focus on Constraints (Tập trung vào điểm nghẽn):** Theo thuyết điểm nghẽn (Theory of Constraints), một hệ thống chỉ mạnh bằng mắt xích yếu nhất của nó. Nếu tỷ lệ chuyển đổi trang đích của bạn đang là 0.5%, thì việc đổ thêm tiền quảng cáo chỉ làm bạn nghèo đi. SOHO giúp bạn tìm ra và giải quyết đúng mắt xích yếu nhất đó trước tiên.
 2. **Short-Cycle Execution (Thực thi theo chu kỳ ngắn):** Chia nhỏ lộ trình thành các sprint 2 tuần. Thử nghiệm nhanh, học hỏi nhanh, cắt lỗ sớm những việc không hiệu quả và dồn toàn lực mở rộng những hoạt động tạo ra kết quả đột phá.
-3. **Data-Driven Prioritization (Ưu tiên dựa trên dữ liệu):** Sử dụng ma trận chấm điểm khoa học (ICE Score: Impact - Confidence - Ease) để xếp hạng các ý tưởng, chấm dứt tình trạng tranh cãi cảm tính giữa các phòng ban.
+3. **Data-Driven Prioritization (Ưu tiên dựa trên dữ liệu):** Sử dụng ma trận chấm điểm khoa học (ICE Score: Impact, Confidence, Ease) để xếp hạng các ý tưởng, chấm dứt tình trạng tranh cãi cảm tính giữa các phòng ban.
 `
     },
     {
@@ -122,7 +122,7 @@ Chương trình tư vấn chiến lược Sprint của SOHO diễn ra cô đọn
 * Đội ngũ chuyên gia của SOHO tiến hành rà soát độc lập trên toàn bộ hệ thống: Mã nguồn website, tài khoản quảng cáo, dữ liệu GA4, quy trình xử lý lead trên CRM và nghiên cứu thị trường ngách.
 * Lập bảng báo cáo chẩn đoán điểm nghẽn với đầy đủ bằng chứng số liệu cụ thể, chỉ rõ những chỗ rò rỉ ngân sách cần bịt lại ngay lập tức.
 
-### Tuần 3: Thiết Kế Bản Đồ Chiến Lược & Lộ Trình Sprint 30–90 Ngày (Strategy Formulation)
+### Tuần 3: Thiết Kế Bản Đồ Chiến Lược & Lộ Trình Sprint 30 đến 90 Ngày (Strategy Formulation)
 * Xây dựng bản đồ chiến lược tăng trưởng bao gồm: Thông điệp định vị sắc bén, Danh mục kênh tiếp thị cần ưu tiên, Ngân sách phân bổ tối ưu và Kế hoạch hành động chi tiết theo từng sprint 2 tuần.
 * Đặt ra các chỉ số đo lường hiệu quả (North Star Metric & KPIs) gắn liền với mục tiêu doanh thu của hội đồng quản trị.
 
@@ -142,11 +142,11 @@ Bảng đối chiếu làm rõ sự khác biệt giữa các dịch vụ tư v�
 
 | Tiêu chí đối chiếu | Dịch Vụ Tư Vấn Chiến Lược Lý Thuyết | Growth Strategy Sprint @ SOHO |
 | :--- | :--- | :--- |
-| **Sản phẩm bàn giao** | Tập tài liệu PowerPoint/PDF dày 100–200 trang toàn mô hình sách vở | **Bảng lộ trình hành động tinh gọn 30–90 ngày rõ việc, rõ người, rõ KPI** |
+| **Sản phẩm bàn giao** | Tập tài liệu PowerPoint/PDF dày 100 đến 200 trang toàn mô hình sách vở | **Bảng lộ trình hành động tinh gọn 30 đến 90 ngày rõ việc, rõ người, rõ KPI** |
 | **Tính ứng dụng** | Rất khó thực thi, nhân sự đọc xong không biết thứ 2 tuần sau phải làm gì | **Thực thi được ngay lập tức từ ngày hôm sau với các đầu việc cụ thể** |
-| **Thời gian triển khai** | Mất từ 3 đến 6 tháng nghiên cứu rườm rà, lãng phí thời gian cơ hội | **Hoàn thành chẩn đoán và đóng gói lộ trình chiến lược chỉ trong 2–4 tuần** |
+| **Thời gian triển khai** | Mất từ 3 đến 6 tháng nghiên cứu rườm rà, lãng phí thời gian cơ hội | **Hoàn thành chẩn đoán và đóng gói lộ trình chiến lược chỉ trong 2 đến 4 tuần** |
 | **Cơ sở dữ liệu** | Dựa trên các báo cáo ngành chung chung của nước ngoài | **Đào sâu vào số liệu tài chính, dữ liệu CRM và khách hàng thực tế của doanh nghiệp** |
-| **Sự đồng hành** | Thuyết trình xong là hết trách nhiệm, mặc kệ doanh nghiệp tự bơi | **Đồng hành cố vấn chuyên môn mỗi 2 tuần trong suốt 60–90 ngày thực thi** |
+| **Sự đồng hành** | Thuyết trình xong là hết trách nhiệm, mặc kệ doanh nghiệp tự bơi | **Đồng hành cố vấn chuyên môn mỗi 2 tuần trong suốt 60 đến 90 ngày thực thi** |
 `
     },
     {
@@ -155,7 +155,7 @@ Bảng đối chiếu làm rõ sự khác biệt giữa các dịch vụ tư v�
       content: `
 Đánh giá xem doanh nghiệp của bạn đã sẵn sàng tăng tốc mở rộng quy mô hay chưa qua **15 câu hỏi chiến lược**:
 
-#### Nhóm 1: Sự Phù Hợp Sản Phẩm - Thị Trường (Product-Market Fit)
+#### Nhóm 1: Sự Phù Hợp Sản Phẩm với Thị Trường (Product-Market Fit)
 - [ ] **1. Tỷ lệ khách hàng hài lòng và giới thiệu đạt chuẩn:** Khách hàng cũ sẵn sàng giới thiệu bạn bè hoặc có tỷ lệ mua lại ổn định.
 - [ ] **2. Lý do mua hàng rõ ràng:** Bạn biết chính xác vì sao khách hàng chọn bạn chứ không chọn đối thủ cạnh tranh lớn nhất.
 - [ ] **3. Năng lực cung ứng dịch vụ không bị nghẽn:** Nếu số lượng đơn hàng tăng gấp đôi vào tháng sau, đội ngũ vận hành của bạn vẫn đảm bảo chất lượng cam kết.
@@ -195,8 +195,8 @@ Bảng đối chiếu làm rõ sự khác biệt giữa các dịch vụ tư v�
 
 ### Câu hỏi 3: Chi phí cho một chương trình Growth Strategy Sprint là bao nhiêu và thời gian hoàn vốn ước tính như thế nào?
 **Trả lời:** Chi phí tư vấn Sprint tại SOHO được tính toán dựa trên quy mô và mức độ phức tạp của mô hình kinh doanh của doanh nghiệp:
-* Khoản đầu tư này thường chỉ tương đương với mức lương 1–2 tháng của một Giám đốc Tiếp thị (CMO) cấp cao, nhưng mang lại cho bạn sự phục vụ của một hội đồng chuyên gia đa ngành có hơn 10 năm kinh nghiệm thực chiến.
-* Về mặt hoàn vốn: Việc loại bỏ ngay lập tức 1–2 kênh quảng cáo đang đốt tiền lãng phí và tối ưu lại tỷ lệ chuyển đổi của các chiến dịch hiện có thường giúp doanh nghiệp **thu hồi 100% chi phí tư vấn ngay trong 60 ngày đầu tiên triển khai lộ trình**.
+* Khoản đầu tư này thường chỉ tương đương với mức lương 1 đến 2 tháng của một Giám đốc Tiếp thị (CMO) cấp cao, nhưng mang lại cho bạn sự phục vụ của một hội đồng chuyên gia đa ngành có hơn 10 năm kinh nghiệm thực chiến.
+* Về mặt hoàn vốn: Việc loại bỏ ngay lập tức 1 đến 2 kênh quảng cáo đang đốt tiền lãng phí và tối ưu lại tỷ lệ chuyển đổi của các chiến dịch hiện có thường giúp doanh nghiệp **thu hồi 100% chi phí tư vấn ngay trong 60 ngày đầu tiên triển khai lộ trình**.
 `
     }
   ]

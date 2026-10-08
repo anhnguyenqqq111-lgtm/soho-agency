@@ -9,7 +9,7 @@ export const contentMarketingPrArticle = {
     avatar: '/brand/soho-logo.png'
   },
   toc: [
-    { id: 'tham-kich-content-rac-khong-chuyen-doi', title: '1. Thực trạng: Bi kịch "Nội dung rác" - Đăng bài đều đặn nhưng không ai đọc' },
+    { id: 'tham-kich-content-rac-khong-chuyen-doi', title: '1. Thực trạng: Bi kịch "Nội dung rác", đăng bài đều đặn nhưng không ai đọc' },
     { id: 'chi-phi-co-hoi-mat-uy-tin-chuyen-mon', title: '2. Chi phí cơ hội: Mất vị thế chuyên gia đầu ngành vào tay đối thủ' },
     { id: 'ban-chat-content-marketing-soho', title: '3. Bản chất Content Marketing B2B & Digital PR định hướng niềm tin' },
     { id: '4-tru-cot-tai-san-noi-dung', title: '4. 4 Trụ cột xây dựng hệ sinh thái nội dung giá trị cao của SOHO' },
@@ -21,12 +21,12 @@ export const contentMarketingPrArticle = {
   sections: [
     {
       id: 'tham-kich-content-rac-khong-chuyen-doi',
-      heading: '1. Thực trạng: Bi kịch "Nội dung rác" - Đăng bài đều đặn nhưng không ai đọc',
+      heading: '1. Thực trạng: Bi kịch "Nội dung rác", đăng bài đều đặn nhưng không ai đọc',
       content: `
 ### 1.1. Nghịch lý xuất bản: Fanpage đầy ắp bài, Blog hàng trăm bài nhưng khách hàng không tin
 
 Một trong những hoạt động tiêu tốn nhiều thời gian và công sức nhất của các doanh nghiệp nhưng lại mang lại ít giá trị kinh doanh nhất chính là việc: **sản xuất nội dung để "cho có bài đăng"**:
-* Doanh nghiệp thuê nhân viên hoặc agency ngoài viết mỗi tuần 5–7 bài trên Fanpage, mỗi tháng 20–30 bài chuẩn SEO trên website.
+* Doanh nghiệp thuê nhân viên hoặc agency ngoài viết mỗi tuần 5 đến 7 bài trên Fanpage, mỗi tháng 20 đến 30 bài chuẩn SEO trên website.
 * Chi phí nhân sự và chi phí bài viết hàng tháng lên tới hàng chục triệu đồng.
 * Nhưng khi nhìn vào kết quả thực tế: Mỗi bài đăng chỉ có vài lượt like của người quen nội bộ; các bài viết blog không ai chia sẻ; và quan trọng nhất: **khách hàng trước khi ký hợp đồng vẫn luôn đặt ra những câu hỏi hoài nghi về năng lực của công ty**.
 
@@ -120,7 +120,7 @@ SOHO vận hành cỗ máy sản xuất nội dung theo quy trình 5 bước ngh
 * Rà soát các câu hỏi và rào cản thường gặp nhất trong các bản ghi âm cuộc gọi bán hàng thực tế.
 
 ### Bước 2: Thiết Lập Kế Hoạch Nội Dung Theo Phễu Chuyển Đổi (Content Roadmap)
-* Lập ma trận nội dung phân bổ đều cho 3 giai đoạn nhận thức: Thu hút (TOFU - 30%), Cân nhắc (MOFU - 40%), Quyết định (BOFU - 30%).
+* Lập ma trận nội dung phân bổ đều cho 3 giai đoạn nhận thức: Thu hút (TOFU, 30%), Cân nhắc (MOFU, 40%), Quyết định (BOFU, 30%).
 * Xác định rõ mục tiêu chuyển đổi của từng bài viết: bài nào để kéo nhận diện, bài nào để thu thập thông tin lead, bài nào để hỗ trợ sales chốt đơn.
 
 ### Bước 3: Biên Soạn Độc Bản Chuẩn E-E-A-T & Phong Cách Chuyên Nghiệp

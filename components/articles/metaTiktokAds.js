@@ -9,7 +9,7 @@ export const metaTiktokAdsArticle = {
     avatar: '/brand/soho-logo.png'
   },
   toc: [
-    { id: 'tham-kich-ad-fatigue-social', title: '1. Thực trạng: Vòng xoáy "Ad Fatigue" - Giá lead tăng vọt sau 3 ngày chạy' },
+    { id: 'tham-kich-ad-fatigue-social', title: '1. Thực trạng: Vòng xoáy "Ad Fatigue", giá lead tăng vọt sau 3 ngày chạy' },
     { id: 'chi-phi-co-hoi-mat-khach-social', title: '2. Chi phí cơ hội: Đốt tiền vào click rác và tin nhắn không phản hồi' },
     { id: 'ban-chat-paid-social-2026', title: '3. Bản chất Meta & TikTok Ads 2026: "Creative is the New Targeting"' },
     { id: '4-tru-cot-creative-performance', title: '4. 4 Trụ cột vận hành hệ thống Paid Social Performance của SOHO' },
@@ -21,13 +21,13 @@ export const metaTiktokAdsArticle = {
   sections: [
     {
       id: 'tham-kich-ad-fatigue-social',
-      heading: '1. Thực trạng: Vòng xoáy "Ad Fatigue" - Giá lead tăng vọt sau 3 ngày chạy',
+      heading: '1. Thực trạng: Vòng xoáy "Ad Fatigue", giá lead tăng vọt sau 3 ngày chạy',
       content: `
 ### 1.1. Cơn ác mộng của mọi nhà bán hàng trên mạng xã hội
 
 Trên các nền tảng mạng xã hội như Facebook, Instagram và TikTok, quy luật thành bại của quảng cáo diễn ra với tốc độ chóng mặt. Nhiều doanh nghiệp thường trải qua cùng một kịch bản thất vọng:
-* Ngày 1 – 2: Khởi chạy một mẫu quảng cáo video hoặc hình ảnh mới, tín hiệu rất khả quan, giá mỗi tin nhắn hoặc lượt điền form chỉ 30.000 – 50.000 VNĐ, đơn hàng về đều đặn.
-* Ngày 4 – 5: Ban giám đốc quyết định tăng gấp đôi ngân sách để mở rộng quy mô (Scale). Nhưng ngay lập tức, chi phí trên mỗi kết quả (CPA) tăng vọt lên gấp 3 lần (120.000 – 180.000 VNĐ).
+* Ngày 1 đến 2: Khởi chạy một mẫu quảng cáo video hoặc hình ảnh mới, tín hiệu rất khả quan, giá mỗi tin nhắn hoặc lượt điền form chỉ 30.000 đến 50.000 VNĐ, đơn hàng về đều đặn.
+* Ngày 4 đến 5: Ban giám đốc quyết định tăng gấp đôi ngân sách để mở rộng quy mô (Scale). Nhưng ngay lập tức, chi phí trên mỗi kết quả (CPA) tăng vọt lên gấp 3 lần (120.000 đến 180.000 VNĐ).
 * Tuần thứ 2: Tần suất hiển thị lặp lại quá cao, khách hàng bắt đầu để lại các bình luận tiêu cực, chi phí đắt đỏ và chiến dịch rơi vào trạng thái "chết lâm sàng".
 
 Hiện tượng này được gọi là **Sự kiệt sức của quảng cáo (Ad Fatigue)**. Khi một mẫu quảng cáo bị lặp đi lặp lại trước cùng một nhóm đối tượng, người dùng sinh ra cơ chế phòng vệ tâm lý: họ lướt qua mà không thèm nhìn. 
@@ -59,7 +59,7 @@ Một trong những tổn thất vô hình lớn nhất mà các chiến dịch 
 
 TikTok và Meta Reels đã định nghĩa lại hoàn toàn cách người tiêu dùng tiếp nhận thông tin. Nếu doanh nghiệp của bạn vẫn tiếp tục chạy quảng cáo bằng những hình ảnh banner tĩnh đơn điệu, bạn đang tự gạt mình ra khỏi vùng chú ý của hơn 70% người dùng mạng xã hội hiện đại. 
 
-Các đối thủ cạnh tranh sử dụng video ngắn chân thực (UGC - User Generated Content), review trải nghiệm thực tế và giải quyết nỗi đau của khách hàng đang chiếm lĩnh toàn bộ thị phần với chi phí CPM rẻ hơn một nửa.
+Các đối thủ cạnh tranh sử dụng video ngắn chân thực (UGC, User Generated Content), review trải nghiệm thực tế và giải quyết nỗi đau của khách hàng đang chiếm lĩnh toàn bộ thị phần với chi phí CPM rẻ hơn một nửa.
 `
     },
     {
@@ -96,9 +96,9 @@ Sau các bản cập nhật quyền riêng tư iOS của Apple, hơn 30% dữ li
 
 ### Trụ cột 3: Phễu Chuyển đổi Đa Tầng (Full-Funnel Remarketing Architecture)
 Thay vì bắt người lạ mua hàng ngay lập tức, SOHO xây dựng phễu 3 tầng logic:
-* **Tầng 1 (Cold Traffic - Thu hút):** Tiếp cận tệp khách hàng chưa từng biết đến thương hiệu bằng các nội dung chia sẻ giá trị, giải quyết vấn đề và định vị chuyên môn.
-* **Tầng 2 (Warm Traffic - Nuôi dưỡng):** Nhắm lại những người đã xem trên 50% video hoặc tương tác với trang bằng các video Case Study thực tế, bằng chứng khách hàng thành công và video giải đáp thắc mắc.
-* **Tầng 3 (Hot Traffic - Chuyển đổi):** Đưa ra lời đề nghị không thể chối từ, ưu đãi giới hạn thời gian hoặc lời mời tư vấn trực tiếp cho những người đã truy cập trang đích hoặc thêm hàng vào giỏ nhưng chưa thanh toán.
+* **Tầng 1 (Cold Traffic, Thu hút):** Tiếp cận tệp khách hàng chưa từng biết đến thương hiệu bằng các nội dung chia sẻ giá trị, giải quyết vấn đề và định vị chuyên môn.
+* **Tầng 2 (Warm Traffic, Nuôi dưỡng):** Nhắm lại những người đã xem trên 50% video hoặc tương tác với trang bằng các video Case Study thực tế, bằng chứng khách hàng thành công và video giải đáp thắc mắc.
+* **Tầng 3 (Hot Traffic, Chuyển đổi):** Đưa ra lời đề nghị không thể chối từ, ưu đãi giới hạn thời gian hoặc lời mời tư vấn trực tiếp cho những người đã truy cập trang đích hoặc thêm hàng vào giỏ nhưng chưa thanh toán.
 
 ### Trụ cột 4: Báo cáo Theo dõi Giá trị Trọn đời & Lợi nhuận Ròng (LTV & Net Margin Reporting)
 * Kết nối dữ liệu quảng cáo với tỷ lệ chốt đơn của phòng kinh doanh và tỷ lệ hoàn hàng thực tế.
@@ -122,7 +122,7 @@ Quy trình triển khai dịch vụ Meta & TikTok Ads tại SOHO được vận 
 
 ### Bước 3: Khởi Chạy Chiến Dịch Thử Nghiệm Tinh Gọn (Sandbox Testing)
 * Đưa các mẫu sáng tạo mới vào chiến dịch thử nghiệm với ngân sách nhỏ và có kiểm soát để đo lường các chỉ số tương tác sớm: Tỷ lệ giữ chân 3 giây đầu (Hook Rate > 30%), Tỷ lệ xem hết video (Hold Rate), và Chi phí trên mỗi lượt click vào link (Outbound CPC).
-* Loại bỏ ngay lập tức 70% các mẫu kém hiệu quả trong vòng 48–72 giờ để bảo toàn ngân sách.
+* Loại bỏ ngay lập tức 70% các mẫu kém hiệu quả trong vòng 48 đến 72 giờ để bảo toàn ngân sách.
 
 ### Bước 4: Mở Rộng Ngân Sách Cho Các Mẫu Chiến Thắng (Scaling Phase)
 * Đưa 30% các mẫu quảng cáo chiến thắng (Winning Creatives) sang chiến dịch mở rộng ngân sách chính với các nhóm đối tượng rộng (Broad Targeting) và tệp tương tự chất lượng cao (Lookalike Audiences dựa trên danh sách khách mua hàng thực tế).
@@ -142,7 +142,7 @@ Sự khác biệt giữa cách chạy quảng cáo ăn may và hệ thống khoa
 | Tiêu chí đối chiếu | Agency "Bào Tệp" Truyền Thống | SOHO Creative Performance Engine |
 | :--- | :--- | :--- |
 | **Chiến lược tiếp cận** | Cố gắng đổi target, nhân nhóm, sao chép chiến dịch liên tục | **Tập trung đổi mới góc tiếp cận sáng tạo (Creative Angles & Hooks)** |
-| **Sản xuất nội dung** | Làm 1–2 video rồi chạy suốt nhiều tháng cho đến khi cạn tệp | **Hệ thống sản xuất và thử nghiệm liên tục từ 10–20 biến thể mới mỗi tháng** |
+| **Sản xuất nội dung** | Làm 1 đến 2 video rồi chạy suốt nhiều tháng cho đến khi cạn tệp | **Hệ thống sản xuất và thử nghiệm liên tục từ 10 đến 20 biến thể mới mỗi tháng** |
 | **Đo lường kỹ thuật** | Chỉ cài Pixel cơ bản trên web, mất dữ liệu sau cập nhật iOS | **Cài đặt hệ thống Server-side CAPI & TikTok Events API đạt điểm tối đa** |
 | **Mục tiêu tối thượng** | Khoe giá tin nhắn/lead rẻ nhưng không quan tâm chất lượng | **Cam kết chi phí trên mỗi khách hàng đạt chuẩn (Qualified Lead) và ROAS** |
 | **Quy trình báo cáo** | Báo cáo số liệu trong trình quản lý quảng cáo (Ads Manager) | **Dashboard Looker Studio đồng bộ dữ liệu doanh thu và tỷ lệ chốt đơn thực tế** |
@@ -164,7 +164,7 @@ Sự khác biệt giữa cách chạy quảng cáo ăn may và hệ thống khoa
 - [ ] **5. Tỷ lệ giữ chân 3 giây đầu (Hook Rate) đạt trên 30%:** Tối thiểu 30% người xem dừng lại xem tiếp video sau 3 giây đầu tiên lướt qua.
 - [ ] **6. Video có phụ đề động rõ ràng:** 80% người dùng mạng xã hội lướt video ở chế độ tắt âm thanh; video bắt buộc phải có phụ đề to, rõ ràng.
 - [ ] **7. Tỷ lệ khung hình chuẩn 9:16 cho thiết bị di động:** Tận dụng 100% diện tích màn hình điện thoại, không dùng video ngang 16:9 bị thu nhỏ.
-- [ ] **8. Tối thiểu 3–5 biến thể sáng tạo mới được thử nghiệm mỗi 2 tuần:** Duy trì quy trình kiểm thử liên tục để chống hiện tượng Ad Fatigue.
+- [ ] **8. Tối thiểu 3 đến 5 biến thể sáng tạo mới được thử nghiệm mỗi 2 tuần:** Duy trì quy trình kiểm thử liên tục để chống hiện tượng Ad Fatigue.
 - [ ] **9. Thông điệp lời đề nghị (Offer) rõ ràng trong 15 giây đầu:** Người xem hiểu ngay giải pháp này mang lại lợi ích gì mà không cần chờ đến cuối video.
 
 #### Nhóm 3: Hiệu quả Kinh doanh & Tối ưu Phễu (Conversion & ROI)
@@ -173,7 +173,7 @@ Sự khác biệt giữa cách chạy quảng cáo ăn may và hệ thống khoa
 - [ ] **12. Tần suất hiển thị (Frequency) ở mức an toàn:** Tần suất hiển thị dưới 2.5 lần trong 7 ngày đối với tệp khách hàng lạnh (Cold Audience).
 - [ ] **13. Quy trình phản hồi tin nhắn/lead dưới 10 phút:** Đội ngũ kinh doanh liên hệ với khách hàng trong vòng 10 phút kể từ khi phát sinh chuyển đổi.
 - [ ] **14. Theo dõi sát sao tỷ lệ hoàn hàng / hủy hẹn:** Định kỳ rà soát nguồn chiến dịch tạo ra các đơn hàng ảo để cắt giảm ngân sách kịp thời.
-- [ ] **15. Duy trì tỷ lệ hiệu quả tiếp thị (MER) ở mức sinh lời:** Tổng doanh thu mang lại luôn cao gấp tối thiểu 3–5 lần tổng chi phí quảng cáo bỏ ra.
+- [ ] **15. Duy trì tỷ lệ hiệu quả tiếp thị (MER) ở mức sinh lời:** Tổng doanh thu mang lại luôn cao gấp tối thiểu 3 đến 5 lần tổng chi phí quảng cáo bỏ ra.
 `
     },
     {

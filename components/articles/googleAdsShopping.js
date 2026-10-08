@@ -39,7 +39,7 @@ Nghịch lý này xảy ra khi tài khoản Google Ads được tối ưu hóa t
    Nhiều đơn vị thiết lập chiến dịch PMax tự động hoàn toàn mà không loại trừ từ khóa thương hiệu (Brand Keywords) và không lọc từ khóa phủ định (Negative Keywords). Thuật toán tự động "ăn gian" số liệu bằng cách đấu thầu chính tên thương hiệu của bạn (vốn dĩ khách hàng tự tìm cũng ra) để khoe chỉ số ROAS 10x ảo, trong khi không hề mang lại khách hàng mới nào (Net New Customers).
 
 2. **Đấu thầu từ khóa quá rộng (Broad Match Spiders):**
-   Sử dụng từ khóa so khớp mở rộng mà không có danh sách hàng nghìn từ khóa phủ định chuyên sâu. Ví dụ: doanh nghiệp bán *"phần mềm quản trị kho bãi B2B cao cấp"* nhưng quảng cáo lại hiển thị cho người tìm kiếm: *"phần mềm quản lý kho bãi crack miễn phí"* hoặc *"tải app quản lý kho trên điện thoại"*. Mỗi click tốn 40.000 – 70.000 VNĐ nhưng giá trị kinh doanh bằng 0.
+   Sử dụng từ khóa so khớp mở rộng mà không có danh sách hàng nghìn từ khóa phủ định chuyên sâu. Ví dụ: doanh nghiệp bán *"phần mềm quản trị kho bãi B2B cao cấp"* nhưng quảng cáo lại hiển thị cho người tìm kiếm: *"phần mềm quản lý kho bãi crack miễn phí"* hoặc *"tải app quản lý kho trên điện thoại"*. Mỗi click tốn 40.000 đến 70.000 VNĐ nhưng giá trị kinh doanh bằng 0.
 
 3. **Trang đích (Landing Page) không ăn khớp với Ý định Tìm kiếm (Message Mismatch):**
    Mẫu quảng cáo hứa hẹn một đằng nhưng trang đích lại nói một nẻo; trang tải chậm trên 4 giây trên thiết bị di động, form đăng ký phức tạp khiến 85% người dùng thoát trang ngay trong 3 giây đầu tiên.
@@ -73,7 +73,7 @@ Mỗi một đồng ngân sách lãng phí vào các click chuột vô nghĩa l�
 Tại SOHO Agency, chúng tôi định nghĩa lại cách vận hành Google Ads: **Google Ads không phải là mua lượt click, Google Ads là cỗ máy mua doanh thu và lợi nhuận có thể dự đoán được (Predictable Revenue Engine)**.
 
 Thay vì dừng lại ở việc báo cáo số lượng click, CTR hay chi phí mỗi chuyển đổi form (CPL ảo), hệ thống SOHO Performance Ads can thiệp sâu vào toàn bộ chuỗi giá trị:
-1. **Theo dõi chuyển đổi ngoại tuyến (Offline Conversion Tracking - OCT):** Đồng bộ dữ liệu từ phần mềm quản lý bán hàng (CRM / ERP / POS) ngược trở lại tài khoản Google Ads.
+1. **Theo dõi chuyển đổi ngoại tuyến (Offline Conversion Tracking, OCT):** Đồng bộ dữ liệu từ phần mềm quản lý bán hàng (CRM / ERP / POS) ngược trở lại tài khoản Google Ads.
 2. **Dạy thuật toán máy học phân biệt Lead chất lượng cao (Value-Based Bidding):** Khi một khách hàng tiềm năng được đội ngũ sales xác nhận là "Lead đạt chuẩn" hoặc "Đã ký hợp đồng", tín hiệu giá trị thực tế này sẽ được gửi về Google Ads để thuật toán chỉ tập trung tìm kiếm những người có tiềm năng mua hàng tương tự.
 3. **Tối ưu hóa theo Biên lợi nhuận gộp (Profit-Driven Optimization):** Phân nhóm chiến dịch theo biên lợi nhuận của từng dòng sản phẩm để đặt mục tiêu ROAS/CPA tương ứng, đảm bảo mọi chiến dịch đều tạo ra lợi nhuận ròng thực tế cho doanh nghiệp.
 `
@@ -127,7 +127,7 @@ SOHO triển khai và tối ưu hóa tài khoản Google Ads theo chu kỳ Sprin
 
 ### Bước 4: Khởi Chạy Theo Dõi & Huấn Luyện Thuật Toán Smart Bidding
 * Khởi chạy chiến dịch với chiến lược đặt giá thầu thủ công có kiểm soát (Manual CPC / Enhanced CPC) để thu thập dữ liệu chuyển đổi sạch ban đầu.
-* Khi tài khoản tích lũy đủ số lượng chuyển đổi chất lượng (thường sau 30–45 ngày), chuyển dịch sang chiến lược Đấu thầu thông minh nâng cao (Target CPA / Target ROAS) dựa trên giá trị kinh doanh thực tế.
+* Khi tài khoản tích lũy đủ số lượng chuyển đổi chất lượng (thường sau 30 đến 45 ngày), chuyển dịch sang chiến lược Đấu thầu thông minh nâng cao (Target CPA / Target ROAS) dựa trên giá trị kinh doanh thực tế.
 
 ### Bước 5: Báo Cáo Doanh Thu Thời Gian Thực & Mở Rộng Quy Mô (Scale Up)
 * Bàn giao Dashboard Looker Studio kết nối trực tiếp tài khoản Google Ads với doanh thu, cho phép Ban giám đốc theo dõi từng đồng chi phí và lợi nhuận gộp theo từng ngày.
@@ -164,7 +164,7 @@ Trước khi tăng thêm ngân sách cho Google Ads, hãy yêu cầu đội ngũ
 #### Nhóm 2: Cài đặt Chiến dịch & Kiểm soát Ngân sách (Settings & Control)
 - [ ] **5. Tắt Mạng hiển thị trên chiến dịch Tìm kiếm:** Bỏ chọn ô "Include Google Display Network" trong chiến dịch Search để tránh bị đốt ngân sách vào các banner rác trong ứng dụng game.
 - [ ] **6. Định vị vị trí địa lý chuẩn xác:** Chọn tùy chọn "Presence: People in or regularly in your included locations" để ngăn chặn người ở nước ngoài nhấp vào quảng cáo dịch vụ nội địa.
-- [ ] **7. Áp dụng danh sách từ khóa phủ định cấp tài khoản:** Có danh sách phủ định tối thiểu 300–500 từ khóa rác được áp dụng cho toàn bộ các chiến dịch.
+- [ ] **7. Áp dụng danh sách từ khóa phủ định cấp tài khoản:** Có danh sách phủ định tối thiểu 300 đến 500 từ khóa rác được áp dụng cho toàn bộ các chiến dịch.
 - [ ] **8. Tách biệt chiến dịch Brand và Non-Brand:** Không gộp từ khóa thương hiệu chung với từ khóa sản phẩm để có cái nhìn trung thực nhất về hiệu quả thu hút khách hàng mới.
 
 #### Nhóm 3: Chất lượng Mẫu Quảng cáo & Trang Đích (Creative & Quality Score)
@@ -183,7 +183,7 @@ Trước khi tăng thêm ngân sách cho Google Ads, hãy yêu cầu đội ngũ
       content: `
 ### Câu hỏi 1: Ngân sách tối thiểu để bắt đầu chạy chiến dịch Google Ads hiệu quả cùng SOHO là bao nhiêu?
 **Trả lời:** Chúng tôi khuyến nghị mức ngân sách quảng cáo tối thiểu từ **15.000.000 đến 30.000.000 VNĐ/tháng** đối với các doanh nghiệp SME/B2B:
-* Mức ngân sách này đảm bảo tài khoản tích lũy đủ khối lượng lượt nhấp và chuyển đổi cần thiết (tối thiểu 30–50 chuyển đổi/tháng) để thuật toán máy học của Google có thể tối ưu hóa hiệu quả.
+* Mức ngân sách này đảm bảo tài khoản tích lũy đủ khối lượng lượt nhấp và chuyển đổi cần thiết (tối thiểu 30 đến 50 chuyển đổi/tháng) để thuật toán máy học của Google có thể tối ưu hóa hiệu quả.
 * Nếu ngân sách quá nhỏ (dưới 500.000 VNĐ/ngày), tài khoản sẽ bị hạn chế hiển thị liên tục, chu kỳ thử nghiệm kéo dài và rất khó để đánh giá chính xác hiệu quả kinh doanh của từng nhóm từ khóa.
 
 ### Câu hỏi 2: Chiến dịch Performance Max (PMax) có thực sự tốt hơn chiến dịch Search và Shopping truyền thống không?

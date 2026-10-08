@@ -9,7 +9,7 @@ export const ga4LookerDashboardArticle = {
     avatar: '/brand/soho-logo.png'
   },
   toc: [
-    { id: 'tham-kich-mu-du-lieu-marketing', title: '1. Thực trạng: Thảm kịch "Mù dữ liệu" - Mỗi kênh báo một số, không biết tiền đi đâu' },
+    { id: 'tham-kich-mu-du-lieu-marketing', title: '1. Thực trạng: Thảm kịch "Mù dữ liệu", mỗi kênh báo một số, không biết tiền đi đâu' },
     { id: 'chi-phi-co-hoi-lang-phi-ngan-sach', title: '2. Chi phí cơ hội: Lãng phí 40% ngân sách tiếp thị vì ra quyết định bằng cảm tính' },
     { id: 'ban-chat-he-thong-du-lieu-soho', title: '3. Bản chất Hệ thống Đo lường Tiếp thị Hiện Đại & Single Source of Truth' },
     { id: '4-tru-cot-data-analytics-engine', title: '4. 4 Trụ cột kiến trúc dữ liệu và trực quan hóa Dashboard của SOHO' },
@@ -21,7 +21,7 @@ export const ga4LookerDashboardArticle = {
   sections: [
     {
       id: 'tham-kich-mu-du-lieu-marketing',
-      heading: '1. Thực trạng: Thảm kịch "Mù dữ liệu" - Mỗi kênh báo một số, không biết tiền đi đâu',
+      heading: '1. Thực trạng: Thảm kịch "Mù dữ liệu", mỗi kênh báo một số, không biết tiền đi đâu',
       content: `
 ### 1.1. Cơn ác mộng trong phòng họp Ban giám đốc cuối mỗi tháng
 
@@ -63,7 +63,7 @@ Theo ước tính của Gartner, các doanh nghiệp vừa và nhỏ lãng phí 
 
 ### 2.2. Lãng phí hàng trăm giờ lao động của cấp quản lý vào việc "Xào xáo bảng biểu Excel"
 
-Cuối mỗi tuần hoặc mỗi tháng, các nhà quản lý tiếp thị và chuyên viên phân tích phải dành từ 2 đến 3 ngày chỉ để tải file dữ liệu từ Facebook Ads, Google Ads, TikTok Ads, CRM và Google Sheets về máy, sau đó ngồi copy - paste thủ công để tạo ra một bản báo cáo slide thuyết trình. 
+Cuối mỗi tuần hoặc mỗi tháng, các nhà quản lý tiếp thị và chuyên viên phân tích phải dành từ 2 đến 3 ngày chỉ để tải file dữ liệu từ Facebook Ads, Google Ads, TikTok Ads, CRM và Google Sheets về máy, sau đó ngồi copy paste thủ công để tạo ra một bản báo cáo slide thuyết trình. 
 
 Đến thời điểm bản báo cáo đó được trình lên Ban giám đốc, dữ liệu trong đó đã bị lỗi thời 5 ngày. Doanh nghiệp hoàn toàn mất đi khả năng phản ứng nhanh trước những biến động giá thầu và xu hướng tiêu dùng trên thị trường.
 `
@@ -79,7 +79,7 @@ Tại SOHO Agency, chúng tôi xây dựng giải pháp đo lường dựa trên
 Một hệ thống đo lường xuất sắc tại SOHO phải giải quyết triệt để 3 câu hỏi sống còn của người làm kinh doanh:
 1. **Khách hàng sinh lời cao nhất đến từ đâu?** (Kênh tiếp thị, chiến dịch, từ khóa hoặc mẫu video cụ thể nào đóng góp lớn nhất vào lợi nhuận).
 2. **Hành trình mua hàng diễn ra như thế nào?** (Bao nhiêu điểm chạm, mất bao nhiêu ngày từ lúc nhìn thấy thương hiệu đến khi quẹt thẻ thanh toán).
-3. **Mỗi đồng ngân sách bỏ ra đang mang về bao nhiêu đồng lợi nhuận gộp?** (Đo lường chỉ số ROAS thực tế và Customer Acquisition Cost - CAC chuẩn xác).
+3. **Mỗi đồng ngân sách bỏ ra đang mang về bao nhiêu đồng lợi nhuận gộp?** (Đo lường chỉ số ROAS thực tế và Customer Acquisition Cost, CAC chuẩn xác).
 `
     },
     {
@@ -101,7 +101,7 @@ Chúng tôi không thu thập dữ liệu hỗn loạn; chúng tôi xây dựng 
 
 ### Trụ cột 3: Mô Hình Phân Bổ Giá Trị Đa Kênh (Data-Driven Attribution Modeling)
 Chấm dứt việc tranh công giữa các kênh tiếp thị:
-* Kích hoạt mô hình phân bổ dựa trên dữ liệu (Data-Driven Attribution - DDA) trong GA4, sử dụng thuật toán máy học để đánh giá công bằng đóng góp của từng điểm chạm trên toàn bộ hành trình khách hàng.
+* Kích hoạt mô hình phân bổ dựa trên dữ liệu (Data-Driven Attribution, DDA) trong GA4, sử dụng thuật toán máy học để đánh giá công bằng đóng góp của từng điểm chạm trên toàn bộ hành trình khách hàng.
 * Cung cấp góc nhìn phân tích phễu đa kênh (Multi-Channel Funnel Reports) giúp ban giám đốc nhìn rõ vai trò mở phễu (First-click), vai trò nuôi dưỡng (Assist-click) và vai trò chốt hạ (Last-click) của từng kênh.
 
 ### Trụ cột 4: Trực Quan Hóa Báo Cáo Thời Gian Thực Trên Looker Studio (Executive Dashboard)
@@ -117,7 +117,7 @@ Xóa bỏ hoàn toàn các bản báo cáo Excel thủ công nặng nề:
       id: 'quy-trinh-sprint-trien-khai-ga4',
       heading: '5. Quy trình Sprint 5 bước chuẩn hóa dữ liệu & xây dựng Dashboard thực chiến',
       content: `
-SOHO triển khai dự án chuẩn hóa dữ liệu và xây dựng Dashboard theo quy trình 5 bước tinh gọn trong 14–21 ngày:
+SOHO triển khai dự án chuẩn hóa dữ liệu và xây dựng Dashboard theo quy trình 5 bước tinh gọn trong 14 đến 21 ngày:
 
 ### Bước 1: Khảo Sát Nhu Cầu Dữ Liệu & Kiểm Toán Hệ Thống Hiện Tại (Tracking Audit)
 * Phỏng vấn Ban giám đốc và các trưởng bộ phận để xác định danh sách các câu hỏi kinh doanh cốt lõi mà báo cáo cần phải trả lời hàng ngày.
@@ -148,7 +148,7 @@ Sự khác biệt giữa cách làm báo cáo truyền thống và hệ thống 
 | Tiêu chí đối chiếu | Báo Cáo Excel Thủ Công Truyền Thống | Live Looker Studio Dashboard @ SOHO |
 | :--- | :--- | :--- |
 | **Tính cập nhật** | Dữ liệu bị trễ từ 3 đến 7 ngày, chỉ xem được dữ liệu quá khứ | **Cập nhật tự động theo thời gian thực (Real-time), dữ liệu luôn mới nhất từng phút** |
-| **Độ chính xác** | Rất dễ sai sót do con người copy - paste, công thức tính bị lỗi | **Chính xác tuyệt đối 100%, dữ liệu được truyền thẳng từ API gốc của nền tảng** |
+| **Độ chính xác** | Rất dễ sai sót do con người copy paste, công thức tính bị lỗi | **Chính xác tuyệt đối 100%, dữ liệu được truyền thẳng từ API gốc của nền tảng** |
 | **Thời gian chuẩn bị** | Tốn từ 10 đến 20 giờ làm việc của nhân sự mỗi tuần | **Tốn 0 giây; mở đường link trình duyệt là có sẵn toàn bộ biểu đồ hoàn chỉnh** |
 | **Khả năng tương tác** | File tĩnh, không thể lọc sâu theo chiến dịch hay phân khúc | **Tương tác linh hoạt: Lọc theo khoảng ngày, theo kênh, theo thiết bị chỉ với 1 click** |
 | **Góc nhìn kinh doanh** | Chỉ thấy các chỉ số vanity (click, view, impression rời rạc) | **Kết nối trực tiếp chi phí tiếp thị với dòng tiền doanh thu và lợi nhuận ròng** |

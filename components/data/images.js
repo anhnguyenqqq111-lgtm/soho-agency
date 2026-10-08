@@ -15,20 +15,6 @@ export const images = {
     source: 'https://unsplash.com/photos/DEdM9Vs6s8w',
     temporary: true
   },
-  homeDesk: {
-    src: '/images/stock/home-desk.jpg',
-    alt: 'Bàn làm việc cạnh cửa sổ với laptop đang mở',
-    author: 'Aleksi Tappura',
-    source: 'https://unsplash.com/photos/mCg0ZgD7BgU',
-    temporary: true
-  },
-  pageServices: {
-    src: '/images/stock/page-dich-vu.jpg',
-    alt: 'Laptop, sổ tay và tách cà phê trên bàn làm việc',
-    author: 'Alejandro Escamilla',
-    source: 'https://unsplash.com/photos/N7XodRrbzS0',
-    temporary: true
-  },
   pageSolutions: {
     src: '/images/stock/page-giai-phap.jpg',
     alt: 'Bàn làm việc nhìn từ trên xuống với laptop và tài liệu',

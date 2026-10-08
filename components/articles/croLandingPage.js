@@ -9,7 +9,7 @@ export const croLandingPageArticle = {
     avatar: '/brand/soho-logo.png'
   },
   toc: [
-    { id: 'tham-kich-cai-xo-thung-traffic', title: '1. Thực trạng: Bi kịch "Cái xô thủng" - 98% người dùng rời đi không để lại dấu vết' },
+    { id: 'tham-kich-cai-xo-thung-traffic', title: '1. Thực trạng: Bi kịch "Cái xô thủng", 98% người dùng rời đi không để lại dấu vết' },
     { id: 'chi-phi-co-hoi-cro-kem', title: '2. Chi phí cơ hội: Đốt tiền mua thêm traffic trong khi trang đích rò rỉ chuyển đổi' },
     { id: 'ban-chat-khoa-hoc-cro', title: '3. Bản chất Tối ưu Tỷ lệ Chuyển đổi (CRO) & Tâm lý học hành vi 2026' },
     { id: '4-tru-cot-cro-landing-page', title: '4. 4 Trụ cột tối ưu hóa Landing Page chuyển đổi cao của SOHO' },
@@ -21,7 +21,7 @@ export const croLandingPageArticle = {
   sections: [
     {
       id: 'tham-kich-cai-xo-thung-traffic',
-      heading: '1. Thực trạng: Bi kịch "Cái xô thủng" - 98% người dùng rời đi không để lại dấu vết',
+      heading: '1. Thực trạng: Bi kịch "Cái xô thủng", 98% người dùng rời đi không để lại dấu vết',
       content: `
 ### 1.1. Thảm kịch tiếp thị phổ biến nhất: Đổ thêm nước vào chiếc xô thủng đáy
 
@@ -29,14 +29,14 @@ Hầu hết các nhà lãnh đạo doanh nghiệp khi thấy doanh số bán hà
 
 Tuy nhiên, số liệu thực tế tại hơn 100 cuộc kiểm toán trang đích do SOHO thực hiện đã chỉ ra một sự thật cay đắng:
 * **Trung bình 97% đến 99% người truy cập vào website của bạn rời đi mà không bao giờ quay lại.**
-* Tỷ lệ chuyển đổi (Conversion Rate - CR) trung bình của các trang đích tại Việt Nam chỉ dao động ở mức từ **0.8% đến 1.5%**. Điều này đồng nghĩa với việc: Cứ mỗi 100 khách hàng tiềm năng mà bạn đã tốn tiền kéo vào website, có tới 99 người lặng lẽ bấm nút thoát trang.
+* Tỷ lệ chuyển đổi (Conversion Rate, CR) trung bình của các trang đích tại Việt Nam chỉ dao động ở mức từ **0.8% đến 1.5%**. Điều này đồng nghĩa với việc: Cứ mỗi 100 khách hàng tiềm năng mà bạn đã tốn tiền kéo vào website, có tới 99 người lặng lẽ bấm nút thoát trang.
 
 Nếu chiếc xô của bạn đang bị thủng hàng chục lỗ lớn dưới đáy, việc tiếp tục mở van xối thêm hàng trăm mét khối nước (mua thêm traffic) chỉ làm bạn tốn tiền nước hơn mà chiếc xô thì không bao giờ đầy. **Giải pháp thông minh duy nhất là phải vá chiếc xô trước khi bơm thêm nước**.
 
 ### 1.2. 3 Điểm mù khiến người dùng thoát trang ngay trong 5 giây đầu tiên
 
 1. **Khối Hero mơ hồ, nói quá nhiều về bản thân (Self-Centered Messaging):**
-   Người dùng bước vào trang web chỉ thấy những câu khẩu hiệu chung chung sáo rỗng: *"Đơn vị tiên phong hàng đầu...", "Uy tín - Tận tâm - Chuyên nghiệp..."*. Họ không tìm thấy câu trả lời cho câu hỏi ích kỷ quan trọng nhất của họ: *"Giải pháp này giải quyết được vấn đề gì cho tôi và tại sao tôi phải tin các bạn?"*.
+   Người dùng bước vào trang web chỉ thấy những câu khẩu hiệu chung chung sáo rỗng: *"Đơn vị tiên phong hàng đầu...", "Uy tín, Tận tâm, Chuyên nghiệp..."*. Họ không tìm thấy câu trả lời cho câu hỏi ích kỷ quan trọng nhất của họ: *"Giải pháp này giải quyết được vấn đề gì cho tôi và tại sao tôi phải tin các bạn?"*.
 
 2. **Điểm ma sát trải nghiệm quá lớn (High Friction):**
    Biểu mẫu đăng ký đòi hỏi quá nhiều thông tin không cần thiết (hỏi cả số CMND, địa chỉ nhà, ngân sách chi tiết khi khách còn chưa biết bạn là ai); nút bấm mờ nhạt khó tìm; trang bị giật lag trên điện thoại di động khiến người dùng bực mình thoát trang.
@@ -53,7 +53,7 @@ Nếu chiếc xô của bạn đang bị thủng hàng chục lỗ lớn dưới
 
 Hãy làm một phép tính kinh tế đơn giản để thấy được sức mạnh khổng lồ của CRO đối với sự sống còn của doanh nghiệp:
 
-* **Trường hợp A (Không làm CRO - Chỉ tăng ngân sách Ads):**
+* **Trường hợp A (Không làm CRO, Chỉ tăng ngân sách Ads):**
   * Lượng truy cập: 20.000 lượt/tháng.
   * Tỷ lệ chuyển đổi hiện tại: **1.0%** -> Thu được **200 lead**.
   * Để tăng gấp đôi số lead lên **400 lead**, bạn bắt buộc phải chi thêm gấp đôi tiền quảng cáo (tăng ngân sách từ 100 triệu lên 200 triệu VNĐ/tháng). Chi phí kinh doanh tăng vọt và rủi ro tài chính nhân đôi.
@@ -71,7 +71,7 @@ Hãy làm một phép tính kinh tế đơn giản để thấy được sức m
       content: `
 ### 3.1. CRO là gì?
 
-**Conversion Rate Optimization (CRO - Tối ưu hóa Tỷ lệ Chuyển đổi)** là phương pháp luận khoa học kết hợp giữa **phân tích dữ liệu hành vi người dùng (Data Analytics)** và **tâm lý học hành vi người tiêu dùng (Behavioral Psychology)** nhằm mục đích: loại bỏ các rào cản ngăn trở khách hàng và gia tăng tối đa tỷ lệ người truy cập thực hiện hành vi có giá trị kinh tế (điền form, gọi điện, đặt hàng, ký hợp đồng).
+**Conversion Rate Optimization (CRO, Tối ưu hóa Tỷ lệ Chuyển đổi)** là phương pháp luận khoa học kết hợp giữa **phân tích dữ liệu hành vi người dùng (Data Analytics)** và **tâm lý học hành vi người tiêu dùng (Behavioral Psychology)** nhằm mục đích: loại bỏ các rào cản ngăn trở khách hàng và gia tăng tối đa tỷ lệ người truy cập thực hiện hành vi có giá trị kinh tế (điền form, gọi điện, đặt hàng, ký hợp đồng).
 
 ### 3.2. Công thức chuyển đổi hành vi Fogg (BJ Fogg Behavior Model)
 
@@ -175,7 +175,7 @@ Trước khi chi tiền đổ traffic vào bất kỳ trang đích nào, hãy r�
 
 #### Nhóm 3: Trải nghiệm Người dùng & Kỹ thuật (UX & Performance)
 - [ ] **10. Tốc độ tải trang dưới 2 giây trên mạng 4G di động:** Không để khách hàng phải chờ đợi tải trang.
-- [ ] **11. Biểu mẫu liên hệ tối giản số trường:** Không hỏi quá 3–4 câu hỏi ở bước tiếp cận đầu tiên.
+- [ ] **11. Biểu mẫu liên hệ tối giản số trường:** Không hỏi quá 3 đến 4 câu hỏi ở bước tiếp cận đầu tiên.
 - [ ] **12. Trang cảm ơn (Thank You Page) rõ ràng:** Sau khi gửi form, hiển thị thông báo xác nhận thành công và thông báo chính xác khi nào chuyên viên sẽ liên hệ lại.
 - [ ] **13. Nút Hotline & Zalo/Messenger bám dính (Sticky CTA):** Luôn hiển thị ở góc dưới màn hình điện thoại để khách hàng có thể gọi ngay khi cần.
 - [ ] **14. Cài đặt đầy đủ mã đo lường Heatmap & Analytics:** Đảm bảo mọi click và hành vi cuộn trang đều được ghi nhận để phục vụ tối ưu hóa.
