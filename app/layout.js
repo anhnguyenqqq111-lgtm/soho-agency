@@ -29,7 +29,7 @@ export const metadata = {
 export default function RootLayout({children}){
   return (
     <html lang="vi" className={`${newsreader.variable} ${beVietnam.variable}`}>
-      <body>{children}</body>
+      <body id="top">{children}</body>
     </html>
   );
 }
