@@ -5,7 +5,7 @@ export const company = {
   taxId: null,              // Mã số thuế
   email: 'hello@sohoagency.vn',
   phone: null,
-  regions: 'Hà Nội và TP. Hồ Chí Minh',
+  regions: 'TP. Hồ Chí Minh',
   address: null,            // Địa chỉ văn phòng
   hours: null,              // Giờ làm việc, ví dụ "Thứ 2 đến thứ 6, 8:30 đến 17:30"
   foundedYear: null,        // Năm thành lập, ví dụ 2019

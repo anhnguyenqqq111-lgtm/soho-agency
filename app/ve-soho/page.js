@@ -13,7 +13,7 @@ import {company} from '../../components/data/company';
 
 export const metadata = {
   title: 'Giới thiệu',
-  description: 'SOHO Agency là đội tư vấn và triển khai digital marketing tại Hà Nội và TP. Hồ Chí Minh, làm SEO, quảng cáo, content và đo lường theo lead và doanh thu.'
+  description: 'SOHO Agency là đội tư vấn và triển khai digital marketing tại TP. Hồ Chí Minh, làm SEO, quảng cáo, content và đo lường theo lead và doanh thu.'
 };
 
 const principles = [
@@ -35,7 +35,7 @@ export default function AboutPage(){
     <>
       <Header activeNav="about"/>
       <main>
-        <Hero tone="about" crumbs={[{label: 'Giới thiệu'}]} eyebrow="Về SOHO" title="Đội marketing nói bằng số" tagline="Hà Nội và TP. Hồ Chí Minh." visual={<AboutVisual/>}/>
+        <Hero tone="about" crumbs={[{label: 'Giới thiệu'}]} eyebrow="Về SOHO" title="Đội marketing nói bằng số" tagline="Làm việc tại TP. Hồ Chí Minh." visual={<AboutVisual/>}/>
         <PageHeader title="Marketing đo được, từ chiến lược đến triển khai" lead="SOHO đồng hành từ chiến lược đến triển khai, ưu tiên những việc tạo tác động rõ tới lead, doanh thu và lợi nhuận."/>
         <Section title={<>SOHO là <span className="hl">ai</span></>}>
           <div className={styles.split}>

@@ -111,7 +111,7 @@ export default function Home(){
           <div className={styles.aboutRow}>
             <div className={styles.aboutMedia}><ImageSlot src={null} need="Ảnh đội SOHO đang làm việc" size="1600×900" ratio="16/9"/></div>
             <div className={styles.aboutCta}>
-              <p>SOHO làm việc tại Hà Nội và TP. Hồ Chí Minh, với doanh nghiệp đã có sản phẩm và doanh thu, cần biết kênh nào đang mang lại khách hàng.</p>
+              <p>SOHO làm việc tại TP. Hồ Chí Minh, với doanh nghiệp đã có sản phẩm và doanh thu, cần biết kênh nào đang mang lại khách hàng.</p>
               <Button href="/ve-soho" variant="text">Tìm hiểu về SOHO</Button>
             </div>
           </div>
