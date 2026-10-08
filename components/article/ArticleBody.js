@@ -36,7 +36,11 @@ function blocksToText(blocks){
 
 export default function ArticleBody({article}){
   const sections = article.sections.map((section, i) => {
-    const blocks = parseMarkdown(section.content);
+    let blocks = parseMarkdown(section.content);
+    // Section không có ### thì #### lên h3 để heading không nhảy cấp (h2 -> h4).
+    if (!blocks.some(b => b.type === 'h3')){
+      blocks = blocks.map(b => (b.type === 'h4' ? {...b, type: 'h3'} : b));
+    }
     const faq = isFaq(section.heading) ? groupFaq(blocks) : null;
     return {
       ...section,

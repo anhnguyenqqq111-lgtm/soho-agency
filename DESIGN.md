@@ -70,17 +70,18 @@ Trang chủ mới: Hero → Khách hàng → Dịch vụ → Cách làm việc �
 --paper-2:    #EFEAE0;  /* nền section phụ */
 --ink:        #16130F;  /* chữ chính, gần đen ấm */
 --ink-2:      #4A443B;  /* chữ phụ */
---ink-3:      #8A8275;  /* meta, caption */
+--ink-3:      #6E665A;  /* meta, caption (đạt AA trên cả paper và paper-2) */
 --rule:       #D9D2C5;  /* đường kẻ */
+--rule-strong:#B9B0A1;  /* đường kẻ đậm, gạch chân link */
 --accent:     #D2401A;  /* cam đỏ giữa gradient logo: link, điểm nhấn */
---accent-ink: #A82E10;  /* accent khi hover / trên nền sáng cần AA */
+--accent-ink: #A82E10;  /* chữ nhỏ màu accent, hover (6.2:1 trên paper) */
 --gold:       #F2A900;  /* chỉ dùng cho đánh dấu nhỏ (gạch chân, số thứ tự) */
 --night:      #16130F;  /* section nền tối (footer, CTA): nền mực + chữ giấy */
 ```
 
 Quy tắc:
 - 90% diện tích là `paper` / `ink` / `rule`.
-- `accent` chỉ dùng cho: link, một từ hoặc cụm từ nhấn trong hero, số thứ tự, nút chính. Mỗi màn hình có tối đa 2 điểm accent.
+- `accent` (4.3:1) chỉ dùng cho chữ từ 24px trở lên hoặc chi tiết trang trí: cụm từ nhấn trong hero, số thứ tự lớn, marker danh sách. Chữ nhỏ màu đỏ cam dùng `accent-ink`. Mỗi màn hình có tối đa 2 điểm accent.
 - Không gradient, trừ logo. Không shadow màu.
 - Chỉ dùng một section nền tối: footer + CTA cuối trang.
 
@@ -143,13 +144,13 @@ app/
   page.module.css
   ...các route giữ nguyên, mỗi route có *.module.css nếu cần
 components/
-  Header.js              Server; phần menu mobile + mega menu tách ra NavMenu.js ('use client')
-  Footer.js              Server
-  Section.js             khung section 4/8 có nhãn số
-  NumberedList.js
+  Header.js, NavMenu.js  Header là Server Component, NavMenu ('use client') lo mega menu và menu mobile
+  Footer.js
   ContactForm.js         'use client'
-  ArticleBody.js         render sections/toc/table/checklist/FAQ từ components/articles/*
-  data/                  (giữ vị trí file data hiện tại, chỉ thêm dấu)
+  ui/                    Section (lưới 4/8 có nhãn số), PageHeader, NumberedList, LinkRows, Button, CtaBand
+  article/               ArticleBody, Toc ('use client'), Markdown, parseMarkdown
+  data/clients.js
+public/brand/soho-logo-crop.svg, soho-logo-white-crop.svg   logo đã cắt sát viewBox, dùng ở header/footer
 ```
 
 Xóa: `globals.css`, `ServiceSectionVisualizer.js`, `ArticleRenderer.js` (thay bằng ArticleBody), `cleanPunctuation.js`, `public/brand/page-*.png` nếu không dùng.

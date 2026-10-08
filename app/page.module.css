@@ -96,7 +96,7 @@
 .principles h3{display:grid;grid-template-columns:2.6em minmax(0,1fr)}
 .principles h3::before{
   content:counter(p, upper-roman) '.';
-  color:var(--accent);
+  color:var(--accent-ink);
   font-variant-numeric:tabular-nums;
 }
 .principles p{color:var(--ink-2);max-width:60ch}
