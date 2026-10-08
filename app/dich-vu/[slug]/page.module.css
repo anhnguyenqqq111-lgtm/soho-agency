@@ -1,5 +1,4 @@
-.formCard{background:var(--white);color:var(--ink);border-radius:var(--r-card);padding:28px;box-shadow:var(--shadow-pop)}
-.formTitle{font-size:18px;font-weight:700;margin-bottom:18px}
+.heroDiagram{color:var(--ink)}
 .split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px var(--gap);align-items:center}
 .proof{margin-top:28px;font-size:var(--fs-small);color:var(--ink-2);max-width:68ch}
 .deliver{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:40px var(--gap);align-items:start}
@@ -9,4 +8,4 @@
 .artifact{margin:0;display:grid;gap:10px}
 .artifact figcaption{font-size:var(--fs-meta);color:var(--ink-2)}
 .articleCard{background:var(--white);border-radius:var(--r-card);padding:clamp(24px,4vw,56px);box-shadow:var(--shadow-card)}
-@media (max-width:900px){.split,.deliver{grid-template-columns:minmax(0,1fr)}.formCard{padding:22px}}
+@media (max-width:900px){.split,.deliver{grid-template-columns:minmax(0,1fr)}}

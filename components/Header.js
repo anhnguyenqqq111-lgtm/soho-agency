@@ -31,7 +31,7 @@ export default function Header({activeNav}){
     <header className={styles.header}>
       <div className={`container ${styles.bar}`}>
         <a className={styles.logo} href={sitePath('/')} aria-label="SOHO Agency, về trang chủ">
-          <img src={sitePath('/brand/soho-logo-white-crop.svg')} alt="SOHO Agency" width="568" height="234"/>
+          <img src={sitePath('/brand/soho-logo-crop.svg')} alt="SOHO Agency" width="568" height="234"/>
         </a>
         <NavMenu activeNav={activeNav} menus={menus} links={links} contactHref={sitePath('/lien-he')}/>
       </div>

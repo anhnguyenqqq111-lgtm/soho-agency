@@ -1,6 +1,6 @@
-.wrap{position:relative;overflow:hidden;background:var(--grad-hero);padding-block:clamp(56px,7vw,96px) clamp(56px,7vw,88px)}
+.wrap{position:relative;overflow:hidden;background:var(--night);padding-block:clamp(56px,7vw,96px) clamp(56px,7vw,88px)}
 .compact{padding-block:clamp(44px,5vw,64px)}
-.rings{opacity:.9}
+.rings{opacity:.8}
 .grid{position:relative;z-index:1;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gap);row-gap:40px;align-items:center}
 .main{grid-column:1 / span 7}
 .main:only-child{grid-column:1 / span 8}

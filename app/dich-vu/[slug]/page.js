@@ -5,11 +5,10 @@ import Footer from '../../../components/Footer';
 import PageHeader from '../../../components/ui/PageHeader';
 import Section from '../../../components/ui/Section';
 import Button from '../../../components/ui/Button';
-import Accordion from '../../../components/ui/Accordion';
+import Track from '../../../components/diagrams/Track';
 import ImageSlot from '../../../components/ui/ImageSlot';
 import LinkRows from '../../../components/ui/LinkRows';
 import CtaBand from '../../../components/ui/CtaBand';
-import ContactForm from '../../../components/ContactForm';
 import ServiceDiagram from '../../../components/diagrams/ServiceDiagrams';
 import BeforeAfter from '../../../components/diagrams/BeforeAfter';
 import ArticleBody from '../../../components/article/ArticleBody';
@@ -53,17 +52,14 @@ export default async function ServicePage({params}){
           title={service.menuTitle}
           lead={service.intro}
           bullets={service.outcomes}
-          aside={<div className={styles.formCard}><p className={styles.formTitle}>Đặt lịch trao đổi</p><ContactForm compact/></div>}
+          aside={<div className={styles.heroDiagram}><ServiceDiagram slug={service.slug} card/></div>}
         >
           <Button href="#lien-he" onDark arrow="up">Nhận audit {service.menuTitle}</Button>
         </PageHeader>
 
         {/* Quy trình + sơ đồ */}
         <Section tone="dark" title={<>Quy trình triển khai <span className="hl">tại SOHO</span></>} intro={service.promise}>
-          <div className={styles.split}>
-            <div data-reveal=""><Accordion items={service.process.map((t, i) => ({title: t, text: service.deliverables[i] ? `Bàn giao: ${service.deliverables[i]}.` : ''}))}/></div>
-            <div data-reveal="" style={{'--reveal-delay': '150ms'}}><ServiceDiagram slug={service.slug} card/></div>
-          </div>
+          <Track items={service.process.map(title => ({title}))}/>
         </Section>
 
         {/* Dấu hiệu và kết quả */}

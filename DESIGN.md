@@ -61,7 +61,7 @@ Trang chủ mới: Hero → Khách hàng → Dịch vụ → Cách làm việc �
 
 ### 2.1. Ý tưởng
 
-Clone bố cục goha.vn (web của công ty), thay toàn bộ màu và chữ ký thương hiệu bằng SOHO. Giữ cấu trúc trang, nhịp section tối xen sáng, hình khối bo tròn và nút viên thuốc của GOHA; không dùng nội dung, ảnh đội ngũ, logo khách hàng hay chứng nhận của GOHA.
+Lấy cảm hứng từ nhịp section tối xen sáng và hình khối bo tròn của goha.vn, nhưng mọi thành phần nhận diện được làm khác để tránh vấn đề pháp lý: hero dùng vầng sáng và đường chân trời (không vòng 3D), bảng hành trình 3 cột dọc (không ma trận mũi tên ngang), dự án cuộn ngang (không thẻ có mũi tên và tab logo), quy trình dạng đường ray (không accordion cạnh ảnh), thẻ blog không ảnh bìa, FAQ kẻ dòng dấu cộng, form liên hệ trên nền sáng, header trắng, footer phẳng. Không dùng nội dung, ảnh, logo khách hàng hay chứng nhận của GOHA.
 
 ### 2.2. Màu (token trong `app/styles/tokens.css`)
 
@@ -79,15 +79,15 @@ Chỉ một font: Be Vietnam Pro (400, 500, 600, 700, 800). Tiêu đề 700–80
 
 ### 2.4. Hình khối
 
-Nút viên thuốc 100px, thẻ 16px, input 100px (textarea 12px). Bóng mềm `--shadow-card`. Vòng gradient vàng cam ở hero và khối liên hệ (`components/HeroRings.js`, thuần SVG) thay cho vòng 3D xanh của GOHA.
+Nút viên thuốc 100px, thẻ 16px, input 100px (textarea 12px). Bóng mềm `--shadow-card`. Hero và banner trang con dùng `components/HeroGlow.js`: vầng sáng ấm góc dưới phải và các đường chân trời mảnh tự vẽ, thuần SVG.
 
 ### 2.5. Cấu trúc trang chủ (theo thứ tự GOHA)
 
-Hero tối + dải logo → ma trận chặng × kênh (`FunnelMatrix`) → 2 thẻ ảnh → case study có mũi tên và hàng logo (`CaseShowcase`) → quy trình accordion trên nền tối (`Accordion`) → về SOHO → blog 3 thẻ → form liên hệ trên nền tối (`CtaBand`) → FAQ.
+Hero (chữ trái, 3 nhóm dịch vụ phải, hàng logo) → bảng hành trình 3 cột (`JourneyBoard`) → dự án cuộn ngang (`ProjectScroller`) → quy trình đường ray trên nền tối (`Track`) → 4 nguyên tắc dạng thẻ + ảnh đội → blog 3 thẻ tối giản (`BlogCard`) → form liên hệ trên nền giấy (`CtaBand`) → FAQ kẻ dòng (`Faq`).
 
 ### 2.6. Trang dịch vụ
 
-Hero tối: H1, 3 ý có dấu ✓, nút; form trắng bên phải. Tiếp theo: quy trình accordion + sơ đồ SVG trong thẻ trắng, khối "dấu hiệu / kết quả", danh sách bàn giao, bài viết dài trong thẻ trắng, dịch vụ cùng nhóm, khối liên hệ.
+Hero tối: H1, 3 ý có dấu ✓, nút; sơ đồ SVG riêng của dịch vụ trong thẻ trắng bên phải. Tiếp theo: quy trình đường ray, khối "dấu hiệu / kết quả", danh sách bàn giao, bài viết dài trong thẻ trắng, dịch vụ cùng nhóm, khối liên hệ.
 
 ### 2.7. Chuyển động và ảnh
 

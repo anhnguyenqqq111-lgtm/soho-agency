@@ -1,7 +1,7 @@
 import styles from './PageHeader.module.css';
 import {sitePath} from '../paths';
 import SplitWords from './SplitWords';
-import HeroRings from '../HeroRings';
+import HeroGlow from '../HeroGlow';
 
 /*
   Banner tối cho trang con (theo hero trang dịch vụ GOHA).
@@ -13,7 +13,7 @@ import HeroRings from '../HeroRings';
 export default function PageHeader({crumbs = [], title, lead, bullets, aside, children, compact = false}){
   return (
     <header className={`${styles.wrap} dark ${compact ? styles.compact : ''}`}>
-      <HeroRings className={styles.rings}/>
+      <HeroGlow className={styles.rings}/>
       <div className={`container ${styles.grid}`}>
         <div className={styles.main}>
           {crumbs.length > 0 && (

@@ -1,50 +1,39 @@
 /* Hero */
-.hero{position:relative;overflow:hidden;background:var(--grad-hero)}
-.heroInner{position:relative;z-index:1;display:grid;gap:64px;padding-block:clamp(72px,9vw,128px) clamp(40px,5vw,56px)}
-.heroCopy{max-width:640px;display:grid;gap:22px;justify-items:start}
-.badge{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--white);padding:7px 14px;border:1px solid rgba(255,255,255,.28);border-radius:var(--r-pill);background:rgba(255,255,255,.06)}
-.badge::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--gold)}
-.heroTitle{color:var(--white);font-size:clamp(40px,5.4vw,72px);max-width:13ch}
+.hero{position:relative;overflow:hidden;background:var(--night)}
+.heroInner{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:48px var(--gap);align-items:center;padding-block:clamp(64px,8vw,112px) clamp(40px,5vw,64px)}
+.heroCopy{display:grid;gap:20px;justify-items:start}
+.heroTitle{color:var(--white);font-size:clamp(40px,5.2vw,68px);max-width:14ch}
 .heroTitle em{font-style:normal;color:var(--gold)}
 .heroLead{font-size:var(--fs-lead);line-height:1.55;color:var(--on-dark-2);max-width:46ch}
 .heroActions{display:flex;flex-wrap:wrap;gap:14px 28px;align-items:center;margin-top:6px}
-.heroLogos{padding-top:28px;border-top:1px solid var(--line-dark)}
-
-/* Hai thẻ ảnh */
-.cards{padding-bottom:var(--space-md)}
-.cardsGrid{display:grid;grid-template-columns:1fr 1fr;gap:var(--gap)}
-.imgCard{position:relative;display:block;aspect-ratio:16/10;border-radius:var(--r-card);overflow:hidden;color:var(--white)}
-.imgCard img{width:100%;height:100%;object-fit:cover;transition:transform 900ms cubic-bezier(.2,.7,.2,1)}
-.imgCard:hover img{transform:scale(1.04)}
-.imgCard:hover{color:var(--white)}
-.imgCard::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(21,12,8,0) 35%,rgba(21,12,8,.78) 100%)}
-.imgCardText{position:absolute;left:28px;right:28px;bottom:26px;z-index:1;display:grid;gap:4px}
-.imgCardText strong{font-size:clamp(22px,2.4vw,32px);font-weight:700;line-height:1.2}
-.imgCardText span{font-size:14px;color:rgba(255,255,255,.85)}
-.credit{position:absolute;right:12px;top:10px;z-index:1;font-size:10px;color:rgba(255,255,255,.7);background:rgba(0,0,0,.3);padding:3px 8px;border-radius:var(--r-sm)}
-
-/* Chia đôi: nội dung + ảnh */
-.split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px var(--gap);align-items:center}
-.splitMedia{min-width:0}
+.heroStages{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.heroStages li{display:grid;grid-template-columns:44px minmax(0,1fr);gap:14px;align-items:start;padding:18px 20px;border:1px solid var(--line-dark);border-radius:var(--r-card);background:rgba(21,12,8,.72);backdrop-filter:blur(6px)}
+.stageNum{font-size:13px;font-weight:700;color:var(--gold);padding-top:2px}
+.stageGroup{font-weight:700;font-size:16px;color:var(--white);margin-bottom:4px}
+.stageLinks{font-size:13.5px;line-height:1.5;color:var(--on-dark-2)}
+.stageLinks a:hover{color:var(--gold)}
+.heroLogos{position:relative;z-index:1;display:flex;flex-wrap:wrap;align-items:center;gap:20px 48px;padding-block:22px 40px;border-top:1px solid var(--line-dark)}
+.heroLogos p{font-size:var(--fs-meta);font-weight:600;color:var(--on-dark-3)}
+.heroLogos ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:20px 48px;align-items:center}
+.heroLogos img{height:28px;width:auto;max-width:130px;object-fit:contain;filter:brightness(0) invert(1);opacity:.75}
 
 /* Về SOHO */
-.about{padding-block:0 var(--space-lg)}
-.aboutTitle{color:var(--white);max-width:20ch;margin-bottom:32px}
-.values{list-style:none;margin:0 0 32px;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:28px 32px}
-.values h3{font-size:18px;color:var(--white);margin-bottom:6px}
-.values p{font-size:14px;line-height:1.55;color:var(--on-dark-2)}
+.values{list-style:none;margin:0 0 48px;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--gap)}
+.values li{display:grid;gap:10px;padding:26px 24px;border:1px solid var(--line);border-radius:var(--r-card);text-align:left}
+.valueNum{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:var(--grad-brand);color:var(--white);font-weight:700;font-size:14px}
+.values h3{font-size:17px}
+.values p{font-size:14px;line-height:1.55;color:var(--ink-2)}
+.aboutRow{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:var(--gap);align-items:center;text-align:left}
+.aboutCta{display:grid;gap:18px;justify-items:start;padding:8px 0 8px 16px}
+.aboutCta p{font-size:var(--fs-lead);line-height:1.55;color:var(--ink-2)}
 
-/* Blog */
 .blogGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--gap)}
-
-.center{display:flex;justify-content:center;margin-top:40px}
+.faqWrap{max-width:860px}
 
 @media (max-width:900px){
-  .cardsGrid,.split,.blogGrid{grid-template-columns:minmax(0,1fr)}
-  .values{grid-template-columns:minmax(0,1fr)}
-  .about{padding-top:var(--space-md)}
+  .heroInner{grid-template-columns:minmax(0,1fr)}
+  .values{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .aboutRow,.blogGrid{grid-template-columns:minmax(0,1fr)}
+  .aboutCta{padding-left:0}
 }
-@media (max-width:640px){
-  .heroTitle{font-size:clamp(34px,10vw,44px)}
-  .imgCardText{left:18px;right:18px;bottom:18px}
-}
+@media (max-width:560px){.values{grid-template-columns:minmax(0,1fr)}.heroTitle{font-size:clamp(34px,10vw,44px)}}

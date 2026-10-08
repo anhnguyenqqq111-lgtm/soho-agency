@@ -1,37 +1,34 @@
 import styles from './page.module.css';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import HeroRings from '../components/HeroRings';
+import HeroGlow from '../components/HeroGlow';
 import Section from '../components/ui/Section';
 import Button from '../components/ui/Button';
 import SplitWords from '../components/ui/SplitWords';
 import ImageSlot from '../components/ui/ImageSlot';
-import Accordion from '../components/ui/Accordion';
 import Faq from '../components/ui/Faq';
 import CtaBand from '../components/ui/CtaBand';
-import FunnelMatrix from '../components/diagrams/FunnelMatrix';
-import CaseShowcase from '../components/proof/CaseShowcase';
-import LogoMarquee from '../components/proof/LogoMarquee';
+import JourneyBoard from '../components/diagrams/JourneyBoard';
+import Track from '../components/diagrams/Track';
+import ProjectScroller from '../components/proof/ProjectScroller';
 import BlogCard from '../components/BlogCard';
 import {clients} from '../components/data/clients';
-import {images} from '../components/data/images';
+import {getServicesByGroup} from '../components/servicePagesData';
 import {getLatestArticles} from '../components/blogData';
 import {sitePath} from '../components/paths';
 
 const steps = [
-  {title: 'Hiểu bài toán và audit', text: 'Mục tiêu, biên lợi nhuận, khách hàng. Xem website, tracking, tài khoản quảng cáo và đối thủ để biết đang mất cơ hội ở đâu.'},
-  {title: 'Chọn việc làm trước', text: 'Xếp việc theo tác động và độ khó. Chọn ít kênh, làm kỹ, thay vì dàn trải ngân sách.'},
-  {title: 'Triển khai theo sprint 2 tuần', text: 'Mỗi sprint có giả thuyết, danh sách việc và chỉ số theo dõi. Hai tuần một lần cùng xem số liệu.'},
-  {title: 'Giữ, sửa hoặc dừng', text: 'Nhân rộng việc tạo kết quả, sửa việc có tín hiệu, dừng việc không hiệu quả.'}
+  {title: 'Hiểu bài toán và audit', text: 'Mục tiêu, biên lợi nhuận, khách hàng. Xem website, tracking, quảng cáo, đối thủ.'},
+  {title: 'Chọn việc làm trước', text: 'Xếp việc theo tác động và độ khó. Ít kênh, làm kỹ.'},
+  {title: 'Sprint 2 tuần', text: 'Mỗi sprint có giả thuyết, việc cần làm và chỉ số theo dõi.'},
+  {title: 'Giữ, sửa hoặc dừng', text: 'Nhân rộng việc hiệu quả, dừng việc không.'}
 ];
-
 const values = [
   {title: 'Chuyên sâu đo lường', text: 'Báo cáo theo lead và doanh thu, không dừng ở traffic hay CTR.'},
   {title: 'Người lập chiến lược trực tiếp làm', text: 'Không chuyển giao xuống đội khác sau khi ký hợp đồng.'},
   {title: 'Doanh nghiệp sở hữu dữ liệu', text: 'Tài khoản quảng cáo, GA4 và dashboard đứng tên bạn.'},
   {title: 'Minh bạch theo sprint', text: 'Hai tuần một vòng, biết việc gì đang làm và vì sao.'}
 ];
-
 const faqs = [
   {q: 'SOHO cung cấp những dịch vụ gì?', a: 'Ba nhóm: tối ưu tìm kiếm (SEO tổng thể, SEO cho AI Overview, Local SEO), quảng cáo hiệu suất (Google Ads, Meta và TikTok Ads, CRO) và content, dữ liệu (content marketing, GA4 và Looker, tư vấn chiến lược sprint). Có thể làm từng dịch vụ hoặc gộp theo mục tiêu.'},
   {q: 'Làm sao biết dịch vụ SEO đang hiệu quả?', a: 'SOHO không đo bằng số từ khóa lên top. Chỉ số chính là visibility của nhóm từ khóa có ý định mua, lead từ trang organic và doanh thu có nguồn organic. Dashboard đứng tên doanh nghiệp, bạn xem được bất cứ lúc nào.'},
@@ -41,17 +38,18 @@ const faqs = [
 
 export default function Home(){
   const latest = getLatestArticles(3);
+  const groups = getServicesByGroup();
 
   return (
     <>
       <Header activeNav="home"/>
       <main>
-        {/* Hero */}
+        {/* Hero: chữ bên trái, 3 chặng bên phải */}
         <section className={`${styles.hero} dark`}>
-          <HeroRings/>
+          <HeroGlow/>
           <div className={`container ${styles.heroInner}`}>
             <div className={styles.heroCopy}>
-              <p className={styles.badge} data-reveal="">Performance marketing cho doanh nghiệp Việt Nam</p>
+              <p className="kicker" data-reveal="">Performance marketing cho doanh nghiệp Việt Nam</p>
               <h1 className={styles.heroTitle}>
                 <SplitWords segments={[{text: 'Marketing được đo bằng '}, {text: 'lead và doanh thu', em: true}]}/>
               </h1>
@@ -63,108 +61,75 @@ export default function Home(){
                 <Button href="/dich-vu" variant="text" onDark>Xem dịch vụ</Button>
               </div>
             </div>
-            <div className={styles.heroLogos} data-reveal="" style={{'--reveal-delay': '700ms'}}>
-              <LogoMarquee clients={clients}/>
-            </div>
+            <ol className={styles.heroStages} data-reveal="" style={{'--reveal-delay': '400ms'}}>
+              {groups.map(({group, items}, i) => (
+                <li key={group}>
+                  <span className={styles.stageNum}>0{i + 1}</span>
+                  <div>
+                    <p className={styles.stageGroup}>{group}</p>
+                    <p className={styles.stageLinks}>{items.map((s, k) => <a key={s.slug} href={sitePath(`/dich-vu/${s.slug}`)}>{s.menuTitle}{k < items.length - 1 ? ', ' : ''}</a>)}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </div>
+          <div className={`container ${styles.heroLogos}`} data-reveal="" style={{'--reveal-delay': '700ms'}}>
+            <p>Đang làm cùng</p>
+            <ul>{clients.map(c => <li key={c.slug}><img src={sitePath(c.logo)} alt={c.name} loading="lazy"/></li>)}</ul>
           </div>
         </section>
 
-        {/* Ma trận chặng × kênh */}
+        {/* Bảng hành trình */}
         <Section
           kicker="Cách SOHO đo"
           title={<>Mỗi chặng hành trình, <span className="hl">một bộ chỉ số</span></>}
           intro="Khách hàng đi từ chưa biết đến mua. SOHO theo dõi đúng chỉ số của từng chặng, trên từng kênh, thay vì một con số traffic chung."
           spacing="lg"
         >
-          <FunnelMatrix/>
+          <JourneyBoard/>
         </Section>
-
-        {/* Hai thẻ ảnh */}
-        <section className={styles.cards}>
-          <div className={`container ${styles.cardsGrid}`}>
-            {[
-              {img: images.homeHero, title: 'Được tìm thấy đúng lúc', text: 'SEO, AI Search và Local SEO', href: '/dich-vu'},
-              {img: images.homeMeeting, title: 'Lead đủ chuẩn, đo được', text: 'Quảng cáo, CRO, GA4 và dashboard', href: '/dich-vu'}
-            ].map((c, i) => (
-              <a key={c.title} href={sitePath(c.href)} className={styles.imgCard} data-reveal="" style={{'--reveal-delay': `${i * 120}ms`}}>
-                <img src={sitePath(c.img.src)} alt={c.img.alt} loading="lazy"/>
-                <span className={styles.imgCardText}>
-                  <strong>{c.title}</strong>
-                  <span>{c.text} ↗</span>
-                </span>
-                {c.img.temporary && <span className={styles.credit}>[ẢNH TẠM] {c.img.author}, Unsplash</span>}
-              </a>
-            ))}
-          </div>
-        </section>
 
         {/* Dự án */}
-        <Section
-          id="du-an"
-          kicker="Dự án"
-          title={<>Từ điểm nghẽn đến kết quả: <span className="hl">hành trình</span> của khách hàng SOHO</>}
-          spacing="lg"
-        >
-          <CaseShowcase clients={clients}/>
+        <Section id="du-an" tone="gray" kicker="Dự án" title={<>Doanh nghiệp SOHO <span className="hl">đang làm cùng</span></>} intro="Số liệu từng dự án chỉ công bố khi khách hàng đồng ý." aside={<Button href="/ket-qua" variant="text">Xem tất cả dự án</Button>}>
+          <ProjectScroller clients={clients}/>
         </Section>
 
-        {/* Quy trình, nền tối */}
-        <Section
-          id="cach-lam-viec"
-          tone="dark"
-          title={<>Bốn bước <span className="hl">làm việc với SOHO</span></>}
-          intro="Cùng một cách làm ở mọi dự án: audit trước, chọn việc trước, sprint 2 tuần, đo rồi quyết định."
-        >
-          <div className={styles.split}>
-            <div data-reveal=""><Accordion items={steps}/></div>
-            <div className={styles.splitMedia} data-reveal="" style={{'--reveal-delay': '150ms'}}>
-              <ImageSlot src={null} need="Ảnh đội SOHO đang họp hoặc làm việc với khách hàng" size="1200×900" ratio="4/3"/>
+        {/* Quy trình */}
+        <Section id="cach-lam-viec" tone="dark" title={<>Bốn bước <span className="hl">làm việc với SOHO</span></>} intro="Cùng một cách làm ở mọi dự án: audit trước, chọn việc trước, sprint 2 tuần, đo rồi quyết định.">
+          <Track items={steps}/>
+        </Section>
+
+        {/* Về SOHO */}
+        <Section align="center" kicker="Về chúng tôi" title={<>Bốn điều SOHO giữ <span className="hl">trong mọi hợp đồng</span></>} spacing="lg">
+          <ul className={styles.values}>
+            {values.map((v, i) => (
+              <li key={v.title} data-reveal="" style={{'--reveal-delay': `${i * 90}ms`}}>
+                <span className={styles.valueNum}>{i + 1}</span>
+                <h3>{v.title}</h3>
+                <p>{v.text}</p>
+              </li>
+            ))}
+          </ul>
+          <div className={styles.aboutRow}>
+            <div className={styles.aboutMedia}><ImageSlot src={null} need="Ảnh đội SOHO đang làm việc" size="1600×900" ratio="16/9"/></div>
+            <div className={styles.aboutCta}>
+              <p>SOHO làm việc tại Hà Nội và TP. Hồ Chí Minh, với doanh nghiệp đã có sản phẩm và doanh thu, cần biết kênh nào đang mang lại khách hàng.</p>
+              <Button href="/ve-soho" variant="text">Tìm hiểu về SOHO</Button>
             </div>
           </div>
         </Section>
-
-        {/* Về SOHO, nền tối tiếp */}
-        <section className={`${styles.about} dark`}>
-          <div className={`container ${styles.split}`}>
-            <div className={styles.splitMedia} data-reveal="">
-              <ImageSlot src={null} need="Ảnh văn phòng hoặc đội ngũ SOHO" size="1200×900" ratio="4/3"/>
-            </div>
-            <div data-reveal="" style={{'--reveal-delay': '150ms'}}>
-              <p className="kicker">Về chúng tôi</p>
-              <h2 className={styles.aboutTitle}><span className="hl">SOHO</span> là lựa chọn của doanh nghiệp muốn marketing nói bằng số</h2>
-              <ul className={styles.values}>
-                {values.map(v => (
-                  <li key={v.title}><h3>{v.title}</h3><p>{v.text}</p></li>
-                ))}
-              </ul>
-              <Button href="/ve-soho" onDark arrow="up">Tìm hiểu về SOHO</Button>
-            </div>
-          </div>
-        </section>
 
         {/* Blog */}
-        <Section
-          tone="fade"
-          title={<>Những bài viết <span className="hl">mới nhất</span></>}
-          aside={<Button href="/blog" variant="text">Xem thêm</Button>}
-          spacing="lg"
-        >
-          <div className={styles.blogGrid}>
-            {latest.map((post, i) => <BlogCard key={post.slug} post={post} delay={i * 100}/>)}
-          </div>
+        <Section tone="gray" title={<>Những bài viết <span className="hl">mới nhất</span></>} aside={<Button href="/blog" variant="text">Xem thêm</Button>}>
+          <div className={styles.blogGrid}>{latest.map((post, i) => <BlogCard key={post.slug} post={post} delay={i * 100}/>)}</div>
         </Section>
 
         {/* Liên hệ */}
         <CtaBand/>
 
         {/* FAQ */}
-        <Section
-          align="center"
-          title={<>Những câu hỏi thường gặp, hiểu hơn về <span className="hl">SOHO và dịch vụ</span></>}
-          spacing="lg"
-        >
-          <Faq items={faqs}/>
-          <div className={styles.center}><Button href="/lien-he">Liên hệ với chúng tôi</Button></div>
+        <Section title={<>Câu hỏi <span className="hl">thường gặp</span></>} spacing="lg">
+          <div className={styles.faqWrap}><Faq items={faqs}/></div>
         </Section>
       </main>
       <Footer/>
