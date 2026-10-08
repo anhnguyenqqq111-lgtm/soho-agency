@@ -1,141 +1,140 @@
-import { notFound } from 'next/navigation';
-import {
-  ArrowRight,
-  ShieldCheck,
-  LineChart,
-  Target,
-  Zap,
-  CheckCircle2,
-  BarChart3,
-  Search,
-  Layers3
-} from 'lucide-react';
+import {notFound} from 'next/navigation';
+import styles from './page.module.css';
 import Header from '../../../components/Header';
 import Footer from '../../../components/Footer';
-import { getServicePage, servicePages } from '../../../components/servicePagesData';
-import { getServiceArticle } from '../../../components/serviceArticlesData';
-import ServiceSectionVisualizer from '../../../components/ServiceSectionVisualizer';
-import { cleanPunctuation } from '../../../components/cleanPunctuation';
-import { sitePath } from '../../../components/paths';
+import PageHeader from '../../../components/ui/PageHeader';
+import Button from '../../../components/ui/Button';
+import CtaBand from '../../../components/ui/CtaBand';
+import ArticleBody from '../../../components/article/ArticleBody';
+import {getServicePage, servicePages} from '../../../components/servicePagesData';
+import {getServiceArticle} from '../../../components/serviceArticlesData';
+import {sitePath} from '../../../components/paths';
 
-export function generateStaticParams() {
-  return servicePages.map(service => ({ slug: service.slug }));
+export function generateStaticParams(){
+  return servicePages.map(service => ({slug: service.slug}));
 }
 
-export async function generateMetadata({ params }) {
-  const { slug } = await params;
+export async function generateMetadata({params}){
+  const {slug} = await params;
   const service = getServicePage(slug);
+  if (!service) return {title: 'Không tìm thấy dịch vụ'};
   const article = getServiceArticle(slug);
-
-  if (!service) {
-    return { title: 'Dịch vụ không tồn tại | SOHO Agency' };
-  }
-
   return {
-    title: cleanPunctuation(article?.metaTitle || `${service.menuTitle} SOHO Agency`),
-    description: cleanPunctuation(article?.metaDesc || service.intro)
+    // metaTitle trong dữ liệu đã có hậu tố "| SOHO", nên dùng absolute để tránh lặp.
+    title: article?.metaTitle ? {absolute: article.metaTitle} : service.menuTitle,
+    description: article?.metaDesc || service.intro
   };
 }
 
-export default async function ServiceLandingPage({ params }) {
-  const { slug } = await params;
+export default async function ServicePage({params}){
+  const {slug} = await params;
   const service = getServicePage(slug);
+  if (!service) notFound();
   const article = getServiceArticle(slug);
 
-  if (!service) {
-    notFound();
-  }
+  const related = servicePages
+    .filter(s => s.category === service.category && s.slug !== service.slug)
+    .slice(0, 3);
+
+  const serviceJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: service.menuTitle,
+    description: service.intro,
+    serviceType: service.category,
+    areaServed: 'VN',
+    provider: {'@type': 'Organization', name: 'SOHO Agency'}
+  };
 
   return (
-    <main className="servicePageMain">
-      <Header activeNav="services" />
+    <>
+      <Header activeNav="services"/>
+      <main>
+        <PageHeader
+          crumbs={[{label: 'Dịch vụ', href: '/dich-vu'}, {label: service.menuTitle}]}
+          title={service.title}
+          lead={service.intro}
+        >
+          <Button href="/lien-he">Trao đổi về dịch vụ này</Button>
+          {article && (
+            <p className={styles.meta}>
+              {article.readingTime}, cập nhật {article.updatedDate}
+              {article.author?.name && <>, {article.author.name}</>}
+            </p>
+          )}
+        </PageHeader>
 
-      {/* 1. CLEAN & EXECUTIVE SERVICE HERO */}
-      <section className="serviceCleanHero">
-        <div className="serviceCleanHeroInner">
-          <div className="serviceHeroCopyBlock">
-            <div className="heroEyebrowBadge">
-              <span className="radarPulse">
-                <span className="radarCore"></span>
-              </span>
-              <span>{cleanPunctuation(service.eyebrow || 'DỊCH VỤ SOHO GROWTH ENGINE 2026')}</span>
+        {/* Tóm tắt */}
+        <section className={styles.summary} aria-label="Tóm tắt dịch vụ">
+          <div className="container">
+            <blockquote className={styles.insight}>
+              <p>{service.insight}</p>
+            </blockquote>
+            <div className={styles.cols}>
+              <div>
+                <h2 className={styles.colTitle}>Dấu hiệu bạn cần dịch vụ này</h2>
+                <ul className={styles.list}>
+                  {service.pains.map(item => <li key={item}>{item}</li>)}
+                </ul>
+              </div>
+              <div>
+                <h2 className={styles.colTitle}>Kết quả cần đạt</h2>
+                <ul className={styles.list}>
+                  {service.outcomes.map(item => <li key={item}>{item}</li>)}
+                </ul>
+              </div>
+              <div>
+                <h2 className={styles.colTitle}>SOHO làm gì</h2>
+                <ol className={`${styles.list} ${styles.steps}`}>
+                  {service.process.map(item => <li key={item}>{item}</li>)}
+                </ol>
+              </div>
             </div>
-
-            <h1 className="serviceHeroH1">{cleanPunctuation(service.title)}</h1>
-            <p className="serviceHeroLead">{cleanPunctuation(service.intro)}</p>
-
-            <div className="serviceHeroActionRow">
-              <a className="btn primary btnGlow" href={sitePath('/#contact')}>
-                <span>Nhận đề xuất</span>
-                <ArrowRight size={18} />
-                <span className="btnSweep"></span>
-              </a>
-              <a className="serviceHeroSecondaryLink" href="#giai-phap">
-                <span>Xem framework</span>
-                <ArrowRight size={16} />
-              </a>
-            </div>
+            <p className={styles.proof}>{service.proof}</p>
           </div>
+        </section>
 
-          <div className="serviceHeroMosaic" aria-label="Các tín hiệu chính của dịch vụ">
-            <div className="serviceMosaicTile darkTile">
-              <span>01</span>
-              <strong>Audit trước</strong>
-              <small>{cleanPunctuation(service.pains?.[0] || 'Tìm đúng điểm nghẽn')}</small>
+        {/* Bài viết đầy đủ */}
+        {article && (
+          <section className={styles.article} aria-label="Phân tích chi tiết">
+            <div className="container">
+              <ArticleBody article={article}/>
             </div>
-            <div className="serviceMosaicTile iconTile">
-              <Search size={28} />
-              <strong>{cleanPunctuation(service.category)}</strong>
-              <small>Đúng intent, đúng tệp</small>
+          </section>
+        )}
+
+        {/* Dịch vụ liên quan */}
+        {related.length > 0 && (
+          <section className={styles.related} aria-labelledby="related-title">
+            <div className="container">
+              <div className={styles.relatedGrid}>
+                <h2 id="related-title" className={styles.relatedTitle}>Dịch vụ cùng nhóm</h2>
+                <ul className={styles.relatedList}>
+                  {related.map(s => (
+                    <li key={s.slug}>
+                      <a href={sitePath(`/dich-vu/${s.slug}`)}>
+                        <span className={styles.relatedName}>{s.menuTitle}</span>
+                        <span className={styles.relatedDesc}>{s.menuDesc}</span>
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
-            <div className="serviceMosaicTile statTile">
-              <span>90D</span>
-              <strong>Roadmap</strong>
-              <small>Việc ưu tiên theo tác động</small>
-            </div>
-            <div className="serviceMosaicTile softTile">
-              <BarChart3 size={27} />
-              <strong>Lead & ROI</strong>
-              <small>Đo bằng dữ liệu kinh doanh</small>
-            </div>
-          </div>
-        </div>
+          </section>
+        )}
 
-        <div className="serviceHeroTrustBar">
-          <div className="trustPill"><Target size={16} /> Đúng insight</div>
-          <div className="trustDivider" />
-          <div className="trustPill"><LineChart size={16} /> Qualified leads</div>
-          <div className="trustDivider" />
-          <div className="trustPill"><ShieldCheck size={16} /> Sở hữu raw data</div>
-          <div className="trustDivider" />
-          <div className="trustPill"><Zap size={16} /> Sprint 2 tuần</div>
-          <div className="trustDivider" />
-          <div className="trustPill"><Layers3 size={16} /> Framework rõ</div>
-        </div>
-      </section>
+        <CtaBand
+          title="Dịch vụ này có hợp với bài toán của bạn?"
+          text="Gửi website và các kênh đang chạy. SOHO xem nhanh và đề xuất việc nên làm trước."
+        />
 
-      {/* 2. DEDICATED VISUAL SECTIONS WITH STICKY SUBNAV */}
-      {article && (
-        <ServiceSectionVisualizer service={service} article={article} serviceTitle={service.title} />
-      )}
-
-      {/* 3. FINAL ACTION CTA */}
-      <section className="serviceFinalCta" id="contact">
-        <div>
-          <p className="eyebrow gold">BẮT ĐẦU ĐÚNG VIỆC</p>
-          <h2>Muốn biết dịch vụ này có phù hợp với bài toán hiện tại?</h2>
-          <p>
-            SOHO sẽ xem nhanh website, các kênh hiện có và mục tiêu kinh doanh để đề xuất hướng triển khai ưu tiên cùng bài toán định lượng ROI minh bạch.
-          </p>
-        </div>
-        <a className="btn primary btnGlow" href={sitePath('/#contact')}>
-          <span>Trao đổi với SOHO</span>
-          <ArrowRight size={18} />
-          <span className="btnSweep"></span>
-        </a>
-      </section>
-
-      <Footer />
-    </main>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{__html: JSON.stringify(serviceJsonLd)}}
+        />
+      </main>
+      <Footer/>
+    </>
   );
 }

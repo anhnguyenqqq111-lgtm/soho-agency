@@ -1,0 +1,64 @@
+.meta{font-size:var(--fs-meta);color:var(--ink-3);font-weight:500}
+
+/* Tóm tắt */
+.summary{background:var(--paper-2);padding-block:var(--space-md)}
+.insight{
+  margin:0 0 64px;
+  padding:0;
+  max-width:30ch;
+  font-family:var(--font-display);
+  font-style:italic;
+  font-size:clamp(26px,3.2vw,40px);
+  line-height:1.22;
+  letter-spacing:-.01em;
+}
+.insight p::before{content:'“';color:var(--accent);margin-right:2px}
+.insight p::after{content:'”';color:var(--accent)}
+.cols{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:var(--gap);
+}
+.colTitle{
+  font-family:var(--font-text);
+  font-size:var(--fs-meta);
+  font-weight:500;
+  color:var(--ink-2);
+  padding-bottom:12px;
+  border-bottom:1px solid var(--ink);
+}
+.list{list-style:none;margin:0;padding:0}
+.list li{padding:14px 0;border-bottom:1px solid var(--rule-strong);font-size:var(--fs-small);line-height:1.5}
+.steps{counter-reset:s}
+.steps li{counter-increment:s;display:grid;grid-template-columns:28px minmax(0,1fr)}
+.steps li::before{content:counter(s, decimal-leading-zero);color:var(--accent-ink);font-variant-numeric:tabular-nums;font-size:var(--fs-meta);padding-top:2px}
+.proof{margin-top:32px;font-size:var(--fs-small);color:var(--ink-2);max-width:68ch}
+
+/* Bài viết */
+.article{padding-block:var(--space-lg)}
+
+/* Liên quan */
+.related{padding-bottom:var(--space-md)}
+.relatedGrid{
+  display:grid;
+  grid-template-columns:repeat(12,minmax(0,1fr));
+  column-gap:var(--gap);
+  row-gap:24px;
+  border-top:1px solid var(--ink);
+  padding-top:32px;
+}
+.relatedTitle{grid-column:1 / span 4;font-size:var(--fs-h3)}
+.relatedList{grid-column:5 / -1;list-style:none;margin:0;padding:0}
+.relatedList li{border-bottom:1px solid var(--rule)}
+.relatedList li:first-child a{padding-top:0}
+.relatedList a{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--gap);padding:16px 0;text-decoration:none;align-items:baseline}
+.relatedName{font-family:var(--font-display);font-size:22px}
+.relatedDesc{font-size:var(--fs-small);color:var(--ink-2)}
+.relatedList a:hover .relatedName{color:var(--accent-ink)}
+
+@media (max-width:900px){
+  .cols{grid-template-columns:1fr;gap:40px}
+  .insight{margin-bottom:48px}
+  .relatedTitle,.relatedList{grid-column:1 / -1}
+  .relatedList a{grid-template-columns:1fr;gap:4px}
+}
