@@ -7,6 +7,7 @@ export const serviceGroups = [
 export const servicePages = [
   {
     slug: 'seo-tong-the',
+    menuDesc: 'Kỹ thuật, nội dung và entity để tạo organic lead',
     eyebrow: 'SEO tổng thể',
     title: 'SEO tổng thể cho doanh nghiệp cần tăng trưởng organic bền vững',
     menuTitle: 'SEO tổng thể',
@@ -21,6 +22,7 @@ export const servicePages = [
   },
   {
     slug: 'seo-ai-overview',
+    menuDesc: 'Để Google và AI Search hiểu, trích dẫn đúng thương hiệu',
     eyebrow: 'SEO & AI Overview',
     title: 'Tối ưu SEO cho Google AI Overviews và hành vi tìm kiếm mới',
     menuTitle: 'SEO & AI Overview',
@@ -35,6 +37,7 @@ export const servicePages = [
   },
   {
     slug: 'local-seo-google-maps',
+    menuDesc: 'Google Maps, review và trang theo khu vực',
     eyebrow: 'Local SEO & Maps',
     title: 'Local SEO và Google Maps cho doanh nghiệp cần khách hàng khu vực',
     menuTitle: 'Local SEO & Maps',
@@ -49,6 +52,7 @@ export const servicePages = [
   },
   {
     slug: 'google-ads-shopping',
+    menuDesc: 'Search, Shopping, Performance Max theo lợi nhuận',
     eyebrow: 'Google Ads & Shopping',
     title: 'Google Ads và Shopping tối ưu theo lead chất lượng và ROAS thật',
     menuTitle: 'Google Ads & Shopping',
@@ -63,6 +67,7 @@ export const servicePages = [
   },
   {
     slug: 'meta-tiktok-ads',
+    menuDesc: 'Hệ thống test creative và remarketing',
     eyebrow: 'Meta & TikTok Ads',
     title: 'Meta và TikTok Ads cho thương hiệu cần tạo nhu cầu và chuyển đổi',
     menuTitle: 'Meta & TikTok Ads',
@@ -77,6 +82,7 @@ export const servicePages = [
   },
   {
     slug: 'cro-landing-page',
+    menuDesc: 'Tăng tỷ lệ chuyển đổi trên traffic đang có',
     eyebrow: 'CRO landing page',
     title: 'Tối ưu tỷ lệ chuyển đổi để biến traffic thành lead và doanh thu',
     menuTitle: 'Tối ưu chuyển đổi (CRO)',
@@ -91,6 +97,7 @@ export const servicePages = [
   },
   {
     slug: 'content-marketing-pr',
+    menuDesc: 'Content hub, case study và góc PR',
     eyebrow: 'Content marketing & PR',
     title: 'Content Marketing và PR tạo niềm tin trước khi khách hàng mua',
     menuTitle: 'Content Marketing & PR',
@@ -105,6 +112,7 @@ export const servicePages = [
   },
   {
     slug: 'ga4-looker-dashboard',
+    menuDesc: 'Tracking, GA4 và Looker dashboard',
     eyebrow: 'GA4 & Looker',
     title: 'GA4 và Looker Dashboard giúp marketing thấy được dòng tiền',
     menuTitle: 'Đo lường & phân tích GA4',
@@ -119,6 +127,7 @@ export const servicePages = [
   },
   {
     slug: 'tu-van-chien-luoc-sprint',
+    menuDesc: 'Lộ trình ưu tiên cho 30 đến 90 ngày tới',
     eyebrow: 'Growth strategy sprint',
     title: 'Sprint chiến lược marketing để biết nên làm gì trước',
     menuTitle: 'Tư vấn chiến lược sprint',

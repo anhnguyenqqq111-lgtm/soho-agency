@@ -44,7 +44,8 @@ export default function Section({
         className
       ].join(' ')}
     >
-      <div className={`container ${styles.inner} ${rule ? styles.ruled : ''}`}>
+      <div className="container">
+        <div className={`${styles.inner} ${rule ? styles.ruled : ''}`}>
         <div className={`${styles.grid} ${styles[variant]}`}>
           {variant === 'default' && (
             <>
@@ -73,6 +74,7 @@ export default function Section({
               <div className={styles.main}>{children}</div>
             </>
           )}
+        </div>
         </div>
       </div>
     </section>

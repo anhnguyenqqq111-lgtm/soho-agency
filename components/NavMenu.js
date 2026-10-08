@@ -1,0 +1,158 @@
+'use client';
+import {useEffect, useRef, useState} from 'react';
+import styles from './Header.module.css';
+
+const MENU_KEYS = ['services', 'solutions'];
+
+function MenuPanel({id, menu, onNavigate}){
+  return (
+    <div id={id} className={styles.panel}>
+      <div className={`container ${styles.panelInner}`}>
+        {menu.groups.map(({group, items}) => (
+          <div className={styles.panelCol} key={group}>
+            <p className={styles.panelGroup}>{group}</p>
+            <ul className={styles.panelList}>
+              {items.map(item => (
+                <li key={item.href}>
+                  <a href={item.href} onClick={onNavigate}>
+                    <span className={styles.panelTitle}>{item.title}</span>
+                    {item.desc && <span className={styles.panelDesc}>{item.desc}</span>}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+        <p className={styles.panelAll}>
+          <a href={menu.allHref} onClick={onNavigate}>{menu.allLabel} →</a>
+        </p>
+      </div>
+    </div>
+  );
+}
+
+export default function NavMenu({activeNav, menus, links, contactHref}){
+  const [openPanel, setOpenPanel] = useState(null);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [mobileGroup, setMobileGroup] = useState(null);
+  const rootRef = useRef(null);
+
+  const closeAll = () => {
+    setOpenPanel(null);
+    setMobileOpen(false);
+  };
+
+  useEffect(() => {
+    const onKey = e => { if (e.key === 'Escape') closeAll(); };
+    const onClick = e => {
+      if (rootRef.current && !rootRef.current.contains(e.target)) setOpenPanel(null);
+    };
+    document.addEventListener('keydown', onKey);
+    document.addEventListener('mousedown', onClick);
+    return () => {
+      document.removeEventListener('keydown', onKey);
+      document.removeEventListener('mousedown', onClick);
+    };
+  }, []);
+
+  useEffect(() => {
+    document.body.style.overflow = mobileOpen ? 'hidden' : '';
+    return () => { document.body.style.overflow = ''; };
+  }, [mobileOpen]);
+
+  return (
+    <div ref={rootRef} className={styles.nav}>
+      <nav className={styles.desktop} aria-label="Điều hướng chính">
+        <ul className={styles.navList}>
+          {MENU_KEYS.map(key => {
+            const isOpen = openPanel === key;
+            return (
+              <li key={key}>
+                <button
+                  type="button"
+                  className={`${styles.navItem} ${activeNav === key ? styles.active : ''}`}
+                  aria-expanded={isOpen}
+                  aria-controls={`panel-${key}`}
+                  onClick={() => setOpenPanel(isOpen ? null : key)}
+                >
+                  {menus[key].label}
+                  <span className={`${styles.caret} ${isOpen ? styles.caretOpen : ''}`} aria-hidden="true" />
+                </button>
+              </li>
+            );
+          })}
+          {links.map(link => (
+            <li key={link.key}>
+              <a
+                href={link.href}
+                className={`${styles.navItem} ${activeNav === link.key ? styles.active : ''}`}
+                aria-current={activeNav === link.key ? 'page' : undefined}
+              >
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+        <a href={contactHref} className={styles.cta}>Liên hệ</a>
+      </nav>
+
+      {openPanel && (
+        <MenuPanel id={`panel-${openPanel}`} menu={menus[openPanel]} onNavigate={closeAll} />
+      )}
+
+      <button
+        type="button"
+        className={styles.menuToggle}
+        aria-expanded={mobileOpen}
+        aria-controls="mobile-menu"
+        onClick={() => setMobileOpen(!mobileOpen)}
+      >
+        {mobileOpen ? 'Đóng' : 'Menu'}
+      </button>
+
+      {mobileOpen && (
+        <nav id="mobile-menu" className={styles.mobile} aria-label="Điều hướng chính">
+          <ul className={styles.mobileList}>
+            {MENU_KEYS.map(key => {
+              const isOpen = mobileGroup === key;
+              return (
+                <li key={key}>
+                  <button
+                    type="button"
+                    className={styles.mobileItem}
+                    aria-expanded={isOpen}
+                    onClick={() => setMobileGroup(isOpen ? null : key)}
+                  >
+                    {menus[key].label}
+                    <span aria-hidden="true">{isOpen ? '−' : '+'}</span>
+                  </button>
+                  {isOpen && (
+                    <div className={styles.mobileSub}>
+                      {menus[key].groups.map(({group, items}) => (
+                        <div key={group}>
+                          <p className={styles.panelGroup}>{group}</p>
+                          <ul>
+                            {items.map(item => (
+                              <li key={item.href}><a href={item.href} onClick={closeAll}>{item.title}</a></li>
+                            ))}
+                          </ul>
+                        </div>
+                      ))}
+                      <a className={styles.mobileAll} href={menus[key].allHref} onClick={closeAll}>{menus[key].allLabel} →</a>
+                    </div>
+                  )}
+                </li>
+              );
+            })}
+            {links.map(link => (
+              <li key={link.key}>
+                <a className={styles.mobileItem} href={link.href} onClick={closeAll}>{link.label}</a>
+              </li>
+            ))}
+          </ul>
+          <a href={contactHref} className={styles.mobileCta} onClick={closeAll}>Liên hệ SOHO</a>
+        </nav>
+      )}
+    </div>
+  );
+}
