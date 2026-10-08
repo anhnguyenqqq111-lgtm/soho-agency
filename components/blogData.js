@@ -17,9 +17,7 @@ export const articles = [
     date: '02/10/2026',
     author: 'Nguyễn Tuấn Anh',
     authorRole: 'Head of Growth SEO @ SOHO',
-    views: '3.4k lượt xem',
     featured: true,
-    banner: 'aiSearchBanner',
     content: `
       <h2>1. AI Search đang thay đổi hành vi tìm kiếm như thế nào?</h2>
       <p>Năm 2026 đánh dấu bước ngoặt lớn nhất trong lịch sử công cụ tìm kiếm kể từ khi Google ra đời. Sự phổ biến của <strong>Google AI Overviews</strong>, <strong>Perplexity</strong> và <strong>SearchGPT</strong> đã định hình lại thói quen của người dùng: từ "tìm danh sách liên kết xanh" sang "nhận câu trả lời tổng hợp tức thì".</p>
@@ -50,9 +48,7 @@ export const articles = [
     date: '28/09/2026',
     author: 'Trần Minh Quân',
     authorRole: 'Performance Marketing Lead @ SOHO',
-    views: '2.8k lượt xem',
     featured: false,
-    banner: 'adsRoiBanner',
     content: `
       <h2>1. Chi phí click rẻ (CPC) có thực sự là một chỉ số tốt?</h2>
       <p>Rất nhiều chiến dịch quảng cáo khoe CPC chỉ 500đ - 1.000đ và CTR trên 15%, nhưng khi đối chiếu với số đơn chốt thực tế tại bộ phận Sale thì tỷ lệ hủy đơn hoặc lead rác lên tới 80%. Đây là cái bẫy tối ưu hóa số lượng thay vì chất lượng.</p>
@@ -79,9 +75,7 @@ export const articles = [
     date: '24/09/2026',
     author: 'Lê Hoàng Yến',
     authorRole: 'Strategy Director @ SOHO',
-    views: '2.1k lượt xem',
     featured: false,
-    banner: 'growthMixBanner',
     content: `
       <h2>1. Cuộc chiến muôn thuở: SEO hay Quảng cáo trả tiền?</h2>
       <p>Một quan niệm sai lầm phổ biến là xem SEO và Ads là hai kênh đối đầu nhau. Trên thực tế, các thương hiệu tăng trưởng nhanh nhất thị trường luôn sử dụng Ads để thử nghiệm thị trường và dùng SEO để chiếm lĩnh lợi nhuận dài hạn.</p>
@@ -102,9 +96,7 @@ export const articles = [
     date: '18/09/2026',
     author: 'Đỗ Gia Huy',
     authorRole: 'CRO & Data Analyst @ SOHO',
-    views: '1.9k lượt xem',
     featured: false,
-    banner: 'croBanner',
     content: `
       <h2>1. Vì sao đổ nhiều traffic nhưng khách hàng không để lại thông tin?</h2>
       <p>Phần lớn landing page thất bại không phải vì sản phẩm tệ, mà vì trang quá tham lam thông tin, tải chậm trên điện thoại và thiếu lý do thuyết phục để khách hàng hành động ngay lập tức.</p>
@@ -127,9 +119,7 @@ export const articles = [
     date: '12/09/2026',
     author: 'Phạm Thùy Linh',
     authorRole: 'Content Strategist @ SOHO',
-    views: '2.5k lượt xem',
     featured: false,
-    banner: 'contentHubBanner',
     content: `
       <h2>1. Rời xa cách làm Content rải rác vô định</h2>
       <p>Viết 100 bài viết rời rạc không liên kết với nhau sẽ khó tạo ra tác động SEO lớn. Mô hình Topic Cluster gom nhóm nội dung xoay quanh một chủ đề cốt lõi (Pillar Page), giúp thuật toán Google nhận diện website của bạn là thẩm quyền chuyên môn cao nhất.</p>
@@ -147,9 +137,7 @@ export const articles = [
     date: '05/09/2026',
     author: 'Nguyễn Tuấn Anh',
     authorRole: 'Technical Director @ SOHO',
-    views: '3.1k lượt xem',
     featured: false,
-    banner: 'trackingBanner',
     content: `
       <h2>1. Thất thoát dữ liệu - Kẻ thù giấu mặt của các chiến dịch Ads</h2>
       <p>Với các tính năng bảo mật trên iOS, Safari ITP và trình duyệt chặn quảng cáo, các thẻ script Pixel chạy trên trình duyệt (Client-side) đang bị chặn lên tới 30-40%. Thuật toán quảng cáo vì thế bị "mù", không nhận được tín hiệu ai vừa mua hàng để tối ưu tiếp.</p>
@@ -159,6 +147,13 @@ export const articles = [
     `
   }
 ];
+
+export function categorySlug(category){
+  return category
+    .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+    .replace(/đ/g, 'd').replace(/Đ/g, 'D')
+    .toLowerCase().replace(/&/g, ' ').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+}
 
 // date dạng dd/mm/yyyy
 export function toISODate(date){

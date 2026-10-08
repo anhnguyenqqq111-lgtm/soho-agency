@@ -1,148 +1,105 @@
-import {
-  ArrowRight,
-  BarChart3,
-  BookOpen,
-  Clock3,
-  Eye,
-  Search,
-  Sparkles,
-  Target,
-  TrendingUp
-} from 'lucide-react';
+import styles from './page.module.css';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
-import {articles, categories} from '../../components/blogData';
+import PageHeader from '../../components/ui/PageHeader';
+import {getLatestArticles, categorySlug} from '../../components/blogData';
 import {sitePath} from '../../components/paths';
 
 export const metadata = {
-  title: 'Blog Marketing SOHO | Kiến thức SEO, Ads, Content & AI Search',
-  description: 'Tổng hợp kiến thức digital marketing, SEO, performance ads, content, CRO và AI Search từ SOHO Agency.'
+  title: 'Blog',
+  description: 'Ghi chép của đội SOHO về SEO, AI Search, quảng cáo, content, CRO và đo lường cho doanh nghiệp Việt Nam.'
 };
 
-const categoryHighlights = [
-  {label: 'SEO & AI Search', icon: Search},
-  {label: 'Performance Ads', icon: Target},
-  {label: 'Dữ liệu & CRO', icon: BarChart3},
-  {label: 'Chiến lược Tăng trưởng', icon: TrendingUp}
-];
-
 export default function BlogPage(){
-  const featuredArticle = articles.find(article => article.featured) || articles[0];
-  const regularArticles = articles.filter(article => article.slug !== featuredArticle.slug);
+  const all = getLatestArticles();
+  const featured = all.find(a => a.featured) || all[0];
+  const rest = all.filter(a => a.slug !== featured.slug);
+  const next = rest.slice(0, 3);
+
+  // Nhóm theo danh mục, giữ thứ tự xuất hiện của bài mới nhất.
+  const groups = [];
+  for (const article of all){
+    let group = groups.find(g => g.category === article.category);
+    if (!group){
+      group = {category: article.category, id: categorySlug(article.category), items: []};
+      groups.push(group);
+    }
+    group.items.push(article);
+  }
 
   return (
-    <main>
-      <Header activeNav="blog" />
-      <section className="blogHero">
-        <div className="blogHeroCopy">
-          <p className="eyebrow">BLOG MARKETING SOHO</p>
-          <h1>Kiến thức marketing giúp doanh nghiệp ra quyết định sắc hơn</h1>
-          <p>
-            Các bài viết thực chiến về SEO, quảng cáo, nội dung, đo lường và AI Search,
-            được biên tập cho đội ngũ muốn biến marketing thành tăng trưởng có thể đo lường.
-          </p>
-          <div className="blogHeroActions">
-            <a className="btn primary btnGlow" href={sitePath(`/blog/${featuredArticle.slug}`)}>
-              <span>Đọc bài nổi bật</span>
-              <ArrowRight size={18}/>
-              <span className="btnSweep"></span>
-            </a>
-            <a className="previewLink" href="#all-posts">
-              <span>Xem tất cả bài viết</span>
-              <ArrowRight size={18} className="linkArrow"/>
-            </a>
-          </div>
-        </div>
-        <div className="blogHeroVisual" aria-hidden="true">
-          <div className="blogSignalCard primarySignal">
-            <Sparkles size={18}/>
-            <span>AI Search</span>
-            <strong>Entity-first</strong>
-          </div>
-          <div className="blogSignalCard adsSignal">
-            <Target size={18}/>
-            <span>Performance</span>
-            <strong>ROAS 4.8x</strong>
-          </div>
-          <div className="blogOrbit">
-            <BookOpen size={58}/>
-            <b>SOHO Insights</b>
-            <small>SEO • Ads • Content • Data</small>
-          </div>
-        </div>
-      </section>
+    <>
+      <Header activeNav="blog"/>
+      <main>
+        <PageHeader
+          compact
+          crumbs={[{label: 'Blog'}]}
+          title="Ghi chép từ đội SOHO"
+          lead="Những gì SOHO học được khi làm SEO, quảng cáo và đo lường cho khách hàng, viết lại để đội marketing của bạn dùng được."
+        />
 
-      <section className="blogCategoryBand">
-        <div className="blogCategoryInner">
-          {categoryHighlights.map(item => (
-            <div className="blogCategoryChip" key={item.label}>
-              <item.icon size={18}/>
-              <span>{item.label}</span>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="section blogFeatureSection">
-        <article className="featuredPost">
-          <div>
-            <div className={`blogBanner featuredBanner ${featuredArticle.banner}`}>
-              <span>{featuredArticle.category}</span>
-              <b>{featuredArticle.menuTitle || 'SOHO Insight'}</b>
-              <i></i>
-            </div>
-            <span className="postKicker">Bài viết nổi bật</span>
-            <h2>{featuredArticle.title}</h2>
-            <p>{featuredArticle.excerpt}</p>
-            <div className="postMeta">
-              <span><Clock3 size={15}/> {featuredArticle.readTime}</span>
-              <span><Eye size={15}/> {featuredArticle.views}</span>
-              <span>{featuredArticle.date}</span>
-            </div>
-            <a className="featuredPostLink" href={sitePath(`/blog/${featuredArticle.slug}`)}>
-              Đọc phân tích đầy đủ <ArrowRight size={17}/>
-            </a>
-          </div>
-          <div className="featuredPostPanel">
-            <span>{featuredArticle.category}</span>
-            <strong>{featuredArticle.author}</strong>
-            <small>{featuredArticle.authorRole}</small>
-          </div>
-        </article>
-      </section>
-
-      <section className="section blogArchive" id="all-posts">
-        <div className="sectionHead left">
-          <p className="eyebrow">THƯ VIỆN KIẾN THỨC</p>
-          <h2>Blog về marketing, SEO và tăng trưởng</h2>
-        </div>
-        <div className="blogFilterRow">
-          {categories.map(category => (
-            <span key={category}>{category}</span>
-          ))}
-        </div>
-        <div className="blogCardGrid">
-          {regularArticles.map(article => (
-            <article className="blogCard" key={article.slug}>
-              <div className={`blogBanner cardBanner ${article.banner}`}>
-                <span>{article.category}</span>
-                <i></i>
-              </div>
-              <span className="postKicker">{article.category}</span>
-              <h3>{article.title}</h3>
-              <p>{article.excerpt}</p>
-              <div className="postMeta">
-                <span><Clock3 size={14}/> {article.readTime}</span>
-                <span>{article.date}</span>
-              </div>
-              <a href={sitePath(`/blog/${article.slug}`)}>
-                Đọc bài viết <ArrowRight size={16}/>
-              </a>
+        {/* Bài nổi bật */}
+        <section className="container" aria-label="Bài nổi bật">
+          <div className={styles.featured}>
+            <article className={styles.lead}>
+              <p className={styles.kicker}>
+                <span>Bài nổi bật</span>
+                <span>{featured.category}</span>
+              </p>
+              <h2 className={styles.leadTitle}>
+                <a href={sitePath(`/blog/${featured.slug}`)}>{featured.title}</a>
+              </h2>
+              <p className={styles.leadExcerpt}>{featured.excerpt}</p>
+              <p className={styles.byline}>
+                {featured.author}, <time dateTime={featured.date.split('/').reverse().join('-')}>{featured.date}</time>, {featured.readTime}
+              </p>
             </article>
+            <aside className={styles.next} aria-label="Bài mới">
+              <p className={styles.nextLabel}>Mới đăng</p>
+              <ul>
+                {next.map(a => (
+                  <li key={a.slug}>
+                    <a href={sitePath(`/blog/${a.slug}`)}>
+                      <span className={styles.nextMeta}>{a.date}, {a.category}</span>
+                      <span className={styles.nextTitle}>{a.title}</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </aside>
+          </div>
+        </section>
+
+        {/* Lưu trữ theo danh mục */}
+        <section className={`container ${styles.archive}`} aria-labelledby="archive-title">
+          <div className={styles.archiveHead}>
+            <h2 id="archive-title" className={styles.archiveTitle}>Tất cả bài viết</h2>
+            <nav aria-label="Danh mục" className={styles.cats}>
+              {groups.map(g => (
+                <a key={g.id} href={`#${g.id}`}>{g.category} <span>{g.items.length}</span></a>
+              ))}
+            </nav>
+          </div>
+
+          {groups.map(g => (
+            <div key={g.id} id={g.id} className={styles.group}>
+              <h3 className={styles.groupTitle}>{g.category}</h3>
+              <ul className={styles.rows}>
+                {g.items.map(a => (
+                  <li key={a.slug}>
+                    <a href={sitePath(`/blog/${a.slug}`)} className={styles.row}>
+                      <span className={`num ${styles.date}`}>{a.date}</span>
+                      <span className={styles.title}>{a.title}</span>
+                      <span className={styles.read}>{a.readTime}</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
           ))}
-        </div>
-      </section>
-      <Footer />
-    </main>
+        </section>
+      </main>
+      <Footer/>
+    </>
   );
 }
