@@ -91,7 +91,7 @@ Mỗi trang mở đầu bằng hero cao gần một màn hình, chia 2 cột: tr
 
 ### 2.6. Trang chủ
 
-Hero → khối mở đầu (chữ, 3 ✓, nút viền, ảnh thật) → hàng logo → lưới hành trình (`JourneyGrid`): hàng là tiêu chí (phụ trách, giai đoạn, khách hỏi, mục tiêu, 4 kênh), cột là 3 chặng; cột 3 là khối tối liền viền gradient; mobile thành 3 thẻ dọc → băng chuyền dự án (`ProjectCarousel`) → quy trình đường ray trên nền tối → 4 nguyên tắc dạng thẻ + ảnh đội → blog → form trên nền kem → FAQ kẻ dòng.
+Hero → khối mở đầu (chữ, 3 ✓, nút viền, ảnh thật) → hàng logo → lưới hành trình (`JourneyGrid`): hàng là tiêu chí, cột là 3 chặng; header cột là mũi tên gradient TOFU/MOFU/BOFU, thanh phụ trách chia Marketing/Sales, ô không viền chỉ kẻ ngang, chỉ số gạch đầu dòng, cột 3 nền hồng nhạt; mobile thành 3 thẻ dọc có đầu gradient → băng chuyền dự án (`ProjectCarousel`) → quy trình đường ray trên nền tối → 4 nguyên tắc dạng thẻ + ảnh đội → blog → form trên nền kem → FAQ kẻ dòng.
 
 ### 2.7. Trang con
 
