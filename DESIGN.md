@@ -91,7 +91,7 @@ Mỗi trang mở đầu bằng hero cao gần một màn hình, chia 2 cột: tr
 
 ### 2.6. Trang chủ
 
-Hero → khối mở đầu (chữ, 3 ✓, nút viền, ảnh thật) → hàng logo → sơ đồ workflow kiểu n8n (`JourneyWorkflow`): nền tối, nút vuông bo góc có icon, 4 làn kênh song song qua 3 chặng, gộp về nút Doanh thu; đường nối tự vẽ, điểm sáng chạy; mobile cuộn ngang → băng chuyền dự án (`ProjectCarousel`) → quy trình đường ray trên nền tối → 4 nguyên tắc dạng thẻ + ảnh đội → blog → form trên nền kem → FAQ kẻ dòng.
+Hero → khối mở đầu (chữ, 3 ✓, nút viền, ảnh thật) → hàng logo → sơ đồ workflow (`JourneyWorkflow`): trên nền sáng, không khung, không hiệu ứng; nút trắng viền mảnh có icon, 4 làn kênh song song qua 3 chặng, gộp về nút Doanh thu; mobile cuộn ngang → băng chuyền dự án (`ProjectCarousel`) → quy trình đường ray trên nền tối → 4 nguyên tắc dạng thẻ + ảnh đội → blog → form trên nền kem → FAQ kẻ dòng.
 
 ### 2.7. Trang con
 
