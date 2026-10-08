@@ -8,7 +8,7 @@ import Button from '../components/ui/Button';
 import ImageSlot from '../components/ui/ImageSlot';
 import Faq from '../components/ui/Faq';
 import CtaBand from '../components/ui/CtaBand';
-import JourneyStreams from '../components/diagrams/JourneyStreams';
+import JourneyMatrix from '../components/diagrams/JourneyMatrix';
 import Track from '../components/diagrams/Track';
 import ProjectCarousel from '../components/proof/ProjectCarousel';
 import BlogCard from '../components/BlogCard';
@@ -81,10 +81,10 @@ export default function Home(){
         <Section
           kicker="Cách SOHO đo"
           title={<>Mỗi chặng hành trình, <span className="hl">một bộ chỉ số</span></>}
-          intro="Bốn kênh chạy song song qua ba chặng. Càng về sau càng ít khách đi tiếp, nên mỗi chặng SOHO đo một chỉ số khác, và tất cả gộp về doanh thu."
+          intro="Khách hàng đi qua ba chặng. Ở mỗi chặng, mỗi kênh có một chỉ số riêng để theo dõi, càng về cuối càng ít khách đi tiếp, và tất cả gộp về doanh thu."
           spacing="lg"
         >
-          <JourneyStreams/>
+          <JourneyMatrix/>
         </Section>
 
         {/* Dự án */}

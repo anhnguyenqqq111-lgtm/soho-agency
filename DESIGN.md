@@ -91,7 +91,7 @@ Mỗi trang mở đầu bằng hero cao gần một màn hình, chia 2 cột: tr
 
 ### 2.6. Trang chủ
 
-Hero → khối mở đầu (chữ, 3 ✓, nút viền, ảnh thật) → hàng logo → dòng chảy kênh (`JourneyStreams`): 4 dải màu (kênh) chạy qua 3 chặng, hẹp dần theo phễu rồi hội tụ về ô Doanh thu; chỉ số ghi trên dải, không icon, không hiệu ứng; mobile cuộn ngang → băng chuyền dự án (`ProjectCarousel`) → quy trình đường ray trên nền tối → 4 nguyên tắc dạng thẻ + ảnh đội → blog → form trên nền kem → FAQ kẻ dòng.
+Hero → khối mở đầu (chữ, 3 ✓, nút viền, ảnh thật) → hàng logo → ma trận chặng × kênh (`JourneyMatrix`) format GOHA: hàng là 3 chặng với phễu mũi tên bên trái và nhãn Marketing/Sales dọc, cột là 4 kênh; trong ô là dải màu theo kênh hẹp dần theo chặng, chỉ số ghi trong dải; không icon, không hiệu ứng; mobile thành 3 thẻ → băng chuyền dự án (`ProjectCarousel`) → quy trình đường ray trên nền tối → 4 nguyên tắc dạng thẻ + ảnh đội → blog → form trên nền kem → FAQ kẻ dòng.
 
 ### 2.7. Trang con
 
