@@ -1,5 +1,4 @@
 import {Newsreader, Be_Vietnam_Pro} from 'next/font/google';
-import './globals.css';
 import './styles/tokens.css';
 import './styles/base.css';
 
