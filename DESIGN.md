@@ -61,7 +61,7 @@ Trang chủ mới: Hero → Khách hàng → Dịch vụ → Cách làm việc �
 
 ### 2.1. Ý tưởng
 
-Lấy cảm hứng từ nhịp section tối xen sáng và hình khối bo tròn của goha.vn, nhưng mọi thành phần nhận diện được làm khác để tránh vấn đề pháp lý: hero dùng vầng sáng và đường chân trời (không vòng 3D), bảng hành trình 3 cột dọc (không ma trận mũi tên ngang), dự án cuộn ngang (không thẻ có mũi tên và tab logo), quy trình dạng đường ray (không accordion cạnh ảnh), thẻ blog không ảnh bìa, FAQ kẻ dòng dấu cộng, form liên hệ trên nền sáng, header trắng, footer phẳng. Không dùng nội dung, ảnh, logo khách hàng hay chứng nhận của GOHA.
+Lấy cảm hứng từ nhịp section tối xen sáng và hình khối bo tròn của goha.vn, nhưng mọi thành phần nhận diện được làm khác để tránh vấn đề pháp lý: hero dùng vầng sáng và đường chân trời (không vòng 3D), ma trận chặng × kênh với phễu mũi tên chỉ xuống (GOHA dùng mũi tên ngang), băng chuyền dự án có nút và chấm tiến trình đặt phía trên (GOHA đặt mũi tên hai mép và tab logo), quy trình dạng đường ray (không accordion cạnh ảnh), thẻ blog không ảnh bìa, FAQ kẻ dòng dấu cộng, form liên hệ trên nền sáng, header trắng, footer phẳng. Không dùng nội dung, ảnh, logo khách hàng hay chứng nhận của GOHA.
 
 ### 2.2. Màu (token trong `app/styles/tokens.css`)
 
@@ -83,7 +83,7 @@ Nút viên thuốc 100px, thẻ 16px, input 100px (textarea 12px). Bóng mềm `
 
 ### 2.5. Cấu trúc trang chủ (theo thứ tự GOHA)
 
-Hero (chữ trái, 3 nhóm dịch vụ phải, hàng logo) → bảng hành trình 3 cột (`JourneyBoard`) → dự án cuộn ngang (`ProjectScroller`) → quy trình đường ray trên nền tối (`Track`) → 4 nguyên tắc dạng thẻ + ảnh đội → blog 3 thẻ tối giản (`BlogCard`) → form liên hệ trên nền giấy (`CtaBand`) → FAQ kẻ dòng (`Faq`).
+Hero (chữ trái, 3 nhóm dịch vụ phải, hàng logo) → ma trận chặng × kênh (`FunnelMatrix`) → băng chuyền dự án (`ProjectCarousel`) → quy trình đường ray trên nền tối (`Track`) → 4 nguyên tắc dạng thẻ + ảnh đội → blog 3 thẻ tối giản (`BlogCard`) → form liên hệ trên nền giấy (`CtaBand`) → FAQ kẻ dòng (`Faq`).
 
 ### 2.6. Trang dịch vụ
 

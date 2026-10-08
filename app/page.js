@@ -8,9 +8,9 @@ import SplitWords from '../components/ui/SplitWords';
 import ImageSlot from '../components/ui/ImageSlot';
 import Faq from '../components/ui/Faq';
 import CtaBand from '../components/ui/CtaBand';
-import JourneyBoard from '../components/diagrams/JourneyBoard';
+import FunnelMatrix from '../components/diagrams/FunnelMatrix';
 import Track from '../components/diagrams/Track';
-import ProjectScroller from '../components/proof/ProjectScroller';
+import ProjectCarousel from '../components/proof/ProjectCarousel';
 import BlogCard from '../components/BlogCard';
 import {clients} from '../components/data/clients';
 import {getServicesByGroup} from '../components/servicePagesData';
@@ -86,12 +86,12 @@ export default function Home(){
           intro="Khách hàng đi từ chưa biết đến mua. SOHO theo dõi đúng chỉ số của từng chặng, trên từng kênh, thay vì một con số traffic chung."
           spacing="lg"
         >
-          <JourneyBoard/>
+          <FunnelMatrix/>
         </Section>
 
         {/* Dự án */}
-        <Section id="du-an" tone="gray" kicker="Dự án" title={<>Doanh nghiệp SOHO <span className="hl">đang làm cùng</span></>} intro="Số liệu từng dự án chỉ công bố khi khách hàng đồng ý." aside={<Button href="/ket-qua" variant="text">Xem tất cả dự án</Button>}>
-          <ProjectScroller clients={clients}/>
+        <Section id="du-an" tone="gray" kicker="Dự án" title={<>Từ điểm nghẽn đến kết quả: <span className="hl">hành trình</span> của khách hàng SOHO</>} aside={<Button href="/ket-qua" variant="text">Xem tất cả dự án</Button>}>
+          <ProjectCarousel clients={clients}/>
         </Section>
 
         {/* Quy trình */}

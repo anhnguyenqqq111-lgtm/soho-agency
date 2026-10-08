@@ -1,0 +1,25 @@
+.wrap{display:grid;gap:18px}
+.controls{display:flex;justify-content:space-between;align-items:center;gap:16px}
+.dots{list-style:none;margin:0;padding:0;display:flex;gap:8px}
+.dots button{width:28px;height:4px;border:0;border-radius:2px;background:var(--gray-2);cursor:pointer;padding:0;transition:background-color var(--t-fast),width var(--t-fast)}
+.dots .on{background:var(--accent);width:44px}
+.arrows{display:flex;gap:8px}
+.arrows button{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--white);cursor:pointer;font-size:17px;display:grid;place-items:center;transition:background-color var(--t-fast),color var(--t-fast),border-color var(--t-fast)}
+.arrows button:hover:not(:disabled){background:var(--red);color:var(--white);border-color:var(--red)}
+.arrows button:disabled{opacity:.35;cursor:default}
+.track{list-style:none;margin:0 calc(var(--gutter) * -1);padding:4px var(--gutter) 8px;display:flex;column-gap:var(--gap);overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:var(--gutter);scrollbar-width:none}
+.track::-webkit-scrollbar{display:none}
+.card{flex:0 0 calc((100% - 2 * var(--gap)) / 3);scroll-snap-align:start}
+.link{display:grid;grid-template-rows:auto 1fr;height:100%;background:var(--white);border:1px solid var(--line);border-radius:var(--r-card);overflow:hidden;color:inherit;transition:box-shadow var(--t-fast),transform var(--t-fast)}
+.link:hover{box-shadow:var(--shadow-card);transform:translateY(-3px)}
+.link :global([class*=slot]),.link :global([class*=img]){border-radius:0;border-left:0;border-right:0;border-top:0}
+.body{display:grid;gap:6px;padding:18px 20px 20px;align-content:start}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.logo{height:20px;width:auto;max-width:90px;object-fit:contain;filter:grayscale(1);opacity:.7}
+.scope{font-size:12px;font-weight:600;color:var(--ink-3);text-align:right}
+.name{font-size:19px;margin-top:4px}
+.link:hover .name{color:var(--accent)}
+.result{font-size:var(--fs-small);color:var(--ink-2)}
+.more{margin-top:10px;font-size:13px;font-weight:600;color:var(--accent)}
+@media (max-width:900px){.card{flex-basis:calc((100% - var(--gap)) / 2)}}
+@media (max-width:600px){.card{flex-basis:86%}}
