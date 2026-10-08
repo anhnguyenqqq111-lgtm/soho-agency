@@ -75,7 +75,7 @@ Nền sáng kem, chữ nâu đen rất to, nhấn đỏ gạch. Đầu trang the
 | `--gold` | `#E8A800` | Chữ nhấn trên nền tối, chi tiết nhỏ |
 | `--night` | `#231A14` | Chỉ footer và 1 section quy trình trên trang chủ |
 
-Gradient thương hiệu chỉ còn ở phễu chặng × kênh và viền trên thẻ blog.
+Gradient thương hiệu chỉ còn ở vòng số chặng cuối, dải chảy mờ và viền trên thẻ blog.
 
 ### 2.3. Chữ
 
@@ -87,7 +87,7 @@ Be Vietnam Pro, H1 800 cỡ tới 76px, thân 400.
 
 ### 2.5. Trang chủ
 
-Hero sáng (chữ, 3 ✓, nút viền, ảnh thật) → hàng logo → phễu chặng × kênh mũi tên xuống (`FunnelMatrix`) → băng chuyền dự án (`ProjectCarousel`) → quy trình đường ray trên nền tối → 4 nguyên tắc dạng thẻ + ảnh đội → blog → form trên nền kem → FAQ kẻ dòng.
+Hero sáng (chữ, 3 ✓, nút viền, ảnh thật) → hàng logo → dòng chảy 3 chặng (`JourneyFlow`): 3 thẻ bậc thang, câu hỏi của khách ở mỗi chặng, chỉ số gắn chấm màu kênh, dải chảy thu hẹp phía sau → băng chuyền dự án (`ProjectCarousel`) → quy trình đường ray trên nền tối → 4 nguyên tắc dạng thẻ + ảnh đội → blog → form trên nền kem → FAQ kẻ dòng.
 
 ### 2.6. Trang con
 

@@ -7,7 +7,7 @@ import SplitWords from '../components/ui/SplitWords';
 import ImageSlot from '../components/ui/ImageSlot';
 import Faq from '../components/ui/Faq';
 import CtaBand from '../components/ui/CtaBand';
-import FunnelMatrix from '../components/diagrams/FunnelMatrix';
+import JourneyFlow from '../components/diagrams/JourneyFlow';
 import Track from '../components/diagrams/Track';
 import ProjectCarousel from '../components/proof/ProjectCarousel';
 import BlogCard from '../components/BlogCard';
@@ -76,10 +76,10 @@ export default function Home(){
         <Section
           kicker="Cách SOHO đo"
           title={<>Mỗi chặng hành trình, <span className="hl">một bộ chỉ số</span></>}
-          intro="Khách hàng đi từ chưa biết đến mua. SOHO theo dõi đúng chỉ số của từng chặng, trên từng kênh, thay vì một con số traffic chung."
+          intro="Khách hàng đi từ chưa biết đến mua qua ba chặng. Ở mỗi chặng họ hỏi một câu khác nhau, nên SOHO theo dõi một bộ chỉ số khác nhau."
           spacing="lg"
         >
-          <FunnelMatrix/>
+          <JourneyFlow/>
         </Section>
 
         {/* Dự án */}
