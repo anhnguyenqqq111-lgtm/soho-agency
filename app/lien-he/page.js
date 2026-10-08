@@ -1,36 +1,52 @@
-'use client';
-
-import {ArrowRight} from 'lucide-react';
+import styles from './page.module.css';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import ContactForm from '../../components/ContactForm';
+import {sitePath} from '../../components/paths';
+
+export const metadata = {
+  title: 'Liên hệ',
+  description: 'Gửi website và mục tiêu hiện tại cho SOHO Agency. SOHO xem các kênh bạn đang chạy và đề xuất việc nên làm trước.'
+};
+
+const EMAIL = 'hello@sohoagency.vn';
+
+const steps = [
+  'SOHO xem website và các kênh bạn đang chạy.',
+  'Hẹn một buổi gọi 30 phút để hỏi thêm về mục tiêu và ngân sách.',
+  'Gửi lại một trang ghi chú: điểm nghẽn chính và 3 việc nên làm trước.'
+];
 
 export default function ContactPage(){
   return (
-    <main>
-      <Header activeNav="contact" />
-      <section className="contact contactPage">
-        <div>
-          <p className="eyebrow gold">LIÊN HỆ</p>
-          <h1>Bạn muốn marketing tạo ra kết quả rõ ràng hơn?</h1>
-          <p>Gửi thông tin website và mục tiêu hiện tại. SOHO sẽ xem xét bối cảnh và đề xuất hướng tiếp cận phù hợp để bắt đầu.</p>
+    <>
+      <Header activeNav="contact"/>
+      <main className={styles.page}>
+        <div className={`container ${styles.grid}`}>
+          <div className={styles.intro}>
+            <nav aria-label="Breadcrumb" className={styles.crumbs}>
+              <a href={sitePath('/')}>Trang chủ</a> <span aria-hidden="true">/</span> <span aria-current="page">Liên hệ</span>
+            </nav>
+            <h1 className={styles.title}>Kể cho SOHO bài toán hiện tại</h1>
+            <p className={styles.lead}>Không cần chuẩn bị brief. Website và vài dòng về mục tiêu là đủ để bắt đầu.</p>
+
+            <h2 className={styles.subTitle}>Sau khi bạn gửi form</h2>
+            <ol className={styles.steps}>
+              {steps.map(step => <li key={step}>{step}</li>)}
+            </ol>
+
+            <dl className={styles.info}>
+              <div><dt>Email</dt><dd><a href={`mailto:${EMAIL}`}>{EMAIL}</a></dd></div>
+              <div><dt>Khu vực</dt><dd>Hà Nội và TP. Hồ Chí Minh</dd></div>
+              <div><dt>Giờ làm việc</dt><dd><span className="placeholder">[CẦN XÁC NHẬN]</span></dd></div>
+            </dl>
+          </div>
+          <div className={styles.form}>
+            <ContactForm/>
+          </div>
         </div>
-        <form onSubmit={e=>e.preventDefault()}>
-          <label>Website doanh nghiệp<input placeholder="https://tenmien.vn"/></label>
-          <label>Họ và tên<input placeholder="Nguyễn Văn A"/></label>
-          <label>Email công việc<input type="email" placeholder="email@congty.vn"/></label>
-          <label>Mục tiêu bạn đang quan tâm
-            <select defaultValue="">
-              <option value="" disabled>Chọn mục tiêu</option>
-              <option>Tăng trưởng SEO & AI Search</option>
-              <option>Tối ưu quảng cáo Google & Meta</option>
-              <option>Tăng lead / doanh thu B2B, B2C</option>
-              <option>Xây chiến lược Digital Marketing tổng thể</option>
-            </select>
-          </label>
-          <button className="btn primary btnGlow">Gửi yêu cầu tư vấn <ArrowRight/></button>
-        </form>
-      </section>
-      <Footer />
-    </main>
+      </main>
+      <Footer/>
+    </>
   );
 }
