@@ -1,9 +1,30 @@
-.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--gap)}
-.cats{display:flex;flex-wrap:wrap;gap:8px}
-.cats a{font-size:13px;font-weight:600;padding:7px 12px;border-radius:var(--r-pill);background:var(--gray);color:var(--ink)}
-.cats a:hover{background:var(--red);color:var(--white)}
-.cats span{color:var(--ink-3);font-weight:500}
-.cats a:hover span{color:rgba(255,255,255,.8)}
-.anchors{display:none}
-@media (max-width:900px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (max-width:600px){.grid{grid-template-columns:minmax(0,1fr)}}
+.latest{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--gap)}
+
+/* Theo chủ đề: mục lục bám bên trái, nhóm bài bên phải */
+.layout{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,9fr);gap:var(--gap) clamp(24px,4vw,56px);align-items:start}
+.toc{position:sticky;top:calc(var(--header-h) + 24px)}
+.tocTitle{font-size:var(--fs-meta);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);margin-bottom:10px}
+.toc ul{list-style:none;margin:0;padding:0;display:grid}
+.toc li{border-top:1px solid var(--line)}
+.toc li:first-child{border-top:0}
+.toc a{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 0;font-size:14px;font-weight:600;color:var(--ink)}
+.toc a:hover{color:var(--accent)}
+.toc a span{font-size:var(--fs-meta);font-weight:500;color:var(--ink-3);min-width:22px;text-align:center;padding:1px 7px;border-radius:var(--r-pill);background:var(--gray)}
+
+.groups{display:grid;gap:clamp(32px,4vw,48px)}
+.group{scroll-margin-top:calc(var(--header-h) + 16px);background:var(--white);border:1px solid var(--line);border-radius:var(--r-card);padding:clamp(20px,2.5vw,28px)}
+.groupTitle{font-size:clamp(19px,1.8vw,22px);margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+.groupTitle span{font-size:var(--fs-meta);font-weight:500;color:var(--ink-3);margin-left:8px}
+.list{display:grid}
+
+@media (max-width:900px){
+  .latest{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .layout{grid-template-columns:minmax(0,1fr)}
+  .toc{position:static}
+  .toc ul{display:flex;flex-wrap:wrap;gap:8px}
+  .toc li,.toc li:first-child{border:0}
+  .toc a{padding:7px 12px;border-radius:var(--r-pill);background:var(--gray)}
+  .toc a:hover{background:var(--red);color:var(--white)}
+  .toc a span{background:rgba(0,0,0,.06)}
+}
+@media (max-width:600px){.latest{grid-template-columns:minmax(0,1fr)}}

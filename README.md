@@ -74,11 +74,12 @@ components/
   data/proof.js              chứng nhận đối tác, nhận xét khách hàng
   servicePagesData.js        9 dịch vụ
   solutionPagesData.js       6 giải pháp
-  blogData.js                bài blog (HTML trong chuỗi)
+  blogData.js                bài blog (HTML trong chuỗi), danh mục, ảnh banner/thumbnail
   articles/*.js              bài viết dài cho từng dịch vụ (markdown trong chuỗi)
 
 public/brand/                logo (bản đã cắt sát: soho-logo-crop.svg, soho-logo-white-crop.svg)
 public/clients/              logo khách hàng
+public/blog/                 ảnh bài blog (thumbnail và banner dùng chung), render bằng skill creating-images-soho
 DESIGN.md                    hướng thiết kế, token, quy tắc
 ```
 
@@ -103,6 +104,19 @@ grep -rn "need=\"CẦN\|\[CẦN" app components
 
 Ảnh đội ngũ, văn phòng trên trang chủ và trang Giới thiệu dùng `ImageSlot` với `src={null}`; thay bằng đường dẫn ảnh thật.
 
+## Blog
+
+Bài viết nằm trong `components/blogData.js`, mỗi bài một object. Trang `/blog` gom bài theo danh mục, thứ tự theo mảng `categories` trong cùng file; ba nhóm đầu là Framework Marketing, Framework SEO, Framework Ads (bài hướng dẫn từng bước). Thêm danh mục mới chỉ cần thêm tên vào mảng này và gán `category` cho bài.
+
+Quy tắc chung của blog (sẽ là quy tắc của CMS sau này), kiểm tra tự động khi build:
+
+- `title` là H1 duy nhất trên trang, tối đa 50 ký tự, cũng là chữ trên thumbnail.
+- `metaTitle` là thẻ `<title>`, tối đa 60 ký tự, không thêm hậu tố site.
+- `excerpt` là mô tả meta và đoạn dẫn dưới H1.
+- `image: {src, alt}` bắt buộc. Một ảnh 1600×1000 dùng chung cho thumbnail trên thẻ bài viết (trang chủ, trang Blog, mục Đọc tiếp) và banner ngay dưới H1 trên trang bài, đều hiển thị 16:10 không cắt. Chữ bên trái là H1, bên phải là cảnh dựng từ nội dung bài (các bước có nhãn, phễu, hub, hai nguồn hợp lại).
+
+Ảnh render bằng skill `creating-images-soho` trong workspace goha-seo-ws2: mỗi bài một file dữ liệu `clients/SOHO/brands/SOHO/keywords/<slug>/images/src/soho-<slug>-cover.data.js` (preset `cover`, trường `palette` chọn màu theo ngữ cảnh bài, trường `scene` dựng cảnh), ảnh ra chép vào `public/blog/<slug>.webp`. Bảng màu, bộ hình khối và kiểu cảnh nằm trong `assets/palettes.js`, `assets/visuals.js`, `assets/scenes.js` của skill.
+
 ## Việc còn lại trước khi xuất bản
 
 - Form liên hệ (`components/ContactForm.js`) chỉ hiện thông báo đã gửi, chưa gửi đi đâu. Cần nối API hoặc dịch vụ form.
@@ -116,4 +130,4 @@ grep -rn "need=\"CẦN\|\[CẦN" app components
 npm run build:pages
 ```
 
-Build phải pass và ra đủ 31 trang trong `out/`. Mỗi trang đúng một `h1`, heading không nhảy cấp, mọi `img` có `alt`, không tràn ngang ở 375px.
+Build phải pass và ra đủ 34 trang trong `out/`. Mỗi trang đúng một `h1`, heading không nhảy cấp, mọi `img` có `alt`, không tràn ngang ở 375px.

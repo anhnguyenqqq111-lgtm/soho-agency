@@ -2,22 +2,21 @@ import {notFound} from 'next/navigation';
 import styles from './page.module.css';
 import Header from '../../../components/Header';
 import Footer from '../../../components/Footer';
-import Hero from '../../../components/hero/Hero';
-import {BlogVisual} from '../../../components/hero/Visuals';
-import PageHeader from '../../../components/ui/PageHeader';
 import Section from '../../../components/ui/Section';
 import BlogCard from '../../../components/BlogCard';
 import CtaBand from '../../../components/ui/CtaBand';
+import {sitePath} from '../../../components/paths';
 import {articles, getLatestArticles, toISODate} from '../../../components/blogData';
 
 export function generateStaticParams(){
   return articles.map(article => ({slug: article.slug}));
 }
+// metaTitle (≤ 60 ký tự) là <title>, đặt absolute để không thêm hậu tố; title (≤ 50) là H1 duy nhất trên trang.
 export async function generateMetadata({params}){
   const {slug} = await params;
   const article = articles.find(item => item.slug === slug);
   if (!article) return {title: 'Không tìm thấy bài viết'};
-  return {title: article.title, description: article.excerpt, openGraph: {type: 'article', title: article.title, description: article.excerpt}};
+  return {title: {absolute: article.metaTitle}, description: article.excerpt, openGraph: {type: 'article', title: article.metaTitle, description: article.excerpt}};
 }
 
 export default async function BlogPostPage({params}){
@@ -29,17 +28,33 @@ export default async function BlogPostPage({params}){
   const jsonLd = {
     '@context': 'https://schema.org', '@type': 'Article', headline: article.title, description: article.excerpt,
     datePublished: toISODate(article.date), author: {'@type': 'Person', name: article.author, jobTitle: article.authorRole},
-    publisher: {'@type': 'Organization', name: 'SOHO Agency'}, inLanguage: 'vi'
+    publisher: {'@type': 'Organization', name: 'SOHO Agency'}, inLanguage: 'vi',
+    image: sitePath(article.image.src)
   };
   const role = article.authorRole.replace(/\s*@\s*SOHO$/, '');
   return (
     <>
       <Header activeNav="blog"/>
       <main>
-        <Hero tone="blog" crumbs={[{label: 'Blog', href: '/blog'}, {label: article.category}]} eyebrow={article.category} title={article.title} tagline={`${article.author} · ${article.date} · ${article.readTime}`} visual={<BlogVisual/>}/>
-        <PageHeader compact title={article.title} lead={article.excerpt}>
-          <p className={styles.byline}><strong>{article.author}</strong>, {role} · <time dateTime={toISODate(article.date)}>{article.date}</time> · {article.readTime}</p>
-        </PageHeader>
+        {/* Đầu bài: breadcrumb, danh mục, H1 duy nhất, trích dẫn, tác giả. Banner (cùng ảnh với thumbnail, 16:10) đặt ngay sau. */}
+        <header className={styles.head}>
+          <div className={`container ${styles.headInner}`}>
+            <nav aria-label="Breadcrumb" className={styles.crumbs}>
+              <ol>
+                <li><a href={sitePath('/')}>Trang chủ</a></li>
+                <li><a href={sitePath('/blog')}>Blog</a></li>
+                <li><span aria-current="page">{article.category}</span></li>
+              </ol>
+            </nav>
+            <p className={styles.eyebrow}>{article.category}</p>
+            <h1 className={styles.title}>{article.title}</h1>
+            <p className={styles.lead}>{article.excerpt}</p>
+            <p className={styles.byline}><strong>{article.author}</strong>, {role} · <time dateTime={toISODate(article.date)}>{article.date}</time> · {article.readTime}</p>
+          </div>
+        </header>
+        <figure className={`container ${styles.banner}`}>
+          <img src={sitePath(article.image.src)} alt={article.image.alt} width="1600" height="1000" fetchPriority="high"/>
+        </figure>
         <section className={styles.wrap}>
           <div className="container">
             <div className={styles.card}>

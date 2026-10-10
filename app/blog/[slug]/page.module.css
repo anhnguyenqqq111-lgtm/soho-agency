@@ -1,6 +1,21 @@
-.byline{font-size:var(--fs-small);color:var(--on-dark-2)}
-.byline strong{color:var(--white)}
-.wrap{padding-block:var(--space-md)}
+/* Đầu bài trên nền kem */
+.head{background:var(--paper);padding-block:clamp(36px,5vw,64px) clamp(28px,4vw,44px)}
+.headInner{display:grid;gap:14px;justify-items:start}
+.crumbs ol{list-style:none;margin:0 0 6px;padding:0;display:flex;flex-wrap:wrap;gap:6px;font-size:var(--fs-meta);color:var(--ink-3)}
+.crumbs li + li::before{content:'/';margin-right:6px;color:var(--gray-2)}
+.crumbs a{color:var(--ink-2)}
+.crumbs a:hover{color:var(--accent)}
+.eyebrow{font-size:var(--fs-meta);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.title{font-size:clamp(32px,4.4vw,58px);line-height:1.06;letter-spacing:-.025em;max-width:22ch}
+.lead{font-size:var(--fs-lead);line-height:1.55;color:var(--ink-2);max-width:62ch}
+.byline{font-size:var(--fs-small);color:var(--ink-3);padding-top:4px}
+.byline strong{color:var(--ink)}
+
+/* Banner dùng chung ảnh với thumbnail, hiển thị nguyên 16:10, rộng hơn cột chữ một chút */
+.banner{margin:0 auto;padding-block:8px 0}
+.banner img{width:100%;max-width:1040px;margin-inline:auto;aspect-ratio:16/10;object-fit:cover;background:var(--gray);border-radius:var(--r-card);box-shadow:var(--shadow-card)}
+
+.wrap{padding-block:clamp(28px,4vw,48px) var(--space-md)}
 .card{max-width:860px;margin-inline:auto;background:var(--white);border-radius:var(--r-card);padding:clamp(24px,4vw,56px);box-shadow:var(--shadow-card)}
 .body{max-width:none;font-size:17px}
 .author{display:grid;grid-template-columns:52px minmax(0,1fr);gap:16px;align-items:center;margin-top:48px;padding-top:28px;border-top:1px solid var(--line)}
@@ -9,3 +24,4 @@
 .authorRole{font-size:var(--fs-meta);color:var(--ink-2)}
 .related{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--gap)}
 @media (max-width:900px){.related{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:640px){.banner img{border-radius:var(--r-md)}}
