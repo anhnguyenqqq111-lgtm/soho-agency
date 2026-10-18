@@ -1,28 +1,29 @@
-.hero{position:relative;min-height:min(calc(100svh - var(--header-h)),820px);display:grid;overflow:hidden;color:var(--hero-ink,var(--ink));background:var(--hero-bg,var(--paper));border-bottom:1px solid var(--line)}
+/* Nền Cloud + quầng sáng tím/cam (Brand Kit v3: glow chỉ dùng ở hero) */
+.hero{position:relative;min-height:min(calc(100svh - var(--header-h)),820px);display:grid;overflow:hidden;color:var(--ink);background:var(--grad-glow),var(--paper);border-bottom:1px solid var(--line)}
 .inner{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:40px var(--gap);align-items:center;padding-block:clamp(40px,6vh,72px)}
-.visual{min-width:0;display:grid;place-items:center}
-.svg{width:100%;height:auto;max-height:calc(100svh - var(--header-h) - 160px)}
+/* Khung tối chứa minh họa: điểm nhấn Signature duy nhất của màn hình đầu */
+.visual{position:relative;min-width:0;display:grid;place-items:center;padding:clamp(20px,3vw,40px);border-radius:var(--r-xl);background:var(--grad-midnight);color:#FFFFFF;box-shadow:0 30px 80px rgba(16,18,28,.22);overflow:hidden;isolation:isolate;
+  --hero-bg:#1A1630;--hero-ink:#FFFFFF;--c1:#FF7A00;--c2:#FF416C;--c3:rgba(255,255,255,.13);--c4:#765BFF}
+.visual::before{content:'';position:absolute;inset:auto -20% -45% auto;width:70%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(255,65,108,.35),rgba(118,91,255,.18) 45%,transparent 70%);z-index:-1}
+.visual::after{content:'';position:absolute;left:0;right:0;top:0;height:3px;background:var(--grad-signature)}
+.svg{width:100%;height:auto;max-height:calc(100svh - var(--header-h) - 220px)}
 .content{display:grid;gap:12px;justify-items:start}
 .crumbs ol{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px;font-size:var(--fs-meta);opacity:.7}
 .crumbs li + li::before{content:'/';margin-right:6px}
 .crumbs a{color:inherit}
 .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--brand-ink)}
 .eyebrow::before{content:'';width:22px;height:3px;border-radius:2px;background:var(--brand)}
-.title{font-size:clamp(40px,5.2vw,74px);line-height:1.02;letter-spacing:-.04em;font-weight:800;max-width:12ch;color:inherit}
+.title{font-size:clamp(40px,5.2vw,72px);line-height:1.04;letter-spacing:-.05em;font-weight:700;max-width:12ch;color:inherit}
 .title::after{content:'.';color:var(--brand)}
 .tagline{font-size:var(--fs-lead);max-width:44ch;color:var(--ink-2)}
-.scroll{margin-top:18px;width:28px;height:44px;border:1.5px solid currentColor;border-radius:14px;opacity:.55;position:relative}
+.scroll{margin-top:18px;width:28px;height:44px;border:1.5px solid var(--silver);border-radius:14px;position:relative}
 .scroll span{position:absolute;left:50%;top:8px;width:4px;height:8px;margin-left:-2px;border-radius:2px;background:var(--brand);animation:scrollHint 1.6s ease-in-out infinite}
 @keyframes scrollHint{0%{transform:translateY(0);opacity:1}100%{transform:translateY(16px);opacity:0}}
 
-/* Phối màu từng trang: luôn nền sáng (trắng ngà hoặc cam nhạt), chữ than chì, minh họa cam + than chì */
-.home{--hero-bg:#FAFAF8;--hero-ink:#1F1F1F;--c1:#FF7A00;--c2:#1F1F1F;--c3:rgba(31,31,31,.09)}
-.services{--hero-bg:#FFF4E9;--hero-ink:#1F1F1F;--c1:#FF7A00;--c2:#FFFFFF;--c3:rgba(31,31,31,.09)}
-.solutions{--hero-bg:#FAFAF8;--hero-ink:#1F1F1F;--c1:#FF7A00;--c2:#FF9A45;--c3:rgba(31,31,31,.09)}
-.results{--hero-bg:#FFF4E9;--hero-ink:#1F1F1F;--c1:#FF7A00;--c2:#1F1F1F;--c3:rgba(31,31,31,.09)}
-.blog{--hero-bg:#FAFAF8;--hero-ink:#1F1F1F;--c1:#FF7A00;--c2:#FFFFFF;--c3:rgba(31,31,31,.09)}
-.about{--hero-bg:#FFF4E9;--hero-ink:#1F1F1F;--c1:#FF7A00;--c2:#1F1F1F;--c3:rgba(31,31,31,.09)}
-.contact{--hero-bg:#FAFAF8;--hero-ink:#1F1F1F;--c1:#FF7A00;--c2:#1F1F1F;--c3:rgba(31,31,31,.09)}
+/* Mọi trang dùng chung nền và khung; tone chỉ đổi vị trí quầng sáng cho đỡ lặp */
+.home,.solutions,.blog,.contact{--glow-x:76%}
+.services,.results,.about{--glow-x:24%}
+.services .visual::before,.results .visual::before,.about .visual::before{inset:-45% auto auto -20%}
 
 /* Hình chung */
 .grid{stroke:var(--c3);stroke-width:1}
@@ -44,12 +45,12 @@
 .curve{fill:none;stroke:url(#hv-line);stroke-width:6;stroke-linecap:round}
 .area{opacity:0;animation:fadeIn 1200ms ease 1200ms forwards}
 .tag{opacity:0;animation:fadeIn 600ms ease 2300ms forwards}
-.tagText{font-family:var(--font-text);font-size:18px;font-weight:700;fill:#FFFFFF;text-anchor:middle}
+.tagText{font-family:var(--font-text);font-size:18px;font-weight:700;fill:#10121C;text-anchor:middle}
 .node{fill:var(--hero-bg);stroke:var(--c1);stroke-width:2.5;opacity:0;animation:fadeIn 500ms ease forwards;animation-delay:calc(var(--i) * 260ms + 500ms)}
 @keyframes fadeIn{to{opacity:1}}
 
 /* Dịch vụ */
-.tileBg{fill:var(--c2);stroke:var(--c3);stroke-width:1}
+.tileBg{fill:rgba(255,255,255,.06);stroke:var(--c3);stroke-width:1}
 .tileDot{fill:var(--c1)}
 .tileText{font-family:var(--font-text);font-size:17px;font-weight:600;fill:var(--hero-ink)}
 .tile{opacity:0;animation:tileIn 600ms cubic-bezier(.2,.7,.2,1) forwards,tileGlow 6s ease-in-out infinite;animation-delay:calc(var(--i) * 90ms + 200ms),calc(var(--i) * 660ms + 1500ms)}
@@ -60,6 +61,8 @@
 /* Giải pháp */
 .layerBody{fill:var(--c3);stroke:var(--c1);stroke-width:1.5}
 .layerTop{fill:var(--c1);opacity:.9}
+.layer:nth-of-type(2) .layerTop{fill:var(--c2)}
+.layer:nth-of-type(3) .layerTop{fill:var(--c4)}
 .layer{animation:floatLayer 5s ease-in-out infinite;animation-delay:calc(var(--i) * -600ms)}
 @keyframes floatLayer{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
 
@@ -70,11 +73,11 @@
 .resultLine{fill:none;stroke:var(--hero-ink);stroke-width:3;stroke-linecap:round;stroke-linejoin:round;animation-delay:1400ms}
 
 /* Blog */
-.pageBg{fill:var(--c2);stroke:var(--c3);stroke-width:1.5}
+.pageBg{fill:rgba(255,255,255,.07);stroke:var(--c3);stroke-width:1.5}
 .page{animation:pageFloat 6s ease-in-out infinite;animation-delay:calc(var(--i) * -900ms)}
 @keyframes pageFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
 .textLine{fill:var(--c3);transform:scaleX(0);transform-origin:left center;animation:growX 700ms ease forwards;animation-delay:calc(var(--k) * 140ms + 400ms)}
-.textTitle{fill:var(--c1)}
+.textTitle{fill:var(--c2)}
 @keyframes growX{to{transform:scaleX(1)}}
 
 /* Về SOHO */
@@ -89,6 +92,7 @@
 
 @media (max-width:900px){
   .hero{min-height:auto}
+  .visual{border-radius:var(--r-card)}
   .inner{grid-template-columns:minmax(0,1fr);padding-block:32px 40px}
   .visual{order:-1}
   .svg{max-height:52vh}

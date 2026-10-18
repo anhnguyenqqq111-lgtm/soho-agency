@@ -2,7 +2,7 @@ import styles from './Button.module.css';
 import {sitePath} from '../paths';
 
 /*
-  variant: primary (nền cam, chữ than chì), secondary (viền than chì), text (link có mũi tên cam)
+  variant: primary (viên thuốc cam, chữ Midnight), secondary (viền xám, hover nền trắng), text (link có mũi tên cam)
   size: md | sm
   arrow: 'up' (↗ như GOHA) | 'right' (→) | false
 */
@@ -11,7 +11,7 @@ export default function Button({
   children,
   variant = 'primary',
   size = 'md',
-  arrow = 'right',
+  arrow = 'up',
   onDark = false,
   className = '',
   ...rest

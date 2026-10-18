@@ -19,7 +19,9 @@
 .scope{font-size:12px;font-weight:600;color:var(--ink-3);text-align:right}
 .name{font-size:19px;margin-top:4px}
 .link:hover{border-color:var(--brand)}
-.result{font-size:17px;font-weight:800;letter-spacing:-.01em;color:var(--brand-dark)}
+/* Viền gradient Signature cho đúng một thẻ nổi bật (thẻ đầu) */
+.card:first-child .link{border:2px solid transparent;background:linear-gradient(var(--white),var(--white)) padding-box,var(--grad-signature) border-box}
+.result{font-size:17px;font-weight:700;letter-spacing:-.01em;color:var(--brand-ink)}
 .more{margin-top:10px;font-size:13px;font-weight:700;color:var(--ink)}
 .link:hover .more{color:var(--brand-ink)}
 @media (max-width:900px){.card{flex-basis:calc((100% - var(--gap)) / 2)}}

@@ -49,9 +49,9 @@ Không thêm biến môi trường nào trên Vercel. Nếu lỡ đặt `GITHUB_
 
 ```text
 app/
-  layout.js                  font Inter, metadata mặc định, RevealObserver
-  favicon.ico, icon.svg      favicon theo brand kit
-  styles/tokens.css          biến màu, chữ, khoảng cách theo SOHO Brand Kit v1.0 (toàn bộ màu định nghĩa ở đây)
+  layout.js                  font Inter + Space Grotesk, metadata mặc định, RevealObserver
+  favicon.ico, icon.svg, apple-icon.png   favicon theo Brand Kit v3
+  styles/tokens.css          biến màu, chữ, khoảng cách, gradient theo SOHO Brand Kit v3.0 (toàn bộ màu định nghĩa ở đây)
   styles/base.css            reset, typography, .prose, hiệu ứng hé lộ
   styles/diagram.css         style chung cho sơ đồ SVG
   page.js                    trang chủ
@@ -69,7 +69,7 @@ components/
   hero/                      Hero (đầu trang) và Visuals (7 minh họa SVG theo trang)
   ui/                        Section, PageHeader, Button, NumberedList, LinkRows, CtaBand, Faq, Fill, ImageSlot, SplitWords
   diagrams/                  JourneyMatrix (trang chủ), ServiceDiagrams (9 sơ đồ dịch vụ), Track, BeforeAfter, svg.js
-  proof/                     ProjectCarousel, ProjectGrid, LogoMarquee, PartnerStrip, Testimonials
+  proof/                     ProjectCarousel, ProjectGrid, LogoMarquee, PartnerStrip, PartnerBadge, Testimonials
   article/                   ArticleBody, Toc, Markdown, parseMarkdown: render bài viết dịch vụ từ markdown
   data/company.js            thông tin công ty (địa chỉ, điện thoại, năm thành lập...)
   data/clients.js            khách hàng, dự án
@@ -79,7 +79,8 @@ components/
   blogData.js                bài blog (HTML trong chuỗi), danh mục, ảnh banner/thumbnail
   articles/*.js              bài viết dài cho từng dịch vụ (markdown trong chuỗi)
 
-public/brand/                logo theo brand kit: soho-wordmark.svg (header), soho-logo-white.svg (footer), symbol, avatar
+public/brand/                logo Brand Kit v3: soho-logo.svg (header), soho-logo-on-dark.svg (footer), avatar
+public/partners/             huy hiệu đối tác chính thức (google-partner.svg)
 public/clients/              logo khách hàng
 public/blog/                 ảnh bài blog (thumbnail và banner dùng chung), render bằng skill creating-images-soho
 DESIGN.md                    hướng thiết kế, token, quy tắc màu và logo (mục 2)
@@ -101,7 +102,7 @@ grep -rn "need=\"CẦN\|\[CẦN" app components
 | --- | --- |
 | `components/data/company.js` | tên pháp nhân, mã số thuế, địa chỉ, điện thoại, giờ làm việc, năm thành lập, số khách hàng, quy mô, link mạng xã hội |
 | `components/data/clients.js` | ảnh dự án (đặt vào `public/projects/`), kết quả, bối cảnh, việc đã làm |
-| `components/data/proof.js` | chứng nhận đối tác (`verified: true` + logo), nhận xét khách hàng |
+| `components/data/proof.js` | `profileUrl` hồ sơ Google Partner (bắt buộc theo quy định của Google), xác nhận Meta/TikTok, nhận xét khách hàng |
 | `components/servicePagesData.js` | `artifact.image`: ảnh sản phẩm bàn giao mẫu cho từng dịch vụ |
 
 Ảnh đội ngũ, văn phòng trên trang chủ và trang Giới thiệu dùng `ImageSlot` với `src={null}`; thay bằng đường dẫn ảnh thật.
@@ -124,7 +125,8 @@ Quy tắc chung của blog (sẽ là quy tắc của CMS sau này), kiểm tra t
 - Form liên hệ (`components/ContactForm.js`) chỉ hiện thông báo đã gửi, chưa gửi đi đâu. Cần nối API hoặc dịch vụ form.
 - Hai trang pháp lý là bản nháp, cần pháp chế duyệt. Đầu trang có dòng cảnh báo đỏ, xóa sau khi duyệt.
 - Bài viết dịch vụ có câu số liệu khẳng định về SOHO (gạch chân chấm vàng, đánh dấu tự động bởi `isClaim()` trong `components/article/parseMarkdown.js`). Cần kiểm chứng hoặc sửa.
-- Ảnh bìa 9 bài blog trong `public/blog/` còn logo cũ, cần xuất lại theo brand kit.
+- Huy hiệu Google Partner chưa có link hồ sơ đối tác. Điền `profileUrl` trong `components/data/proof.js`.
+- Ảnh bìa 9 bài blog trong `public/blog/` còn logo cũ, cần xuất lại theo logo Brand Kit v3.
 - Tên tác giả chưa thống nhất giữa `blogData.js` ("Nguyễn Tuấn Anh") và `articles/*.js` ("Nguyễn Thế Tuấn Anh").
 
 ## Kiểm tra trước khi merge

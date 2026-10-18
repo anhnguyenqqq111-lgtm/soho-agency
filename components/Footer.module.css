@@ -1,8 +1,8 @@
-.footer{position:relative;background:var(--night);color:var(--on-dark);padding-top:var(--space-md);border-top:4px solid var(--brand)}
+.footer{position:relative;background:var(--night);color:var(--on-dark);padding-top:var(--space-md)}
 .footer a:hover{color:var(--brand)}
 .grid{display:grid;grid-template-columns:1.5fr 1fr 1fr .8fr 1fr;gap:40px var(--gap);padding-bottom:48px}
 .brand{display:grid;gap:18px;align-content:start}
-.logo img{height:64px;width:auto}
+.logo img{height:56px;width:auto}
 .company{font-size:18px;font-weight:700;margin-top:10px}
 .info{list-style:none;margin:0;padding:0;display:grid;gap:10px;font-size:14px;color:var(--on-dark-2)}
 .info li{display:grid;grid-template-columns:22px minmax(0,1fr);gap:10px;align-items:start}
@@ -14,6 +14,7 @@
 .badges{list-style:none;margin:0;padding:0;display:grid;gap:8px}
 .badge{display:grid;gap:2px;padding:10px 12px;border:1px solid var(--line-dark);border-radius:var(--r-sm);font-size:13px}
 .badge :global(.placeholder){font-size:11px}
+.badgeImg{margin-bottom:4px}
 .bottom{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 24px;padding-block:22px 28px;border-top:1px solid var(--line-dark);font-size:var(--fs-meta);color:var(--on-dark-2)}
 .legal{display:flex;flex-wrap:wrap;gap:8px 20px}
 @media (max-width:1000px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}.brand{grid-column:1 / -1}}

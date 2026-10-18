@@ -7,7 +7,7 @@
 .dg .ln.soft{stroke:var(--gray-2)}
 .dg .ln.acc{stroke:var(--brand);stroke-width:2.25}
 .dg .ln.fill{fill:var(--white)}
-.dg .ln.fill2{fill:var(--brand-soft)}
+.dg .ln.fill2{fill:var(--paper-2)}
 .dg .ln.fillAcc{fill:var(--brand)}
 .dg .dash{fill:none;stroke:var(--gray-2);stroke-width:1;stroke-dasharray:3 5}
 .dg .shade{fill:var(--brand);opacity:.14}

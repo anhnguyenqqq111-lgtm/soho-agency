@@ -1,7 +1,8 @@
 import styles from './PartnerStrip.module.css';
 import {partners} from '../data/proof';
-import {sitePath} from '../paths';
+import PartnerBadge from './PartnerBadge';
 
+/* Dải chứng nhận: huy hiệu chính thức cho mục đã xác nhận, tên kèm nhãn [CẦN ...] cho mục chưa có */
 export default function PartnerStrip(){
   if (!partners.length) return null;
   return (
@@ -10,10 +11,12 @@ export default function PartnerStrip(){
       <ul className={styles.list}>
         {partners.map(p => (
           <li key={p.name}>
-            {p.logo
-              ? <img src={sitePath(p.logo)} alt={p.name} className={styles.logo}/>
-              : <span className={styles.name}>{p.name}</span>}
-            {!p.verified && <span className="placeholder">[CẦN XÁC NHẬN và logo chính thức]</span>}
+            {p.verified && p.logo
+              ? <PartnerBadge partner={p} size={96}/>
+              : <>
+                  <span className={styles.name}>{p.name}</span>
+                  <span className="placeholder">[CẦN XÁC NHẬN và logo chính thức]</span>
+                </>}
           </li>
         ))}
       </ul>

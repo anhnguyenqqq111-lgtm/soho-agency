@@ -25,9 +25,9 @@
 .actions{display:grid;gap:12px;justify-items:start}
 .consent{font-size:12.5px;color:var(--ink-3);max-width:52ch}
 .consent a{color:var(--accent);text-decoration:underline}
-.submit{display:inline-flex;align-items:center;gap:10px;background:var(--brand);color:var(--ink);border:0;border-radius:var(--r-md);padding:14px 22px;font-size:15px;font-weight:700;cursor:pointer;transition:background-color var(--t-fast),box-shadow var(--t-fast)}
+.submit{display:inline-flex;align-items:center;gap:10px;background:var(--brand);color:var(--ink);border:0;border-radius:var(--r-pill);padding:14px 24px;font-size:15px;font-weight:700;cursor:pointer;transition:background-color var(--t-fast),box-shadow var(--t-fast),transform var(--t-fast)}
 .submit span:last-child{transition:transform var(--t-fast)}
-.submit:hover{background:var(--brand-hover);box-shadow:0 8px 22px rgba(255,122,0,.28)}
+.submit:hover{background:var(--brand-hover);box-shadow:0 10px 26px rgba(255,122,0,.3);transform:translateY(-2px)}
 .submit:hover span:last-child{transform:translateX(3px)}
 
 .done{display:grid;gap:8px;color:var(--ink-2);padding:8px 0}

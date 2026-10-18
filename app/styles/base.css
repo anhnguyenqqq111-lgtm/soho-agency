@@ -15,31 +15,35 @@ img,svg{display:block;max-width:100%;height:auto}
 button,input,select,textarea{font:inherit;color:inherit}
 ::selection{background:var(--brand);color:var(--ink)}
 
-h1,h2,h3,h4{margin:0;color:inherit;font-weight:700;text-wrap:balance}
-h1{font-size:var(--fs-h1);line-height:1.04;letter-spacing:-.035em;font-weight:800}
-h2{font-size:var(--fs-h2);line-height:1.12;letter-spacing:-.028em;font-weight:750}
-h3{font-size:var(--fs-h3);line-height:1.3;letter-spacing:-.012em}
-h4{font-size:17px;line-height:1.35;font-weight:600}
+h1,h2,h3,h4{margin:0;color:inherit;font-weight:700;text-wrap:balance;font-family:var(--font-display)}
+h1{font-size:var(--fs-h1);line-height:1.07;letter-spacing:-.045em;font-weight:700}
+h2{font-size:var(--fs-h2);line-height:1.1;letter-spacing:-.035em;font-weight:700}
+h3{font-size:var(--fs-h3);line-height:1.25;letter-spacing:-.02em}
+h4{font-size:17px;line-height:1.35;font-weight:600;font-family:var(--font-text)}
 p{margin:0;text-wrap:pretty}
 li,dd,blockquote{text-wrap:pretty}
 a{color:inherit;text-decoration:none;transition:color var(--t-fast)}
 a:hover{color:var(--accent)}
-:focus-visible{outline:3px solid var(--brand-dark);outline-offset:3px}
-.dark :focus-visible{outline-color:var(--brand)}
+:focus-visible{outline:3px solid var(--violet);outline-offset:4px}
 
 .container{width:100%;max-width:calc(var(--container) + var(--gutter) * 2);margin-inline:auto;padding-inline:var(--gutter)}
 .visually-hidden{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
 .meta{font-size:var(--fs-meta);color:var(--ink-3);font-weight:500}
 .num{font-variant-numeric:tabular-nums}
 
-/* Chữ nhấn trong tiêu đề: cam sáng trên nền tối, cam đậm trên nền sáng */
-.hl{color:var(--brand-dark)}
+/* Chữ nhấn trong tiêu đề: cam đậm trên nền sáng, cam sáng trên nền tối (màu đặc, không gradient) */
+.hl{color:var(--brand-ink)}
 .dark .hl{color:var(--brand)}
+/* Chữ gradient Signature: chỉ một chỗ lớn mỗi màn hình (hero). Có màu đặc dự phòng. */
+.grad-text{color:var(--brand-ink)}
+@supports (-webkit-background-clip:text) or (background-clip:text){
+  .grad-text{background:var(--grad-signature);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+}
 .dark h1,.dark h2,.dark h3{color:var(--on-dark)}
 
 /* Nhãn nhỏ trên tiêu đề section: chữ in hoa cam đậm, vạch cam phía trước */
 .kicker{display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--brand-ink);margin-bottom:16px}
-.kicker::before{content:'';width:18px;height:3px;border-radius:2px;background:var(--brand)}
+.kicker::before{content:'';width:22px;height:3px;border-radius:2px;background:var(--brand)}
 .dark .kicker{color:var(--brand)}
 
 /* Nền tối dùng chung */
@@ -49,7 +53,7 @@ a:hover{color:var(--accent)}
 /* Đánh dấu chỗ cần điền */
 mark[data-verify]{background:none;color:inherit;text-decoration:underline dotted var(--brand);text-decoration-thickness:2px;text-underline-offset:4px}
 .placeholder{color:var(--error);font-weight:600}
-.dark .placeholder{color:#FF9C8F}
+.dark .placeholder{color:#FF8FA0}
 
 /* Nội dung bài viết dài */
 .prose{max-width:72ch;color:var(--ink)}
@@ -64,7 +68,7 @@ mark[data-verify]{background:none;color:inherit;text-decoration:underline dotted
 .prose li + li{margin-top:.45em}
 .prose li > ul,.prose li > ol{margin-top:.45em}
 .prose ul li::marker{color:var(--brand)}
-.prose blockquote{margin-inline:0;padding:20px 24px;border-left:4px solid var(--brand);background:var(--brand-soft);border-radius:0 var(--r-md) var(--r-md) 0;font-size:1.08em;line-height:1.5;font-weight:500;color:var(--ink)}
+.prose blockquote{margin-inline:0;padding:20px 24px;border-left:4px solid var(--brand);background:var(--paper);border-radius:0 var(--r-md) var(--r-md) 0;font-size:1.08em;line-height:1.5;font-weight:500;color:var(--ink)}
 .prose a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
 .prose .tableWrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--r-md)}
 .prose table{width:100%;border-collapse:collapse;font-size:var(--fs-small);line-height:1.5;min-width:560px}

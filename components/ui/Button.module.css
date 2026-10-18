@@ -1,27 +1,26 @@
-/* Nút theo SOHO Brand Kit: bo 12px, cam nền chữ than chì (không dùng chữ trắng trên cam) */
-.btn{display:inline-flex;align-items:center;gap:10px;font-weight:700;text-decoration:none;cursor:pointer;border:1.5px solid transparent;border-radius:var(--r-md);transition:background-color var(--t-fast),color var(--t-fast),border-color var(--t-fast),box-shadow var(--t-fast);white-space:nowrap;line-height:1.2}
-.btn:hover{text-decoration:none}
-.md{font-size:15px;padding:13px 20px}
-.sm{font-size:14px;padding:9px 15px;gap:8px}
-.arrow{display:inline-block;font-size:1.05em;transition:transform var(--t-fast)}
-.btn:hover .arrow{transform:translateX(3px)}
+/* Nút theo SOHO Brand Kit v3: viên thuốc, cam nền chữ Midnight (không dùng chữ trắng trên cam) */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.7em;font-weight:700;text-decoration:none;cursor:pointer;border:1px solid transparent;border-radius:var(--r-pill);transition:background-color .2s var(--ease),color .2s var(--ease),border-color .2s var(--ease),transform .2s var(--ease),box-shadow .2s var(--ease);white-space:nowrap;line-height:1.2}
+.btn:hover{text-decoration:none;transform:translateY(-2px)}
+.md{font-size:15px;padding:14px 23px}
+.sm{font-size:14px;padding:10px 17px;gap:.55em}
+.arrow{display:inline-block;transition:transform var(--t-fast)}
+.btn:hover .arrow{transform:translate(2px,-2px)}
 
 .primary{background:var(--brand);color:var(--ink);border-color:var(--brand)}
-.primary:hover{background:var(--brand-hover);border-color:var(--brand-hover);color:var(--ink);box-shadow:0 8px 22px rgba(255,122,0,.28)}
+.primary:hover{background:var(--brand-hover);border-color:var(--brand-hover);color:var(--ink);box-shadow:0 10px 26px rgba(255,122,0,.3)}
 
-.secondary{background:transparent;color:var(--ink);border-color:var(--ink)}
-.secondary:hover{background:var(--ink);color:var(--white)}
+.secondary{background:transparent;color:var(--ink);border-color:var(--line)}
+.secondary:hover{background:var(--white);border-color:var(--ink);color:var(--ink)}
 
 .text{border:0;background:none;color:var(--ink);padding:0;border-radius:0;white-space:normal;gap:8px}
 .text.md,.text.sm{padding:0}
-.text .arrow{color:var(--brand-dark)}
-.text:hover{color:var(--brand-ink)}
+.text:hover{transform:none;color:var(--brand-ink)}
+.text .arrow{color:var(--brand-ink)}
 .text > span:first-child{background:linear-gradient(currentColor,currentColor) 0 100% / 0 1.5px no-repeat;transition:background-size var(--t-med)}
 .text:hover > span:first-child{background-size:100% 1.5px}
 
-.onDark.primary:hover{box-shadow:0 8px 26px rgba(255,122,0,.35)}
-.onDark.secondary{color:var(--white);border-color:rgba(255,255,255,.55)}
-.onDark.secondary:hover{background:var(--white);border-color:var(--white);color:var(--ink)}
+.onDark.secondary{background:var(--white);color:var(--ink);border-color:var(--white)}
+.onDark.secondary:hover{background:transparent;color:var(--white)}
 .onDark.text{color:var(--white)}
 .onDark.text .arrow{color:var(--brand)}
 .onDark.text:hover{color:var(--brand)}

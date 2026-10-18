@@ -12,7 +12,7 @@ export function HomeVisual(){
   return (
     <svg viewBox="0 0 1140 480" className={styles.svg} aria-hidden="true">
       <defs>
-        <linearGradient id="hv-line" x1="0" x2="1"><stop offset="0" stopColor="#FF9A45"/><stop offset="1" stopColor="#F45100"/></linearGradient>
+        <linearGradient id="hv-line" x1="0" x2="1"><stop offset="0" stopColor="#FF7A00"/><stop offset=".52" stopColor="#FF416C"/><stop offset="1" stopColor="#765BFF"/></linearGradient>
         <linearGradient id="hv-area" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stopColor="#FF7A00" stopOpacity=".32"/><stop offset="1" stopColor="#FF7A00" stopOpacity="0"/></linearGradient>
         <radialGradient id="hv-glow"><stop offset="0" stopColor="#FF7A00" stopOpacity=".55"/><stop offset="1" stopColor="#FF7A00" stopOpacity="0"/></radialGradient>
       </defs>
@@ -25,16 +25,16 @@ export function HomeVisual(){
       <circle r="9" fill="#FFFFFF" stroke="#FF7A00" strokeWidth="3"><animateMotion dur="7s" repeatCount="indefinite" path={CURVE}/></circle>
       <g className={styles.orbit} style={{transformOrigin: '1060px 80px'}}>
         <circle cx="1060" cy="80" r="46" className={styles.orbitRing}/>
-        <circle cx="1106" cy="80" r="6" fill="#1F1F1F"/>
+        <circle cx="1106" cy="80" r="6" fill="#765BFF"/>
       </g>
       <g className={styles.orbitSlow} style={{transformOrigin: '1060px 80px'}}>
         <circle cx="1060" cy="80" r="76" className={styles.orbitRing}/>
         <circle cx="1060" cy="4" r="5" fill="#FF7A00"/>
       </g>
       <g className={styles.tag}>
-        <rect x="806" y="18" width="168" height="44" rx="12" fill="#1F1F1F"/>
+        <rect x="806" y="18" width="168" height="44" rx="22" fill="#FFFFFF"/>
         <text x="890" y="46" className={styles.tagText}>Doanh thu</text>
-        <path d="M974 40 L1004 62" stroke="#1F1F1F" strokeWidth="2"/>
+        <path d="M974 40 L1004 62" stroke="rgba(255,255,255,.6)" strokeWidth="2"/>
       </g>
       <text x="80" y="460" className={styles.axisLabel}>Tháng 1</text>
       <text x="1060" y="460" className={`${styles.axisLabel} ${styles.end}`}>Tháng 12</text>
@@ -122,7 +122,7 @@ export function AboutVisual(){
         {[0, 1, 2, 3].map(i => <circle key={i} cx={380 + 180 * Math.cos(i * Math.PI / 2)} cy={270 + 180 * Math.sin(i * Math.PI / 2)} r="9" fill="#FF7A00"/>)}
       </g>
       <g className={styles.orbit} style={{transformOrigin: '520px 270px'}}>
-        {[0, 1, 2].map(i => <circle key={i} cx={520 + 180 * Math.cos(i * 2 * Math.PI / 3)} cy={270 + 180 * Math.sin(i * 2 * Math.PI / 3)} r="9" fill="#1F1F1F"/>)}
+        {[0, 1, 2].map(i => <circle key={i} cx={520 + 180 * Math.cos(i * 2 * Math.PI / 3)} cy={270 + 180 * Math.sin(i * 2 * Math.PI / 3)} r="9" fill="#765BFF"/>)}
       </g>
       <text x="300" y="275" className={`${styles.sideLabel} ${styles.mid}`}>SOHO</text>
       <text x="600" y="275" className={`${styles.sideLabel} ${styles.mid}`}>Khách hàng</text>

@@ -14,6 +14,8 @@ import ProjectCarousel from '../components/proof/ProjectCarousel';
 import BlogCard from '../components/BlogCard';
 import LogoMarquee from '../components/proof/LogoMarquee';
 import ServiceGroups from '../components/ServiceGroups';
+import PartnerBadge from '../components/proof/PartnerBadge';
+import {partners} from '../components/data/proof';
 import {clients} from '../components/data/clients';
 import {getServicesByGroup} from '../components/servicePagesData';
 import {getLatestArticles} from '../components/blogData';
@@ -69,6 +71,12 @@ export default function Home(){
                 <Button href="#lien-he">Đặt lịch trao đổi</Button>
                 <Button href="/dich-vu" variant="text">Xem dịch vụ</Button>
               </div>
+              {partners.filter(p => p.verified && p.logo).map(p => (
+                <div key={p.name} className={styles.partnerRow}>
+                  <PartnerBadge partner={p} size={76}/>
+                  <p><strong>SOHO là {p.name}{p.year ? ` ${p.year}` : ''}.</strong> Huy hiệu Google cấp cho agency đạt yêu cầu về chứng chỉ, mức chi tiêu và hiệu quả quảng cáo.</p>
+                </div>
+              ))}
             </div>
             <div className={styles.introMedia} data-reveal="" style={{'--reveal-delay': '150ms'}}>
               <ImageSlot src={null} need="Ảnh hoặc video đội SOHO đang làm việc (ảnh thật, không stock)" size="1200×1200" ratio="1/1"/>
@@ -79,12 +87,13 @@ export default function Home(){
         <LogoMarquee clients={clients}/>
 
         {/* Dịch vụ: thẻ trắng trên nền cam nhạt */}
-        <Section id="dich-vu" tone="soft" kicker="Dịch vụ" title={<>Chín dịch vụ, <span className="hl">ba nhóm việc</span></>} aside={<Button href="/dich-vu" variant="text">Xem tất cả dịch vụ</Button>}>
+        <Section id="dich-vu" tone="paper" kicker="Dịch vụ" title={<>Chín dịch vụ, <span className="hl">ba nhóm việc</span></>} aside={<Button href="/dich-vu" variant="text">Xem tất cả dịch vụ</Button>}>
           <ServiceGroups groups={groups}/>
         </Section>
 
         {/* Bảng hành trình */}
         <Section
+          tone="soft"
           kicker="Cách SOHO đo"
           title={<>Mỗi chặng hành trình, <span className="hl">một bộ chỉ số</span></>}
           intro="Khách hàng đi qua ba chặng. Ở mỗi chặng, mỗi kênh có một chỉ số riêng để theo dõi, càng về cuối càng ít khách đi tiếp, và tất cả gộp về doanh thu."
@@ -94,7 +103,7 @@ export default function Home(){
         </Section>
 
         {/* Dự án */}
-        <Section id="du-an" tone="paper" kicker="Dự án" title={<>Từ điểm nghẽn đến kết quả: <span className="hl">hành trình</span> của khách hàng SOHO</>} aside={<Button href="/ket-qua" variant="text">Xem tất cả dự án</Button>}>
+        <Section id="du-an" tone="white" kicker="Dự án" title={<>Từ điểm nghẽn đến kết quả: <span className="hl">hành trình</span> của khách hàng SOHO</>} aside={<Button href="/ket-qua" variant="text">Xem tất cả dự án</Button>}>
           <ProjectCarousel clients={clients}/>
         </Section>
 

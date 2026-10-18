@@ -5,6 +5,7 @@ import {solutionPages} from './solutionPagesData';
 import {company} from './data/company';
 import {partners} from './data/proof';
 import Fill from './ui/Fill';
+import PartnerBadge from './proof/PartnerBadge';
 
 export default function Footer(){
   const year = new Date().getFullYear();
@@ -24,7 +25,7 @@ export default function Footer(){
       <div className={`container ${styles.grid}`}>
         <div className={styles.brand}>
           <a href={sitePath('/')} className={styles.logo} aria-label="SOHO Agency, về trang chủ">
-            <img src={sitePath('/brand/soho-logo-white.svg')} alt="SOHO Agency" width="752" height="222"/>
+            <img src={sitePath('/brand/soho-logo-on-dark.svg')} alt="SOHO Agency" width="730" height="250"/>
           </a>
           <h2 className={styles.company}><Fill value={company.legalName} need="CẦN TÊN PHÁP NHÂN"/></h2>
           <ul className={styles.info}>
@@ -54,10 +55,12 @@ export default function Footer(){
           </ul>
           <h2 className={`${styles.colTitle} ${styles.gap}`}>Chứng nhận</h2>
           <ul className={styles.badges}>
-            {partners.map(p => (
+            {partners.map(p => p.verified && p.logo ? (
+              <li key={p.name} className={styles.badgeImg}><PartnerBadge partner={p} size={84}/></li>
+            ) : (
               <li key={p.name} className={styles.badge}>
                 <span>{p.name}</span>
-                {!p.verified && <Fill value={null} need="CẦN XÁC NHẬN"/>}
+                <Fill value={null} need="CẦN XÁC NHẬN"/>
               </li>
             ))}
           </ul>
