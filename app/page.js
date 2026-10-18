@@ -44,7 +44,7 @@ export default function Home(){
         <Hero
           tone="home"
           eyebrow="SOHO Agency"
-          title="Marketing đo bằng doanh thu"
+          title={<>Marketing đo bằng <span className="hl">doanh thu</span></>}
           tagline="SEO, quảng cáo, content và đo lường cho doanh nghiệp Việt Nam."
           visual={<HomeVisual/>}
         />

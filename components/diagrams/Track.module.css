@@ -2,14 +2,14 @@
 .label{font-size:var(--fs-meta);font-weight:600;color:var(--ink-3);margin:0 0 20px}
 :global(.dark) .label{color:var(--on-dark-3)}
 .list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(var(--n),minmax(0,1fr));gap:var(--gap);position:relative}
-.list::before{content:'';position:absolute;left:0;right:0;top:22px;height:1px;background:var(--line);transform-origin:left center}
+.list::before{content:'';position:absolute;left:0;right:0;top:22px;height:2px;background:var(--grad-warm);transform-origin:left center;opacity:.55}
 .item{position:relative;display:grid;gap:16px;align-content:start}
 .node{
   position:relative;z-index:1;width:44px;height:44px;border-radius:50%;
-  border:1px solid var(--gray-2);background:var(--white);color:var(--ink);
+  border:0;background:var(--grad-cta);color:var(--ink);box-shadow:0 0 0 6px var(--white);
   display:grid;place-items:center;font-weight:700;font-size:14px;
 }
-.acc .node{background:var(--grad-cta);border-color:transparent;color:var(--ink)}
+.acc .node{background:var(--midnight);color:var(--white)}
 :global(.dark) .node{background:var(--brand);border-color:var(--brand);color:var(--ink);font-weight:800}
 :global(.dark) .acc .node{background:var(--brand);color:var(--ink);border-color:var(--brand)}
 .body{display:grid;gap:6px;padding-right:8px}

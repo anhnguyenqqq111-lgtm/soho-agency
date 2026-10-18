@@ -1,6 +1,5 @@
-/* SOHO design tokens, bản 7: tối giản theo SOHO Brand Kit v4.0. Xem DESIGN.md.
-   Nền trắng là chính. Một màu nhấn duy nhất là cam, chỉ dùng ở chỗ cần nổi bật: nút hành động, link, con số kết quả.
-   Không gradient trang trí, không khối nền tối, không san hô/tím. */
+/* SOHO design tokens, bản 8: nền trắng theo SOHO Brand Kit v4.0, màu và hiệu ứng chỉ ở điểm quan trọng. Xem DESIGN.md.
+   Một họ màu nhấn là cam của logo (đặc hoặc gradient). Một khối tối duy nhất: khối liên hệ. */
 :root{
   /* Màu nhấn */
   --brand:#F28C35;          /* cam logo */
@@ -9,7 +8,13 @@
   --brand-ink:#AE420D;      /* chữ cam nhỏ, link (>= 4.5:1 trên nền trắng) */
   --brand-dark:var(--brand-ink);
   --brand-soft:#F5F6FA;     /* tên cũ: nay là xám rất nhạt, không còn nền cam */
-  --grad-cta:linear-gradient(110deg,#F6A341,#E7622B);  /* chỉ cho nút chính */
+  --grad-cta:linear-gradient(110deg,#F6A341,#E7622B);  /* nút chính */
+  --grad-warm:linear-gradient(120deg,#F6A341 0%,#F28C35 35%,#EA6B2B 66%,#D95026 100%);  /* gradient logo: mảng nhấn lớn */
+  --grad-warm-text:linear-gradient(100deg,#E8642A 0%,#C2410C 100%);  /* chữ nhấn trong tiêu đề (>= 3:1 cho chữ lớn) */
+  --warm-1:#FCE3CC;         /* cam rất nhạt: chặng đầu, nền chip */
+  --warm-2:#F6A341;
+  --midnight:#10121C;       /* nền khối liên hệ */
+  --glow-warm:radial-gradient(circle at 85% 15%,rgba(242,140,53,.16),transparent 45%);
 
   /* Trung tính */
   --white:#FFFFFF;

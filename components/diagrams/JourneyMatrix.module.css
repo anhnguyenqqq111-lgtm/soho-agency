@@ -5,34 +5,36 @@
 .chDot{display:none}
 
 .stageWrap{display:grid;gap:0}
-.block{display:grid;grid-template-columns:64px 250px repeat(4,minmax(0,1fr));column-gap:16px;row-gap:0;align-items:center;padding:22px 24px;background:var(--white);border:1px solid var(--line);border-radius:var(--r-card)}
+.block{display:grid;grid-template-columns:64px 250px repeat(4,minmax(0,1fr));column-gap:16px;row-gap:0;align-items:center;padding:22px 24px;background:var(--white);border:1px solid var(--line);border-radius:var(--r-card);transition:box-shadow var(--t-med),border-color var(--t-med),transform var(--t-med)}
+.block:hover{box-shadow:var(--shadow-card);border-color:#F3C9A4;transform:translateY(-2px)}
 .q{display:none}
 .cellCh{display:none}
 
 /* Nhãn mục tiêu dọc */
 .goal{align-self:stretch;display:flex;align-items:center;justify-content:center;border:1.5px solid var(--ink);border-right:0;border-radius:6px 0 0 6px}
 .goal span{writing-mode:vertical-rl;transform:rotate(180deg);font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2)}
-.goalSales{border-color:var(--ink)}
-.goalSales span{color:var(--ink)}
+.goalSales{border-color:var(--brand)}
+.goalSales span{color:var(--brand-ink)}
 
 /* Phễu */
 .stage{display:grid;align-content:center;justify-items:end;text-align:right;gap:2px;padding:22px 42px 22px 18px;color:var(--ink);
   clip-path:polygon(0 6%,calc(100% - 28px) 0,100% 50%,calc(100% - 28px) 100%,0 94%)}
-/* Bản tối giản: hai chặng đầu xám, chỉ chặng chốt đơn (BOFU) dùng cam */
-.s0{background:#EEF0F5}
-.s1{background:#E1E4EC;margin-right:30px}
-.s2{background:var(--grad-cta);margin-right:60px}
+/* Ba chặng đậm dần theo cam của logo: càng gần quyết định mua càng đậm */
+.s0{background:linear-gradient(90deg,#FFF1E4,#FCE3CC)}
+.s1{background:linear-gradient(90deg,#FBC48F,#F6A341);margin-right:30px}
+.s2{background:var(--grad-warm);margin-right:60px}
 .stage strong{font-size:clamp(17px,1.5vw,20px);font-weight:800;line-height:1.2}
 .code{font-size:11px;font-weight:700;letter-spacing:.14em;opacity:.9}
 .sub{font-size:12.5px;opacity:.9}
 
 /* Dải kênh */
 .cell{display:flex;align-items:center}
-.band{width:var(--w);display:grid;gap:4px;padding:14px 16px;border-radius:var(--r-md);font-size:14px;line-height:1.4;font-weight:600}
+.band{width:var(--w);display:grid;gap:4px;padding:14px 16px;border-radius:var(--r-md);font-size:14px;line-height:1.4;font-weight:600;border:1px solid transparent;transition:border-color var(--t-fast),background-color var(--t-fast)}
+.block:hover .band{background:#FFF7F0!important;border-color:#F6CFAE}
 .band span + span{padding-top:5px;border-top:1px solid color-mix(in srgb,currentColor 28%,transparent);font-weight:500}
 
 /* Mũi tên nối */
-.arrow{display:flex;justify-content:center;padding:6px 0;color:var(--silver)}
+.arrow{display:flex;justify-content:center;padding:6px 0;color:var(--brand)}
 
 /* Đích */
 .dest{padding:16px 20px;border-radius:var(--r-md);background:var(--ink);color:#FFFFFF;font-size:15px;text-align:center}

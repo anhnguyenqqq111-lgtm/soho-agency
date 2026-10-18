@@ -8,6 +8,7 @@ export default function ServiceGroups({groups}){
       {groups.map(({group, items}, gi) => (
         <article key={group} className={styles.card} data-reveal="" style={{'--reveal-delay': `${gi * 100}ms`}}>
           <header className={styles.head}>
+            <span className={styles.num}>{String(gi + 1).padStart(2, '0')}</span>
             <h3 className={styles.group}>{group}</h3>
           </header>
           <ul className={styles.list}>

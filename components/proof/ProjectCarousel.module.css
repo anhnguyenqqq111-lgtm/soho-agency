@@ -2,7 +2,7 @@
 .controls{display:flex;justify-content:space-between;align-items:center;gap:16px}
 .dots{list-style:none;margin:0;padding:0;display:flex;gap:8px}
 .dots button{width:28px;height:4px;border:0;border-radius:2px;background:var(--gray-2);cursor:pointer;padding:0;transition:background-color var(--t-fast),width var(--t-fast)}
-.dots .on{background:var(--ink);width:44px}
+.dots .on{background:var(--grad-warm);width:44px}
 .arrows{display:flex;gap:8px}
 .arrows button{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--white);cursor:pointer;font-size:17px;display:grid;place-items:center;transition:background-color var(--t-fast),color var(--t-fast),border-color var(--t-fast)}
 .arrows button:hover:not(:disabled){background:var(--ink);color:var(--white);border-color:var(--ink)}
@@ -18,7 +18,10 @@
 .logo{height:20px;width:auto;max-width:90px;object-fit:contain}
 .scope{font-size:12px;font-weight:600;color:var(--ink-3);text-align:right}
 .name{font-size:19px;margin-top:4px}
-.link:hover{border-color:var(--gray-2)}
+.link{position:relative}
+.link::after{content:'';position:absolute;left:0;right:0;top:0;height:3px;background:var(--grad-warm);transform:scaleX(0);transform-origin:left;transition:transform var(--t-med)}
+.link:hover::after{transform:scaleX(1)}
+.link:hover{border-color:#F3C9A4}
 .result{font-size:17px;font-weight:700;letter-spacing:-.01em;color:var(--brand-ink)}
 .more{margin-top:10px;font-size:13px;font-weight:700;color:var(--ink)}
 .link:hover .more{color:var(--brand-ink)}

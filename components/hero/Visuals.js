@@ -1,25 +1,33 @@
 /*
-  Minh họa SVG cho hero, mỗi trang một hình. Bản tối giản: nét xám, một điểm cam (biến màu ở Hero.module.css).
+  Minh họa SVG cho hero, mỗi trang một hình: nét xám làm nền, cam của logo cho phần chính (biến màu ở Hero.module.css).
   Chuyển động bằng CSS keyframes và animateMotion; prefers-reduced-motion thì dừng.
 */
 import styles from './Hero.module.css';
 
 const CURVE = 'M80 420 C 300 400, 380 330, 520 300 S 800 220, 1060 80';
 
-// Trang chủ: đường tăng trưởng màu cam trên lưới xám, một điểm chạy dọc đường
+// Trang chủ: đường tăng trưởng gradient cam, vùng cam bên dưới, điểm sáng chạy dọc đường, đích nhấp nháy
 export function HomeVisual(){
   const pts = [[80, 420], [260, 390], [420, 330], [580, 290], [740, 210], [900, 160], [1060, 80]];
   return (
     <svg viewBox="0 0 1140 480" className={styles.svg} aria-hidden="true">
       <defs>
-        <linearGradient id="hv-area" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stopColor="#F28C35" stopOpacity=".14"/><stop offset="1" stopColor="#F28C35" stopOpacity="0"/></linearGradient>
+        <linearGradient id="hv-area" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stopColor="#F28C35" stopOpacity=".32"/><stop offset="1" stopColor="#F28C35" stopOpacity="0"/></linearGradient>
+        <linearGradient id="hv-line" x1="0" x2="1"><stop offset="0" stopColor="#F6A341"/><stop offset="1" stopColor="#D94F27"/></linearGradient>
+        <radialGradient id="hv-glow"><stop offset="0" stopColor="#F28C35" stopOpacity=".5"/><stop offset="1" stopColor="#F28C35" stopOpacity="0"/></radialGradient>
       </defs>
       {[0, 1, 2, 3, 4].map(i => <line key={i} x1="0" x2="1140" y1={60 + i * 95} y2={60 + i * 95} className={styles.grid}/>)}
       <path d={`${CURVE} L1060 440 L80 440 Z`} fill="url(#hv-area)" className={styles.area}/>
       <path d={CURVE} className={styles.curveShadow}/>
       <path d={CURVE} className={`${styles.curve} ${styles.draw}`} pathLength="1"/>
       {pts.map(([x, y], i) => <circle key={i} cx={x} cy={y} r="5" className={styles.node} style={{'--i': i}}/>)}
-      <circle r="9" fill="#FFFFFF" stroke="#F28C35" strokeWidth="3"><animateMotion dur="7s" repeatCount="indefinite" path={CURVE}/></circle>
+      <circle r="56" fill="url(#hv-glow)"><animateMotion dur="7s" repeatCount="indefinite" path={CURVE}/></circle>
+      <circle r="9" fill="#FFFFFF" stroke="#E7622B" strokeWidth="3"><animateMotion dur="7s" repeatCount="indefinite" path={CURVE}/></circle>
+      <circle cx="1060" cy="80" r="10" className={styles.pulse}/>
+      <g className={styles.tag}>
+        <rect x="818" y="18" width="164" height="44" rx="12" fill="#10121C"/>
+        <text x="900" y="46" className={styles.tagText}>Doanh thu</text>
+      </g>
       <text x="80" y="460" className={styles.axisLabel}>Tháng 1</text>
       <text x="1060" y="460" className={`${styles.axisLabel} ${styles.end}`}>Tháng 12</text>
     </svg>

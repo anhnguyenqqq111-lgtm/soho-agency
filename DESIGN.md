@@ -57,31 +57,32 @@ Trang chủ mới: Hero → Khách hàng → Dịch vụ → Cách làm việc �
 
 ---
 
-## 2. Hướng thiết kế (bản 7, tháng 10/2026, tối giản theo SOHO Brand Kit v4.0)
+## 2. Hướng thiết kế (bản 8, tháng 10/2026, nền trắng theo SOHO Brand Kit v4.0, màu và hiệu ứng ở điểm quan trọng)
 
-Nguồn: thư mục `SOHO_Agency_Brand_Kit_v4` (logo truy vết từ ảnh duyệt, `soho-tokens.css`). Yêu cầu của chủ web: **ưu tiên màu trắng, càng ít màu càng tốt, chỉ dùng màu ở điểm cần nổi bật; ít chi tiết, chỉ giữ ý chính.** Bản này thay bản 6.
+Nguồn: thư mục `SOHO_Agency_Brand_Kit_v4`. Yêu cầu của chủ web: ưu tiên màu trắng, ít chi tiết; nhưng **vẫn cần màu và hiệu ứng ở các chỗ quan trọng** (bản 7 hoàn toàn trắng bị đánh giá là quá đơn giản). Bản này thay bản 7.
 
 ### 2.1. Nguyên tắc
 
-- Nền trắng cho mọi section. Section tách nhau bằng đường kẻ mảnh `--line`, không đổi màu nền. Riêng khối form liên hệ dùng xám rất nhạt `--gray`.
-- Một màu nhấn duy nhất là cam logo. Cam chỉ xuất hiện ở: nút hành động chính, link khi rê chuột, đường tăng trưởng ở hero, chặng chốt đơn (BOFU) của ma trận, thẻ "Kết quả cần đạt", con số kết quả dự án, huy hiệu đối tác.
-- Không gradient trang trí, không khối nền tối, không màu san hô hay tím, không chữ tô màu trong tiêu đề (`.hl` giữ class nhưng không còn màu).
-- Không trang trí thừa: không vạch trước nhãn, không dấu chấm cuối H1, không biểu tượng cuộn, không vòng quỹ đạo hay quầng sáng, logo khách hàng đứng yên.
+- Nền trắng cho hầu hết section, tách nhau bằng đường kẻ mảnh `--line`. Chỉ một khối tối: khối liên hệ cuối trang (điểm chuyển đổi chính).
+- Một họ màu nhấn duy nhất là cam của logo (đặc hoặc gradient). Không dùng san hô, tím.
+- Màu chỉ ở điểm quan trọng: cụm từ chính trong tiêu đề (`.hl`, gradient cam), nút hành động, minh họa hero, ba chặng của ma trận hành trình, số bước quy trình, con số kết quả, huy hiệu đối tác.
+- Hiệu ứng chỉ ở điểm quan trọng: minh họa hero chuyển động, quầng cam "thở" sau khối liên hệ, dải logo khách hàng chạy ngang (dừng khi rê chuột), đường ray quy trình tự vẽ khi cuộn tới, phản hồi khi rê chuột ở nút, thẻ dịch vụ, khối ma trận, thẻ dự án. Tắt hết khi bật giảm chuyển động.
+- Không trang trí thừa: không vạch trước nhãn, không dấu chấm cuối H1, không biểu tượng cuộn.
 
 ### 2.2. Màu (`app/styles/tokens.css`)
 
 | Token | Giá trị | Dùng cho |
 |---|---|---|
-| `--grad-cta` | `#F6A341` sang `#E7622B` | Chỉ nền nút chính (chữ Midnight) |
-| `--brand` | `#F28C35` | Nét nhấn trong minh họa và sơ đồ, viền thẻ kết quả |
+| `--grad-cta` | `#F6A341` sang `#E7622B` | Nút chính (chữ Midnight), số bước quy trình, chữ nhấn trên nền tối |
+| `--grad-warm` | gradient logo `#F6A341` sang `#D95026` | Chặng BOFU, đường ray quy trình, vạch nhấn khi rê chuột |
+| `--grad-warm-text` | `#E8642A` sang `#C2410C` | Chữ nhấn `.hl` trong tiêu đề (đạt 3:1 cho chữ lớn, màu đặc `--brand-ink` dự phòng) |
+| `--warm-1` | `#FCE3CC` | Chặng TOFU, nền dấu tích |
+| `--brand` | `#F28C35` | Nét nhấn trong minh họa và sơ đồ |
 | `--brand-ink` / `--accent` | `#AE420D` | Chữ cam nhỏ, link, con số kết quả |
-| `--ink` | `#10121C` | Chữ, nền thanh "doanh thu theo kênh" |
+| `--midnight` / `--ink` | `#10121C` | Chữ; nền khối liên hệ và thanh "doanh thu theo kênh" |
 | `--ink-3` | `#60697B` | Chữ phụ, nhãn nhỏ trên tiêu đề |
-| `--line` | `#E7E9F0` | Đường kẻ, viền thẻ |
-| `--gray` | `#F5F6FA` | Ô nền rất nhạt (dải kênh của ma trận, form liên hệ, chip) |
-| `--error` | `#C62D44` | Nhãn `[CẦN ...]` |
-
-Các token cũ (`--night`, `--grad-midnight`, `--coral`...) vẫn tồn tại nhưng trỏ về màu trắng hoặc phẳng để component cũ không lỗi. Không dùng chúng cho thiết kế mới.
+| `--line` / `--gray` | `#E7E9F0` / `#F5F6FA` | Đường kẻ, viền / ô nền rất nhạt |
+| `--glow-warm` | quầng cam rất nhạt | Chỉ nền hero |
 
 ### 2.3. Chữ
 
@@ -89,7 +90,7 @@ Chỉ dùng Inter (cả tiêu đề và thân bài), nạp bộ ký tự tiếng
 
 ### 2.4. Nút
 
-`Button` bo 12px. `primary` nền `--grad-cta` chữ Midnight, là chỗ có màu duy nhất của mỗi khối. `secondary` viền xám. `text` chữ Midnight gạch chân mảnh, chuyển cam đậm khi rê chuột.
+`Button` bo 12px. `primary` nền `--grad-cta` chữ Midnight, có bóng cam nhẹ, nổi lên khi rê chuột. `secondary` viền xám. `text` chữ Midnight gạch chân mảnh, chuyển cam đậm khi rê chuột.
 
 ### 2.5. Logo (`public/brand/`)
 
@@ -103,11 +104,11 @@ Chỉ có Google Partner 2026. Huy hiệu RGB gốc ở `public/partners/google-
 
 ### 2.7. Hero
 
-Nền trắng, hai cột: trái là breadcrumb, nhãn, H1, một dòng mô tả; phải là minh họa SVG đặt thẳng trên nền, nét xám với một điểm cam (`Visuals.js`, biến màu trong `Hero.module.css`). Trang dịch vụ con đặt sơ đồ dịch vụ (thẻ trắng) ở cột phải. Hero không còn chiếm cả màn hình.
+Nền trắng có quầng cam rất nhạt góc phải, hai cột: trái là breadcrumb, nhãn cam, H1 (trang chủ tô gradient cụm “doanh thu”), một dòng mô tả; phải là minh họa SVG có chuyển động, nét xám làm nền và cam của logo cho phần chính (`Visuals.js`, biến màu trong `Hero.module.css`). Trang dịch vụ con đặt sơ đồ dịch vụ (thẻ trắng) ở cột phải. Hero không còn chiếm cả màn hình.
 
 ### 2.8. Trang chủ
 
-Hero → khối mở đầu (hai cột: tiêu đề trái; mô tả, 3 ý, nút, huy hiệu Google Partner phải) → hàng logo khách hàng đứng yên → Dịch vụ (3 cột, mỗi cột 3 dòng có link) → ma trận hành trình (xám, chỉ BOFU cam) → Dự án → Quy trình 4 bước → Blog → form liên hệ → FAQ → footer trắng.
+Hero → khối mở đầu (hai cột: tiêu đề trái; mô tả, 3 ý, nút, huy hiệu Google Partner phải) → dải logo khách hàng chạy ngang → Dịch vụ (3 cột có số nhóm cam, vạch cam chạy khi rê chuột) → ma trận hành trình (TOFU cam nhạt, MOFU cam, BOFU gradient logo; khối nổi khi rê chuột) → Dự án (vạch cam trên thẻ khi rê chuột, kết quả chữ cam đậm) → Quy trình 4 bước (số cam, đường ray tự vẽ) → Blog → khối liên hệ nền tối có quầng cam → FAQ → footer trắng.
 
 Đã bỏ: khối "4 nguyên tắc" (trùng ý với 3 ý ở khối mở đầu), ô ảnh trống ở khối mở đầu và khối giới thiệu.
 
@@ -117,7 +118,7 @@ Hero riêng → `PageHeader` nền trắng với h2, lead, 3 ý, nút. `Section`
 
 ### 2.10. Chuyển động và ảnh
 
-Giữ: chữ và khối hiện mờ dần khi cuộn, sơ đồ tự vẽ, đường tăng trưởng ở hero. Tắt hết khi bật giảm chuyển động. Ảnh dự án, logo khách hàng giữ nguyên bản. Ảnh bìa 9 bài blog còn logo cũ, cần xuất lại.
+Xem 2.1. Chữ và khối hiện mờ dần khi cuộn, sơ đồ tự vẽ. Tắt hết khi bật giảm chuyển động. Ảnh dự án, logo khách hàng giữ nguyên bản. Ảnh bìa 9 bài blog còn logo cũ, cần xuất lại.
 
 ---
 

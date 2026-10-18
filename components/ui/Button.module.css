@@ -1,5 +1,5 @@
-/* Nút theo Brand Kit v4, bản tối giản: bo 12px. Chỉ nút chính có màu (cam logo, chữ Midnight). */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:.55em;font-weight:700;text-decoration:none;cursor:pointer;border:1px solid transparent;border-radius:var(--r-md);transition:filter .18s ease,background-color .18s ease,color .18s ease,border-color .18s ease;white-space:nowrap;line-height:1.2}
+/* Nút theo Brand Kit v4: bo 12px. Nút chính gradient cam logo, chữ Midnight, nổi lên khi rê chuột. */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.55em;font-weight:700;text-decoration:none;cursor:pointer;border:1px solid transparent;border-radius:var(--r-md);transition:filter .18s ease,background-color .18s ease,color .18s ease,border-color .18s ease,transform .18s ease,box-shadow .18s ease;white-space:nowrap;line-height:1.2}
 .btn:hover{text-decoration:none}
 .md{font-size:15px;padding:13px 22px}
 .sm{font-size:14px;padding:9px 16px}
@@ -7,7 +7,8 @@
 .btn:hover .arrow{transform:translate(2px,-2px)}
 
 .primary{background:var(--grad-cta);color:var(--ink)}
-.primary:hover{filter:brightness(.96);color:var(--ink)}
+.primary{box-shadow:0 6px 18px rgba(231,98,43,.22)}
+.primary:hover{filter:brightness(1.03);color:var(--ink);transform:translateY(-2px);box-shadow:0 12px 28px rgba(231,98,43,.34)}
 
 .secondary{background:transparent;color:var(--ink);border-color:#B9BDCA}
 .secondary:hover{background:rgba(16,18,28,.04);color:var(--ink)}

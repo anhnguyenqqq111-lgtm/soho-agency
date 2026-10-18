@@ -51,7 +51,7 @@ Không thêm biến môi trường nào trên Vercel. Nếu lỡ đặt `GITHUB_
 app/
   layout.js                  font Inter, metadata mặc định, RevealObserver
   favicon.ico, icon.svg, apple-icon.png   favicon
-  styles/tokens.css          biến màu, chữ, khoảng cách theo SOHO Brand Kit v4.0, bản tối giản (toàn bộ màu định nghĩa ở đây)
+  styles/tokens.css          biến màu, chữ, khoảng cách theo SOHO Brand Kit v4.0 (nền trắng, cam ở điểm quan trọng) (toàn bộ màu định nghĩa ở đây)
   styles/base.css            reset, typography, .prose, hiệu ứng hé lộ
   styles/diagram.css         style chung cho sơ đồ SVG
   page.js                    trang chủ

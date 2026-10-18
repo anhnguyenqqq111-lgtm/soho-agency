@@ -31,8 +31,12 @@ a:hover{color:var(--accent)}
 .meta{font-size:var(--fs-meta);color:var(--ink-3);font-weight:500}
 .num{font-variant-numeric:tabular-nums}
 
-/* Chữ nhấn trong tiêu đề: bản tối giản không tô màu, giữ class để không phải sửa nội dung */
-.hl{color:inherit}
+/* Chữ nhấn trong tiêu đề: gradient cam của logo (màu đặc dự phòng). Đây là một trong số ít chỗ có màu. */
+.hl{color:var(--brand-ink)}
+@supports (-webkit-background-clip:text) or (background-clip:text){
+  .hl{background:var(--grad-warm-text);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;padding:.14em 0 .08em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+}
+.on-dark .hl{background:var(--grad-cta);-webkit-background-clip:text;background-clip:text}
 .grad-text{color:inherit}
 .dark h1,.dark h2,.dark h3{color:var(--on-dark)}
 
