@@ -1,4 +1,4 @@
-import {Inter, Space_Grotesk} from 'next/font/google';
+import {Inter} from 'next/font/google';
 import './styles/tokens.css';
 import './styles/base.css';
 import './styles/diagram.css';
@@ -8,13 +8,6 @@ const inter = Inter({
   subsets: ['latin', 'vietnamese'],
   display: 'swap',
   variable: '--font-inter'
-});
-
-const spaceGrotesk = Space_Grotesk({
-  subsets: ['latin', 'vietnamese'],
-  weight: ['500', '600', '700'],
-  display: 'swap',
-  variable: '--font-space'
 });
 
 export const metadata = {
@@ -27,7 +20,7 @@ export const metadata = {
 
 export default function RootLayout({children}){
   return (
-    <html lang="vi" className={`${inter.variable} ${spaceGrotesk.variable}`} suppressHydrationWarning>
+    <html lang="vi" className={inter.variable} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{__html: "document.documentElement.classList.add('js')"}}/>
       </head>

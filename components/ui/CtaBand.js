@@ -3,7 +3,7 @@ import Button from './Button';
 import ContactForm from '../ContactForm';
 
 /*
-  Khối liên hệ cuối trang trên nền Midnight: tiêu đề và mô tả ở giữa, form trong thẻ trắng đặc bên dưới (không đặt form trên gradient).
+  Khối liên hệ cuối trang: nền xám rất nhạt, tiêu đề và mô tả ở giữa, form trong thẻ trắng bên dưới.
   withForm=false: chỉ tiêu đề + nút.
 */
 export default function CtaBand({
@@ -15,7 +15,7 @@ export default function CtaBand({
   label = 'Liên hệ ngay'
 }){
   return (
-    <section id={id} className={`${styles.band} dark`}>
+    <section id={id} className={styles.band}>
       <div className="container">
         <div className={styles.copy} data-reveal="">
           <h2 className={styles.title}>{title}</h2>

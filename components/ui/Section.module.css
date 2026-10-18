@@ -1,21 +1,16 @@
-.section{position:relative}
-.tone_white{background:var(--white)}
-.tone_gray{background:var(--gray)}
-.tone_dark{background:var(--grad-dark);color:var(--on-dark);overflow:hidden}
-.tone_fade{background:var(--grad-fade)}
-.tone_paper{background:var(--paper)}
-.tone_soft{background:var(--grad-mist)}
+.section{position:relative;background:var(--white);border-top:1px solid var(--line)}
+/* Bản tối giản: mọi tone đều nền trắng, tách section bằng đường kẻ mảnh */
+.tone_white,.tone_paper,.tone_soft,.tone_gray,.tone_dark,.tone_fade{background:var(--white)}
 
 .space_sm{padding-block:var(--space-sm)}
 .space_md{padding-block:var(--space-md)}
 .space_lg{padding-block:var(--space-lg)}
 
-.head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px 40px;margin-bottom:44px}
+.head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px 40px;margin-bottom:40px}
 .head.center{flex-direction:column;align-items:center;text-align:center}
 .title{max-width:24ch}
 .center .title{max-width:30ch}
 .intro{margin-top:14px;font-size:var(--fs-lead);line-height:1.55;color:var(--ink-2);max-width:62ch}
-.tone_dark .intro{color:var(--on-dark-2)}
 .center .intro{margin-inline:auto}
 .aside{flex:none}
 

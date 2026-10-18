@@ -8,7 +8,7 @@
 .body{display:grid;grid-template-rows:auto auto 1fr auto;gap:12px;padding:28px 26px 24px}
 .withThumb .body{padding-top:22px}
 .meta{display:flex;justify-content:space-between;gap:12px;font-size:var(--fs-meta);color:var(--ink-3)}
-.cat{font-weight:700;color:var(--accent)}
+.cat{font-weight:600;color:var(--ink-3)}
 .title{font-size:19px;line-height:1.35;font-weight:700}
 .title a:hover{color:var(--accent)}
 .excerpt{font-size:14px;line-height:1.55;color:var(--ink-2);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}

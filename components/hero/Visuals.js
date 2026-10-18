@@ -1,41 +1,25 @@
 /*
-  Minh họa SVG lớn cho hero, mỗi trang một hình, mỗi hình một phối màu (đặt ở Hero.module.css).
+  Minh họa SVG cho hero, mỗi trang một hình. Bản tối giản: nét xám, một điểm cam (biến màu ở Hero.module.css).
   Chuyển động bằng CSS keyframes và animateMotion; prefers-reduced-motion thì dừng.
 */
 import styles from './Hero.module.css';
 
 const CURVE = 'M80 420 C 300 400, 380 330, 520 300 S 800 220, 1060 80';
 
-// Trang chủ: đường tăng trưởng, điểm sáng chạy dọc đường, vệ tinh xoay quanh đích
+// Trang chủ: đường tăng trưởng màu cam trên lưới xám, một điểm chạy dọc đường
 export function HomeVisual(){
   const pts = [[80, 420], [260, 390], [420, 330], [580, 290], [740, 210], [900, 160], [1060, 80]];
   return (
     <svg viewBox="0 0 1140 480" className={styles.svg} aria-hidden="true">
       <defs>
-        <linearGradient id="hv-line" x1="0" x2="1"><stop offset="0" stopColor="#FF7A00"/><stop offset=".52" stopColor="#FF416C"/><stop offset="1" stopColor="#765BFF"/></linearGradient>
-        <linearGradient id="hv-area" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stopColor="#FF7A00" stopOpacity=".32"/><stop offset="1" stopColor="#FF7A00" stopOpacity="0"/></linearGradient>
-        <radialGradient id="hv-glow"><stop offset="0" stopColor="#FF7A00" stopOpacity=".55"/><stop offset="1" stopColor="#FF7A00" stopOpacity="0"/></radialGradient>
+        <linearGradient id="hv-area" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stopColor="#F28C35" stopOpacity=".14"/><stop offset="1" stopColor="#F28C35" stopOpacity="0"/></linearGradient>
       </defs>
       {[0, 1, 2, 3, 4].map(i => <line key={i} x1="0" x2="1140" y1={60 + i * 95} y2={60 + i * 95} className={styles.grid}/>)}
       <path d={`${CURVE} L1060 440 L80 440 Z`} fill="url(#hv-area)" className={styles.area}/>
       <path d={CURVE} className={styles.curveShadow}/>
       <path d={CURVE} className={`${styles.curve} ${styles.draw}`} pathLength="1"/>
       {pts.map(([x, y], i) => <circle key={i} cx={x} cy={y} r="5" className={styles.node} style={{'--i': i}}/>)}
-      <circle r="60" fill="url(#hv-glow)"><animateMotion dur="7s" repeatCount="indefinite" path={CURVE}/></circle>
-      <circle r="9" fill="#FFFFFF" stroke="#FF7A00" strokeWidth="3"><animateMotion dur="7s" repeatCount="indefinite" path={CURVE}/></circle>
-      <g className={styles.orbit} style={{transformOrigin: '1060px 80px'}}>
-        <circle cx="1060" cy="80" r="46" className={styles.orbitRing}/>
-        <circle cx="1106" cy="80" r="6" fill="#765BFF"/>
-      </g>
-      <g className={styles.orbitSlow} style={{transformOrigin: '1060px 80px'}}>
-        <circle cx="1060" cy="80" r="76" className={styles.orbitRing}/>
-        <circle cx="1060" cy="4" r="5" fill="#FF7A00"/>
-      </g>
-      <g className={styles.tag}>
-        <rect x="806" y="18" width="168" height="44" rx="22" fill="#FFFFFF"/>
-        <text x="890" y="46" className={styles.tagText}>Doanh thu</text>
-        <path d="M974 40 L1004 62" stroke="rgba(255,255,255,.6)" strokeWidth="2"/>
-      </g>
+      <circle r="9" fill="#FFFFFF" stroke="#F28C35" strokeWidth="3"><animateMotion dur="7s" repeatCount="indefinite" path={CURVE}/></circle>
       <text x="80" y="460" className={styles.axisLabel}>Tháng 1</text>
       <text x="1060" y="460" className={`${styles.axisLabel} ${styles.end}`}>Tháng 12</text>
     </svg>
@@ -118,12 +102,6 @@ export function AboutVisual(){
       <circle cx="380" cy="270" r="180" className={styles.ringA}/>
       <circle cx="520" cy="270" r="180" className={styles.ringB}/>
       <path d="M450 128 A180 180 0 0 1 450 412 A180 180 0 0 1 450 128 Z" className={styles.lens}/>
-      <g className={styles.orbitSlow} style={{transformOrigin: '380px 270px'}}>
-        {[0, 1, 2, 3].map(i => <circle key={i} cx={380 + 180 * Math.cos(i * Math.PI / 2)} cy={270 + 180 * Math.sin(i * Math.PI / 2)} r="9" fill="#FF7A00"/>)}
-      </g>
-      <g className={styles.orbit} style={{transformOrigin: '520px 270px'}}>
-        {[0, 1, 2].map(i => <circle key={i} cx={520 + 180 * Math.cos(i * 2 * Math.PI / 3)} cy={270 + 180 * Math.sin(i * 2 * Math.PI / 3)} r="9" fill="#765BFF"/>)}
-      </g>
       <text x="300" y="275" className={`${styles.sideLabel} ${styles.mid}`}>SOHO</text>
       <text x="600" y="275" className={`${styles.sideLabel} ${styles.mid}`}>Khách hàng</text>
     </svg>
@@ -137,7 +115,7 @@ export function ContactVisual(){
       {[0, 1, 2, 3, 4].map(i => <circle key={i} cx="450" cy="270" r={60 + i * 70} className={styles.wave} style={{'--i': i}}/>)}
       <circle cx="450" cy="270" r="26" className={styles.pulse}/>
       <path d="M450 270 L 760 120" className={`${styles.beam} ${styles.draw}`} pathLength="1"/>
-      <circle cx="760" cy="120" r="8" fill="#FFFFFF" stroke="#FF7A00" strokeWidth="3"/>
+      <circle cx="760" cy="120" r="8" fill="#FFFFFF" stroke="#F28C35" strokeWidth="3"/>
     </svg>
   );
 }

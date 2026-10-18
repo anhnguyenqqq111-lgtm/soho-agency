@@ -49,9 +49,9 @@ Không thêm biến môi trường nào trên Vercel. Nếu lỡ đặt `GITHUB_
 
 ```text
 app/
-  layout.js                  font Inter + Space Grotesk, metadata mặc định, RevealObserver
-  favicon.ico, icon.svg, apple-icon.png   favicon theo Brand Kit v3
-  styles/tokens.css          biến màu, chữ, khoảng cách, gradient theo SOHO Brand Kit v3.0 (toàn bộ màu định nghĩa ở đây)
+  layout.js                  font Inter, metadata mặc định, RevealObserver
+  favicon.ico, icon.svg, apple-icon.png   favicon
+  styles/tokens.css          biến màu, chữ, khoảng cách theo SOHO Brand Kit v4.0, bản tối giản (toàn bộ màu định nghĩa ở đây)
   styles/base.css            reset, typography, .prose, hiệu ứng hé lộ
   styles/diagram.css         style chung cho sơ đồ SVG
   page.js                    trang chủ
@@ -79,7 +79,7 @@ components/
   blogData.js                bài blog (HTML trong chuỗi), danh mục, ảnh banner/thumbnail
   articles/*.js              bài viết dài cho từng dịch vụ (markdown trong chuỗi)
 
-public/brand/                logo Brand Kit v3: soho-logo.svg (header), soho-logo-on-dark.svg (footer), avatar
+public/brand/                logo Brand Kit v4: soho-logo.svg (header, footer), các bản phụ, avatar
 public/partners/             huy hiệu đối tác chính thức (google-partner.svg)
 public/clients/              logo khách hàng
 public/blog/                 ảnh bài blog (thumbnail và banner dùng chung), render bằng skill creating-images-soho
@@ -125,7 +125,7 @@ Quy tắc chung của blog (sẽ là quy tắc của CMS sau này), kiểm tra t
 - Form liên hệ (`components/ContactForm.js`) chỉ hiện thông báo đã gửi, chưa gửi đi đâu. Cần nối API hoặc dịch vụ form.
 - Hai trang pháp lý là bản nháp, cần pháp chế duyệt. Đầu trang có dòng cảnh báo đỏ, xóa sau khi duyệt.
 - Bài viết dịch vụ có câu số liệu khẳng định về SOHO (gạch chân chấm vàng, đánh dấu tự động bởi `isClaim()` trong `components/article/parseMarkdown.js`). Cần kiểm chứng hoặc sửa.
-- Ảnh bìa 9 bài blog trong `public/blog/` còn logo cũ, cần xuất lại theo logo Brand Kit v3.
+- Ảnh bìa 9 bài blog trong `public/blog/` còn logo cũ, cần xuất lại theo logo Brand Kit v4.
 - Tên tác giả chưa thống nhất giữa `blogData.js` ("Nguyễn Tuấn Anh") và `articles/*.js` ("Nguyễn Thế Tuấn Anh").
 
 ## Kiểm tra trước khi merge

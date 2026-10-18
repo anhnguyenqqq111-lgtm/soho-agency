@@ -1,27 +1,20 @@
-/* Nút theo SOHO Brand Kit v3: viên thuốc, cam nền chữ Midnight (không dùng chữ trắng trên cam) */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:.7em;font-weight:700;text-decoration:none;cursor:pointer;border:1px solid transparent;border-radius:var(--r-pill);transition:background-color .2s var(--ease),color .2s var(--ease),border-color .2s var(--ease),transform .2s var(--ease),box-shadow .2s var(--ease);white-space:nowrap;line-height:1.2}
-.btn:hover{text-decoration:none;transform:translateY(-2px)}
-.md{font-size:15px;padding:14px 23px}
-.sm{font-size:14px;padding:10px 17px;gap:.55em}
+/* Nút theo Brand Kit v4, bản tối giản: bo 12px. Chỉ nút chính có màu (cam logo, chữ Midnight). */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.55em;font-weight:700;text-decoration:none;cursor:pointer;border:1px solid transparent;border-radius:var(--r-md);transition:filter .18s ease,background-color .18s ease,color .18s ease,border-color .18s ease;white-space:nowrap;line-height:1.2}
+.btn:hover{text-decoration:none}
+.md{font-size:15px;padding:13px 22px}
+.sm{font-size:14px;padding:9px 16px}
 .arrow{display:inline-block;transition:transform var(--t-fast)}
 .btn:hover .arrow{transform:translate(2px,-2px)}
 
-.primary{background:var(--brand);color:var(--ink);border-color:var(--brand)}
-.primary:hover{background:var(--brand-hover);border-color:var(--brand-hover);color:var(--ink);box-shadow:0 10px 26px rgba(255,122,0,.3)}
+.primary{background:var(--grad-cta);color:var(--ink)}
+.primary:hover{filter:brightness(.96);color:var(--ink)}
 
-.secondary{background:transparent;color:var(--ink);border-color:var(--line)}
-.secondary:hover{background:var(--white);border-color:var(--ink);color:var(--ink)}
+.secondary{background:transparent;color:var(--ink);border-color:#B9BDCA}
+.secondary:hover{background:rgba(16,18,28,.04);color:var(--ink)}
 
-.text{border:0;background:none;color:var(--ink);padding:0;border-radius:0;white-space:normal;gap:8px}
+.text{border:0;background:none;color:var(--ink);padding:0;border-radius:0;white-space:normal;gap:6px}
 .text.md,.text.sm{padding:0}
-.text:hover{transform:none;color:var(--brand-ink)}
-.text .arrow{color:var(--brand-ink)}
-.text > span:first-child{background:linear-gradient(currentColor,currentColor) 0 100% / 0 1.5px no-repeat;transition:background-size var(--t-med)}
-.text:hover > span:first-child{background-size:100% 1.5px}
-
-.onDark.secondary{background:var(--white);color:var(--ink);border-color:var(--white)}
-.onDark.secondary:hover{background:transparent;color:var(--white)}
-.onDark.text{color:var(--white)}
-.onDark.text .arrow{color:var(--brand)}
-.onDark.text:hover{color:var(--brand)}
+.text:hover{color:var(--brand-ink)}
+.text > span:first-child{text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:5px;text-decoration-thickness:1.5px;transition:text-decoration-color var(--t-fast)}
+.text:hover > span:first-child{text-decoration-color:currentColor}
 @media (max-width:480px){.btn{white-space:normal}}

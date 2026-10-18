@@ -1,29 +1,23 @@
-/* Nền Cloud + quầng sáng tím/cam (Brand Kit v3: glow chỉ dùng ở hero) */
-.hero{position:relative;min-height:min(calc(100svh - var(--header-h)),820px);display:grid;overflow:hidden;color:var(--ink);background:var(--grad-glow),var(--paper);border-bottom:1px solid var(--line)}
-.inner{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:40px var(--gap);align-items:center;padding-block:clamp(40px,6vh,72px)}
-/* Khung tối chứa minh họa: điểm nhấn Signature duy nhất của màn hình đầu */
-.visual{position:relative;min-width:0;display:grid;place-items:center;padding:clamp(20px,3vw,40px);border-radius:var(--r-xl);background:var(--grad-midnight);color:#FFFFFF;box-shadow:0 30px 80px rgba(16,18,28,.22);overflow:hidden;isolation:isolate;
-  --hero-bg:#1A1630;--hero-ink:#FFFFFF;--c1:#FF7A00;--c2:#FF416C;--c3:rgba(255,255,255,.13);--c4:#765BFF}
-.visual::before{content:'';position:absolute;inset:auto -20% -45% auto;width:70%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(255,65,108,.35),rgba(118,91,255,.18) 45%,transparent 70%);z-index:-1}
-.visual::after{content:'';position:absolute;left:0;right:0;top:0;height:3px;background:var(--grad-signature)}
+/* Bản tối giản: nền trắng, minh họa nét xám với một điểm cam */
+.hero{position:relative;display:grid;overflow:hidden;color:var(--ink);background:var(--white)}
+.inner{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:40px var(--gap);align-items:center;padding-block:clamp(56px,7vw,104px)}
+/* Minh họa đặt thẳng trên nền trắng: c1 cam (điểm nhấn duy nhất), c2 Midnight, c3 nét xám */
+.visual{position:relative;min-width:0;display:grid;place-items:center;color:var(--ink);
+  --hero-bg:#FFFFFF;--hero-ink:#10121C;--c1:#F28C35;--c2:#10121C;--c3:#E1E4EC;--c4:#9AA1B2}
 .svg{width:100%;height:auto;max-height:calc(100svh - var(--header-h) - 220px)}
 .content{display:grid;gap:12px;justify-items:start}
 .crumbs ol{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px;font-size:var(--fs-meta);opacity:.7}
 .crumbs li + li::before{content:'/';margin-right:6px}
 .crumbs a{color:inherit}
-.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--brand-ink)}
-.eyebrow::before{content:'';width:22px;height:3px;border-radius:2px;background:var(--brand)}
-.title{font-size:clamp(40px,5.2vw,72px);line-height:1.04;letter-spacing:-.05em;font-weight:700;max-width:12ch;color:inherit}
-.title::after{content:'.';color:var(--brand)}
+.eyebrow{font-size:13px;font-weight:600;color:var(--ink-3)}
+.title{font-size:var(--fs-h1);line-height:1.08;letter-spacing:-.035em;font-weight:700;max-width:13ch;color:inherit}
 .tagline{font-size:var(--fs-lead);max-width:44ch;color:var(--ink-2)}
-.scroll{margin-top:18px;width:28px;height:44px;border:1.5px solid var(--silver);border-radius:14px;position:relative}
+.scroll{display:none}
 .scroll span{position:absolute;left:50%;top:8px;width:4px;height:8px;margin-left:-2px;border-radius:2px;background:var(--brand);animation:scrollHint 1.6s ease-in-out infinite}
 @keyframes scrollHint{0%{transform:translateY(0);opacity:1}100%{transform:translateY(16px);opacity:0}}
 
-/* Mọi trang dùng chung nền và khung; tone chỉ đổi vị trí quầng sáng cho đỡ lặp */
-.home,.solutions,.blog,.contact{--glow-x:76%}
-.services,.results,.about{--glow-x:24%}
-.services .visual::before,.results .visual::before,.about .visual::before{inset:-45% auto auto -20%}
+/* Mọi trang dùng chung một phối màu */
+.home,.services,.solutions,.results,.blog,.about,.contact{--tone:0}
 
 /* Hình chung */
 .grid{stroke:var(--c3);stroke-width:1}
@@ -41,8 +35,8 @@
 .orbitRing{fill:none;stroke:var(--c3);stroke-width:1.5}
 
 /* Trang chủ */
-.curveShadow{fill:none;stroke:var(--c3);stroke-width:14;stroke-linecap:round}
-.curve{fill:none;stroke:url(#hv-line);stroke-width:6;stroke-linecap:round}
+.curveShadow{display:none}
+.curve{fill:none;stroke:var(--c1);stroke-width:4;stroke-linecap:round}
 .area{opacity:0;animation:fadeIn 1200ms ease 1200ms forwards}
 .tag{opacity:0;animation:fadeIn 600ms ease 2300ms forwards}
 .tagText{font-family:var(--font-text);font-size:18px;font-weight:700;fill:#10121C;text-anchor:middle}
@@ -50,49 +44,48 @@
 @keyframes fadeIn{to{opacity:1}}
 
 /* Dịch vụ */
-.tileBg{fill:rgba(255,255,255,.06);stroke:var(--c3);stroke-width:1}
-.tileDot{fill:var(--c1)}
+.tileBg{fill:#FFFFFF;stroke:var(--c3);stroke-width:1.5}
+.tileDot{fill:var(--c4)}
 .tileText{font-family:var(--font-text);font-size:17px;font-weight:600;fill:var(--hero-ink)}
 .tile{opacity:0;animation:tileIn 600ms cubic-bezier(.2,.7,.2,1) forwards,tileGlow 6s ease-in-out infinite;animation-delay:calc(var(--i) * 90ms + 200ms),calc(var(--i) * 660ms + 1500ms)}
 @keyframes tileIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
-@keyframes tileGlow{0%,8%,100%{filter:none}4%{filter:drop-shadow(0 10px 24px rgba(255,122,0,.35))}}
+@keyframes tileGlow{0%,8%,100%{filter:none}4%{filter:drop-shadow(0 8px 18px rgba(16,18,28,.12))}}
 .tileLink{stroke:var(--c3);stroke-width:2;stroke-dasharray:4 6}
 
 /* Giải pháp */
-.layerBody{fill:var(--c3);stroke:var(--c1);stroke-width:1.5}
-.layerTop{fill:var(--c1);opacity:.9}
-.layer:nth-of-type(2) .layerTop{fill:var(--c2)}
-.layer:nth-of-type(3) .layerTop{fill:var(--c4)}
+.layerBody{fill:#FFFFFF;stroke:var(--c4);stroke-width:1.5}
+.layerTop{fill:var(--c4)}
+.layer:first-of-type .layerTop{fill:var(--c1)}
 .layer{animation:floatLayer 5s ease-in-out infinite;animation-delay:calc(var(--i) * -600ms)}
 @keyframes floatLayer{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
 
 /* Kết quả */
-.bar{fill:var(--c1);opacity:.85;transform:scaleY(0);animation:grow 900ms cubic-bezier(.2,.7,.2,1) forwards;animation-delay:calc(var(--i) * 90ms + 200ms)}
-.bar:nth-of-type(even){fill:var(--c2)}
+.bar{transform:scaleY(0);animation:grow 900ms cubic-bezier(.2,.7,.2,1) forwards;animation-delay:calc(var(--i) * 90ms + 200ms)}
+.bar{fill:var(--c3);opacity:1}
+.bar:last-of-type{fill:var(--c1)}
 @keyframes grow{to{transform:scaleY(1)}}
 .resultLine{fill:none;stroke:var(--hero-ink);stroke-width:3;stroke-linecap:round;stroke-linejoin:round;animation-delay:1400ms}
 
 /* Blog */
-.pageBg{fill:rgba(255,255,255,.07);stroke:var(--c3);stroke-width:1.5}
+.pageBg{fill:#FFFFFF;stroke:var(--c3);stroke-width:1.5}
 .page{animation:pageFloat 6s ease-in-out infinite;animation-delay:calc(var(--i) * -900ms)}
 @keyframes pageFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
 .textLine{fill:var(--c3);transform:scaleX(0);transform-origin:left center;animation:growX 700ms ease forwards;animation-delay:calc(var(--k) * 140ms + 400ms)}
-.textTitle{fill:var(--c2)}
+.textTitle{fill:var(--c1)}
 @keyframes growX{to{transform:scaleX(1)}}
 
 /* Về SOHO */
 .ringA{fill:none;stroke:var(--c2);stroke-width:2}
 .ringB{fill:none;stroke:var(--c1);stroke-width:2}
-.lens{fill:var(--c1);opacity:.18}
+.lens{fill:var(--c1);opacity:.14}
 
 /* Liên hệ */
-.wave{fill:none;stroke:var(--c1);stroke-width:1.5;opacity:0;transform-box:fill-box;transform-origin:center;animation:wave 4s ease-out infinite;animation-delay:calc(var(--i) * 800ms)}
+.wave{fill:none;stroke:var(--c4);stroke-width:1.5;opacity:0;transform-box:fill-box;transform-origin:center;animation:wave 4s ease-out infinite;animation-delay:calc(var(--i) * 800ms)}
 @keyframes wave{0%{opacity:.7;transform:scale(.6)}100%{opacity:0;transform:scale(1.15)}}
-.beam{fill:none;stroke:var(--c2);stroke-width:2.5;stroke-linecap:round}
+.beam{fill:none;stroke:var(--c1);stroke-width:2.5;stroke-linecap:round}
 
 @media (max-width:900px){
   .hero{min-height:auto}
-  .visual{border-radius:var(--r-card)}
   .inner{grid-template-columns:minmax(0,1fr);padding-block:32px 40px}
   .visual{order:-1}
   .svg{max-height:52vh}

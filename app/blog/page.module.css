@@ -24,7 +24,7 @@
   .toc ul{display:flex;flex-wrap:wrap;gap:8px}
   .toc li,.toc li:first-child{border:0}
   .toc a{padding:7px 12px;border-radius:var(--r-pill);background:var(--gray)}
-  .toc a:hover{background:var(--brand);color:var(--ink)}
+  .toc a:hover{background:var(--ink);color:var(--white)}
   .toc a span{background:rgba(0,0,0,.06)}
 }
 @media (max-width:600px){.latest{grid-template-columns:minmax(0,1fr)}}

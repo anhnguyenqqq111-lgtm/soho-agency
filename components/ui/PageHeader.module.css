@@ -12,6 +12,6 @@
 .lead{margin-top:22px;font-size:var(--fs-lead);line-height:1.55;color:var(--ink-2);max-width:56ch}
 .bullets{list-style:none;margin:24px 0 0;padding:0;display:grid;gap:10px;font-size:16px;color:var(--ink)}
 .bullets li{display:grid;grid-template-columns:26px minmax(0,1fr);gap:10px;align-items:center}
-.check{width:22px;height:22px;border-radius:50%;background:var(--brand);color:var(--ink);display:grid;place-items:center;font-size:12px;font-weight:700}
+.check{width:22px;height:22px;border-radius:50%;background:none;color:var(--brand-ink);display:grid;place-items:center;font-size:12px;font-weight:700}
 .extra{margin-top:30px;display:flex;flex-wrap:wrap;gap:14px 24px;align-items:center}
 @media (max-width:900px){.main,.main:only-child,.aside{grid-column:1 / -1}}

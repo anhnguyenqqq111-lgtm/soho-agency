@@ -1,7 +1,6 @@
 import styles from './Footer.module.css';
 import {sitePath} from './paths';
 import {servicePages} from './servicePagesData';
-import {solutionPages} from './solutionPagesData';
 import {company} from './data/company';
 import {partners} from './data/proof';
 import Fill from './ui/Fill';
@@ -11,9 +10,9 @@ export default function Footer(){
   const year = new Date().getFullYear();
   const columns = [
     {title: 'Dịch vụ', links: servicePages.map(s => ({label: s.menuTitle, href: `/dich-vu/${s.slug}`}))},
-    {title: 'Giải pháp', links: solutionPages.map(s => ({label: s.title, href: `/giai-phap/${s.slug}`}))},
     {title: 'Về SOHO', links: [
       {label: 'Giới thiệu', href: '/ve-soho'},
+      {label: 'Giải pháp', href: '/giai-phap'},
       {label: 'Dự án', href: '/ket-qua'},
       {label: 'Blog', href: '/blog'},
       {label: 'Liên hệ', href: '/lien-he'}
@@ -25,7 +24,7 @@ export default function Footer(){
       <div className={`container ${styles.grid}`}>
         <div className={styles.brand}>
           <a href={sitePath('/')} className={styles.logo} aria-label="SOHO Agency, về trang chủ">
-            <img src={sitePath('/brand/soho-logo-on-dark.svg')} alt="SOHO Agency" width="730" height="250"/>
+            <img src={sitePath('/brand/soho-logo.svg')} alt="SOHO Agency" width="915" height="320"/>
           </a>
           <h2 className={styles.company}><Fill value={company.legalName} need="CẦN TÊN PHÁP NHÂN"/></h2>
           <ul className={styles.info}>
@@ -47,10 +46,8 @@ export default function Footer(){
         <div className={styles.col}>
           <h2 className={styles.colTitle}>Theo dõi</h2>
           <ul className={styles.list}>
-            {company.socials.map(s => (
-              <li key={s.label}>
-                {s.url ? <a href={s.url} target="_blank" rel="noopener noreferrer">{s.label}</a> : <span className={styles.muted}>{s.label} <Fill value={null} need="CẦN LINK"/></span>}
-              </li>
+            {company.socials.filter(s => s.url).map(s => (
+              <li key={s.label}><a href={s.url} target="_blank" rel="noopener noreferrer">{s.label}</a></li>
             ))}
           </ul>
           <h2 className={`${styles.colTitle} ${styles.gap}`}>Chứng nhận</h2>

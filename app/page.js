@@ -5,7 +5,6 @@ import Section from '../components/ui/Section';
 import Hero from '../components/hero/Hero';
 import {HomeVisual} from '../components/hero/Visuals';
 import Button from '../components/ui/Button';
-import ImageSlot from '../components/ui/ImageSlot';
 import Faq from '../components/ui/Faq';
 import CtaBand from '../components/ui/CtaBand';
 import JourneyMatrix from '../components/diagrams/JourneyMatrix';
@@ -26,12 +25,6 @@ const steps = [
   {title: 'Chọn việc làm trước', text: 'Xếp việc theo tác động và độ khó. Ít kênh, làm kỹ.'},
   {title: 'Sprint 2 tuần', text: 'Mỗi sprint có giả thuyết, việc cần làm và chỉ số theo dõi.'},
   {title: 'Giữ, sửa hoặc dừng', text: 'Nhân rộng việc hiệu quả, dừng việc không.'}
-];
-const values = [
-  {title: 'Chuyên sâu đo lường', text: 'Báo cáo theo lead và doanh thu, không dừng ở traffic hay CTR.'},
-  {title: 'Người lập chiến lược trực tiếp làm', text: 'Không chuyển giao xuống đội khác sau khi ký hợp đồng.'},
-  {title: 'Doanh nghiệp sở hữu dữ liệu', text: 'Tài khoản quảng cáo, GA4 và dashboard đứng tên bạn.'},
-  {title: 'Minh bạch theo sprint', text: 'Hai tuần một vòng, biết việc gì đang làm và vì sao.'}
 ];
 const faqs = [
   {q: 'SOHO cung cấp những dịch vụ gì?', a: 'Ba nhóm: tối ưu tìm kiếm (SEO tổng thể, SEO cho AI Overview, Local SEO), quảng cáo hiệu suất (Google Ads, Meta và TikTok Ads, CRO) và content, dữ liệu (content marketing, GA4 và Looker, tư vấn chiến lược sprint). Có thể làm từng dịch vụ hoặc gộp theo mục tiêu.'},
@@ -78,9 +71,6 @@ export default function Home(){
                 </div>
               ))}
             </div>
-            <div className={styles.introMedia} data-reveal="" style={{'--reveal-delay': '150ms'}}>
-              <ImageSlot src={null} need="Ảnh hoặc video đội SOHO đang làm việc (ảnh thật, không stock)" size="1200×1200" ratio="1/1"/>
-            </div>
           </div>
         </section>
 
@@ -110,26 +100,6 @@ export default function Home(){
         {/* Quy trình */}
         <Section id="cach-lam-viec" tone="dark" title={<>Bốn bước <span className="hl">làm việc với SOHO</span></>} intro="Cùng một cách làm ở mọi dự án: audit trước, chọn việc trước, sprint 2 tuần, đo rồi quyết định.">
           <Track items={steps}/>
-        </Section>
-
-        {/* Về SOHO */}
-        <Section align="center" kicker="Về chúng tôi" title={<>Bốn điều SOHO giữ <span className="hl">trong mọi hợp đồng</span></>} spacing="lg">
-          <ul className={styles.values}>
-            {values.map((v, i) => (
-              <li key={v.title} data-reveal="" style={{'--reveal-delay': `${i * 90}ms`}}>
-                <span className={styles.valueNum}>{i + 1}</span>
-                <h3>{v.title}</h3>
-                <p>{v.text}</p>
-              </li>
-            ))}
-          </ul>
-          <div className={styles.aboutRow}>
-            <div className={styles.aboutMedia}><ImageSlot src={null} need="Ảnh đội SOHO đang làm việc" size="1600×900" ratio="16/9"/></div>
-            <div className={styles.aboutCta}>
-              <p>SOHO làm việc tại TP. Hồ Chí Minh, với doanh nghiệp đã có sản phẩm và doanh thu, cần biết kênh nào đang mang lại khách hàng.</p>
-              <Button href="/ve-soho" variant="text">Tìm hiểu về SOHO</Button>
-            </div>
-          </div>
         </Section>
 
         {/* Blog */}

@@ -57,82 +57,67 @@ Trang chủ mới: Hero → Khách hàng → Dịch vụ → Cách làm việc �
 
 ---
 
-## 2. Hướng thiết kế (bản 6, tháng 10/2026, theo SOHO Brand Kit v3.0)
+## 2. Hướng thiết kế (bản 7, tháng 10/2026, tối giản theo SOHO Brand Kit v4.0)
 
-Nguồn: thư mục `SOHO_Agency_Brand_Kit_v3` (logo, `tokens.css`, `tokens.json`, `design-system.html`, `reference/approved-brand-reference.png`). Tên hệ thống: Electric Orange / Digital Aurora. Bản này thay toàn bộ bản 5 (Brand Kit v1); không còn nền kem.
+Nguồn: thư mục `SOHO_Agency_Brand_Kit_v4` (logo truy vết từ ảnh duyệt, `soho-tokens.css`). Yêu cầu của chủ web: **ưu tiên màu trắng, càng ít màu càng tốt, chỉ dùng màu ở điểm cần nổi bật; ít chi tiết, chỉ giữ ý chính.** Bản này thay bản 6.
 
 ### 2.1. Nguyên tắc
 
-- Cam #FF7A00 là màu nhận diện chính. Gradient hồng tím chỉ là điểm nhấn UI, **mỗi màn hình một điểm lớn**.
-- Xen kẽ nền sáng (trắng, xám mây) và nền tối (Midnight) để tạo nhịp.
-- Không đặt chữ trên gradient nhiều màu nếu không có lớp nền đặc. Không đặt form trên gradient.
-- Không áp gradient hồng tím vào logo. Logo chỉ dùng gradient cam của chính nó.
+- Nền trắng cho mọi section. Section tách nhau bằng đường kẻ mảnh `--line`, không đổi màu nền. Riêng khối form liên hệ dùng xám rất nhạt `--gray`.
+- Một màu nhấn duy nhất là cam logo. Cam chỉ xuất hiện ở: nút hành động chính, link khi rê chuột, đường tăng trưởng ở hero, chặng chốt đơn (BOFU) của ma trận, thẻ "Kết quả cần đạt", con số kết quả dự án, huy hiệu đối tác.
+- Không gradient trang trí, không khối nền tối, không màu san hô hay tím, không chữ tô màu trong tiêu đề (`.hl` giữ class nhưng không còn màu).
+- Không trang trí thừa: không vạch trước nhãn, không dấu chấm cuối H1, không biểu tượng cuộn, không vòng quỹ đạo hay quầng sáng, logo khách hàng đứng yên.
 
 ### 2.2. Màu (`app/styles/tokens.css`)
 
 | Token | Giá trị | Dùng cho |
 |---|---|---|
-| `--brand` | `#FF7A00` | Nút chính, số thứ tự, mảng nhấn. Không dùng cho chữ nhỏ trên nền sáng |
-| `--brand-hover` | `#E56F00` | Hover nút cam |
-| `--brand-ink` / `--accent` | `#B84A00` | Chữ cam trên nền sáng: `.hl`, link, kết quả dự án |
-| `--coral` | `#FF416C` | Điểm nhấn UI: chặng MOFU, minh họa hero |
-| `--violet` | `#765BFF` | Điểm nhấn UI: chặng BOFU, viền focus |
-| `--paper` | `#F5F6FA` | Cloud: nền trang, section xen kẽ |
-| `--white` | `#FFFFFF` | Header, thẻ, section xen kẽ |
-| `--ink` | `#10121C` | Midnight: chữ, chữ trên nút cam, footer |
-| `--ink-3` | `#62697D` | Slate: chữ phụ |
-| `--line` | `#DCE0E9` | Viền |
-| `--error` | `#BE293C` | Nhãn `[CẦN ...]` |
+| `--grad-cta` | `#F6A341` sang `#E7622B` | Chỉ nền nút chính (chữ Midnight) |
+| `--brand` | `#F28C35` | Nét nhấn trong minh họa và sơ đồ, viền thẻ kết quả |
+| `--brand-ink` / `--accent` | `#AE420D` | Chữ cam nhỏ, link, con số kết quả |
+| `--ink` | `#10121C` | Chữ, nền thanh "doanh thu theo kênh" |
+| `--ink-3` | `#60697B` | Chữ phụ, nhãn nhỏ trên tiêu đề |
+| `--line` | `#E7E9F0` | Đường kẻ, viền thẻ |
+| `--gray` | `#F5F6FA` | Ô nền rất nhạt (dải kênh của ma trận, form liên hệ, chip) |
+| `--error` | `#C62D44` | Nhãn `[CẦN ...]` |
 
-Gradient: `--grad-signature` (cam, san hô, tím) cho một điểm nhấn lớn; `--grad-midnight` cho khối quy trình, khối liên hệ, khung minh họa hero; `--grad-mist` cho section ma trận hành trình và cột phụ của mega menu; `--grad-glow` chỉ cho nền hero.
-
-Tương phản: chữ trên nút cam luôn là Midnight. Chữ trắng chỉ đặt trên Midnight hoặc tím đậm `#5A3FE0`.
+Các token cũ (`--night`, `--grad-midnight`, `--coral`...) vẫn tồn tại nhưng trỏ về màu trắng hoặc phẳng để component cũ không lỗi. Không dùng chúng cho thiết kế mới.
 
 ### 2.3. Chữ
 
-Tiêu đề Space Grotesk 700, khoảng chữ -0.045em (h1) đến -0.02em (h3). Thân bài Inter. Cả hai font nạp bộ ký tự tiếng Việt qua `next/font`. Nhãn trên tiêu đề (`.kicker`, eyebrow hero): chữ in hoa 12px `--brand-ink`, vạch cam phía trước. Lớp `.grad-text` (chữ gradient Signature, có màu đặc dự phòng) chỉ dùng cho tiêu đề lớn trang trí, tối đa một chỗ mỗi màn hình.
+Chỉ dùng Inter (cả tiêu đề và thân bài), nạp bộ ký tự tiếng Việt qua `next/font`. H1 700 tới 64px, H2 700 tới 38px, H3 600. Nhãn trên tiêu đề (`.kicker`, eyebrow hero) là chữ thường 13px màu `--ink-3`.
 
 ### 2.4. Nút
 
-`Button`: viên thuốc (`--r-pill`), nổi lên 2px khi hover, mặc định mũi tên ↗. `primary` nền cam chữ Midnight; `secondary` viền xám, hover nền trắng viền Midnight; `text` chữ kèm mũi tên cam. Nút "Liên hệ ngay" trên header và nút gửi form cùng kiểu `primary`. Viền focus 3px tím, cách 4px.
+`Button` bo 12px. `primary` nền `--grad-cta` chữ Midnight, là chỗ có màu duy nhất của mỗi khối. `secondary` viền xám. `text` chữ Midnight gạch chân mảnh, chuyển cam đậm khi rê chuột.
 
 ### 2.5. Logo (`public/brand/`)
 
-Logo v3 là chữ SOHO cách điệu, gradient cam sang cam đỏ, theo ảnh tham chiếu đã duyệt. File SVG chỉ được cắt bớt khoảng trắng của viewBox, giữ nguyên hình và màu.
+Logo v4 truy vết từ ảnh duyệt, giữ gradient cam ấm và nếp gấp. `soho-logo.svg` dùng cho header (cao 40px, mobile 34px) và footer. Các bản khác: `soho-logo-on-dark.svg`, `soho-logo-white.svg`, `soho-wordmark*.svg`.
 
-- `soho-logo.svg`: SOHO gradient + AGENCY đen, dùng ở header (cao 44px, mobile 36px).
-- `soho-logo-on-dark.svg`: SOHO gradient + AGENCY trắng, dùng ở footer.
-- `soho-logo-white.svg`, `soho-wordmark.svg`, `soho-wordmark-white.svg`: bản dự phòng.
-- `soho-avatar.png`: app icon 256px, ảnh đại diện tác giả trong bài viết dịch vụ.
-- `app/favicon.ico`, `app/icon.svg`, `app/apple-icon.png`: favicon, Next.js tự gắn.
+Favicon vẫn dùng bản ở `app/icon.svg` và `app/favicon.ico`. Favicon và chữ S đứng riêng trong kit v4 bị lẹm một phần chữ O nên không dùng.
 
-Không dùng `soho-symbol-*.svg` trong kit v3: khung của file bị lệch, cắt lẹm sang chữ O.
+### 2.6. Chứng nhận
 
-### 2.6. Chứng nhận (`components/data/proof.js`, `components/proof/PartnerBadge.js`)
+Chỉ có Google Partner 2026. Huy hiệu RGB gốc ở `public/partners/google-partner.svg`, dẫn tới hồ sơ đối tác `https://www.google.com/partners/agency?id=6437141441`. Hiện ở khối mở đầu trang chủ, trang Dự án và footer.
 
-Huy hiệu Google Partner 2026 lấy nguyên bản RGB từ bộ tài liệu của Google, đặt ở `public/partners/google-partner.svg`. Hiện ở 3 chỗ: dưới nút ở khối mở đầu trang chủ, dải chứng nhận trang Dự án, cột Chứng nhận ở footer.
+### 2.7. Hero
 
-Quy định của Google: huy hiệu trên web phải dẫn tới trang hồ sơ đối tác của công ty. Điền `profileUrl` cho mục Google Partner trong `proof.js`, huy hiệu sẽ tự thành link và nhãn `[CẦN LINK HỒ SƠ GOOGLE PARTNER]` biến mất. Không đổi màu, không cắt, không thêm hiệu ứng lên huy hiệu.
+Nền trắng, hai cột: trái là breadcrumb, nhãn, H1, một dòng mô tả; phải là minh họa SVG đặt thẳng trên nền, nét xám với một điểm cam (`Visuals.js`, biến màu trong `Hero.module.css`). Trang dịch vụ con đặt sơ đồ dịch vụ (thẻ trắng) ở cột phải. Hero không còn chiếm cả màn hình.
 
-SOHO không có chứng nhận Meta, TikTok; danh sách chỉ còn Google Partner.
+### 2.8. Trang chủ
 
-### 2.7. Hero (`components/hero/Hero.js`)
+Hero → khối mở đầu (hai cột: tiêu đề trái; mô tả, 3 ý, nút, huy hiệu Google Partner phải) → hàng logo khách hàng đứng yên → Dịch vụ (3 cột, mỗi cột 3 dòng có link) → ma trận hành trình (xám, chỉ BOFU cam) → Dự án → Quy trình 4 bước → Blog → form liên hệ → FAQ → footer trắng.
 
-Nền Cloud + quầng sáng tím cam. Trái: breadcrumb, eyebrow, H1 ngắn kết thúc bằng dấu chấm cam, tagline, gợi ý cuộn. Phải: khung Midnight bo 28px có vạch Signature ở cạnh trên, bên trong là minh họa SVG có chuyển động (`Visuals.js`), vẽ bằng cam, san hô, tím trên nền tối. Trang dịch vụ con đặt sơ đồ dịch vụ (thẻ trắng) trong khung này. Nội dung chi tiết chuyển xuống khối `#noi-dung` ngay dưới, tiêu đề ở đó là h2.
-
-### 2.8. Trang chủ (theo bảng section của kit)
-
-Hero (Cloud + glow) → khối mở đầu (trắng, 3 ✓ cam, nút cam, huy hiệu Google Partner) → logo khách hàng (trắng, logo giữ màu gốc) → Dịch vụ (Cloud, 3 thẻ trắng) → ma trận hành trình (nền Mist; chặng TOFU cam, MOFU san hô, BOFU tím; kênh: SEO Midnight, Quảng cáo cam, Content bạc, Đo lường xám nhạt) → Dự án (trắng, kết quả chữ cam đậm, viền Signature cho đúng một thẻ đầu) → Quy trình (Midnight, số cam) → 4 nguyên tắc (trắng) → Blog (Cloud) → Liên hệ (Midnight, form trong thẻ trắng đặc) → FAQ (trắng) → Footer (Midnight đặc, logo on-dark).
+Đã bỏ: khối "4 nguyên tắc" (trùng ý với 3 ý ở khối mở đầu), ô ảnh trống ở khối mở đầu và khối giới thiệu.
 
 ### 2.9. Trang con
 
-Hero riêng → `PageHeader` (Cloud) với h2, lead, 3 ✓, nút; aside bên phải (form ở trang Liên hệ). Section dùng `tone`: `white`, `paper` (Cloud), `soft` (Mist), `gray`, `dark` (Midnight).
+Hero riêng → `PageHeader` nền trắng với h2, lead, 3 ý, nút. `Section` vẫn nhận `tone` nhưng mọi tone đều hiển thị nền trắng.
 
 ### 2.10. Chuyển động và ảnh
 
-Chữ hiện từng từ, nội dung hiện mờ dần, sơ đồ tự vẽ, tắt hết khi bật giảm chuyển động. Không ảnh stock; mọi ảnh dùng `ImageSlot` chờ ảnh thật. Ảnh dự án và logo khách hàng giữ nguyên bản.
-
-Ảnh bìa 9 bài blog (`public/blog/*.webp`) làm trước brand kit, còn logo cũ, cần xuất lại theo logo v3.
+Giữ: chữ và khối hiện mờ dần khi cuộn, sơ đồ tự vẽ, đường tăng trưởng ở hero. Tắt hết khi bật giảm chuyển động. Ảnh dự án, logo khách hàng giữ nguyên bản. Ảnh bìa 9 bài blog còn logo cũ, cần xuất lại.
 
 ---
 
@@ -140,7 +125,7 @@ Chữ hiện từng từ, nội dung hiện mờ dần, sơ đồ tự vẽ, t�
 
 ```
 app/
-  layout.js              next/font (Inter, Space Grotesk), import styles
+  layout.js              next/font (Inter), import styles
   styles/
     tokens.css           biến màu, chữ, khoảng cách
     base.css             reset, typography, link, prose (nội dung bài viết)
@@ -154,7 +139,7 @@ components/
   ui/                    Section (lưới 4/8 có nhãn số), PageHeader, NumberedList, LinkRows, Button, CtaBand
   article/               ArticleBody, Toc ('use client'), Markdown, parseMarkdown
   data/clients.js
-public/brand/soho-logo.svg, soho-logo-on-dark.svg   logo Brand Kit v3, dùng ở header/footer (xem 2.5)
+public/brand/soho-logo.svg   logo Brand Kit v4, dùng ở header và footer (xem 2.5)
 ```
 
 Xóa: `globals.css`, `ServiceSectionVisualizer.js`, `ArticleRenderer.js` (thay bằng ArticleBody), `cleanPunctuation.js`, `public/brand/page-*.png` nếu không dùng.

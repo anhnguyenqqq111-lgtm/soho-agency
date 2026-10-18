@@ -14,7 +14,7 @@
 
 .section{padding-bottom:56px;margin-bottom:56px;border-bottom:1px solid var(--line)}
 .section:last-child{border-bottom:0;margin-bottom:0}
-.index{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--brand);color:var(--ink);font-size:13px;font-weight:800;margin-bottom:14px}
+.index{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--gray);color:var(--ink);font-size:13px;font-weight:800;margin-bottom:14px}
 .heading{font-size:clamp(24px,2.6vw,34px);line-height:1.15;max-width:26ch;margin-bottom:28px}
 
 .faq{display:grid;gap:12px;max-width:72ch}

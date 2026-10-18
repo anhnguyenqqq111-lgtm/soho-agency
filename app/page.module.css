@@ -1,35 +1,25 @@
 /* Mở đầu sau hero */
-.intro{background:var(--white);padding-top:var(--space-md)}
-.introGrid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:48px var(--gap);align-items:center;padding-bottom:var(--space-md)}
-.introCopy{display:grid;gap:22px;justify-items:start}
+.intro{background:var(--white);padding-top:var(--space-md);border-top:1px solid var(--line)}
+.introGrid{display:grid;grid-template-columns:minmax(0,1fr);padding-bottom:var(--space-md)}
+.introCopy{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);column-gap:var(--gap);row-gap:22px;justify-items:start}
+.introCopy > *{grid-column:2}
+.introCopy > h2{grid-column:1;grid-row:1 / span 5;align-self:start}
 .introTitle{font-size:clamp(30px,3.6vw,46px);max-width:16ch}
 .heroLead{font-size:var(--fs-lead);line-height:1.55;color:var(--ink-2);max-width:48ch}
 .heroBullets{list-style:none;margin:0;padding:0;display:grid;gap:10px;font-size:16px}
 .heroBullets li{display:grid;grid-template-columns:26px minmax(0,1fr);gap:10px;align-items:center}
-.check{width:22px;height:22px;border-radius:50%;background:var(--brand);color:var(--ink);display:grid;place-items:center;font-size:12px;font-weight:700}
+.check{width:22px;height:22px;display:grid;place-items:center;font-size:15px;font-weight:700;color:var(--brand-ink)}
 .heroActions{display:flex;flex-wrap:wrap;gap:14px 28px;align-items:center;margin-top:8px}
-.introMedia{min-width:0}
 .partnerRow{display:grid;grid-template-columns:auto minmax(0,1fr);gap:18px;align-items:center;margin-top:14px;padding-top:22px;border-top:1px solid var(--line);max-width:520px}
 .partnerRow p{font-size:14px;line-height:1.5;color:var(--ink-3)}
 .partnerRow strong{display:block;color:var(--ink);font-size:15px;margin-bottom:2px}
-
-/* Về SOHO */
-.values{list-style:none;margin:0 0 48px;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--gap)}
-.values li{display:grid;gap:10px;padding:26px 24px;border:1px solid var(--line);border-radius:var(--r-card);text-align:left}
-.valueNum{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:var(--brand);color:var(--ink);font-weight:800;font-size:14px}
-.values h3{font-size:17px}
-.values p{font-size:14px;line-height:1.55;color:var(--ink-2)}
-.aboutRow{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:var(--gap);align-items:center;text-align:left}
-.aboutCta{display:grid;gap:18px;justify-items:start;padding:8px 0 8px 16px}
-.aboutCta p{font-size:var(--fs-lead);line-height:1.55;color:var(--ink-2)}
 
 .blogGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--gap)}
 .faqWrap{max-width:860px}
 
 @media (max-width:900px){
   .introGrid{grid-template-columns:minmax(0,1fr)}
-  .values{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .aboutRow,.blogGrid{grid-template-columns:minmax(0,1fr)}
-  .aboutCta{padding-left:0}
+  .introCopy{grid-template-columns:minmax(0,1fr)}
+  .introCopy > *,.introCopy > h2{grid-column:1;grid-row:auto}
+  .blogGrid{grid-template-columns:minmax(0,1fr)}
 }
-@media (max-width:560px){.values{grid-template-columns:minmax(0,1fr)}}

@@ -2,7 +2,7 @@
 .item{display:grid;grid-template-rows:1fr auto;gap:24px;padding:28px;background:var(--white);border:1px solid var(--line);border-radius:var(--r-card)}
 .quote{margin:0}
 .quote p{font-size:17px;line-height:1.55;font-weight:500;color:var(--ink)}
-.quote p::before{content:'“';color:var(--brand);font-size:1.6em;line-height:0;margin-right:4px;vertical-align:-.3em}
+.quote p::before{content:'“';color:var(--silver);font-size:1.6em;line-height:0;margin-right:4px;vertical-align:-.3em}
 .who{display:grid;grid-template-columns:40px minmax(0,1fr);gap:4px 12px;align-items:center}
 .who::before{content:'';grid-row:span 2;width:40px;height:40px;border-radius:50%;background:var(--grad-brand)}
 .name{font-weight:700;font-size:15px}

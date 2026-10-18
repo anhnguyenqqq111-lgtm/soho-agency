@@ -6,10 +6,10 @@ import styles from './JourneyMatrix.module.css';
   Dải nhỏ dần theo chặng. Không icon, không hiệu ứng.
 */
 const CHANNELS = [
-  {name: 'SEO và AI Search', color: '#10121C', ink: '#FFFFFF'},
-  {name: 'Quảng cáo', color: '#FF7A00', ink: '#10121C'},
-  {name: 'Content', color: '#C9D0DF', ink: '#10121C'},
-  {name: 'Đo lường', color: '#EEF0F6', ink: '#10121C'}
+  {name: 'SEO và AI Search', color: '#F5F6FA', ink: '#10121C'},
+  {name: 'Quảng cáo', color: '#F5F6FA', ink: '#10121C'},
+  {name: 'Content', color: '#F5F6FA', ink: '#10121C'},
+  {name: 'Đo lường', color: '#F5F6FA', ink: '#10121C'}
 ];
 const STAGES = [
   {code: 'TOFU', name: 'Được tìm thấy', sub: 'Nhận biết', owner: 'Marketing', q: '“Có ai giải được việc này không?”',

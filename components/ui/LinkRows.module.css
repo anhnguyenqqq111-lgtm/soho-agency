@@ -9,9 +9,9 @@
 .title{grid-column:1;font-size:clamp(18px,1.7vw,21px);font-weight:700;line-height:1.25}
 .desc{grid-column:2;color:var(--ink-2);font-size:var(--fs-small)}
 .arrow{grid-column:3;width:36px;height:36px;border-radius:50%;background:var(--gray);display:grid;place-items:center;color:var(--ink);transition:background-color var(--t-fast),color var(--t-fast)}
-.row:hover .arrow{background:var(--brand);color:var(--ink)}
+.row:hover .arrow{background:var(--ink);color:var(--white)}
 .row:hover .title{color:var(--ink)}
-.row:hover{border-color:var(--brand)}
+.row:hover{border-color:var(--gray-2)}
 .sm .row{padding:16px 20px}
 .sm .title{font-size:17px}
 :global(.dark) .row{background:rgba(255,255,255,.05);border-color:var(--line-dark)}
