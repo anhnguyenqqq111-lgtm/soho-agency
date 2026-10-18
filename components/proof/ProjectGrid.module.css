@@ -12,5 +12,7 @@ a.link:hover .name{color:var(--accent)}
 .featured .name{font-size:clamp(22px,2.2vw,28px)}
 .field{font-size:var(--fs-small);color:var(--ink-2)}
 .result{font-size:var(--fs-small);margin-top:6px;font-weight:500}
+/* Đúng 4 dự án: lưới 2 × 2 thay vì 3 + 1 */
+@media (min-width:901px){.item:first-child:nth-last-child(4),.item:first-child:nth-last-child(4) ~ .item{grid-column:span 6}}
 @media (max-width:900px){.item{grid-column:span 6}.featured{grid-column:1 / -1}}
 @media (max-width:560px){.item{grid-column:1 / -1}}

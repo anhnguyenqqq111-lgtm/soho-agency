@@ -15,7 +15,7 @@
 .link :global([class*=slot]),.link :global([class*=img]){border-radius:0;border-left:0;border-right:0;border-top:0}
 .body{display:grid;gap:6px;padding:18px 20px 20px;align-content:start}
 .top{display:flex;justify-content:space-between;align-items:center;gap:12px}
-.logo{height:20px;width:auto;max-width:90px;object-fit:contain;filter:grayscale(1);opacity:.7}
+.logo{height:20px;width:auto;max-width:90px;object-fit:contain}
 .scope{font-size:12px;font-weight:600;color:var(--ink-3);text-align:right}
 .name{font-size:19px;margin-top:4px}
 .link:hover{border-color:var(--brand)}

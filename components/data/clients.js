@@ -15,19 +15,6 @@ export const clients = [
     work: null
   },
   {
-    slug: 'icado',
-    name: 'ICADO',
-    field: 'Thời trang thể thao, activewear',
-    scope: 'Ecommerce, quảng cáo chuyển đổi',
-    logo: '/clients/icado.png',
-    url: 'https://icado.vn',
-    image: null,
-    imageNeed: 'Trang sản phẩm hoặc mẫu quảng cáo đã chạy cho ICADO',
-    result: null,
-    context: null,
-    work: null
-  },
-  {
     slug: 'studio-1-nha',
     name: 'Studio 1 Nhà',
     field: 'Studio nhiếp ảnh và dịch vụ cưới',
