@@ -5,6 +5,7 @@ import {company} from './data/company';
 import {partners} from './data/proof';
 import Fill from './ui/Fill';
 import PartnerBadge from './proof/PartnerBadge';
+import StickyCta from './StickyCta';
 
 export default function Footer(){
   const year = new Date().getFullYear();
@@ -53,7 +54,7 @@ export default function Footer(){
           <h2 className={`${styles.colTitle} ${styles.gap}`}>Chứng nhận</h2>
           <ul className={styles.badges}>
             {partners.map(p => p.verified && p.logo ? (
-              <li key={p.name} className={styles.badgeImg}><PartnerBadge partner={p} size={84}/></li>
+              <li key={p.name} className={styles.badgeImg}><PartnerBadge partner={p} size={84} tipId="tip-partner-footer"/></li>
             ) : (
               <li key={p.name} className={styles.badge}>
                 <span>{p.name}</span>
@@ -74,6 +75,7 @@ export default function Footer(){
           </nav>
         </div>
       </div>
+      <StickyCta phone={company.phone} contactHref={sitePath('/lien-he')}/>
     </footer>
   );
 }

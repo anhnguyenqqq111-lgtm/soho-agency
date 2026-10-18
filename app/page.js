@@ -3,7 +3,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Section from '../components/ui/Section';
 import Hero from '../components/hero/Hero';
-import {HomeVisual} from '../components/hero/Visuals';
+import RevenueToggle from '../components/hero/RevenueToggle';
 import Button from '../components/ui/Button';
 import Faq from '../components/ui/Faq';
 import CtaBand from '../components/ui/CtaBand';
@@ -46,14 +46,14 @@ export default function Home(){
           eyebrow="SOHO Agency"
           title={<>Marketing đo bằng <span className="hl">doanh thu</span></>}
           tagline="SEO, quảng cáo, content và đo lường cho doanh nghiệp Việt Nam."
-          visual={<HomeVisual/>}
+          visual={<RevenueToggle/>}
         />
 
         {/* Mở đầu: nội dung hero cũ */}
         <section id="noi-dung" className={styles.intro}>
           <div className={`container ${styles.introGrid}`}>
             <div className={styles.introCopy} data-reveal="">
-              <h2 className={styles.introTitle}>Marketing được đo bằng <span className="hl">lead và doanh thu</span></h2>
+              <h2 className={styles.introTitle}>Từ chiến lược đến triển khai, <span className="hl">một đội chịu trách nhiệm</span></h2>
               <p className={styles.heroLead}>SOHO lập kế hoạch và trực tiếp triển khai SEO, quảng cáo, content và đo lường, làm theo sprint 2 tuần, báo cáo bằng số liệu bán hàng.</p>
               <ul className={styles.heroBullets}>
                 {['SEO, quảng cáo, content và đo lường trong một đội', 'Sprint 2 tuần, báo cáo bằng số liệu bán hàng', 'Doanh nghiệp sở hữu tài khoản và dữ liệu'].map(b => (
@@ -66,7 +66,7 @@ export default function Home(){
               </div>
               {partners.filter(p => p.verified && p.logo).map(p => (
                 <div key={p.name} className={styles.partnerRow}>
-                  <PartnerBadge partner={p} size={76}/>
+                  <PartnerBadge partner={p} size={76} tipId="tip-partner-intro"/>
                   <p><strong>SOHO là {p.name}{p.year ? ` ${p.year}` : ''}.</strong> Huy hiệu Google cấp cho agency đạt yêu cầu về chứng chỉ, mức chi tiêu và hiệu quả quảng cáo.</p>
                 </div>
               ))}
@@ -78,7 +78,7 @@ export default function Home(){
 
         {/* Dịch vụ: thẻ trắng trên nền cam nhạt */}
         <Section id="dich-vu" tone="white" kicker="Dịch vụ" title={<>Chín dịch vụ, <span className="hl">ba nhóm việc</span></>} aside={<Button href="/dich-vu" variant="text">Xem tất cả dịch vụ</Button>}>
-          <ServiceGroups groups={groups}/>
+          <ServiceGroups groups={groups.map(g => ({group: g.group, items: g.items.map(({slug, menuTitle, menuDesc}) => ({slug, menuTitle, menuDesc}))}))}/>
         </Section>
 
         {/* Bảng hành trình */}

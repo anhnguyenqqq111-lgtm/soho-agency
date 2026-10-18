@@ -7,6 +7,7 @@ import BlogCard from '../../../components/BlogCard';
 import CtaBand from '../../../components/ui/CtaBand';
 import {sitePath} from '../../../components/paths';
 import {articles, getLatestArticles, toISODate} from '../../../components/blogData';
+import ReadingProgress from '../../../components/article/ReadingProgress';
 
 export function generateStaticParams(){
   return articles.map(article => ({slug: article.slug}));
@@ -35,6 +36,7 @@ export default async function BlogPostPage({params}){
   return (
     <>
       <Header activeNav="blog"/>
+      <ReadingProgress/>
       <main>
         {/* Đầu bài: breadcrumb, danh mục, H1 duy nhất, trích dẫn, tác giả. Banner (cùng ảnh với thumbnail, 16:10) đặt ngay sau. */}
         <header className={styles.head}>

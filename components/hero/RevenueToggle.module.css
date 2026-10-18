@@ -1,0 +1,41 @@
+.wrap{margin:0;width:100%;display:grid;gap:14px}
+.switch{justify-self:start;display:inline-flex;padding:4px;border-radius:999px;background:var(--gray);border:1px solid var(--line)}
+.switch button{border:0;background:none;padding:8px 16px;border-radius:999px;font-size:14px;font-weight:600;color:var(--ink-3);cursor:pointer;transition:background-color var(--t-fast),color var(--t-fast),box-shadow var(--t-fast)}
+.switch button:hover{color:var(--ink)}
+.switch .on{background:var(--white);color:var(--ink);box-shadow:0 2px 8px rgba(16,18,28,.08)}
+.switch .on:last-child{background:var(--grad-cta)}
+
+.svg{width:100%;height:auto;max-height:calc(100svh - var(--header-h) - 260px)}
+.grid{stroke:#E4E7EE;stroke-width:1}
+.axis{font-family:var(--font-text);font-size:14px;fill:var(--ink-3)}
+.end{text-anchor:end}
+
+/* Mỗi lần đổi chế độ, nhóm đường được vẽ lại từ đầu (key={mode}) */
+.traffic,.revenue{fill:none;stroke-linecap:round;stroke-dasharray:1 1;stroke-dashoffset:1;animation:draw 1300ms cubic-bezier(.65,0,.35,1) forwards}
+.traffic{stroke:#9AA1B2;stroke-width:3}
+.revenue{stroke:url(#rt-line);stroke-width:5;animation-delay:150ms}
+@keyframes draw{to{stroke-dashoffset:0}}
+.area{opacity:0;animation:fade 700ms ease 900ms forwards}
+.areaFlat{display:none}
+.pulse{fill:#E7622B;transform-box:fill-box;transform-origin:center;opacity:0;animation:fade 300ms ease 1300ms forwards,pulse 2.4s ease-in-out 1600ms infinite}
+.dotFlat{fill:#9AA1B2;opacity:0;animation:fade 300ms ease 1300ms forwards}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.35)}}
+.tag{opacity:0;animation:fade 400ms ease 1200ms forwards}
+.tagHot{fill:#10121C}
+.tagCold{fill:#FFFFFF;stroke:#DDE1EB}
+.tagText{font-family:var(--font-text);font-size:17px;font-weight:700;text-anchor:middle}
+.tagHot + .tagText{fill:#FFFFFF}
+.tagCold + .tagText{fill:#60697B}
+@keyframes fade{to{opacity:1}}
+
+.legend{display:flex;gap:18px;font-size:13px;color:var(--ink-3)}
+.legend span{display:inline-flex;align-items:center;gap:8px}
+.legend i{display:inline-block;width:18px;height:3px;border-radius:2px}
+.keyTraffic{background:#9AA1B2}
+.keyRevenue{background:var(--grad-cta)}
+
+@media (max-width:900px){.svg{max-height:none}}
+@media (prefers-reduced-motion:reduce){
+  .traffic,.revenue{stroke-dasharray:none;animation:none}
+  .area,.pulse,.dotFlat,.tag{opacity:1;animation:none}
+}

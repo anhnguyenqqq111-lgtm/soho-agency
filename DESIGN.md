@@ -90,9 +90,22 @@ Nguồn: bộ 3dicons của Vijay Verma (3dicons.co, github.com/realvjy/3dicons)
 
 Chỉ hiện ở section dạng khối nền xám, góc phải trên, có quầng cam nhạt phía sau, trôi lên xuống chậm (tắt khi giảm chuyển động); section nền trắng không đặt hình để không đè nội dung. Đang dùng: trang chủ `target` (ma trận hành trình), `flag` (quy trình), `chat-bubble` (FAQ); trang dịch vụ `calender` (quy trình), `zoom` (vì sao); Dự án `chart`; Giới thiệu `megaphone`; giải pháp `rocket`. Có sẵn thêm `trophy`, `bulb`. Muốn thêm hình: tải bản clay từ link trong `content/3dicons-meta/<tên>.md` của repo trên, chuyển WebP, đặt vào `public/decor/`.
 
+### 2.2c. Tương tác có ý nghĩa (giúp người đọc hiểu nhanh hoặc quyết định dễ hơn)
+
+| Ở đâu | Tương tác | File |
+|---|---|---|
+| Hero trang chủ | Công tắc **Đo bằng traffic / Đo bằng doanh thu**: chế độ traffic cho thấy traffic tăng mà doanh thu đứng yên, chế độ doanh thu cho thấy doanh thu tăng. Mở ở traffic, tự chuyển sang doanh thu sau 3 giây một lần nếu người xem chưa bấm. | `components/hero/RevenueToggle.js` |
+| Khối dịch vụ trang chủ | Bộ chọn **Bạn đang gặp vấn đề gì?** (4 điểm nghẽn): dịch vụ phù hợp sáng lên, còn lại mờ, kèm một câu gợi ý. Ánh xạ ở `PROBLEMS`. | `components/ServiceGroups.js` |
+| Ma trận hành trình | Cuộn tới: ba chặng sáng lần lượt, dải kênh co hẹp như phễu, thanh doanh thu hiện cuối. Rê chuột vào một kênh: tô cả cột kênh đó (CSS `:has`, không JS). | `components/diagrams/JourneyMatrix.*` |
+| Huy hiệu Google Partner | Rê chuột hoặc Tab: ô giải thích 3 tiêu chí Google xác nhận (dữ liệu `criteria` trong `proof.js`). | `components/proof/PartnerBadge.*` |
+| Mọi trang, mobile | Thanh cố định **Gọi / Nhận tư vấn** ở đáy, hiện sau khi cuộn qua hero, ẩn khi form liên hệ hoặc footer trong màn hình và ở trang Liên hệ. | `components/StickyCta.js` (gắn trong Footer) |
+| Bài blog, trang dịch vụ | Thanh tiến độ đọc 3px ở mép trên. | `components/article/ReadingProgress.js` |
+
+Chưa làm: số liệu dự án đếm lên khi cuộn tới (chờ số thật được khách đồng ý công bố). Tránh: hiệu ứng chuột, hạt bay, parallax nặng.
+
 ### 2.3. Chữ
 
-Chỉ dùng Inter (cả tiêu đề và thân bài), nạp bộ ký tự tiếng Việt qua `next/font`. H1 700 tới 64px, H2 700 tới 38px, H3 600. Nhãn trên tiêu đề (`.kicker`, eyebrow hero) là chữ thường 13px màu `--ink-3`.
+Chỉ dùng Inter (cả tiêu đề và thân bài), nạp bộ ký tự tiếng Việt qua `next/font`. H1 600 tới 64px, H2 600 tới 38px, H3 600; khoảng chữ khoảng -2% (không ép khít hơn vì tiếng Việt nhiều dấu chồng). Nhãn trên tiêu đề (`.kicker`, eyebrow hero) là chữ thường 13px màu `--ink-3`.
 
 ### 2.4. Nút
 

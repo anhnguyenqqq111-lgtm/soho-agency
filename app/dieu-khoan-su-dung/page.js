@@ -19,7 +19,7 @@ const sections = [
     )
   },
   {
-    id: 'noi-dung',
+    id: 'noi-dung-website',
     title: 'Nội dung trên website',
     body: (
       <p>

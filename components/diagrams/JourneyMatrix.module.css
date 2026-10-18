@@ -30,7 +30,6 @@
 /* Dải kênh */
 .cell{display:flex;align-items:center}
 .band{width:var(--w);display:grid;gap:4px;padding:14px 16px;border-radius:var(--r-md);font-size:14px;line-height:1.4;font-weight:600;border:1px solid transparent;transition:border-color var(--t-fast),background-color var(--t-fast)}
-.block:hover .band{background:#FFF7F0!important;border-color:#F6CFAE}
 .band span + span{padding-top:5px;border-top:1px solid color-mix(in srgb,currentColor 28%,transparent);font-weight:500}
 
 /* Mũi tên nối */
@@ -50,4 +49,32 @@
   .cell:last-of-type{padding-bottom:20px}
   .cellCh{display:flex;align-items:center;gap:7px;font-size:12px;font-weight:700;color:var(--ink-2)}
   .band{width:100%}
+}
+
+/* Rê chuột vào một kênh: tô cả cột kênh đó xuyên ba chặng */
+.chHead{cursor:default;transition:background-color var(--t-fast)}
+.wrap:has([data-ch="0"]:hover) .cell[data-ch="0"] .band{background:#FFF1E4!important;border-color:var(--brand)}
+.wrap:has([data-ch="0"]:hover) .chHead[data-ch="0"]{background:var(--grad-cta);color:var(--ink)}
+.wrap:has([data-ch="1"]:hover) .cell[data-ch="1"] .band{background:#FFF1E4!important;border-color:var(--brand)}
+.wrap:has([data-ch="1"]:hover) .chHead[data-ch="1"]{background:var(--grad-cta);color:var(--ink)}
+.wrap:has([data-ch="2"]:hover) .cell[data-ch="2"] .band{background:#FFF1E4!important;border-color:var(--brand)}
+.wrap:has([data-ch="2"]:hover) .chHead[data-ch="2"]{background:var(--grad-cta);color:var(--ink)}
+.wrap:has([data-ch="3"]:hover) .cell[data-ch="3"] .band{background:#FFF1E4!important;border-color:var(--brand)}
+.wrap:has([data-ch="3"]:hover) .chHead[data-ch="3"]{background:var(--grad-cta);color:var(--ink)}
+
+/* Cuộn tới: ba chặng sáng lần lượt, dải co hẹp như phễu, thanh doanh thu hiện cuối */
+:global(html.js) .wrap[data-reveal="journey"]{opacity:1;transform:none}
+:global(html.js) .wrap[data-reveal="journey"] .block{opacity:.25;transform:translateY(12px);transition:opacity 600ms ease,transform 600ms var(--ease),box-shadow var(--t-med),border-color var(--t-med);transition-delay:calc(var(--i) * 450ms)}
+:global(html.js) .wrap[data-reveal="journey"] .band{width:100%;transition:width 900ms var(--ease),background-color var(--t-fast),border-color var(--t-fast);transition-delay:calc(var(--i) * 450ms + 250ms),0ms,0ms}
+:global(html.js) .wrap[data-reveal="journey"] .arrow{opacity:0;transition:opacity 400ms ease;transition-delay:calc(var(--i) * 450ms + 350ms)}
+:global(html.js) .wrap[data-reveal="journey"] .dest{opacity:0;transform:scale(.97);transition:opacity 600ms ease 1600ms,transform 600ms var(--ease) 1600ms}
+:global(html.js) .wrap[data-reveal="journey"]:global(.is-in) .block{opacity:1;transform:none}
+:global(html.js) .wrap[data-reveal="journey"]:global(.is-in) .block:hover{transform:translateY(-2px);transition-delay:0s}
+:global(html.js) .wrap[data-reveal="journey"]:global(.is-in) .band{width:var(--w)}
+:global(html.js) .wrap[data-reveal="journey"]:global(.is-in) .arrow{opacity:1}
+:global(html.js) .wrap[data-reveal="journey"]:global(.is-in) .dest{opacity:1;transform:none}
+@media (max-width:1000px){:global(html.js) .wrap[data-reveal="journey"]:global(.is-in) .band{width:100%}}
+@media (prefers-reduced-motion:reduce){
+  :global(html.js) .wrap[data-reveal="journey"] .block,:global(html.js) .wrap[data-reveal="journey"] .arrow,:global(html.js) .wrap[data-reveal="journey"] .dest{opacity:1;transform:none;transition:none}
+  :global(html.js) .wrap[data-reveal="journey"] .band{width:var(--w);transition:none}
 }

@@ -12,7 +12,7 @@ export default function PartnerStrip(){
         {partners.map(p => (
           <li key={p.name}>
             {p.verified && p.logo
-              ? <PartnerBadge partner={p} size={96}/>
+              ? <PartnerBadge partner={p} size={96} tipId="tip-partner-strip"/>
               : <>
                   <span className={styles.name}>{p.name}</span>
                   <span className="placeholder">[CẦN XÁC NHẬN và logo chính thức]</span>

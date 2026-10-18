@@ -15,6 +15,7 @@ import BeforeAfter from '../../../components/diagrams/BeforeAfter';
 import ArticleBody from '../../../components/article/ArticleBody';
 import {getServicePage, servicePages} from '../../../components/servicePagesData';
 import {getServiceArticle} from '../../../components/serviceArticlesData';
+import ReadingProgress from '../../../components/article/ReadingProgress';
 
 export function generateStaticParams(){
   return servicePages.map(service => ({slug: service.slug}));
@@ -47,6 +48,7 @@ export default async function ServicePage({params}){
   return (
     <>
       <Header activeNav="services"/>
+      <ReadingProgress/>
       <main>
         <Hero tone="services" crumbs={[{label: 'Dịch vụ', href: '/dich-vu'}, {label: service.menuTitle}]} eyebrow={service.category} title={service.menuTitle} tagline={service.menuDesc} visual={<div className={styles.heroDiagram}><ServiceDiagram slug={service.slug} card/></div>}/>
         <PageHeader

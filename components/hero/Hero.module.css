@@ -10,7 +10,7 @@
 .crumbs li + li::before{content:'/';margin-right:6px}
 .crumbs a{color:inherit}
 .eyebrow{font-size:13px;font-weight:600;color:var(--brand-ink)}
-.title{font-size:var(--fs-h1);line-height:1.08;letter-spacing:-.035em;font-weight:700;max-width:13ch;color:inherit}
+.title{font-size:var(--fs-h1);line-height:1.1;letter-spacing:-.022em;font-weight:600;max-width:13ch;color:inherit}
 .tagline{font-size:var(--fs-lead);max-width:44ch;color:var(--ink-2)}
 .scroll{display:none}
 .scroll span{position:absolute;left:50%;top:8px;width:4px;height:8px;margin-left:-2px;border-radius:2px;background:var(--brand);animation:scrollHint 1.6s ease-in-out infinite}

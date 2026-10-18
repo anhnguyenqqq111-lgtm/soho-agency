@@ -1,3 +1,13 @@
+.wrap{display:grid;gap:36px}
+.picker{display:grid;gap:12px;padding:20px 22px;border:1px solid var(--line);border-radius:var(--r-card);background:var(--white)}
+.ask{font-size:15px;font-weight:600}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip,.chipOn,.reset{border:1px solid var(--gray-2);background:var(--white);color:var(--ink);font-size:14px;font-weight:500;padding:8px 14px;border-radius:999px;cursor:pointer;transition:background-color var(--t-fast),border-color var(--t-fast),color var(--t-fast),transform var(--t-fast)}
+.chip:hover{border-color:var(--brand);transform:translateY(-1px)}
+.chipOn{background:var(--grad-cta);border-color:transparent;font-weight:600}
+.reset{border-color:transparent;background:none;color:var(--ink-3);text-decoration:underline;text-underline-offset:4px}
+.hint{font-size:14px;color:var(--ink-3);min-height:1.5em}
+.hint strong{color:var(--brand-ink)}
 .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--gap)}
 .card{display:grid;align-content:start;gap:4px}
 .head{display:flex;align-items:baseline;gap:12px;padding-bottom:14px;border-bottom:2px solid var(--ink);position:relative}
@@ -12,6 +22,10 @@
 .text strong{font-size:16px;font-weight:600;transition:color var(--t-fast)}
 .text span{font-size:14px;line-height:1.45;color:var(--ink-3)}
 .arrow{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;color:var(--ink-3);font-size:14px;transition:background-color var(--t-fast),color var(--t-fast),transform var(--t-fast)}
+.list li{transition:opacity var(--t-med),filter var(--t-med)}
+.filtering .miss{opacity:.32;filter:grayscale(1)}
+.hit .row{background:#FFF7F0;box-shadow:inset 3px 0 0 var(--brand)}
+.hit .arrow{background:var(--grad-cta);color:var(--ink)}
 .row:hover{color:inherit}
 .row:hover strong{color:var(--brand-ink)}
 .row:hover{background:#FFF7F0}
