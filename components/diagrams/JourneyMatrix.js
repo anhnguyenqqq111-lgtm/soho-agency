@@ -6,10 +6,10 @@ import styles from './JourneyMatrix.module.css';
   Dải nhỏ dần theo chặng. Không icon, không hiệu ứng.
 */
 const CHANNELS = [
-  {name: 'SEO và AI Search', color: '#C9391A'},
-  {name: 'Quảng cáo', color: '#F26716'},
-  {name: 'Content', color: '#E8A800'},
-  {name: 'Đo lường', color: '#8A8178'}
+  {name: 'SEO và AI Search', color: '#1F1F1F', ink: '#FFFFFF'},
+  {name: 'Quảng cáo', color: '#FF7A00', ink: '#1F1F1F'},
+  {name: 'Content', color: '#FFB877', ink: '#1F1F1F'},
+  {name: 'Đo lường', color: '#E8E6E2', ink: '#1F1F1F'}
 ];
 const STAGES = [
   {code: 'TOFU', name: 'Được tìm thấy', sub: 'Nhận biết', owner: 'Marketing', q: '“Có ai giải được việc này không?”',
@@ -49,7 +49,7 @@ export default function JourneyMatrix(){
             {CHANNELS.map((c, j) => (
               <div key={c.name} className={styles.cell}>
                 <p className={styles.cellCh}><span className={styles.chDot} style={{background: c.color}}/>{c.name}</p>
-                <div className={styles.band} style={{background: c.color}}>
+                <div className={styles.band} style={{background: c.color, color: c.ink}}>
                   {st.cells[j].map(it => <span key={it}>{it}</span>)}
                 </div>
               </div>

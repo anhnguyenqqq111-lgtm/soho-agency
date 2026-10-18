@@ -49,8 +49,9 @@ Không thêm biến môi trường nào trên Vercel. Nếu lỡ đặt `GITHUB_
 
 ```text
 app/
-  layout.js                  font Be Vietnam Pro, metadata mặc định, RevealObserver
-  styles/tokens.css          biến màu, chữ, khoảng cách (toàn bộ màu định nghĩa ở đây)
+  layout.js                  font Inter, metadata mặc định, RevealObserver
+  favicon.ico, icon.svg      favicon theo brand kit
+  styles/tokens.css          biến màu, chữ, khoảng cách theo SOHO Brand Kit v1.0 (toàn bộ màu định nghĩa ở đây)
   styles/base.css            reset, typography, .prose, hiệu ứng hé lộ
   styles/diagram.css         style chung cho sơ đồ SVG
   page.js                    trang chủ
@@ -62,6 +63,7 @@ app/
 components/
   Header.js, NavMenu.js      header; NavMenu là client component (mega menu, menu mobile)
   Footer.js
+  ServiceGroups.js           khối dịch vụ trang chủ (3 thẻ nhóm trên nền cam nhạt)
   ContactForm.js             form liên hệ (client), chưa nối API, xem TODO trong file
   RevealObserver.js          gắn class is-in cho [data-reveal] khi cuộn tới
   hero/                      Hero (đầu trang) và Visuals (7 minh họa SVG theo trang)
@@ -77,10 +79,10 @@ components/
   blogData.js                bài blog (HTML trong chuỗi), danh mục, ảnh banner/thumbnail
   articles/*.js              bài viết dài cho từng dịch vụ (markdown trong chuỗi)
 
-public/brand/                logo (bản đã cắt sát: soho-logo-crop.svg, soho-logo-white-crop.svg)
+public/brand/                logo theo brand kit: soho-wordmark.svg (header), soho-logo-white.svg (footer), symbol, avatar
 public/clients/              logo khách hàng
 public/blog/                 ảnh bài blog (thumbnail và banner dùng chung), render bằng skill creating-images-soho
-DESIGN.md                    hướng thiết kế, token, quy tắc
+DESIGN.md                    hướng thiết kế, token, quy tắc màu và logo (mục 2)
 ```
 
 Mỗi component và trang có `.module.css` riêng. Server Component mặc định; chỉ `NavMenu`, `ContactForm`, `RevealObserver`, `Toc`, `ProjectCarousel` là client.
@@ -122,6 +124,7 @@ Quy tắc chung của blog (sẽ là quy tắc của CMS sau này), kiểm tra t
 - Form liên hệ (`components/ContactForm.js`) chỉ hiện thông báo đã gửi, chưa gửi đi đâu. Cần nối API hoặc dịch vụ form.
 - Hai trang pháp lý là bản nháp, cần pháp chế duyệt. Đầu trang có dòng cảnh báo đỏ, xóa sau khi duyệt.
 - Bài viết dịch vụ có câu số liệu khẳng định về SOHO (gạch chân chấm vàng, đánh dấu tự động bởi `isClaim()` trong `components/article/parseMarkdown.js`). Cần kiểm chứng hoặc sửa.
+- Ảnh bìa 9 bài blog trong `public/blog/` còn logo cũ, cần xuất lại theo brand kit.
 - Tên tác giả chưa thống nhất giữa `blogData.js` ("Nguyễn Tuấn Anh") và `articles/*.js` ("Nguyễn Thế Tuấn Anh").
 
 ## Kiểm tra trước khi merge

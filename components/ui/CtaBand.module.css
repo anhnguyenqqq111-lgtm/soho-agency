@@ -1,4 +1,4 @@
-.band{background:var(--paper);padding-block:var(--space-md)}
+.band{background:var(--brand-soft);padding-block:var(--space-md)}
 .copy{display:grid;gap:14px;justify-items:center;text-align:center;max-width:62ch;margin-inline:auto;margin-bottom:36px}
 .title{max-width:none}
 .text{color:var(--ink-2);font-size:var(--fs-lead);line-height:1.55}

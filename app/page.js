@@ -13,6 +13,7 @@ import Track from '../components/diagrams/Track';
 import ProjectCarousel from '../components/proof/ProjectCarousel';
 import BlogCard from '../components/BlogCard';
 import LogoMarquee from '../components/proof/LogoMarquee';
+import ServiceGroups from '../components/ServiceGroups';
 import {clients} from '../components/data/clients';
 import {getServicesByGroup} from '../components/servicePagesData';
 import {getLatestArticles} from '../components/blogData';
@@ -65,7 +66,7 @@ export default function Home(){
                 ))}
               </ul>
               <div className={styles.heroActions}>
-                <Button href="#lien-he" variant="secondary">Đặt lịch trao đổi</Button>
+                <Button href="#lien-he">Đặt lịch trao đổi</Button>
                 <Button href="/dich-vu" variant="text">Xem dịch vụ</Button>
               </div>
             </div>
@@ -76,6 +77,11 @@ export default function Home(){
         </section>
 
         <LogoMarquee clients={clients}/>
+
+        {/* Dịch vụ: thẻ trắng trên nền cam nhạt */}
+        <Section id="dich-vu" tone="soft" kicker="Dịch vụ" title={<>Chín dịch vụ, <span className="hl">ba nhóm việc</span></>} aside={<Button href="/dich-vu" variant="text">Xem tất cả dịch vụ</Button>}>
+          <ServiceGroups groups={groups}/>
+        </Section>
 
         {/* Bảng hành trình */}
         <Section
@@ -88,7 +94,7 @@ export default function Home(){
         </Section>
 
         {/* Dự án */}
-        <Section id="du-an" tone="white" kicker="Dự án" title={<>Từ điểm nghẽn đến kết quả: <span className="hl">hành trình</span> của khách hàng SOHO</>} aside={<Button href="/ket-qua" variant="text">Xem tất cả dự án</Button>}>
+        <Section id="du-an" tone="paper" kicker="Dự án" title={<>Từ điểm nghẽn đến kết quả: <span className="hl">hành trình</span> của khách hàng SOHO</>} aside={<Button href="/ket-qua" variant="text">Xem tất cả dự án</Button>}>
           <ProjectCarousel clients={clients}/>
         </Section>
 
@@ -118,7 +124,7 @@ export default function Home(){
         </Section>
 
         {/* Blog */}
-        <Section tone="white" title={<>Những bài viết <span className="hl">mới nhất</span></>} aside={<Button href="/blog" variant="text">Xem thêm</Button>}>
+        <Section tone="paper" kicker="Blog" title={<>Những bài viết <span className="hl">mới nhất</span></>} aside={<Button href="/blog" variant="text">Xem thêm</Button>}>
           <div className={styles.blogGrid}>{latest.map((post, i) => <BlogCard key={post.slug} post={post} delay={i * 100}/>)}</div>
         </Section>
 

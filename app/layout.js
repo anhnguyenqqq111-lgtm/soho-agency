@@ -1,14 +1,13 @@
-import {Be_Vietnam_Pro} from 'next/font/google';
+import {Inter} from 'next/font/google';
 import './styles/tokens.css';
 import './styles/base.css';
 import './styles/diagram.css';
 import RevealObserver from '../components/RevealObserver';
 
-const beVietnam = Be_Vietnam_Pro({
+const inter = Inter({
   subsets: ['latin', 'vietnamese'],
-  weight: ['400', '500', '600', '700', '800'],
   display: 'swap',
-  variable: '--font-be-vietnam'
+  variable: '--font-inter'
 });
 
 export const metadata = {
@@ -21,7 +20,7 @@ export const metadata = {
 
 export default function RootLayout({children}){
   return (
-    <html lang="vi" className={beVietnam.variable} suppressHydrationWarning>
+    <html lang="vi" className={inter.variable} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{__html: "document.documentElement.classList.add('js')"}}/>
       </head>

@@ -1,34 +1,28 @@
-/* Nút kiểu Growthcurve: viên thuốc, mũi tên nằm trong ô riêng có vạch ngăn */
-.btn{display:inline-flex;align-items:stretch;font-weight:600;text-decoration:none;cursor:pointer;border:1.5px solid var(--red);border-radius:var(--r-pill);overflow:hidden;transition:background-color var(--t-fast),color var(--t-fast),border-color var(--t-fast),transform var(--t-fast);white-space:nowrap}
-.btn:hover{text-decoration:none;transform:translateY(-1px)}
-.btn > span:first-child{display:flex;align-items:center}
-.md > span:first-child{font-size:15px;padding:12px 22px}
-.sm > span:first-child{font-size:14px;padding:9px 16px}
-.arrow{display:flex;align-items:center;justify-content:center;border-left:1.5px solid currentColor;padding-inline:16px;font-size:16px;transition:background-color var(--t-fast)}
-.sm .arrow{padding-inline:12px;font-size:14px}
+/* Nút theo SOHO Brand Kit: bo 12px, cam nền chữ than chì (không dùng chữ trắng trên cam) */
+.btn{display:inline-flex;align-items:center;gap:10px;font-weight:700;text-decoration:none;cursor:pointer;border:1.5px solid transparent;border-radius:var(--r-md);transition:background-color var(--t-fast),color var(--t-fast),border-color var(--t-fast),box-shadow var(--t-fast);white-space:nowrap;line-height:1.2}
+.btn:hover{text-decoration:none}
+.md{font-size:15px;padding:13px 20px}
+.sm{font-size:14px;padding:9px 15px;gap:8px}
+.arrow{display:inline-block;font-size:1.05em;transition:transform var(--t-fast)}
+.btn:hover .arrow{transform:translateX(3px)}
 
-.primary{background:var(--red);color:var(--white)}
-.primary .arrow{border-left-color:rgba(255,255,255,.35)}
-.primary:hover{background:var(--accent);border-color:var(--accent);color:var(--white)}
-.primary:hover .arrow{background:rgba(255,255,255,.12)}
+.primary{background:var(--brand);color:var(--ink);border-color:var(--brand)}
+.primary:hover{background:var(--brand-hover);border-color:var(--brand-hover);color:var(--ink);box-shadow:0 8px 22px rgba(255,122,0,.28)}
 
-.secondary{background:transparent;color:var(--red)}
-.secondary .arrow{border-left-color:var(--red)}
-.secondary:hover{background:var(--red);color:var(--white)}
-.secondary:hover .arrow{border-left-color:rgba(255,255,255,.35)}
+.secondary{background:transparent;color:var(--ink);border-color:var(--ink)}
+.secondary:hover{background:var(--ink);color:var(--white)}
 
-.text{border:0;background:none;color:var(--ink);border-radius:0;white-space:normal;align-items:center;gap:8px}
-.text > span:first-child{padding:0;font-size:15px}
-.text .arrow{border:0;padding:0;font-size:15px;transition:transform var(--t-fast)}
-.text:hover{color:var(--accent);transform:none}
-.text:hover .arrow{transform:translate(2px,-2px)}
+.text{border:0;background:none;color:var(--ink);padding:0;border-radius:0;white-space:normal;gap:8px}
+.text.md,.text.sm{padding:0}
+.text .arrow{color:var(--brand-dark)}
+.text:hover{color:var(--brand-ink)}
+.text > span:first-child{background:linear-gradient(currentColor,currentColor) 0 100% / 0 1.5px no-repeat;transition:background-size var(--t-med)}
+.text:hover > span:first-child{background-size:100% 1.5px}
 
-.onDark.primary{background:var(--on-dark);color:var(--ink);border-color:var(--on-dark)}
-.onDark.primary .arrow{border-left-color:rgba(27,22,17,.2)}
-.onDark.primary:hover{background:var(--gold);border-color:var(--gold);color:var(--ink)}
-.onDark.secondary{color:var(--on-dark);border-color:rgba(247,243,236,.5)}
-.onDark.secondary .arrow{border-left-color:rgba(247,243,236,.5)}
-.onDark.secondary:hover{background:var(--on-dark);color:var(--ink)}
-.onDark.text{color:var(--on-dark)}
-.onDark.text:hover{color:var(--gold)}
-@media (max-width:480px){.btn{white-space:normal}.btn > span:first-child{text-align:left}}
+.onDark.primary:hover{box-shadow:0 8px 26px rgba(255,122,0,.35)}
+.onDark.secondary{color:var(--white);border-color:rgba(255,255,255,.55)}
+.onDark.secondary:hover{background:var(--white);border-color:var(--white);color:var(--ink)}
+.onDark.text{color:var(--white)}
+.onDark.text .arrow{color:var(--brand)}
+.onDark.text:hover{color:var(--brand)}
+@media (max-width:480px){.btn{white-space:normal}}

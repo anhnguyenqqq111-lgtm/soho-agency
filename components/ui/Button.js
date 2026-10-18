@@ -2,7 +2,7 @@ import styles from './Button.module.css';
 import {sitePath} from '../paths';
 
 /*
-  variant: primary (viên thuốc đỏ), secondary (viền), text (link có mũi tên)
+  variant: primary (nền cam, chữ than chì), secondary (viền than chì), text (link có mũi tên cam)
   size: md | sm
   arrow: 'up' (↗ như GOHA) | 'right' (→) | false
 */

@@ -1,37 +1,48 @@
-/* SOHO design tokens, bản 4: nền sáng kem, chữ nâu đen, nhấn đỏ gạch. Xem DESIGN.md. */
+/* SOHO design tokens, bản 5: theo SOHO Brand Kit v1.0 (cam #FF7A00, than chì #1F1F1F, nền trắng ngà). Xem DESIGN.md. */
 :root{
+  /* Màu thương hiệu */
+  --brand:#FF7A00;          /* nút, mảng màu, chi tiết. Không dùng cho chữ nhỏ trên nền sáng */
+  --brand-hover:#E66E00;    /* hover của nút cam */
+  --brand-2:#FF9A45;        /* cam phụ */
+  --brand-soft:#FFF4E9;     /* nền cam nhạt: khối dịch vụ, ô nhấn */
+  --brand-dark:#C65300;     /* chữ cam cỡ lớn trên nền sáng (tiêu đề) */
+  --brand-ink:#B34A00;      /* chữ cam cỡ nhỏ, link trên nền sáng (đạt 4.5:1 trên nền trắng ngà) */
+
+  /* Nền và chữ */
   --white:#FFFFFF;
-  --paper:#F7F3EC;      /* nền chính */
-  --paper-2:#EFE9DE;    /* section phụ */
-  --gray:#F3F0EA;
-  --gray-2:#E4DED3;
-  --line:#E1DBD0;
-  --ink:#1B1611;
-  --ink-2:#4F473E;
-  --ink-3:#766D62;
+  --paper:#FAFAF8;          /* nền chính */
+  --paper-2:var(--brand-soft);
+  --gray:#F3F2EF;           /* section phụ, ô nền */
+  --gray-2:#E8E6E2;
+  --line:#E8E6E2;
+  --ink:#1F1F1F;
+  --ink-2:#474747;
+  --ink-3:#666666;
 
-  --red:#A82E10;        /* nhấn chính, nút */
-  --accent:#C9391A;     /* chữ nhấn, hover */
-  --orange:#F26716;     /* chỉ dùng nhỏ */
-  --gold:#E8A800;       /* chi tiết nhỏ, dấu check */
-  --gold-light:#F5DFA6;
+  /* Chữ nhấn nhỏ, link (tên cũ, nhiều component dùng) */
+  --accent:var(--brand-ink);
 
-  /* Khối tối chỉ dùng cho footer và 1 section ở trang chủ */
-  --night:#231A14;
-  --night-2:#2E241C;
-  --on-dark:#F7F3EC;
-  --on-dark-2:rgba(247,243,236,.78);
-  --on-dark-3:rgba(247,243,236,.55);
-  --line-dark:rgba(247,243,236,.14);
+  /* Khối tối: quy trình và footer */
+  --night:#1F1F1F;
+  --night-2:#2A2A2A;
+  --on-dark:#FFFFFF;
+  --on-dark-2:rgba(255,255,255,.76);
+  --on-dark-3:rgba(255,255,255,.56);
+  --line-dark:rgba(255,255,255,.14);
 
-  --grad-brand:linear-gradient(90deg,#E8A800 0%,#F26716 50%,#C9391A 100%);
+  --success:#16794B;
+  --warning:#9A5800;
+  --error:#B42318;
+
+  --grad-brand:linear-gradient(90deg,#FF9A21 0%,#FF7A00 55%,#F45100 100%);
   --grad-dark:var(--night);
   --grad-hero:var(--paper);
+  --grad-fade:linear-gradient(180deg,var(--paper) 0%,var(--white) 100%);
 
-  --font-text:var(--font-be-vietnam),system-ui,-apple-system,'Segoe UI',Arial,sans-serif;
+  --font-text:var(--font-inter),Inter,Arial,sans-serif;
 
   --fs-h1:clamp(40px,5.6vw,76px);
-  --fs-h2:clamp(28px,3.2vw,42px);
+  --fs-h2:clamp(28px,3.2vw,44px);
   --fs-h3:clamp(19px,1.6vw,22px);
   --fs-lead:clamp(16px,1.3vw,19px);
   --fs-body:16px;
@@ -47,13 +58,13 @@
   --space-md:clamp(64px,8vw,96px);
   --space-lg:clamp(80px,10vw,120px);
 
-  --r-pill:100px;
+  --r-pill:999px;
   --r-card:20px;
   --r-md:12px;
   --r-sm:8px;
 
-  --shadow-card:0 10px 40px rgba(27,22,17,.08);
-  --shadow-pop:0 20px 60px rgba(27,22,17,.16);
+  --shadow-card:0 12px 36px rgba(31,31,31,.08);
+  --shadow-pop:0 24px 60px rgba(31,31,31,.16);
   --t-fast:160ms ease;
   --t-med:320ms cubic-bezier(.2,.7,.2,1);
 }

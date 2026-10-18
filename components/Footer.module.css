@@ -1,12 +1,12 @@
-.footer{background:var(--night);color:var(--on-dark);padding-top:var(--space-md)}
-.footer a:hover{color:var(--gold)}
+.footer{position:relative;background:var(--night);color:var(--on-dark);padding-top:var(--space-md);border-top:4px solid var(--brand)}
+.footer a:hover{color:var(--brand)}
 .grid{display:grid;grid-template-columns:1.5fr 1fr 1fr .8fr 1fr;gap:40px var(--gap);padding-bottom:48px}
 .brand{display:grid;gap:18px;align-content:start}
-.logo img{height:52px;width:auto}
+.logo img{height:64px;width:auto}
 .company{font-size:18px;font-weight:700;margin-top:10px}
 .info{list-style:none;margin:0;padding:0;display:grid;gap:10px;font-size:14px;color:var(--on-dark-2)}
 .info li{display:grid;grid-template-columns:22px minmax(0,1fr);gap:10px;align-items:start}
-.ic{color:var(--gold);font-size:16px;line-height:1.3}
+.ic{color:var(--brand);font-size:16px;line-height:1.3}
 .colTitle{font-size:17px;font-weight:700;margin:0 0 14px}
 .gap{margin-top:26px}
 .list{list-style:none;margin:0;padding:0;display:grid;gap:9px;font-size:14px;color:var(--on-dark-2)}

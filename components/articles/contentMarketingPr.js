@@ -6,7 +6,7 @@ export const contentMarketingPrArticle = {
   author: {
     name: 'Nguyễn Thế Tuấn Anh',
     role: 'Head of Growth Strategy @ SOHO Agency',
-    avatar: '/brand/soho-logo.png'
+    avatar: '/brand/soho-avatar.png'
   },
   toc: [
     { id: 'tham-kich-content-rac-khong-chuyen-doi', title: '1. Thực trạng: Bi kịch "Nội dung rác", đăng bài đều đặn nhưng không ai đọc' },

@@ -7,7 +7,7 @@
 .item:hover{box-shadow:var(--shadow-card);transform:translateY(-2px)}
 .num{
   width:44px;height:44px;border-radius:50%;display:grid;place-items:center;
-  background:var(--grad-brand);color:var(--white);font-weight:700;font-size:15px;
+  background:var(--brand);color:var(--ink);font-weight:800;font-size:15px;
 }
 .body{display:grid;gap:6px}
 .title{font-size:var(--fs-h3)}

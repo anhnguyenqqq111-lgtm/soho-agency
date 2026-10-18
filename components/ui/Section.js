@@ -1,8 +1,8 @@
 import styles from './Section.module.css';
 
 /*
-  Section chuẩn theo bố cục GOHA: kicker nhỏ, H2 lớn (có thể chứa .hl), intro, rồi nội dung.
-  tone: white | gray | dark | fade
+  Section chuẩn: kicker nhỏ, H2 lớn (có thể chứa .hl), intro, rồi nội dung.
+  tone: white | paper | soft (cam nhạt) | gray | dark (than chì) | fade
   align: left | center
   aside: nút hoặc link đặt bên phải tiêu đề (desktop)
 */

@@ -2,26 +2,26 @@
 .label{font-size:var(--fs-meta);font-weight:600;color:var(--ink-3);margin:0 0 20px}
 :global(.dark) .label{color:var(--on-dark-3)}
 .list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(var(--n),minmax(0,1fr));gap:var(--gap);position:relative}
-.list::before{content:'';position:absolute;left:0;right:0;top:22px;height:2px;background:var(--grad-brand);transform-origin:left center;opacity:.5}
+.list::before{content:'';position:absolute;left:0;right:0;top:22px;height:2px;background:var(--brand);transform-origin:left center;opacity:.45}
 .item{position:relative;display:grid;gap:16px;align-content:start}
 .node{
   position:relative;z-index:1;width:44px;height:44px;border-radius:50%;
-  border:2px solid var(--accent);background:var(--white);color:var(--accent);
+  border:2px solid var(--brand);background:var(--white);color:var(--ink);
   display:grid;place-items:center;font-weight:700;font-size:14px;
 }
-.acc .node{background:var(--grad-brand);border-color:transparent;color:var(--white)}
-:global(.dark) .node{background:var(--night-2);border-color:var(--gold);color:var(--gold)}
-:global(.dark) .acc .node{background:var(--grad-brand);color:var(--white);border-color:transparent}
+.acc .node{background:var(--brand);border-color:var(--brand);color:var(--ink)}
+:global(.dark) .node{background:var(--brand);border-color:var(--brand);color:var(--ink);font-weight:800}
+:global(.dark) .acc .node{background:var(--brand);color:var(--ink);border-color:var(--brand)}
 .body{display:grid;gap:6px;padding-right:8px}
 .meta{font-size:var(--fs-meta);font-weight:600;color:var(--ink-3)}
 :global(.dark) .meta{color:var(--on-dark-3)}
 .title{font-size:clamp(17px,1.5vw,20px);line-height:1.25;font-weight:700}
-.acc .title{color:var(--accent)}
-:global(.dark) .acc .title{color:var(--gold)}
+.acc .title{color:var(--brand-dark)}
+:global(.dark) .acc .title{color:var(--brand)}
 .text{font-size:var(--fs-small);color:var(--ink-2);line-height:1.5}
 :global(.dark) .text{color:var(--on-dark-2)}
 .links{list-style:none;margin:6px 0 0;padding:0;display:grid;gap:4px;font-size:var(--fs-small)}
-.links a{color:var(--accent);font-weight:500}
+.links a{color:var(--brand-ink);font-weight:500}
 :global(.dark) .links a{color:var(--on-dark)}
 
 :global(html.js) .track[data-reveal="track"]{opacity:1;transform:none}

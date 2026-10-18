@@ -3,6 +3,8 @@
 .tone_gray{background:var(--gray)}
 .tone_dark{background:var(--grad-dark);color:var(--on-dark);overflow:hidden}
 .tone_fade{background:var(--grad-fade)}
+.tone_paper{background:var(--paper)}
+.tone_soft{background:var(--brand-soft)}
 
 .space_sm{padding-block:var(--space-sm)}
 .space_md{padding-block:var(--space-md)}

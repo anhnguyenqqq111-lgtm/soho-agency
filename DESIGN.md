@@ -57,49 +57,71 @@ Trang chủ mới: Hero → Khách hàng → Dịch vụ → Cách làm việc �
 
 ---
 
-## 2. Hướng thiết kế (bản 4, tháng 10/2026)
+## 2. Hướng thiết kế (bản 5, tháng 10/2026, theo SOHO Brand Kit v1.0)
+
+Nguồn: `SOHO_Agency_Brand_Kit.zip` (logo, `tokens.css`, `tokens.json`, `design-system.html`). Khẩu hiệu của bộ nhận diện: "Bold in orange. Built for performance."
 
 ### 2.1. Ý tưởng
 
-Nền sáng kem, chữ nâu đen rất to, nhấn đỏ gạch. Đầu trang theo phong cách growthcurve.co: header trắng gọn, nút viên thuốc có mũi tên trong ô riêng ngăn bằng vạch, hero chữ to bên trái với 3 ý ✓ tròn, ảnh bo góc lớn bên phải, hàng logo dưới. Không còn hero tối, gradient hay hình trang trí, nên khác hẳn goha.vn.
+Nền trắng ngà, chữ than chì rất to, điểm nhấn cam. Cam là màu mảng (nút, số thứ tự, vùng dưới biểu đồ, dấu chấm cuối H1), không dùng làm chữ nhỏ. Chỉ hai khối tối: quy trình và footer.
 
 ### 2.2. Màu (`app/styles/tokens.css`)
 
 | Token | Giá trị | Dùng cho |
 |---|---|---|
-| `--paper` | `#F7F3EC` | Nền trang |
-| `--white` | `#FFFFFF` | Section xen kẽ, thẻ |
-| `--ink` | `#1B1611` | Chữ, nút header |
-| `--red` | `#A82E10` | Nút chính, dấu check |
-| `--accent` | `#C9391A` | Chữ nhấn `.hl`, hover |
-| `--gold` | `#E8A800` | Chữ nhấn trên nền tối, chi tiết nhỏ |
-| `--night` | `#231A14` | Chỉ footer và 1 section quy trình trên trang chủ |
+| `--brand` | `#FF7A00` | Nút chính, số thứ tự, nét và mảng nhấn trong sơ đồ. Không dùng cho chữ trên nền sáng (2.6:1) |
+| `--brand-hover` | `#E66E00` | Hover nút cam |
+| `--brand-2` | `#FF9A45` | Cam phụ trong minh họa |
+| `--brand-soft` | `#FFF4E9` | Nền khối dịch vụ, form liên hệ, hero xen kẽ |
+| `--brand-dark` | `#C65300` | Chữ nhấn cỡ lớn `.hl` trên nền sáng |
+| `--brand-ink` / `--accent` | `#B34A00` | Chữ cam cỡ nhỏ, link. Đậm hơn `#C65300` của brand kit một chút để đạt 4.5:1 trên nền `#FAFAF8` |
+| `--paper` | `#FAFAF8` | Nền trang |
+| `--white` | `#FFFFFF` | Header, thẻ, section xen kẽ |
+| `--ink` | `#1F1F1F` | Chữ, chữ trên nút cam |
+| `--ink-3` | `#666666` | Chữ phụ |
+| `--line` | `#E8E6E2` | Viền |
+| `--night` | `#1F1F1F` | Khối quy trình, footer |
+| `--error` | `#B42318` | Nhãn `[CẦN ...]` (để không lẫn với cam thương hiệu) |
 
-Gradient thương hiệu chỉ còn ở vòng số chặng cuối, dải chảy mờ và viền trên thẻ blog.
+Quy tắc tương phản: chữ trên nút cam luôn là than chì, không dùng chữ trắng. Trên nền tối, chữ nhấn dùng `--brand`.
 
 ### 2.3. Chữ
 
-Be Vietnam Pro, H1 800 cỡ tới 76px, thân 400.
+Inter (có bộ ký tự tiếng Việt), H1 800 cỡ tới 76px, chữ khít (-0.035em), H2 750. Nhãn trên tiêu đề (`.kicker`, eyebrow hero): chữ in hoa 12px cam đậm, vạch cam phía trước.
 
 ### 2.4. Nút
 
-`Button`: viên thuốc, phần chữ và mũi tên tách bằng vạch dọc. `primary` nền đỏ, `secondary` viền đỏ (dùng ở hero), `text` chữ kèm mũi tên.
+`Button`: bo 12px (`--r-md`). `primary` nền cam chữ than chì, hover đậm hơn và có bóng cam; `secondary` viền than chì, hover nền than chì chữ trắng; `text` chữ than chì kèm mũi tên cam, gạch chân chạy khi hover. Nút "Liên hệ ngay" trên header và nút gửi form cùng kiểu `primary`.
 
-### 2.5. Hero (`components/hero/Hero.js`)
+### 2.5. Logo (`public/brand/`)
 
-Mỗi trang mở đầu bằng hero cao gần một màn hình, chia 2 cột: trái là breadcrumb, eyebrow, H1 ngắn (tối đa 4 từ), một dòng tagline và gợi ý cuộn; phải là minh họa SVG lớn có chuyển động (`Visuals.js`). Mỗi trang một phối màu và một hình riêng: trang chủ nền nâu đen với đường tăng trưởng và điểm sáng chạy; Dịch vụ nền kem đậm với 9 ô sáng luân phiên; Giải pháp nền xanh rêu với 4 lớp nổi; Dự án nền kem hồng với cột mọc lên; Blog nền kem với trang giấy xếp lớp; Giới thiệu nền nâu đỏ với hai vòng giao nhau; Liên hệ nền xanh đêm với sóng tín hiệu. Trang dịch vụ con dùng sơ đồ riêng của dịch vụ. Nội dung chi tiết (lead, 3 ✓, nút) chuyển xuống khối `#noi-dung` ngay dưới, tiêu đề ở đó là h2.
+- `soho-wordmark.svg`: chữ SOHO cam, dùng ở header (cao 30px, mobile 26px). Không dùng bản có chữ AGENCY ở header vì chữ phụ sẽ quá nhỏ.
+- `soho-logo-white.svg`: logo trắng có chữ AGENCY, dùng ở footer.
+- `soho-logo.svg`, `soho-wordmark-white.svg`, `soho-symbol.svg`: bản dự phòng.
+- `soho-avatar.png`: ô vuông chữ S, ảnh đại diện tác giả trong bài viết dịch vụ.
+- `app/favicon.ico`, `app/icon.svg`: favicon, Next.js tự gắn.
 
-### 2.6. Trang chủ
+Các file SVG chỉ được cắt bớt khoảng trắng của viewBox, giữ nguyên tỷ lệ và hình chữ. Giữ khoảng trống quanh logo tối thiểu 12% chiều cao.
 
-Hero → khối mở đầu (chữ, 3 ✓, nút viền, ảnh thật) → hàng logo → 3 khối chặng xếp dọc (`JourneyMatrix`), giữa các khối là mũi tên chỉ xuống, cuối là thanh doanh thu; mỗi khối có nhãn Marketing/Sales dọc, phễu mũi tên ngang và 4 dải màu kênh hẹp dần theo chặng; không icon, không hiệu ứng; mobile thành 3 thẻ → băng chuyền dự án (`ProjectCarousel`) → quy trình đường ray trên nền tối → 4 nguyên tắc dạng thẻ + ảnh đội → blog → form trên nền kem → FAQ kẻ dòng.
+### 2.6. Hero (`components/hero/Hero.js`)
 
-### 2.7. Trang con
+Hero cao gần một màn hình, chia 2 cột: trái là breadcrumb, eyebrow, H1 ngắn kết thúc bằng dấu chấm cam, tagline và gợi ý cuộn; phải là minh họa SVG lớn có chuyển động (`Visuals.js`). Mọi hero nền sáng, xen kẽ trắng ngà và cam nhạt, minh họa vẽ bằng cam và than chì: trang chủ đường tăng trưởng có vùng cam và nhãn "Doanh thu"; Dịch vụ 9 ô trắng; Giải pháp 4 lớp nổi; Dự án cột cam xen than chì; Blog trang giấy xếp lớp; Giới thiệu hai vòng giao nhau; Liên hệ sóng tín hiệu. Trang dịch vụ con dùng sơ đồ riêng của dịch vụ. Nội dung chi tiết chuyển xuống khối `#noi-dung` ngay dưới, tiêu đề ở đó là h2.
 
-Hero riêng → `PageHeader` thành khối mở đầu nền kem với h2, lead, 3 ✓, nút; aside bên phải (form ở trang Liên hệ).
+### 2.7. Trang chủ
 
-### 2.8. Chuyển động và ảnh
+Theo hướng dẫn section của brand kit:
 
-Chữ hiện từng từ, nội dung hiện mờ dần, sơ đồ tự vẽ, tắt khi bật giảm chuyển động. Không còn ảnh stock; mọi ảnh dùng `ImageSlot` chờ ảnh thật của SOHO.
+Hero (trắng ngà) → khối mở đầu (trắng, 3 ✓ cam, nút cam) → hàng logo khách hàng → **Dịch vụ: 3 thẻ trắng trên nền cam nhạt** (`ServiceGroups`, mỗi thẻ một nhóm, số 01 đến 03 cam lớn) → ma trận hành trình (`JourneyMatrix`, phễu từ cam nhạt qua cam tới than chì; kênh: SEO than chì, Quảng cáo cam, Content cam nhạt, Đo lường xám) → **Dự án: thẻ trắng, kết quả chữ cam đậm** → **Quy trình: nền than chì, số cam** → 4 nguyên tắc → **Blog: nền trắng ngà** → form trên nền cam nhạt → FAQ → **Footer than chì, viền cam, logo trắng**.
+
+### 2.8. Trang con
+
+Hero riêng → `PageHeader` (khối mở đầu nền trắng ngà) với h2, lead, 3 ✓, nút; aside bên phải (form ở trang Liên hệ). Section dùng `tone`: `white`, `paper`, `soft` (cam nhạt), `gray`, `dark` (than chì).
+
+### 2.9. Chuyển động và ảnh
+
+Chữ hiện từng từ, nội dung hiện mờ dần, sơ đồ tự vẽ, tắt khi bật giảm chuyển động. Không ảnh stock; mọi ảnh dùng `ImageSlot` chờ ảnh thật của SOHO.
+
+Ảnh bìa 9 bài blog (`public/blog/*.webp`) được làm trước brand kit, còn logo cũ. Cần xuất lại theo logo mới.
 
 ---
 
@@ -107,7 +129,7 @@ Chữ hiện từng từ, nội dung hiện mờ dần, sơ đồ tự vẽ, t�
 
 ```
 app/
-  layout.js              next/font (Newsreader, Be Vietnam Pro), import styles
+  layout.js              next/font (Inter), import styles
   styles/
     tokens.css           biến màu, chữ, khoảng cách
     base.css             reset, typography, link, prose (nội dung bài viết)
@@ -121,7 +143,7 @@ components/
   ui/                    Section (lưới 4/8 có nhãn số), PageHeader, NumberedList, LinkRows, Button, CtaBand
   article/               ArticleBody, Toc ('use client'), Markdown, parseMarkdown
   data/clients.js
-public/brand/soho-logo-crop.svg, soho-logo-white-crop.svg   logo đã cắt sát viewBox, dùng ở header/footer
+public/brand/soho-wordmark.svg, soho-logo-white.svg   logo theo brand kit, dùng ở header/footer (xem 2.5)
 ```
 
 Xóa: `globals.css`, `ServiceSectionVisualizer.js`, `ArticleRenderer.js` (thay bằng ArticleBody), `cleanPunctuation.js`, `public/brand/page-*.png` nếu không dùng.
