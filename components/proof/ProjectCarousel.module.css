@@ -21,7 +21,7 @@
 .link{position:relative}
 .link::after{content:'';position:absolute;left:0;right:0;top:0;height:3px;background:var(--grad-warm);transform:scaleX(0);transform-origin:left;transition:transform var(--t-med)}
 .link:hover::after{transform:scaleX(1)}
-.link:hover{border-color:#F3C9A4}
+.link:hover{border-color:#FFC08A}
 .result{font-size:17px;font-weight:700;letter-spacing:-.01em;color:var(--brand-ink)}
 .more{margin-top:10px;font-size:13px;font-weight:700;color:var(--ink)}
 .link:hover .more{color:var(--brand-ink)}

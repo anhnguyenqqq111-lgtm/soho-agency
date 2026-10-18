@@ -57,32 +57,34 @@ Trang chủ mới: Hero → Khách hàng → Dịch vụ → Cách làm việc �
 
 ---
 
-## 2. Hướng thiết kế (bản 8, tháng 10/2026, nền trắng theo SOHO Brand Kit v4.0, màu và hiệu ứng ở điểm quan trọng)
+## 2. Hướng thiết kế (bản 9, tháng 10/2026: bố cục bản 8, màu Brand Kit v3, logo gốc của SOHO)
 
-Nguồn: thư mục `SOHO_Agency_Brand_Kit_v4`. Yêu cầu của chủ web: ưu tiên màu trắng, ít chi tiết; nhưng **vẫn cần màu và hiệu ứng ở các chỗ quan trọng** (bản 7 hoàn toàn trắng bị đánh giá là quá đơn giản). Bản này thay bản 7.
+Chủ web chọn: giữ bố cục nền trắng, khối nền xám, hiệu ứng và tương tác của bản 8; **dùng lại màu của Brand Kit v3** (cam, san hô, tím, Midnight); **dùng logo gốc** đang chạy trên sohoagency.vn (chữ SOHO có chân, chuyển sắc vàng sang đỏ, AGENCY đen). Bản này thay bản 8.
 
 ### 2.1. Nguyên tắc
 
-- Section chia rõ bằng hai kiểu xen kẽ: **nền trắng** toàn chiều ngang (`tone` white, paper) và **khối nền xám mây bo góc lớn, thụt vào hai bên** (`tone` gray, soft, dark, fade). Khoảng trắng quanh khối là ranh giới giữa các phần. Chỉ một khối tối: khối liên hệ cuối trang (điểm chuyển đổi chính).
-- Một họ màu nhấn duy nhất là cam của logo (đặc hoặc gradient). Không dùng san hô, tím.
-- Màu chỉ ở điểm quan trọng: cụm từ chính trong tiêu đề (`.hl`, gradient cam), nút hành động, minh họa hero, ba chặng của ma trận hành trình, số bước quy trình, con số kết quả, huy hiệu đối tác.
-- Hiệu ứng chỉ ở điểm quan trọng: minh họa hero chuyển động, quầng cam "thở" sau khối liên hệ, dải logo khách hàng chạy ngang (dừng khi rê chuột), đường ray quy trình tự vẽ khi cuộn tới, phản hồi khi rê chuột ở nút, thẻ dịch vụ, khối ma trận, thẻ dự án. Tắt hết khi bật giảm chuyển động.
+- Section chia rõ bằng hai kiểu xen kẽ: **nền trắng** toàn chiều ngang (`tone` white, paper) và **khối bo góc lớn, thụt vào hai bên**: nền xám mây (`tone` gray, dark, fade) hoặc gradient Mist (`tone` soft, dùng cho ma trận hành trình). Một khối tối duy nhất: khối liên hệ, nền gradient Midnight.
+- Cam #FF7A00 là màu chính. Gradient Signature (cam, san hô, tím) chỉ ở vài điểm nhấn: chữ nhấn trong tiêu đề, đường doanh thu ở hero, đường ray quy trình, vạch khi rê chuột. Không tô gradient lên logo.
+- Màu và hiệu ứng chỉ ở điểm quan trọng (xem 2.2c). Tắt hết khi bật giảm chuyển động.
 - Không trang trí thừa: không vạch trước nhãn, không dấu chấm cuối H1, không biểu tượng cuộn.
 
 ### 2.2. Màu (`app/styles/tokens.css`)
 
 | Token | Giá trị | Dùng cho |
 |---|---|---|
-| `--grad-cta` | `#F6A341` sang `#E7622B` | Nút chính (chữ Midnight), số bước quy trình, chữ nhấn trên nền tối |
-| `--grad-warm` | gradient logo `#F6A341` sang `#D95026` | Chặng BOFU, đường ray quy trình, vạch nhấn khi rê chuột |
-| `--grad-warm-text` | `#E8642A` sang `#C2410C` | Chữ nhấn `.hl` trong tiêu đề (đạt 3:1 cho chữ lớn, màu đặc `--brand-ink` dự phòng) |
-| `--warm-1` | `#FCE3CC` | Chặng TOFU, nền dấu tích |
-| `--brand` | `#F28C35` | Nét nhấn trong minh họa và sơ đồ |
-| `--brand-ink` / `--accent` | `#AE420D` | Chữ cam nhỏ, link, con số kết quả |
-| `--midnight` / `--ink` | `#10121C` | Chữ; nền khối liên hệ và thanh "doanh thu theo kênh" |
-| `--ink-3` | `#60697B` | Chữ phụ, nhãn nhỏ trên tiêu đề |
-| `--line` / `--gray` | `#E7E9F0` / `#F5F6FA` | Đường kẻ, viền / ô nền rất nhạt |
-| `--glow-warm` | quầng cam rất nhạt | Chỉ nền hero |
+| `--brand` / `--grad-cta` | `#FF7A00` | Nút chính (chữ Midnight), số bước quy trình, nét nhấn. Không dùng cho chữ nhỏ trên nền sáng (2.6:1) |
+| `--brand-hover` | `#E56F00` | Hover nút |
+| `--brand-ink` / `--accent` | `#B84A00` | Chữ cam nhỏ, link, con số kết quả |
+| `--coral` | `#FF416C` | Chặng MOFU, điểm nhấn minh họa |
+| `--violet` | `#765BFF` | Chặng BOFU (chữ trắng trên tím đậm `#5A3FE0`), cuối gradient |
+| `--grad-warm` | Signature `#FF7A00`, `#FF416C`, `#765BFF` | Đường ray quy trình, vạch nhấn, chú thích biểu đồ |
+| `--grad-warm-text` | `#E0560F`, `#E0245E`, `#6A4CF0` | Chữ nhấn `.hl` (bản đậm của Signature, ≥ 3.5:1; màu đặc `--brand-ink` dự phòng) |
+| `--grad-midnight` | `#10121C`, `#261E44`, `#593358` | Nền khối liên hệ |
+| `--grad-mist` | `#F5F6FA`, `#E8E9FF`, `#F7E5EB` | Nền khối ma trận hành trình |
+| `--glow-warm` | quầng tím và cam rất nhạt | Chỉ nền hero |
+| `--ink` | `#10121C` | Chữ |
+| `--ink-3` | `#62697D` | Chữ phụ |
+| `--line` / `--gray` | `#DCE0E9` / `#F5F6FA` | Viền / nền khối xám, ô nền nhạt |
 
 ### 2.2b. Hình 3D trang trí (`public/decor/`, thuộc tính `decor` của `Section`)
 
@@ -113,9 +115,11 @@ Chỉ dùng Inter (cả tiêu đề và thân bài), nạp bộ ký tự tiếng
 
 ### 2.5. Logo (`public/brand/`)
 
-Logo v4 truy vết từ ảnh duyệt, giữ gradient cam ấm và nếp gấp. `soho-logo.svg` dùng cho header (cao 40px, mobile 34px) và footer. Các bản khác: `soho-logo-on-dark.svg`, `soho-logo-white.svg`, `soho-wordmark*.svg`.
+Logo gốc của SOHO, giống logo trên sohoagency.vn, lấy bản vector từ lịch sử repo (trước các brand kit):
 
-Favicon vẫn dùng bản ở `app/icon.svg` và `app/favicon.ico`. Favicon và chữ S đứng riêng trong kit v4 bị lẹm một phần chữ O nên không dùng.
+- `soho-logo.svg`: logo màu (SOHO chuyển sắc vàng, cam, đỏ; AGENCY đen), dùng ở header (cao 50px, mobile 42px) và footer (56px).
+- `soho-logo-white.svg`: logo trắng cho nền tối (chưa dùng vì footer nền trắng).
+- `soho-avatar.png`, `app/icon.png`, `app/apple-icon.png`, `app/favicon.ico`: chữ S trắng của logo gốc trên nền gradient vàng đỏ của logo, tạo từ `soho-logo.png` cũ. Chữ S màu trên nền trắng quá mảnh ở 16px nên đảo màu.
 
 ### 2.6. Chứng nhận
 
@@ -159,7 +163,7 @@ components/
   ui/                    Section (lưới 4/8 có nhãn số), PageHeader, NumberedList, LinkRows, Button, CtaBand
   article/               ArticleBody, Toc ('use client'), Markdown, parseMarkdown
   data/clients.js
-public/brand/soho-logo.svg   logo Brand Kit v4, dùng ở header và footer (xem 2.5)
+public/brand/soho-logo.svg   logo gốc của SOHO, dùng ở header và footer (xem 2.5)
 ```
 
 Xóa: `globals.css`, `ServiceSectionVisualizer.js`, `ArticleRenderer.js` (thay bằng ArticleBody), `cleanPunctuation.js`, `public/brand/page-*.png` nếu không dùng.

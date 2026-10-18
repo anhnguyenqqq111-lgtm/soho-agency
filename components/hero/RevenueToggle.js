@@ -63,8 +63,8 @@ export default function RevenueToggle(){
 
       <svg viewBox="0 0 1140 480" className={styles.svg} aria-hidden="true">
         <defs>
-          <linearGradient id="rt-line" x1="0" x2="1"><stop offset="0" stopColor="#F6A341"/><stop offset="1" stopColor="#D94F27"/></linearGradient>
-          <linearGradient id="rt-area" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stopColor="#F28C35" stopOpacity=".3"/><stop offset="1" stopColor="#F28C35" stopOpacity="0"/></linearGradient>
+          <linearGradient id="rt-line" x1="0" x2="1"><stop offset="0" stopColor="#FF7A00"/><stop offset=".55" stopColor="#FF416C"/><stop offset="1" stopColor="#765BFF"/></linearGradient>
+          <linearGradient id="rt-area" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stopColor="#FF416C" stopOpacity=".2"/><stop offset="1" stopColor="#765BFF" stopOpacity="0"/></linearGradient>
         </defs>
         {[0, 1, 2, 3, 4].map(i => <line key={i} x1="0" x2="1140" y1={60 + i * 95} y2={60 + i * 95} className={styles.grid}/>)}
 

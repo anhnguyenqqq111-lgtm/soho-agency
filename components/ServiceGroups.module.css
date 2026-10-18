@@ -24,10 +24,10 @@
 .arrow{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;color:var(--ink-3);font-size:14px;transition:background-color var(--t-fast),color var(--t-fast),transform var(--t-fast)}
 .list li{transition:opacity var(--t-med),filter var(--t-med)}
 .filtering .miss{opacity:.32;filter:grayscale(1)}
-.hit .row{background:#FFF7F0;box-shadow:inset 3px 0 0 var(--brand)}
+.hit .row{background:#FFF6EF;box-shadow:inset 3px 0 0 var(--brand)}
 .hit .arrow{background:var(--grad-cta);color:var(--ink)}
 .row:hover{color:inherit}
 .row:hover strong{color:var(--brand-ink)}
-.row:hover{background:#FFF7F0}
+.row:hover{background:#FFF6EF}
 .row:hover .arrow{background:var(--grad-cta);color:var(--ink);transform:translateX(2px)}
 @media (max-width:960px){.grid{grid-template-columns:minmax(0,1fr)}}

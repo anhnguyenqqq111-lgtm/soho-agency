@@ -4,6 +4,7 @@
 .section{position:relative;isolation:isolate}
 .plain{background:var(--white)}
 .panel{background:var(--gray);margin:clamp(8px,1.4vw,20px) clamp(8px,1.4vw,20px);border-radius:clamp(20px,2.4vw,36px);overflow:hidden}
+.mist{background:var(--grad-mist)}
 .inner{position:relative;z-index:1}
 
 .space_sm{padding-block:var(--space-sm)}
@@ -12,7 +13,7 @@
 
 /* Hình 3D trang trí: mờ, góc phải trên, quầng cam nhạt phía sau, trôi chậm */
 .decor{position:absolute;z-index:0;top:clamp(8px,2vw,32px);right:clamp(-48px,-2vw,-12px);width:clamp(140px,19vw,290px);aspect-ratio:1;pointer-events:none;opacity:.95}
-.decor::before{content:'';position:absolute;inset:-18%;border-radius:50%;background:radial-gradient(circle,rgba(242,140,53,.20),rgba(242,140,53,.06) 45%,transparent 70%);z-index:-1}
+.decor::before{content:'';position:absolute;inset:-18%;border-radius:50%;background:radial-gradient(circle,rgba(255,122,0,.20),rgba(255,122,0,.06) 45%,transparent 70%);z-index:-1}
 .decor img{width:100%;height:auto;animation:decorFloat 7s ease-in-out infinite;filter:drop-shadow(0 30px 40px rgba(16,18,28,.10))}
 .plain .decor{display:none}
 @keyframes decorFloat{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-14px) rotate(-3deg)}}

@@ -3,7 +3,7 @@
 .inner{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:40px var(--gap);align-items:center;padding-block:clamp(56px,7vw,104px)}
 /* Minh họa đặt thẳng trên nền trắng: c1 cam (điểm nhấn duy nhất), c2 Midnight, c3 nét xám */
 .visual{position:relative;min-width:0;display:grid;place-items:center;color:var(--ink);
-  --hero-bg:#FFFFFF;--hero-ink:#10121C;--c1:#F28C35;--c2:#D94F27;--c3:#E4E7EE;--c4:#9AA1B2}
+  --hero-bg:#FFFFFF;--hero-ink:#10121C;--c1:#FF7A00;--c2:#765BFF;--c3:#E4E7EE;--c4:#9AA1B2}
 .svg{width:100%;height:auto;max-height:calc(100svh - var(--header-h) - 220px)}
 .content{display:grid;gap:12px;justify-items:start}
 .crumbs ol{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px;font-size:var(--fs-meta);opacity:.7}
@@ -49,7 +49,7 @@
 .tileText{font-family:var(--font-text);font-size:17px;font-weight:600;fill:var(--hero-ink)}
 .tile{opacity:0;animation:tileIn 600ms cubic-bezier(.2,.7,.2,1) forwards,tileGlow 6s ease-in-out infinite;animation-delay:calc(var(--i) * 90ms + 200ms),calc(var(--i) * 660ms + 1500ms)}
 @keyframes tileIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
-@keyframes tileGlow{0%,8%,100%{filter:none}4%{filter:drop-shadow(0 10px 22px rgba(242,140,53,.38))}}
+@keyframes tileGlow{0%,8%,100%{filter:none}4%{filter:drop-shadow(0 10px 22px rgba(255,122,0,.38))}}
 .tileLink{stroke:var(--c3);stroke-width:2;stroke-dasharray:4 6}
 
 /* Giải pháp */

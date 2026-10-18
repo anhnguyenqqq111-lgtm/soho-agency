@@ -13,7 +13,7 @@ body{
 }
 img,svg{display:block;max-width:100%;height:auto}
 button,input,select,textarea{font:inherit;color:inherit}
-::selection{background:#FCE3CC;color:var(--ink)}
+::selection{background:#FFE8D6;color:var(--ink)}
 
 h1,h2,h3,h4{margin:0;color:inherit;font-weight:700;text-wrap:balance;font-family:var(--font-display)}
 h1{font-size:var(--fs-h1);line-height:1.1;letter-spacing:-.022em;font-weight:600}
@@ -36,7 +36,7 @@ a:hover{color:var(--accent)}
 @supports (-webkit-background-clip:text) or (background-clip:text){
   .hl{background:var(--grad-warm-text);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;padding:.14em 0 .08em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
 }
-.on-dark .hl{background:var(--grad-cta);-webkit-background-clip:text;background-clip:text}
+.on-dark .hl{background:linear-gradient(100deg,#FF9A45,#FF6B8A 55%,#A08CFF);-webkit-background-clip:text;background-clip:text}
 .grad-text{color:inherit}
 .dark h1,.dark h2,.dark h3{color:var(--on-dark)}
 

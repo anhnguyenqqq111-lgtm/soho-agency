@@ -3,7 +3,7 @@ import {sitePath} from '../paths';
 
 /*
   Section chuẩn: kicker nhỏ, H2 lớn (có thể chứa .hl), intro, rồi nội dung.
-  tone: white | paper -> nền trắng; gray | soft | dark | fade -> khối nền xám mây bo góc, thụt vào hai bên (tách section rõ ràng).
+  tone: white | paper -> nền trắng; gray | dark | fade -> khối nền xám mây bo góc, thụt vào hai bên; soft -> khối nền gradient Mist (kit 3).
   decor: tên hình 3D trong public/decor (vd 'target'), đặt mờ ở góc phải, trôi nhẹ; chỉ hiện ở section dạng khối nền xám. Hình CC0 từ 3dicons.co.
   align: left | center
   aside: nút hoặc link đặt bên phải tiêu đề (desktop)
@@ -13,7 +13,7 @@ const PANEL = new Set(['gray', 'soft', 'dark', 'fade', 'panel']);
 export default function Section({id, kicker, title, intro, aside, children, tone = 'white', align = 'left', spacing = 'md', decor, className = ''}){
   const panel = PANEL.has(tone);
   return (
-    <section id={id} className={[styles.section, panel ? styles.panel : styles.plain, styles[`space_${spacing}`], className].join(' ')}>
+    <section id={id} className={[styles.section, panel ? styles.panel : styles.plain, tone === 'soft' ? styles.mist : '', styles[`space_${spacing}`], className].join(' ')}>
       {decor && (
         <span className={styles.decor} aria-hidden="true">
           <img src={sitePath(`/decor/${decor}.webp`)} alt="" width="400" height="400" loading="lazy"/>

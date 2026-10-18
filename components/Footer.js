@@ -25,7 +25,7 @@ export default function Footer(){
       <div className={`container ${styles.grid}`}>
         <div className={styles.brand}>
           <a href={sitePath('/')} className={styles.logo} aria-label="SOHO Agency, về trang chủ">
-            <img src={sitePath('/brand/soho-logo.svg')} alt="SOHO Agency" width="915" height="320"/>
+            <img src={sitePath('/brand/soho-logo.svg')} alt="SOHO Agency" width="568" height="234"/>
           </a>
           <h2 className={styles.company}><Fill value={company.legalName} need="CẦN TÊN PHÁP NHÂN"/></h2>
           <ul className={styles.info}>

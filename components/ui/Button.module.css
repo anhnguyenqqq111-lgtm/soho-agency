@@ -7,8 +7,8 @@
 .btn:hover .arrow{transform:translate(2px,-2px)}
 
 .primary{background:var(--grad-cta);color:var(--ink)}
-.primary{box-shadow:0 6px 18px rgba(231,98,43,.22)}
-.primary:hover{filter:brightness(1.03);color:var(--ink);transform:translateY(-2px);box-shadow:0 12px 28px rgba(231,98,43,.34)}
+.primary{box-shadow:0 6px 18px rgba(255,122,0,.22)}
+.primary:hover{filter:brightness(1.03);color:var(--ink);transform:translateY(-2px);box-shadow:0 12px 28px rgba(255,122,0,.34)}
 
 .secondary{background:transparent;color:var(--ink);border-color:#B9BDCA}
 .secondary:hover{background:rgba(16,18,28,.04);color:var(--ink)}

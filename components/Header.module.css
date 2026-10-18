@@ -1,7 +1,7 @@
 .header{position:sticky;top:0;z-index:50;background:var(--white);color:var(--ink);border-bottom:1px solid var(--line)}
 .bar{height:var(--header-h);display:flex;align-items:center;justify-content:space-between;gap:28px}
 .logo{display:block;flex:none}
-.logo img{height:40px;width:auto}
+.logo img{height:50px;width:auto}
 .nav{display:flex;align-items:center;flex:1;justify-content:flex-end}
 .desktop{display:flex;align-items:center;gap:36px;flex:1;justify-content:flex-end}
 .navList{list-style:none;margin:0;padding:0;display:flex;gap:34px;margin-right:12px}
@@ -45,4 +45,4 @@
 .mobileAll{font-size:15px;color:var(--brand-ink);font-weight:600}
 .mobileCta{display:block;margin-top:28px;text-align:center;background:var(--grad-cta);color:var(--ink);padding:15px;text-decoration:none;font-weight:700;border-radius:var(--r-md)}
 @media (max-width:1100px){.navList{gap:22px}}
-@media (max-width:960px){.desktop,.panel{display:none}.menuToggle{display:inline-block}.logo img{height:34px}}
+@media (max-width:960px){.desktop,.panel{display:none}.menuToggle{display:inline-block}.logo img{height:42px}}

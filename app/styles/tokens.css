@@ -1,20 +1,22 @@
-/* SOHO design tokens, bản 8: nền trắng theo SOHO Brand Kit v4.0, màu và hiệu ứng chỉ ở điểm quan trọng. Xem DESIGN.md.
-   Một họ màu nhấn là cam của logo (đặc hoặc gradient). Một khối tối duy nhất: khối liên hệ. */
+/* SOHO design tokens, bản 9: bố cục nền trắng của bản 8, màu theo SOHO Brand Kit v3.0, logo gốc của SOHO. Xem DESIGN.md.
+   Cam là màu chính; gradient Signature (cam, san hô, tím) chỉ ở vài điểm nhấn. Một khối tối duy nhất: khối liên hệ. */
 :root{
-  /* Màu nhấn */
-  --brand:#F28C35;          /* cam logo */
-  --brand-hover:#E7622B;
-  --brand-deep:#D94F27;     /* con số kết quả (KPI) */
-  --brand-ink:#AE420D;      /* chữ cam nhỏ, link (>= 4.5:1 trên nền trắng) */
+  /* Màu nhấn theo Brand Kit v3: cam là chính, san hô và tím là điểm nhấn UI */
+  --brand:#FF7A00;          /* SOHO Orange: nút, số thứ tự, nét nhấn. Không dùng cho chữ nhỏ trên nền sáng */
+  --brand-hover:#E56F00;
+  --brand-deep:#B84A00;
+  --brand-ink:#B84A00;      /* chữ cam nhỏ, link (>= 4.5:1 trên nền trắng) */
   --brand-dark:var(--brand-ink);
-  --brand-soft:#F5F6FA;     /* tên cũ: nay là xám rất nhạt, không còn nền cam */
-  --grad-cta:linear-gradient(110deg,#F6A341,#E7622B);  /* nút chính */
-  --grad-warm:linear-gradient(120deg,#F6A341 0%,#F28C35 35%,#EA6B2B 66%,#D95026 100%);  /* gradient logo: mảng nhấn lớn */
-  --grad-warm-text:linear-gradient(100deg,#E8642A 0%,#C2410C 100%);  /* chữ nhấn trong tiêu đề (>= 3:1 cho chữ lớn) */
-  --warm-1:#FCE3CC;         /* cam rất nhạt: chặng đầu, nền chip */
-  --warm-2:#F6A341;
-  --midnight:#10121C;       /* nền khối liên hệ */
-  --glow-warm:radial-gradient(circle at 85% 15%,rgba(242,140,53,.16),transparent 45%);
+  --brand-soft:#F5F6FA;
+  --coral:#FF416C;          /* Electric Coral */
+  --violet:#765BFF;         /* Digital Violet */
+  --grad-cta:#FF7A00;       /* nút chính: cam đặc, chữ Midnight (kit 3) */
+  --grad-warm:linear-gradient(112deg,#FF7A00 0%,#FF416C 52%,#765BFF 100%);   /* gradient Signature: mảng nhấn lớn, mỗi màn hình một chỗ */
+  --grad-warm-text:linear-gradient(100deg,#E0560F 0%,#E0245E 52%,#6A4CF0 100%);  /* chữ nhấn .hl: Signature đậm hơn, >= 3.5:1 */
+  --warm-1:#FFE8D6;         /* cam rất nhạt: chặng đầu, nền dấu tích */
+  --warm-2:#FF9A45;
+  --midnight:#10121C;
+  --glow-warm:radial-gradient(circle at 80% 18%,rgba(118,91,255,.14),transparent 40%),radial-gradient(circle at 12% 88%,rgba(255,122,0,.12),transparent 45%);
 
   /* Trung tính */
   --white:#FFFFFF;
@@ -22,10 +24,10 @@
   --paper-2:#F5F6FA;
   --gray:#F5F6FA;           /* ô nền rất nhạt khi cần tách lớp */
   --gray-2:#DDE1EB;
-  --line:#E7E9F0;
+  --line:#DCE0E9;
   --ink:#10121C;
   --ink-2:#3B4152;
-  --ink-3:#60697B;
+  --ink-3:#62697D;
   --silver:#C9D0DF;
   --accent:var(--brand-ink);
 
@@ -42,9 +44,9 @@
   --error:#C62D44;
 
   /* Tên gradient cũ trỏ về màu phẳng */
-  --grad-signature:var(--brand);
-  --grad-midnight:var(--white);
-  --grad-mist:var(--white);
+  --grad-signature:var(--grad-warm);
+  --grad-midnight:linear-gradient(120deg,#10121C 10%,#261E44 57%,#593358 100%);
+  --grad-mist:linear-gradient(120deg,#F5F6FA 5%,#E8E9FF 53%,#F7E5EB 100%);
   --grad-glow:none;
   --grad-brand:var(--brand);
   --grad-dark:var(--white);
