@@ -1,0 +1,3 @@
+Hình 3D trang trí trong thư mục này lấy từ bộ 3dicons của Vijay Verma (https://3dicons.co, https://github.com/realvjy/3dicons).
+Giấy phép: CC0 1.0 Universal. Dùng cho dự án cá nhân và thương mại, không cần ghi nguồn.
+Kiểu: clay, góc nhìn dynamic, 400×400px, chuyển sang WebP.

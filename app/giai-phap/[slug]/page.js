@@ -39,7 +39,7 @@ export default async function SolutionDetailPage({params}){
           <NumberedList items={solution.outcomes.map(text => ({title: text}))}/>
         </Section>
         {services.length > 0 && (
-          <Section tone="gray" title={<>Dịch vụ thường dùng <span className="hl">trong giải pháp này</span></>}>
+          <Section tone="gray" decor="rocket" title={<>Dịch vụ thường dùng <span className="hl">trong giải pháp này</span></>}>
             <LinkRows items={services.map(s => ({title: s.menuTitle, desc: s.menuDesc, href: `/dich-vu/${s.slug}`}))}/>
           </Section>
         )}

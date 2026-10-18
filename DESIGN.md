@@ -63,7 +63,7 @@ Nguồn: thư mục `SOHO_Agency_Brand_Kit_v4`. Yêu cầu của chủ web: ưu 
 
 ### 2.1. Nguyên tắc
 
-- Nền trắng cho hầu hết section, tách nhau bằng đường kẻ mảnh `--line`. Chỉ một khối tối: khối liên hệ cuối trang (điểm chuyển đổi chính).
+- Section chia rõ bằng hai kiểu xen kẽ: **nền trắng** toàn chiều ngang (`tone` white, paper) và **khối nền xám mây bo góc lớn, thụt vào hai bên** (`tone` gray, soft, dark, fade). Khoảng trắng quanh khối là ranh giới giữa các phần. Chỉ một khối tối: khối liên hệ cuối trang (điểm chuyển đổi chính).
 - Một họ màu nhấn duy nhất là cam của logo (đặc hoặc gradient). Không dùng san hô, tím.
 - Màu chỉ ở điểm quan trọng: cụm từ chính trong tiêu đề (`.hl`, gradient cam), nút hành động, minh họa hero, ba chặng của ma trận hành trình, số bước quy trình, con số kết quả, huy hiệu đối tác.
 - Hiệu ứng chỉ ở điểm quan trọng: minh họa hero chuyển động, quầng cam "thở" sau khối liên hệ, dải logo khách hàng chạy ngang (dừng khi rê chuột), đường ray quy trình tự vẽ khi cuộn tới, phản hồi khi rê chuột ở nút, thẻ dịch vụ, khối ma trận, thẻ dự án. Tắt hết khi bật giảm chuyển động.
@@ -83,6 +83,12 @@ Nguồn: thư mục `SOHO_Agency_Brand_Kit_v4`. Yêu cầu của chủ web: ưu 
 | `--ink-3` | `#60697B` | Chữ phụ, nhãn nhỏ trên tiêu đề |
 | `--line` / `--gray` | `#E7E9F0` / `#F5F6FA` | Đường kẻ, viền / ô nền rất nhạt |
 | `--glow-warm` | quầng cam rất nhạt | Chỉ nền hero |
+
+### 2.2b. Hình 3D trang trí (`public/decor/`, thuộc tính `decor` của `Section`)
+
+Nguồn: bộ 3dicons của Vijay Verma (3dicons.co, github.com/realvjy/3dicons), giấy phép **CC0**, dùng thương mại không cần ghi nguồn (ghi chú trong `public/decor/LICENSE.txt`). Kiểu clay (trắng xám, mờ), 400px, WebP khoảng 5 KB mỗi hình.
+
+Chỉ hiện ở section dạng khối nền xám, góc phải trên, có quầng cam nhạt phía sau, trôi lên xuống chậm (tắt khi giảm chuyển động); section nền trắng không đặt hình để không đè nội dung. Đang dùng: trang chủ `target` (ma trận hành trình), `flag` (quy trình), `chat-bubble` (FAQ); trang dịch vụ `calender` (quy trình), `zoom` (vì sao); Dự án `chart`; Giới thiệu `megaphone`; giải pháp `rocket`. Có sẵn thêm `trophy`, `bulb`. Muốn thêm hình: tải bản clay từ link trong `content/3dicons-meta/<tên>.md` của repo trên, chuyển WebP, đặt vào `public/decor/`.
 
 ### 2.3. Chữ
 

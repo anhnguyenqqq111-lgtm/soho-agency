@@ -77,13 +77,14 @@ export default function Home(){
         <LogoMarquee clients={clients}/>
 
         {/* Dịch vụ: thẻ trắng trên nền cam nhạt */}
-        <Section id="dich-vu" tone="paper" kicker="Dịch vụ" title={<>Chín dịch vụ, <span className="hl">ba nhóm việc</span></>} aside={<Button href="/dich-vu" variant="text">Xem tất cả dịch vụ</Button>}>
+        <Section id="dich-vu" tone="white" kicker="Dịch vụ" title={<>Chín dịch vụ, <span className="hl">ba nhóm việc</span></>} aside={<Button href="/dich-vu" variant="text">Xem tất cả dịch vụ</Button>}>
           <ServiceGroups groups={groups}/>
         </Section>
 
         {/* Bảng hành trình */}
         <Section
           tone="soft"
+          decor="target"
           kicker="Cách SOHO đo"
           title={<>Mỗi chặng hành trình, <span className="hl">một bộ chỉ số</span></>}
           intro="Khách hàng đi qua ba chặng. Ở mỗi chặng, mỗi kênh có một chỉ số riêng để theo dõi, càng về cuối càng ít khách đi tiếp, và tất cả gộp về doanh thu."
@@ -98,12 +99,12 @@ export default function Home(){
         </Section>
 
         {/* Quy trình */}
-        <Section id="cach-lam-viec" tone="dark" title={<>Bốn bước <span className="hl">làm việc với SOHO</span></>} intro="Cùng một cách làm ở mọi dự án: audit trước, chọn việc trước, sprint 2 tuần, đo rồi quyết định.">
+        <Section id="cach-lam-viec" tone="dark" decor="flag" kicker="Cách làm việc" title={<>Bốn bước <span className="hl">làm việc với SOHO</span></>} intro="Cùng một cách làm ở mọi dự án: audit trước, chọn việc trước, sprint 2 tuần, đo rồi quyết định.">
           <Track items={steps}/>
         </Section>
 
         {/* Blog */}
-        <Section tone="paper" kicker="Blog" title={<>Những bài viết <span className="hl">mới nhất</span></>} aside={<Button href="/blog" variant="text">Xem thêm</Button>}>
+        <Section tone="white" kicker="Blog" title={<>Những bài viết <span className="hl">mới nhất</span></>} aside={<Button href="/blog" variant="text">Xem thêm</Button>}>
           <div className={styles.blogGrid}>{latest.map((post, i) => <BlogCard key={post.slug} post={post} delay={i * 100}/>)}</div>
         </Section>
 
@@ -111,7 +112,7 @@ export default function Home(){
         <CtaBand/>
 
         {/* FAQ */}
-        <Section title={<>Câu hỏi <span className="hl">thường gặp</span></>} spacing="lg">
+        <Section tone="gray" decor="chat-bubble" kicker="FAQ" title={<>Câu hỏi <span className="hl">thường gặp</span></>} spacing="lg">
           <div className={styles.faqWrap}><Faq items={faqs}/></div>
         </Section>
       </main>

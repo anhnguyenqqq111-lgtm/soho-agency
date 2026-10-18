@@ -47,7 +47,7 @@ export default function AboutPage(){
             <div data-reveal="" style={{'--reveal-delay': '150ms'}}><ImageSlot src={null} need="Ảnh văn phòng hoặc đội ngũ SOHO" size="1200×900" ratio="4/3"/></div>
           </div>
         </Section>
-        <Section tone="gray" title={<>Bốn nguyên tắc <span className="hl">làm việc</span></>}>
+        <Section tone="gray" decor="megaphone" title={<>Bốn nguyên tắc <span className="hl">làm việc</span></>}>
           <NumberedList items={principles}/>
         </Section>
         <Section title={<>Những người bạn sẽ <span className="hl">làm việc cùng</span></>}>

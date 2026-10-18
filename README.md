@@ -81,6 +81,7 @@ components/
 
 public/brand/                logo Brand Kit v4: soho-logo.svg (header, footer), các bản phụ, avatar
 public/partners/             huy hiệu đối tác chính thức (google-partner.svg)
+public/decor/                hình 3D trang trí CC0 từ 3dicons.co (dùng qua thuộc tính decor của Section)
 public/clients/              logo khách hàng
 public/blog/                 ảnh bài blog (thumbnail và banner dùng chung), render bằng skill creating-images-soho
 DESIGN.md                    hướng thiết kế, token, quy tắc màu và logo (mục 2)

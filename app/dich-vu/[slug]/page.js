@@ -58,12 +58,12 @@ export default async function ServicePage({params}){
         </PageHeader>
 
         {/* Quy trình + sơ đồ */}
-        <Section tone="dark" title={<>Quy trình triển khai <span className="hl">tại SOHO</span></>} intro={service.promise}>
+        <Section tone="dark" decor="calender" title={<>Quy trình triển khai <span className="hl">tại SOHO</span></>} intro={service.promise}>
           <Track items={service.process.map(title => ({title}))}/>
         </Section>
 
         {/* Dấu hiệu và kết quả */}
-        <Section tone="gray" title={<>Vì sao doanh nghiệp cần <span className="hl">{service.menuTitle}</span>?</>} intro={service.insight}>
+        <Section tone="gray" decor="zoom" title={<>Vì sao doanh nghiệp cần <span className="hl">{service.menuTitle}</span>?</>} intro={service.insight}>
           <BeforeAfter before={service.pains} after={service.outcomes} beforeLabel="Dấu hiệu bạn đang gặp" afterLabel="Kết quả cần đạt"/>
           <p className={styles.proof}>{service.proof}</p>
         </Section>

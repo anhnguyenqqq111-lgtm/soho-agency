@@ -1,7 +1,7 @@
 .wrap{display:grid;gap:0}
 .head{display:grid;grid-template-columns:64px 250px repeat(4,minmax(0,1fr));column-gap:16px;margin-bottom:18px}
-.corner{grid-column:1 / span 2;display:flex;justify-content:space-between;align-items:center;padding:12px 18px;background:var(--gray);border-radius:var(--r-md);font-size:14px;font-weight:700;color:var(--ink-3)}
-.chHead{display:flex;align-items:center;gap:8px;padding:12px 14px;background:var(--gray);border-radius:var(--r-md);font-size:14px;font-weight:700;color:var(--ink)}
+.corner{grid-column:1 / span 2;display:flex;justify-content:space-between;align-items:center;padding:12px 18px;background:var(--white);border-radius:var(--r-md);font-size:14px;font-weight:700;color:var(--ink-3)}
+.chHead{display:flex;align-items:center;gap:8px;padding:12px 14px;background:var(--white);border-radius:var(--r-md);font-size:14px;font-weight:700;color:var(--ink)}
 .chDot{display:none}
 
 .stageWrap{display:grid;gap:0}

@@ -39,7 +39,7 @@ export default function ResultsPage(){
           <div className={styles.partners}><PartnerStrip/></div>
         </Section>
 
-        <Section tone="gray" title={<>Mỗi kênh, SOHO <span className="hl">xem gì</span></>}>
+        <Section tone="gray" decor="chart" title={<>Mỗi kênh, SOHO <span className="hl">xem gì</span></>}>
           <div className={styles.tableWrap}>
             <table className={styles.table}>
               <thead><tr><th scope="col">Kênh</th><th scope="col">Hằng tuần</th><th scope="col">Hằng tháng</th><th scope="col">Không dùng làm KPI chính</th></tr></thead>
