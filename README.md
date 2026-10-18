@@ -102,7 +102,7 @@ grep -rn "need=\"CẦN\|\[CẦN" app components
 | --- | --- |
 | `components/data/company.js` | tên pháp nhân, mã số thuế, địa chỉ, điện thoại, giờ làm việc, năm thành lập, số khách hàng, quy mô, link mạng xã hội |
 | `components/data/clients.js` | ảnh dự án (đặt vào `public/projects/`), kết quả, bối cảnh, việc đã làm |
-| `components/data/proof.js` | `profileUrl` hồ sơ Google Partner (bắt buộc theo quy định của Google), xác nhận Meta/TikTok, nhận xét khách hàng |
+| `components/data/proof.js` | chứng nhận đối tác (hiện chỉ Google Partner, đã có link hồ sơ), nhận xét khách hàng |
 | `components/servicePagesData.js` | `artifact.image`: ảnh sản phẩm bàn giao mẫu cho từng dịch vụ |
 
 Ảnh đội ngũ, văn phòng trên trang chủ và trang Giới thiệu dùng `ImageSlot` với `src={null}`; thay bằng đường dẫn ảnh thật.
@@ -125,7 +125,6 @@ Quy tắc chung của blog (sẽ là quy tắc của CMS sau này), kiểm tra t
 - Form liên hệ (`components/ContactForm.js`) chỉ hiện thông báo đã gửi, chưa gửi đi đâu. Cần nối API hoặc dịch vụ form.
 - Hai trang pháp lý là bản nháp, cần pháp chế duyệt. Đầu trang có dòng cảnh báo đỏ, xóa sau khi duyệt.
 - Bài viết dịch vụ có câu số liệu khẳng định về SOHO (gạch chân chấm vàng, đánh dấu tự động bởi `isClaim()` trong `components/article/parseMarkdown.js`). Cần kiểm chứng hoặc sửa.
-- Huy hiệu Google Partner chưa có link hồ sơ đối tác. Điền `profileUrl` trong `components/data/proof.js`.
 - Ảnh bìa 9 bài blog trong `public/blog/` còn logo cũ, cần xuất lại theo logo Brand Kit v3.
 - Tên tác giả chưa thống nhất giữa `blogData.js` ("Nguyễn Tuấn Anh") và `articles/*.js` ("Nguyễn Thế Tuấn Anh").
 

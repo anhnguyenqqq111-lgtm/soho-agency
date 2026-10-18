@@ -114,7 +114,7 @@ Huy hiệu Google Partner 2026 lấy nguyên bản RGB từ bộ tài liệu c�
 
 Quy định của Google: huy hiệu trên web phải dẫn tới trang hồ sơ đối tác của công ty. Điền `profileUrl` cho mục Google Partner trong `proof.js`, huy hiệu sẽ tự thành link và nhãn `[CẦN LINK HỒ SƠ GOOGLE PARTNER]` biến mất. Không đổi màu, không cắt, không thêm hiệu ứng lên huy hiệu.
 
-Meta và TikTok vẫn là `verified: false`, hiện tên kèm nhãn `[CẦN XÁC NHẬN]`. Xóa hẳn mục nào SOHO không có.
+SOHO không có chứng nhận Meta, TikTok; danh sách chỉ còn Google Partner.
 
 ### 2.7. Hero (`components/hero/Hero.js`)
 
