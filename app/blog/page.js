@@ -27,7 +27,7 @@ export default function BlogPage(){
     <>
       <Header activeNav="blog"/>
       <main id="main">
-        <Hero tone="blog" crumbs={[{label: 'Blog'}]} title={<>Blog SOHO Agency: <span className="hl">ghi chép từ việc thật</span></>} tagline="Hướng dẫn từng bước về SEO, quảng cáo và đo lường, viết để đội marketing của bạn làm theo được." visual={<BlogVisual/>}/>
+        <Hero tone="blog" crumbs={[{label: 'Tin tức'}]} title={<>Blog SOHO Agency: <span className="hl">ghi chép từ việc thật</span></>} tagline="Hướng dẫn từng bước về SEO, quảng cáo và đo lường, viết để đội marketing của bạn làm theo được." visual={<BlogVisual/>}/>
         <Section id="noi-dung" tone="white" title={<>Bài viết <span className="hl">mới nhất</span></>} spacing="sm">
           <div className={styles.latest}>{latest.map((p, i) => <BlogCard key={p.slug} post={p} delay={i * 80}/>)}</div>
         </Section>

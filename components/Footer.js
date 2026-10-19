@@ -16,7 +16,7 @@ export default function Footer(){
       {label: 'Giới thiệu', href: '/ve-soho'},
       {label: 'Giải pháp', href: '/giai-phap'},
       {label: 'Dự án', href: '/ket-qua'},
-      {label: 'Blog', href: '/blog'},
+      {label: 'Tin tức', href: '/blog'},
       {label: 'Liên hệ', href: '/lien-he'}
     ]}
   ];

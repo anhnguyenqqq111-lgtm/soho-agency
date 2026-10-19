@@ -45,7 +45,7 @@ export default async function BlogPostPage({params}){
             <nav aria-label="Breadcrumb" className={styles.crumbs}>
               <ol>
                 <li><a href={sitePath('/')}>Trang chủ</a></li>
-                <li><a href={sitePath('/blog')}>Blog</a></li>
+                <li><a href={sitePath('/blog')}>Tin tức</a></li>
                 <li><span aria-current="page">{article.category}</span></li>
               </ol>
             </nav>

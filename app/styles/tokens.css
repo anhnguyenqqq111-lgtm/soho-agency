@@ -68,7 +68,7 @@
   --container:1160px;
   --gutter:24px;
   --gap:24px;
-  --header-h:72px;
+  --header-h:76px;
 
   --space-sm:clamp(48px,6vw,64px);
   --space-md:clamp(72px,8.5vw,112px);

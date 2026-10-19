@@ -22,7 +22,7 @@ export default function NotFound(){
           <LinkRows items={[
             {title: 'Dịch vụ', desc: 'SEO, quảng cáo, website, nhận diện thương hiệu, mobile app', href: '/dich-vu'},
             {title: 'Dự án', desc: 'Le Viva Resort, King Decor Luxury, Kronos, Helen Bridal', href: '/ket-qua'},
-            {title: 'Blog', desc: 'Hướng dẫn từng bước về SEO, quảng cáo, đo lường', href: '/blog'}
+            {title: 'Tin tức', desc: 'Hướng dẫn từng bước về SEO, quảng cáo, đo lường', href: '/blog'}
           ]}/>
         </Section>
       </main>

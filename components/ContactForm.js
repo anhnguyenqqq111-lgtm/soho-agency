@@ -4,6 +4,7 @@ import styles from './ContactForm.module.css';
 import {company} from './data/company';
 import {sitePath} from './paths';
 import Icon from './ui/Icon';
+import {track} from './analytics';
 
 /*
   Form nhận tư vấn.
@@ -12,7 +13,7 @@ import Icon from './ui/Icon';
   - Chưa cấu hình endpoint: nút gửi mở ứng dụng email với nội dung đã điền sẵn (gửi tới company.email),
     không giả vờ đã gửi.
   - Chống spam: ô ẩn làm bẫy (bot điền vào thì bỏ qua) và chặn gửi quá nhanh sau khi trang tải.
-  - Sau khi gửi thành công: đẩy sự kiện generate_lead vào window.dataLayer nếu site đã cài Google Tag Manager.
+  - Sau khi gửi thành công: gửi sự kiện generate_lead nếu site đã cài GA4 hoặc Google Tag Manager (components/analytics.js).
 */
 const ENDPOINT = process.env.NEXT_PUBLIC_FORM_ENDPOINT || '';
 
@@ -110,7 +111,7 @@ export default function ContactForm({compact = false, idPrefix = 'cf'}){
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       setStatus('success');
       setValues(EMPTY);
-      if (Array.isArray(window.dataLayer)) window.dataLayer.push({event: 'generate_lead', form: 'nhan-tu-van', service: values.service});
+      track('generate_lead', {form: 'nhan-tu-van', service: values.service});
     } catch (err){
       setStatus('error');
     }
