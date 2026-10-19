@@ -6,17 +6,17 @@ import styles from './Hero.module.css';
 
 // Dịch vụ: 9 ô dịch vụ, sáng lên luân phiên
 export function ServicesVisual({labels = []}){
-  const cols = 3;
+  // Dải rộng 4 cột × 3 hàng cho 12 dịch vụ, ô sáng lên luân phiên
+  const cols = 4, w = 280, h = 104, gx = 24, gy = 20;
   return (
-    <svg viewBox="0 0 900 540" className={styles.svg} aria-hidden="true">
-      <path d="M180 170 L180 200 M450 170 L450 200 M720 170 L720 200 M180 330 L180 360 M450 330 L450 360 M720 330 L720 360" className={styles.tileLink}/>
-      {labels.slice(0, 9).map((label, i) => {
-        const x = 60 + (i % cols) * 270, y = 40 + Math.floor(i / cols) * 160;
+    <svg viewBox="0 0 1192 372" className={styles.svg} aria-hidden="true">
+      {labels.slice(0, 12).map((label, i) => {
+        const x = 8 + (i % cols) * (w + gx), y = 8 + Math.floor(i / cols) * (h + gy);
         return (
           <g key={label} className={styles.tile} style={{'--i': i}}>
-            <rect x={x} y={y} width="240" height="130" rx="18" className={styles.tileBg}/>
-            <circle cx={x + 32} cy={y + 34} r="10" className={styles.tileDot}/>
-            <text x={x + 24} y={y + 92} className={styles.tileText}>{label}</text>
+            <rect x={x} y={y} width={w} height={h} rx="16" className={styles.tileBg}/>
+            <circle cx={x + 26} cy={y + 30} r="8" className={styles.tileDot}/>
+            <text x={x + 22} y={y + 78} className={styles.tileText}>{label}</text>
           </g>
         );
       })}

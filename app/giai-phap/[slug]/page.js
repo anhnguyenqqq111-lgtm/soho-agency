@@ -19,7 +19,7 @@ export async function generateMetadata({params}){
   const {slug} = await params;
   const solution = getSolutionPage(slug);
   if (!solution) return {title: 'Không tìm thấy giải pháp'};
-  return {title: solution.title, description: solution.desc};
+  return {title: solution.title, description: solution.desc, alternates: {canonical: `/giai-phap/${solution.slug}/`}};
 }
 
 export default async function SolutionDetailPage({params}){
@@ -30,10 +30,10 @@ export default async function SolutionDetailPage({params}){
   return (
     <>
       <Header activeNav="solutions"/>
-      <main>
+      <main id="main">
         <Hero tone="solutions" crumbs={[{label: 'Giải pháp', href: '/giai-phap'}, {label: solution.group}]} title={solution.title} tagline={solution.menuDesc} visual={<SolutionsVisual/>}/>
         <PageHeader title={solution.title} lead={solution.desc}>
-          <Button href="#lien-he">Đặt lịch tư vấn</Button>
+          <Button href="#lien-he">Nhận tư vấn</Button>
         </PageHeader>
         <Section title={<>SOHO <span className="hl">ưu tiên làm gì</span></>}>
           <NumberedList items={solution.outcomes.map(text => ({title: text}))}/>

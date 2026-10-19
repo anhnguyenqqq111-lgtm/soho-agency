@@ -1,29 +1,40 @@
-.hero{position:relative;overflow:hidden;background:var(--glow-warm),var(--white);padding-block:clamp(44px,6vw,96px) clamp(48px,6vw,88px);border-bottom:1px solid var(--line)}
-.top{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,4fr);grid-template-areas:"title proofs" "lead proofs";gap:clamp(24px,3vw,40px) clamp(32px,5vw,72px);align-items:start}
-.title{grid-area:title;font-size:clamp(42px,6vw,82px);line-height:1.06;letter-spacing:-.018em;max-width:14ch}
-.lead{grid-area:lead;display:grid;gap:22px;justify-items:start}
-.text{font-size:clamp(17px,1.4vw,20px);line-height:1.55;color:var(--ink-2);max-width:46ch}
-.actions{display:flex;flex-wrap:wrap;align-items:center;gap:12px 24px}
-.call{display:inline-flex;align-items:center;gap:8px;min-height:44px;font-weight:600;color:var(--ink);text-decoration:none}
-.call:hover{color:var(--brand-ink)}
-.note{font-size:14px;color:var(--ink-3);max-width:46ch}
+.hero{position:relative;overflow:hidden;background:var(--white);padding-block:clamp(40px,6vw,88px) clamp(56px,7vw,104px)}
+.grid{display:grid;grid-template-columns:minmax(0,11fr) minmax(0,10fr);gap:48px clamp(32px,5vw,72px);align-items:center}
+.copy{display:grid;gap:22px;justify-items:start}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;min-height:34px;padding:0 14px;border:1px solid var(--line);border-radius:999px;font-size:13px;font-weight:500;color:var(--ink-2);background:var(--white)}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--brand);box-shadow:0 0 0 4px rgba(255,122,0,.16)}
+.title{font-size:clamp(36px,4.3vw,60px);line-height:1.08;letter-spacing:-.018em;max-width:19ch}
+.lead{font-size:clamp(17px,1.35vw,19px);line-height:1.6;color:var(--ink-2);max-width:48ch}
+.actions{display:flex;flex-wrap:wrap;align-items:center;gap:12px}
+.note{font-size:14px;color:var(--ink-3)}
+.note a{display:inline-flex;align-items:center;gap:6px;color:var(--ink);font-weight:600;text-decoration:none}
+.note a:hover{color:var(--brand-ink)}
 
-/* Bằng chứng: danh sách kẻ mảnh (thẻ đứng trên viền, không bóng) */
-.proofs{grid-area:proofs;align-self:end;list-style:none;margin:0;padding:0;border-top:1px solid var(--ink)}
-.proofs li{display:grid;grid-template-columns:76px minmax(0,1fr);gap:16px;align-items:center;padding:16px 0;border-bottom:1px solid var(--line)}
-.proofs strong{display:block;font-size:15px;color:var(--ink);margin-bottom:2px}
-.proofs span{font-size:14px;line-height:1.5;color:var(--ink-3)}
-.big{font-family:var(--font-display);font-weight:500;font-size:24px;line-height:1;color:var(--brand-ink);font-style:italic;white-space:nowrap}
-.iconBox{width:44px;height:44px;border-radius:var(--r-md);display:grid;place-items:center;background:var(--gray);color:var(--ink)}
+/* Mảng nghệ thuật: gradient Signature trong khung bo góc, thẻ trắng nổi lên trên */
+.art{position:relative;min-width:0;padding:clamp(96px,10vw,132px) clamp(16px,2.4vw,32px) clamp(64px,7vw,88px)}
+.canvas{position:absolute;inset:0 0 24px clamp(24px,4vw,56px);border-radius:var(--r-xl);overflow:hidden;
+  background:
+    radial-gradient(circle at 18% 22%,rgba(255,255,255,.35),transparent 42%),
+    radial-gradient(circle at 85% 85%,rgba(118,91,255,.55),transparent 55%),
+    linear-gradient(140deg,#FF9A45 0%,#FF7A00 28%,#FF416C 62%,#765BFF 100%)}
+.canvas::after{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.22) 1px,transparent 1px);background-size:18px 18px;mask-image:linear-gradient(180deg,#000,transparent 80%)}
+.obj{position:absolute;right:4%;top:2%;width:34%;max-width:200px;height:auto;filter:drop-shadow(0 24px 30px rgba(16,18,28,.25));animation:float 7s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-12px) rotate(-4deg)}}
+.card{position:relative;display:grid;gap:10px;padding:clamp(16px,2vw,24px);background:var(--white);border-radius:var(--r-card);box-shadow:0 30px 70px rgba(16,18,28,.22)}
+.cardTitle{font-family:var(--font-display);font-weight:500;font-size:20px;line-height:1.25;color:var(--ink)}
+.chip{position:absolute;left:0;bottom:16px;display:flex;align-items:center;gap:12px;padding:10px 16px 10px 10px;background:var(--white);border-radius:var(--r-card);box-shadow:0 16px 40px rgba(16,18,28,.18);text-decoration:none;color:var(--ink);transition:transform var(--t-fast)}
+.chip:hover{transform:translateY(-2px);color:var(--ink)}
+.chip img{width:44px;height:auto;border-radius:6px}
+.chip span{display:grid;font-size:12.5px;line-height:1.35;color:var(--ink-3)}
+.chip strong{font-size:14px;color:var(--ink)}
 
-.instrument{margin:clamp(40px,5vw,64px) 0 0;display:grid;grid-template-columns:minmax(0,3fr) minmax(0,9fr);gap:24px 40px;padding:clamp(20px,2.5vw,32px);border:1px solid var(--line);border-radius:var(--r-xl);background:var(--white)}
-.caption{display:grid;gap:10px;align-content:start}
-.caption strong{font-family:var(--font-display);font-weight:500;font-size:24px;line-height:1.2}
-.caption span{font-size:14px;line-height:1.55;color:var(--ink-3)}
-.chart{min-width:0}
-.chart svg{max-height:340px}
-
-@media (max-width:960px){
-  .top{grid-template-columns:minmax(0,1fr);grid-template-areas:"title" "lead" "proofs"}
-  .instrument{grid-template-columns:minmax(0,1fr)}
+@media (max-width:980px){
+  .grid{grid-template-columns:minmax(0,1fr)}
+  .art{padding-inline:12px 8px}
+  .canvas{left:24px}
 }
+@media (max-width:480px){
+  .actions{display:grid;grid-template-columns:minmax(0,1fr);width:100%}
+  .obj{width:38%;right:-4%}
+}
+@media (prefers-reduced-motion:reduce){.obj{animation:none}}

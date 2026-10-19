@@ -328,6 +328,104 @@ function SprintTimeline({card}){
   );
 }
 
+// Thiết kế website: cùng một trang trên máy tính và điện thoại, nút liên hệ là điểm đến
+function WebsiteFrames({card}){
+  return (
+    <Figure
+      card={card}
+      id="dg-web"
+      viewBox="0 0 480 330"
+      title="Khung website trên máy tính và điện thoại"
+      desc="Một trang có đầu trang, khối giới thiệu, ba khối dịch vụ và nút liên hệ, hiển thị trên máy tính và điện thoại."
+      caption="Cùng một nội dung, bố cục tự đổi theo màn hình, và trang nào cũng dẫn tới nút liên hệ."
+    >
+      <R x={20} y={30} w={320} h={240} d={0}/>
+      <L x1={20} y1={56} x2={340} y2={56} d={200} c="soft"/>
+      <Dot cx={36} cy={43} d={300}/><Dot cx={50} cy={43} d={350}/><Dot cx={64} cy={43} d={400}/>
+      <R x={40} y={74} w={170} h={14} d={500} c="fill2"/>
+      <R x={40} y={96} w={130} h={10} d={560} c="fill2"/>
+      <R x={40} y={118} w={86} h={26} d={700} c="fillAcc acc"/>
+      <R x={232} y={74} w={88} h={70} d={600}/>
+      {[0, 1, 2].map(i => <R key={i} x={40 + i * 96} y={166} w={84} h={74} d={800 + i * 120}/>)}
+      <R x={372} y={70} w={92} h={200} d={900}/>
+      <R x={384} y={92} w={68} h={10} d={1100} c="fill2"/>
+      <R x={384} y={110} w={52} h={8} d={1150} c="fill2"/>
+      <R x={384} y={128} w={46} h={18} d={1250} c="fillAcc acc"/>
+      {[0, 1].map(i => <R key={i} x={384} y={158 + i * 46} w={68} h={36} d={1350 + i * 120}/>)}
+      <T x={83} y={290} c="mid acc" d={1500}>Nút liên hệ</T>
+      <T x={418} y={290} c="mid" d={1600}>Điện thoại</T>
+    </Figure>
+  );
+}
+
+// Nhận diện thương hiệu: logo ở giữa, nối tới màu, chữ và các điểm chạm
+function BrandSystem({card}){
+  const cx = 240, cy = 150;
+  const touch = [
+    {x: 70, y: 285, label: 'Website'},
+    {x: 190, y: 285, label: 'Mạng xã hội'},
+    {x: 300, y: 285, label: 'Bao bì'},
+    {x: 410, y: 285, label: 'Cửa hàng'}
+  ];
+  return (
+    <Figure
+      card={card}
+      id="dg-brand"
+      viewBox="0 0 480 320"
+      title="Hệ thống nhận diện thương hiệu"
+      desc="Logo ở giữa, bên trái là bảng màu, bên phải là kiểu chữ, bên dưới là bốn điểm chạm: website, mạng xã hội, bao bì, cửa hàng."
+      caption="Logo, màu và chữ được quy định một lần, rồi dùng giống nhau ở mọi nơi khách gặp bạn."
+    >
+      <R x={cx - 60} y={cy - 40} w={120} h={80} d={0}/>
+      <T x={cx} y={cy + 8} c="mid d" d={300}>Logo</T>
+      {[0, 1, 2].map(i => <C key={i} cx={52 + i * 34} cy={cy} r={14} d={500 + i * 120} c={i === 0 ? 'fillAcc acc' : 'fill2'}/>)}
+      <T x={86} y={cy - 26} c="mid" d={800}>Bảng màu</T>
+      <L x1={124} y1={cy} x2={cx - 60} y2={cy} d={700} c="soft"/>
+      <T x={392} y={cy + 10} c="mid d" d={900}>Aa</T>
+      <T x={392} y={cy - 26} c="mid" d={950}>Kiểu chữ</T>
+      <L x1={cx + 60} y1={cy} x2={360} y2={cy} d={850} c="soft"/>
+      {touch.map((t, i) => (
+        <g key={t.label}>
+          <L x1={cx} y1={cy + 40} x2={t.x} y2={256} d={1100 + i * 120} c={i === 0 ? 'acc' : ''}/>
+          <C cx={t.x} cy={256} r={6} d={1300 + i * 120} c={i === 0 ? 'fillAcc acc' : 'fill'}/>
+          <T x={t.x} y={t.y} c="mid" d={1400 + i * 120}>{t.label}</T>
+        </g>
+      ))}
+    </Figure>
+  );
+}
+
+// Mobile App: ba màn hình nối nhau theo việc khách làm
+function AppFlow({card}){
+  const screens = [
+    {x: 30, label: 'Chọn dịch vụ'},
+    {x: 185, label: 'Chọn giờ'},
+    {x: 340, label: 'Xác nhận', acc: true}
+  ];
+  return (
+    <Figure
+      card={card}
+      id="dg-app"
+      viewBox="0 0 480 320"
+      title="Luồng đặt lịch trên app"
+      desc="Ba màn hình điện thoại nối nhau: chọn dịch vụ, chọn giờ, xác nhận."
+      caption="Thiết kế bắt đầu từ việc khách cần làm trên app, rồi mới tới từng màn hình."
+    >
+      {screens.map((sc, i) => (
+        <g key={sc.label}>
+          <R x={sc.x} y={30} w={110} h={210} d={i * 250}/>
+          <L x1={sc.x + 40} y1={42} x2={sc.x + 70} y2={42} d={i * 250 + 300} c="soft"/>
+          <R x={sc.x + 14} y={62} w={82} h={12} d={i * 250 + 400} c="fill2"/>
+          {[0, 1, 2].map(k => <R key={k} x={sc.x + 14} y={86 + k * 34} w={82} h={26} d={i * 250 + 500 + k * 80}/>)}
+          <R x={sc.x + 14} y={196} w={82} h={26} d={i * 250 + 800} c={sc.acc ? 'fillAcc acc' : 'fill2'}/>
+          <T x={sc.x + 55} y={270} c={`mid ${sc.acc ? 'acc' : ''}`} d={i * 250 + 900}>{sc.label}</T>
+          {i < 2 && <Arrow x1={sc.x + 118} y1={135} x2={sc.x + 147} y2={135} d={i * 250 + 1000} c="acc"/>}
+        </g>
+      ))}
+    </Figure>
+  );
+}
+
 const MAP = {
   'seo-tong-the': SeoCluster,
   'seo-ai-overview': AiEntity,
@@ -337,7 +435,10 @@ const MAP = {
   'cro-landing-page': CroWireframe,
   'content-marketing-pr': ContentJourney,
   'ga4-looker-dashboard': DataFlow,
-  'tu-van-chien-luoc-sprint': SprintTimeline
+  'tu-van-chien-luoc-sprint': SprintTimeline,
+  'thiet-ke-website': WebsiteFrames,
+  'nhan-dien-thuong-hieu': BrandSystem,
+  'thiet-ke-mobile-app': AppFlow
 };
 
 export default function ServiceDiagram({slug, card = false}){

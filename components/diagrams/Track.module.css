@@ -7,15 +7,15 @@
 .node{
   position:relative;z-index:1;width:44px;height:44px;border-radius:50%;
   border:0;background:var(--grad-cta);color:var(--ink);box-shadow:0 0 0 6px var(--gray);
-  display:grid;place-items:center;font-weight:700;font-size:14px;
+  display:grid;place-items:center;font-weight:600;font-size:14px;
 }
 .acc .node{background:var(--midnight);color:var(--white)}
-:global(.dark) .node{background:var(--brand);border-color:var(--brand);color:var(--ink);font-weight:800}
+:global(.dark) .node{background:var(--brand);border-color:var(--brand);color:var(--ink);font-weight:600}
 :global(.dark) .acc .node{background:var(--brand);color:var(--ink);border-color:var(--brand)}
 .body{display:grid;gap:6px;padding-right:8px}
 .meta{font-size:var(--fs-meta);font-weight:600;color:var(--ink-3)}
 :global(.dark) .meta{color:var(--on-dark-3)}
-.title{font-size:clamp(17px,1.5vw,20px);line-height:1.25;font-weight:700}
+.title{font-size:clamp(17px,1.5vw,20px);line-height:1.25;font-weight:600}
 .acc .title{color:var(--ink)}
 :global(.dark) .acc .title{color:var(--brand)}
 .text{font-size:var(--fs-small);color:var(--ink-2);line-height:1.5}

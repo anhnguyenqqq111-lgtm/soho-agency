@@ -1,9 +1,13 @@
 // Dự án SOHO đã công bố. Nguồn: sohoagency.vn/du-an/<slug> (đăng bởi SOHO, kiểm tra 10/2026).
-// Ảnh bìa lấy từ cùng trang, đặt ở public/projects/<slug>.webp.
+// Ảnh bìa lấy từ cùng trang, đặt ở public/projects/<slug>.webp. Trang chi tiết: /du-an/<slug> (giữ đúng URL của site cũ).
+// problem, solution: một dòng tóm tắt từ context và work, không thêm ý mới. services: slug dịch vụ liên quan.
 // Luật viết chữ số 5: chỉ ghi con số khi chính trang dự án đã công bố; không thêm số mới.
 export const cases = [
   {
     slug: 'le-viva-resort',
+    problem: 'Chưa có định vị rõ ở Mũi Né, đặt phòng theo mùa lúc được lúc không.',
+    solution: 'Dựng lại hình ảnh fanpage, quảng cáo nhắn tin theo mùa cho khách cuối tuần từ TP.HCM.',
+    services: ['meta-tiktok-ads'],
     name: 'Le Viva Resort',
     field: 'Khu nghỉ dưỡng ven biển ở Mũi Né',
     scope: 'Fanpage, quảng cáo Facebook',
@@ -21,6 +25,9 @@ export const cases = [
   },
   {
     slug: 'king-decor-luxury',
+    problem: 'Công trình đẹp nhưng website chưa trả lời được câu hỏi của chủ đầu tư.',
+    solution: 'Tái cấu trúc website theo nhóm dịch vụ, viết bài cho từng câu hỏi, quảng cáo Facebook đúng tệp.',
+    services: ['seo-tong-the', 'meta-tiktok-ads'],
     name: 'King Decor Luxury',
     field: 'Thiết kế, thi công quán cà phê sân vườn, studio, homestay',
     scope: 'SEO website, quảng cáo Facebook',
@@ -32,6 +39,9 @@ export const cases = [
   },
   {
     slug: 'kronos-luxury-timepieces',
+    problem: 'Hình ảnh sang trọng nhưng quảng cáo đẹp mà không ra đơn.',
+    solution: 'Chia nội dung theo dòng đồng hồ và dịp tặng quà, quảng cáo nhắn tin theo mùa lễ.',
+    services: ['meta-tiktok-ads'],
     name: 'Kronos Luxury Timepieces',
     field: 'Phân phối đồng hồ cao cấp',
     scope: 'Fanpage, quảng cáo Facebook',
@@ -43,6 +53,9 @@ export const cases = [
   },
   {
     slug: 'helen-bridal',
+    problem: 'Đông người theo dõi nhưng nội dung chưa dẫn tới bước đặt lịch.',
+    solution: 'Sắp nội dung theo hành trình cô dâu chú rể, quảng cáo theo mùa cưới.',
+    services: ['meta-tiktok-ads'],
     name: 'Helen Bridal',
     field: 'Studio ảnh cưới phong cách Hàn Quốc',
     scope: 'Fanpage, quảng cáo Facebook',
@@ -53,3 +66,7 @@ export const cases = [
     work: 'Sắp lại nội dung theo hành trình của cô dâu chú rể: concept mới, phim trường riêng, trước và sau trang điểm, ảnh cặp đôi thật. Quảng cáo theo mùa cưới, nhắm vào cảm xúc của cặp đôi thay vì liệt kê dịch vụ.'
   }
 ];
+
+export function getCase(slug){
+  return cases.find(c => c.slug === slug);
+}

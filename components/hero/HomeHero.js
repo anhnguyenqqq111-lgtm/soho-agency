@@ -2,58 +2,51 @@ import styles from './HomeHero.module.css';
 import Button from '../ui/Button';
 import Icon from '../ui/Icon';
 import RevenueToggle from './RevenueToggle';
-import PartnerBadge from '../proof/PartnerBadge';
 import {partners} from '../data/proof';
 import {company} from '../data/company';
+import {sitePath} from '../paths';
 
 /*
-  Hero trang chủ, dàn chữ kiểu báo (tham chiếu Ramp trên styles.refero.design):
-  1. H1 = tên + nghề (luật viết chữ số 1), không nhãn nhỏ phía trên.
-  2. Mô tả nói thẳng với đúng nhóm khách, một nút chính, số điện thoại; bên phải ba bằng chứng có tên riêng (luật số 5).
-  3. Khung biểu đồ "đo bằng traffic hay doanh thu" trải rộng bên dưới.
+  Hero trang chủ, hai cột (học bố cục Positivus, không lấy hình):
+  trái: dòng bằng chứng (Google Partner + khu vực), H1 = tên + nghề + lợi ích, câu giá trị, nút chính + nút phụ;
+  phải: mảng nghệ thuật gradient Signature (kit 3) với thẻ biểu đồ "đo bằng lượt truy cập hay doanh thu",
+        hình 3D CC0 và chip Google Partner. Chữ luôn nằm trên nền trắng đặc, không đặt trên gradient.
 */
 export default function HomeHero(){
   const google = partners.find(p => p.verified && p.logo);
   const tel = company.phone ? company.phone.replace(/\s/g, '') : null;
   return (
     <section className={styles.hero}>
-      <div className="container">
-        <div className={styles.top}>
-          <h1 className={styles.title}>SOHO Agency làm SEO và quảng cáo <span className="hl">đo bằng doanh thu</span></h1>
-          <div className={styles.lead}>
-            <p className={styles.text}>Dành cho doanh nghiệp vừa và nhỏ ở TP.HCM đã có sản phẩm và khách mua. Hai tuần một lần, bạn nhận báo cáo bằng số đơn và doanh thu của từng kênh, không bằng lượt xem.</p>
-            <div className={styles.actions}>
-              <Button href="#lien-he">Đặt lịch tư vấn</Button>
-              {tel && <a href={`tel:${tel}`} className={styles.call}><Icon name="phone" size={18}/>{company.phone}</a>}
-            </div>
-            <p className={styles.note}>Buổi đầu 30 phút: SOHO xem website và các kênh bạn đang chạy, rồi chỉ ra 3 việc nên làm trước.</p>
+      <div className={`container ${styles.grid}`}>
+        <div className={styles.copy}>
+          <p className={styles.eyebrow}>
+            <span className={styles.dot} aria-hidden="true"/>
+            {google ? `${google.name} ${google.year}` : 'SOHO Agency'} · TP. Hồ Chí Minh
+          </p>
+          <h1 className={styles.title}>SOHO Agency giúp doanh nghiệp <span className="hl">tăng trưởng bằng</span> SEO, quảng cáo và website</h1>
+          <p className={styles.lead}>Từ chiến lược đến tự tay triển khai: SEO, Google Ads, Facebook Ads, website và nhận diện thương hiệu. Báo cáo bằng khách hàng và doanh thu, không bằng lượt xem.</p>
+          <div className={styles.actions}>
+            <Button href="#lien-he">Nhận tư vấn</Button>
+            <Button href="/ket-qua" variant="secondary" arrow="right">Xem dự án</Button>
           </div>
-
-          <ul className={styles.proofs}>
-            {google && (
-              <li>
-                <PartnerBadge partner={google} size={56} showNeed={false} tipId="tip-partner-hero"/>
-                <span><strong>{google.name} {google.year}</strong>Google xác nhận SOHO quản lý tối thiểu 10.000 USD quảng cáo trong 90 ngày.</span>
-              </li>
-            )}
-            <li>
-              <b className={styles.big}>2 tuần</b>
-              <span><strong>Một vòng làm việc</strong>Mỗi vòng có giả thuyết, việc cần làm và con số để giữ, sửa hoặc dừng.</span>
-            </li>
-            <li>
-              <span className={styles.iconBox}><Icon name="badge-check" size={22}/></span>
-              <span><strong>Tài khoản đứng tên bạn</strong>Google Ads, Meta và GA4 thuộc doanh nghiệp. SOHO chỉ được cấp quyền.</span>
-            </li>
-          </ul>
+          {tel && <p className={styles.note}>Hoặc gọi <a href={`tel:${tel}`}><Icon name="phone" size={16}/>{company.phone}</a> · {company.hours}</p>}
         </div>
 
-        <figure className={styles.instrument}>
-          <figcaption className={styles.caption}>
-            <strong>Cùng một chiến dịch, hai cách đo.</strong>
-            <span>Đo bằng lượt truy cập thì báo cáo luôn đẹp. Đo bằng doanh thu mới biết kênh nào đáng giữ. Bấm để so.</span>
-          </figcaption>
-          <div className={styles.chart}><RevenueToggle/></div>
-        </figure>
+        <div className={styles.art}>
+          <div className={styles.canvas} aria-hidden="true">
+            <img src={sitePath('/decor/target.webp')} alt="" width="400" height="400" className={styles.obj} fetchPriority="low"/>
+          </div>
+          <div className={styles.card}>
+            <p className={styles.cardTitle}>Cùng một chiến dịch, hai cách đo</p>
+            <RevenueToggle/>
+          </div>
+          {google && (
+            <a className={styles.chip} href={google.profileUrl} target="_blank" rel="noopener noreferrer">
+              <img src={sitePath(google.logo)} alt="" width="152" height="146"/>
+              <span><strong>{google.name} {google.year}</strong>Xem hồ sơ trên Google</span>
+            </a>
+          )}
+        </div>
       </div>
     </section>
   );

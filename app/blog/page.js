@@ -10,6 +10,7 @@ import CtaBand from '../../components/ui/CtaBand';
 import {getArticlesByCategory, getLatestArticles} from '../../components/blogData';
 
 export const metadata = {
+  alternates: {canonical: '/blog/'},
   title: 'Blog',
   description: 'Ghi chép của đội SOHO về SEO, AI Search, quảng cáo, content, CRO, đo lường và các framework làm marketing từng bước cho doanh nghiệp Việt Nam.'
 };
@@ -25,7 +26,7 @@ export default function BlogPage(){
   return (
     <>
       <Header activeNav="blog"/>
-      <main>
+      <main id="main">
         <Hero tone="blog" crumbs={[{label: 'Blog'}]} title={<>Blog SOHO Agency: <span className="hl">ghi chép từ việc thật</span></>} tagline="Hướng dẫn từng bước về SEO, quảng cáo và đo lường, viết để đội marketing của bạn làm theo được." visual={<BlogVisual/>}/>
         <Section id="noi-dung" tone="white" title={<>Bài viết <span className="hl">mới nhất</span></>} spacing="sm">
           <div className={styles.latest}>{latest.map((p, i) => <BlogCard key={p.slug} post={p} delay={i * 80}/>)}</div>

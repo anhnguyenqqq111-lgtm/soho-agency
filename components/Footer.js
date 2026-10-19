@@ -1,6 +1,6 @@
 import styles from './Footer.module.css';
 import {sitePath} from './paths';
-import {servicePages} from './servicePagesData';
+import {getCoreServices} from './servicePagesData';
 import {company} from './data/company';
 import {partners} from './data/proof';
 import Fill from './ui/Fill';
@@ -11,8 +11,8 @@ import Icon from './ui/Icon';
 export default function Footer(){
   const year = new Date().getFullYear();
   const columns = [
-    {title: 'Dịch vụ', links: servicePages.map(s => ({label: s.menuTitle, href: `/dich-vu/${s.slug}`}))},
-    {title: 'Về SOHO', links: [
+    {title: 'Dịch vụ', links: [...getCoreServices().map(s => ({label: s.coreTitle, href: `/dich-vu/${s.slug}`})), {label: 'Tất cả dịch vụ', href: '/dich-vu'}]},
+    {title: 'Công ty', links: [
       {label: 'Giới thiệu', href: '/ve-soho'},
       {label: 'Giải pháp', href: '/giai-phap'},
       {label: 'Dự án', href: '/ket-qua'},
@@ -26,7 +26,7 @@ export default function Footer(){
       <div className={`container ${styles.grid}`}>
         <div className={styles.brand}>
           <a href={sitePath('/')} className={styles.logo} aria-label="SOHO Agency, về trang chủ">
-            <img src={sitePath('/brand/soho-logo-white.svg')} alt="SOHO Agency" width="568" height="234"/>
+            <img src={sitePath('/brand/soho-logo-white.webp')} alt="SOHO Agency" width="305" height="120" loading="lazy"/>
           </a>
           <h2 className={styles.company}><Fill value={company.legalName} need="CẦN TÊN PHÁP NHÂN"/></h2>
           <ul className={styles.info}>

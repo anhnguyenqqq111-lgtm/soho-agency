@@ -3,7 +3,7 @@ import {sitePath} from '../paths';
 import Icon from './Icon';
 
 /*
-  variant: primary (nền cam, chữ Midnight: chỉ dùng cho hành động chính "Đặt lịch tư vấn"),
+  variant: primary (nền cam, chữ Midnight: chỉ dùng cho hành động chính "Nhận tư vấn"),
            secondary (viền xám), text (link có mũi tên)
   size: md | sm. Vùng bấm tối thiểu 44px (luật giao diện Apple).
   arrow: 'up' (↗, mặc định) | 'right' (→) | false. Icon từ bộ Lucide.

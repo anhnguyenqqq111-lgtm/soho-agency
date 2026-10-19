@@ -35,7 +35,7 @@ export default function StickyCta({phone, contactHref}){
   return (
     <div className={`${styles.bar} ${show ? styles.on : ''}`} aria-hidden={!show} inert={!show}>
       {tel && <a href={`tel:${tel}`} className={styles.call}><Icon name="phone" size={18}/>Gọi</a>}
-      <a href={contactHref} className={styles.cta}>Đặt lịch tư vấn</a>
+      <a href={contactHref} className={styles.cta}>Nhận tư vấn</a>
     </div>
   );
 }

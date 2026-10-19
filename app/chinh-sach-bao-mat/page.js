@@ -3,6 +3,7 @@ import Fill from '../../components/ui/Fill';
 import {company} from '../../components/data/company';
 
 export const metadata = {
+  alternates: {canonical: '/chinh-sach-bao-mat/'},
   title: 'Chính sách bảo mật',
   description: 'Cách SOHO Agency thu thập, sử dụng và bảo vệ thông tin cá nhân bạn gửi qua website.'
 };

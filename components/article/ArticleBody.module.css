@@ -3,7 +3,7 @@
 .body{grid-column:5 / -1;min-width:0}
 
 .tocDesktop{position:sticky;top:calc(var(--header-h) + 24px);max-height:calc(100vh - var(--header-h) - 48px);overflow-y:auto;padding:20px;background:var(--gray);border-radius:var(--r-card)}
-.tocLabel{font-size:var(--fs-meta);font-weight:700;color:var(--ink);margin-bottom:12px}
+.tocLabel{font-size:var(--fs-meta);font-weight:600;color:var(--ink);margin-bottom:12px}
 .tocList{list-style:none;margin:0;padding:0;display:grid;gap:2px}
 .tocList a{display:grid;grid-template-columns:28px minmax(0,1fr);gap:6px;padding:8px 10px;border-radius:var(--r-sm);font-size:14px;line-height:1.4;color:var(--ink-2);text-decoration:none;transition:background-color var(--t-fast),color var(--t-fast)}
 .tocList a:hover{background:var(--white);color:var(--ink)}
@@ -14,12 +14,12 @@
 
 .section{padding-bottom:56px;margin-bottom:56px;border-bottom:1px solid var(--line)}
 .section:last-child{border-bottom:0;margin-bottom:0}
-.index{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--gray);color:var(--ink);font-size:13px;font-weight:800;margin-bottom:14px}
+.index{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--gray);color:var(--ink);font-size:13px;font-weight:600;margin-bottom:14px}
 .heading{font-size:clamp(24px,2.6vw,34px);line-height:1.15;max-width:26ch;margin-bottom:28px}
 
 .faq{display:grid;gap:12px;max-width:72ch}
 .faqItem{background:var(--gray);border-radius:var(--r-card);overflow:hidden}
-.faqItem summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:minmax(0,1fr) 36px;gap:16px;align-items:center;padding:20px 24px;font-size:17px;font-weight:700;line-height:1.35}
+.faqItem summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:minmax(0,1fr) 36px;gap:16px;align-items:center;padding:20px 24px;font-size:17px;font-weight:600;line-height:1.35}
 .faqItem summary::-webkit-details-marker{display:none}
 .faqItem summary::after{content:'↓';width:36px;height:36px;border-radius:50%;background:var(--white);display:grid;place-items:center;font-size:14px;transition:transform var(--t-med)}
 .faqItem[open] summary::after{transform:rotate(180deg)}
@@ -30,7 +30,7 @@
   .toc,.body{grid-column:1 / -1}
   .tocDesktop{display:none}
   .tocMobile{display:block;margin-bottom:40px;background:var(--gray);border-radius:var(--r-card);padding:4px 16px}
-  .tocMobile summary{cursor:pointer;padding:14px 0;font-weight:700;font-size:15px}
+  .tocMobile summary{cursor:pointer;padding:14px 0;font-weight:600;font-size:15px}
   .tocMobile .tocList{padding-bottom:12px}
   .section{padding-bottom:40px;margin-bottom:40px}
 }

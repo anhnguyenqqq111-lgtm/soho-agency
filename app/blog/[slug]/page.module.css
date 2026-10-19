@@ -5,7 +5,7 @@
 .crumbs li + li::before{content:'/';margin-right:6px;color:var(--gray-2)}
 .crumbs a{color:var(--ink-2)}
 .crumbs a:hover{color:var(--accent)}
-.eyebrow{font-size:var(--fs-meta);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.eyebrow{font-size:var(--fs-meta);font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
 .title{font-size:clamp(32px,4.4vw,58px);line-height:1.06;letter-spacing:-.025em;max-width:22ch}
 .lead{font-size:var(--fs-lead);line-height:1.55;color:var(--ink-2);max-width:62ch}
 .byline{font-size:var(--fs-small);color:var(--ink-3);padding-top:4px}
@@ -20,7 +20,7 @@
 .body{max-width:none;font-size:17px}
 .author{display:grid;grid-template-columns:52px minmax(0,1fr);gap:16px;align-items:center;margin-top:48px;padding-top:28px;border-top:1px solid var(--line)}
 .avatar{width:52px;height:52px;border-radius:50%;background:var(--grad-brand)}
-.authorName{font-weight:700}
+.authorName{font-weight:600}
 .authorRole{font-size:var(--fs-meta);color:var(--ink-2)}
 .related{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--gap)}
 @media (max-width:900px){.related{grid-template-columns:minmax(0,1fr)}}

@@ -9,6 +9,7 @@ import CtaBand from '../../components/ui/CtaBand';
 import {getSolutionsByGroup} from '../../components/solutionPagesData';
 
 export const metadata = {
+  alternates: {canonical: '/giai-phap/'},
   title: 'Giải pháp',
   description: 'Giải pháp của SOHO Agency theo mô hình kinh doanh: bán cho doanh nghiệp, bán hàng online, doanh nghiệp nhỏ. Làm theo vòng 2 tuần, đo bằng doanh thu.'
 };
@@ -23,7 +24,7 @@ export default function SolutionsPage(){
   return (
     <>
       <Header activeNav="solutions"/>
-      <main>
+      <main id="main">
         <Hero tone="solutions" crumbs={[{label: 'Giải pháp'}]} title={<>Giải pháp của SOHO <span className="hl">theo mô hình kinh doanh</span></>} tagline="Bán cho doanh nghiệp, bán hàng online hay doanh nghiệp nhỏ: mỗi mô hình một thứ tự ưu tiên." visual={<SolutionsVisual/>}/>
         <PageHeader title="Bắt đầu từ mô hình kinh doanh của bạn" lead="Mỗi giải pháp xuất phát từ thị trường, biên lợi nhuận, chu kỳ bán hàng và năng lực vận hành hiện có, rồi mới chọn kênh."/>
         {groups.map(({group, items}, i) => (

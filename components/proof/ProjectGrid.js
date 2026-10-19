@@ -3,21 +3,21 @@ import Icon from '../ui/Icon';
 import {sitePath} from '../paths';
 
 /*
-  Lưới dự án đã công bố (components/data/cases.js), ảnh thật, mỗi thẻ trỏ xuống phần chi tiết cùng trang (#slug).
+  Lưới dự án đã công bố (components/data/cases.js), ảnh thật, mỗi thẻ trỏ tới trang chi tiết /du-an/<slug>.
 */
 export default function ProjectGrid({projects}){
   return (
     <ul className={styles.grid}>
       {projects.map((p, i) => (
         <li key={p.slug} className={styles.item} data-reveal="" style={{'--reveal-delay': `${i * 90}ms`}}>
-          <a href={`#${p.slug}`} className={styles.link}>
+          <a href={sitePath(`/du-an/${p.slug}`)} className={styles.link}>
             <div className={styles.media}><img src={sitePath(p.image)} alt={`Dự án ${p.name}`} loading="lazy" width="1200" height="560"/></div>
             <div className={styles.meta}>
               <p className={styles.scope}>{p.scope} · {p.period}</p>
               <h3 className={styles.name}>{p.name}</h3>
               <p className={styles.field}>{p.field}</p>
               <p className={styles.result}>{p.result}</p>
-              <span className={styles.more}>Đọc chi tiết <Icon name="arrow-down" size={16}/></span>
+              <span className={styles.more}>Xem chi tiết <Icon name="arrow-right" size={16}/></span>
             </div>
           </a>
         </li>

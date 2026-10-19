@@ -1,7 +1,21 @@
 export const serviceGroups = [
   'Được tìm thấy trên Google và AI',
   'Quảng cáo ra đơn',
+  'Website và thương hiệu',
   'Nội dung và đo lường'
+];
+
+/*
+  Sáu dịch vụ chính hiện ở trang chủ (đúng danh mục SOHO đang bán trên sohoagency.vn), theo thứ tự hiển thị.
+  coreTitle: tên ngắn trên thẻ; coreDesc: một câu lợi ích; icon: tên trong bộ Lucide (components/ui/Icon.js).
+*/
+export const coreServices = [
+  {slug: 'seo-tong-the', coreTitle: 'SEO website', icon: 'search', coreDesc: 'Khách tự tìm thấy bạn trên Google khi đang có nhu cầu.'},
+  {slug: 'google-ads-shopping', coreTitle: 'Google Ads', icon: 'mouse-pointer-click', coreDesc: 'Có khách ngay, tối ưu theo đơn có lãi chứ không theo lượt bấm.', featured: true},
+  {slug: 'meta-tiktok-ads', coreTitle: 'Facebook Ads', icon: 'megaphone', coreDesc: 'Quảng cáo Facebook và TikTok tạo nhu cầu, ra tin nhắn và đơn hàng.'},
+  {slug: 'thiet-ke-website', coreTitle: 'Thiết kế website', icon: 'monitor-smartphone', coreDesc: 'Website nhanh, chuẩn SEO, dẫn khách tới bước liên hệ.'},
+  {slug: 'nhan-dien-thuong-hieu', coreTitle: 'Nhận diện thương hiệu', icon: 'palette', coreDesc: 'Logo, màu và chữ nhất quán ở mọi nơi khách gặp bạn.'},
+  {slug: 'thiet-ke-mobile-app', coreTitle: 'Thiết kế Mobile App', icon: 'smartphone', coreDesc: 'App Android và iOS cho đặt lịch, đặt hàng, quản lý nội bộ.'}
 ];
 
 export const servicePages = [
@@ -108,6 +122,57 @@ export const servicePages = [
     proof: 'Hợp với mọi doanh nghiệp đang trả tiền cho lượt truy cập, hoặc đã có khách từ Google nhưng chưa khai thác hết.'
   },
   {
+    slug: 'thiet-ke-website',
+    menuDesc: 'Website nhanh, chuẩn SEO, dễ quản trị, dẫn khách tới bước liên hệ',
+    deliverables: ['Sơ đồ thông tin và đường đi của người dùng', 'Bản thiết kế giao diện máy tính và điện thoại', 'Website hoàn chỉnh đã kiểm thử', 'Cài đặt đo lường khách liên hệ', 'Tài liệu và buổi hướng dẫn tự quản trị'],
+    artifact: {image: null, need: 'Ảnh chụp một website SOHO đã làm, đã được khách đồng ý'},
+    eyebrow: 'Thiết kế website',
+    title: 'Thiết kế website cho doanh nghiệp cần một công cụ bán hàng chạy cả ngày',
+    menuTitle: 'Thiết kế website',
+    category: 'Website và thương hiệu',
+    intro: 'Dành cho doanh nghiệp cần website mới hoặc làm lại: đúng nhận diện thương hiệu, chạy tốt trên điện thoại, chuẩn SEO và đo được khách liên hệ.',
+    promise: 'SOHO thiết kế theo yêu cầu, không dùng mẫu có sẵn: nghiên cứu ngành và khách hàng, vẽ đường đi của người dùng, thiết kế giao diện, lập trình, đưa nội dung lên và hướng dẫn bạn tự quản trị.',
+    insight: 'Website là nơi đầu tiên khách tìm đến để hiểu về bạn. Website đẹp mà chậm trên điện thoại, hoặc không dẫn khách tới bước liên hệ, là bỏ phí tiền quảng cáo và SEO đổ vào.',
+    outcomes: ['Giao diện đúng nhận diện thương hiệu, thống nhất trên mọi thiết bị', 'Mỗi trang có mục tiêu rõ: gọi, nhắn tin, đặt lịch hoặc mua', 'Sẵn sàng cho SEO và quảng cáo: tải nhanh, đo được hành động của khách'],
+    pains: ['Website cũ chậm, vỡ bố cục trên điện thoại', 'Có website nhưng gần như không ai liên hệ qua đó', 'Muốn sửa nội dung phải nhờ người khác, mất vài ngày'],
+    process: ['Tư vấn nhu cầu, nghiên cứu ngành và chân dung khách hàng', 'Lên chiến lược, đường đi của người dùng và sơ đồ thông tin', 'Thiết kế giao diện theo nhận diện thương hiệu', 'Lập trình, tối ưu tốc độ trên điện thoại, kiểm thử tính năng', 'Đưa nội dung lên, chạy chính thức, hướng dẫn quản trị và bảo trì'],
+    proof: 'Có thể tích hợp đặt lịch, thanh toán, quản lý khách hàng, email marketing và nhiều ngôn ngữ khi cần.'
+  },
+  {
+    slug: 'nhan-dien-thuong-hieu',
+    menuDesc: 'Logo, màu, chữ và cách dùng nhất quán ở mọi điểm chạm',
+    deliverables: ['Logo và các phiên bản sử dụng', 'Bảng màu và kiểu chữ', 'Bộ ứng dụng: văn phòng phẩm, bao bì, mạng xã hội', 'File thiết kế, file in và file xem trước', 'Bộ hướng dẫn thương hiệu (brand guideline)'],
+    artifact: {image: null, need: 'Ảnh một bộ nhận diện SOHO đã làm, đã được khách đồng ý'},
+    eyebrow: 'Nhận diện thương hiệu',
+    title: 'Thiết kế nhận diện thương hiệu nhất quán từ online đến cửa hàng',
+    menuTitle: 'Nhận diện thương hiệu',
+    category: 'Website và thương hiệu',
+    intro: 'Dành cho doanh nghiệp mới ra mắt, đổi định vị, hoặc đang có hình ảnh mỗi nơi một kiểu.',
+    promise: 'SOHO thiết kế logo, bộ nhận diện và hệ thống hình ảnh dựa trên tính cách thương hiệu, khách hàng mục tiêu và định vị, để dùng được ngay trên web, mạng xã hội, bao bì và văn phòng phẩm.',
+    insight: 'Mỗi lần thương hiệu xuất hiện là một lần khách nhớ thêm hoặc quên bạn. Chỉ một chỗ lệch về màu, chữ hay logo cũng đủ làm giảm thiện cảm và phá vỡ sự nhất quán đã xây.',
+    outcomes: ['Khách nhận ra thương hiệu nhanh hơn ở mọi điểm chạm', 'Hình ảnh thống nhất giữa web, mạng xã hội, bao bì và cửa hàng', 'Có bộ hướng dẫn để đội nhà và đối tác tự làm đúng'],
+    pains: ['Logo và màu sắc mỗi nơi một kiểu', 'Thương hiệu trông giống đối thủ, khó nhớ', 'Thiết kế đẹp trên màn hình nhưng khó dùng khi in hay làm quảng cáo'],
+    process: ['Tư vấn phạm vi, báo giá và ký hợp đồng', 'Tìm hiểu doanh nghiệp: giá trị cốt lõi, tầm nhìn, tính cách thương hiệu', 'Nghiên cứu ngành, khách hàng mục tiêu và đối thủ', 'Đề xuất hướng: màu sắc, kiểu chữ, phong cách đồ họa, cấu trúc logo', 'Thiết kế logo và các ứng dụng: văn phòng phẩm, bao bì, mạng xã hội', 'Trình bày, chỉnh theo phản hồi, đóng gói và bàn giao kèm hướng dẫn'],
+    proof: 'SOHO đưa nhiều phương án để chọn và làm theo mốc thời gian rõ, hạn chế sửa đi sửa lại.'
+  },
+  {
+    slug: 'thiet-ke-mobile-app',
+    menuDesc: 'Ứng dụng Android và iOS: đặt lịch, đặt hàng, quản lý nội bộ',
+    deliverables: ['Bản mô tả tính năng', 'Khung màn hình và luồng sử dụng', 'Thiết kế giao diện', 'App Android và iOS đã kiểm thử', 'Kế hoạch bảo trì và cập nhật'],
+    artifact: {image: null, need: 'Ảnh màn hình một app SOHO đã làm, đã được khách đồng ý'},
+    eyebrow: 'Thiết kế Mobile App',
+    title: 'Thiết kế và phát triển ứng dụng di động cho Android và iOS',
+    menuTitle: 'Thiết kế Mobile App',
+    category: 'Website và thương hiệu',
+    intro: 'Dành cho doanh nghiệp cần app đặt lịch, đặt hàng, bán hàng, dịch vụ tiện ích hoặc quản lý nội bộ.',
+    promise: 'SOHO đi cùng bạn từ ý tưởng, khung màn hình, thiết kế giao diện, lập trình đến bảo trì và cập nhật. App có thể nối với website, hệ thống quản trị hoặc phần mềm quản lý khách hàng đang có.',
+    insight: 'App đáng làm khi khách quay lại thường xuyên: đặt lịch, đặt hàng, tích điểm. Vì vậy việc đầu tiên là xác định khách dùng app để làm gì, trước khi vẽ bất kỳ màn hình nào.',
+    outcomes: ['Giao diện dễ dùng, chạy mượt trên Android và iOS', 'Nối với website và hệ thống đang có, không nhập liệu hai lần', 'Có người bảo trì và cập nhật sau khi ra mắt'],
+    pains: ['Khách phải gọi điện hoặc nhắn tin mới đặt được lịch, đặt được hàng', 'Dữ liệu khách nằm rải rác, không ai nắm hết', 'App cũ chậm, hay lỗi, không ai cập nhật'],
+    process: ['Làm rõ ý tưởng và việc khách sẽ làm trên app', 'Vẽ khung màn hình và luồng sử dụng', 'Thiết kế giao diện và trải nghiệm', 'Lập trình, nối với website hoặc hệ thống quản trị', 'Kiểm thử, đưa lên kho ứng dụng, bảo trì và cập nhật'],
+    proof: 'Phù hợp cho app đặt lịch, đặt hàng, thương mại điện tử, dịch vụ tiện ích hoặc quản lý nội bộ.'
+  },
+  {
     slug: 'content-marketing-pr',
     menuDesc: 'Bài chuyên sâu, câu chuyện khách hàng và góc cho báo chí',
     deliverables: ['Bản đồ chủ đề và câu hỏi của khách', 'Lịch nội dung', 'Bài chủ đề và bài vệ tinh', 'Câu chuyện khách hàng', 'Bộ tài liệu cho đội sale', 'Báo cáo số khách đã đọc bài trước khi mua'],
@@ -159,6 +224,10 @@ export const servicePages = [
     proof: 'Hợp với SME đang tăng tốc, B2B bán hàng chu kỳ dài và đội muốn ra quyết định marketing gọn.'
   }
 ];
+
+export function getCoreServices(){
+  return coreServices.map(c => ({...servicePages.find(s => s.slug === c.slug), ...c}));
+}
 
 export function getServicePage(slug){
   return servicePages.find(service => service.slug === slug);

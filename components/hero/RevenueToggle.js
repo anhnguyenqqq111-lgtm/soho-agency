@@ -61,27 +61,25 @@ export default function RevenueToggle(){
         <button type="button" aria-pressed={mode === 'revenue'} className={mode === 'revenue' ? styles.on : ''} onClick={() => pick('revenue')}>Đo bằng doanh thu</button>
       </div>
 
-      <svg viewBox="0 0 1140 480" className={styles.svg} aria-hidden="true">
-        <defs>
-          <linearGradient id="rt-line" x1="0" x2="1"><stop offset="0" stopColor="#FF7A00"/><stop offset=".55" stopColor="#FF416C"/><stop offset="1" stopColor="#765BFF"/></linearGradient>
-          <linearGradient id="rt-area" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stopColor="#FF416C" stopOpacity=".2"/><stop offset="1" stopColor="#765BFF" stopOpacity="0"/></linearGradient>
-        </defs>
-        {[0, 1, 2, 3, 4].map(i => <line key={i} x1="0" x2="1140" y1={60 + i * 95} y2={60 + i * 95} className={styles.grid}/>)}
-
-        <g key={mode} className={styles.lines}>
-          <path d={`${rev} L1060 440 L80 440 Z`} fill="url(#rt-area)" className={`${styles.area} ${mode === 'traffic' ? styles.areaFlat : ''}`}/>
-          <path d={smooth(d.traffic)} className={styles.traffic} pathLength="1"/>
-          <path d={rev} className={styles.revenue} pathLength="1"/>
-          <circle cx={end[0]} cy={end[1]} r="9" className={mode === 'revenue' ? styles.pulse : styles.dotFlat}/>
-          <g className={styles.tag} transform={`translate(${mode === 'revenue' ? 760 : 660} ${mode === 'revenue' ? 14 : 300})`}>
-            <rect width={mode === 'revenue' ? 300 : 400} height="44" rx="12" className={mode === 'revenue' ? styles.tagHot : styles.tagCold}/>
-            <text x={mode === 'revenue' ? 150 : 200} y="28" className={styles.tagText}>{d.tag}</text>
+      <div className={styles.plot}>
+        <p key={mode} className={`${styles.tagPill} ${mode === 'revenue' ? styles.tagPillHot : ''}`}>{d.tag}</p>
+        <div className={styles.chartBox}>
+        <svg viewBox="0 0 1140 450" className={styles.svg} aria-hidden="true" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="rt-line" x1="0" x2="1"><stop offset="0" stopColor="#FF7A00"/><stop offset=".55" stopColor="#FF416C"/><stop offset="1" stopColor="#765BFF"/></linearGradient>
+            <linearGradient id="rt-area" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stopColor="#FF416C" stopOpacity=".2"/><stop offset="1" stopColor="#765BFF" stopOpacity="0"/></linearGradient>
+          </defs>
+          {[0, 1, 2, 3, 4].map(i => <line key={i} x1="0" x2="1140" y1={60 + i * 95} y2={60 + i * 95} className={styles.grid} vectorEffect="non-scaling-stroke"/>)}
+          <g key={mode} className={styles.lines}>
+            <path d={`${rev} L1060 440 L80 440 Z`} fill="url(#rt-area)" className={`${styles.area} ${mode === 'traffic' ? styles.areaFlat : ''}`}/>
+            <path d={smooth(d.traffic)} className={styles.traffic} pathLength="1"/>
+            <path d={rev} className={styles.revenue} pathLength="1"/>
           </g>
-        </g>
-
-        <text x="80" y="466" className={styles.axis}>Tháng 1</text>
-        <text x="1060" y="466" className={`${styles.axis} ${styles.end}`}>Tháng 12</text>
-      </svg>
+        </svg>
+        <span key={`dot-${mode}`} className={mode === 'revenue' ? styles.pulse : styles.dotFlat} style={{left: `${(end[0] / 1140) * 100}%`, top: `${(end[1] / 450) * 100}%`}} aria-hidden="true"/>
+        </div>
+        <div className={styles.axis} aria-hidden="true"><span>Tháng 1</span><span>Tháng 12</span></div>
+      </div>
 
       <figcaption className={styles.legend}>
         <span><i className={styles.keyTraffic}/>Lượt truy cập</span>

@@ -1,0 +1,31 @@
+.wrap{display:grid;gap:24px}
+.leadLink,.card{display:grid;height:100%;border:1px solid var(--line);border-radius:var(--r-card);overflow:hidden;background:var(--white);color:var(--ink);text-decoration:none;transition:border-color var(--t-fast),box-shadow var(--t-med)}
+.leadLink:hover,.card:hover{border-color:var(--ink);box-shadow:0 18px 40px rgba(16,18,28,.08);color:var(--ink)}
+.leadLink{grid-template-columns:minmax(0,7fr) minmax(0,5fr)}
+.leadMedia,.media{position:relative;overflow:hidden;background:var(--gray)}
+.leadMedia img,.media img{width:100%;height:100%;object-fit:cover;transition:transform 600ms var(--ease)}
+.leadLink:hover img,.card:hover img{transform:scale(1.03)}
+.leadMedia{min-height:340px}
+.leadBody{display:grid;align-content:start;gap:14px;padding:clamp(22px,3vw,36px)}
+.meta{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-3)}
+.leadName{font-family:var(--font-display);font-weight:500;font-size:clamp(28px,3vw,38px);line-height:1.12}
+.ps{margin:0;display:grid;gap:10px}
+.ps dt{font-size:12px;font-weight:600;color:var(--ink-3);margin-bottom:2px}
+.ps dd{margin:0;font-size:15px;line-height:1.55;color:var(--ink-2)}
+.kpis{list-style:none;margin:6px 0 0;padding:16px 0 0;border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.kpis li{display:grid;gap:4px}
+.kpis b{font-family:var(--font-display);font-style:italic;font-weight:500;font-size:clamp(26px,2.4vw,34px);line-height:1;color:var(--brand-ink)}
+.kpis span{font-size:12.5px;line-height:1.4;color:var(--ink-3)}
+.more{display:inline-flex;align-items:center;gap:6px;margin-top:6px;font-size:14px;font-weight:600}
+.more svg{transition:transform var(--t-fast)}
+.leadLink:hover .more svg,.card:hover .more svg{transform:translateX(3px)}
+
+.grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.card{grid-template-rows:auto 1fr}
+.media{aspect-ratio:16/9}
+.body{display:grid;align-content:start;gap:8px;padding:22px 22px 24px}
+.name{font-family:var(--font-display);font-weight:500;font-size:24px;line-height:1.2}
+.problem{font-size:14.5px;line-height:1.55;color:var(--ink-2)}
+.result{font-size:15px;font-weight:600;line-height:1.5;color:var(--brand-ink)}
+@media (max-width:980px){.leadLink{grid-template-columns:minmax(0,1fr)}.leadMedia{min-height:0;aspect-ratio:16/9}.grid{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:560px){.kpis{grid-template-columns:minmax(0,1fr)}}

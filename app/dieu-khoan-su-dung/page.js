@@ -4,6 +4,7 @@ import {company} from '../../components/data/company';
 import {sitePath} from '../../components/paths';
 
 export const metadata = {
+  alternates: {canonical: '/dieu-khoan-su-dung/'},
   title: 'Điều khoản sử dụng',
   description: 'Điều khoản sử dụng website của SOHO Agency.'
 };

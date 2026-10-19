@@ -3,46 +3,29 @@ import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import Hero from '../../components/hero/Hero';
 import {ServicesVisual} from '../../components/hero/Visuals';
-import PageHeader from '../../components/ui/PageHeader';
 import Section from '../../components/ui/Section';
 import LinkRows from '../../components/ui/LinkRows';
 import CtaBand from '../../components/ui/CtaBand';
-import Track from '../../components/diagrams/Track';
+import ServiceGroups from '../../components/ServiceGroups';
 import {getServicesByGroup} from '../../components/servicePagesData';
 
 export const metadata = {
+  alternates: {canonical: '/dich-vu/'},
   title: 'Dịch vụ',
-  description: 'Chín dịch vụ của SOHO Agency: SEO, SEO cho AI tìm kiếm, Google Maps, Google Ads, Meta và TikTok Ads, tối ưu trang đích, nội dung, đo lường GA4, tư vấn lộ trình. Chọn theo chỗ đang nghẽn.'
+  description: 'Dịch vụ của SOHO Agency: SEO, Google Ads, Facebook và TikTok Ads, thiết kế website, nhận diện thương hiệu, mobile app, nội dung và đo lường. Chọn theo chỗ đang nghẽn.'
 };
 
-const STAGES = [
-  {title: 'Được tìm thấy', text: 'Khách tìm bạn trên Google, Google Maps và câu trả lời của AI.'},
-  {title: 'Được chọn', text: 'Quảng cáo và trang đích biến lượt xem thành khách liên hệ.'},
-  {title: 'Được tin và đo đúng', text: 'Nội dung tạo niềm tin, số liệu cho biết kênh nào mang về doanh thu.'}
-];
-const IDS = ['tim-kiem', 'quang-cao', 'content-du-lieu'];
+const IDS = ['tim-kiem', 'quang-cao', 'website-thuong-hieu', 'noi-dung-do-luong'];
 
 export default function ServicesIndexPage(){
   const groups = getServicesByGroup();
   return (
     <>
       <Header activeNav="services"/>
-      <main>
-        <Hero tone="services" crumbs={[{label: 'Dịch vụ'}]} title={<>Chín dịch vụ marketing của SOHO, <span className="hl">chọn theo chỗ nghẽn</span></>} tagline="Không bán gói. Mỗi dịch vụ giải một chỗ nghẽn cụ thể trên đường khách tới đơn hàng." visual={<ServicesVisual labels={groups.flatMap(g => g.items.map(s => s.menuTitle))}/>}/>
-        <PageHeader
-          title="Bạn đang tắc ở chỗ nào?"
-          lead="Mỗi doanh nghiệp tắc ở một chỗ khác nhau: không ai tìm thấy, có người tìm thấy nhưng không mua, hoặc có mua nhưng không biết kênh nào mang lại."
-        />
-        <Section title={<>Ba nhóm dịch vụ, <span className="hl">ba chặng</span> trên hành trình khách hàng</>}>
-          <Track
-            items={groups.map(({group, items}, i) => ({
-              meta: group,
-              title: STAGES[i].title,
-              text: STAGES[i].text,
-              acc: i === 2,
-              links: items.map(s => ({label: s.menuTitle, href: `/dich-vu/${s.slug}`}))
-            }))}
-          />
+      <main id="main">
+        <Hero tone="services" crumbs={[{label: 'Dịch vụ'}]} title={<>Dịch vụ của SOHO Agency: <span className="hl">marketing, website, thương hiệu</span></>} tagline="Không bán gói. Mỗi dịch vụ giải một chỗ nghẽn cụ thể trên đường khách tới đơn hàng." visual={<ServicesVisual labels={groups.flatMap(g => g.items.map(s => s.menuTitle))}/>}/>
+        <Section id="noi-dung" title={<>Bạn đang tắc <span className="hl">ở chỗ nào?</span></>} intro="Không ai tìm thấy, có người xem mà không mua, hay có mua mà không biết kênh nào mang lại. Chọn vấn đề, các dịch vụ nên làm trước sẽ sáng lên.">
+          <ServiceGroups groups={groups.map(g => ({group: g.group, items: g.items.map(({slug, menuTitle, menuDesc}) => ({slug, menuTitle, menuDesc}))}))}/>
         </Section>
         {groups.map(({group, items}, i) => (
           <Section key={group} id={IDS[i]} tone={i % 2 ? 'white' : 'gray'} title={group} spacing="sm">

@@ -12,9 +12,9 @@ import Testimonials from '../../components/proof/Testimonials';
 import {cases} from '../../components/data/cases';
 import {clients} from '../../components/data/clients';
 import LogoMarquee from '../../components/proof/LogoMarquee';
-import {sitePath} from '../../components/paths';
 
 export const metadata = {
+  alternates: {canonical: '/ket-qua/'},
   title: 'Dự án SOHO đã làm và cách đo kết quả',
   description: 'Le Viva Resort, King Decor Luxury, Kronos Luxury Timepieces, Helen Bridal: bối cảnh, việc SOHO đã làm và kết quả. Cách SOHO đo từng kênh bằng đơn hàng và doanh thu.'
 };
@@ -32,7 +32,7 @@ export default function ResultsPage(){
   return (
     <>
       <Header activeNav="results"/>
-      <main>
+      <main id="main">
         <Hero tone="results" crumbs={[{label: 'Dự án'}]} title={<>Dự án SOHO đã làm, <span className="hl">kể bằng kết quả</span></>} tagline="Bốn dự án đã công bố: một khu nghỉ dưỡng, một đơn vị thiết kế thi công, một nhà phân phối đồng hồ, một studio ảnh cưới." visual={<ResultsVisual/>}/>
         <PageHeader title="Đo bằng đơn hàng, không bằng lượt xem" lead="Lượt truy cập và lượt bấm vẫn được theo dõi, nhưng không phải thước đo chính. SOHO nối số liệu quảng cáo với số đơn và doanh thu trong sổ bán hàng của bạn."/>
 
@@ -60,32 +60,6 @@ export default function ResultsPage(){
           </div>
         </Section>
 
-        <Section title={<>Từng dự án, <span className="hl">SOHO đã làm gì</span></>}>
-          <ul className={styles.cases}>
-            {cases.map((c, i) => (
-              <li key={c.slug} id={c.slug} className={styles.case} data-reveal="" style={{'--reveal-delay': `${i * 80}ms`}}>
-                <div className={styles.caseHead}>
-                  <img src={sitePath(c.image)} alt={`Dự án ${c.name}`} loading="lazy" className={styles.caseImg} width="1200" height="560"/>
-                  <h3>{c.name}</h3>
-                  <p className={styles.caseField}>{c.field}</p>
-                  <p className={styles.caseScope}>{c.scope} · {c.period}</p>
-                </div>
-                <div className={styles.caseBody}>
-                  <dl>
-                    <div><dt>Bối cảnh</dt><dd>{c.context}</dd></div>
-                    <div><dt>Việc SOHO làm</dt><dd>{c.work}</dd></div>
-                    <div><dt>Kết quả</dt><dd>{c.result}</dd></div>
-                  </dl>
-                  {c.kpis && (
-                    <ul className={styles.kpis}>
-                      {c.kpis.map(k => <li key={k.label}><b>{k.value}</b><span>{k.label}</span></li>)}
-                    </ul>
-                  )}
-                </div>
-              </li>
-            ))}
-          </ul>
-        </Section>
 
         <Section tone="gray" title={<>Khách hàng <span className="hl">nói gì</span></>}>
           <Testimonials/>

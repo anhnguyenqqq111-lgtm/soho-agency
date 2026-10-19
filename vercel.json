@@ -1,0 +1,70 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    {
+      "source": "/gioi-thieu",
+      "destination": "/ve-soho/",
+      "permanent": true
+    },
+    {
+      "source": "/du-an",
+      "destination": "/ket-qua/",
+      "permanent": true
+    },
+    {
+      "source": "/du-an/",
+      "destination": "/ket-qua/",
+      "permanent": true
+    },
+    {
+      "source": "/tin-tuc",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/tin-tuc/:slug*",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/seo-website",
+      "destination": "/dich-vu/seo-tong-the/",
+      "permanent": true
+    },
+    {
+      "source": "/quang-cao-google-ads",
+      "destination": "/dich-vu/google-ads-shopping/",
+      "permanent": true
+    },
+    {
+      "source": "/facebook-ads",
+      "destination": "/dich-vu/meta-tiktok-ads/",
+      "permanent": true
+    },
+    {
+      "source": "/thiet-ke-website",
+      "destination": "/dich-vu/thiet-ke-website/",
+      "permanent": true
+    },
+    {
+      "source": "/nhan-dien-thuong-hieu",
+      "destination": "/dich-vu/nhan-dien-thuong-hieu/",
+      "permanent": true
+    },
+    {
+      "source": "/thiet-ke-mobile-app",
+      "destination": "/dich-vu/thiet-ke-mobile-app/",
+      "permanent": true
+    },
+    {
+      "source": "/privacy-policy",
+      "destination": "/chinh-sach-bao-mat/",
+      "permanent": true
+    },
+    {
+      "source": "/terms-conditions",
+      "destination": "/dieu-khoan-su-dung/",
+      "permanent": true
+    }
+  ]
+}

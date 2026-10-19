@@ -13,6 +13,7 @@ import CtaBand from '../../components/ui/CtaBand';
 import {company} from '../../components/data/company';
 
 export const metadata = {
+  alternates: {canonical: '/ve-soho/'},
   title: 'Giới thiệu',
   description: 'SOHO Agency (Công ty TNHH SOHO Agency) là đội SEO, quảng cáo, nội dung và đo lường tại TP.HCM, Google Partner 2026. Lập kế hoạch và tự triển khai, báo cáo bằng doanh thu.'
 };
@@ -36,7 +37,7 @@ export default function AboutPage(){
   return (
     <>
       <Header activeNav="about"/>
-      <main>
+      <main id="main">
         <Hero tone="about" crumbs={[{label: 'Giới thiệu'}]} title={<>SOHO Agency, <span className="hl">đội marketing ở TP.HCM</span></>} tagline="Lập kế hoạch và tự tay triển khai SEO, quảng cáo, nội dung, đo lường. Báo cáo bằng doanh thu." visual={<AboutVisual/>}/>
         <PageHeader title="Một đội vừa lập kế hoạch, vừa tự làm" lead="Người lên kế hoạch cũng là người làm. Không chuyển việc cho đội khác sau khi ký hợp đồng, nên điều đã hứa trong buổi đầu là điều được làm."/>
         <Section title={<>SOHO là <span className="hl">ai</span></>}>

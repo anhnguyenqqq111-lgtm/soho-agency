@@ -2,26 +2,25 @@ import styles from './Header.module.css';
 import NavMenu from './NavMenu';
 import {sitePath} from './paths';
 import {getServicesByGroup} from './servicePagesData';
-import {getSolutionsByGroup} from './solutionPagesData';
+import {solutionPages} from './solutionPagesData';
 
-function toMenu(groups, base){
-  return groups.map(({group, items}) => ({
-    group,
-    items: items.map(item => ({
-      title: item.menuTitle || item.title,
-      desc: item.menuDesc,
-      href: sitePath(`${base}/${item.slug}`)
-    }))
-  }));
-}
+export const CTA_LABEL = 'Nhận tư vấn';
 
 export default function Header({activeNav}){
-  const menus = {
-    services: {label: 'Dịch vụ', allLabel: 'Tất cả dịch vụ', allHref: sitePath('/dich-vu'), sideTitle: 'Chưa biết chọn gì?', sideText: 'Gửi website, SOHO chỉ ra 3 việc nên làm trước.', groups: toMenu(getServicesByGroup(), '/dich-vu')},
-    solutions: {label: 'Giải pháp', allLabel: 'Tất cả giải pháp', allHref: sitePath('/giai-phap'), sideTitle: 'Theo mô hình của bạn', sideText: 'Bán cho doanh nghiệp, bán hàng online hay doanh nghiệp nhỏ: mỗi mô hình một thứ tự ưu tiên.', groups: toMenu(getSolutionsByGroup(), '/giai-phap')}
+  const menu = {
+    label: 'Dịch vụ',
+    allLabel: 'Xem tất cả dịch vụ',
+    allHref: sitePath('/dich-vu'),
+    sideTitle: 'Theo mô hình kinh doanh',
+    sideLinks: solutionPages.filter(s => s.group === 'Theo mô hình kinh doanh').map(s => ({label: s.title, href: sitePath(`/giai-phap/${s.slug}`)})),
+    groups: getServicesByGroup().map(({group, items}) => ({
+      group,
+      items: items.map(item => ({title: item.menuTitle, href: sitePath(`/dich-vu/${item.slug}`)}))
+    }))
   };
   const links = [
-    {key: 'about', label: 'Giới thiệu', href: sitePath('/ve-soho'), first: true},
+    {key: 'home', label: 'Trang chủ', href: sitePath('/'), beforeMenu: true},
+    {key: 'about', label: 'Giới thiệu', href: sitePath('/ve-soho'), beforeMenu: true},
     {key: 'results', label: 'Dự án', href: sitePath('/ket-qua')},
     {key: 'blog', label: 'Blog', href: sitePath('/blog')},
     {key: 'contact', label: 'Liên hệ', href: sitePath('/lien-he')}
@@ -31,9 +30,9 @@ export default function Header({activeNav}){
     <header className={styles.header}>
       <div className={`container ${styles.bar}`}>
         <a className={styles.logo} href={sitePath('/')} aria-label="SOHO Agency, về trang chủ">
-          <img src={sitePath('/brand/soho-logo.svg')} alt="SOHO Agency" width="568" height="234"/>
+          <img src={sitePath('/brand/soho-logo.webp')} alt="SOHO Agency" width="305" height="120" fetchPriority="high"/>
         </a>
-        <NavMenu activeNav={activeNav} menus={menus} links={links} contactHref={sitePath('/lien-he')}/>
+        <NavMenu activeNav={activeNav} menu={menu} links={links} contactHref={sitePath('/lien-he')} ctaLabel={CTA_LABEL}/>
       </div>
     </header>
   );

@@ -4,7 +4,7 @@ import styles from './ServiceGroups.module.css';
 import {sitePath} from './paths';
 
 /*
-  Khối dịch vụ trang chủ: ba cột (một cột mỗi nhóm), mỗi cột ba dịch vụ dạng dòng có link.
+  Danh sách dịch vụ theo nhóm (trang /dich-vu), mỗi nhóm ba dịch vụ dạng dòng có link.
   Bộ chọn "Bạn đang gặp vấn đề gì?": chọn một điểm nghẽn, dịch vụ phù hợp sáng lên, còn lại mờ đi.
   Đúng tinh thần "chọn theo điểm nghẽn, không theo gói". Sửa ánh xạ ở PROBLEMS.
 */
@@ -15,6 +15,8 @@ const PROBLEMS = [
     hint: 'Đã có người xem. Việc trước là sửa trang đích và đo đúng chỗ khách bỏ đi.'},
   {key: 'ads', label: 'Quảng cáo đắt, khó ra đơn', services: ['google-ads-shopping', 'meta-tiktok-ads', 'cro-landing-page'],
     hint: 'Tối ưu tài khoản quảng cáo theo lợi nhuận và sửa trang đích đi kèm.'},
+  {key: 'web', label: 'Website cũ, hình ảnh chưa chuyên nghiệp', services: ['thiet-ke-website', 'nhan-dien-thuong-hieu', 'cro-landing-page'],
+    hint: 'Làm lại website và nhận diện trước, để tiền quảng cáo và SEO đổ vào không bị phí.'},
   {key: 'measure', label: 'Không biết kênh nào hiệu quả', services: ['ga4-looker-dashboard', 'tu-van-chien-luoc-sprint'],
     hint: 'Đo lại cho đúng trước, rồi mới quyết định tăng hay cắt ngân sách kênh nào.'}
 ];

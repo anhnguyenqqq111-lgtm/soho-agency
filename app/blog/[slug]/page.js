@@ -5,7 +5,7 @@ import Footer from '../../../components/Footer';
 import Section from '../../../components/ui/Section';
 import BlogCard from '../../../components/BlogCard';
 import CtaBand from '../../../components/ui/CtaBand';
-import {sitePath} from '../../../components/paths';
+import {sitePath, siteUrl} from '../../../components/paths';
 import {articles, getLatestArticles, toISODate} from '../../../components/blogData';
 import ReadingProgress from '../../../components/article/ReadingProgress';
 
@@ -17,7 +17,7 @@ export async function generateMetadata({params}){
   const {slug} = await params;
   const article = articles.find(item => item.slug === slug);
   if (!article) return {title: 'Không tìm thấy bài viết'};
-  return {title: {absolute: article.metaTitle}, description: article.excerpt, openGraph: {type: 'article', title: article.metaTitle, description: article.excerpt}};
+  return {title: {absolute: article.metaTitle}, description: article.excerpt, alternates: {canonical: `/blog/${article.slug}/`}, openGraph: {type: 'article', title: article.metaTitle, description: article.excerpt, images: [{url: article.image.src}]}};
 }
 
 export default async function BlogPostPage({params}){
@@ -30,14 +30,15 @@ export default async function BlogPostPage({params}){
     '@context': 'https://schema.org', '@type': 'Article', headline: article.title, description: article.excerpt,
     datePublished: toISODate(article.date), author: {'@type': 'Person', name: article.author, jobTitle: article.authorRole},
     publisher: {'@type': 'Organization', name: 'SOHO Agency'}, inLanguage: 'vi',
-    image: sitePath(article.image.src)
+    image: `${siteUrl}${article.image.src}`,
+    mainEntityOfPage: `${siteUrl}/blog/${article.slug}/`
   };
   const role = article.authorRole.replace(/\s*@\s*SOHO$/, '');
   return (
     <>
       <Header activeNav="blog"/>
       <ReadingProgress/>
-      <main>
+      <main id="main">
         {/* Đầu bài: breadcrumb, danh mục, H1 duy nhất, trích dẫn, tác giả. Banner (cùng ảnh với thumbnail, 16:10) đặt ngay sau. */}
         <header className={styles.head}>
           <div className={`container ${styles.headInner}`}>

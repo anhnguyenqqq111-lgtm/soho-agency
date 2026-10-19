@@ -8,6 +8,6 @@
 .tip strong{font-size:13px}
 .tipList{display:grid;gap:6px}
 .tipList span{display:grid;grid-template-columns:16px minmax(0,1fr);gap:6px}
-.tipList span::before{content:'✓';color:#FF9A45;font-weight:700}
+.tipList span::before{content:'✓';color:#FF9A45;font-weight:600}
 .tipMore{color:#FF9A45;font-weight:600}
 .wrap:hover .tip,.wrap:focus-within .tip{opacity:1;visibility:visible;transform:none}

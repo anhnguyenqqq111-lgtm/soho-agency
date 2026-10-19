@@ -37,7 +37,7 @@
 .curve{fill:none;stroke:url(#hv-line);stroke-width:5;stroke-linecap:round}
 .area{opacity:0;animation:fadeIn 1200ms ease 1200ms forwards}
 .tag{opacity:0;animation:fadeIn 600ms ease 2300ms forwards}
-.tagText{font-family:var(--font-text);font-size:18px;font-weight:700;fill:#FFFFFF;text-anchor:middle}
+.tagText{font-family:var(--font-text);font-size:18px;font-weight:600;fill:#FFFFFF;text-anchor:middle}
 .node{fill:var(--hero-bg);stroke:var(--c1);stroke-width:2.5;opacity:0;animation:fadeIn 500ms ease forwards;animation-delay:calc(var(--i) * 260ms + 500ms)}
 @keyframes fadeIn{to{opacity:1}}
 

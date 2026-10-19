@@ -15,9 +15,9 @@
 .dg .dotAcc{fill:var(--brand)}
 
 .dg .tx{font-family:var(--font-text);font-size:14px;fill:var(--ink-2)}
-.dg .tx.b{fill:var(--ink);font-weight:700}
-.dg .tx.d{font-size:18px;fill:var(--ink);font-weight:700}
-.dg .tx.acc{fill:var(--accent);font-weight:700}
+.dg .tx.b{fill:var(--ink);font-weight:600}
+.dg .tx.d{font-size:18px;fill:var(--ink);font-weight:600}
+.dg .tx.acc{fill:var(--accent);font-weight:600}
 .dg .tx.light{fill:var(--white)}
 .dg .tx.mid{text-anchor:middle}
 .dg .tx.end{text-anchor:end}

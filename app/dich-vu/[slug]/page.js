@@ -16,6 +16,7 @@ import ArticleBody from '../../../components/article/ArticleBody';
 import {getServicePage, servicePages} from '../../../components/servicePagesData';
 import {getServiceArticle} from '../../../components/serviceArticlesData';
 import ReadingProgress from '../../../components/article/ReadingProgress';
+import {siteUrl} from '../../../components/paths';
 
 export function generateStaticParams(){
   return servicePages.map(service => ({slug: service.slug}));
@@ -28,7 +29,8 @@ export async function generateMetadata({params}){
   const article = getServiceArticle(slug);
   return {
     title: article?.metaTitle ? {absolute: article.metaTitle} : service.menuTitle,
-    description: article?.metaDesc || service.intro
+    description: article?.metaDesc || service.intro,
+    alternates: {canonical: `/dich-vu/${service.slug}/`}
   };
 }
 
@@ -42,21 +44,21 @@ export default async function ServicePage({params}){
   const serviceJsonLd = {
     '@context': 'https://schema.org', '@type': 'Service',
     name: service.menuTitle, description: service.intro, serviceType: service.category, areaServed: 'VN',
-    provider: {'@type': 'Organization', name: 'SOHO Agency'}
+    provider: {'@type': 'Organization', name: 'SOHO Agency', url: siteUrl}
   };
 
   return (
     <>
       <Header activeNav="services"/>
       <ReadingProgress/>
-      <main>
+      <main id="main">
         <Hero tone="services" crumbs={[{label: 'Dịch vụ', href: '/dich-vu'}, {label: service.menuTitle}]} title={service.title} long tagline={service.intro} visual={<div className={styles.heroDiagram}><ServiceDiagram slug={service.slug} card/></div>}/>
         <PageHeader
           title="Kết quả cần đạt"
           lead={service.promise}
           bullets={service.outcomes}
         >
-          <Button href="#lien-he">Đặt lịch tư vấn</Button>
+          <Button href="#lien-he">Nhận tư vấn</Button>
         </PageHeader>
 
         {/* Quy trình + sơ đồ */}

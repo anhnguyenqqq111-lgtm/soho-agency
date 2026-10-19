@@ -10,6 +10,7 @@ import Fill from '../../components/ui/Fill';
 import {company} from '../../components/data/company';
 
 export const metadata = {
+  alternates: {canonical: '/lien-he/'},
   title: 'Liên hệ',
   description: 'Gửi website và mục tiêu hiện tại cho SOHO Agency. SOHO xem các kênh bạn đang chạy và đề xuất việc nên làm trước.'
 };
@@ -24,8 +25,8 @@ export default function ContactPage(){
   return (
     <>
       <Header activeNav="contact"/>
-      <main>
-        <Hero tone="contact" crumbs={[{label: 'Liên hệ'}]} title={<>Đặt lịch tư vấn <span className="hl">với SOHO Agency</span></>} tagline="Buổi đầu 30 phút. Bạn gửi website và mục tiêu, SOHO chỉ ra 3 việc nên làm trước." visual={<ContactVisual/>}/>
+      <main id="main">
+        <Hero tone="contact" crumbs={[{label: 'Liên hệ'}]} title={<>Nhận tư vấn <span className="hl">với SOHO Agency</span></>} tagline="Buổi đầu 30 phút. Bạn gửi website và mục tiêu, SOHO chỉ ra 3 việc nên làm trước." visual={<ContactVisual/>}/>
         <PageHeader
           title="Sau khi bạn gửi, SOHO làm ba việc"
           lead="Không cần chuẩn bị tài liệu. Website và vài dòng về mục tiêu là đủ để bắt đầu."

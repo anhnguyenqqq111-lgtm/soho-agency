@@ -3,7 +3,7 @@
 /* Theo chủ đề: mục lục bám bên trái, nhóm bài bên phải */
 .layout{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,9fr);gap:var(--gap) clamp(24px,4vw,56px);align-items:start}
 .toc{position:sticky;top:calc(var(--header-h) + 24px)}
-.tocTitle{font-size:var(--fs-meta);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);margin-bottom:10px}
+.tocTitle{font-size:var(--fs-meta);font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);margin-bottom:10px}
 .toc ul{list-style:none;margin:0;padding:0;display:grid}
 .toc li{border-top:1px solid var(--line)}
 .toc li:first-child{border-top:0}

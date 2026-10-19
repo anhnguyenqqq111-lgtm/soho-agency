@@ -55,7 +55,7 @@ export default function ProjectCarousel({items}){
       <ul ref={trackRef} className={styles.track} aria-label="Dự án SOHO đã công bố">
         {clients.map((c, i) => (
           <li key={c.slug} className={styles.card} data-reveal="" style={{'--reveal-delay': `${i * 90}ms`}}>
-            <a href={sitePath(`/ket-qua#${c.slug}`)} className={styles.link}>
+            <a href={sitePath(`/du-an/${c.slug}`)} className={styles.link}>
               <div className={styles.media}><img src={sitePath(c.image)} alt={`Dự án ${c.name}`} loading="lazy" width="1200" height="560"/></div>
               <div className={styles.body}>
                 <p className={styles.scope}>{c.scope}</p>

@@ -10,7 +10,7 @@ export default function LegalPage({title, lead, updated, sections}){
   return (
     <>
       <Header/>
-      <main>
+      <main id="main">
         <Hero tone="blog" crumbs={[{label: title}]} title={title} visual={<ContactVisual/>}/>
         <PageHeader compact title="Nội dung" lead={lead}>
           <p style={{fontSize: 13, color: 'var(--on-dark-2)'}}>Cập nhật lần cuối: <Fill value={updated} need="CẦN NGÀY HIỆU LỰC"/></p>
