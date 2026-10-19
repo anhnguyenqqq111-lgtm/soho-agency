@@ -64,7 +64,8 @@ components/
   Header.js, NavMenu.js      header; NavMenu là client component (mega menu, menu mobile)
   Footer.js
   ServiceGroups.js           khối dịch vụ trang chủ (3 thẻ nhóm trên nền cam nhạt)
-  ContactForm.js             form liên hệ (client), chưa nối API, xem TODO trong file
+  ContactForm.js             form Nhận tư vấn (client): kiểm tra từng ô, chống gửi trùng, bẫy bot; gửi tới NEXT_PUBLIC_FORM_ENDPOINT
+  home/                      khối trang chủ: ServicesGrid, Differentiators, ProjectShowcase, ProcessAccordion
   RevealObserver.js          gắn class is-in cho [data-reveal] khi cuộn tới
   hero/                      Hero (đầu trang) và Visuals (7 minh họa SVG theo trang)
   ui/                        Section, PageHeader, Button, NumberedList, LinkRows, CtaBand, Faq, Fill, ImageSlot, SplitWords
@@ -88,7 +89,27 @@ public/blog/                 ảnh bài blog (thumbnail và banner dùng chung),
 DESIGN.md                    "tờ giấy" hệ thiết kế: nguồn tham chiếu, màu, phông, luật viết chữ, từ cấm, icon, ảnh (mục 2). Đọc trước khi sửa giao diện hay câu chữ
 ```
 
-Mỗi component và trang có `.module.css` riêng. Server Component mặc định; chỉ `NavMenu`, `ContactForm`, `RevealObserver`, `Toc`, `ProjectCarousel` là client.
+Mỗi component và trang có `.module.css` riêng. Server Component mặc định; client component: `NavMenu`, `ContactForm`, `RevealObserver`, `Toc`, `ProjectCarousel`, `RevenueToggle`, `ServiceGroups`, `ProcessAccordion`, `StickyCta`, `ReadingProgress`.
+
+## Form liên hệ
+
+Web xuất tĩnh nên không có máy chủ nhận form. Đặt biến môi trường trên Vercel (Settings > Environment Variables) rồi deploy lại:
+
+```bash
+NEXT_PUBLIC_FORM_ENDPOINT=https://...   # địa chỉ nhận POST JSON
+```
+
+Nội dung gửi: `{name, contact, service, message, consent, page, sentAt}`. Endpoint phải trả mã 2xx và cho phép CORS từ tên miền của site. Dùng được Formspree, Getform, Google Apps Script (ghi vào Google Sheet) hoặc API riêng nối CRM.
+
+- Form chỉ báo "Đã gửi" khi endpoint trả 2xx. Lỗi thì giữ nguyên nội dung và cho gửi lại.
+- Chưa đặt biến: bấm gửi sẽ mở ứng dụng email với nội dung điền sẵn tới `company.email`, không báo gửi thành công giả.
+- Gửi thành công thì đẩy sự kiện `generate_lead` vào `window.dataLayer` nếu site có Google Tag Manager (site cũ dùng GTM-K2FCZS8S).
+
+## SEO kỹ thuật
+
+- `NEXT_PUBLIC_SITE_URL` (mặc định `https://soho-agency.vercel.app`): dùng cho canonical, sitemap, Open Graph. Đổi khi chuyển sang tên miền chính.
+- `app/robots.js`, `app/sitemap.js` tự sinh từ dữ liệu dịch vụ, dự án, bài viết.
+- `vercel.json`: chuyển hướng URL cũ của sohoagency.vn (`/gioi-thieu`, `/seo-website`, `/tin-tuc`...) sang trang mới. Trang dự án giữ đúng đường dẫn cũ `/du-an/<slug>`.
 
 ## Dữ liệu chưa có
 
@@ -125,7 +146,6 @@ Quy tắc chung của blog (sẽ là quy tắc của CMS sau này), kiểm tra t
 
 ## Việc còn lại trước khi xuất bản
 
-- Form liên hệ (`components/ContactForm.js`) chỉ hiện thông báo đã gửi, chưa gửi đi đâu. Cần nối API hoặc dịch vụ form.
 - Hai trang pháp lý là bản nháp, cần pháp chế duyệt. Đầu trang có dòng cảnh báo đỏ, xóa sau khi duyệt.
 - Bài viết dịch vụ có câu số liệu khẳng định về SOHO (gạch chân chấm vàng, đánh dấu tự động bởi `isClaim()` trong `components/article/parseMarkdown.js`). Cần kiểm chứng hoặc sửa.
 - Ảnh bìa 9 bài blog trong `public/blog/` còn logo cũ, cần xuất lại theo logo đang dùng.
@@ -137,4 +157,4 @@ Quy tắc chung của blog (sẽ là quy tắc của CMS sau này), kiểm tra t
 npm run build:pages
 ```
 
-Build phải pass và ra đủ 34 trang trong `out/`. Mỗi trang đúng một `h1`, heading không nhảy cấp, mọi `img` có `alt`, không tràn ngang ở 375px.
+Build phải pass và ra đủ 41 trang trong `out/`. Mỗi trang đúng một `h1`, heading không nhảy cấp, mọi `img` có `alt`, không tràn ngang ở 375px.

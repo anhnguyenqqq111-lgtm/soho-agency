@@ -7,7 +7,7 @@ import {sitePath} from '../paths';
   Có criteria thì rê chuột hoặc Tab vào huy hiệu hiện ô giải thích các tiêu chí Google đã xác nhận.
   size: chiều cao hiển thị (px). Không đổi màu, không cắt, không đặt lên nền làm mất viền của huy hiệu.
 */
-export default function PartnerBadge({partner, size = 88, showNeed = true, tipId}){
+export default function PartnerBadge({partner, size = 88, showNeed = true, tipId, align = 'start'}){
   if (!partner?.verified || !partner.logo) return null;
   const tid = partner.criteria?.length ? (tipId || `tip-${partner.name.toLowerCase().replace(/\s+/g, '-')}`) : undefined;
   const img = (
@@ -22,7 +22,7 @@ export default function PartnerBadge({partner, size = 88, showNeed = true, tipId
     />
   );
   return (
-    <span className={styles.wrap}>
+    <span className={`${styles.wrap} ${align === 'end' ? styles.end : ''}`}>
       {partner.profileUrl
         ? <a href={partner.profileUrl} target="_blank" rel="noopener noreferrer" className={styles.link} aria-label={`${partner.name}: xem hồ sơ đối tác của SOHO trên Google`} aria-describedby={tid}>{img}</a>
         : img}

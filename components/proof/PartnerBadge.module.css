@@ -3,11 +3,16 @@
 .img{width:auto;max-width:none;display:block}
 .link{display:block;border-radius:8px;transition:transform var(--t-fast),box-shadow var(--t-fast)}
 .link:hover{transform:translateY(-2px);box-shadow:var(--shadow-card)}
-.tip{position:absolute;z-index:20;left:0;bottom:calc(100% + 12px);width:max-content;max-width:min(300px,78vw);display:grid;gap:8px;padding:14px 16px;border-radius:var(--r-md);background:var(--ink);color:#FFFFFF;font-size:13px;line-height:1.45;box-shadow:var(--shadow-pop);opacity:0;visibility:hidden;transform:translateY(6px);transition:opacity var(--t-fast),transform var(--t-fast),visibility var(--t-fast);pointer-events:none}
+.tip{position:absolute;z-index:20;left:0;bottom:calc(100% + 12px);width:max-content;max-width:300px;display:none;gap:8px;padding:14px 16px;border-radius:var(--r-md);background:var(--ink);color:#FFFFFF;font-size:13px;line-height:1.45;box-shadow:var(--shadow-pop);pointer-events:none;animation:tipIn 160ms ease}
+@keyframes tipIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
 .tip::after{content:'';position:absolute;left:28px;top:100%;border:7px solid transparent;border-top-color:var(--ink)}
 .tip strong{font-size:13px}
 .tipList{display:grid;gap:6px}
 .tipList span{display:grid;grid-template-columns:16px minmax(0,1fr);gap:6px}
 .tipList span::before{content:'✓';color:#FF9A45;font-weight:600}
 .tipMore{color:#FF9A45;font-weight:600}
-.wrap:hover .tip,.wrap:focus-within .tip{opacity:1;visibility:visible;transform:none}
+/* Chỉ hiện trên màn hình có chuột và đủ rộng; khi ẩn thì không chiếm chỗ (không gây tràn ngang) */
+@media (hover:hover) and (min-width:900px){.wrap:hover .tip,.wrap:focus-within .tip{display:grid}}
+.end .tip{left:auto;right:0}
+.end .tip::after{left:auto;right:28px}
+@media (prefers-reduced-motion:reduce){.tip{animation:none}}

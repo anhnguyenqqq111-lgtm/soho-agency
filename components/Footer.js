@@ -56,7 +56,7 @@ export default function Footer(){
           <h2 className={`${styles.colTitle} ${styles.gap}`}>Chứng nhận</h2>
           <ul className={styles.badges}>
             {partners.map(p => p.verified && p.logo ? (
-              <li key={p.name} className={styles.badgeImg}><PartnerBadge partner={p} size={84} tipId="tip-partner-footer"/></li>
+              <li key={p.name} className={styles.badgeImg}><PartnerBadge partner={p} size={84} tipId="tip-partner-footer" align="end"/></li>
             ) : (
               <li key={p.name} className={styles.badge}>
                 <span>{p.name}</span>
