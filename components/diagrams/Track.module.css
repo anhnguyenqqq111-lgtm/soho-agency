@@ -10,7 +10,7 @@
   display:grid;place-items:center;font-weight:600;font-size:14px;
 }
 .acc .node{background:var(--midnight);color:var(--white)}
-:global(.dark) .node{background:var(--brand);border-color:var(--brand);color:var(--ink);font-weight:600}
+:global(.dark) .node{background:var(--brand);border-color:var(--brand);color:var(--ink);font-weight:700;box-shadow:0 0 0 6px var(--c-ink)}
 :global(.dark) .acc .node{background:var(--brand);color:var(--ink);border-color:var(--brand)}
 .body{display:grid;gap:6px;padding-right:8px}
 .meta{font-size:var(--fs-meta);font-weight:600;color:var(--ink-3)}

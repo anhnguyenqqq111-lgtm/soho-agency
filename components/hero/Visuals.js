@@ -93,7 +93,7 @@ export function ContactVisual(){
       {[0, 1, 2, 3, 4].map(i => <circle key={i} cx="450" cy="270" r={60 + i * 70} className={styles.wave} style={{'--i': i}}/>)}
       <circle cx="450" cy="270" r="26" className={styles.pulse}/>
       <path d="M450 270 L 760 120" className={`${styles.beam} ${styles.draw}`} pathLength="1"/>
-      <circle cx="760" cy="120" r="8" fill="#FFFFFF" stroke="#FF7A00" strokeWidth="3"/>
+      <circle cx="760" cy="120" r="8" fill="#FFFFFF" stroke="#F26522" strokeWidth="3"/>
     </svg>
   );
 }

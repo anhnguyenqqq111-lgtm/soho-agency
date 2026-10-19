@@ -1,28 +1,25 @@
-import {Fraunces, Be_Vietnam_Pro} from 'next/font/google';
+import {Bricolage_Grotesque, Plus_Jakarta_Sans} from 'next/font/google';
 import './styles/tokens.css';
 import './styles/base.css';
 import './styles/diagram.css';
 import RevealObserver from '../components/RevealObserver';
 import {siteUrl} from '../components/paths';
 
-// Hai phông theo DESIGN.md mục 2.3, cả hai đã qua bài thử ẾỨỠẶẰ (không mượn nét phông khác).
-// Fraunces: tiêu đề H1/H2 và chữ nhấn nghiêng. Be Vietnam Pro: nội dung, giao diện, H3 trở xuống.
-// Chỉ nạp đúng các kiểu đang dùng: Fraunces 500 (thường + nghiêng cho .hl), Be Vietnam Pro 400/500/600.
-// Bản trước nạp cả trục opsz và mọi kiểu nghiêng: 27 file, ~500 KB, kéo LCP lên 5,8 giây.
-const display = Fraunces({
+// Hai phông theo brief "SOHO Color & Typography" (DESIGN.md mục 2.3), cả hai có bộ chữ tiếng Việt riêng và đã qua bài thử ẾỨỠẶẰ.
+// Bricolage Grotesque: tiêu đề H1 đến H3, số lớn (600 đến 800). Plus Jakarta Sans: nội dung và giao diện (400 đến 700).
+// Nạp bản variable, chỉ trục độ đậm: mỗi phông 2 file (latin + vietnamese), thay cho một file mỗi độ đậm.
+// Chỉ preload phông tiêu đề vì H1 là phần tử LCP; phông nội dung hiện bằng phông dự phòng đã chỉnh số đo rồi đổi (display: swap).
+const display = Bricolage_Grotesque({
   subsets: ['latin', 'vietnamese'],
-  weight: ['500'],
-  style: ['normal', 'italic'],
   display: 'swap',
-  variable: '--font-fraunces'
+  variable: '--font-bricolage'
 });
 
-const text = Be_Vietnam_Pro({
+const text = Plus_Jakarta_Sans({
   subsets: ['latin', 'vietnamese'],
-  weight: ['400', '500', '600'],
   display: 'swap',
   preload: false,
-  variable: '--font-bvp'
+  variable: '--font-jakarta'
 });
 
 export const metadata = {

@@ -7,10 +7,10 @@ import styles from './JourneyMatrix.module.css';
   Rê chuột vào một kênh: cả cột kênh đó được tô (CSS :has, không cần JS).
 */
 const CHANNELS = [
-  {name: 'SEO và AI tìm kiếm', color: '#F5F6FA', ink: '#10121C'},
-  {name: 'Quảng cáo', color: '#F5F6FA', ink: '#10121C'},
-  {name: 'Nội dung', color: '#F5F6FA', ink: '#10121C'},
-  {name: 'Đo lường', color: '#F5F6FA', ink: '#10121C'}
+  {name: 'SEO và AI tìm kiếm', color: '#F3F1F8', ink: '#141218'},
+  {name: 'Quảng cáo', color: '#F3F1F8', ink: '#141218'},
+  {name: 'Nội dung', color: '#F3F1F8', ink: '#141218'},
+  {name: 'Đo lường', color: '#F3F1F8', ink: '#141218'}
 ];
 // Ô chỉ số viết bằng tiếng Việt (luật viết chữ: không dùng thuật ngữ tiếng Anh không giải thích)
 const STAGES = [

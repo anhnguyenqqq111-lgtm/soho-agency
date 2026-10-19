@@ -57,7 +57,7 @@ Trang chủ mới: Hero → Khách hàng → Dịch vụ → Cách làm việc �
 
 ---
 
-## 2. Hệ thiết kế (bản 10, tháng 10/2026): "tờ giấy" đưa cho người và AI trước khi làm bất cứ trang nào
+## 2. Hệ thiết kế (bản 11, tháng 10/2026): "tờ giấy" đưa cho người và AI trước khi làm bất cứ trang nào
 
 Lý do có tờ giấy này: AI không có gu, nó lấp chỗ trống bằng mặc định (Inter, nền kem, khuôn "nhãn nhỏ + tiêu đề trái + ảnh phải", câu chung chung như "tận tâm, uy tín"). Mọi chỗ trống đều được ghi rõ dưới đây. Phương pháp theo video "Claude Design làm web nha khoa và văn phòng luật ra cùng một khuôn" (AI 5 Phút, 10/2026).
 
@@ -72,23 +72,27 @@ Lý do có tờ giấy này: AI không có gu, nó lấp chỗ trống bằng m�
 |---|---|
 | **Ramp** trên styles.refero.design | Cách dàn chữ kiểu báo: tiêu đề lớn, thứ bậc bằng cỡ chữ; thẻ đứng trên viền mảnh 1px, không đổ bóng; bo 16px cho thẻ nội dung; một màu nhấn chỉ ở nơi có tiền (nút, con số) |
 | **Brex** trên styles.refero.design | Nền trắng tinh, một màu cam duy nhất cho hành động chính; bo 12px cho nút và ô nhập; khung tối ở cuối trang (khối liên hệ + footer) |
-| **Brand Kit v3 SOHO** | Màu: cam `#FF7A00`, san hô `#FF416C`, tím `#765BFF`, Midnight `#10121C` |
+| **Brief "SOHO Color & Typography"** (10/2026) | Màu: Brand Orange `#F26522`, Deep Orange `#C2410C`, Violet `#6D28D9`, Coral `#EC4899`, Dark Ink `#141218`, Soft Canvas `#FAF9FD`, Muted `#62616C`, viền `#E9E5EF`; gradient Signature 115°. Phông Bricolage Grotesque + Plus Jakarta Sans |
+| **Monopo Paris** (chỉ tham khảo hướng, không sao chép) | Tỉ lệ 70% trắng/nền nhạt + chữ tối, 20% cam, 10% tím/san hô/gradient; tiêu đề editorial rất lớn; khối tối xen khối sáng ở phần dự án |
 | **Logo gốc SOHO** (như sohoagency.vn) | Logo, favicon (chữ S trắng trên gradient vàng đỏ của logo) |
 
 ### 2.3. Phông chữ (đã qua bài thử Ế Ứ Ỡ Ặ Ằ)
 
 | Vai trò | Phông | Ghi chú |
 |---|---|---|
-| Tiêu đề H1, H2, chữ nhấn `.hl` (nghiêng), con số lớn | **Fraunces** (Google Fonts, có bộ tiếng Việt) | Độ đậm 500, khoảng chữ −1.5%, giãn dòng 1.08. Có chân, khác hẳn mặc định Inter của AI |
-| Nội dung, giao diện, nút, H3 trở xuống | **Be Vietnam Pro** (Google Fonts) | 400 thân bài, 600 nhấn. Làm riêng cho tiếng Việt |
+| Tiêu đề H1, H2, H3, tên thẻ, con số lớn | **Bricolage Grotesque** (Google Fonts, có bộ tiếng Việt) | H1/H2 đậm 700, H3 và tên thẻ 600, con số kết quả 800. Khoảng chữ −2,2% đến −3,5% ở cỡ lớn. Giãn dòng tối thiểu 1.06 (H1 hero desktop), 1.1 cho H1 còn lại: dấu chồng như Ặ, Ữ cần chỗ |
+| Nội dung, giao diện, nút, H4 | **Plus Jakarta Sans** (Google Fonts, có bộ tiếng Việt) | 400 thân bài, 500 menu, 600 nhãn, 700 nút |
 
-Bài thử: gõ **Ế Ứ Ỡ Ặ Ằ** ở cỡ lớn, đặt phông dự phòng là Comic Sans; chữ nào lệch nét là phông bị vá, loại. Đã loại: Sora, Figtree, DM Sans, Outfit, Instrument Sans, Urbanist, Albert Sans, Red Hat Display (không có bộ tiếng Việt). Đổi phông phải ghi đúng tên, không ghi mô tả.
+- Nạp bản variable (chỉ trục độ đậm), mỗi phông 2 file cho trang tiếng Việt (latin + vietnamese). Chỉ preload Bricolage vì H1 là phần tử LCP.
+- Không có kiểu nghiêng: chữ nhấn `.hl` dùng màu gradient, không nghiêng.
+- Bài thử: gõ **Ế Ứ Ỡ Ặ Ằ** ở cỡ lớn, đặt phông dự phòng là Comic Sans; chữ nào lệch nét là phông bị vá, loại. Bricolage (600, 700, 800) và Jakarta (400, 500, 700) đều qua, ảnh thử trong báo cáo `docs/REDESIGN-REPORT.md`.
+- Đã loại: Sora, Figtree, DM Sans, Outfit, Instrument Sans, Urbanist, Albert Sans, Red Hat Display (không có bộ tiếng Việt). Bản 10 dùng Fraunces + Be Vietnam Pro.
 
 ### 2.4. Luật viết chữ
 
 1. **H1 = tên + nghề**, không phải lời chào. Thử xóa tên SOHO khỏi H1: nếu câu vẫn đúng với agency khác thì viết lại. Trang dịch vụ: H1 = tên dịch vụ + cho ai.
 2. **Hẹp thắng rộng:** nói với "doanh nghiệp vừa và nhỏ ở TP.HCM đã có sản phẩm và khách mua", không "doanh nghiệp Việt Nam".
-3. **Một nhãn nút chính trên toàn site: "Đặt lịch tư vấn".** Header, hero, form, thanh mobile, cuối trang đều dùng đúng nhãn này. Nút khác là nút chữ (link có mũi tên).
+3. **Một nhãn nút chính trên toàn site: "Nhận tư vấn".** Header, hero, form, thanh mobile, cuối trang đều dùng đúng nhãn này. Nút khác là nút chữ (link có mũi tên).
 4. **Nút = động từ + đối tượng cụ thể** ("Xem SOHO đã làm gì", "Đọc tất cả bài viết"), không "Tìm hiểu", "Xem thêm".
 5. **Mỗi lời tự khen kèm một tên riêng không phải của SOHO:** Google Partner (hồ sơ Google), tên dự án (Le Viva Resort...), tên khách nhận xét. Con số chỉ ghi khi đã được công bố (xem `components/data/cases.js`); không bịa số.
 6. Câu ngắn, viết hoa đầu câu, không emoji, dấu tiếng Việt đúng. Mỗi tiêu đề tối đa một cụm `.hl`.
@@ -125,31 +129,40 @@ Ngoại lệ được giữ: tên sản phẩm (Google Ads, Meta, TikTok, GA4, L
 
 ### 2.6. Màu (`app/styles/tokens.css`)
 
-| Token | Giá trị | Dùng cho |
-|---|---|---|
-| `--brand` | `#FF7A00` | Nút chính "Đặt lịch tư vấn" (chữ Midnight). Không dùng cho chữ nhỏ trên nền trắng |
-| `--brand-ink` | `#B84A00` | Chữ cam nhỏ, link, con số kết quả (đạt 4.5:1) |
-| `--grad-warm-text` | `#E0560F` → `#E0245E` → `#6A4CF0` | Cụm chữ nhấn `.hl` (Fraunces nghiêng) |
-| `--grad-warm` | Signature `#FF7A00` → `#FF416C` → `#765BFF` | Đường doanh thu ở hero, đường ray quy trình, vạch khi rê chuột |
-| `--grad-mist` | `#F5F6FA` → `#E8E9FF` → `#F7E5EB` | Khối ma trận hành trình |
-| `--grad-midnight` / `--midnight` | `#10121C` … | Khối liên hệ, footer (khung tối cuối trang) |
-| `--ink` / `--ink-3` | `#10121C` / `#62697D` | Chữ / chữ phụ |
-| `--line` / `--gray` | `#DCE0E9` / `#F5F6FA` | Viền mảnh / khối nền xám |
+Ba lớp token: bảng màu gốc (`--c-*`), token theo vai trò (`--color-*`, `--gradient-*`) mà component nên dùng, và tên cũ (`--brand`, `--ink`...) trỏ về token mới để component cũ không phải sửa.
 
-Ba chặng ma trận: cam, san hô, tím (chữ trắng trên tím đậm `#5A3FE0`).
+| Token vai trò | Giá trị | Dùng cho | Tương phản |
+|---|---|---|---|
+| `--color-primary` | `#F26522` | Nền nút chính, ô icon nổi bật, nút trên Track. **Chữ trên nền này luôn là Dark Ink** | Dark Ink trên cam 5,9:1. Chữ trắng trên cam chỉ 3,15:1: không dùng |
+| `--color-primary-hover` | `#E0581C` | Nút chính khi rê chuột | Dark Ink 4,94:1 |
+| `--color-primary-text` | `#C2410C` | Chữ cam nhỏ, link, số thứ tự, con số kết quả, viền focus | 5,18:1 trên trắng, 4,94:1 trên Soft Canvas |
+| `--color-secondary` / `--color-accent` | `#6D28D9` / `#EC4899` | Chỉ trong gradient, quầng sáng, chặng 2 và 3 của ma trận | San hô không làm chữ nhỏ (3,5:1) |
+| `--color-text` / `--color-text-2` / `--color-text-muted` | `#141218` / `#3A3843` / `#62616C` | Chữ chính / đoạn phụ / chú thích | 18,6 / 11,5 / 6,09:1 |
+| `--color-bg` / `--color-bg-soft` / `--color-surface` | `#FFFFFF` / `#FAF9FD` / `#F3F1F8` | Nền trang / khối section (kèm viền mảnh) / ô icon, nền hover, ảnh chờ | |
+| `--color-border` / `--color-border-strong` | `#E9E5EF` / `#8E8A99` | Viền thẻ, đường kẻ / viền ô nhập | Viền ô nhập 3,36:1 (đạt 3:1 cho thành phần giao diện) |
+| `--color-text-inverse-muted` | `#B8B5C2` | Chữ phụ trên nền tối đặc | 9,2:1 trên Dark Ink |
+| `--gradient-signature` | `115deg, #F26522 0%, #EC4899 48%, #6D28D9 100%` | Mảng hero, đường ray quy trình, vạch nhấn | Không đặt chữ lên trên |
+| `--gradient-signature-text` | `#C2410C` → `#DB2777` → `#6D28D9` | Cụm chữ nhấn `.hl` trên nền sáng | Mọi điểm ≥ 4,6:1 |
+| `--gradient-signature-on-dark` | `#F58A4E` → `#F472B6` → `#A78BFA` | `.hl` trong khối tối | Mọi điểm ≥ 6,8:1 |
+| `--gradient-ink` | `#141218` → `#2B1A4A` → `#5A1F4D` | Khối CTA cuối trang | Chữ phụ dùng `#D9D6E0`: ≥ 5,6:1 ở điểm tối nhất của quầng cam |
+
+- Không dùng nền `#FFF4E9` hay bất kỳ nền kem nào. `--color-primary-tint` (`#FDE5D8`) chỉ cho ô dấu tích nhỏ và màu bôi chọn chữ.
+- Mỗi trang tối đa hai khối tối kể cả CTA cuối (trang chủ: dự án + CTA; trang dịch vụ: quy trình + CTA).
+- Ba chặng ma trận: cam, san hô (chữ Dark Ink, ≥ 5,2:1), tím `#6D28D9` → `#5B21B6` (chữ trắng, ≥ 7,1:1).
 
 ### 2.7. Hình khối và bố cục
 
 - Nút, ô nhập: bo 12px, cao tối thiểu 44px (vùng bấm theo luật giao diện của Apple). Thẻ nội dung: bo 16px, viền 1px, **không đổ bóng**. Nhãn nhỏ: bo 6px.
-- Section xen kẽ: nền trắng toàn chiều ngang và khối nền xám (hoặc Mist) bo góc lớn thụt vào hai bên. Không đặt hai khối xám liền nhau.
+- Section xen kẽ (`components/ui/Section.js`, thuộc tính `tone`): nền trắng toàn chiều ngang; khối Soft Canvas viền mảnh (`gray`) hoặc gradient nhạt (`soft`) bo góc lớn thụt vào hai bên; khối Dark Ink (`dark`) cho dự án và quy trình. Không đặt hai khối cùng loại liền nhau.
 - **Không dùng nhãn nhỏ phía trên tiêu đề** (kicker, eyebrow): đó là dấu hiệu khuôn AI.
-- **Hero trang chủ** (`components/hero/HomeHero.js`): H1 lớn trải ngang; dưới là mô tả + nút + số điện thoại (trái) và ba bằng chứng có tên riêng xếp danh sách kẻ mảnh (phải); cuối là khung biểu đồ "đo bằng traffic hay doanh thu" trải rộng.
+- **Hero trang chủ** (`components/hero/HomeHero.js`): kiểu editorial. Dòng Google Partner, rồi H1 rất lớn (tới 88px) trải hết chiều ngang; hàng dưới: mô tả + nút + số điện thoại (trái, có đường kẻ đậm phía trên) và mảng gradient Signature với thẻ biểu đồ "đo bằng lượt truy cập hay doanh thu" (phải).
+- **Header và Mega Menu** (`components/header/`): cao 76px; menu Trang chủ, Giới thiệu, Dịch vụ, Dự án, Tin tức, Liên hệ + nút Nhận tư vấn. "Dịch vụ" mở panel 3 nhóm, 6 dịch vụ và khối CTA tối; bấm để mở, theo mẫu Disclosure Navigation (không role menu). Dưới 1000px là drawer với accordion. Dữ liệu menu ở `components/header/navigation.js`.
 - **Hero trang con** (`components/hero/Hero.js`): xếp dọc: breadcrumb, H1, một dòng mô tả; minh họa thành dải rộng bên dưới. Trang dịch vụ dùng `long` (H1 dài hơn, cỡ nhỏ hơn).
 
 ### 2.8. Ảnh
 
 - Ảnh dự án: ảnh thật từ trang dự án của SOHO (`public/projects/*.webp`), không ảnh kho.
-- Chưa có ảnh đội ngũ: hiện chữ cái đầu tên (Fraunces nghiêng trên nền Mist), không để khung trống. Có ảnh thì thêm `photo` vào `team` trong `app/ve-soho/page.js`.
+- Chưa có ảnh đội ngũ: hiện chữ cái đầu tên (Bricolage 800 trên nền gradient nhạt), không để khung trống. Có ảnh thì thêm `photo` vào `team` trong `app/ve-soho/page.js`.
 - Ô "sản phẩm bàn giao" ở trang dịch vụ chỉ hiện khi có ảnh thật (`artifact.image`).
 - Ảnh tạo bằng công cụ (nếu dùng): theo phong cách thương hiệu, 16:9, không có chữ trong ảnh.
 
@@ -159,17 +172,17 @@ Chỉ đặt ở chỗ giúp người xem hiểu hoặc quyết định nhanh h�
 
 ### 2.9b. Hình 3D trang trí (`public/decor/`, thuộc tính `decor` của `Section`)
 
-Bộ 3dicons của Vijay Verma (CC0), kiểu clay, WebP ~5 KB. Chỉ đặt trên khối nền xám, góc phải, trôi chậm.
+Bộ 3dicons của Vijay Verma (CC0), kiểu clay, WebP ~5 KB. Chỉ đặt trên khối nền (sáng hoặc tối), góc phải, trôi chậm.
 
 ### 2.10. Tương tác có ý nghĩa
 
 | Ở đâu | Tương tác | File |
 |---|---|---|
-| Hero trang chủ | Công tắc **Đo bằng traffic / Đo bằng doanh thu** | `components/hero/RevenueToggle.js` |
+| Hero trang chủ | Công tắc **Đo bằng lượt truy cập / Đo bằng doanh thu** | `components/hero/RevenueToggle.js` |
 | Khối dịch vụ trang chủ | Bộ chọn **Bạn đang gặp vấn đề gì?** làm sáng dịch vụ phù hợp | `components/ServiceGroups.js` |
 | Ma trận hành trình | Ba chặng sáng lần lượt khi cuộn; rê chuột vào kênh tô cả cột | `components/diagrams/JourneyMatrix.*` |
 | Huy hiệu Google Partner | Rê chuột hoặc Tab: ba tiêu chí Google xác nhận | `components/proof/PartnerBadge.*` |
-| Mobile | Thanh cố định **Gọi / Đặt lịch tư vấn** | `components/StickyCta.js` |
+| Mobile | Thanh cố định **Gọi / Nhận tư vấn** | `components/StickyCta.js` |
 | Bài dài | Thanh tiến độ đọc | `components/article/ReadingProgress.js` |
 
 ---
@@ -178,7 +191,7 @@ Bộ 3dicons của Vijay Verma (CC0), kiểu clay, WebP ~5 KB. Chỉ đặt trê
 
 ```
 app/
-  layout.js              next/font (Fraunces, Be Vietnam Pro), import styles
+  layout.js              next/font (Bricolage Grotesque, Plus Jakarta Sans), import styles
   styles/
     tokens.css           biến màu, chữ, khoảng cách
     base.css             reset, typography, link, prose (nội dung bài viết)
@@ -186,13 +199,16 @@ app/
   page.module.css
   ...các route giữ nguyên, mỗi route có *.module.css nếu cần
 components/
-  Header.js, NavMenu.js  Header là Server Component, NavMenu ('use client') lo mega menu và menu mobile
+  Header.js              trỏ tới header/SiteHeader.js
+  header/                SiteHeader (server), DesktopNavigation + MobileNavigation ('use client'), ServicesMegaMenu,
+                         ServiceMenuItem, MegaMenuCTA, MobileServiceAccordion; navigation.js là dữ liệu menu
+  analytics.js           track(): gửi sự kiện GA4 chỉ khi site đã cài gtag hoặc GTM
   Footer.js
   ContactForm.js         'use client'
   ui/                    Section (lưới 4/8 có nhãn số), PageHeader, NumberedList, LinkRows, Button, CtaBand
   article/               ArticleBody, Toc ('use client'), Markdown, parseMarkdown
   data/clients.js
-public/brand/soho-logo.svg   logo gốc của SOHO, dùng ở header và footer (xem 2.5)
+public/brand/soho-logo.webp  logo gốc của SOHO ở header (bản trắng soho-logo-white.webp ở footer)
 ```
 
 Xóa: `globals.css`, `ServiceSectionVisualizer.js`, `ArticleRenderer.js` (thay bằng ArticleBody), `cleanPunctuation.js`, `public/brand/page-*.png` nếu không dùng.

@@ -1,9 +1,11 @@
 .hero{position:relative;overflow:hidden;background:var(--white);padding-block:clamp(40px,6vw,88px) clamp(56px,7vw,104px)}
-.grid{display:grid;grid-template-columns:minmax(0,11fr) minmax(0,10fr);gap:48px clamp(32px,5vw,72px);align-items:center}
-.copy{display:grid;gap:22px;justify-items:start}
+/* Hàng trên: H1 editorial trải ngang. Hàng dưới: câu giá trị + nút (trái, có đường kẻ mảnh phía trên), mảng nghệ thuật (phải) */
+.head{display:grid;gap:clamp(20px,2.4vw,28px);justify-items:start;margin-bottom:clamp(32px,4.4vw,64px)}
+.grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:40px clamp(32px,5vw,80px);align-items:start}
+.copy{display:grid;gap:24px;justify-items:start;padding-top:clamp(20px,2.4vw,28px);border-top:1px solid var(--ink)}
 .eyebrow{display:inline-flex;align-items:center;gap:10px;min-height:34px;padding:0 14px;border:1px solid var(--line);border-radius:999px;font-size:13px;font-weight:500;color:var(--ink-2);background:var(--white)}
-.dot{width:8px;height:8px;border-radius:50%;background:var(--brand);box-shadow:0 0 0 4px rgba(255,122,0,.16)}
-.title{font-size:clamp(36px,4.3vw,60px);line-height:1.08;letter-spacing:-.018em;max-width:19ch}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--brand);box-shadow:0 0 0 4px rgba(242,101,34,.16)}
+.title{font-size:clamp(40px,6.2vw,88px);line-height:1.06;letter-spacing:-.035em;max-width:20ch}
 .lead{font-size:clamp(17px,1.35vw,19px);line-height:1.6;color:var(--ink-2);max-width:48ch}
 .actions{display:flex;flex-wrap:wrap;align-items:center;gap:12px}
 .note{font-size:14px;color:var(--ink-3)}
@@ -11,18 +13,18 @@
 .note a:hover{color:var(--brand-ink)}
 
 /* Mảng nghệ thuật: gradient Signature trong khung bo góc, thẻ trắng nổi lên trên */
-.art{position:relative;min-width:0;padding:clamp(96px,10vw,132px) clamp(16px,2.4vw,32px) clamp(64px,7vw,88px)}
+.art{position:relative;min-width:0;padding:clamp(88px,9vw,120px) clamp(16px,2.4vw,32px) clamp(64px,7vw,88px)}
 .canvas{position:absolute;inset:0 0 24px clamp(24px,4vw,56px);border-radius:var(--r-xl);overflow:hidden;
   background:
     radial-gradient(circle at 18% 22%,rgba(255,255,255,.35),transparent 42%),
-    radial-gradient(circle at 85% 85%,rgba(118,91,255,.55),transparent 55%),
-    linear-gradient(140deg,#FF9A45 0%,#FF7A00 28%,#FF416C 62%,#765BFF 100%)}
+    radial-gradient(circle at 85% 85%,rgba(109,40,217,.55),transparent 55%),
+    linear-gradient(140deg,#F58A4E 0%,#F26522 28%,#EC4899 62%,#6D28D9 100%)}
 .canvas::after{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.22) 1px,transparent 1px);background-size:18px 18px;mask-image:linear-gradient(180deg,#000,transparent 80%)}
-.obj{position:absolute;right:4%;top:2%;width:34%;max-width:200px;height:auto;filter:drop-shadow(0 24px 30px rgba(16,18,28,.25));animation:float 7s ease-in-out infinite}
+.obj{position:absolute;right:4%;top:2%;width:34%;max-width:200px;height:auto;filter:drop-shadow(0 24px 30px rgba(20,18,24,.25));animation:float 7s ease-in-out infinite}
 @keyframes float{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-12px) rotate(-4deg)}}
-.card{position:relative;display:grid;gap:10px;padding:clamp(16px,2vw,24px);background:var(--white);border-radius:var(--r-card);box-shadow:0 30px 70px rgba(16,18,28,.22)}
-.cardTitle{font-family:var(--font-display);font-weight:500;font-size:20px;line-height:1.25;color:var(--ink)}
-.chip{position:absolute;left:0;bottom:16px;display:flex;align-items:center;gap:12px;padding:10px 16px 10px 10px;background:var(--white);border-radius:var(--r-card);box-shadow:0 16px 40px rgba(16,18,28,.18);text-decoration:none;color:var(--ink);transition:transform var(--t-fast)}
+.card{position:relative;display:grid;gap:10px;padding:clamp(16px,2vw,24px);background:var(--white);border-radius:var(--r-card);box-shadow:0 30px 70px rgba(20,18,24,.22)}
+.cardTitle{font-family:var(--font-display);font-weight:600;font-size:20px;line-height:1.25;color:var(--ink)}
+.chip{position:absolute;left:0;bottom:16px;display:flex;align-items:center;gap:12px;padding:10px 16px 10px 10px;background:var(--white);border-radius:var(--r-card);box-shadow:0 16px 40px rgba(20,18,24,.18);text-decoration:none;color:var(--ink);transition:transform var(--t-fast)}
 .chip:hover{transform:translateY(-2px);color:var(--ink)}
 .chip img{width:44px;height:auto;border-radius:6px}
 .chip span{display:grid;font-size:12.5px;line-height:1.35;color:var(--ink-3)}
@@ -30,6 +32,7 @@
 
 @media (max-width:980px){
   .grid{grid-template-columns:minmax(0,1fr)}
+  .title{line-height:1.08}
   .art{padding-inline:12px 8px}
   .canvas{left:24px}
 }

@@ -13,15 +13,18 @@ body{
 }
 img,svg{display:block;max-width:100%;height:auto}
 button,input,select,textarea{font:inherit;color:inherit}
-::selection{background:#FFE8D6;color:var(--ink)}
+::selection{background:var(--color-primary-tint);color:var(--ink)}
 
 h1,h2,h3,h4{margin:0;color:inherit;text-wrap:balance}
-/* H1/H2: Fraunces, thứ bậc bằng cỡ chữ (Ramp), độ đậm 500. Giãn dòng 1.1 thay vì 1.0 vì dấu tiếng Việt chồng lên nhau */
-h1,h2{font-family:var(--font-display);font-weight:500;font-optical-sizing:auto}
-h3,h4{font-family:var(--font-text);font-weight:600}
-h1{font-size:var(--fs-h1);line-height:1.08;letter-spacing:-.015em}
-h2{font-size:var(--fs-h2);line-height:1.12;letter-spacing:-.01em}
-h3{font-size:var(--fs-h3);line-height:1.3;letter-spacing:-.005em}
+/* Tiêu đề: Bricolage Grotesque. H1/H2 đậm 700, H3 600, khít chữ nhẹ ở cỡ lớn.
+   Giãn dòng tối thiểu 1.1: dấu tiếng Việt chồng (Ặ, Ẫ, Ữ) cao hơn chữ hoa thường, dòng khít hơn sẽ chạm dòng trên. */
+h1,h2,h3{font-family:var(--font-display);font-optical-sizing:auto}
+h1,h2{font-weight:var(--fw-display)}
+h3{font-weight:var(--fw-title)}
+h4{font-family:var(--font-text);font-weight:700}
+h1{font-size:var(--fs-h1);line-height:1.1;letter-spacing:-.028em}
+h2{font-size:var(--fs-h2);line-height:1.12;letter-spacing:-.022em}
+h3{font-size:var(--fs-h3);line-height:1.3;letter-spacing:-.01em}
 h4{font-size:17px;line-height:1.35}
 p{margin:0;text-wrap:pretty}
 li,dd,blockquote{text-wrap:pretty}
@@ -37,21 +40,22 @@ main:focus{outline:none}
 .meta{font-size:var(--fs-meta);color:var(--ink-3);font-weight:500}
 .num{font-variant-numeric:tabular-nums}
 
-/* Chữ nhấn trong tiêu đề: Fraunces nghiêng + gradient Signature bản đậm (màu đặc dự phòng). Mỗi tiêu đề tối đa một cụm. */
-.hl{color:var(--brand-ink);font-style:italic;font-family:var(--font-display)}
+/* Chữ nhấn trong tiêu đề: gradient Signature bản đậm (mọi điểm >= 4,6:1 trên nền trắng), màu đặc Deep Orange dự phòng.
+   Mỗi tiêu đề tối đa một cụm. Đệm trên/dưới để background-clip:text không cắt dấu tiếng Việt. */
+.hl{color:var(--brand-ink)}
 @supports (-webkit-background-clip:text) or (background-clip:text){
   .hl{background:var(--grad-warm-text);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;padding:.14em 0 .08em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
 }
-.on-dark .hl{background:linear-gradient(100deg,#FF9A45,#FF6B8A 55%,#A08CFF);-webkit-background-clip:text;background-clip:text}
+.on-dark .hl{background:var(--gradient-signature-on-dark);-webkit-background-clip:text;background-clip:text}
 .grad-text{color:inherit}
-.dark h1,.dark h2,.dark h3{color:var(--on-dark)}
 
 /* Nhãn nhỏ trên tiêu đề section: chữ in hoa cam đậm, vạch cam phía trước */
 .kicker{display:block;font-size:13px;font-weight:600;color:var(--ink-3);margin-bottom:12px}
 
 /* Nền tối dùng chung */
 .dark{background:var(--grad-dark);color:var(--on-dark)}
-.dark a:hover{color:var(--brand)}
+/* Tiêu đề không ép màu: tự kế thừa (trắng ở nền tối, mực ở thẻ trắng nằm trong khối tối). :where() để link trong thẻ con tự đặt màu hover */
+:where(.dark) a:hover{color:var(--warm-2)}
 
 /* Đánh dấu chỗ cần điền */
 mark[data-verify]{background:none;color:inherit;text-decoration:underline dotted var(--brand);text-decoration-thickness:2px;text-underline-offset:4px}

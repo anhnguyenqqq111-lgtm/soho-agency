@@ -87,7 +87,7 @@ export default function Home(){
           <JourneyMatrix/>
         </Section>
 
-        <Section id="du-an" title={<>Dự án nổi bật, <span className="hl">kể bằng kết quả</span></>} intro="Con số chỉ ghi khi dự án đã công bố." aside={<Button href="/ket-qua" variant="text" arrow="right">Xem tất cả dự án</Button>}>
+        <Section id="du-an" tone="dark" title={<>Dự án nổi bật, <span className="hl">kể bằng kết quả</span></>} intro="Con số chỉ ghi khi dự án đã công bố." aside={<Button href="/ket-qua" variant="text" arrow="right">Xem tất cả dự án</Button>}>
           <ProjectShowcase items={cases}/>
         </Section>
 

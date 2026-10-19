@@ -20,7 +20,7 @@
   background-size:5px 5px;background-repeat:no-repeat;
 }
 .field input::placeholder,.field textarea::placeholder{color:var(--ink-3)}
-.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--brand);box-shadow:0 0 0 3px rgba(255,122,0,.18)}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--brand);box-shadow:0 0 0 3px rgba(242,101,34,.18)}
 
 .field input[aria-invalid],.field select[aria-invalid]{border-color:var(--error)}
 .field input,.field select{min-height:48px}
@@ -46,7 +46,7 @@
 .result:focus{outline:none}
 .result a{color:var(--brand-ink);font-weight:600}
 .okIcon{color:var(--success)}
-.resultTitle{font-family:var(--font-display);font-size:26px;line-height:1.25;font-weight:500;color:var(--ink)}
+.resultTitle{font-family:var(--font-display);font-size:26px;line-height:1.25;font-weight:700;color:var(--ink)}
 .linkBtn{min-height:44px;padding:0;border:0;background:none;color:var(--ink);font-weight:600;text-decoration:underline;text-underline-offset:4px;cursor:pointer}
 
 @media (max-width:560px){.row{grid-template-columns:minmax(0,1fr)}.actions{justify-items:stretch}.submit{justify-content:center}}

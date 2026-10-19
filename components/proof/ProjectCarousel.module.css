@@ -19,12 +19,12 @@
 .link:hover .media img{transform:scale(1.03)}
 .body{display:grid;gap:6px;padding:20px 22px 22px;align-content:start}
 .scope{font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-3)}
-.name{font-family:var(--font-display);font-weight:500;font-size:24px;line-height:1.2}
+.name{font-family:var(--font-display);font-weight:600;font-size:24px;line-height:1.2}
 .field{font-size:14px;color:var(--ink-3)}
 .result{margin-top:8px;font-size:15px;line-height:1.5;color:var(--ink-2)}
 /* Con số đã công bố: điểm sáng duy nhất của thẻ (kiểu Ramp) */
 .kpi{margin-top:8px;display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px;align-items:center}
-.kpi b{font-family:var(--font-display);font-weight:500;font-style:italic;font-size:34px;line-height:1;color:var(--brand-ink)}
+.kpi b{font-family:var(--font-display);font-weight:800;font-size:34px;line-height:1;color:var(--brand-ink)}
 .kpi span{font-size:14px;line-height:1.4;color:var(--ink-2)}
 .more{margin-top:12px;display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:600;color:var(--ink)}
 .link:hover .more{color:var(--brand-ink)}

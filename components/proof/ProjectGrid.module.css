@@ -6,7 +6,7 @@
 .link:hover .media img{transform:scale(1.03)}
 .meta{display:grid;gap:6px;padding:22px 24px 24px;align-content:start}
 .scope{font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-3)}
-.name{font-family:var(--font-display);font-weight:500;font-size:26px;line-height:1.2}
+.name{font-family:var(--font-display);font-weight:600;font-size:26px;line-height:1.2}
 .field{font-size:14px;color:var(--ink-3)}
 .result{margin-top:6px;font-size:15px;line-height:1.5;color:var(--ink-2)}
 .more{margin-top:10px;display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:600}

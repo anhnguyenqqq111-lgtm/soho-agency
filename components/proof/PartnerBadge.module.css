@@ -9,8 +9,8 @@
 .tip strong{font-size:13px}
 .tipList{display:grid;gap:6px}
 .tipList span{display:grid;grid-template-columns:16px minmax(0,1fr);gap:6px}
-.tipList span::before{content:'✓';color:#FF9A45;font-weight:600}
-.tipMore{color:#FF9A45;font-weight:600}
+.tipList span::before{content:'✓';color:#F58A4E;font-weight:600}
+.tipMore{color:#F58A4E;font-weight:600}
 /* Chỉ hiện trên màn hình có chuột và đủ rộng; khi ẩn thì không chiếm chỗ (không gây tràn ngang) */
 @media (hover:hover) and (min-width:900px){.wrap:hover .tip,.wrap:focus-within .tip{display:grid}}
 .end .tip{left:auto;right:0}

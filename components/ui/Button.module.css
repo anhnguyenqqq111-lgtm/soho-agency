@@ -1,5 +1,5 @@
 /* Nút: bo 12px (Brex), phẳng, không bóng. Cam chỉ cho hành động chính; mỗi trang một nhãn chính. */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;min-height:44px;font-family:var(--font-text);font-weight:600;text-decoration:none;cursor:pointer;border:1px solid transparent;border-radius:var(--r-md);transition:background-color .18s ease,color .18s ease,border-color .18s ease,transform .18s ease;white-space:nowrap;line-height:1.2}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;min-height:44px;font-family:var(--font-text);font-weight:700;text-decoration:none;cursor:pointer;border:1px solid transparent;border-radius:var(--r-md);transition:background-color .18s ease,color .18s ease,border-color .18s ease,transform .18s ease;white-space:nowrap;line-height:1.2}
 .btn:hover{text-decoration:none}
 .md{font-size:15px;padding:12px 20px}
 .sm{font-size:14px;padding:9px 15px}
@@ -18,8 +18,10 @@
 .text > span:first-child{text-decoration:underline;text-decoration-color:var(--gray-2);text-underline-offset:6px;text-decoration-thickness:1.5px;transition:text-decoration-color var(--t-fast)}
 .text:hover > span:first-child{text-decoration-color:currentColor}
 
-.onDark.secondary{background:transparent;color:#FFFFFF;border-color:rgba(255,255,255,.35)}
-.onDark.secondary:hover{border-color:#FFFFFF}
-.onDark.text{color:#FFFFFF}
-.onDark.text:hover{color:var(--warm-2)}
+/* Trên nền tối: prop onDark, hoặc tự động khi nằm trong section .dark */
+.onDark.secondary,:global(.dark) .secondary{background:transparent;color:#FFFFFF;border-color:rgba(255,255,255,.35)}
+.onDark.secondary:hover,:global(.dark) .secondary:hover{border-color:#FFFFFF;color:#FFFFFF}
+.onDark.text,:global(.dark) .text{color:#FFFFFF}
+.onDark.text:hover,:global(.dark) .text:hover{color:var(--warm-2)}
+.onDark.text > span:first-child,:global(.dark) .text > span:first-child{text-decoration-color:rgba(255,255,255,.4)}
 @media (max-width:480px){.btn{white-space:normal}}

@@ -13,7 +13,7 @@ export default function LegalPage({title, lead, updated, sections}){
       <main id="main">
         <Hero tone="blog" crumbs={[{label: title}]} title={title} visual={<ContactVisual/>}/>
         <PageHeader compact title="Nội dung" lead={lead}>
-          <p style={{fontSize: 13, color: 'var(--on-dark-2)'}}>Cập nhật lần cuối: <Fill value={updated} need="CẦN NGÀY HIỆU LỰC"/></p>
+          <p style={{fontSize: 13, color: 'var(--ink-3)'}}>Cập nhật lần cuối: <Fill value={updated} need="CẦN NGÀY HIỆU LỰC"/></p>
         </PageHeader>
         <div className="container" style={{paddingBlock: 'var(--space-md) var(--space-lg)'}}>
           <div style={{maxWidth: 860, marginInline: 'auto', background: 'var(--white)', borderRadius: 'var(--r-card)', padding: 'clamp(24px,4vw,56px)', boxShadow: 'var(--shadow-card)'}}>

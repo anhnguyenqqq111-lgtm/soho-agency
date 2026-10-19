@@ -49,7 +49,7 @@ Không thêm biến môi trường nào trên Vercel. Nếu lỡ đặt `GITHUB_
 
 ```text
 app/
-  layout.js                  font Fraunces (tiêu đề) + Be Vietnam Pro (nội dung), metadata mặc định, RevealObserver
+  layout.js                  font Bricolage Grotesque (tiêu đề) + Plus Jakarta Sans (nội dung), metadata mặc định, RevealObserver
   favicon.ico, icon.png, apple-icon.png   favicon (chữ S của logo gốc)
   styles/tokens.css          biến màu, chữ, khoảng cách theo màu SOHO Brand Kit v3.0 (nền trắng, màu ở điểm quan trọng) (toàn bộ màu định nghĩa ở đây)
   styles/base.css            reset, typography, .prose, hiệu ứng hé lộ
@@ -61,7 +61,8 @@ app/
   chinh-sach-bao-mat/  dieu-khoan-su-dung/   trang pháp lý (bản nháp)
 
 components/
-  Header.js, NavMenu.js      header; NavMenu là client component (mega menu, menu mobile)
+  Header.js                  trỏ tới header/SiteHeader.js
+  header/                    SiteHeader, Mega Menu dịch vụ (DesktopNavigation, ServicesMegaMenu), drawer mobile; dữ liệu menu ở navigation.js
   Footer.js
   ServiceGroups.js           khối dịch vụ trang chủ (3 thẻ nhóm trên nền cam nhạt)
   ContactForm.js             form Nhận tư vấn (client): kiểm tra từng ô, chống gửi trùng, bẫy bot; gửi tới NEXT_PUBLIC_FORM_ENDPOINT
@@ -89,7 +90,7 @@ public/blog/                 ảnh bài blog (thumbnail và banner dùng chung),
 DESIGN.md                    "tờ giấy" hệ thiết kế: nguồn tham chiếu, màu, phông, luật viết chữ, từ cấm, icon, ảnh (mục 2). Đọc trước khi sửa giao diện hay câu chữ
 ```
 
-Mỗi component và trang có `.module.css` riêng. Server Component mặc định; client component: `NavMenu`, `ContactForm`, `RevealObserver`, `Toc`, `ProjectCarousel`, `RevenueToggle`, `ServiceGroups`, `ProcessAccordion`, `StickyCta`, `ReadingProgress`.
+Mỗi component và trang có `.module.css` riêng. Server Component mặc định; client component: `DesktopNavigation`, `MobileNavigation`, `HeaderScroll`, `ContactForm`, `RevealObserver`, `Toc`, `ProjectCarousel`, `RevenueToggle`, `ServiceGroups`, `ProcessAccordion`, `StickyCta`, `ReadingProgress`.
 
 ## Form liên hệ
 

@@ -1,65 +1,106 @@
-/* SOHO design tokens, bản 10: trộn hai hệ thật trên styles.refero.design (Ramp: dàn chữ kiểu báo; Brex: nền trắng, một màu hành động)
-   với màu Brand Kit v3 và logo gốc. Phông Fraunces + Be Vietnam Pro. Xem DESIGN.md.
-   Cam là màu chính; gradient Signature (cam, san hô, tím) chỉ ở vài điểm nhấn. Một khối tối duy nhất: khối liên hệ. */
+/* SOHO design tokens, bản 11 (tháng 10/2026): màu và chữ theo brief "SOHO Color & Typography".
+   Phông: Bricolage Grotesque (tiêu đề, 600 đến 800) + Plus Jakarta Sans (nội dung, 400 đến 700). Xem DESIGN.md mục 2.3 và 2.6.
+   Tỉ lệ màu trên một màn hình: khoảng 70% trắng hoặc nền nhạt + chữ tối, 20% cam, 10% tím, san hô và gradient.
+   Gradient Signature chỉ dùng ở điểm nhấn: chữ nhấn .hl, mảng hero, khối CTA tối. Không dùng nền #FFF4E9.
+   Cam #F26522 chỉ làm nền (nút, ô icon) với chữ tối #141218; chữ cam nhỏ trên nền sáng dùng Deep Orange #C2410C. */
 :root{
-  /* Màu nhấn theo Brand Kit v3: cam là chính, san hô và tím là điểm nhấn UI */
-  --brand:#FF7A00;          /* SOHO Orange: nút, số thứ tự, nét nhấn. Không dùng cho chữ nhỏ trên nền sáng */
-  --brand-hover:#E56F00;
-  --brand-deep:#B84A00;
-  --brand-ink:#B84A00;      /* chữ cam nhỏ, link (>= 4.5:1 trên nền trắng) */
-  --brand-dark:var(--brand-ink);
-  --brand-soft:#F5F6FA;
-  --coral:#FF416C;          /* Electric Coral */
-  --violet:#765BFF;         /* Digital Violet */
-  --grad-cta:#FF7A00;       /* nút chính: cam đặc, chữ Midnight (kit 3) */
-  --grad-warm:linear-gradient(112deg,#FF7A00 0%,#FF416C 52%,#765BFF 100%);   /* gradient Signature: mảng nhấn lớn, mỗi màn hình một chỗ */
-  --grad-warm-text:linear-gradient(100deg,#E0560F 0%,#E0245E 52%,#6A4CF0 100%);  /* chữ nhấn .hl: Signature đậm hơn, >= 3.5:1 */
-  --warm-1:#FFE8D6;         /* cam rất nhạt: chặng đầu, nền dấu tích */
-  --warm-2:#FF9A45;
-  --midnight:#10121C;
-  --glow-warm:radial-gradient(circle at 80% 18%,rgba(118,91,255,.14),transparent 40%),radial-gradient(circle at 12% 88%,rgba(255,122,0,.12),transparent 45%);
+  /* 1. Bảng màu gốc trong brief */
+  --c-orange:#F26522;       /* Brand Orange */
+  --c-orange-deep:#C2410C;  /* Deep Orange: chữ cam, link. 5,18:1 trên trắng */
+  --c-violet:#6D28D9;       /* Violet: 7,1:1 trên trắng */
+  --c-coral:#EC4899;        /* Coral: chỉ trong gradient và hình, không làm chữ nhỏ (3,5:1) */
+  --c-ink:#141218;          /* Dark Ink */
+  --c-white:#FFFFFF;
+  --c-canvas:#FAF9FD;       /* Soft Canvas */
+  --c-border:#E9E5EF;
+  --c-muted:#62616C;        /* Muted Text: 6,09:1 trên trắng, 5,81:1 trên Soft Canvas */
 
-  /* Trung tính */
+  /* 2. Token theo vai trò: component dùng nhóm này */
+  --color-bg:var(--c-white);
+  --color-bg-soft:var(--c-canvas);
+  --color-surface:#F3F1F8;          /* ô icon, nền hover, ảnh chờ: đậm hơn Soft Canvas một bậc để còn thấy trên nền trắng */
+  --color-bg-inverse:var(--c-ink);
+  --color-text:var(--c-ink);
+  --color-text-2:#3A3843;           /* đoạn văn phụ: 11,5:1 */
+  --color-text-muted:var(--c-muted);
+  --color-text-inverse:#FFFFFF;
+  --color-text-inverse-muted:#B8B5C2; /* chữ phụ trên nền tối: 9,2:1 */
+  --color-border:var(--c-border);
+  --color-border-strong:#8E8A99;    /* viền ô nhập: 3,36:1, đạt mức 3:1 cho thành phần giao diện */
+  --color-primary:var(--c-orange);  /* nền nút chính, chữ trên nút luôn là Dark Ink (5,9:1) */
+  --color-primary-hover:#E0581C;    /* Dark Ink trên nền này: 4,94:1 */
+  --color-primary-text:var(--c-orange-deep);
+  --color-primary-tint:#FDE5D8;     /* nền rất nhạt cho dấu tích, chọn chữ. Không dùng làm nền section */
+  --color-secondary:var(--c-violet);
+  --color-accent:var(--c-coral);
+  --color-focus:var(--c-orange-deep);
+  --gradient-signature:linear-gradient(115deg,#F26522 0%,#EC4899 48%,#6D28D9 100%);
+  --gradient-signature-text:linear-gradient(115deg,#C2410C 0%,#DB2777 48%,#6D28D9 100%); /* chữ nhấn trên nền sáng: mọi điểm >= 4,6:1 */
+  --gradient-signature-on-dark:linear-gradient(115deg,#F58A4E 0%,#F472B6 48%,#A78BFA 100%); /* chữ nhấn trên nền tối: >= 6,8:1 */
+  --gradient-ink:linear-gradient(120deg,#141218 10%,#2B1A4A 57%,#5A1F4D 100%);
+  --gradient-soft:linear-gradient(120deg,#FAF9FD 5%,#EFE9FB 53%,#FCE7F1 100%);
+
+  /* 3. Tên cũ, trỏ về token mới để component cũ không lỗi */
+  --brand:var(--color-primary);
+  --brand-hover:var(--color-primary-hover);
+  --brand-deep:var(--c-orange-deep);
+  --brand-ink:var(--c-orange-deep);
+  --brand-dark:var(--c-orange-deep);
+  --brand-soft:var(--c-canvas);
+  --coral:var(--c-coral);
+  --violet:var(--c-violet);
+  --grad-cta:var(--color-primary);
+  --grad-warm:var(--gradient-signature);
+  --grad-warm-text:var(--gradient-signature-text);
+  --warm-1:var(--color-primary-tint);
+  --warm-2:#F58A4E;
+  --midnight:var(--c-ink);
+  --glow-warm:radial-gradient(circle at 80% 18%,rgba(109,40,217,.14),transparent 40%),radial-gradient(circle at 12% 88%,rgba(242,101,34,.12),transparent 45%);
+
   --white:#FFFFFF;
-  --paper:#FFFFFF;          /* nền trang: trắng */
-  --paper-2:#F5F6FA;
-  --gray:#F5F6FA;           /* ô nền rất nhạt khi cần tách lớp */
-  --gray-2:#DDE1EB;
-  --line:#DCE0E9;
-  --ink:#10121C;
-  --ink-2:#3B4152;
-  --ink-3:#62697D;
-  --silver:#C9D0DF;
-  --accent:var(--brand-ink);
+  --paper:#FFFFFF;
+  --paper-2:var(--c-canvas);
+  --canvas:var(--c-canvas);
+  --gray:var(--color-surface);
+  --gray-2:var(--color-border-strong);
+  --line:var(--color-border);
+  --ink:var(--color-text);
+  --ink-2:var(--color-text-2);
+  --ink-3:var(--color-text-muted);
+  --silver:#C9C5D3;
+  --accent:var(--color-primary-text);
 
-  /* Tên cũ cho khối tối: không còn dùng nền tối, giữ để component không lỗi */
-  --night:#FFFFFF;
-  --night-2:#F5F6FA;
-  --on-dark:var(--ink);
-  --on-dark-2:var(--ink-2);
-  --on-dark-3:var(--ink-3);
-  --line-dark:var(--line);
+  /* Khối tối (portfolio, CTA cuối trang) */
+  --night:var(--c-ink);
+  --night-2:#1E1B25;
+  --on-dark:var(--color-text-inverse);
+  --on-dark-2:#D9D6E0;
+  --on-dark-3:var(--color-text-inverse-muted);
+  --line-dark:rgba(255,255,255,.14);
 
   --success:#117A5B;
   --warning:#A35A00;
   --error:#C62D44;
 
-  /* Tên gradient cũ trỏ về màu phẳng */
-  --grad-signature:var(--grad-warm);
-  --grad-midnight:linear-gradient(120deg,#10121C 10%,#261E44 57%,#593358 100%);
-  --grad-mist:linear-gradient(120deg,#F5F6FA 5%,#E8E9FF 53%,#F7E5EB 100%);
+  --grad-signature:var(--gradient-signature);
+  --grad-midnight:var(--gradient-ink);
+  --grad-mist:var(--gradient-soft);
   --grad-glow:none;
-  --grad-brand:var(--brand);
-  --grad-dark:var(--white);
+  --grad-brand:var(--color-primary);
+  --grad-dark:var(--c-ink);
   --grad-hero:var(--white);
   --grad-fade:var(--white);
 
-  --font-text:var(--font-bvp),'Be Vietnam Pro',system-ui,-apple-system,'Segoe UI',sans-serif;
-  --font-display:var(--font-fraunces),'Fraunces',Georgia,serif;
+  /* Chữ */
+  --font-text:var(--font-jakarta),'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --font-display:var(--font-bricolage),'Bricolage Grotesque',var(--font-text);
+  --fw-display:700;         /* H1, H2 */
+  --fw-display-strong:800;  /* số lớn, chữ hero */
+  --fw-title:600;           /* H3, tên thẻ */
 
-  --fs-h1:clamp(40px,5.6vw,76px);
-  --fs-h2:clamp(30px,3.4vw,48px);
-  --fs-h3:clamp(18px,1.5vw,21px);
+  --fs-h1:clamp(40px,5.4vw,76px);
+  --fs-h2:clamp(30px,3.6vw,52px);
+  --fs-h3:clamp(19px,1.6vw,22px);
   --fs-lead:clamp(17px,1.35vw,19px);
   --fs-body:16px;
   --fs-small:14px;
@@ -76,12 +117,12 @@
 
   --r-pill:999px;
   --r-xl:20px;
-  --r-card:16px;      /* thẻ nội dung (Ramp) */
-  --r-md:12px;        /* nút, ô nhập (Brex) */
-  --r-sm:6px;         /* nhãn nhỏ, chip */
+  --r-card:16px;
+  --r-md:12px;
+  --r-sm:6px;
 
-  --shadow-card:none;   /* thẻ đứng trên viền mảnh, không đổ bóng (Ramp, Brex) */
-  --shadow-pop:0 20px 50px rgba(16,18,28,.12);
+  --shadow-card:none;
+  --shadow-pop:0 20px 50px rgba(20,18,24,.12);
   --ease:cubic-bezier(.2,.8,.2,1);
   --t-fast:160ms ease;
   --t-med:240ms cubic-bezier(.2,.8,.2,1);
