@@ -6,6 +6,7 @@ import {partners} from './data/proof';
 import Fill from './ui/Fill';
 import PartnerBadge from './proof/PartnerBadge';
 import StickyCta from './StickyCta';
+import Icon from './ui/Icon';
 
 export default function Footer(){
   const year = new Date().getFullYear();
@@ -25,13 +26,14 @@ export default function Footer(){
       <div className={`container ${styles.grid}`}>
         <div className={styles.brand}>
           <a href={sitePath('/')} className={styles.logo} aria-label="SOHO Agency, về trang chủ">
-            <img src={sitePath('/brand/soho-logo.svg')} alt="SOHO Agency" width="568" height="234"/>
+            <img src={sitePath('/brand/soho-logo-white.svg')} alt="SOHO Agency" width="568" height="234"/>
           </a>
           <h2 className={styles.company}><Fill value={company.legalName} need="CẦN TÊN PHÁP NHÂN"/></h2>
           <ul className={styles.info}>
-            <li><span className={styles.ic} aria-hidden="true">⌖</span><span><Fill value={company.address} need="CẦN ĐỊA CHỈ VĂN PHÒNG"/></span></li>
-            <li><span className={styles.ic} aria-hidden="true">✆</span>{company.phone ? <a href={`tel:${company.phone.replace(/\s/g, '')}`}>{company.phone}</a> : <Fill value={null} need="CẦN SỐ ĐIỆN THOẠI"/>}</li>
-            <li><span className={styles.ic} aria-hidden="true">✉</span><a href={`mailto:${company.email}`}>{company.email}</a></li>
+            <li><Icon name="map-pin" size={18} className={styles.ic}/><span><Fill value={company.address} need="CẦN ĐỊA CHỈ VĂN PHÒNG"/></span></li>
+            <li><Icon name="phone" size={18} className={styles.ic}/>{company.phone ? <a href={`tel:${company.phone.replace(/\s/g, '')}`}>{company.phone}</a> : <Fill value={null} need="CẦN SỐ ĐIỆN THOẠI"/>}</li>
+            <li><Icon name="mail" size={18} className={styles.ic}/><a href={`mailto:${company.email}`}>{company.email}</a></li>
+            {company.hours && <li><Icon name="clock" size={18} className={styles.ic}/><span>{company.hours}</span></li>}
           </ul>
         </div>
 
@@ -71,7 +73,7 @@ export default function Footer(){
           <nav aria-label="Pháp lý" className={styles.legal}>
             <a href={sitePath('/chinh-sach-bao-mat')}>Chính sách bảo mật</a>
             <a href={sitePath('/dieu-khoan-su-dung')}>Điều khoản sử dụng</a>
-            <a href="#top">Lên đầu trang ↑</a>
+            <a href="#top">Lên đầu trang</a>
           </nav>
         </div>
       </div>

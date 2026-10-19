@@ -7,18 +7,19 @@ import styles from './JourneyMatrix.module.css';
   Rê chuột vào một kênh: cả cột kênh đó được tô (CSS :has, không cần JS).
 */
 const CHANNELS = [
-  {name: 'SEO và AI Search', color: '#F5F6FA', ink: '#10121C'},
+  {name: 'SEO và AI tìm kiếm', color: '#F5F6FA', ink: '#10121C'},
   {name: 'Quảng cáo', color: '#F5F6FA', ink: '#10121C'},
-  {name: 'Content', color: '#F5F6FA', ink: '#10121C'},
+  {name: 'Nội dung', color: '#F5F6FA', ink: '#10121C'},
   {name: 'Đo lường', color: '#F5F6FA', ink: '#10121C'}
 ];
+// Ô chỉ số viết bằng tiếng Việt (luật viết chữ: không dùng thuật ngữ tiếng Anh không giải thích)
 const STAGES = [
-  {code: 'TOFU', name: 'Được tìm thấy', sub: 'Nhận biết', owner: 'Marketing', q: '“Có ai giải được việc này không?”',
-    cells: [['Visibility nhóm từ khóa', 'Trích dẫn trên AI Overview'], ['Hiển thị đúng tệp', 'Tỉ lệ nhớ quảng cáo'], ['Traffic bài viết', 'Nhắc tên thương hiệu'], ['Tracking đủ event', 'Nguồn traffic đúng']]},
-  {code: 'MOFU', name: 'Được chọn', sub: 'Cân nhắc', owner: 'Marketing', q: '“Bên nào đáng tin hơn?”',
-    cells: [['Lead từ trang organic'], ['Lead đạt chuẩn', 'Truy vấn lãng phí'], ['Lead có chạm nội dung', 'Tải tài liệu'], ['Số liệu khớp Ads và CRM']]},
-  {code: 'BOFU', name: 'Được tin, mua', sub: 'Quyết định', owner: 'Sales', q: '“Mua thì được gì, bao nhiêu?”',
-    cells: [['Doanh thu nguồn organic'], ['CPA, ROAS', 'Lợi nhuận gộp'], ['Assisted conversion'], ['Quyết định ngân sách theo kênh']]}
+  {code: 'Chặng 1', name: 'Được tìm thấy', sub: 'Khách mới biết tới bạn', owner: 'Marketing', q: '“Có ai giải được việc này không?”',
+    cells: [['Độ phủ nhóm từ khóa người muốn mua', 'Được AI của Google nhắc tên'], ['Hiện đúng nhóm khách', 'Tỉ lệ nhớ quảng cáo'], ['Lượt đọc bài viết', 'Số lần thương hiệu được nhắc'], ['Đo đủ hành động quan trọng', 'Biết khách đến từ đâu']]},
+  {code: 'Chặng 2', name: 'Được chọn', sub: 'Khách đang cân nhắc', owner: 'Marketing', q: '“Bên nào đáng tin hơn?”',
+    cells: [['Khách để lại thông tin từ Google'], ['Khách tiềm năng đúng tệp', 'Từ khóa tốn tiền vô ích'], ['Khách đã đọc bài trước khi liên hệ', 'Lượt tải tài liệu'], ['Số quảng cáo khớp sổ bán hàng']]},
+  {code: 'Chặng 3', name: 'Được tin, mua', sub: 'Khách ra quyết định', owner: 'Sales', q: '“Mua thì được gì, bao nhiêu?”',
+    cells: [['Doanh thu từ Google tự nhiên'], ['Chi phí mỗi đơn', 'Lợi nhuận gộp'], ['Kênh góp phần vào đơn'], ['Chia ngân sách theo kênh']]}
 ];
 const WIDTH = ['100%', '88%', '76%'];
 

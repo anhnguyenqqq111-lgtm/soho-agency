@@ -10,7 +10,7 @@ function SeoCluster({card}){
     {x: 405, y: 112, label: 'So sánh', ty: -16},
     {x: 405, y: 244, label: 'Chi phí', ty: 30},
     {x: 240, y: 304, label: 'Trang dịch vụ', ty: 30, acc: true},
-    {x: 75, y: 244, label: 'Case study', ty: 30},
+    {x: 75, y: 244, label: 'Câu chuyện khách', ty: 30},
     {x: 75, y: 112, label: 'Quy trình', ty: -16}
   ];
   return (
@@ -47,7 +47,7 @@ function AiEntity({card}){
       id="dg-ai"
       viewBox="0 0 480 330"
       title="Sơ đồ thực thể thương hiệu cho AI Search"
-      desc="Tác giả, schema, FAQ và báo chí cùng xác nhận thương hiệu, từ đó AI trích dẫn website trong câu trả lời."
+      desc="Tác giả, dữ liệu cấu trúc, phần hỏi đáp và báo chí cùng xác nhận thương hiệu, từ đó AI trích dẫn website trong câu trả lời."
       caption="AI tổng hợp tín hiệu từ nhiều nguồn trước khi chọn website để trích dẫn."
     >
       {left.map((label, i) => {
@@ -113,9 +113,9 @@ function LocalMap({card}){
 function AdsFunnel({card}){
   const layers = [
     {w: 300, label: 'Truy vấn', note: 'Lọc từ khóa phủ định'},
-    {w: 230, label: 'Click', note: 'Landing đúng ý định'},
-    {w: 160, label: 'Lead đạt chuẩn', note: 'Đồng bộ dữ liệu CRM'},
-    {w: 96, label: 'Đơn có lợi nhuận', note: 'Bid theo lợi nhuận', acc: true}
+    {w: 230, label: 'Lượt bấm', note: 'Trang đích đúng ý định'},
+    {w: 160, label: 'Khách đúng tệp', note: 'Khớp với sổ bán hàng'},
+    {w: 96, label: 'Đơn có lãi', note: 'Giá thầu theo lợi nhuận', acc: true}
   ];
   const cx = 160, h = 58, gap = 12, top = 20;
   return (
@@ -124,7 +124,7 @@ function AdsFunnel({card}){
       id="dg-ads"
       viewBox="0 0 480 300"
       title="Phễu Google Ads từ truy vấn đến đơn có lợi nhuận"
-      desc="Bốn tầng: truy vấn, click, lead đạt chuẩn, đơn có lợi nhuận, mỗi tầng có một việc tối ưu."
+      desc="Bốn tầng: truy vấn, lượt bấm, khách đúng tệp, đơn có lãi, mỗi tầng có một việc tối ưu."
       caption="Tối ưu ở từng tầng phễu, không chỉ ở giá click."
     >
       {layers.map((l, i) => {
@@ -148,16 +148,16 @@ function AdsFunnel({card}){
 // Meta & TikTok: ma trận creative
 function CreativeMatrix({card}){
   const x0 = 100, y0 = 52, cw = 88, ch = 66;
-  const hooks = ['Hook A', 'Hook B', 'Hook C'];
-  const offers = ['Offer 1', 'Offer 2', 'Offer 3'];
+  const hooks = ['Mở đầu A', 'Mở đầu B', 'Mở đầu C'];
+  const offers = ['Ưu đãi 1', 'Ưu đãi 2', 'Ưu đãi 3'];
   const bars = [[40, 22, 30], [28, 18, 66], [16, 34, 26]];
   return (
     <Figure
       card={card}
       id="dg-creative"
       viewBox="0 0 480 300"
-      title="Ma trận test creative"
-      desc="Ba hook nhân ba offer thành chín mẫu quảng cáo, mẫu thắng được mở rộng ngân sách."
+      title="Bảng thử mẫu quảng cáo"
+      desc="Ba câu mở đầu nhân ba ưu đãi thành chín mẫu quảng cáo, mẫu hiệu quả được tăng ngân sách."
       caption="Test theo ma trận để biết thứ gì làm quảng cáo thắng, rồi mới tăng ngân sách."
     >
       {offers.map((o, j) => <T key={o} x={x0 + j * cw + cw / 2} y={38} c="mid b" d={j * 100}>{o}</T>)}
@@ -183,7 +183,7 @@ function CreativeMatrix({card}){
 function CroWireframe({card}){
   const marks = [
     {y: 92, label: 'Thông điệp rõ'},
-    {y: 150, label: 'CTA nổi bật'},
+    {y: 150, label: 'Nút bấm rõ'},
     {y: 206, label: 'Bằng chứng'},
     {y: 272, label: 'Form ngắn'}
   ];
@@ -192,8 +192,8 @@ function CroWireframe({card}){
       card={card}
       id="dg-cro"
       viewBox="0 0 480 340"
-      title="Landing page với bốn điểm cần tối ưu"
-      desc="Khung landing page: thông điệp, nút kêu gọi, bằng chứng, form, mỗi phần được đánh số."
+      title="Trang đích với bốn điểm cần tối ưu"
+      desc="Khung trang đích: thông điệp, nút bấm, bằng chứng, form, mỗi phần được đánh số."
       caption="Bốn chỗ khách hay rời trang, sắp theo thứ tự cần sửa."
     >
       <R x={20} y={20} w={260} h={300} d={0}/>
@@ -263,7 +263,7 @@ function DataFlow({card}){
       id="dg-data"
       viewBox="0 0 480 330"
       title="Luồng dữ liệu từ nguồn đến quyết định"
-      desc="Website, quảng cáo và CRM đổ dữ liệu vào GA4 và GTM, lên dashboard, rồi thành quyết định ngân sách."
+      desc="Website, quảng cáo và sổ bán hàng đổ dữ liệu vào GA4, lên báo cáo, rồi thành quyết định ngân sách."
       caption="Một nguồn số liệu chung cho marketing và sales."
     >
       {sources.map((s, i) => {
@@ -280,7 +280,7 @@ function DataFlow({card}){
       <TL x={234} y={120} lines={['GA4', '+ GTM']} lh={20} c="mid b" d={1100}/>
       <Arrow x1={286} y1={125} x2={326} y2={125} d={1200}/>
       <R x={330} y={60} w={140} h={130} d={1300}/>
-      <T x={344} y={84} c="b" d={1600}>Dashboard</T>
+      <T x={344} y={84} c="b" d={1600}>Báo cáo</T>
       {[[350, 40], [376, 64], [402, 52], [428, 82]].map(([x, hgt], i) => (
         <L key={x} x1={x} y1={176} x2={x} y2={176 - hgt} c={i === 3 ? 'acc' : ''} d={1700 + i * 100}/>
       ))}
@@ -301,8 +301,8 @@ function SprintTimeline({card}){
       card={card}
       id="dg-sprint"
       viewBox="0 0 480 270"
-      title="Dòng thời gian sprint 90 ngày"
-      desc="Hai tuần đầu chẩn đoán, sau đó năm sprint hai tuần, kết thúc bằng đánh giá ngày 90."
+      title="Lộ trình 90 ngày theo vòng 2 tuần"
+      desc="Hai tuần đầu chẩn đoán, sau đó năm vòng hai tuần, kết thúc bằng đánh giá ngày 90."
       caption="Hai tuần chẩn đoán, sau đó cứ hai tuần một lần xem số liệu và quyết định."
     >
       <Arrow x1={x0} y1={200} x2={x1 + 14} y2={200} d={0}/>
@@ -321,7 +321,7 @@ function SprintTimeline({card}){
         </g>
       ))}
       <P path={`M${dx(7)} 118 L${dx(7)} 74`} d={1800} c="soft"/>
-      <T x={dx(7) - 8} y={64} d={2000}>Roadmap</T>
+      <T x={dx(7) - 8} y={64} d={2000}>Lộ trình</T>
       <P path={`M${dx(84)} 118 L${dx(84)} 74`} d={1900} c="soft"/>
       <T x={dx(84) + 8} y={64} c="end" d={2100}>Đánh giá 90 ngày</T>
     </Figure>

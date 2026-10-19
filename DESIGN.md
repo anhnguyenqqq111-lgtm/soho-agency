@@ -57,91 +57,120 @@ Trang chủ mới: Hero → Khách hàng → Dịch vụ → Cách làm việc �
 
 ---
 
-## 2. Hướng thiết kế (bản 9, tháng 10/2026: bố cục bản 8, màu Brand Kit v3, logo gốc của SOHO)
+## 2. Hệ thiết kế (bản 10, tháng 10/2026): "tờ giấy" đưa cho người và AI trước khi làm bất cứ trang nào
 
-Chủ web chọn: giữ bố cục nền trắng, khối nền xám, hiệu ứng và tương tác của bản 8; **dùng lại màu của Brand Kit v3** (cam, san hô, tím, Midnight); **dùng logo gốc** đang chạy trên sohoagency.vn (chữ SOHO có chân, chuyển sắc vàng sang đỏ, AGENCY đen). Bản này thay bản 8.
+Lý do có tờ giấy này: AI không có gu, nó lấp chỗ trống bằng mặc định (Inter, nền kem, khuôn "nhãn nhỏ + tiêu đề trái + ảnh phải", câu chung chung như "tận tâm, uy tín"). Mọi chỗ trống đều được ghi rõ dưới đây. Phương pháp theo video "Claude Design làm web nha khoa và văn phòng luật ra cùng một khuôn" (AI 5 Phút, 10/2026).
 
-### 2.1. Nguyên tắc
+### 2.1. SOHO là ai, viết cho ai
 
-- Section chia rõ bằng hai kiểu xen kẽ: **nền trắng** toàn chiều ngang (`tone` white, paper) và **khối bo góc lớn, thụt vào hai bên**: nền xám mây (`tone` gray, dark, fade) hoặc gradient Mist (`tone` soft, dùng cho ma trận hành trình). Một khối tối duy nhất: khối liên hệ, nền gradient Midnight.
-- Cam #FF7A00 là màu chính. Gradient Signature (cam, san hô, tím) chỉ ở vài điểm nhấn: chữ nhấn trong tiêu đề, đường doanh thu ở hero, đường ray quy trình, vạch khi rê chuột. Không tô gradient lên logo.
-- Màu và hiệu ứng chỉ ở điểm quan trọng (xem 2.2c). Tắt hết khi bật giảm chuyển động.
-- Không trang trí thừa: không vạch trước nhãn, không dấu chấm cuối H1, không biểu tượng cuộn.
+- **SOHO Agency** (Công ty TNHH SOHO Agency), TP.HCM, Google Partner 2026. Làm SEO, quảng cáo Google, Meta, TikTok, nội dung và đo lường; tự tay triển khai, báo cáo bằng số đơn và doanh thu, làm theo vòng 2 tuần.
+- **Khách đọc web:** chủ doanh nghiệp vừa và nhỏ ở TP.HCM đã có sản phẩm và khách mua, đã thử SEO hoặc quảng cáo nhưng không rõ kênh nào ra tiền. Không chuyên kỹ thuật. Nhiều ngành dịch vụ cao cấp (resort, nội thất, đồng hồ, studio cưới).
 
-### 2.2. Màu (`app/styles/tokens.css`)
+### 2.2. Nguồn tham chiếu (trộn hai nguồn, ghi rõ lấy gì ở đâu)
+
+| Nguồn | Lấy gì |
+|---|---|
+| **Ramp** trên styles.refero.design | Cách dàn chữ kiểu báo: tiêu đề lớn, thứ bậc bằng cỡ chữ; thẻ đứng trên viền mảnh 1px, không đổ bóng; bo 16px cho thẻ nội dung; một màu nhấn chỉ ở nơi có tiền (nút, con số) |
+| **Brex** trên styles.refero.design | Nền trắng tinh, một màu cam duy nhất cho hành động chính; bo 12px cho nút và ô nhập; khung tối ở cuối trang (khối liên hệ + footer) |
+| **Brand Kit v3 SOHO** | Màu: cam `#FF7A00`, san hô `#FF416C`, tím `#765BFF`, Midnight `#10121C` |
+| **Logo gốc SOHO** (như sohoagency.vn) | Logo, favicon (chữ S trắng trên gradient vàng đỏ của logo) |
+
+### 2.3. Phông chữ (đã qua bài thử Ế Ứ Ỡ Ặ Ằ)
+
+| Vai trò | Phông | Ghi chú |
+|---|---|---|
+| Tiêu đề H1, H2, chữ nhấn `.hl` (nghiêng), con số lớn | **Fraunces** (Google Fonts, có bộ tiếng Việt) | Độ đậm 500, khoảng chữ −1.5%, giãn dòng 1.08. Có chân, khác hẳn mặc định Inter của AI |
+| Nội dung, giao diện, nút, H3 trở xuống | **Be Vietnam Pro** (Google Fonts) | 400 thân bài, 600 nhấn. Làm riêng cho tiếng Việt |
+
+Bài thử: gõ **Ế Ứ Ỡ Ặ Ằ** ở cỡ lớn, đặt phông dự phòng là Comic Sans; chữ nào lệch nét là phông bị vá, loại. Đã loại: Sora, Figtree, DM Sans, Outfit, Instrument Sans, Urbanist, Albert Sans, Red Hat Display (không có bộ tiếng Việt). Đổi phông phải ghi đúng tên, không ghi mô tả.
+
+### 2.4. Luật viết chữ
+
+1. **H1 = tên + nghề**, không phải lời chào. Thử xóa tên SOHO khỏi H1: nếu câu vẫn đúng với agency khác thì viết lại. Trang dịch vụ: H1 = tên dịch vụ + cho ai.
+2. **Hẹp thắng rộng:** nói với "doanh nghiệp vừa và nhỏ ở TP.HCM đã có sản phẩm và khách mua", không "doanh nghiệp Việt Nam".
+3. **Một nhãn nút chính trên toàn site: "Đặt lịch tư vấn".** Header, hero, form, thanh mobile, cuối trang đều dùng đúng nhãn này. Nút khác là nút chữ (link có mũi tên).
+4. **Nút = động từ + đối tượng cụ thể** ("Xem SOHO đã làm gì", "Đọc tất cả bài viết"), không "Tìm hiểu", "Xem thêm".
+5. **Mỗi lời tự khen kèm một tên riêng không phải của SOHO:** Google Partner (hồ sơ Google), tên dự án (Le Viva Resort...), tên khách nhận xét. Con số chỉ ghi khi đã được công bố (xem `components/data/cases.js`); không bịa số.
+6. Câu ngắn, viết hoa đầu câu, không emoji, dấu tiếng Việt đúng. Mỗi tiêu đề tối đa một cụm `.hl`.
+
+**Từ cấm và từ thay** (thuật ngữ tiếng Anh chỉ dùng khi là tên sản phẩm, hoặc để trong ngoặc sau từ tiếng Việt):
+
+| Không dùng | Thay bằng |
+|---|---|
+| lead | khách tiềm năng, khách để lại thông tin |
+| traffic | lượt truy cập |
+| organic | từ Google tự nhiên |
+| conversion, CR | lượt chuyển đổi, tỉ lệ khách để lại thông tin |
+| landing page | trang đích |
+| tracking | cách đo, đo lường |
+| dashboard | báo cáo |
+| sprint | vòng 2 tuần |
+| audit | kiểm tra, xem số liệu |
+| insight | điều khách cần, lý do khách mua |
+| creative | mẫu quảng cáo |
+| funnel, TOFU/MOFU/BOFU | các bước khách đi qua, chặng 1/2/3 |
+| visibility | độ phủ |
+| entity, E-E-A-T | độ uy tín của thương hiệu và tác giả |
+| KPI | con số cần đạt |
+| roadmap, backlog | lộ trình, danh sách việc |
+| founder, manager | chủ doanh nghiệp, trưởng bộ phận |
+| B2B, SME, ecommerce | bán cho doanh nghiệp, doanh nghiệp nhỏ, bán hàng online |
+| tận tâm, uy tín, chuyên nghiệp, giải pháp toàn diện | (bỏ, thay bằng bằng chứng cụ thể) |
+
+Ngoại lệ được giữ: tên sản phẩm (Google Ads, Meta, TikTok, GA4, Looker, Performance Max), SEO, và CPA/ROAS khi đã có giải nghĩa tiếng Việt đi trước.
+
+### 2.5. Icon
+
+Đúng **một bộ: Lucide** (`lucide-static` 0.460.0, giấy phép ISC), qua `components/ui/Icon.js`. Không để AI tự vẽ icon, không trộn bộ khác, không dùng ký tự ⌖ ✆ ✉ ↗ làm icon. Cần icon mới: lấy từ `unpkg.com/lucide-static@0.460.0/icons/<tên>.svg` (bỏ dòng chú thích giấy phép, chỉ lấy phần bên trong thẻ svg) rồi thêm vào `ICONS`. Hình minh họa nét (hero, sơ đồ dịch vụ) là SVG tự dựng; hình 3D trang trí là bộ 3dicons CC0 (mục 2.9).
+
+### 2.6. Màu (`app/styles/tokens.css`)
 
 | Token | Giá trị | Dùng cho |
 |---|---|---|
-| `--brand` / `--grad-cta` | `#FF7A00` | Nút chính (chữ Midnight), số bước quy trình, nét nhấn. Không dùng cho chữ nhỏ trên nền sáng (2.6:1) |
-| `--brand-hover` | `#E56F00` | Hover nút |
-| `--brand-ink` / `--accent` | `#B84A00` | Chữ cam nhỏ, link, con số kết quả |
-| `--coral` | `#FF416C` | Chặng MOFU, điểm nhấn minh họa |
-| `--violet` | `#765BFF` | Chặng BOFU (chữ trắng trên tím đậm `#5A3FE0`), cuối gradient |
-| `--grad-warm` | Signature `#FF7A00`, `#FF416C`, `#765BFF` | Đường ray quy trình, vạch nhấn, chú thích biểu đồ |
-| `--grad-warm-text` | `#E0560F`, `#E0245E`, `#6A4CF0` | Chữ nhấn `.hl` (bản đậm của Signature, ≥ 3.5:1; màu đặc `--brand-ink` dự phòng) |
-| `--grad-midnight` | `#10121C`, `#261E44`, `#593358` | Nền khối liên hệ |
-| `--grad-mist` | `#F5F6FA`, `#E8E9FF`, `#F7E5EB` | Nền khối ma trận hành trình |
-| `--glow-warm` | quầng tím và cam rất nhạt | Chỉ nền hero |
-| `--ink` | `#10121C` | Chữ |
-| `--ink-3` | `#62697D` | Chữ phụ |
-| `--line` / `--gray` | `#DCE0E9` / `#F5F6FA` | Viền / nền khối xám, ô nền nhạt |
+| `--brand` | `#FF7A00` | Nút chính "Đặt lịch tư vấn" (chữ Midnight). Không dùng cho chữ nhỏ trên nền trắng |
+| `--brand-ink` | `#B84A00` | Chữ cam nhỏ, link, con số kết quả (đạt 4.5:1) |
+| `--grad-warm-text` | `#E0560F` → `#E0245E` → `#6A4CF0` | Cụm chữ nhấn `.hl` (Fraunces nghiêng) |
+| `--grad-warm` | Signature `#FF7A00` → `#FF416C` → `#765BFF` | Đường doanh thu ở hero, đường ray quy trình, vạch khi rê chuột |
+| `--grad-mist` | `#F5F6FA` → `#E8E9FF` → `#F7E5EB` | Khối ma trận hành trình |
+| `--grad-midnight` / `--midnight` | `#10121C` … | Khối liên hệ, footer (khung tối cuối trang) |
+| `--ink` / `--ink-3` | `#10121C` / `#62697D` | Chữ / chữ phụ |
+| `--line` / `--gray` | `#DCE0E9` / `#F5F6FA` | Viền mảnh / khối nền xám |
 
-### 2.2b. Hình 3D trang trí (`public/decor/`, thuộc tính `decor` của `Section`)
+Ba chặng ma trận: cam, san hô, tím (chữ trắng trên tím đậm `#5A3FE0`).
 
-Nguồn: bộ 3dicons của Vijay Verma (3dicons.co, github.com/realvjy/3dicons), giấy phép **CC0**, dùng thương mại không cần ghi nguồn (ghi chú trong `public/decor/LICENSE.txt`). Kiểu clay (trắng xám, mờ), 400px, WebP khoảng 5 KB mỗi hình.
+### 2.7. Hình khối và bố cục
 
-Chỉ hiện ở section dạng khối nền xám, góc phải trên, có quầng cam nhạt phía sau, trôi lên xuống chậm (tắt khi giảm chuyển động); section nền trắng không đặt hình để không đè nội dung. Đang dùng: trang chủ `target` (ma trận hành trình), `flag` (quy trình), `chat-bubble` (FAQ); trang dịch vụ `calender` (quy trình), `zoom` (vì sao); Dự án `chart`; Giới thiệu `megaphone`; giải pháp `rocket`. Có sẵn thêm `trophy`, `bulb`. Muốn thêm hình: tải bản clay từ link trong `content/3dicons-meta/<tên>.md` của repo trên, chuyển WebP, đặt vào `public/decor/`.
+- Nút, ô nhập: bo 12px, cao tối thiểu 44px (vùng bấm theo luật giao diện của Apple). Thẻ nội dung: bo 16px, viền 1px, **không đổ bóng**. Nhãn nhỏ: bo 6px.
+- Section xen kẽ: nền trắng toàn chiều ngang và khối nền xám (hoặc Mist) bo góc lớn thụt vào hai bên. Không đặt hai khối xám liền nhau.
+- **Không dùng nhãn nhỏ phía trên tiêu đề** (kicker, eyebrow): đó là dấu hiệu khuôn AI.
+- **Hero trang chủ** (`components/hero/HomeHero.js`): H1 lớn trải ngang; dưới là mô tả + nút + số điện thoại (trái) và ba bằng chứng có tên riêng xếp danh sách kẻ mảnh (phải); cuối là khung biểu đồ "đo bằng traffic hay doanh thu" trải rộng.
+- **Hero trang con** (`components/hero/Hero.js`): xếp dọc: breadcrumb, H1, một dòng mô tả; minh họa thành dải rộng bên dưới. Trang dịch vụ dùng `long` (H1 dài hơn, cỡ nhỏ hơn).
 
-### 2.2c. Tương tác có ý nghĩa (giúp người đọc hiểu nhanh hoặc quyết định dễ hơn)
+### 2.8. Ảnh
+
+- Ảnh dự án: ảnh thật từ trang dự án của SOHO (`public/projects/*.webp`), không ảnh kho.
+- Chưa có ảnh đội ngũ: hiện chữ cái đầu tên (Fraunces nghiêng trên nền Mist), không để khung trống. Có ảnh thì thêm `photo` vào `team` trong `app/ve-soho/page.js`.
+- Ô "sản phẩm bàn giao" ở trang dịch vụ chỉ hiện khi có ảnh thật (`artifact.image`).
+- Ảnh tạo bằng công cụ (nếu dùng): theo phong cách thương hiệu, 16:9, không có chữ trong ảnh.
+
+### 2.9. Chuyển động và tương tác
+
+Chỉ đặt ở chỗ giúp người xem hiểu hoặc quyết định nhanh hơn (xem bảng 2.10). Tắt hết khi bật giảm chuyển động. Không hiệu ứng chuột, hạt bay, parallax nặng.
+
+### 2.9b. Hình 3D trang trí (`public/decor/`, thuộc tính `decor` của `Section`)
+
+Bộ 3dicons của Vijay Verma (CC0), kiểu clay, WebP ~5 KB. Chỉ đặt trên khối nền xám, góc phải, trôi chậm.
+
+### 2.10. Tương tác có ý nghĩa
 
 | Ở đâu | Tương tác | File |
 |---|---|---|
-| Hero trang chủ | Công tắc **Đo bằng traffic / Đo bằng doanh thu**: chế độ traffic cho thấy traffic tăng mà doanh thu đứng yên, chế độ doanh thu cho thấy doanh thu tăng. Mở ở traffic, tự chuyển sang doanh thu sau 3 giây một lần nếu người xem chưa bấm. | `components/hero/RevenueToggle.js` |
-| Khối dịch vụ trang chủ | Bộ chọn **Bạn đang gặp vấn đề gì?** (4 điểm nghẽn): dịch vụ phù hợp sáng lên, còn lại mờ, kèm một câu gợi ý. Ánh xạ ở `PROBLEMS`. | `components/ServiceGroups.js` |
-| Ma trận hành trình | Cuộn tới: ba chặng sáng lần lượt, dải kênh co hẹp như phễu, thanh doanh thu hiện cuối. Rê chuột vào một kênh: tô cả cột kênh đó (CSS `:has`, không JS). | `components/diagrams/JourneyMatrix.*` |
-| Huy hiệu Google Partner | Rê chuột hoặc Tab: ô giải thích 3 tiêu chí Google xác nhận (dữ liệu `criteria` trong `proof.js`). | `components/proof/PartnerBadge.*` |
-| Mọi trang, mobile | Thanh cố định **Gọi / Nhận tư vấn** ở đáy, hiện sau khi cuộn qua hero, ẩn khi form liên hệ hoặc footer trong màn hình và ở trang Liên hệ. | `components/StickyCta.js` (gắn trong Footer) |
-| Bài blog, trang dịch vụ | Thanh tiến độ đọc 3px ở mép trên. | `components/article/ReadingProgress.js` |
-
-Chưa làm: số liệu dự án đếm lên khi cuộn tới (chờ số thật được khách đồng ý công bố). Tránh: hiệu ứng chuột, hạt bay, parallax nặng.
-
-### 2.3. Chữ
-
-Chỉ dùng Inter (cả tiêu đề và thân bài), nạp bộ ký tự tiếng Việt qua `next/font`. H1 600 tới 64px, H2 600 tới 38px, H3 600; khoảng chữ khoảng -2% (không ép khít hơn vì tiếng Việt nhiều dấu chồng). Nhãn trên tiêu đề (`.kicker`, eyebrow hero) là chữ thường 13px màu `--ink-3`.
-
-### 2.4. Nút
-
-`Button` bo 12px. `primary` nền `--grad-cta` chữ Midnight, có bóng cam nhẹ, nổi lên khi rê chuột. `secondary` viền xám. `text` chữ Midnight gạch chân mảnh, chuyển cam đậm khi rê chuột.
-
-### 2.5. Logo (`public/brand/`)
-
-Logo gốc của SOHO, giống logo trên sohoagency.vn, lấy bản vector từ lịch sử repo (trước các brand kit):
-
-- `soho-logo.svg`: logo màu (SOHO chuyển sắc vàng, cam, đỏ; AGENCY đen), dùng ở header (cao 50px, mobile 42px) và footer (56px).
-- `soho-logo-white.svg`: logo trắng cho nền tối (chưa dùng vì footer nền trắng).
-- `soho-avatar.png`, `app/icon.png`, `app/apple-icon.png`, `app/favicon.ico`: chữ S trắng của logo gốc trên nền gradient vàng đỏ của logo, tạo từ `soho-logo.png` cũ. Chữ S màu trên nền trắng quá mảnh ở 16px nên đảo màu.
-
-### 2.6. Chứng nhận
-
-Chỉ có Google Partner 2026. Huy hiệu RGB gốc ở `public/partners/google-partner.svg`, dẫn tới hồ sơ đối tác `https://www.google.com/partners/agency?id=6437141441`. Hiện ở khối mở đầu trang chủ, trang Dự án và footer.
-
-### 2.7. Hero
-
-Nền trắng có quầng cam rất nhạt góc phải, hai cột: trái là breadcrumb, nhãn cam, H1 (trang chủ tô gradient cụm “doanh thu”), một dòng mô tả; phải là minh họa SVG có chuyển động, nét xám làm nền và cam của logo cho phần chính (`Visuals.js`, biến màu trong `Hero.module.css`). Trang dịch vụ con đặt sơ đồ dịch vụ (thẻ trắng) ở cột phải. Hero không còn chiếm cả màn hình.
-
-### 2.8. Trang chủ
-
-Hero → khối mở đầu (hai cột: tiêu đề trái; mô tả, 3 ý, nút, huy hiệu Google Partner phải) → dải logo khách hàng chạy ngang → Dịch vụ (3 cột có số nhóm cam, vạch cam chạy khi rê chuột) → ma trận hành trình (TOFU cam nhạt, MOFU cam, BOFU gradient logo; khối nổi khi rê chuột) → Dự án (vạch cam trên thẻ khi rê chuột, kết quả chữ cam đậm) → Quy trình 4 bước (số cam, đường ray tự vẽ) → Blog → khối liên hệ nền tối có quầng cam → FAQ → footer trắng.
-
-Đã bỏ: khối "4 nguyên tắc" (trùng ý với 3 ý ở khối mở đầu), ô ảnh trống ở khối mở đầu và khối giới thiệu.
-
-### 2.9. Trang con
-
-Hero riêng → `PageHeader` nền trắng với h2, lead, 3 ý, nút. `Section` vẫn nhận `tone` nhưng mọi tone đều hiển thị nền trắng.
-
-### 2.10. Chuyển động và ảnh
-
-Xem 2.1. Chữ và khối hiện mờ dần khi cuộn, sơ đồ tự vẽ. Tắt hết khi bật giảm chuyển động. Ảnh dự án, logo khách hàng giữ nguyên bản. Ảnh bìa 9 bài blog còn logo cũ, cần xuất lại.
+| Hero trang chủ | Công tắc **Đo bằng traffic / Đo bằng doanh thu** | `components/hero/RevenueToggle.js` |
+| Khối dịch vụ trang chủ | Bộ chọn **Bạn đang gặp vấn đề gì?** làm sáng dịch vụ phù hợp | `components/ServiceGroups.js` |
+| Ma trận hành trình | Ba chặng sáng lần lượt khi cuộn; rê chuột vào kênh tô cả cột | `components/diagrams/JourneyMatrix.*` |
+| Huy hiệu Google Partner | Rê chuột hoặc Tab: ba tiêu chí Google xác nhận | `components/proof/PartnerBadge.*` |
+| Mobile | Thanh cố định **Gọi / Đặt lịch tư vấn** | `components/StickyCta.js` |
+| Bài dài | Thanh tiến độ đọc | `components/article/ReadingProgress.js` |
 
 ---
 
@@ -149,7 +178,7 @@ Xem 2.1. Chữ và khối hiện mờ dần khi cuộn, sơ đồ tự vẽ. T�
 
 ```
 app/
-  layout.js              next/font (Inter), import styles
+  layout.js              next/font (Fraunces, Be Vietnam Pro), import styles
   styles/
     tokens.css           biến màu, chữ, khoảng cách
     base.css             reset, typography, link, prose (nội dung bài viết)

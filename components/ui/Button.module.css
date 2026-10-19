@@ -1,21 +1,25 @@
-/* Nút theo Brand Kit v4: bo 12px. Nút chính gradient cam logo, chữ Midnight, nổi lên khi rê chuột. */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:.55em;font-weight:700;text-decoration:none;cursor:pointer;border:1px solid transparent;border-radius:var(--r-md);transition:filter .18s ease,background-color .18s ease,color .18s ease,border-color .18s ease,transform .18s ease,box-shadow .18s ease;white-space:nowrap;line-height:1.2}
+/* Nút: bo 12px (Brex), phẳng, không bóng. Cam chỉ cho hành động chính; mỗi trang một nhãn chính. */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;min-height:44px;font-family:var(--font-text);font-weight:600;text-decoration:none;cursor:pointer;border:1px solid transparent;border-radius:var(--r-md);transition:background-color .18s ease,color .18s ease,border-color .18s ease,transform .18s ease;white-space:nowrap;line-height:1.2}
 .btn:hover{text-decoration:none}
-.md{font-size:15px;padding:13px 22px}
-.sm{font-size:14px;padding:9px 16px}
-.arrow{display:inline-block;transition:transform var(--t-fast)}
+.md{font-size:15px;padding:12px 20px}
+.sm{font-size:14px;padding:9px 15px}
+.arrow{flex:none;transition:transform var(--t-fast)}
 .btn:hover .arrow{transform:translate(2px,-2px)}
 
-.primary{background:var(--grad-cta);color:var(--ink)}
-.primary{box-shadow:0 6px 18px rgba(255,122,0,.22)}
-.primary:hover{filter:brightness(1.03);color:var(--ink);transform:translateY(-2px);box-shadow:0 12px 28px rgba(255,122,0,.34)}
+.primary{background:var(--brand);color:var(--ink)}
+.primary:hover{background:var(--brand-hover);color:var(--ink);transform:translateY(-1px)}
 
-.secondary{background:transparent;color:var(--ink);border-color:#B9BDCA}
-.secondary:hover{background:rgba(16,18,28,.04);color:var(--ink)}
+.secondary{background:var(--white);color:var(--ink);border-color:var(--gray-2)}
+.secondary:hover{border-color:var(--ink);color:var(--ink)}
 
-.text{border:0;background:none;color:var(--ink);padding:0;border-radius:0;white-space:normal;gap:6px}
+.text{border:0;background:none;color:var(--ink);padding:0;border-radius:0;white-space:normal;gap:6px;min-height:44px}
 .text.md,.text.sm{padding:0}
 .text:hover{color:var(--brand-ink)}
-.text > span:first-child{text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:5px;text-decoration-thickness:1.5px;transition:text-decoration-color var(--t-fast)}
+.text > span:first-child{text-decoration:underline;text-decoration-color:var(--gray-2);text-underline-offset:6px;text-decoration-thickness:1.5px;transition:text-decoration-color var(--t-fast)}
 .text:hover > span:first-child{text-decoration-color:currentColor}
+
+.onDark.secondary{background:transparent;color:#FFFFFF;border-color:rgba(255,255,255,.35)}
+.onDark.secondary:hover{border-color:#FFFFFF}
+.onDark.text{color:#FFFFFF}
+.onDark.text:hover{color:var(--warm-2)}
 @media (max-width:480px){.btn{white-space:normal}}

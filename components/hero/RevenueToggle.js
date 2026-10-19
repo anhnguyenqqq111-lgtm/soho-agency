@@ -14,8 +14,8 @@ const DATA = {
   traffic: {
     traffic: [400, 352, 300, 246, 196, 140, 92],
     revenue: [410, 404, 408, 398, 402, 396, 392],
-    tag: 'Traffic tăng, doanh thu đứng yên',
-    caption: 'Đo bằng traffic: lượt truy cập tăng nhưng doanh thu gần như không đổi.'
+    tag: 'Lượt truy cập tăng, doanh thu đứng yên',
+    caption: 'Đo bằng lượt truy cập: lượt truy cập tăng nhưng doanh thu gần như không đổi.'
   },
   revenue: {
     traffic: [384, 366, 346, 326, 306, 290, 276],
@@ -57,7 +57,7 @@ export default function RevenueToggle(){
   return (
     <figure className={styles.wrap}>
       <div className={styles.switch} role="group" aria-label="Chọn cách đo">
-        <button type="button" aria-pressed={mode === 'traffic'} className={mode === 'traffic' ? styles.on : ''} onClick={() => pick('traffic')}>Đo bằng traffic</button>
+        <button type="button" aria-pressed={mode === 'traffic'} className={mode === 'traffic' ? styles.on : ''} onClick={() => pick('traffic')}>Đo bằng lượt truy cập</button>
         <button type="button" aria-pressed={mode === 'revenue'} className={mode === 'revenue' ? styles.on : ''} onClick={() => pick('revenue')}>Đo bằng doanh thu</button>
       </div>
 
@@ -73,9 +73,9 @@ export default function RevenueToggle(){
           <path d={smooth(d.traffic)} className={styles.traffic} pathLength="1"/>
           <path d={rev} className={styles.revenue} pathLength="1"/>
           <circle cx={end[0]} cy={end[1]} r="9" className={mode === 'revenue' ? styles.pulse : styles.dotFlat}/>
-          <g className={styles.tag} transform={`translate(${mode === 'revenue' ? 760 : 700} ${mode === 'revenue' ? 14 : 300})`}>
-            <rect width={mode === 'revenue' ? 300 : 360} height="44" rx="12" className={mode === 'revenue' ? styles.tagHot : styles.tagCold}/>
-            <text x={mode === 'revenue' ? 150 : 180} y="28" className={styles.tagText}>{d.tag}</text>
+          <g className={styles.tag} transform={`translate(${mode === 'revenue' ? 760 : 660} ${mode === 'revenue' ? 14 : 300})`}>
+            <rect width={mode === 'revenue' ? 300 : 400} height="44" rx="12" className={mode === 'revenue' ? styles.tagHot : styles.tagCold}/>
+            <text x={mode === 'revenue' ? 150 : 200} y="28" className={styles.tagText}>{d.tag}</text>
           </g>
         </g>
 
@@ -84,7 +84,7 @@ export default function RevenueToggle(){
       </svg>
 
       <figcaption className={styles.legend}>
-        <span><i className={styles.keyTraffic}/>Traffic</span>
+        <span><i className={styles.keyTraffic}/>Lượt truy cập</span>
         <span><i className={styles.keyRevenue}/>Doanh thu</span>
         <span className="visually-hidden" aria-live="polite">{d.caption}</span>
       </figcaption>

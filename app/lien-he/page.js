@@ -25,17 +25,17 @@ export default function ContactPage(){
     <>
       <Header activeNav="contact"/>
       <main>
-        <Hero tone="contact" crumbs={[{label: 'Liên hệ'}]} eyebrow="Liên hệ" title="Kể cho SOHO bài toán" tagline="Website và vài dòng về mục tiêu là đủ để bắt đầu." visual={<ContactVisual/>}/>
+        <Hero tone="contact" crumbs={[{label: 'Liên hệ'}]} title={<>Đặt lịch tư vấn <span className="hl">với SOHO Agency</span></>} tagline="Buổi đầu 30 phút. Bạn gửi website và mục tiêu, SOHO chỉ ra 3 việc nên làm trước." visual={<ContactVisual/>}/>
         <PageHeader
-          title="Kể cho SOHO bài toán hiện tại"
-          lead="Không cần chuẩn bị brief. Website và vài dòng về mục tiêu là đủ để bắt đầu."
+          title="Sau khi bạn gửi, SOHO làm ba việc"
+          lead="Không cần chuẩn bị tài liệu. Website và vài dòng về mục tiêu là đủ để bắt đầu."
           bullets={steps}
           aside={<div className={styles.formCard}><ContactForm/></div>}
         />
         <Section title={<>Thông tin <span className="hl">liên hệ</span></>} spacing="sm">
           <dl className={styles.info}>
             <div><dt>Email</dt><dd><a href={`mailto:${company.email}`}>{company.email}</a></dd></div>
-            <div><dt>Điện thoại</dt><dd><Fill value={company.phone} need="CẦN SỐ ĐIỆN THOẠI"/></dd></div>
+            <div><dt>Điện thoại</dt><dd>{company.phone ? <a href={`tel:${company.phone.replace(/\s/g, '')}`}>{company.phone}</a> : <Fill value={null} need="CẦN SỐ ĐIỆN THOẠI"/>}</dd></div>
             <div><dt>Văn phòng</dt><dd><Fill value={company.address} need="CẦN ĐỊA CHỈ"/></dd></div>
             <div><dt>Khu vực</dt><dd>{company.regions}</dd></div>
             <div><dt>Giờ làm việc</dt><dd><Fill value={company.hours} need="CẦN GIỜ LÀM VIỆC"/></dd></div>

@@ -1,15 +1,15 @@
 'use client';
 import {useEffect, useRef, useState} from 'react';
 import styles from './ProjectCarousel.module.css';
-import ImageSlot from '../ui/ImageSlot';
-import Fill from '../ui/Fill';
+import Icon from '../ui/Icon';
 import {sitePath} from '../paths';
 
 /*
   Băng chuyền dự án: thẻ cuộn ngang theo scroll-snap, vuốt được trên mobile,
   nút trước/sau và chấm tiến trình đặt phía trên dãy thẻ. Không tự chạy.
 */
-export default function ProjectCarousel({clients}){
+export default function ProjectCarousel({items}){
+  const clients = items;
   const trackRef = useRef(null);
   const [idx, setIdx] = useState(0);
   const [perView, setPerView] = useState(3);
@@ -48,23 +48,23 @@ export default function ProjectCarousel({clients}){
           ))}
         </ol>
         <div className={styles.arrows}>
-          <button type="button" onClick={() => go(idx - 1)} disabled={idx <= 0} aria-label="Dự án trước">←</button>
-          <button type="button" onClick={() => go(idx + 1)} disabled={idx >= pages - 1} aria-label="Dự án tiếp theo">→</button>
+          <button type="button" onClick={() => go(idx - 1)} disabled={idx <= 0} aria-label="Dự án trước"><Icon name="arrow-left" size={18}/></button>
+          <button type="button" onClick={() => go(idx + 1)} disabled={idx >= pages - 1} aria-label="Dự án tiếp theo"><Icon name="arrow-right" size={18}/></button>
         </div>
       </div>
-      <ul ref={trackRef} className={styles.track} aria-label="Dự án SOHO đang làm">
+      <ul ref={trackRef} className={styles.track} aria-label="Dự án SOHO đã công bố">
         {clients.map((c, i) => (
           <li key={c.slug} className={styles.card} data-reveal="" style={{'--reveal-delay': `${i * 90}ms`}}>
             <a href={sitePath(`/ket-qua#${c.slug}`)} className={styles.link}>
-              <ImageSlot src={c.image} alt={`Dự án ${c.name}`} need={c.imageNeed} size="1200×900" ratio="4/3"/>
+              <div className={styles.media}><img src={sitePath(c.image)} alt={`Dự án ${c.name}`} loading="lazy" width="1200" height="560"/></div>
               <div className={styles.body}>
-                <div className={styles.top}>
-                  <img src={sitePath(c.logo)} alt="" className={styles.logo} loading="lazy"/>
-                  <span className={styles.scope}>{c.scope}</span>
-                </div>
+                <p className={styles.scope}>{c.scope}</p>
                 <h3 className={styles.name}>{c.name}</h3>
-                <p className={styles.result}><Fill value={c.result} need="CẦN KẾT QUẢ THẬT, 1 dòng"/></p>
-                <span className={styles.more}>Xem dự án ↗</span>
+                <p className={styles.field}>{c.field}</p>
+                {c.kpis?.[0]
+                  ? <p className={styles.kpi}><b>{c.kpis[0].value}</b><span>{c.kpis[0].label}</span></p>
+                  : <p className={styles.result}>{c.result}</p>}
+                <span className={styles.more}>Xem SOHO đã làm gì <Icon name="arrow-up-right" size={16}/></span>
               </div>
             </a>
           </li>

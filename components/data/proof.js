@@ -8,9 +8,11 @@ export const partners = [
     criteria: ['Điểm tối ưu hóa tài khoản từ 70% trở lên', 'Quản lý tối thiểu 10.000 USD chi tiêu quảng cáo trong 90 ngày', 'Ít nhất một nửa chuyên viên có chứng chỉ Google Ads']}
 ];
 
-// Nhận xét khách hàng thật, tiếng Việt, 2 đến 4 câu. Cần sự đồng ý của người nhận xét.
+// Nhận xét khách hàng: lấy nguyên văn từ trang chủ sohoagency.vn (SOHO đã đăng công khai, kiểm tra 10/2026).
+// Tên và ngành giữ như bản gốc. Thêm nhận xét mới chỉ khi khách đồng ý.
 export const testimonials = [
-  {quote: null, name: null, role: null, company: null},
-  {quote: null, name: null, role: null, company: null},
-  {quote: null, name: null, role: null, company: null}
+  {quote: 'Soho giúp tụi mình hoàn thiện nhận diện thương hiệu và chạy quảng cáo ổn định hơn. Điều thích nhất là team theo sát và phản hồi nhanh.', name: 'Nguyễn Minh Tâm', role: 'Chủ nhà hàng Nhật Bản'},
+  {quote: 'Sau khi làm bộ nhận diện mới, thương hiệu của chúng tôi được phản hồi chuyên nghiệp hơn rất nhiều. Lượng khách từ mạng xã hội tăng ổn định.', name: 'Anh Bình', role: 'Ngành chăm sóc xe'},
+  {quote: 'Từ khi có bộ content kế hoạch theo tháng của Soho, team tụi mình dễ triển khai hơn, không bị bí ý tưởng như trước.', name: 'Chị Mai', role: 'Khách hàng bất động sản'},
+  {quote: 'Soho làm nhanh, đúng deadline, trình bày rõ ràng và rất hiểu insight khách hàng. Dịch vụ chăm sóc sau dự án cũng rất tốt.', name: 'Trà My', role: 'Khách hàng dịch vụ'}
 ];

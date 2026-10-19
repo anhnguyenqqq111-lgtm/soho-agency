@@ -49,7 +49,7 @@ Không thêm biến môi trường nào trên Vercel. Nếu lỡ đặt `GITHUB_
 
 ```text
 app/
-  layout.js                  font Inter, metadata mặc định, RevealObserver
+  layout.js                  font Fraunces (tiêu đề) + Be Vietnam Pro (nội dung), metadata mặc định, RevealObserver
   favicon.ico, icon.png, apple-icon.png   favicon (chữ S của logo gốc)
   styles/tokens.css          biến màu, chữ, khoảng cách theo màu SOHO Brand Kit v3.0 (nền trắng, màu ở điểm quan trọng) (toàn bộ màu định nghĩa ở đây)
   styles/base.css            reset, typography, .prose, hiệu ứng hé lộ
@@ -70,6 +70,7 @@ components/
   ui/                        Section, PageHeader, Button, NumberedList, LinkRows, CtaBand, Faq, Fill, ImageSlot, SplitWords
   diagrams/                  JourneyMatrix (trang chủ), ServiceDiagrams (9 sơ đồ dịch vụ), Track, BeforeAfter, svg.js
   proof/                     ProjectCarousel, ProjectGrid, LogoMarquee, PartnerStrip, PartnerBadge, Testimonials
+  ui/Icon.js                 bộ icon duy nhất (Lucide); không dùng ký tự hay icon tự vẽ
   article/                   ArticleBody, Toc, Markdown, parseMarkdown: render bài viết dịch vụ từ markdown
   data/company.js            thông tin công ty (địa chỉ, điện thoại, năm thành lập...)
   data/clients.js            khách hàng, dự án
@@ -84,7 +85,7 @@ public/partners/             huy hiệu đối tác chính thức (google-partne
 public/decor/                hình 3D trang trí CC0 từ 3dicons.co (dùng qua thuộc tính decor của Section)
 public/clients/              logo khách hàng
 public/blog/                 ảnh bài blog (thumbnail và banner dùng chung), render bằng skill creating-images-soho
-DESIGN.md                    hướng thiết kế, token, quy tắc màu và logo (mục 2)
+DESIGN.md                    "tờ giấy" hệ thiết kế: nguồn tham chiếu, màu, phông, luật viết chữ, từ cấm, icon, ảnh (mục 2). Đọc trước khi sửa giao diện hay câu chữ
 ```
 
 Mỗi component và trang có `.module.css` riêng. Server Component mặc định; chỉ `NavMenu`, `ContactForm`, `RevealObserver`, `Toc`, `ProjectCarousel` là client.
@@ -102,6 +103,7 @@ grep -rn "need=\"CẦN\|\[CẦN" app components
 | File | Cần điền |
 | --- | --- |
 | `components/data/company.js` | tên pháp nhân, mã số thuế, địa chỉ, điện thoại, giờ làm việc, năm thành lập, số khách hàng, quy mô, link mạng xã hội |
+| `components/data/cases.js` | dự án đã công bố (ảnh trong `public/projects/`, chỉ ghi số đã công bố) |
 | `components/data/clients.js` | ảnh dự án (đặt vào `public/projects/`), kết quả, bối cảnh, việc đã làm |
 | `components/data/proof.js` | chứng nhận đối tác (hiện chỉ Google Partner, đã có link hồ sơ), nhận xét khách hàng |
 | `components/servicePagesData.js` | `artifact.image`: ảnh sản phẩm bàn giao mẫu cho từng dịch vụ |

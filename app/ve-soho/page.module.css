@@ -1,8 +1,19 @@
-.split{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,6fr);gap:40px var(--gap);align-items:center}
+.split{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:40px clamp(32px,5vw,72px);align-items:start}
+.facts{display:grid;gap:20px;padding:24px;border:1px solid var(--line);border-radius:var(--r-card);background:var(--white)}
+.factBadge{display:grid;grid-template-columns:auto minmax(0,1fr);gap:16px;align-items:center;padding-bottom:20px;border-bottom:1px solid var(--line)}
+.factBadge p{font-size:14px;line-height:1.5;color:var(--ink-3)}
+.factBadge strong{display:block;color:var(--ink);font-size:15px}
+.facts dl{margin:0;display:grid;gap:14px}
+.facts dt{font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-3)}
+.facts dd{margin:2px 0 0;font-size:16px;font-weight:600}
+.facts a{color:var(--ink)}
+.facts a:hover{color:var(--brand-ink)}
 .team{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:var(--gap)}
-.team li{display:grid;gap:10px}
-.name{font-weight:700;font-size:16px;margin-top:4px}
-.role{font-size:var(--fs-meta);color:var(--ink-2)}
+.team li{display:grid;gap:8px;align-content:start}
+.mono,.photo{width:100%;aspect-ratio:1;border-radius:var(--r-card);border:1px solid var(--line);object-fit:cover}
+.mono{display:grid;place-items:center;background:var(--grad-mist);font-family:var(--font-display);font-style:italic;font-weight:500;font-size:clamp(48px,6vw,72px);color:var(--brand-ink)}
+.name{font-weight:600;font-size:16px;margin-top:6px}
+.role{font-size:var(--fs-meta);color:var(--ink-3)}
 @media (max-width:1000px){.team{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media (max-width:900px){.split{grid-template-columns:minmax(0,1fr)}}
 @media (max-width:560px){.team{grid-template-columns:repeat(2,minmax(0,1fr))}}

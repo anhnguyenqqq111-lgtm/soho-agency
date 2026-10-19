@@ -6,24 +6,26 @@ import {ResultsVisual} from '../../components/hero/Visuals';
 import PageHeader from '../../components/ui/PageHeader';
 import Section from '../../components/ui/Section';
 import CtaBand from '../../components/ui/CtaBand';
-import Fill from '../../components/ui/Fill';
 import ProjectGrid from '../../components/proof/ProjectGrid';
 import PartnerStrip from '../../components/proof/PartnerStrip';
 import Testimonials from '../../components/proof/Testimonials';
+import {cases} from '../../components/data/cases';
 import {clients} from '../../components/data/clients';
+import LogoMarquee from '../../components/proof/LogoMarquee';
 import {sitePath} from '../../components/paths';
 
 export const metadata = {
-  title: 'Dự án và cách SOHO đo kết quả',
-  description: 'SOHO đo SEO, quảng cáo, CRO, content và tracking bằng chỉ số gắn với lead và doanh thu. Các dự án đang triển khai.'
+  title: 'Dự án SOHO đã làm và cách đo kết quả',
+  description: 'Le Viva Resort, King Decor Luxury, Kronos Luxury Timepieces, Helen Bridal: bối cảnh, việc SOHO đã làm và kết quả. Cách SOHO đo từng kênh bằng đơn hàng và doanh thu.'
 };
 
+// Bảng đo theo kênh: viết bằng tiếng Việt, thuật ngữ tiếng Anh (nếu cần) để trong ngoặc
 const channels = [
-  {name: 'SEO', weekly: 'Visibility nhóm từ khóa có ý định mua, lỗi index mới', monthly: 'Lead từ trang organic, doanh thu nguồn organic', notKpi: 'Tổng traffic, số bài, số backlink'},
-  {name: 'Quảng cáo', weekly: 'CPA, ROAS, tỉ lệ lead đạt chuẩn, truy vấn lãng phí', monthly: 'CAC, lợi nhuận gộp theo chiến dịch', notKpi: 'CPC, CTR, lượt hiển thị'},
-  {name: 'CRO', weekly: 'Tỉ lệ chuyển đổi theo trang và thiết bị', monthly: 'Mức tăng sau mỗi test, CPL sau tối ưu', notKpi: 'Thời gian trên trang'},
-  {name: 'Content', weekly: 'Tiến độ, tương tác có chất lượng', monthly: 'Assisted conversion, lead có chạm nội dung', notKpi: 'Lượt xem, lượt thích'},
-  {name: 'Đo lường', weekly: 'Event thiếu hoặc sai, conversion trùng', monthly: 'Độ khớp giữa Ads, GA4 và CRM', notKpi: 'Số biểu đồ trên dashboard'}
+  {name: 'SEO', weekly: 'Độ phủ của nhóm từ khóa có ý định mua, lỗi khiến Google không đọc được trang', monthly: 'Khách để lại thông tin và doanh thu đến từ Google tự nhiên', notKpi: 'Tổng lượt truy cập, số bài viết, số liên kết'},
+  {name: 'Quảng cáo', weekly: 'Chi phí cho mỗi khách tiềm năng (CPA), doanh thu trên chi phí (ROAS), từ khóa tốn tiền vô ích', monthly: 'Chi phí để có một khách mua, lợi nhuận gộp theo chiến dịch', notKpi: 'Giá mỗi lượt bấm, tỉ lệ bấm, lượt hiển thị'},
+  {name: 'Trang đích', weekly: 'Tỉ lệ khách để lại thông tin theo từng trang, từng thiết bị', monthly: 'Mức tăng sau mỗi lần thử nghiệm', notKpi: 'Thời gian ở lại trang'},
+  {name: 'Nội dung', weekly: 'Tiến độ, bình luận và tin nhắn có chất lượng', monthly: 'Số khách đã đọc bài trước khi liên hệ', notKpi: 'Lượt xem, lượt thích'},
+  {name: 'Đo lường', weekly: 'Hành động bị thiếu hoặc đếm trùng', monthly: 'Số liệu quảng cáo, GA4 và sổ bán hàng có khớp nhau không', notKpi: 'Số biểu đồ trên báo cáo'}
 ];
 
 export default function ResultsPage(){
@@ -31,25 +33,26 @@ export default function ResultsPage(){
     <>
       <Header activeNav="results"/>
       <main>
-        <Hero tone="results" crumbs={[{label: 'Dự án'}]} eyebrow="Dự án" title="Đo bằng doanh thu" tagline="Các dự án SOHO đang làm và cách SOHO đo kết quả." visual={<ResultsVisual/>}/>
-        <PageHeader title="Đo những con số có ý nghĩa với doanh nghiệp" lead="Traffic và lượt click vẫn được theo dõi, nhưng không phải thước đo chính. SOHO nối dữ liệu marketing với lead và doanh thu."/>
+        <Hero tone="results" crumbs={[{label: 'Dự án'}]} title={<>Dự án SOHO đã làm, <span className="hl">kể bằng kết quả</span></>} tagline="Bốn dự án đã công bố: một khu nghỉ dưỡng, một đơn vị thiết kế thi công, một nhà phân phối đồng hồ, một studio ảnh cưới." visual={<ResultsVisual/>}/>
+        <PageHeader title="Đo bằng đơn hàng, không bằng lượt xem" lead="Lượt truy cập và lượt bấm vẫn được theo dõi, nhưng không phải thước đo chính. SOHO nối số liệu quảng cáo với số đơn và doanh thu trong sổ bán hàng của bạn."/>
 
-        <Section kicker="Dự án" title={<>Doanh nghiệp SOHO <span className="hl">đang làm cùng</span></>} intro="Số liệu từng dự án chỉ công bố khi khách hàng đồng ý.">
-          <ProjectGrid projects={clients}/>
+        <Section title={<>Bốn dự án <span className="hl">đã công bố</span></>} intro="Con số chỉ ghi khi chính dự án đã công bố. Dự án khác đang chạy, số liệu công bố khi khách hàng đồng ý.">
+          <ProjectGrid projects={cases}/>
           <div className={styles.partners}><PartnerStrip/></div>
         </Section>
+        <LogoMarquee clients={clients}/>
 
-        <Section tone="gray" decor="chart" title={<>Mỗi kênh, SOHO <span className="hl">xem gì</span></>}>
+        <Section tone="gray" decor="chart" title={<>Mỗi kênh, SOHO <span className="hl">xem con số nào</span></>} intro="Cột cuối là những con số đẹp nhưng không nói lên doanh thu. SOHO vẫn theo dõi, chỉ không dùng để đánh giá.">
           <div className={styles.tableWrap}>
             <table className={styles.table}>
-              <thead><tr><th scope="col">Kênh</th><th scope="col">Hằng tuần</th><th scope="col">Hằng tháng</th><th scope="col">Không dùng làm KPI chính</th></tr></thead>
+              <thead><tr><th scope="col">Kênh</th><th scope="col">Hằng tuần</th><th scope="col">Hằng tháng</th><th scope="col">Không dùng để đánh giá</th></tr></thead>
               <tbody>
                 {channels.map(c => (
                   <tr key={c.name}>
                     <th scope="row">{c.name}</th>
                     <td data-label="Hằng tuần">{c.weekly}</td>
                     <td data-label="Hằng tháng">{c.monthly}</td>
-                    <td data-label="Không dùng làm KPI chính" className={styles.muted}>{c.notKpi}</td>
+                    <td data-label="Không dùng để đánh giá" className={styles.muted}>{c.notKpi}</td>
                   </tr>
                 ))}
               </tbody>
@@ -59,20 +62,26 @@ export default function ResultsPage(){
 
         <Section title={<>Từng dự án, <span className="hl">SOHO đã làm gì</span></>}>
           <ul className={styles.cases}>
-            {clients.map((client, i) => (
-              <li key={client.slug} id={client.slug} className={styles.case} data-reveal="" style={{'--reveal-delay': `${i * 80}ms`}}>
+            {cases.map((c, i) => (
+              <li key={c.slug} id={c.slug} className={styles.case} data-reveal="" style={{'--reveal-delay': `${i * 80}ms`}}>
                 <div className={styles.caseHead}>
-                  <img src={sitePath(client.logo)} alt="" loading="lazy" className={styles.caseLogo}/>
-                  <h3>{client.name}</h3>
-                  <p className={styles.caseField}>{client.field}</p>
-                  <p className={styles.caseScope}>{client.scope}</p>
-                  <a href={client.url} target="_blank" rel="noopener noreferrer" className={styles.caseSite}>{client.url.replace(/^https?:\/\//, '')} ↗</a>
+                  <img src={sitePath(c.image)} alt={`Dự án ${c.name}`} loading="lazy" className={styles.caseImg} width="1200" height="560"/>
+                  <h3>{c.name}</h3>
+                  <p className={styles.caseField}>{c.field}</p>
+                  <p className={styles.caseScope}>{c.scope} · {c.period}</p>
                 </div>
-                <dl className={styles.caseBody}>
-                  <div><dt>Bối cảnh</dt><dd><Fill value={client.context} need="CẦN CASE STUDY THẬT"/></dd></div>
-                  <div><dt>Việc đã làm</dt><dd><Fill value={client.work} need="CẦN CASE STUDY THẬT"/></dd></div>
-                  <div><dt>Kết quả</dt><dd><Fill value={client.result} need="CẦN SỐ LIỆU THẬT"/></dd></div>
-                </dl>
+                <div className={styles.caseBody}>
+                  <dl>
+                    <div><dt>Bối cảnh</dt><dd>{c.context}</dd></div>
+                    <div><dt>Việc SOHO làm</dt><dd>{c.work}</dd></div>
+                    <div><dt>Kết quả</dt><dd>{c.result}</dd></div>
+                  </dl>
+                  {c.kpis && (
+                    <ul className={styles.kpis}>
+                      {c.kpis.map(k => <li key={k.label}><b>{k.value}</b><span>{k.label}</span></li>)}
+                    </ul>
+                  )}
+                </div>
               </li>
             ))}
           </ul>
@@ -82,7 +91,7 @@ export default function ResultsPage(){
           <Testimonials/>
         </Section>
 
-        <CtaBand title={<>Muốn biết kênh nào đang <span className="hl">tạo ra doanh thu?</span></>} text="SOHO audit nhanh tracking, dashboard và phễu chuyển đổi để chỉ ra chỗ số liệu đang sai hoặc thiếu."/>
+        <CtaBand title={<>Muốn biết kênh nào đang <span className="hl">tạo ra doanh thu?</span></>} text="SOHO kiểm tra cách đo, báo cáo và các bước khách đi qua trên web của bạn, rồi chỉ ra chỗ số liệu đang sai hoặc thiếu."/>
       </main>
       <Footer/>
     </>

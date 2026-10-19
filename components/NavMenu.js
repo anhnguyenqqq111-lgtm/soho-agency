@@ -1,6 +1,7 @@
 'use client';
 import {useEffect, useRef, useState} from 'react';
 import styles from './Header.module.css';
+import Icon from './ui/Icon';
 
 const MENU_KEYS = ['services', 'solutions'];
 
@@ -78,7 +79,7 @@ export default function NavMenu({activeNav, menus, links, contactHref}){
           {rest.map(renderLink)}
         </ul>
         <a href={contactHref} className={styles.cta}>
-          <span>Liên hệ ngay</span><span className={styles.ctaIcon} aria-hidden="true">↗</span>
+          <span>Đặt lịch tư vấn</span><Icon name="arrow-up-right" size={17} className={styles.ctaIcon}/>
         </a>
       </nav>
 
@@ -115,7 +116,7 @@ export default function NavMenu({activeNav, menus, links, contactHref}){
             })}
             {rest.map(link => <li key={link.key}><a className={styles.mobileItem} href={link.href} onClick={closeAll}>{link.label}</a></li>)}
           </ul>
-          <a href={contactHref} className={styles.mobileCta} onClick={closeAll}>Liên hệ ngay ↗</a>
+          <a href={contactHref} className={styles.mobileCta} onClick={closeAll}>Đặt lịch tư vấn</a>
         </nav>
       )}
     </div>

@@ -1,4 +1,5 @@
-/* SOHO design tokens, bản 9: bố cục nền trắng của bản 8, màu theo SOHO Brand Kit v3.0, logo gốc của SOHO. Xem DESIGN.md.
+/* SOHO design tokens, bản 10: trộn hai hệ thật trên styles.refero.design (Ramp: dàn chữ kiểu báo; Brex: nền trắng, một màu hành động)
+   với màu Brand Kit v3 và logo gốc. Phông Fraunces + Be Vietnam Pro. Xem DESIGN.md.
    Cam là màu chính; gradient Signature (cam, san hô, tím) chỉ ở vài điểm nhấn. Một khối tối duy nhất: khối liên hệ. */
 :root{
   /* Màu nhấn theo Brand Kit v3: cam là chính, san hô và tím là điểm nhấn UI */
@@ -53,13 +54,13 @@
   --grad-hero:var(--white);
   --grad-fade:var(--white);
 
-  --font-text:var(--font-inter),Inter,system-ui,-apple-system,'Segoe UI',sans-serif;
-  --font-display:var(--font-text);
+  --font-text:var(--font-bvp),'Be Vietnam Pro',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --font-display:var(--font-fraunces),'Fraunces',Georgia,serif;
 
-  --fs-h1:clamp(38px,5vw,64px);
-  --fs-h2:clamp(26px,2.8vw,38px);
+  --fs-h1:clamp(40px,5.6vw,76px);
+  --fs-h2:clamp(30px,3.4vw,48px);
   --fs-h3:clamp(18px,1.5vw,21px);
-  --fs-lead:clamp(16px,1.25vw,18px);
+  --fs-lead:clamp(17px,1.35vw,19px);
   --fs-body:16px;
   --fs-small:14px;
   --fs-meta:13px;
@@ -70,16 +71,16 @@
   --header-h:72px;
 
   --space-sm:clamp(48px,6vw,64px);
-  --space-md:clamp(64px,8vw,104px);
-  --space-lg:clamp(80px,10vw,128px);
+  --space-md:clamp(72px,8.5vw,112px);
+  --space-lg:clamp(88px,10vw,136px);
 
   --r-pill:999px;
-  --r-xl:16px;
-  --r-card:16px;
-  --r-md:12px;
-  --r-sm:8px;
+  --r-xl:20px;
+  --r-card:16px;      /* thẻ nội dung (Ramp) */
+  --r-md:12px;        /* nút, ô nhập (Brex) */
+  --r-sm:6px;         /* nhãn nhỏ, chip */
 
-  --shadow-card:0 10px 30px rgba(16,18,28,.06);
+  --shadow-card:none;   /* thẻ đứng trên viền mảnh, không đổ bóng (Ramp, Brex) */
   --shadow-pop:0 20px 50px rgba(16,18,28,.12);
   --ease:cubic-bezier(.2,.8,.2,1);
   --t-fast:160ms ease;

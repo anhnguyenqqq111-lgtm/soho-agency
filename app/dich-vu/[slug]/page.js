@@ -50,44 +50,46 @@ export default async function ServicePage({params}){
       <Header activeNav="services"/>
       <ReadingProgress/>
       <main>
-        <Hero tone="services" crumbs={[{label: 'Dịch vụ', href: '/dich-vu'}, {label: service.menuTitle}]} eyebrow={service.category} title={service.menuTitle} tagline={service.menuDesc} visual={<div className={styles.heroDiagram}><ServiceDiagram slug={service.slug} card/></div>}/>
+        <Hero tone="services" crumbs={[{label: 'Dịch vụ', href: '/dich-vu'}, {label: service.menuTitle}]} title={service.title} long tagline={service.intro} visual={<div className={styles.heroDiagram}><ServiceDiagram slug={service.slug} card/></div>}/>
         <PageHeader
-          title={service.menuTitle}
-          lead={service.intro}
+          title="Kết quả cần đạt"
+          lead={service.promise}
           bullets={service.outcomes}
         >
-          <Button href="#lien-he">Nhận audit {service.menuTitle}</Button>
+          <Button href="#lien-he">Đặt lịch tư vấn</Button>
         </PageHeader>
 
         {/* Quy trình + sơ đồ */}
-        <Section tone="dark" decor="calender" title={<>Quy trình triển khai <span className="hl">tại SOHO</span></>} intro={service.promise}>
+        <Section tone="dark" decor="calender" title={<>SOHO làm theo <span className="hl">{service.process.length} bước</span></>} intro="Mỗi bước có việc cụ thể và con số để bạn kiểm tra.">
           <Track items={service.process.map(title => ({title}))}/>
         </Section>
 
         {/* Dấu hiệu và kết quả */}
-        <Section tone="gray" decor="zoom" title={<>Vì sao doanh nghiệp cần <span className="hl">{service.menuTitle}</span>?</>} intro={service.insight}>
+        <Section title={<>Vì sao doanh nghiệp cần <span className="hl">{service.menuTitle}</span>?</>} intro={service.insight}>
           <BeforeAfter before={service.pains} after={service.outcomes} beforeLabel="Dấu hiệu bạn đang gặp" afterLabel="Kết quả cần đạt"/>
           <p className={styles.proof}>{service.proof}</p>
         </Section>
 
         {/* Bàn giao */}
         <Section title={<>Bạn nhận được gì khi làm <span className="hl">{service.menuTitle}</span> với SOHO</>}>
-          <div className={styles.deliver}>
+          <div className={`${styles.deliver} ${service.artifact?.image ? '' : styles.deliverFull}`}>
             <ol className={styles.deliverList}>
               {service.deliverables.map((d, i) => (
                 <li key={d} data-reveal="" style={{'--reveal-delay': `${i * 80}ms`}}><span>{String(i + 1).padStart(2, '0')}</span>{d}</li>
               ))}
             </ol>
-            <figure className={styles.artifact} data-reveal="" style={{'--reveal-delay': '200ms'}}>
-              <ImageSlot src={service.artifact.image} alt={service.artifact.need} need={service.artifact.need} size="1600×1000"/>
-              <figcaption>Ví dụ sản phẩm bàn giao: {service.artifact.need.charAt(0).toLowerCase() + service.artifact.need.slice(1)}.</figcaption>
-            </figure>
+            {service.artifact?.image && (
+              <figure className={styles.artifact} data-reveal="" style={{'--reveal-delay': '200ms'}}>
+                <ImageSlot src={service.artifact.image} alt={service.artifact.need} need={service.artifact.need} size="1600×1000"/>
+                <figcaption>Ví dụ sản phẩm bàn giao: {service.artifact.need.charAt(0).toLowerCase() + service.artifact.need.slice(1)}.</figcaption>
+              </figure>
+            )}
           </div>
         </Section>
 
         {/* Bài viết chi tiết */}
         {article && (
-          <Section tone="gray" kicker="Phân tích chi tiết" title={<>Hiểu sâu về <span className="hl">{service.menuTitle}</span></>} spacing="lg">
+          <Section tone="gray" title={<>Hiểu sâu về <span className="hl">{service.menuTitle}</span></>} spacing="lg">
             <div className={styles.articleCard}><ArticleBody article={article}/></div>
           </Section>
         )}

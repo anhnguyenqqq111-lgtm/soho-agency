@@ -11,8 +11,8 @@ import {sitePath} from './paths';
 const PROBLEMS = [
   {key: 'found', label: 'Ít người tìm thấy', services: ['seo-tong-the', 'seo-ai-overview', 'local-seo-google-maps', 'content-marketing-pr'],
     hint: 'Bắt đầu từ SEO và content để khách tìm thấy bạn khi họ đang có nhu cầu.'},
-  {key: 'lead', label: 'Có traffic nhưng ít lead', services: ['cro-landing-page', 'content-marketing-pr', 'ga4-looker-dashboard'],
-    hint: 'Traffic đã có. Việc trước là sửa trang đích và đo đúng chỗ khách rơi rụng.'},
+  {key: 'lead', label: 'Có người xem nhưng ít người liên hệ', services: ['cro-landing-page', 'content-marketing-pr', 'ga4-looker-dashboard'],
+    hint: 'Đã có người xem. Việc trước là sửa trang đích và đo đúng chỗ khách bỏ đi.'},
   {key: 'ads', label: 'Quảng cáo đắt, khó ra đơn', services: ['google-ads-shopping', 'meta-tiktok-ads', 'cro-landing-page'],
     hint: 'Tối ưu tài khoản quảng cáo theo lợi nhuận và sửa trang đích đi kèm.'},
   {key: 'measure', label: 'Không biết kênh nào hiệu quả', services: ['ga4-looker-dashboard', 'tu-van-chien-luoc-sprint'],

@@ -12,7 +12,7 @@ export default function CtaBand({
   text = 'Gửi website và mục tiêu quý tới. SOHO xem các kênh bạn đang chạy và gửi lại 3 việc nên làm trước.',
   withForm = true,
   href = '/lien-he',
-  label = 'Liên hệ ngay'
+  label = 'Đặt lịch tư vấn'
 }){
   return (
     <section id={id} className={`${styles.band} on-dark`}>

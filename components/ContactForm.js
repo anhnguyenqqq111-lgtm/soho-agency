@@ -4,6 +4,7 @@ import styles from './ContactForm.module.css';
 import Fill from './ui/Fill';
 import {company} from './data/company';
 import {sitePath} from './paths';
+import Icon from './ui/Icon';
 
 const GOALS = [
   'Tăng trưởng SEO và AI Search',
@@ -65,7 +66,7 @@ export default function ContactForm({compact = false}){
         <textarea id="cf-note" name="note" rows={compact ? 2 : 3} placeholder="Ngân sách hiện tại, kênh đang chạy, mục tiêu quý tới..." />
       </div>
       <div className={styles.actions}>
-        <button type="submit" className={styles.submit}><span>Gửi yêu cầu</span><span aria-hidden="true">→</span></button>
+        <button type="submit" className={styles.submit}><span>Đặt lịch tư vấn</span><Icon name="arrow-right" size={18}/></button>
         <p className={styles.consent}>
           Khi gửi form, bạn đồng ý để SOHO dùng thông tin này để liên hệ lại, theo <a href={sitePath('/chinh-sach-bao-mat')}>Chính sách bảo mật</a>.
         </p>

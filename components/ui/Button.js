@@ -1,10 +1,12 @@
 import styles from './Button.module.css';
 import {sitePath} from '../paths';
+import Icon from './Icon';
 
 /*
-  variant: primary (viên thuốc cam, chữ Midnight), secondary (viền xám, hover nền trắng), text (link có mũi tên cam)
-  size: md | sm
-  arrow: 'up' (↗ như GOHA) | 'right' (→) | false
+  variant: primary (nền cam, chữ Midnight: chỉ dùng cho hành động chính "Đặt lịch tư vấn"),
+           secondary (viền xám), text (link có mũi tên)
+  size: md | sm. Vùng bấm tối thiểu 44px (luật giao diện Apple).
+  arrow: 'up' (↗, mặc định) | 'right' (→) | false. Icon từ bộ Lucide.
 */
 export default function Button({
   href,
@@ -20,7 +22,7 @@ export default function Button({
   const content = (
     <>
       <span>{children}</span>
-      {arrow && <span className={styles.arrow} aria-hidden="true">{arrow === 'up' ? '↗' : '→'}</span>}
+      {arrow && <Icon name={arrow === 'right' ? 'arrow-right' : 'arrow-up-right'} size={size === 'sm' ? 16 : 18} className={styles.arrow}/>}
     </>
   );
   if (href) return <a href={sitePath(href)} className={cls} {...rest}>{content}</a>;

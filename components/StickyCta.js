@@ -2,6 +2,7 @@
 import {useEffect, useState} from 'react';
 import {usePathname} from 'next/navigation';
 import styles from './StickyCta.module.css';
+import Icon from './ui/Icon';
 
 /*
   Thanh liên hệ cố định ở đáy màn hình, chỉ trên mobile (CSS ẩn từ 761px).
@@ -33,8 +34,8 @@ export default function StickyCta({phone, contactHref}){
   const tel = phone ? phone.replace(/\s/g, '') : null;
   return (
     <div className={`${styles.bar} ${show ? styles.on : ''}`} aria-hidden={!show} inert={!show}>
-      {tel && <a href={`tel:${tel}`} className={styles.call}>Gọi {phone}</a>}
-      <a href={contactHref} className={styles.cta}>Nhận tư vấn ↗</a>
+      {tel && <a href={`tel:${tel}`} className={styles.call}><Icon name="phone" size={18}/>Gọi</a>}
+      <a href={contactHref} className={styles.cta}>Đặt lịch tư vấn</a>
     </div>
   );
 }

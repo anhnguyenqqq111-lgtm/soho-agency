@@ -1,0 +1,29 @@
+.hero{position:relative;overflow:hidden;background:var(--glow-warm),var(--white);padding-block:clamp(44px,6vw,96px) clamp(48px,6vw,88px);border-bottom:1px solid var(--line)}
+.top{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,4fr);grid-template-areas:"title proofs" "lead proofs";gap:clamp(24px,3vw,40px) clamp(32px,5vw,72px);align-items:start}
+.title{grid-area:title;font-size:clamp(42px,6vw,82px);line-height:1.06;letter-spacing:-.018em;max-width:14ch}
+.lead{grid-area:lead;display:grid;gap:22px;justify-items:start}
+.text{font-size:clamp(17px,1.4vw,20px);line-height:1.55;color:var(--ink-2);max-width:46ch}
+.actions{display:flex;flex-wrap:wrap;align-items:center;gap:12px 24px}
+.call{display:inline-flex;align-items:center;gap:8px;min-height:44px;font-weight:600;color:var(--ink);text-decoration:none}
+.call:hover{color:var(--brand-ink)}
+.note{font-size:14px;color:var(--ink-3);max-width:46ch}
+
+/* Bằng chứng: danh sách kẻ mảnh (thẻ đứng trên viền, không bóng) */
+.proofs{grid-area:proofs;align-self:end;list-style:none;margin:0;padding:0;border-top:1px solid var(--ink)}
+.proofs li{display:grid;grid-template-columns:76px minmax(0,1fr);gap:16px;align-items:center;padding:16px 0;border-bottom:1px solid var(--line)}
+.proofs strong{display:block;font-size:15px;color:var(--ink);margin-bottom:2px}
+.proofs span{font-size:14px;line-height:1.5;color:var(--ink-3)}
+.big{font-family:var(--font-display);font-weight:500;font-size:24px;line-height:1;color:var(--brand-ink);font-style:italic;white-space:nowrap}
+.iconBox{width:44px;height:44px;border-radius:var(--r-md);display:grid;place-items:center;background:var(--gray);color:var(--ink)}
+
+.instrument{margin:clamp(40px,5vw,64px) 0 0;display:grid;grid-template-columns:minmax(0,3fr) minmax(0,9fr);gap:24px 40px;padding:clamp(20px,2.5vw,32px);border:1px solid var(--line);border-radius:var(--r-xl);background:var(--white)}
+.caption{display:grid;gap:10px;align-content:start}
+.caption strong{font-family:var(--font-display);font-weight:500;font-size:24px;line-height:1.2}
+.caption span{font-size:14px;line-height:1.55;color:var(--ink-3)}
+.chart{min-width:0}
+.chart svg{max-height:340px}
+
+@media (max-width:960px){
+  .top{grid-template-columns:minmax(0,1fr);grid-template-areas:"title" "lead" "proofs"}
+  .instrument{grid-template-columns:minmax(0,1fr)}
+}

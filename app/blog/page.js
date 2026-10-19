@@ -26,11 +26,11 @@ export default function BlogPage(){
     <>
       <Header activeNav="blog"/>
       <main>
-        <Hero tone="blog" crumbs={[{label: 'Blog'}]} eyebrow="Blog" title="Ghi chép từ đội SOHO" tagline="SEO, quảng cáo, đo lường và các framework từng bước, viết lại để đội marketing của bạn dùng được." visual={<BlogVisual/>}/>
+        <Hero tone="blog" crumbs={[{label: 'Blog'}]} title={<>Blog SOHO Agency: <span className="hl">ghi chép từ việc thật</span></>} tagline="Hướng dẫn từng bước về SEO, quảng cáo và đo lường, viết để đội marketing của bạn làm theo được." visual={<BlogVisual/>}/>
         <Section id="noi-dung" tone="white" title={<>Bài viết <span className="hl">mới nhất</span></>} spacing="sm">
           <div className={styles.latest}>{latest.map((p, i) => <BlogCard key={p.slug} post={p} delay={i * 80}/>)}</div>
         </Section>
-        <Section id="chu-de" tone="fade" title={<>Theo <span className="hl">chủ đề</span></>} intro={<p>{total} bài, xếp theo danh mục. Nhóm Framework là bài hướng dẫn từng bước.</p>}>
+        <Section id="chu-de" tone="fade" title={<>Theo <span className="hl">chủ đề</span></>} intro={<p>{total} bài, xếp theo danh mục. Nhóm Framework là bài hướng dẫn từng bước, làm theo được ngay.</p>}>
           <div className={styles.layout}>
             <nav aria-label="Danh mục" className={styles.toc}>
               <p className={styles.tocTitle}>Danh mục</p>

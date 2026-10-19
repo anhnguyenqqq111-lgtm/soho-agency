@@ -12,13 +12,13 @@ import {getServicesByGroup} from '../../components/servicePagesData';
 
 export const metadata = {
   title: 'Dịch vụ',
-  description: 'Chín dịch vụ SEO, AI Search, Google Ads, Meta và TikTok Ads, CRO, content, GA4 và tư vấn chiến lược của SOHO Agency, chia theo điểm nghẽn tăng trưởng.'
+  description: 'Chín dịch vụ của SOHO Agency: SEO, SEO cho AI tìm kiếm, Google Maps, Google Ads, Meta và TikTok Ads, tối ưu trang đích, nội dung, đo lường GA4, tư vấn lộ trình. Chọn theo chỗ đang nghẽn.'
 };
 
 const STAGES = [
-  {title: 'Được tìm thấy', text: 'Khách hàng tìm trên Google, Maps và AI Search.'},
-  {title: 'Được chọn', text: 'Quảng cáo và landing page biến lượt xem thành lead.'},
-  {title: 'Được tin và đo đúng', text: 'Nội dung tạo niềm tin, dữ liệu cho biết kênh nào mang về doanh thu.'}
+  {title: 'Được tìm thấy', text: 'Khách tìm bạn trên Google, Google Maps và câu trả lời của AI.'},
+  {title: 'Được chọn', text: 'Quảng cáo và trang đích biến lượt xem thành khách liên hệ.'},
+  {title: 'Được tin và đo đúng', text: 'Nội dung tạo niềm tin, số liệu cho biết kênh nào mang về doanh thu.'}
 ];
 const IDS = ['tim-kiem', 'quang-cao', 'content-du-lieu'];
 
@@ -28,9 +28,9 @@ export default function ServicesIndexPage(){
     <>
       <Header activeNav="services"/>
       <main>
-        <Hero tone="services" crumbs={[{label: 'Dịch vụ'}]} eyebrow="Dịch vụ" title="Chín việc SOHO làm" tagline="Chọn theo điểm nghẽn, không theo gói." visual={<ServicesVisual labels={groups.flatMap(g => g.items.map(s => s.menuTitle))}/>}/>
+        <Hero tone="services" crumbs={[{label: 'Dịch vụ'}]} title={<>Chín dịch vụ marketing của SOHO, <span className="hl">chọn theo chỗ nghẽn</span></>} tagline="Không bán gói. Mỗi dịch vụ giải một chỗ nghẽn cụ thể trên đường khách tới đơn hàng." visual={<ServicesVisual labels={groups.flatMap(g => g.items.map(s => s.menuTitle))}/>}/>
         <PageHeader
-          title="Chọn dịch vụ theo điểm nghẽn, không theo gói"
+          title="Bạn đang tắc ở chỗ nào?"
           lead="Mỗi doanh nghiệp tắc ở một chỗ khác nhau: không ai tìm thấy, có người tìm thấy nhưng không mua, hoặc có mua nhưng không biết kênh nào mang lại."
         />
         <Section title={<>Ba nhóm dịch vụ, <span className="hl">ba chặng</span> trên hành trình khách hàng</>}>
@@ -45,7 +45,7 @@ export default function ServicesIndexPage(){
           />
         </Section>
         {groups.map(({group, items}, i) => (
-          <Section key={group} id={IDS[i]} tone={i % 2 ? 'white' : 'gray'} kicker={`0${i + 1}`} title={group} spacing="sm">
+          <Section key={group} id={IDS[i]} tone={i % 2 ? 'white' : 'gray'} title={group} spacing="sm">
             <LinkRows items={items.map(s => ({title: s.menuTitle, desc: s.intro, href: `/dich-vu/${s.slug}`}))}/>
           </Section>
         ))}

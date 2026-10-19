@@ -1,47 +1,27 @@
 import styles from './ProjectGrid.module.css';
-import ImageSlot from '../ui/ImageSlot';
-import Fill from '../ui/Fill';
+import Icon from '../ui/Icon';
 import {sitePath} from '../paths';
 
 /*
-  Lưới dự án: dự án đầu tiên lớn, các dự án sau nhỏ.
-  linkBase: nếu có, mỗi thẻ trỏ tới `${linkBase}#${slug}` (trang Kết quả)
+  Lưới dự án đã công bố (components/data/cases.js), ảnh thật, mỗi thẻ trỏ xuống phần chi tiết cùng trang (#slug).
 */
-export default function ProjectGrid({projects, linkBase}){
+export default function ProjectGrid({projects}){
   return (
     <ul className={styles.grid}>
-      {projects.map((p, i) => {
-        const featured = false;
-        const body = (
-          <>
-            <div className={styles.mediaWrap}>
-            <ImageSlot
-              src={p.image}
-              alt={`Dự án ${p.name}`}
-              need={p.imageNeed}
-              size={featured ? '1600×1200' : '1200×900'}
-              ratio={featured ? '4/3' : '4/3'}
-              className={styles.media}
-            />
-            </div>
+      {projects.map((p, i) => (
+        <li key={p.slug} className={styles.item} data-reveal="" style={{'--reveal-delay': `${i * 90}ms`}}>
+          <a href={`#${p.slug}`} className={styles.link}>
+            <div className={styles.media}><img src={sitePath(p.image)} alt={`Dự án ${p.name}`} loading="lazy" width="1200" height="560"/></div>
             <div className={styles.meta}>
-              <p className={styles.scope}>{p.scope}</p>
+              <p className={styles.scope}>{p.scope} · {p.period}</p>
               <h3 className={styles.name}>{p.name}</h3>
               <p className={styles.field}>{p.field}</p>
-              <p className={styles.result}>
-                <Fill value={p.result} need="CẦN KẾT QUẢ THẬT, 1 dòng"/>
-              </p>
+              <p className={styles.result}>{p.result}</p>
+              <span className={styles.more}>Đọc chi tiết <Icon name="arrow-down" size={16}/></span>
             </div>
-          </>
-        );
-        return (
-          <li key={p.slug} className={`${styles.item} ${featured ? styles.featured : ''}`} data-reveal="" style={{'--reveal-delay': `${i * 90}ms`}}>
-            {linkBase
-              ? <a href={sitePath(`${linkBase}#${p.slug}`)} className={styles.link}>{body}</a>
-              : <div className={styles.link}>{body}</div>}
-          </li>
-        );
-      })}
+          </a>
+        </li>
+      ))}
     </ul>
   );
 }
