@@ -4,6 +4,15 @@
    Gradient Signature chỉ dùng ở điểm nhấn: chữ nhấn .hl, mảng hero, khối CTA tối. Không dùng nền #FFF4E9.
    Cam #F26522 chỉ làm nền (nút, ô icon) với chữ tối #141218; chữ cam nhỏ trên nền sáng dùng Deep Orange #C2410C. */
 :root{
+  /* 0. Token Brand Identity 3.0 (brief "Approved Brand Identity 3.0 & Banner"), trỏ về cùng giá trị bên dưới */
+  --soho-orange:#F26522;
+  --soho-coral:#EC4899;
+  --soho-violet:#6D28D9;
+  --soho-midnight:#141218;
+  --soho-white:#FFFFFF;
+  --soho-canvas:#FAF9FD;
+  --soho-gradient:linear-gradient(115deg,#F26522 0%,#EC4899 48%,#6D28D9 100%);
+
   /* 1. Bảng màu gốc trong brief */
   --c-orange:#F26522;       /* Brand Orange */
   --c-orange-deep:#C2410C;  /* Deep Orange: chữ cam, link. 5,18:1 trên trắng */

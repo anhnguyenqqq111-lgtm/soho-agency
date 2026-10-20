@@ -72,7 +72,7 @@ export default function Home(){
 
         <LogoMarquee clients={clients} label="Doanh nghiệp đang làm cùng SOHO"/>
 
-        <Section id="dich-vu" title={<>Sáu việc SOHO làm <span className="hl">giỏi nhất</span></>} intro="Mỗi dịch vụ giải một chỗ nghẽn cụ thể trên đường khách tới đơn hàng." aside={<Button href="/dich-vu" variant="text" arrow="right">Xem đủ 12 dịch vụ</Button>}>
+        <Section id="dich-vu" tone="dark" title={<>Sáu việc SOHO làm <span className="hl">giỏi nhất</span></>} intro="Mỗi dịch vụ giải một chỗ nghẽn cụ thể trên đường khách tới đơn hàng." aside={<Button href="/dich-vu" variant="text" arrow="right">Xem đủ 12 dịch vụ</Button>}>
           <ServicesGrid services={getCoreServices()} partnerLabel={google ? `${google.name} ${google.year}` : null}/>
         </Section>
 

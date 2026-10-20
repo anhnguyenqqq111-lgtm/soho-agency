@@ -57,7 +57,7 @@ Trang chủ mới: Hero → Khách hàng → Dịch vụ → Cách làm việc �
 
 ---
 
-## 2. Hệ thiết kế (bản 11, tháng 10/2026): "tờ giấy" đưa cho người và AI trước khi làm bất cứ trang nào
+## 2. Hệ thiết kế (bản 12, Brand Identity 3.0, tháng 10/2026): "tờ giấy" đưa cho người và AI trước khi làm bất cứ trang nào
 
 Lý do có tờ giấy này: AI không có gu, nó lấp chỗ trống bằng mặc định (Inter, nền kem, khuôn "nhãn nhỏ + tiêu đề trái + ảnh phải", câu chung chung như "tận tâm, uy tín"). Mọi chỗ trống đều được ghi rõ dưới đây. Phương pháp theo video "Claude Design làm web nha khoa và văn phòng luật ra cùng một khuôn" (AI 5 Phút, 10/2026).
 
@@ -127,6 +127,12 @@ Ngoại lệ được giữ: tên sản phẩm (Google Ads, Meta, TikTok, GA4, L
 
 Đúng **một bộ: Lucide** (`lucide-static` 0.460.0, giấy phép ISC), qua `components/ui/Icon.js`. Không để AI tự vẽ icon, không trộn bộ khác, không dùng ký tự ⌖ ✆ ✉ ↗ làm icon. Cần icon mới: lấy từ `unpkg.com/lucide-static@0.460.0/icons/<tên>.svg` (bỏ dòng chú thích giấy phép, chỉ lấy phần bên trong thẻ svg) rồi thêm vào `ICONS`. Hình minh họa nét (hero, sơ đồ dịch vụ) là SVG tự dựng; hình 3D trang trí là bộ 3dicons CC0 (mục 2.9).
 
+### 2.5b. Logo và banner (Brand Identity 3.0)
+
+- Logo: SOHO Concept 01 Open Corner, file đã duyệt `public/assets/brand/approved/SOHO_01_Open_Corner_APPROVED.svg` (bản trắng-cam cho nền tối), dùng nguyên vẹn ở header (52px, 44px trên mobile) và footer (72px). Logo cũ giữ nguyên trong `public/brand/` và `public/assets/brand/` làm bản dự phòng.
+- Banner: hero dùng Concept A "SOHO Unfold" (`public/banners/A_*`), CTA cuối trang dùng Concept C "Chromatic Impact" (`public/banners/C_*`). Ảnh không chứa chữ, nút hay logo; mobile dùng ảnh dựng riêng 900×1200, chỉ lấy phần hình ở đáy.
+- Thẻ dịch vụ: 6 hình hình học SVG vẽ tay (`components/home/ServiceArt.js`), không phải ảnh render 3D.
+
 ### 2.6. Màu (`app/styles/tokens.css`)
 
 Ba lớp token: bảng màu gốc (`--c-*`), token theo vai trò (`--color-*`, `--gradient-*`) mà component nên dùng, và tên cũ (`--brand`, `--ink`...) trỏ về token mới để component cũ không phải sửa.
@@ -147,7 +153,7 @@ Ba lớp token: bảng màu gốc (`--c-*`), token theo vai trò (`--color-*`, `
 | `--gradient-ink` | `#141218` → `#2B1A4A` → `#5A1F4D` | Khối CTA cuối trang | Chữ phụ dùng `#D9D6E0`: ≥ 5,6:1 ở điểm tối nhất của quầng cam |
 
 - Không dùng nền `#FFF4E9` hay bất kỳ nền kem nào. `--color-primary-tint` (`#FDE5D8`) chỉ cho ô dấu tích nhỏ và màu bôi chọn chữ.
-- Mỗi trang tối đa hai khối tối kể cả CTA cuối (trang chủ: dự án + CTA; trang dịch vụ: quy trình + CTA).
+- Brand Identity 3.0 (10/2026) thay luật cũ "tối đa hai khối tối": header, hero, dịch vụ, dự án và CTA cuối trang chủ dùng nền Midnight theo bản demo cinematic 3D đã duyệt; các khối nội dung còn lại giữ nền sáng để xen kẽ.
 - Ba chặng ma trận: cam, san hô (chữ Dark Ink, ≥ 5,2:1), tím `#6D28D9` → `#5B21B6` (chữ trắng, ≥ 7,1:1).
 
 ### 2.7. Hình khối và bố cục

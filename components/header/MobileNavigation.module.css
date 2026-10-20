@@ -1,7 +1,7 @@
 /* Drawer mobile, dưới 1000px. Phủ từ dưới header tới đáy màn hình, cuộn riêng. */
 .root{display:none;margin-left:auto}
-.toggle{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 14px;border:1px solid var(--gray-2);border-radius:var(--r-md);background:var(--white);color:var(--ink);font:inherit;font-size:14px;font-weight:600;cursor:pointer;transition:background-color var(--t-fast),color var(--t-fast)}
-.toggle[aria-expanded="true"]{background:var(--ink);border-color:var(--ink);color:var(--white)}
+.toggle{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 14px;border:1px solid rgba(255,255,255,.4);border-radius:var(--r-md);background:transparent;color:var(--white);font:inherit;font-size:14px;font-weight:600;cursor:pointer;transition:background-color var(--t-fast),color var(--t-fast)}
+.toggle[aria-expanded="true"]{background:var(--white);border-color:var(--white);color:var(--ink)}
 
 .drawer{position:fixed;inset:var(--header-h) 0 0;z-index:60;overflow-y:auto;overscroll-behavior:contain;padding:8px var(--gutter) calc(32px + env(safe-area-inset-bottom));background:var(--white);color:var(--ink);animation:drawerIn 200ms var(--ease)}
 .drawer[hidden]{display:none}

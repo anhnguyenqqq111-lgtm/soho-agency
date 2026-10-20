@@ -9,6 +9,7 @@ Báo cáo gồm các phần, làm theo thứ tự yêu cầu:
 2. Mega Menu dịch vụ (mục B).
 3. Màu và chữ (mục C).
 4. Full Homepage Redesign, Sprint 1: Header và Hero (mục D).
+5. Brand Identity 3.0: logo Open Corner và banner cinematic 3D (mục E).
 
 Phần A mô tả trạng thái sau đợt Master Brief. Phần C đổi lại phông, màu và hero trên nền đó, nên ảnh "sau" cuối cùng nằm ở mục C4.
 
@@ -416,6 +417,88 @@ LCP mobile chưa đạt ngưỡng 2,5 giây và gần như không đổi so vớ
 | 9. FAQ accordion | Đã có từ trước (FAQ 6 câu, có schema), chưa làm lại |
 | 10. Form gửi dữ liệu thật | Code đã sẵn (`NEXT_PUBLIC_FORM_ENDPOINT`). Cần SOHO chọn nơi nhận |
 | 11. Footer theo hệ thiết kế | Chưa làm |
+
+---
+
+## E. Brand Identity 3.0: logo Open Corner và banner cinematic 3D
+
+Nguồn: `SOHO_Approved_Logo01_Demo_Style_Banners.zip` (logo Concept 01 đã duyệt, 3 bộ banner A/B/C, ảnh preview demo). Ảnh preview chỉ dùng để đối chiếu, không đưa lên web.
+
+### E1. Audit trước khi sửa
+
+| Hạng mục | Hiện trạng | Quyết định |
+|---|---|---|
+| Framework | Next.js 15 App Router, xuất tĩnh, CSS Modules, không thư viện animation | Giữ, chỉ dùng CSS |
+| Trang chủ | `app/page.js`, hero `components/hero/HomeHero.js` | Sửa hero, dịch vụ, dự án, CTA |
+| Header và mobile | `components/header/*`, nền trắng, logo ngang `soho-logo-horizontal.svg` | Header nền Midnight, logo mới; Mega Menu và drawer giữ nguyên chức năng |
+| Logo footer | `soho-logo-white.svg` | Thay bằng logo đã duyệt |
+| Thẻ dịch vụ | `components/home/ServicesGrid.js`, thẻ trắng + icon hình | Thẻ tối + hình hình học riêng |
+| Dự án | `components/home/ProjectShowcase.js`, khối tối, thẻ trắng | Thẻ tối kiểu tạp chí, giữ ảnh và tên dự án thật |
+| CTA cuối | `components/ui/CtaBand.js`, có form liên hệ | Concept C, giữ nguyên form |
+| Token | `app/styles/tokens.css` | Thêm `--soho-*` trỏ về cùng giá trị |
+| SEO | metadata, canonical, JSON-LD, OG | Không đổi |
+| Lint / type-check | `package.json` không có script `lint` hay `typecheck` | Chỉ chạy được `npm run build` |
+
+### E2. Đã triển khai
+
+| File | Thay đổi |
+|---|---|
+| `public/assets/brand/approved/SOHO_01_Open_Corner_APPROVED.svg` | Logo đã duyệt, copy nguyên file từ ZIP |
+| `public/banners/A_*.webp`, `C_*.webp` | Banner Concept A (hero) và C (CTA), desktop 1920×960 và mobile 900×1200 |
+| `components/header/SiteHeader.*`, `MobileNavigation.module.css` | Header nền Midnight, logo 52 px (44 px mobile), chữ menu trắng, viền focus trắng |
+| `components/Footer.*` | Logo mới 72 px |
+| `components/hero/HomeHero.*` | Nền Midnight, ảnh A neo phải, chữ trắng bên trái, nhãn cam. Mobile: chữ và nút trước, ảnh mobile bên dưới (chỉ lấy phần hình ở đáy ảnh) |
+| `components/home/ServiceArt.js` (mới), `ServicesGrid.*` | 6 hình hình học SVG riêng cho từng dịch vụ, thẻ tối, số cam, tên trắng; khối dịch vụ chuyển sang nền tối |
+| `components/home/ProjectShowcase.module.css` | Thẻ dự án tối, khung ảnh lớn, số liệu cam sáng |
+| `components/ui/CtaBand.*` | Concept C bên phải, tiêu đề, mô tả và form bên trái; mobile có dải ảnh riêng phía trên |
+| `app/styles/tokens.css` | Token `--soho-orange`, `--soho-coral`, `--soho-violet`, `--soho-midnight`, `--soho-white`, `--soho-canvas`, `--soho-gradient` |
+| `components/article/Markdown.js`, `app/ket-qua/page.js` | Bảng cuộn ngang nhận được focus bàn phím (lỗi axe có từ trước) |
+| `DESIGN.md` | Mục 2.5b, luật khối tối mới |
+
+Logo cũ giữ nguyên trong `public/brand/` và `public/assets/brand/` làm bản dự phòng. Không ghi đè file vector gốc.
+
+**Nội dung giữ nguyên:**
+
+- H1 "SOHO Agency · SEO, quảng cáo và website: Từ tìm kiếm đến doanh thu.", đoạn mô tả, hai nút, số điện thoại, Google Partner và tên dự án.
+- Không dùng chữ mẫu của bản demo ("Đừng chỉ tăng lượt truy cập...").
+- Danh sách 3 chặng hành trình rời khỏi hero, vì ma trận hành trình ngay bên dưới đã có đủ nội dung đó.
+
+### E3. Trước và sau
+
+| | Trước | Sau |
+|---|---|---|
+| Desktop 1440 | ![](redesign/b3-truoc-desktop.jpg) | ![](redesign/b3-sau-desktop.jpg) |
+| Mobile 390 | ![](redesign/b3-truoc-mobile.jpg) | ![](redesign/b3-sau-mobile.jpg) |
+
+**Các khổ khác:** ![1920](redesign/b3-sau-1920.jpg) ![768](redesign/b3-sau-768.jpg) ![320](redesign/b3-sau-320.jpg)
+
+**Mega Menu trên header tối:** ![](redesign/b3-mega-menu.jpg)
+
+**Dịch vụ và dự án:** ![](redesign/b3-dich-vu-du-an.jpg)
+
+**CTA Concept C:** ![](redesign/b3-cta.jpg)
+
+### E4. Kiểm tra (trên bản build tĩnh)
+
+| Hạng mục | Kết quả |
+|---|---|
+| `npm run build` | Đạt, 44 trang HTML |
+| Link và ảnh nội bộ | 0 hỏng. Mỗi trang đúng 1 H1 |
+| Tràn ngang, ảnh không tải, lỗi console | 64/64 đạt: 8 trang × 8 khổ (320, 375, 390, 430, 768, 1024, 1440, 1920) |
+| axe-core WCAG 2.2 AA | 0 lỗi trên trang chủ, liên hệ, dịch vụ SEO ở 1440 và 390 (sau khi sửa bảng cuộn ngang) |
+| Lighthouse mobile, trang chủ, 2 lần | Hiệu năng 92, LCP 3,2–3,3 s, CLS 0, truy cập 100, SEO 100 |
+| Lighthouse desktop | 100 / 100 / 100 / 100, LCP 0,7 s, CLS 0 |
+| Lint, type-check | Không chạy được: dự án không có script |
+
+### E5. Giới hạn và việc cần duyệt
+
+- **Ảnh dịch vụ:** 6 hình thẻ dịch vụ là SVG hình học vẽ tay theo cùng bảng màu, không phải ảnh render 3D như banner. Muốn đồng bộ hoàn toàn cần render 6 ảnh riêng.
+- **Độ phân giải banner:** theo README của gói ZIP, banner được dựng lại từ ảnh concept, không phải bản xuất gốc. Trên màn hình mật độ điểm ảnh rất cao có thể thấy hơi mềm.
+- **Ảnh mobile:** banner mobile để trống nửa trên cho chữ. Vì chữ đã nằm phía trên, site chỉ lấy phần hình ở đáy ảnh.
+- **Header tối trên mọi trang:** trang con vẫn có hero sáng, nên ranh giới header và hero rõ hơn trước.
+- **Ảnh OG chưa làm lại theo logo mới.** Brief để mục này tùy chọn; tôi chưa làm.
+- **Thẻ "Google Partner 2026" trên thẻ dịch vụ** vẫn hiện như cũ.
+- **Chưa deploy.**
 
 ---
 

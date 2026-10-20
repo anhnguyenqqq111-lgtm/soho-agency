@@ -44,7 +44,7 @@ export default function ResultsPage(){
         <LogoMarquee clients={clients}/>
 
         <Section tone="gray" decor="chart" title={<>Mỗi kênh, SOHO <span className="hl">xem con số nào</span></>} intro="Cột cuối là những con số đẹp nhưng không nói lên doanh thu. SOHO vẫn theo dõi, chỉ không dùng để đánh giá.">
-          <div className={styles.tableWrap}>
+          <div className={styles.tableWrap} tabIndex={0} role="region" aria-label="Bảng con số theo kênh">
             <table className={styles.table}>
               <thead><tr><th scope="col">Kênh</th><th scope="col">Hằng tuần</th><th scope="col">Hằng tháng</th><th scope="col">Không dùng để đánh giá</th></tr></thead>
               <tbody>

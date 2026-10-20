@@ -50,7 +50,7 @@ export function Block({block}){
       );
     case 'table':
       return (
-        <div className="tableWrap">
+        <div className="tableWrap" tabIndex={0} role="region" aria-label="Bảng (cuộn ngang trên màn hình nhỏ)">
           <table>
             <thead>
               <tr>{block.head.map((cell, i) => <th key={i} scope="col"><Inline text={cell}/></th>)}</tr>

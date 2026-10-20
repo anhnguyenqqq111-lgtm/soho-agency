@@ -1,22 +1,24 @@
 /* Header dính: nền trắng, viền mảnh; đã cuộn thì thêm bóng nhẹ (data-scrolled do HeaderScroll gắn).
    Không dùng backdrop-filter: nó biến header thành khung chứa của phần tử fixed và làm lệch drawer mobile. */
-.header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);color:var(--ink);border-bottom:1px solid var(--line);transition:box-shadow var(--t-med),background-color var(--t-med)}
-.header[data-scrolled]{background:var(--white);box-shadow:0 6px 24px rgba(20,18,24,.06)}
+/* Brand Identity 3.0: header nền Midnight, logo Open Corner bản trắng-cam, chữ menu trắng */
+.header{position:sticky;top:0;z-index:50;background:var(--soho-midnight);color:var(--white);border-bottom:1px solid rgba(255,255,255,.10);transition:box-shadow var(--t-med),background-color var(--t-med)}
+.header[data-scrolled]{background:var(--soho-midnight);box-shadow:0 10px 30px rgba(0,0,0,.35)}
+.header :focus-visible{outline-color:var(--white)}
 /* Ở đầu trang: bỏ viền đáy để hero (trường gradient) liền mạch với header; cuộn xuống mới hiện viền và bóng */
 .header:not([data-scrolled]){border-bottom-color:transparent}
 .bar{position:relative;height:var(--header-h);display:flex;align-items:center;gap:24px}
 .logo{display:block;flex:none;border-radius:var(--r-sm)}
-.logo img{display:block;height:38px;width:auto}
+.logo img{display:block;height:52px;width:52px}
 
 /* Desktop: logo | menu ở giữa | nút chính */
 .desktop{flex:1;display:flex;align-items:center;gap:24px;min-width:0}
 .navList{list-style:none;margin:0 auto;padding:0;display:flex;align-items:center;gap:clamp(18px,2.2vw,32px)}
-.navItem{position:relative;display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:0;background:none;border:0;cursor:pointer;font:inherit;font-size:15px;font-weight:500;color:var(--ink);text-decoration:none;white-space:nowrap}
+.navItem{position:relative;display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:0;background:none;border:0;cursor:pointer;font:inherit;font-size:15px;font-weight:500;color:var(--white);text-decoration:none;white-space:nowrap}
 .navItem::after{content:'';position:absolute;left:0;right:0;bottom:6px;height:2px;border-radius:2px;background:var(--brand);transform:scaleX(0);transform-origin:left;transition:transform var(--t-med)}
 .navItem:hover::after,.active::after{transform:scaleX(1)}
 .active{font-weight:600}
 /* Đang mở: đổi màu chữ và lật mũi tên, không dùng gạch chân để khỏi nhầm với trang hiện tại */
-.navItem[aria-expanded="true"]{color:var(--brand-ink)}
+.navItem[aria-expanded="true"]{color:var(--warm-2)}
 .navItem[aria-expanded="true"]::after{transform:scaleX(0)}
 .caret{transition:transform 200ms var(--ease)}
 .navItem[aria-expanded="true"] .caret{transform:rotate(180deg)}
@@ -24,9 +26,10 @@
 .megaItem{position:static}
 .cta{flex:none;display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 18px;border-radius:var(--r-md);background:var(--brand);color:var(--ink);font-size:15px;font-weight:700;text-decoration:none;white-space:nowrap;transition:background-color var(--t-fast),transform var(--t-fast)}
 .cta:hover{background:var(--brand-hover);color:var(--ink);transform:translateY(-1px)}
+.cta:focus-visible{outline-color:var(--white)}
 .ctaIcon{transition:transform var(--t-fast)}
 .cta:hover .ctaIcon{transform:translate(2px,-2px)}
 
 /* Dưới 1000px dùng drawer (MobileNavigation). Trùng DESKTOP_QUERY trong navUtils.js */
-@media (max-width:999px){.desktop{display:none}.logo img{height:32px}}
+@media (max-width:999px){.desktop{display:none}.logo img{height:44px;width:44px}}
 @media (prefers-reduced-motion:reduce){.navItem::after,.caret,.cta,.ctaIcon{transition:none}}
