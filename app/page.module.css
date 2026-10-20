@@ -1,3 +1,13 @@
-.blogGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--gap)}
-.faqWrap{max-width:860px}
-@media (max-width:900px){.blogGrid{grid-template-columns:minmax(0,1fr)}}
+.blogGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--gap);
+}
+.faqWrap {
+  max-width: 860px;
+}
+@media (max-width: 900px) {
+  .blogGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

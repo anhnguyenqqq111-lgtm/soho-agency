@@ -1,0 +1,326 @@
+{
+  "framework-marketing-90-ngay": {
+    "contentHash": "c7aa757cd3c874d74ee03df39395982e57fb8035892f45ab6130911fc7674382",
+    "publishedAt": "2026-10-20T16:13:32+00:00",
+    "templateId": "soho-editorial-frame-v2",
+    "thumbnail": {
+      "src": "/blog/generated/thumbnails/framework-marketing-90-ngay-thumbnail-e2b42654.webp",
+      "width": 1200,
+      "height": 675,
+      "alt": "Framework marketing 90 ngày: 7 bước"
+    },
+    "hero": {
+      "src": "/blog/generated/banners/framework-marketing-90-ngay-hero-ebde015d.webp",
+      "width": 1600,
+      "height": 900,
+      "alt": "Ảnh minh họa: Framework marketing 90 ngày: 7 bước"
+    },
+    "inArticle": [
+      {
+        "h2Index": 0,
+        "h2": "Bước 1. Chốt mục tiêu bằng số và tính ngược ra lead",
+        "src": "/blog/generated/in-article/framework-marketing-90-ngay-in-article-7ca6d639.webp",
+        "width": 1200,
+        "height": 800,
+        "alt": "Chốt mục tiêu và tính ngược ra lead"
+      }
+    ],
+    "credit": {
+      "text": "Ảnh: Eric Rothermel erothermel, Wikimedia Commons (CC0)",
+      "url": "https://commons.wikimedia.org/wiki/File:Monthly_schedule_(Unsplash).jpg"
+    },
+    "license": "CC0 (đọc từ API Commons)",
+    "source": {
+      "attribution": "Monthly schedule (Unsplash).jpg, Eric Rothermel erothermel, kho Unsplash trên Wikimedia Commons, https://commons.wikimedia.org/wiki/File:Monthly_schedule_(Unsplash).jpg, tải 2026-10-20",
+      "query": "calendar"
+    }
+  },
+  "framework-seo-8-buoc": {
+    "contentHash": "1b6364a492bf7f750bdc0624d1116ea1b160e7d0ad582beb17ab0b3e48023994",
+    "publishedAt": "2026-10-20T16:13:32+00:00",
+    "templateId": "soho-editorial-frame-v2",
+    "thumbnail": {
+      "src": "/blog/generated/thumbnails/framework-seo-8-buoc-thumbnail-27215a10.webp",
+      "width": 1200,
+      "height": 675,
+      "alt": "Framework SEO 8 bước: từ audit đến lead"
+    },
+    "hero": {
+      "src": "/blog/generated/banners/framework-seo-8-buoc-hero-3d0ff421.webp",
+      "width": 1600,
+      "height": 900,
+      "alt": "Ảnh minh họa: Framework SEO 8 bước: từ audit đến lead"
+    },
+    "inArticle": [
+      {
+        "h2Index": 0,
+        "h2": "Bước 1. Audit kỹ thuật: site có được Google đọc và hiểu không?",
+        "src": "/blog/generated/in-article/framework-seo-8-buoc-in-article-5de37939.webp",
+        "width": 1200,
+        "height": 800,
+        "alt": "Audit kỹ thuật website"
+      }
+    ],
+    "credit": {
+      "text": "Ảnh: Daniel von Appen daniel_von_appen, Wikimedia Commons (CC0)",
+      "url": "https://commons.wikimedia.org/wiki/File:Curve_in_white_marble_stairs_(Unsplash).jpg"
+    },
+    "license": "CC0 (đọc từ API Commons)",
+    "source": {
+      "attribution": "Curve in white marble stairs (Unsplash).jpg, Daniel von Appen daniel_von_appen, kho Unsplash trên Wikimedia Commons, https://commons.wikimedia.org/wiki/File:Curve_in_white_marble_stairs_(Unsplash).jpg, tải 2026-10-20",
+      "query": "stairs"
+    }
+  },
+  "framework-ads-6-buoc": {
+    "contentHash": "f0ce3313d518a57fc76d74147963b3c98bc2bc7ae91872c17006e8672046b1d0",
+    "publishedAt": "2026-10-20T16:13:32+00:00",
+    "templateId": "soho-editorial-frame-v2",
+    "thumbnail": {
+      "src": "/blog/generated/thumbnails/framework-ads-6-buoc-thumbnail-fda40cd9.webp",
+      "width": 1200,
+      "height": 675,
+      "alt": "Framework Google Ads và Meta Ads 6 bước"
+    },
+    "hero": {
+      "src": "/blog/generated/banners/framework-ads-6-buoc-hero-ab085e95.webp",
+      "width": 1600,
+      "height": 900,
+      "alt": "Ảnh minh họa: Framework Google Ads và Meta Ads 6 bước"
+    },
+    "inArticle": [
+      {
+        "h2Index": 0,
+        "h2": "Bước 1. Tính chi phí mỗi lead cho phép trước khi mở tài khoản",
+        "src": "/blog/generated/in-article/framework-ads-6-buoc-in-article-a75c3caa.webp",
+        "width": 1200,
+        "height": 800,
+        "alt": "Xác định chi phí mỗi lead"
+      }
+    ],
+    "credit": {
+      "text": "Ảnh: Brazil (Unsplash nehfi SfqtU).jpg, Wikimedia Commons (CC0)",
+      "url": "https://commons.wikimedia.org/wiki/File:Bras%C3%ADlia,_Brazil_(Unsplash_nehfi_SfqtU).jpg"
+    },
+    "license": "CC0 (đọc từ API Commons)",
+    "source": {
+      "attribution": "Brasília, Brazil (Unsplash nehfi SfqtU).jpg, Alexandre Perotto perotto, kho Unsplash trên Wikimedia Commons, https://commons.wikimedia.org/wiki/File:Bras%C3%ADlia,_Brazil_(Unsplash_nehfi_SfqtU).jpg, tải 2026-10-20",
+      "query": "antenna"
+    }
+  },
+  "seo-ky-nguyen-ai-search": {
+    "contentHash": "747c2ecb4d507a8933eadaccee8f54a54e398a48c51cadb259d6334b546356d8",
+    "publishedAt": "2026-10-20T16:13:32+00:00",
+    "templateId": "soho-editorial-frame-v2",
+    "thumbnail": {
+      "src": "/blog/generated/thumbnails/seo-ky-nguyen-ai-search-thumbnail-71987c63.webp",
+      "width": 1200,
+      "height": 675,
+      "alt": "SEO thời AI Search: doanh nghiệp cần đổi gì?"
+    },
+    "hero": {
+      "src": "/blog/generated/banners/seo-ky-nguyen-ai-search-hero-4b3ef818.webp",
+      "width": 1600,
+      "height": 900,
+      "alt": "Ảnh minh họa: SEO thời AI Search: doanh nghiệp cần đổi gì?"
+    },
+    "inArticle": [
+      {
+        "h2Index": 0,
+        "h2": "1. AI Search đang thay đổi hành vi tìm kiếm như thế nào?",
+        "src": "/blog/generated/in-article/seo-ky-nguyen-ai-search-in-article-6c71b39a.webp",
+        "width": 1200,
+        "height": 800,
+        "alt": "1. AI Search đang thay đổi hành vi tìm kiếm như thế nào?"
+      }
+    ],
+    "credit": {
+      "text": "Ảnh: Chris Lawton chrislawton, Wikimedia Commons (CC0)",
+      "url": "https://commons.wikimedia.org/wiki/File:Chris_Lawton_2017-05-20_(Unsplash).jpg"
+    },
+    "license": "CC0 (đọc từ API Commons)",
+    "source": {
+      "attribution": "Chris Lawton 2017-05-20 (Unsplash).jpg, Chris Lawton chrislawton, kho Unsplash trên Wikimedia Commons, https://commons.wikimedia.org/wiki/File:Chris_Lawton_2017-05-20_(Unsplash).jpg, tải 2026-10-20",
+      "query": "compass"
+    }
+  },
+  "toi-uu-roas-performance-ads": {
+    "contentHash": "ae3d120351ff1e586d5eb1df0b71d937c0f05c4b39b56fc62794613561313f3a",
+    "publishedAt": "2026-10-20T16:13:32+00:00",
+    "templateId": "soho-editorial-frame-v2",
+    "thumbnail": {
+      "src": "/blog/generated/thumbnails/toi-uu-roas-performance-ads-thumbnail-58168770.webp",
+      "width": 1200,
+      "height": 675,
+      "alt": "Đo Performance Ads bằng doanh thu thực tế"
+    },
+    "hero": {
+      "src": "/blog/generated/banners/toi-uu-roas-performance-ads-hero-11e8bfec.webp",
+      "width": 1600,
+      "height": 900,
+      "alt": "Ảnh minh họa: Đo Performance Ads bằng doanh thu thực tế"
+    },
+    "inArticle": [
+      {
+        "h2Index": 0,
+        "h2": "1. Chi phí click rẻ (CPC) có thực sự là một chỉ số tốt?",
+        "src": "/blog/generated/in-article/toi-uu-roas-performance-ads-in-article-3d7e4553.webp",
+        "width": 1200,
+        "height": 800,
+        "alt": "1. Chi phí click rẻ (CPC) có thực sự là một chỉ số tốt?"
+      }
+    ],
+    "credit": {
+      "text": "Ảnh: AnonymousUnknown author, Wikimedia Commons (CC0)",
+      "url": "https://commons.wikimedia.org/wiki/File:Desktop_with_laptop_and_calculator_(Unsplash).jpg"
+    },
+    "license": "CC0 (đọc từ API Commons)",
+    "source": {
+      "attribution": "Desktop with laptop and calculator (Unsplash).jpg, AnonymousUnknown author, kho Unsplash trên Wikimedia Commons, https://commons.wikimedia.org/wiki/File:Desktop_with_laptop_and_calculator_(Unsplash).jpg, tải 2026-10-20",
+      "query": "calculator"
+    }
+  },
+  "chien-luoc-seo-ads-song-hanh": {
+    "contentHash": "fbcd98db801617602c7f708ad06b0f6d9fdc0210744ffcf723f9d3f65a8fc471",
+    "publishedAt": "2026-10-20T16:13:32+00:00",
+    "templateId": "soho-editorial-frame-v2",
+    "thumbnail": {
+      "src": "/blog/generated/thumbnails/chien-luoc-seo-ads-song-hanh-thumbnail-96f0cecb.webp",
+      "width": 1200,
+      "height": 675,
+      "alt": "Khi nào nên đầu tư SEO và Ads cùng lúc?"
+    },
+    "hero": {
+      "src": "/blog/generated/banners/chien-luoc-seo-ads-song-hanh-hero-ffd7a694.webp",
+      "width": 1600,
+      "height": 900,
+      "alt": "Ảnh minh họa: Khi nào nên đầu tư SEO và Ads cùng lúc?"
+    },
+    "inArticle": [
+      {
+        "h2Index": 0,
+        "h2": "1. Cuộc chiến muôn thuở: SEO hay Quảng cáo trả tiền?",
+        "src": "/blog/generated/in-article/chien-luoc-seo-ads-song-hanh-in-article-e7fc8d62.webp",
+        "width": 1200,
+        "height": 800,
+        "alt": "1. Cuộc chiến muôn thuở: SEO hay Quảng cáo trả tiền?"
+      }
+    ],
+    "credit": {
+      "text": "Ảnh: Thong Vo titi_wanderer, Wikimedia Commons (CC0)",
+      "url": "https://commons.wikimedia.org/wiki/File:Countryside_Railway_(Unsplash).jpg"
+    },
+    "license": "CC0 (đọc từ API Commons)",
+    "source": {
+      "attribution": "Countryside Railway (Unsplash).jpg, Thong Vo titi_wanderer, kho Unsplash trên Wikimedia Commons, https://commons.wikimedia.org/wiki/File:Countryside_Railway_(Unsplash).jpg, tải 2026-10-20",
+      "query": "railway"
+    }
+  },
+  "toi-uu-cro-landing-page": {
+    "contentHash": "da5553de23a5a30321519f6dc3d0cc0eb7eb3cddd9363cf28b1c256c11e73d6b",
+    "publishedAt": "2026-10-20T16:13:32+00:00",
+    "templateId": "soho-editorial-frame-v2",
+    "thumbnail": {
+      "src": "/blog/generated/thumbnails/toi-uu-cro-landing-page-thumbnail-eaf0e7b1.webp",
+      "width": 1200,
+      "height": 675,
+      "alt": "Tối ưu CRO cho landing page B2B"
+    },
+    "hero": {
+      "src": "/blog/generated/banners/toi-uu-cro-landing-page-hero-1ae0f46e.webp",
+      "width": 1600,
+      "height": 900,
+      "alt": "Ảnh minh họa: Tối ưu CRO cho landing page B2B"
+    },
+    "inArticle": [
+      {
+        "h2Index": 0,
+        "h2": "1. Vì sao đổ nhiều traffic nhưng khách hàng không để lại thông tin?",
+        "src": "/blog/generated/in-article/toi-uu-cro-landing-page-in-article-2b5a0ec6.webp",
+        "width": 1200,
+        "height": 800,
+        "alt": "1. Vì sao đổ nhiều traffic nhưng khách hàng không để lại thông tin?"
+      }
+    ],
+    "credit": {
+      "text": "Ảnh: Steinar Engeland, Wikimedia Commons (CC0)",
+      "url": "https://commons.wikimedia.org/wiki/File:Concrete_arrow_(Unsplash).jpg"
+    },
+    "license": "CC0 1.0 (đọc từ API Commons)",
+    "source": {
+      "attribution": "Concrete arrow, Steinar Engeland, kho Unsplash trên Wikimedia Commons, https://commons.wikimedia.org/wiki/File:Concrete_arrow_(Unsplash).jpg, tải 2026-10-20",
+      "query": "arrow"
+    }
+  },
+  "content-hub-topic-cluster": {
+    "contentHash": "dc686f225795f64cf6dc17d095d87b2a3ec1ab0705ea9c30b920497d9a9429cf",
+    "publishedAt": "2026-10-20T16:13:32+00:00",
+    "templateId": "soho-editorial-frame-v2",
+    "thumbnail": {
+      "src": "/blog/generated/thumbnails/content-hub-topic-cluster-thumbnail-eeb5472d.webp",
+      "width": 1200,
+      "height": 675,
+      "alt": "Topic Cluster: xây Content Hub dẫn đầu tìm kiếm"
+    },
+    "hero": {
+      "src": "/blog/generated/banners/content-hub-topic-cluster-hero-93af6767.webp",
+      "width": 1600,
+      "height": 900,
+      "alt": "Ảnh minh họa: Topic Cluster: xây Content Hub dẫn đầu tìm kiếm"
+    },
+    "inArticle": [
+      {
+        "h2Index": 0,
+        "h2": "1. Rời xa cách làm Content rải rác vô định",
+        "src": "/blog/generated/in-article/content-hub-topic-cluster-in-article-f1d137ae.webp",
+        "width": 1200,
+        "height": 800,
+        "alt": "1. Rời xa cách làm Content rải rác vô định"
+      }
+    ],
+    "credit": {
+      "text": "Ảnh: Clint Adair clintadair, Wikimedia Commons (CC0)",
+      "url": "https://commons.wikimedia.org/wiki/File:Green_rope_meshwork_(Unsplash).jpg"
+    },
+    "license": "CC0 (đọc từ API Commons)",
+    "source": {
+      "attribution": "Green rope meshwork (Unsplash).jpg, Clint Adair clintadair, kho Unsplash trên Wikimedia Commons, https://commons.wikimedia.org/wiki/File:Green_rope_meshwork_(Unsplash).jpg, tải 2026-10-20",
+      "query": "network"
+    }
+  },
+  "tracking-ga4-capi-2026": {
+    "contentHash": "1447ed3ae6cd23372734d92f7eb3716536be7b62eaea61ffcdcf2ef3fa940ddb",
+    "publishedAt": "2026-10-20T16:13:32+00:00",
+    "templateId": "soho-editorial-frame-v2",
+    "thumbnail": {
+      "src": "/blog/generated/thumbnails/tracking-ga4-capi-2026-thumbnail-5901f8f0.webp",
+      "width": 1200,
+      "height": 675,
+      "alt": "Facebook CAPI và Server-side Tracking"
+    },
+    "hero": {
+      "src": "/blog/generated/banners/tracking-ga4-capi-2026-hero-2b25e7da.webp",
+      "width": 1600,
+      "height": 900,
+      "alt": "Ảnh minh họa: Facebook CAPI và Server-side Tracking"
+    },
+    "inArticle": [
+      {
+        "h2Index": 0,
+        "h2": "1. Thất thoát dữ liệu, Kẻ thù giấu mặt của các chiến dịch Ads",
+        "src": "/blog/generated/in-article/tracking-ga4-capi-2026-in-article-9a680b3e.webp",
+        "width": 1200,
+        "height": 800,
+        "alt": "1. Thất thoát dữ liệu, Kẻ thù giấu mặt của các chiến dịch Ads"
+      }
+    ],
+    "credit": {
+      "text": "Ảnh: Thomas Kvistholt freeche, Wikimedia Commons (CC0)",
+      "url": "https://commons.wikimedia.org/wiki/File:Beautiful_technology_(Unsplash).jpg"
+    },
+    "license": "CC0 (đọc từ API Commons)",
+    "source": {
+      "attribution": "Beautiful technology (Unsplash).jpg, Thomas Kvistholt freeche, kho Unsplash trên Wikimedia Commons, https://commons.wikimedia.org/wiki/File:Beautiful_technology_(Unsplash).jpg, tải 2026-10-20",
+      "query": "server"
+    }
+  }
+}

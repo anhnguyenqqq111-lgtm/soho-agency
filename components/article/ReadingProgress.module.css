@@ -1,2 +1,15 @@
-.track{position:fixed;z-index:70;left:0;right:0;top:0;height:3px;pointer-events:none}
-.bar{height:100%;background:var(--grad-cta);transform:scaleX(0);transform-origin:left center}
+.track {
+  position: fixed;
+  z-index: 70;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 3px;
+  pointer-events: none;
+}
+.bar {
+  height: 100%;
+  background: var(--grad-cta);
+  transform: scaleX(0);
+  transform-origin: left center;
+}

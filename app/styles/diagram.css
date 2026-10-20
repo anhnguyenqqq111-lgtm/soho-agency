@@ -1,42 +1,147 @@
 /* Sơ đồ SVG nét mảnh. Xem components/diagrams. */
-.dg{margin:0;display:grid;gap:12px}
-.dg svg{display:block;width:100%;height:auto;overflow:visible}
-.dg figcaption{font-size:var(--fs-meta);color:var(--ink-2);max-width:56ch}
+.dg {
+  margin: 0;
+  display: grid;
+  gap: 12px;
+}
+.dg svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+.dg figcaption {
+  font-size: var(--fs-meta);
+  color: var(--ink-2);
+  max-width: 56ch;
+}
 
-.dg .ln{fill:none;stroke:var(--ink);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
-.dg .ln.soft{stroke:var(--gray-2)}
-.dg .ln.acc{stroke:var(--brand);stroke-width:2.25}
-.dg .ln.fill{fill:var(--white)}
-.dg .ln.fill2{fill:var(--paper-2)}
-.dg .ln.fillAcc{fill:var(--brand)}
-.dg .dash{fill:none;stroke:var(--gray-2);stroke-width:1;stroke-dasharray:3 5}
-.dg .shade{fill:var(--brand);opacity:.14}
-.dg .dot{fill:var(--ink)}
-.dg .dotAcc{fill:var(--brand)}
+.dg .ln {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.dg .ln.soft {
+  stroke: var(--gray-2);
+}
+.dg .ln.acc {
+  stroke: var(--brand);
+  stroke-width: 2.25;
+}
+.dg .ln.fill {
+  fill: var(--white);
+}
+.dg .ln.fill2 {
+  fill: var(--paper-2);
+}
+.dg .ln.fillAcc {
+  fill: var(--brand);
+}
+.dg .dash {
+  fill: none;
+  stroke: var(--gray-2);
+  stroke-width: 1;
+  stroke-dasharray: 3 5;
+}
+.dg .shade {
+  fill: var(--brand);
+  opacity: 0.14;
+}
+.dg .dot {
+  fill: var(--ink);
+}
+.dg .dotAcc {
+  fill: var(--brand);
+}
 
-.dg .tx{font-family:var(--font-text);font-size:14px;fill:var(--ink-2)}
-.dg .tx.b{fill:var(--ink);font-weight:600}
-.dg .tx.d{font-size:18px;fill:var(--ink);font-weight:600}
-.dg .tx.acc{fill:var(--accent);font-weight:600}
-.dg .tx.light{fill:var(--white)}
-.dg .tx.mid{text-anchor:middle}
-.dg .tx.end{text-anchor:end}
+.dg .tx {
+  font-family: var(--font-text);
+  font-size: 14px;
+  fill: var(--ink-2);
+}
+.dg .tx.b {
+  fill: var(--ink);
+  font-weight: 600;
+}
+.dg .tx.d {
+  font-size: 18px;
+  fill: var(--ink);
+  font-weight: 600;
+}
+.dg .tx.acc {
+  fill: var(--accent);
+  font-weight: 600;
+}
+.dg .tx.light {
+  fill: var(--white);
+}
+.dg .tx.mid {
+  text-anchor: middle;
+}
+.dg .tx.end {
+  text-anchor: end;
+}
 
 /* Thẻ trắng để đặt sơ đồ trên nền tối */
-.dg.card{background:var(--white);color:var(--ink);border-radius:var(--r-card);padding:28px;box-shadow:var(--shadow-card)}
+.dg.card {
+  background: var(--white);
+  color: var(--ink);
+  border-radius: var(--r-card);
+  padding: 28px;
+  box-shadow: var(--shadow-card);
+}
 
-html.js .dg[data-reveal="draw"]{opacity:1;transform:none}
-html.js .dg[data-reveal="draw"] .ln{stroke-dasharray:1 1;stroke-dashoffset:1;transition:stroke-dashoffset 1400ms cubic-bezier(.65,0,.35,1) var(--d,0ms),fill-opacity 600ms ease var(--d,0ms)}
-html.js .dg[data-reveal="draw"] .ln.fillAcc,html.js .dg[data-reveal="draw"] .ln.fill2{fill-opacity:0}
-html.js .dg[data-reveal="draw"].is-in .ln{stroke-dashoffset:0;fill-opacity:1}
-html.js .dg[data-reveal="draw"] .fd{opacity:0;transition:opacity 700ms ease var(--d,0ms)}
-html.js .dg[data-reveal="draw"].is-in .fd{opacity:1}
-html.js .dg[data-reveal="draw"] .shade.fd{opacity:0}
-html.js .dg[data-reveal="draw"].is-in .shade.fd{opacity:.12}
+html.js .dg[data-reveal='draw'] {
+  opacity: 1;
+  transform: none;
+}
+html.js .dg[data-reveal='draw'] .ln {
+  stroke-dasharray: 1 1;
+  stroke-dashoffset: 1;
+  transition:
+    stroke-dashoffset 1400ms cubic-bezier(0.65, 0, 0.35, 1) var(--d, 0ms),
+    fill-opacity 600ms ease var(--d, 0ms);
+}
+html.js .dg[data-reveal='draw'] .ln.fillAcc,
+html.js .dg[data-reveal='draw'] .ln.fill2 {
+  fill-opacity: 0;
+}
+html.js .dg[data-reveal='draw'].is-in .ln {
+  stroke-dashoffset: 0;
+  fill-opacity: 1;
+}
+html.js .dg[data-reveal='draw'] .fd {
+  opacity: 0;
+  transition: opacity 700ms ease var(--d, 0ms);
+}
+html.js .dg[data-reveal='draw'].is-in .fd {
+  opacity: 1;
+}
+html.js .dg[data-reveal='draw'] .shade.fd {
+  opacity: 0;
+}
+html.js .dg[data-reveal='draw'].is-in .shade.fd {
+  opacity: 0.12;
+}
 
-@media (max-width:640px){.dg.card{padding:16px}}
-@media (prefers-reduced-motion:reduce){
-  html.js .dg[data-reveal="draw"] .ln,html.js .dg[data-reveal="draw"] .ln.fillAcc,html.js .dg[data-reveal="draw"] .ln.fill2{stroke-dasharray:none;fill-opacity:1}
-  html.js .dg[data-reveal="draw"] .fd{opacity:1}
-  html.js .dg[data-reveal="draw"] .shade.fd{opacity:.12}
+@media (max-width: 640px) {
+  .dg.card {
+    padding: 16px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html.js .dg[data-reveal='draw'] .ln,
+  html.js .dg[data-reveal='draw'] .ln.fillAcc,
+  html.js .dg[data-reveal='draw'] .ln.fill2 {
+    stroke-dasharray: none;
+    fill-opacity: 1;
+  }
+  html.js .dg[data-reveal='draw'] .fd {
+    opacity: 1;
+  }
+  html.js .dg[data-reveal='draw'] .shade.fd {
+    opacity: 0.12;
+  }
 }

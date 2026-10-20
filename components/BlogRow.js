@@ -1,5 +1,6 @@
 import styles from './BlogRow.module.css';
 import {sitePath} from './paths';
+import {thumbnailOf} from './blogVisuals';
 
 /*
   Dòng bài viết gọn: thumbnail nhỏ bên trái, danh mục, tiêu đề, trích dẫn 2 dòng, tác giả và ngày.
@@ -11,7 +12,7 @@ export default function BlogRow({post, delay = 0, headingLevel = 'h3', showCateg
   return (
     <article className={styles.row} data-reveal="" style={{'--reveal-delay': `${delay}ms`}}>
       <a href={href} className={styles.thumb} tabIndex={-1} aria-hidden="true">
-        <img src={sitePath(post.image.src)} alt="" loading="lazy" width="1600" height="1000" />
+        <img src={sitePath(thumbnailOf(post).src)} alt="" loading="lazy" width={thumbnailOf(post).width} height={thumbnailOf(post).height} />
       </a>
       <div className={styles.body}>
         <p className={styles.meta}>

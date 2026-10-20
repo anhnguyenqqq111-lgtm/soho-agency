@@ -1,2 +1,4 @@
 /* không còn style riêng, giữ file để import không lỗi */
-.x{display:block}
+.x {
+  display: block;
+}

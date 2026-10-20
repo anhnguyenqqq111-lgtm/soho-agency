@@ -1,5 +1,6 @@
 import styles from './BlogCard.module.css';
 import {sitePath} from './paths';
+import {thumbnailOf} from './blogVisuals';
 
 /*
   Thẻ bài viết: thumbnail (nếu bài có image, cắt 16:10), viền trên gradient, danh mục, tiêu đề, trích dẫn, tác giả.
@@ -8,11 +9,20 @@ import {sitePath} from './paths';
 export default function BlogCard({post, delay = 0, headingLevel = 'h3'}) {
   const Heading = headingLevel;
   const href = sitePath(`/blog/${post.slug}`);
+  // Thumbnail: ảnh 1200×675 từ Image Studio nếu bài đã có, không thì ảnh gốc 1600×1000; tỉ lệ khung theo đúng ảnh.
+  const thumb = post.image ? thumbnailOf(post) : null;
   return (
     <article className={`${styles.card} ${post.image ? styles.withThumb : ''}`} data-reveal="" style={{'--reveal-delay': `${delay}ms`}}>
       {post.image && (
         <a href={href} className={styles.thumb} tabIndex={-1} aria-hidden="true">
-          <img src={sitePath(post.image.src)} alt="" loading="lazy" width="1600" height="1000" />
+          <img
+            src={sitePath(thumb.src)}
+            alt=""
+            loading="lazy"
+            width={thumb.width}
+            height={thumb.height}
+            style={{aspectRatio: `${thumb.width} / ${thumb.height}`}}
+          />
         </a>
       )}
       <div className={styles.body}>

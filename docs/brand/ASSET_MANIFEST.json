@@ -21,19 +21,8 @@
       "/assets/brand/soho-logo-white.svg",
       "/assets/brand/soho-logo-gradient.svg"
     ],
-    "favicons": [
-      "/assets/brand/favicon.svg",
-      "/assets/brand/favicon-32x32.png",
-      "/assets/brand/favicon-16x16.png",
-      "/assets/brand/apple-touch-icon.png"
-    ],
-    "rasterExports": [
-      "/assets/brand/soho-logo-transparent.png",
-      "/assets/brand/soho-avatar.png",
-      "/icon.png",
-      "/apple-icon.png",
-      "/favicon.ico"
-    ],
+    "favicons": ["/assets/brand/favicon.svg", "/assets/brand/favicon-32x32.png", "/assets/brand/favicon-16x16.png", "/assets/brand/apple-touch-icon.png"],
+    "rasterExports": ["/assets/brand/soho-logo-transparent.png", "/assets/brand/soho-avatar.png", "/icon.png", "/apple-icon.png", "/favicon.ico"],
     "exportCommand": "npm run brand:export",
     "archive": "/assets/brand/archive/",
     "previewRoute": "/brand-preview/",
@@ -74,18 +63,133 @@
     ]
   },
   "proposed": [
-    {"id": "H-01", "name": "hero-desktop", "path": "/hero/customer-journey-desktop.webp", "format": "webp", "dimensions": [1536, 1024], "priority": "P0", "status": "implemented", "integration": "components/hero/HomeHero.js"},
-    {"id": "H-02", "name": "hero-mobile", "path": "/hero/customer-journey-mobile.webp", "format": "webp", "dimensions": [1024, 1536], "priority": "P0", "status": "not-used", "note": "Ẩn dưới 981px: nằm sau các thẻ hành trình nên lộ thành mảng vụn trên mobile", "integration": "none"},
-    {"id": "S-01", "name": "service-seo", "path": "/services/seo.svg", "format": "svg", "viewBox": [96, 96], "priority": "P0", "status": "implemented", "integration": "components/home/ServicesGrid.js"},
-    {"id": "S-02", "name": "service-google-ads", "path": "/services/google-ads.svg", "format": "svg", "viewBox": [96, 96], "priority": "P0", "status": "implemented", "integration": "components/home/ServicesGrid.js"},
-    {"id": "S-03", "name": "service-meta-tiktok-ads", "path": "/services/meta-tiktok-ads.svg", "format": "svg", "viewBox": [96, 96], "priority": "P0", "status": "implemented", "integration": "components/home/ServicesGrid.js"},
-    {"id": "S-04", "name": "service-website-design", "path": "/services/website-design.svg", "format": "svg", "viewBox": [96, 96], "priority": "P0", "status": "implemented", "integration": "components/home/ServicesGrid.js"},
-    {"id": "S-05", "name": "service-brand-identity", "path": "/services/brand-identity.svg", "format": "svg", "viewBox": [96, 96], "priority": "P0", "status": "implemented", "integration": "components/home/ServicesGrid.js"},
-    {"id": "S-06", "name": "service-mobile-app", "path": "/services/mobile-app.svg", "format": "svg", "viewBox": [96, 96], "priority": "P0", "status": "implemented", "integration": "components/home/ServicesGrid.js"},
-    {"id": "P-01..P-04", "name": "portfolio-cover-treatment", "format": "existing-webp-plus-html", "priority": "P0", "status": "implemented-existing-real-assets", "integration": "components/home/ProjectShowcase.js"},
-    {"id": "B-01..B-09", "name": "blog-thumbnail-system", "format": "webp", "dimensions": [1600, 1000], "priority": "P1", "status": "implemented-logo-normalization", "integration": "components/blogData.js"},
-    {"id": "C-01", "name": "cta-visual", "path": "/cta/conversion-path.svg", "format": "svg", "viewBox": [420, 420], "priority": "P1", "status": "implemented", "integration": "components/ui/CtaBand.js"},
-    {"id": "O-01", "name": "site-og-banner", "path": "/og/soho-og-v2.png", "format": "png", "dimensions": [1200, 630], "priority": "P1", "status": "implemented", "integration": "app/layout.js"},
-    {"id": "O-02", "name": "projects-og-banner", "path": "/og/soho-projects-og.png", "format": "png", "dimensions": [1200, 630], "priority": "P1", "status": "implemented", "integration": "app/ket-qua/page.js"}
+    {
+      "id": "H-01",
+      "name": "hero-desktop",
+      "path": "/hero/customer-journey-desktop.webp",
+      "format": "webp",
+      "dimensions": [1536, 1024],
+      "priority": "P0",
+      "status": "implemented",
+      "integration": "components/hero/HomeHero.js"
+    },
+    {
+      "id": "H-02",
+      "name": "hero-mobile",
+      "path": "/hero/customer-journey-mobile.webp",
+      "format": "webp",
+      "dimensions": [1024, 1536],
+      "priority": "P0",
+      "status": "not-used",
+      "note": "Ẩn dưới 981px: nằm sau các thẻ hành trình nên lộ thành mảng vụn trên mobile",
+      "integration": "none"
+    },
+    {
+      "id": "S-01",
+      "name": "service-seo",
+      "path": "/services/seo.svg",
+      "format": "svg",
+      "viewBox": [96, 96],
+      "priority": "P0",
+      "status": "implemented",
+      "integration": "components/home/ServicesGrid.js"
+    },
+    {
+      "id": "S-02",
+      "name": "service-google-ads",
+      "path": "/services/google-ads.svg",
+      "format": "svg",
+      "viewBox": [96, 96],
+      "priority": "P0",
+      "status": "implemented",
+      "integration": "components/home/ServicesGrid.js"
+    },
+    {
+      "id": "S-03",
+      "name": "service-meta-tiktok-ads",
+      "path": "/services/meta-tiktok-ads.svg",
+      "format": "svg",
+      "viewBox": [96, 96],
+      "priority": "P0",
+      "status": "implemented",
+      "integration": "components/home/ServicesGrid.js"
+    },
+    {
+      "id": "S-04",
+      "name": "service-website-design",
+      "path": "/services/website-design.svg",
+      "format": "svg",
+      "viewBox": [96, 96],
+      "priority": "P0",
+      "status": "implemented",
+      "integration": "components/home/ServicesGrid.js"
+    },
+    {
+      "id": "S-05",
+      "name": "service-brand-identity",
+      "path": "/services/brand-identity.svg",
+      "format": "svg",
+      "viewBox": [96, 96],
+      "priority": "P0",
+      "status": "implemented",
+      "integration": "components/home/ServicesGrid.js"
+    },
+    {
+      "id": "S-06",
+      "name": "service-mobile-app",
+      "path": "/services/mobile-app.svg",
+      "format": "svg",
+      "viewBox": [96, 96],
+      "priority": "P0",
+      "status": "implemented",
+      "integration": "components/home/ServicesGrid.js"
+    },
+    {
+      "id": "P-01..P-04",
+      "name": "portfolio-cover-treatment",
+      "format": "existing-webp-plus-html",
+      "priority": "P0",
+      "status": "implemented-existing-real-assets",
+      "integration": "components/home/ProjectShowcase.js"
+    },
+    {
+      "id": "B-01..B-09",
+      "name": "blog-thumbnail-system",
+      "format": "webp",
+      "dimensions": [1600, 1000],
+      "priority": "P1",
+      "status": "implemented-logo-normalization",
+      "integration": "components/blogData.js"
+    },
+    {
+      "id": "C-01",
+      "name": "cta-visual",
+      "path": "/cta/conversion-path.svg",
+      "format": "svg",
+      "viewBox": [420, 420],
+      "priority": "P1",
+      "status": "implemented",
+      "integration": "components/ui/CtaBand.js"
+    },
+    {
+      "id": "O-01",
+      "name": "site-og-banner",
+      "path": "/og/soho-og-v2.png",
+      "format": "png",
+      "dimensions": [1200, 630],
+      "priority": "P1",
+      "status": "implemented",
+      "integration": "app/layout.js"
+    },
+    {
+      "id": "O-02",
+      "name": "projects-og-banner",
+      "path": "/og/soho-projects-og.png",
+      "format": "png",
+      "dimensions": [1200, 630],
+      "priority": "P1",
+      "status": "implemented",
+      "integration": "app/ket-qua/page.js"
+    }
   ]
 }

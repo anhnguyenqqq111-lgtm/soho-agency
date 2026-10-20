@@ -8,6 +8,7 @@ import CtaBand from '../../../components/ui/CtaBand';
 import {sitePath, siteUrl} from '../../../components/paths';
 import {articles, getLatestArticles, toISODate} from '../../../components/blogData';
 import ReadingProgress from '../../../components/article/ReadingProgress';
+import {heroOf, shareImageOf, creditOf, contentWithVisuals} from '../../../components/blogVisuals';
 
 export function generateStaticParams() {
   return articles.map(article => ({slug: article.slug}));
@@ -17,11 +18,18 @@ export async function generateMetadata({params}) {
   const {slug} = await params;
   const article = articles.find(item => item.slug === slug);
   if (!article) return {title: 'Không tìm thấy bài viết'};
+  // Ảnh chia sẻ: thumbnail từ Image Studio khi bài đã có, không thì ảnh gốc. Tiêu đề và mô tả giữ nguyên từ blogData.js.
+  const share = shareImageOf(article);
   return {
     title: {absolute: article.metaTitle},
     description: article.excerpt,
     alternates: {canonical: `/blog/${article.slug}/`},
-    openGraph: {type: 'article', title: article.metaTitle, description: article.excerpt, images: [{url: article.image.src}]}
+    openGraph: {
+      type: 'article',
+      title: article.metaTitle,
+      description: article.excerpt,
+      images: [{url: share.src, width: share.width, height: share.height, alt: share.alt}]
+    }
   };
 }
 
@@ -31,6 +39,10 @@ export default async function BlogPostPage({params}) {
   if (!article) notFound();
   const others = getLatestArticles().filter(a => a.slug !== article.slug);
   const related = [...others.filter(a => a.category === article.category), ...others.filter(a => a.category !== article.category)].slice(0, 3);
+  const hero = heroOf(article);
+  const credit = creditOf(article);
+  const share = shareImageOf(article);
+  const body = contentWithVisuals(article, sitePath);
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Article',
@@ -40,7 +52,7 @@ export default async function BlogPostPage({params}) {
     author: {'@type': 'Person', name: article.author, jobTitle: article.authorRole},
     publisher: {'@type': 'Organization', name: 'SOHO Agency'},
     inLanguage: 'vi',
-    image: `${siteUrl}${article.image.src}`,
+    image: `${siteUrl}${share.src}`,
     mainEntityOfPage: `${siteUrl}/blog/${article.slug}/`
   };
   const role = article.authorRole.replace(/\s*@\s*SOHO$/, '');
@@ -73,13 +85,32 @@ export default async function BlogPostPage({params}) {
             </p>
           </div>
         </header>
+        {/* Banner: Hero 1600×900 từ Image Studio nếu có (kèm ghi công ảnh nguồn), không thì ảnh gốc 16:10 như trước. */}
         <figure className={`container ${styles.banner}`}>
-          <img src={sitePath(article.image.src)} alt={article.image.alt} width="1600" height="1000" fetchPriority="high" />
+          <img
+            src={sitePath(hero.src)}
+            alt={hero.alt}
+            width={hero.width}
+            height={hero.height}
+            fetchPriority="high"
+            style={{aspectRatio: `${hero.width} / ${hero.height}`}}
+          />
+          {credit && (
+            <figcaption className={styles.credit}>
+              {credit.url ? (
+                <a href={credit.url} target="_blank" rel="nofollow noopener">
+                  {credit.text}
+                </a>
+              ) : (
+                credit.text
+              )}
+            </figcaption>
+          )}
         </figure>
         <section className={styles.wrap}>
           <div className="container">
             <div className={styles.card}>
-              <div className={`prose ${styles.body}`} dangerouslySetInnerHTML={{__html: article.content}} />
+              <div className={`prose ${styles.body}`} dangerouslySetInnerHTML={{__html: body}} />
               <div className={styles.author}>
                 <span className={styles.avatar} aria-hidden="true" />
                 <div>
