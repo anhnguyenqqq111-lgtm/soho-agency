@@ -74,7 +74,7 @@ Lý do có tờ giấy này: AI không có gu, nó lấp chỗ trống bằng m�
 | **Brex** trên styles.refero.design | Nền trắng tinh, một màu cam duy nhất cho hành động chính; bo 12px cho nút và ô nhập; khung tối ở cuối trang (khối liên hệ + footer) |
 | **Brief "SOHO Color & Typography"** (10/2026) | Màu: Brand Orange `#F26522`, Deep Orange `#C2410C`, Violet `#6D28D9`, Coral `#EC4899`, Dark Ink `#141218`, Soft Canvas `#FAF9FD`, Muted `#62616C`, viền `#E9E5EF`; gradient Signature 115°. Phông Bricolage Grotesque + Plus Jakarta Sans |
 | **Monopo Paris** (chỉ tham khảo hướng, không sao chép) | Tỉ lệ 70% trắng/nền nhạt + chữ tối, 20% cam, 10% tím/san hô/gradient; tiêu đề editorial rất lớn; khối tối xen khối sáng ở phần dự án |
-| **Logo gốc SOHO** (như sohoagency.vn) | Logo, favicon (chữ S trắng trên gradient vàng đỏ của logo) |
+| **Logo Open Corner đã duyệt** (Brand Identity 3.0) | Logo header, footer, favicon, ảnh OG, schema; file trong `public/assets/brand/approved/` |
 
 ### 2.3. Phông chữ (đã qua bài thử Ế Ứ Ỡ Ặ Ằ)
 

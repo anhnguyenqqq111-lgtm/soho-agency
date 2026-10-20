@@ -6,8 +6,7 @@ export const seoAiOverviewArticle = {
   updatedDate: '04/10/2026',
   author: {
     name: 'Nguyễn Thế Tuấn Anh',
-    role: 'Head of Growth Strategy @ SOHO Agency',
-    avatar: '/assets/brand/soho-avatar.png'
+    role: 'Head of Growth Strategy @ SOHO Agency'
   },
   toc: [
     {id: 'tham-kich-zero-click-ai-search', title: '1. Thảm kịch Zero-Click: Khi AI Search nuốt chửng lượt truy cập'},

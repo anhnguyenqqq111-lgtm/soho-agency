@@ -6,8 +6,7 @@ export const growthStrategySprintArticle = {
   updatedDate: '04/10/2026',
   author: {
     name: 'Nguyễn Thế Tuấn Anh',
-    role: 'Head of Growth Strategy @ SOHO Agency',
-    avatar: '/assets/brand/soho-avatar.png'
+    role: 'Head of Growth Strategy @ SOHO Agency'
   },
   toc: [
     {id: 'tham-kich-dan-trai-nguon-luc', title: '1. Thực trạng: Thảm kịch "Dàn trải nguồn lực", làm đủ mọi kênh nhưng không kênh nào ra tiền'},

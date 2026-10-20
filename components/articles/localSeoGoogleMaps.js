@@ -6,8 +6,7 @@ export const localSeoGoogleMapsArticle = {
   updatedDate: '04/10/2026',
   author: {
     name: 'Nguyễn Thế Tuấn Anh',
-    role: 'Head of Growth Strategy @ SOHO Agency',
-    avatar: '/assets/brand/soho-avatar.png'
+    role: 'Head of Growth Strategy @ SOHO Agency'
   },
   toc: [
     {id: 'tham-kich-mat-khach-local', title: '1. Thực trạng: Khi khách hàng tìm kiếm quanh bạn nhưng chỉ thấy đối thủ'},

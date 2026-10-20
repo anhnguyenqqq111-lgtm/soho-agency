@@ -88,7 +88,7 @@ export default function Home() {
     name: company.name,
     legalName: company.legalName,
     url: `${siteUrl}/`,
-    logo: `${siteUrl}/assets/brand/soho-logo-transparent.png`,
+    logo: `${siteUrl}/assets/brand/approved/soho-logo-open-corner.png`,
     image: `${siteUrl}/og/soho-og-v2.png`,
     telephone: company.phone ? `+84${company.phone.replace(/\s/g, '').replace(/^0/, '')}` : undefined,
     email: company.email,

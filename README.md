@@ -50,7 +50,7 @@ Không thêm biến môi trường nào trên Vercel. Nếu lỡ đặt `GITHUB_
 ```text
 app/
   layout.js                  font Bricolage Grotesque (tiêu đề) + Plus Jakarta Sans (nội dung), metadata mặc định, RevealObserver
-  favicon.ico, icon.png, apple-icon.png   favicon (chữ S của logo gốc)
+  favicon.ico, icon.png, apple-icon.png   favicon: logo Open Corner trên nền Midnight (quy ước file của Next)
   styles/tokens.css          biến màu, chữ, khoảng cách theo màu SOHO Brand Kit v3.0 (nền trắng, màu ở điểm quan trọng) (toàn bộ màu định nghĩa ở đây)
   styles/base.css            reset, typography, .prose, hiệu ứng hé lộ
   styles/diagram.css         style chung cho sơ đồ SVG
@@ -82,7 +82,7 @@ components/
   blogData.js                bài blog (HTML trong chuỗi), danh mục, ảnh banner/thumbnail
   articles/*.js              bài viết dài cho từng dịch vụ (markdown trong chuỗi)
 
-public/assets/brand/         logo đã duyệt approved/SOHO_01_Open_Corner_APPROVED.svg (header, footer), favicon, avatar, bản PNG xuất bằng npm run brand:export
+public/assets/brand/approved/ logo đã duyệt: SOHO_01_Open_Corner_APPROVED.svg (header, footer) và soho-logo-open-corner.png (schema, chia sẻ)
 public/banners/              banner 3D Concept A (hero) và C (CTA cuối), desktop 1920×960 + mobile 900×1200
 public/partners/             huy hiệu đối tác chính thức (google-partner.svg)
 public/decor/                hình 3D trang trí CC0 từ 3dicons.co (dùng qua thuộc tính decor của Section)

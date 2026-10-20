@@ -6,8 +6,7 @@ export const seoTongTheArticle = {
   updatedDate: '03/10/2026',
   author: {
     name: 'Nguyễn Thế Tuấn Anh',
-    role: 'Head of Growth Strategy @ SOHO Agency',
-    avatar: '/assets/brand/soho-avatar.png'
+    role: 'Head of Growth Strategy @ SOHO Agency'
   },
   toc: [
     {id: 'thuc-trang-va-bay-traffic-ao', title: '1. Thực trạng & Bẫy "Vanity Traffic" trong SEO hiện nay'},

@@ -6,8 +6,7 @@ export const ga4LookerDashboardArticle = {
   updatedDate: '04/10/2026',
   author: {
     name: 'Nguyễn Thế Tuấn Anh',
-    role: 'Head of Growth Strategy @ SOHO Agency',
-    avatar: '/assets/brand/soho-avatar.png'
+    role: 'Head of Growth Strategy @ SOHO Agency'
   },
   toc: [
     {id: 'tham-kich-mu-du-lieu-marketing', title: '1. Thực trạng: Thảm kịch "Mù dữ liệu", mỗi kênh báo một số, không biết tiền đi đâu'},
