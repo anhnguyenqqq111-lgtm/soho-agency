@@ -6,7 +6,7 @@ import {sitePath} from '../paths';
   breadcrumb, H1 lớn (Fraunces), một dòng mô tả; minh họa thành dải rộng bên dưới, ngăn bằng đường kẻ mảnh.
   Nội dung chi tiết nằm ở section ngay dưới (#noi-dung). Trang chủ dùng HomeHero.
 */
-export default function Hero({tone, title, tagline, visual, crumbs = [], long = false}){
+export default function Hero({tone, title, tagline, visual, crumbs = [], long = false}) {
   return (
     <section className={`${styles.hero} ${styles[tone] || ''}`}>
       <div className={`container ${styles.inner}`}>
@@ -14,8 +14,12 @@ export default function Hero({tone, title, tagline, visual, crumbs = [], long = 
           {crumbs.length > 0 && (
             <nav aria-label="Breadcrumb" className={styles.crumbs}>
               <ol>
-                <li><a href={sitePath('/')}>Trang chủ</a></li>
-                {crumbs.map(c => <li key={c.label}>{c.href ? <a href={sitePath(c.href)}>{c.label}</a> : <span aria-current="page">{c.label}</span>}</li>)}
+                <li>
+                  <a href={sitePath('/')}>Trang chủ</a>
+                </li>
+                {crumbs.map(c => (
+                  <li key={c.label}>{c.href ? <a href={sitePath(c.href)}>{c.label}</a> : <span aria-current="page">{c.label}</span>}</li>
+                ))}
               </ol>
             </nav>
           )}

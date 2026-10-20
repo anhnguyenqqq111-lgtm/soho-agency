@@ -1,6 +1,7 @@
 export const contentMarketingPrArticle = {
   metaTitle: 'Dịch Vụ Content Marketing & Digital PR 2026: Xây Dựng Uy Tín Chuyên Môn & Tạo Niềm Tin Trước Khi Bán | SOHO',
-  metaDesc: 'Chiến lược Content Marketing & Digital PR chuyên sâu 2026. Xây dựng phễu nội dung nuôi dưỡng nhu cầu, thiết lập vị thế chuyên gia (Thought Leadership) và hỗ trợ đội ngũ sales chốt đơn hiệu quả.',
+  metaDesc:
+    'Chiến lược Content Marketing & Digital PR chuyên sâu 2026. Xây dựng phễu nội dung nuôi dưỡng nhu cầu, thiết lập vị thế chuyên gia (Thought Leadership) và hỗ trợ đội ngũ sales chốt đơn hiệu quả.',
   readingTime: '17 phút đọc',
   updatedDate: '04/10/2026',
   author: {
@@ -9,14 +10,14 @@ export const contentMarketingPrArticle = {
     avatar: '/assets/brand/soho-avatar.png'
   },
   toc: [
-    { id: 'tham-kich-content-rac-khong-chuyen-doi', title: '1. Thực trạng: Bi kịch "Nội dung rác", đăng bài đều đặn nhưng không ai đọc' },
-    { id: 'chi-phi-co-hoi-mat-uy-tin-chuyen-mon', title: '2. Chi phí cơ hội: Mất vị thế chuyên gia đầu ngành vào tay đối thủ' },
-    { id: 'ban-chat-content-marketing-soho', title: '3. Bản chất Content Marketing B2B & Digital PR định hướng niềm tin' },
-    { id: '4-tru-cot-tai-san-noi-dung', title: '4. 4 Trụ cột xây dựng hệ sinh thái nội dung giá trị cao của SOHO' },
-    { id: 'quy-trinh-sprint-content-marketing', title: '5. Quy trình Sprint 5 bước sản xuất nội dung chuyên sâu thực chiến' },
-    { id: 'bang-so-sanh-content-marketing', title: '6. So sánh: "Viết bài theo bài" giá rẻ vs Content Chiến Lược @ SOHO' },
-    { id: 'checklist-15-tieu-chi-content', title: '7. Bộ Checklist 15 tiêu chí kiểm toán chất lượng tài sản nội dung' },
-    { id: 'faq-content-marketing-pr', title: '8. Câu hỏi thường gặp (FAQ chuẩn Schema)' }
+    {id: 'tham-kich-content-rac-khong-chuyen-doi', title: '1. Thực trạng: Bi kịch "Nội dung rác", đăng bài đều đặn nhưng không ai đọc'},
+    {id: 'chi-phi-co-hoi-mat-uy-tin-chuyen-mon', title: '2. Chi phí cơ hội: Mất vị thế chuyên gia đầu ngành vào tay đối thủ'},
+    {id: 'ban-chat-content-marketing-soho', title: '3. Bản chất Content Marketing B2B & Digital PR định hướng niềm tin'},
+    {id: '4-tru-cot-tai-san-noi-dung', title: '4. 4 Trụ cột xây dựng hệ sinh thái nội dung giá trị cao của SOHO'},
+    {id: 'quy-trinh-sprint-content-marketing', title: '5. Quy trình Sprint 5 bước sản xuất nội dung chuyên sâu thực chiến'},
+    {id: 'bang-so-sanh-content-marketing', title: '6. So sánh: "Viết bài theo bài" giá rẻ vs Content Chiến Lược @ SOHO'},
+    {id: 'checklist-15-tieu-chi-content', title: '7. Bộ Checklist 15 tiêu chí kiểm toán chất lượng tài sản nội dung'},
+    {id: 'faq-content-marketing-pr', title: '8. Câu hỏi thường gặp (FAQ chuẩn Schema)'}
   ],
   sections: [
     {

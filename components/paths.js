@@ -9,7 +9,7 @@ export const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || 'https://soho-agency
   - thêm dấu "/" cuối cho trang (khớp trailingSlash: true), tránh một lần chuyển hướng 308 mỗi lần bấm.
   File có phần mở rộng (.svg, .webp...) giữ nguyên.
 */
-export function sitePath(path){
+export function sitePath(path) {
   if (!path) return path;
   if (/^(https?:|mailto:|tel:|#)/.test(path)) return path;
   if (!path.startsWith('/')) return path;

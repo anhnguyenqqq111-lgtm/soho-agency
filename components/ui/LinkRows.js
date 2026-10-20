@@ -2,7 +2,7 @@ import styles from './LinkRows.module.css';
 import {sitePath} from '../paths';
 
 // Danh sách dòng có đường kẻ, cả dòng là link. items: [{title, desc, href, meta}]
-export default function LinkRows({items, size = 'md'}){
+export default function LinkRows({items, size = 'md'}) {
   return (
     <ul className={`${styles.list} ${styles[size]}`}>
       {items.map(item => (
@@ -11,7 +11,9 @@ export default function LinkRows({items, size = 'md'}){
             {item.meta && <span className={styles.meta}>{item.meta}</span>}
             <span className={styles.title}>{item.title}</span>
             {item.desc && <span className={styles.desc}>{item.desc}</span>}
-            <span className={styles.arrow} aria-hidden="true">→</span>
+            <span className={styles.arrow} aria-hidden="true">
+              →
+            </span>
           </a>
         </li>
       ))}

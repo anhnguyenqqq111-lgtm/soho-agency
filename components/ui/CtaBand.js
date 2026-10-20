@@ -11,27 +11,35 @@ import {sitePath} from '../paths';
 */
 export default function CtaBand({
   id = 'lien-he',
-  title = <>Kể cho SOHO <span className="hl">bài toán hiện tại</span></>,
+  title = (
+    <>
+      Kể cho SOHO <span className="hl">bài toán hiện tại</span>
+    </>
+  ),
   text = 'Gửi website và mục tiêu quý tới. SOHO xem các kênh bạn đang chạy và gửi lại 3 việc nên làm trước.',
   withForm = true,
   href = '/lien-he',
   label = 'Nhận tư vấn'
-}){
+}) {
   return (
     <section id={id} className={`${styles.band} dark on-dark`}>
-      <picture className={styles.art} aria-hidden="true">
-        <source media="(max-width: 900px)" srcSet={sitePath('/banners/C_mobile_900x1200.webp')} width="900" height="1200"/>
-        <img src={sitePath('/banners/C_desktop_1920x960.webp')} alt="" width="1920" height="960" loading="lazy"/>
+      <picture className={styles.art}>
+        <source media="(max-width: 900px)" srcSet={sitePath('/banners/C_mobile_900x1200.webp')} width="900" height="1200" />
+        <img src={sitePath('/banners/C_desktop_1920x960.webp')} alt="" width="1920" height="960" loading="lazy" />
       </picture>
       <div className={`container ${styles.inner}`}>
         <div className={styles.copy} data-reveal="">
           <h2 className={styles.title}>{title}</h2>
           <p className={styles.text}>{text}</p>
-          {!withForm && <div className={styles.btn}><Button href={href}>{label}</Button></div>}
+          {!withForm && (
+            <div className={styles.btn}>
+              <Button href={href}>{label}</Button>
+            </div>
+          )}
         </div>
         {withForm && (
           <div className={styles.card} data-reveal="" style={{'--reveal-delay': '150ms'}}>
-            <ContactForm/>
+            <ContactForm />
           </div>
         )}
       </div>

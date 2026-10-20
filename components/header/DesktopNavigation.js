@@ -16,7 +16,7 @@ import {DESKTOP_QUERY, isCurrentPath} from './navUtils';
   - Mũi tên xuống trên nút: mở và đưa focus vào dịch vụ đầu tiên.
   Panel nằm ngay sau nút trong DOM nên thứ tự Tab đi thẳng vào các dịch vụ.
 */
-export default function DesktopNavigation({items, activeNav, services, cta}){
+export default function DesktopNavigation({items, activeNav, services, cta}) {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
   const itemRef = useRef(null);
@@ -35,10 +35,19 @@ export default function DesktopNavigation({items, activeNav, services, cta}){
 
   useEffect(() => {
     if (!open) return;
-    const onKey = e => { if (e.key === 'Escape'){ e.preventDefault(); close(true); } };
-    const onPointer = e => { if (!itemRef.current?.contains(e.target)) close(); };
+    const onKey = e => {
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        close(true);
+      }
+    };
+    const onPointer = e => {
+      if (!itemRef.current?.contains(e.target)) close();
+    };
     const mq = window.matchMedia(DESKTOP_QUERY);
-    const onBreakpoint = () => { if (!mq.matches) close(); };
+    const onBreakpoint = () => {
+      if (!mq.matches) close();
+    };
     document.addEventListener('keydown', onKey);
     document.addEventListener('pointerdown', onPointer);
     mq.addEventListener('change', onBreakpoint);
@@ -50,7 +59,9 @@ export default function DesktopNavigation({items, activeNav, services, cta}){
   }, [open, close]);
 
   // Chỉ đóng khi focus chuyển sang một phần tử khác bên ngoài. relatedTarget rỗng (bấm vào vùng trống trong panel) thì giữ nguyên.
-  const onBlur = e => { if (open && e.relatedTarget && !e.currentTarget.contains(e.relatedTarget)) close(); };
+  const onBlur = e => {
+    if (open && e.relatedTarget && !e.currentTarget.contains(e.relatedTarget)) close();
+  };
 
   const onSelectService = (item, group) => {
     track('mega_menu_service_click', {service: item.slug, service_group: group.title});
@@ -66,7 +77,7 @@ export default function DesktopNavigation({items, activeNav, services, cta}){
       <ul className={styles.navList}>
         {items.map(item => {
           const active = item.activeFor ? item.activeFor.includes(activeNav) : activeNav === item.key;
-          if (item.megaMenu){
+          if (item.megaMenu) {
             return (
               <li key={item.key} ref={itemRef} className={styles.megaItem} onBlur={onBlur}>
                 <button
@@ -76,12 +87,17 @@ export default function DesktopNavigation({items, activeNav, services, cta}){
                   aria-expanded={open}
                   aria-controls={services.id}
                   onClick={() => (open ? close() : openMenu())}
-                  onKeyDown={e => { if (e.key === 'ArrowDown'){ e.preventDefault(); openMenu(true); } }}
+                  onKeyDown={e => {
+                    if (e.key === 'ArrowDown') {
+                      e.preventDefault();
+                      openMenu(true);
+                    }
+                  }}
                 >
                   {item.label}
-                  <Icon name="chevron-down" size={16} className={styles.caret}/>
+                  <Icon name="chevron-down" size={16} className={styles.caret} />
                 </button>
-                <ServicesMegaMenu menu={services} open={open} pathname={pathname} onSelectService={onSelectService} onSelectCta={onSelectCta}/>
+                <ServicesMegaMenu menu={services} open={open} pathname={pathname} onSelectService={onSelectService} onSelectCta={onSelectCta} />
               </li>
             );
           }
@@ -96,7 +112,8 @@ export default function DesktopNavigation({items, activeNav, services, cta}){
         })}
       </ul>
       <a href={sitePath(cta.href)} className={styles.cta}>
-        <span>{cta.label}</span><Icon name="arrow-up-right" size={17} className={styles.ctaIcon}/>
+        <span>{cta.label}</span>
+        <Icon name="arrow-up-right" size={17} className={styles.ctaIcon} />
       </a>
     </nav>
   );

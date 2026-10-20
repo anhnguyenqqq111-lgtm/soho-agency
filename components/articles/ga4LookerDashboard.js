@@ -1,6 +1,7 @@
 export const ga4LookerDashboardArticle = {
   metaTitle: 'Dịch Vụ Đo Lường GA4 & Looker Studio Dashboard 2026: Kết Nối Tiếp Thị Với Dòng Tiền Thực Tế | SOHO',
-  metaDesc: 'Chiến lược đo lường dữ liệu GA4, Google Tag Manager & thiết kế Looker Studio Dashboard chuyên sâu 2026. Xóa bỏ điểm mù dữ liệu, kết nối chi phí marketing trực tiếp với doanh thu và lợi nhuận ròng.',
+  metaDesc:
+    'Chiến lược đo lường dữ liệu GA4, Google Tag Manager & thiết kế Looker Studio Dashboard chuyên sâu 2026. Xóa bỏ điểm mù dữ liệu, kết nối chi phí marketing trực tiếp với doanh thu và lợi nhuận ròng.',
   readingTime: '17 phút đọc',
   updatedDate: '04/10/2026',
   author: {
@@ -9,14 +10,14 @@ export const ga4LookerDashboardArticle = {
     avatar: '/assets/brand/soho-avatar.png'
   },
   toc: [
-    { id: 'tham-kich-mu-du-lieu-marketing', title: '1. Thực trạng: Thảm kịch "Mù dữ liệu", mỗi kênh báo một số, không biết tiền đi đâu' },
-    { id: 'chi-phi-co-hoi-lang-phi-ngan-sach', title: '2. Chi phí cơ hội: Lãng phí 40% ngân sách tiếp thị vì ra quyết định bằng cảm tính' },
-    { id: 'ban-chat-he-thong-du-lieu-soho', title: '3. Bản chất Hệ thống Đo lường Tiếp thị Hiện Đại & Single Source of Truth' },
-    { id: '4-tru-cot-data-analytics-engine', title: '4. 4 Trụ cột kiến trúc dữ liệu và trực quan hóa Dashboard của SOHO' },
-    { id: 'quy-trinh-sprint-trien-khai-ga4', title: '5. Quy trình Sprint 5 bước chuẩn hóa dữ liệu & xây dựng Dashboard thực chiến' },
-    { id: 'bang-so-sanh-bao-cao-ga4', title: '6. So sánh: Báo cáo Excel thủ công vs Live Looker Studio Dashboard' },
-    { id: 'checklist-15-tieu-chi-ga4-audit', title: '7. Bộ Checklist 15 tiêu chí kiểm toán tính chính xác của hệ thống GA4' },
-    { id: 'faq-ga4-looker-dashboard', title: '8. Câu hỏi thường gặp (FAQ chuẩn Schema)' }
+    {id: 'tham-kich-mu-du-lieu-marketing', title: '1. Thực trạng: Thảm kịch "Mù dữ liệu", mỗi kênh báo một số, không biết tiền đi đâu'},
+    {id: 'chi-phi-co-hoi-lang-phi-ngan-sach', title: '2. Chi phí cơ hội: Lãng phí 40% ngân sách tiếp thị vì ra quyết định bằng cảm tính'},
+    {id: 'ban-chat-he-thong-du-lieu-soho', title: '3. Bản chất Hệ thống Đo lường Tiếp thị Hiện Đại & Single Source of Truth'},
+    {id: '4-tru-cot-data-analytics-engine', title: '4. 4 Trụ cột kiến trúc dữ liệu và trực quan hóa Dashboard của SOHO'},
+    {id: 'quy-trinh-sprint-trien-khai-ga4', title: '5. Quy trình Sprint 5 bước chuẩn hóa dữ liệu & xây dựng Dashboard thực chiến'},
+    {id: 'bang-so-sanh-bao-cao-ga4', title: '6. So sánh: Báo cáo Excel thủ công vs Live Looker Studio Dashboard'},
+    {id: 'checklist-15-tieu-chi-ga4-audit', title: '7. Bộ Checklist 15 tiêu chí kiểm toán tính chính xác của hệ thống GA4'},
+    {id: 'faq-ga4-looker-dashboard', title: '8. Câu hỏi thường gặp (FAQ chuẩn Schema)'}
   ],
   sections: [
     {

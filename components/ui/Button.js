@@ -8,23 +8,23 @@ import Icon from './Icon';
   size: md | sm. Vùng bấm tối thiểu 44px (luật giao diện Apple).
   arrow: 'up' (↗, mặc định) | 'right' (→) | false. Icon từ bộ Lucide.
 */
-export default function Button({
-  href,
-  children,
-  variant = 'primary',
-  size = 'md',
-  arrow = 'up',
-  onDark = false,
-  className = '',
-  ...rest
-}){
+export default function Button({href, children, variant = 'primary', size = 'md', arrow = 'up', onDark = false, className = '', ...rest}) {
   const cls = [styles.btn, styles[variant], styles[size], onDark ? styles.onDark : '', className].join(' ');
   const content = (
     <>
       <span>{children}</span>
-      {arrow && <Icon name={arrow === 'right' ? 'arrow-right' : 'arrow-up-right'} size={size === 'sm' ? 16 : 18} className={styles.arrow}/>}
+      {arrow && <Icon name={arrow === 'right' ? 'arrow-right' : 'arrow-up-right'} size={size === 'sm' ? 16 : 18} className={styles.arrow} />}
     </>
   );
-  if (href) return <a href={sitePath(href)} className={cls} {...rest}>{content}</a>;
-  return <button type="button" className={cls} {...rest}>{content}</button>;
+  if (href)
+    return (
+      <a href={sitePath(href)} className={cls} {...rest}>
+        {content}
+      </a>
+    );
+  return (
+    <button type="button" className={cls} {...rest}>
+      {content}
+    </button>
+  );
 }

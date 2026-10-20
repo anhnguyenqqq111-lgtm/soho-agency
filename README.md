@@ -66,12 +66,12 @@ components/
   Footer.js
   ServiceGroups.js           khối dịch vụ trang chủ (3 thẻ nhóm trên nền cam nhạt)
   ContactForm.js             form Nhận tư vấn (client): kiểm tra từng ô, chống gửi trùng, bẫy bot; gửi tới NEXT_PUBLIC_FORM_ENDPOINT
-  home/                      khối trang chủ: ServicesGrid, Differentiators, ProjectShowcase, ProcessAccordion
+  home/                      khối trang chủ: ServicesGrid + ServiceArt (6 hình SVG), Differentiators, ProjectShowcase, ProcessAccordion
   RevealObserver.js          gắn class is-in cho [data-reveal] khi cuộn tới
   hero/                      Hero (đầu trang) và Visuals (7 minh họa SVG theo trang)
-  ui/                        Section, PageHeader, Button, NumberedList, LinkRows, CtaBand, Faq, Fill, ImageSlot, SplitWords
+  ui/                        Section, PageHeader, Button, NumberedList, LinkRows, CtaBand, Faq, Fill, ImageSlot
   diagrams/                  JourneyMatrix (trang chủ), ServiceDiagrams (9 sơ đồ dịch vụ), Track, BeforeAfter, svg.js
-  proof/                     ProjectCarousel, ProjectGrid, LogoMarquee, PartnerStrip, PartnerBadge, Testimonials
+  proof/                     ProjectGrid, LogoMarquee, PartnerStrip, PartnerBadge, Testimonials
   ui/Icon.js                 bộ icon duy nhất (Lucide); không dùng ký tự hay icon tự vẽ
   article/                   ArticleBody, Toc, Markdown, parseMarkdown: render bài viết dịch vụ từ markdown
   data/company.js            thông tin công ty (địa chỉ, điện thoại, năm thành lập...)
@@ -82,15 +82,26 @@ components/
   blogData.js                bài blog (HTML trong chuỗi), danh mục, ảnh banner/thumbnail
   articles/*.js              bài viết dài cho từng dịch vụ (markdown trong chuỗi)
 
-public/brand/                logo gốc của SOHO: soho-logo.svg (header, footer), soho-logo-white.svg, avatar
+public/assets/brand/         logo đã duyệt approved/SOHO_01_Open_Corner_APPROVED.svg (header, footer), favicon, avatar, bản PNG xuất bằng npm run brand:export
+public/banners/              banner 3D Concept A (hero) và C (CTA cuối), desktop 1920×960 + mobile 900×1200
 public/partners/             huy hiệu đối tác chính thức (google-partner.svg)
 public/decor/                hình 3D trang trí CC0 từ 3dicons.co (dùng qua thuộc tính decor của Section)
 public/clients/              logo khách hàng
 public/blog/                 ảnh bài blog (thumbnail và banner dùng chung), render bằng skill creating-images-soho
+docs/REDESIGN-REPORT.md      báo cáo các đợt redesign; docs/brand/: tài liệu audit tài sản hình và logo
 DESIGN.md                    "tờ giấy" hệ thiết kế: nguồn tham chiếu, màu, phông, luật viết chữ, từ cấm, icon, ảnh (mục 2). Đọc trước khi sửa giao diện hay câu chữ
 ```
 
-Mỗi component và trang có `.module.css` riêng. Server Component mặc định; client component: `DesktopNavigation`, `MobileNavigation`, `HeaderScroll`, `ContactForm`, `RevealObserver`, `Toc`, `ProjectCarousel`, `ServiceGroups`, `ProcessAccordion`, `StickyCta`, `ReadingProgress`.
+Mỗi component và trang có `.module.css` riêng. Server Component mặc định; client component: `DesktopNavigation`, `MobileNavigation`, `HeaderScroll`, `ContactForm`, `RevealObserver`, `Toc`, `ServiceGroups`, `ProcessAccordion`, `StickyCta`, `ReadingProgress`.
+
+## Kiểm tra code
+
+```bash
+npm run lint          # ESLint, bộ quy tắc next/core-web-vitals
+npm run format        # Prettier, ghi đè file
+npm run format:check  # Prettier, chỉ báo
+npm run build         # xuất tĩnh vào out/
+```
 
 ## Form liên hệ
 

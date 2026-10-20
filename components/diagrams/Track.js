@@ -7,12 +7,10 @@ import {sitePath} from '../paths';
   items: [{title, text?, meta?, links?: [{label, href}], acc?}]
   headingLabel: true khi Track đứng ngay sau h1, để nhãn thành h2 và heading không nhảy cấp
 */
-export default function Track({items, label, headingLabel = false, numbered = true, className = ''}){
+export default function Track({items, label, headingLabel = false, numbered = true, className = ''}) {
   return (
     <div className={`${styles.track} ${className}`} data-reveal="track" style={{'--n': items.length}}>
-      {label && (headingLabel
-        ? <h2 className={styles.label}>{label}</h2>
-        : <p className={styles.label}>{label}</p>)}
+      {label && (headingLabel ? <h2 className={styles.label}>{label}</h2> : <p className={styles.label}>{label}</p>)}
       <ol className={styles.list}>
         {items.map((item, i) => (
           <li key={item.title} className={`${styles.item} ${item.acc ? styles.acc : ''}`} style={{'--i': i}}>
@@ -26,7 +24,9 @@ export default function Track({items, label, headingLabel = false, numbered = tr
               {item.links && (
                 <ul className={styles.links}>
                   {item.links.map(link => (
-                    <li key={link.href}><a href={sitePath(link.href)}>{link.label}</a></li>
+                    <li key={link.href}>
+                      <a href={sitePath(link.href)}>{link.label}</a>
+                    </li>
                   ))}
                 </ul>
               )}

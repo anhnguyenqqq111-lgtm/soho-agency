@@ -8,9 +8,9 @@ export const clients = [
     scope: 'SEO B2B, Google Ads',
     logo: '/clients/cth.png',
     url: 'https://maymaccth.com',
-    image: null,        // ví dụ '/projects/cth.jpg', 1600×1000
+    image: null, // ví dụ '/projects/cth.jpg', 1600×1000
     imageNeed: 'Website hoặc kết quả tìm kiếm Google của CTH',
-    result: null,       // 1 dòng kết quả, ví dụ "Lead B2B từ organic tăng 2,1 lần sau 6 tháng"
+    result: null, // 1 dòng kết quả, ví dụ "Lead B2B từ organic tăng 2,1 lần sau 6 tháng"
     context: null,
     work: null
   },

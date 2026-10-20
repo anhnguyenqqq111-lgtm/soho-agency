@@ -1,6 +1,7 @@
 export const seoAiOverviewArticle = {
   metaTitle: 'Tối Ưu SEO Cho Google AI Overviews & AI Search 2026: Chiếm Lĩnh Trích Dẫn & Tăng Trưởng Khách Hàng | SOHO',
-  metaDesc: 'Chiến lược tối ưu hóa Generative Engine Optimization (GEO) chuyên sâu 2026. Hướng dẫn cách đưa thương hiệu vào câu trả lời tổng hợp của Google AI Overviews, ChatGPT Search và Gemini.',
+  metaDesc:
+    'Chiến lược tối ưu hóa Generative Engine Optimization (GEO) chuyên sâu 2026. Hướng dẫn cách đưa thương hiệu vào câu trả lời tổng hợp của Google AI Overviews, ChatGPT Search và Gemini.',
   readingTime: '17 phút đọc',
   updatedDate: '04/10/2026',
   author: {
@@ -9,14 +10,14 @@ export const seoAiOverviewArticle = {
     avatar: '/assets/brand/soho-avatar.png'
   },
   toc: [
-    { id: 'tham-kich-zero-click-ai-search', title: '1. Thảm kịch Zero-Click: Khi AI Search nuốt chửng lượt truy cập' },
-    { id: 'chi-phi-co-hoi-khi-vo-hinh-truoc-ai', title: '2. Chi phí cơ hội: Nguy cơ vô hình trước thế hệ khách hàng mới' },
-    { id: 'ban-chat-geo-va-entity-first', title: '3. Giải pháp: Bản chất Generative Engine Optimization (GEO)' },
-    { id: '4-tru-cot-ky-thuat-ai-search', title: '4. 4 Trụ cột kỹ thuật giúp website được AI trích dẫn nguồn' },
-    { id: 'quy-trinh-5-buoc-toi-uu-geo', title: '5. Quy trình 5 bước triển khai tối ưu hóa AI Search thực chiến' },
-    { id: 'bang-so-sanh-seo-vs-geo', title: '6. So sánh: Traditional SEO vs Generative Engine Optimization' },
-    { id: 'checklist-12-tieu-chi-ai-overview', title: '7. Bộ Checklist 12 tiêu chí tối ưu nội dung cho AI Overviews' },
-    { id: 'faq-ai-overview-search', title: '8. Câu hỏi thường gặp (FAQ chuẩn Schema)' }
+    {id: 'tham-kich-zero-click-ai-search', title: '1. Thảm kịch Zero-Click: Khi AI Search nuốt chửng lượt truy cập'},
+    {id: 'chi-phi-co-hoi-khi-vo-hinh-truoc-ai', title: '2. Chi phí cơ hội: Nguy cơ vô hình trước thế hệ khách hàng mới'},
+    {id: 'ban-chat-geo-va-entity-first', title: '3. Giải pháp: Bản chất Generative Engine Optimization (GEO)'},
+    {id: '4-tru-cot-ky-thuat-ai-search', title: '4. 4 Trụ cột kỹ thuật giúp website được AI trích dẫn nguồn'},
+    {id: 'quy-trinh-5-buoc-toi-uu-geo', title: '5. Quy trình 5 bước triển khai tối ưu hóa AI Search thực chiến'},
+    {id: 'bang-so-sanh-seo-vs-geo', title: '6. So sánh: Traditional SEO vs Generative Engine Optimization'},
+    {id: 'checklist-12-tieu-chi-ai-overview', title: '7. Bộ Checklist 12 tiêu chí tối ưu nội dung cho AI Overviews'},
+    {id: 'faq-ai-overview-search', title: '8. Câu hỏi thường gặp (FAQ chuẩn Schema)'}
   ],
   sections: [
     {

@@ -18,11 +18,11 @@ import {getServiceArticle} from '../../../components/serviceArticlesData';
 import ReadingProgress from '../../../components/article/ReadingProgress';
 import {siteUrl} from '../../../components/paths';
 
-export function generateStaticParams(){
+export function generateStaticParams() {
   return servicePages.map(service => ({slug: service.slug}));
 }
 
-export async function generateMetadata({params}){
+export async function generateMetadata({params}) {
   const {slug} = await params;
   const service = getServicePage(slug);
   if (!service) return {title: 'Không tìm thấy dịch vụ'};
@@ -34,7 +34,7 @@ export async function generateMetadata({params}){
   };
 }
 
-export default async function ServicePage({params}){
+export default async function ServicePage({params}) {
   const {slug} = await params;
   const service = getServicePage(slug);
   if (!service) notFound();
@@ -42,47 +42,83 @@ export default async function ServicePage({params}){
   const related = servicePages.filter(s => s.category === service.category && s.slug !== service.slug).slice(0, 3);
 
   const serviceJsonLd = {
-    '@context': 'https://schema.org', '@type': 'Service',
-    name: service.menuTitle, description: service.intro, serviceType: service.category, areaServed: 'VN',
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: service.menuTitle,
+    description: service.intro,
+    serviceType: service.category,
+    areaServed: 'VN',
     provider: {'@type': 'Organization', name: 'SOHO Agency', url: siteUrl}
   };
 
   return (
     <>
-      <Header activeNav="services"/>
-      <ReadingProgress/>
+      <Header activeNav="services" />
+      <ReadingProgress />
       <main id="main">
-        <Hero tone="services" crumbs={[{label: 'Dịch vụ', href: '/dich-vu'}, {label: service.menuTitle}]} title={service.title} long tagline={service.intro} visual={<div className={styles.heroDiagram}><ServiceDiagram slug={service.slug} card/></div>}/>
-        <PageHeader
-          title="Kết quả cần đạt"
-          lead={service.promise}
-          bullets={service.outcomes}
-        >
+        <Hero
+          tone="services"
+          crumbs={[{label: 'Dịch vụ', href: '/dich-vu'}, {label: service.menuTitle}]}
+          title={service.title}
+          long
+          tagline={service.intro}
+          visual={
+            <div className={styles.heroDiagram}>
+              <ServiceDiagram slug={service.slug} card />
+            </div>
+          }
+        />
+        <PageHeader title="Kết quả cần đạt" lead={service.promise} bullets={service.outcomes}>
           <Button href="#lien-he">Nhận tư vấn</Button>
         </PageHeader>
 
         {/* Quy trình + sơ đồ */}
-        <Section tone="dark" decor="calender" title={<>SOHO làm theo <span className="hl">{service.process.length} bước</span></>} intro="Mỗi bước có việc cụ thể và con số để bạn kiểm tra.">
-          <Track items={service.process.map(title => ({title}))}/>
+        <Section
+          tone="dark"
+          decor="calender"
+          title={
+            <>
+              SOHO làm theo <span className="hl">{service.process.length} bước</span>
+            </>
+          }
+          intro="Mỗi bước có việc cụ thể và con số để bạn kiểm tra."
+        >
+          <Track items={service.process.map(title => ({title}))} />
         </Section>
 
         {/* Dấu hiệu và kết quả */}
-        <Section title={<>Vì sao doanh nghiệp cần <span className="hl">{service.menuTitle}</span>?</>} intro={service.insight}>
-          <BeforeAfter before={service.pains} after={service.outcomes} beforeLabel="Dấu hiệu bạn đang gặp" afterLabel="Kết quả cần đạt"/>
+        <Section
+          title={
+            <>
+              Vì sao doanh nghiệp cần <span className="hl">{service.menuTitle}</span>?
+            </>
+          }
+          intro={service.insight}
+        >
+          <BeforeAfter before={service.pains} after={service.outcomes} beforeLabel="Dấu hiệu bạn đang gặp" afterLabel="Kết quả cần đạt" />
           <p className={styles.proof}>{service.proof}</p>
         </Section>
 
         {/* Bàn giao */}
-        <Section title={<>Bạn nhận được gì khi làm <span className="hl">{service.menuTitle}</span> với SOHO</>}>
+        <Section
+          title={
+            <>
+              Bạn nhận được gì khi làm <span className="hl">{service.menuTitle}</span> với SOHO
+            </>
+          }
+        >
           <div className={`${styles.deliver} ${service.artifact?.image ? '' : styles.deliverFull}`}>
             <ol className={styles.deliverList}>
               {service.deliverables.map((d, i) => (
-                <li key={d} data-reveal="" style={{'--reveal-delay': `${i * 80}ms`}}><span>{String(i + 1).padStart(2, '0')}</span>{d}</li>
+                <li key={d} data-reveal="" style={{'--reveal-delay': `${i * 80}ms`}}>
+                  <span>{String(i + 1).padStart(2, '0')}</span>
+                  {d}
+                </li>
               ))}
             </ol>
             {service.artifact?.image && (
               <figure className={styles.artifact} data-reveal="" style={{'--reveal-delay': '200ms'}}>
-                <ImageSlot src={service.artifact.image} alt={service.artifact.need} need={service.artifact.need} size="1600×1000"/>
+                <ImageSlot src={service.artifact.image} alt={service.artifact.need} need={service.artifact.need} size="1600×1000" />
                 <figcaption>Ví dụ sản phẩm bàn giao: {service.artifact.need.charAt(0).toLowerCase() + service.artifact.need.slice(1)}.</figcaption>
               </figure>
             )}
@@ -91,21 +127,38 @@ export default async function ServicePage({params}){
 
         {/* Bài viết chi tiết */}
         {article && (
-          <Section tone="gray" title={<>Hiểu sâu về <span className="hl">{service.menuTitle}</span></>} spacing="lg">
-            <div className={styles.articleCard}><ArticleBody article={article}/></div>
+          <Section
+            tone="gray"
+            title={
+              <>
+                Hiểu sâu về <span className="hl">{service.menuTitle}</span>
+              </>
+            }
+            spacing="lg"
+          >
+            <div className={styles.articleCard}>
+              <ArticleBody article={article} />
+            </div>
           </Section>
         )}
 
         {related.length > 0 && (
-          <Section title={<>Dịch vụ <span className="hl">cùng nhóm</span></>} spacing="sm">
-            <LinkRows items={related.map(s => ({title: s.menuTitle, desc: s.menuDesc, href: `/dich-vu/${s.slug}`}))}/>
+          <Section
+            title={
+              <>
+                Dịch vụ <span className="hl">cùng nhóm</span>
+              </>
+            }
+            spacing="sm"
+          >
+            <LinkRows items={related.map(s => ({title: s.menuTitle, desc: s.menuDesc, href: `/dich-vu/${s.slug}`}))} />
           </Section>
         )}
 
-        <CtaBand/>
-        <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(serviceJsonLd)}}/>
+        <CtaBand />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(serviceJsonLd)}} />
       </main>
-      <Footer/>
+      <Footer />
     </>
   );
 }

@@ -25,7 +25,8 @@ export const articles = [
     title: 'SEO thời AI Search: doanh nghiệp cần đổi gì?',
     metaTitle: 'SEO thời AI Search: doanh nghiệp cần thay đổi gì? | SOHO',
     category: 'SEO & AI Search',
-    excerpt: 'Cách xây dựng nội dung, tối ưu thực thể thương hiệu (Entity) và tín hiệu E-E-A-T khi hành vi tìm kiếm chuyển dịch mạnh mẽ sang các nền tảng AI như Google AI Overviews, Perplexity và ChatGPT.',
+    excerpt:
+      'Cách xây dựng nội dung, tối ưu thực thể thương hiệu (Entity) và tín hiệu E-E-A-T khi hành vi tìm kiếm chuyển dịch mạnh mẽ sang các nền tảng AI như Google AI Overviews, Perplexity và ChatGPT.',
     readTime: '7 phút đọc',
     date: '02/10/2026',
     author: 'Nguyễn Tuấn Anh',
@@ -58,7 +59,8 @@ export const articles = [
     title: 'Đo Performance Ads bằng doanh thu thực tế',
     metaTitle: 'Đo Performance Ads bằng doanh thu, không chỉ CPC và CTR',
     category: 'Performance Ads',
-    excerpt: 'Phân tích vì sao giá click rẻ nhưng không ra doanh số. Hướng dẫn thiết lập phễu đo lường từ Impression, Click đến Qualified Lead, CAC và ROAS thực tế.',
+    excerpt:
+      'Phân tích vì sao giá click rẻ nhưng không ra doanh số. Hướng dẫn thiết lập phễu đo lường từ Impression, Click đến Qualified Lead, CAC và ROAS thực tế.',
     readTime: '5 phút đọc',
     date: '28/09/2026',
     author: 'Trần Minh Quân',
@@ -87,7 +89,8 @@ export const articles = [
     title: 'Khi nào nên đầu tư SEO và Ads cùng lúc?',
     metaTitle: 'Khi nào nên đầu tư SEO và Ads cùng lúc? | SOHO Agency',
     category: 'Chiến lược Tăng trưởng',
-    excerpt: 'Phân bổ ngân sách thông minh giữa ngắn hạn (Paid Ads) và dài hạn (Organic SEO) theo từng giai đoạn vòng đời doanh nghiệp và độ cạnh tranh của ngành.',
+    excerpt:
+      'Phân bổ ngân sách thông minh giữa ngắn hạn (Paid Ads) và dài hạn (Organic SEO) theo từng giai đoạn vòng đời doanh nghiệp và độ cạnh tranh của ngành.',
     readTime: '6 phút đọc',
     date: '24/09/2026',
     author: 'Lê Hoàng Yến',
@@ -175,7 +178,8 @@ export const articles = [
     title: 'Framework marketing 90 ngày: 7 bước',
     metaTitle: 'Framework lập kế hoạch marketing 90 ngày trong 7 bước',
     category: 'Framework Marketing',
-    excerpt: 'Quy trình 7 bước SOHO dùng khi nhận một kế hoạch marketing mới: chốt mục tiêu bằng số, vẽ hành trình 3 chặng, chọn kênh theo chặng, dựng thông điệp, chia ngân sách, cắm đo lường và xếp lịch 90 ngày.',
+    excerpt:
+      'Quy trình 7 bước SOHO dùng khi nhận một kế hoạch marketing mới: chốt mục tiêu bằng số, vẽ hành trình 3 chặng, chọn kênh theo chặng, dựng thông điệp, chia ngân sách, cắm đo lường và xếp lịch 90 ngày.',
     readTime: '12 phút đọc',
     date: '08/10/2026',
     author: 'Lê Hoàng Yến',
@@ -291,7 +295,8 @@ export const articles = [
     title: 'Framework SEO 8 bước: từ audit đến lead',
     metaTitle: 'Framework SEO 8 bước: từ audit kỹ thuật đến đo bằng lead',
     category: 'Framework SEO',
-    excerpt: 'Trình tự SOHO triển khai SEO cho một website: audit kỹ thuật, nghiên cứu từ khóa theo ý định, dựng cấu trúc theo cụm chủ đề, viết brief, tối ưu on-page và thực thể, nội dung sẵn sàng cho AI Search, liên kết, rồi đo bằng lead.',
+    excerpt:
+      'Trình tự SOHO triển khai SEO cho một website: audit kỹ thuật, nghiên cứu từ khóa theo ý định, dựng cấu trúc theo cụm chủ đề, viết brief, tối ưu on-page và thực thể, nội dung sẵn sàng cho AI Search, liên kết, rồi đo bằng lead.',
     readTime: '14 phút đọc',
     date: '07/10/2026',
     author: 'Nguyễn Tuấn Anh',
@@ -418,7 +423,8 @@ export const articles = [
     title: 'Framework Google Ads và Meta Ads 6 bước',
     metaTitle: 'Framework chạy Google Ads và Meta Ads trong 6 bước | SOHO',
     category: 'Framework Ads',
-    excerpt: 'Trình tự SOHO áp dụng cho mọi tài khoản quảng cáo mới: tính chi phí mỗi lead cho phép, cắm tracking trước khi tiêu tiền, dựng cấu trúc tài khoản, thử nghiệm sáng tạo và trang đích, tối ưu theo tuần, rồi mở rộng ngân sách theo doanh thu.',
+    excerpt:
+      'Trình tự SOHO áp dụng cho mọi tài khoản quảng cáo mới: tính chi phí mỗi lead cho phép, cắm tracking trước khi tiêu tiền, dựng cấu trúc tài khoản, thử nghiệm sáng tạo và trang đích, tối ưu theo tuần, rồi mở rộng ngân sách theo doanh thu.',
     readTime: '13 phút đọc',
     date: '06/10/2026',
     author: 'Trần Minh Quân',
@@ -529,36 +535,39 @@ export const articles = [
 ];
 
 // Quy tắc blog: H1 ≤ 50, metaTitle ≤ 60, có image {src, alt}. Vi phạm là build dừng.
-for (const a of articles){
+for (const a of articles) {
   const where = `Bài blog "${a.slug}"`;
   if (!a.title || a.title.length > 50) throw new Error(`${where}: title (H1) phải có và tối đa 50 ký tự, hiện ${(a.title || '').length}.`);
   if (!a.metaTitle || a.metaTitle.length > 60) throw new Error(`${where}: metaTitle phải có và tối đa 60 ký tự, hiện ${(a.metaTitle || '').length}.`);
   if (!a.image || !a.image.src || !a.image.alt) throw new Error(`${where} thiếu image {src, alt}. Xem chú thích đầu components/blogData.js`);
 }
 
-export function categorySlug(category){
+export function categorySlug(category) {
   return category
-    .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
-    .replace(/đ/g, 'd').replace(/Đ/g, 'D')
-    .toLowerCase().replace(/&/g, ' ').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/đ/g, 'd')
+    .replace(/Đ/g, 'D')
+    .toLowerCase()
+    .replace(/&/g, ' ')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-|-$/g, '');
 }
 
 // date dạng dd/mm/yyyy
-export function toISODate(date){
+export function toISODate(date) {
   const [d, m, y] = date.split('/');
   return `${y}-${m}-${d}`;
 }
 
 // Bài viết gom theo danh mục, theo thứ tự `categories`; danh mục không có bài thì bỏ qua.
-export function getArticlesByCategory(){
+export function getArticlesByCategory() {
   const list = getLatestArticles();
   const known = categories.filter(c => list.some(a => a.category === c));
   const extra = [...new Set(list.map(a => a.category))].filter(c => !categories.includes(c));
   return [...known, ...extra].map(name => ({name, id: categorySlug(name), items: list.filter(a => a.category === name)}));
 }
 
-export function getLatestArticles(limit = articles.length){
-  return [...articles]
-    .sort((a, b) => toISODate(b.date).localeCompare(toISODate(a.date)))
-    .slice(0, limit);
+export function getLatestArticles(limit = articles.length) {
+  return [...articles].sort((a, b) => toISODate(b.date).localeCompare(toISODate(a.date))).slice(0, limit);
 }

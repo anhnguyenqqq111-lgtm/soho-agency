@@ -1,6 +1,7 @@
 export const croLandingPageArticle = {
   metaTitle: 'Tối Ưu Tỷ Lệ Chuyển Đổi (CRO) & Landing Page 2026: Biến Traffic Thành Doanh Thu Đột Phá | SOHO',
-  metaDesc: 'Chiến lược tối ưu hóa tỷ lệ chuyển đổi (CRO) & thiết kế Landing Page chuyên sâu 2026. Phương pháp chẩn đoán điểm nghẽn, A/B Testing khoa học giúp nhân đôi doanh số trên lượng traffic sẵn có.',
+  metaDesc:
+    'Chiến lược tối ưu hóa tỷ lệ chuyển đổi (CRO) & thiết kế Landing Page chuyên sâu 2026. Phương pháp chẩn đoán điểm nghẽn, A/B Testing khoa học giúp nhân đôi doanh số trên lượng traffic sẵn có.',
   readingTime: '17 phút đọc',
   updatedDate: '04/10/2026',
   author: {
@@ -9,14 +10,14 @@ export const croLandingPageArticle = {
     avatar: '/assets/brand/soho-avatar.png'
   },
   toc: [
-    { id: 'tham-kich-cai-xo-thung-traffic', title: '1. Thực trạng: Bi kịch "Cái xô thủng", 98% người dùng rời đi không để lại dấu vết' },
-    { id: 'chi-phi-co-hoi-cro-kem', title: '2. Chi phí cơ hội: Đốt tiền mua thêm traffic trong khi trang đích rò rỉ chuyển đổi' },
-    { id: 'ban-chat-khoa-hoc-cro', title: '3. Bản chất Tối ưu Tỷ lệ Chuyển đổi (CRO) & Tâm lý học hành vi 2026' },
-    { id: '4-tru-cot-cro-landing-page', title: '4. 4 Trụ cột tối ưu hóa Landing Page chuyển đổi cao của SOHO' },
-    { id: 'quy-trinh-sprint-cro-testing', title: '5. Quy trình Sprint 5 bước chẩn đoán dữ liệu & A/B Testing thực chiến' },
-    { id: 'bang-so-sanh-cro-landing-page', title: '6. So sánh: Trang đích "Vẽ đẹp đơn thuần" vs Landing Page chuẩn CRO' },
-    { id: 'checklist-15-tieu-chi-cro', title: '7. Bộ Checklist 15 tiêu chí nghiệm thu Landing Page chuyển đổi cao' },
-    { id: 'faq-cro-landing-page', title: '8. Câu hỏi thường gặp (FAQ chuẩn Schema)' }
+    {id: 'tham-kich-cai-xo-thung-traffic', title: '1. Thực trạng: Bi kịch "Cái xô thủng", 98% người dùng rời đi không để lại dấu vết'},
+    {id: 'chi-phi-co-hoi-cro-kem', title: '2. Chi phí cơ hội: Đốt tiền mua thêm traffic trong khi trang đích rò rỉ chuyển đổi'},
+    {id: 'ban-chat-khoa-hoc-cro', title: '3. Bản chất Tối ưu Tỷ lệ Chuyển đổi (CRO) & Tâm lý học hành vi 2026'},
+    {id: '4-tru-cot-cro-landing-page', title: '4. 4 Trụ cột tối ưu hóa Landing Page chuyển đổi cao của SOHO'},
+    {id: 'quy-trinh-sprint-cro-testing', title: '5. Quy trình Sprint 5 bước chẩn đoán dữ liệu & A/B Testing thực chiến'},
+    {id: 'bang-so-sanh-cro-landing-page', title: '6. So sánh: Trang đích "Vẽ đẹp đơn thuần" vs Landing Page chuẩn CRO'},
+    {id: 'checklist-15-tieu-chi-cro', title: '7. Bộ Checklist 15 tiêu chí nghiệm thu Landing Page chuyển đổi cao'},
+    {id: 'faq-cro-landing-page', title: '8. Câu hỏi thường gặp (FAQ chuẩn Schema)'}
   ],
   sections: [
     {

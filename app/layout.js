@@ -28,7 +28,8 @@ export const metadata = {
     default: 'SOHO Agency | SEO, quảng cáo và website cho doanh nghiệp TP.HCM',
     template: '%s | SOHO Agency'
   },
-  description: 'SOHO Agency làm SEO, Google Ads, Facebook Ads, thiết kế website, nhận diện thương hiệu và mobile app cho doanh nghiệp vừa và nhỏ ở TP.HCM. Google Partner 2026. Báo cáo bằng khách hàng và doanh thu.',
+  description:
+    'SOHO Agency làm SEO, Google Ads, Facebook Ads, thiết kế website, nhận diện thương hiệu và mobile app cho doanh nghiệp vừa và nhỏ ở TP.HCM. Google Partner 2026. Báo cáo bằng khách hàng và doanh thu.',
   alternates: {canonical: '/'},
   openGraph: {
     type: 'website',
@@ -51,16 +52,18 @@ export const metadata = {
 
 export const viewport = {themeColor: '#FFFFFF'};
 
-export default function RootLayout({children}){
+export default function RootLayout({children}) {
   return (
     <html lang="vi" className={`${display.variable} ${text.variable}`} suppressHydrationWarning>
       <head>
-        <script dangerouslySetInnerHTML={{__html: "document.documentElement.classList.add('js')"}}/>
+        <script dangerouslySetInnerHTML={{__html: "document.documentElement.classList.add('js')"}} />
       </head>
       <body id="top">
-        <a href="#main" className="skip-link">Bỏ qua, tới nội dung chính</a>
+        <a href="#main" className="skip-link">
+          Bỏ qua, tới nội dung chính
+        </a>
         {children}
-        <RevealObserver/>
+        <RevealObserver />
       </body>
     </html>
   );

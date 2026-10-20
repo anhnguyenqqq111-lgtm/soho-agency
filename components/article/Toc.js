@@ -2,7 +2,7 @@
 import {useEffect, useState} from 'react';
 import styles from './ArticleBody.module.css';
 
-export default function Toc({items}){
+export default function Toc({items}) {
   const [active, setActive] = useState(items[0]?.id);
 
   useEffect(() => {
@@ -24,11 +24,7 @@ export default function Toc({items}){
     <ol className={styles.tocList}>
       {items.map(item => (
         <li key={item.id}>
-          <a
-            href={`#${item.id}`}
-            className={active === item.id ? styles.tocActive : undefined}
-            aria-current={active === item.id ? 'location' : undefined}
-          >
+          <a href={`#${item.id}`} className={active === item.id ? styles.tocActive : undefined} aria-current={active === item.id ? 'location' : undefined}>
             <span className={styles.tocIndex}>{item.index}</span>
             <span>{item.title}</span>
           </a>

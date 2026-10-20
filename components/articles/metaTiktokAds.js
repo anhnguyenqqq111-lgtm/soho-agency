@@ -1,6 +1,7 @@
 export const metaTiktokAdsArticle = {
   metaTitle: 'Dịch Vụ Meta & TikTok Ads 2026: Hệ Thống Creative Testing & Scale Doanh Số Bền Vững | SOHO',
-  metaDesc: 'Chiến lược Meta Ads & TikTok Ads chuyên sâu 2026. Xây dựng ma trận thử nghiệm sáng tạo (Creative Testing), tối ưu CAPI Server-side và tăng tốc doanh số đơn hàng/lead chất lượng cao.',
+  metaDesc:
+    'Chiến lược Meta Ads & TikTok Ads chuyên sâu 2026. Xây dựng ma trận thử nghiệm sáng tạo (Creative Testing), tối ưu CAPI Server-side và tăng tốc doanh số đơn hàng/lead chất lượng cao.',
   readingTime: '17 phút đọc',
   updatedDate: '04/10/2026',
   author: {
@@ -9,14 +10,14 @@ export const metaTiktokAdsArticle = {
     avatar: '/assets/brand/soho-avatar.png'
   },
   toc: [
-    { id: 'tham-kich-ad-fatigue-social', title: '1. Thực trạng: Vòng xoáy "Ad Fatigue", giá lead tăng vọt sau 3 ngày chạy' },
-    { id: 'chi-phi-co-hoi-mat-khach-social', title: '2. Chi phí cơ hội: Đốt tiền vào click rác và tin nhắn không phản hồi' },
-    { id: 'ban-chat-paid-social-2026', title: '3. Bản chất Meta & TikTok Ads 2026: "Creative is the New Targeting"' },
-    { id: '4-tru-cot-creative-performance', title: '4. 4 Trụ cột vận hành hệ thống Paid Social Performance của SOHO' },
-    { id: 'quy-trinh-sprint-creative-testing', title: '5. Quy trình Sprint 5 bước xây dựng cỗ máy Creative Testing liên tục' },
-    { id: 'bang-so-sanh-meta-tiktok-ads', title: '6. So sánh: Agency "Bào Tệp" truyền thống vs SOHO Creative Engine' },
-    { id: 'checklist-15-tieu-chi-social-ads', title: '7. Bộ Checklist 15 tiêu chí kiểm toán chiến dịch Meta & TikTok Ads' },
-    { id: 'faq-meta-tiktok-ads', title: '8. Câu hỏi thường gặp (FAQ chuẩn Schema)' }
+    {id: 'tham-kich-ad-fatigue-social', title: '1. Thực trạng: Vòng xoáy "Ad Fatigue", giá lead tăng vọt sau 3 ngày chạy'},
+    {id: 'chi-phi-co-hoi-mat-khach-social', title: '2. Chi phí cơ hội: Đốt tiền vào click rác và tin nhắn không phản hồi'},
+    {id: 'ban-chat-paid-social-2026', title: '3. Bản chất Meta & TikTok Ads 2026: "Creative is the New Targeting"'},
+    {id: '4-tru-cot-creative-performance', title: '4. 4 Trụ cột vận hành hệ thống Paid Social Performance của SOHO'},
+    {id: 'quy-trinh-sprint-creative-testing', title: '5. Quy trình Sprint 5 bước xây dựng cỗ máy Creative Testing liên tục'},
+    {id: 'bang-so-sanh-meta-tiktok-ads', title: '6. So sánh: Agency "Bào Tệp" truyền thống vs SOHO Creative Engine'},
+    {id: 'checklist-15-tieu-chi-social-ads', title: '7. Bộ Checklist 15 tiêu chí kiểm toán chiến dịch Meta & TikTok Ads'},
+    {id: 'faq-meta-tiktok-ads', title: '8. Câu hỏi thường gặp (FAQ chuẩn Schema)'}
   ],
   sections: [
     {

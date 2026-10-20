@@ -1,6 +1,7 @@
 export const localSeoGoogleMapsArticle = {
   metaTitle: 'Dịch Vụ Local SEO & Google Maps 2026: Chiếm Lĩnh Tìm Kiếm Khu Vực & Tăng Trưởng Khách Hàng Thực Tế | SOHO',
-  metaDesc: 'Chiến lược Local SEO & Google Maps Marketing chuyên sâu 2026. Tối ưu Google Business Profile, chiếm lĩnh Top 3 Google Map Pack và thu hút khách hàng đến cửa hàng, chi nhánh.',
+  metaDesc:
+    'Chiến lược Local SEO & Google Maps Marketing chuyên sâu 2026. Tối ưu Google Business Profile, chiếm lĩnh Top 3 Google Map Pack và thu hút khách hàng đến cửa hàng, chi nhánh.',
   readingTime: '16 phút đọc',
   updatedDate: '04/10/2026',
   author: {
@@ -9,14 +10,14 @@ export const localSeoGoogleMapsArticle = {
     avatar: '/assets/brand/soho-avatar.png'
   },
   toc: [
-    { id: 'tham-kich-mat-khach-local', title: '1. Thực trạng: Khi khách hàng tìm kiếm quanh bạn nhưng chỉ thấy đối thủ' },
-    { id: 'chi-phi-co-hoi-local-seo', title: '2. Chi phí cơ hội: Đánh mất dòng khách hàng có ý định mua cao nhất' },
-    { id: 'ban-chat-local-seo-soho', title: '3. Bản chất Local SEO & Thuật toán Google 3-Pack 2026' },
-    { id: '4-tru-cot-local-seo-engine', title: '4. 4 Trụ cột thống trị tìm kiếm địa phương của SOHO' },
-    { id: 'quy-trinh-5-buoc-local-seo', title: '5. Quy trình 5 bước triển khai Local SEO thực chiến' },
-    { id: 'bang-so-sanh-local-seo', title: '6. So sánh: Tự quản lý Maps vs Hệ thống Local SEO SOHO' },
-    { id: 'checklist-15-tieu-chi-local-seo', title: '7. Bộ Checklist 15 tiêu chí tối ưu Google Business Profile' },
-    { id: 'faq-local-seo-maps', title: '8. Câu hỏi thường gặp (FAQ chuẩn Schema)' }
+    {id: 'tham-kich-mat-khach-local', title: '1. Thực trạng: Khi khách hàng tìm kiếm quanh bạn nhưng chỉ thấy đối thủ'},
+    {id: 'chi-phi-co-hoi-local-seo', title: '2. Chi phí cơ hội: Đánh mất dòng khách hàng có ý định mua cao nhất'},
+    {id: 'ban-chat-local-seo-soho', title: '3. Bản chất Local SEO & Thuật toán Google 3-Pack 2026'},
+    {id: '4-tru-cot-local-seo-engine', title: '4. 4 Trụ cột thống trị tìm kiếm địa phương của SOHO'},
+    {id: 'quy-trinh-5-buoc-local-seo', title: '5. Quy trình 5 bước triển khai Local SEO thực chiến'},
+    {id: 'bang-so-sanh-local-seo', title: '6. So sánh: Tự quản lý Maps vs Hệ thống Local SEO SOHO'},
+    {id: 'checklist-15-tieu-chi-local-seo', title: '7. Bộ Checklist 15 tiêu chí tối ưu Google Business Profile'},
+    {id: 'faq-local-seo-maps', title: '8. Câu hỏi thường gặp (FAQ chuẩn Schema)'}
   ],
   sections: [
     {

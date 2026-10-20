@@ -1,7 +1,7 @@
 import styles from './Faq.module.css';
 
 // FAQ dạng details, thẻ xám bo tròn như GOHA. items: [{q, a}] (a là chuỗi hoặc ReactNode)
-export default function Faq({items}){
+export default function Faq({items}) {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -17,7 +17,7 @@ export default function Faq({items}){
           </details>
         ))}
       </div>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}/>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}} />
     </>
   );
 }

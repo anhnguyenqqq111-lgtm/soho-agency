@@ -17,12 +17,29 @@ export const mainNav = [
 ];
 
 const SERVICE_GROUPS = [
-  {id: 'performance', number: '01', title: 'Performance Marketing', items: [['seo-tong-the', 'SEO Website'], ['google-ads-shopping', 'Google Ads'], ['meta-tiktok-ads', 'Facebook Ads']]},
-  {id: 'digital', number: '02', title: 'Digital Experiences', items: [['thiet-ke-website', 'Thiết kế Website'], ['thiet-ke-mobile-app', 'Thiết kế Mobile App']]},
+  {
+    id: 'performance',
+    number: '01',
+    title: 'Performance Marketing',
+    items: [
+      ['seo-tong-the', 'SEO Website'],
+      ['google-ads-shopping', 'Google Ads'],
+      ['meta-tiktok-ads', 'Facebook Ads']
+    ]
+  },
+  {
+    id: 'digital',
+    number: '02',
+    title: 'Digital Experiences',
+    items: [
+      ['thiet-ke-website', 'Thiết kế Website'],
+      ['thiet-ke-mobile-app', 'Thiết kế Mobile App']
+    ]
+  },
   {id: 'brand', number: '03', title: 'Brand Identity', items: [['nhan-dien-thuong-hieu', 'Nhận diện thương hiệu']]}
 ];
 
-export function getServicesMenu(){
+export function getServicesMenu() {
   const core = new Map(getCoreServices().map(s => [s.slug, s]));
   return {
     id: 'services-menu',

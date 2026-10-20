@@ -1,6 +1,7 @@
 export const growthStrategySprintArticle = {
   metaTitle: 'Tư Vấn Chiến Lược Tăng Trưởng Sprint 30-90 Ngày: Xóa Bỏ Dàn Trải & Tối Ưu Lợi Nhuận | SOHO',
-  metaDesc: 'Dịch vụ tư vấn chiến lược Digital Marketing & Growth Sprint 30-90 ngày chuyên sâu 2026. Chẩn đoán điểm nghẽn tăng trưởng, xác định thứ tự ưu tiên kênh và xây dựng lộ trình thực thi gắn liền với doanh thu.',
+  metaDesc:
+    'Dịch vụ tư vấn chiến lược Digital Marketing & Growth Sprint 30-90 ngày chuyên sâu 2026. Chẩn đoán điểm nghẽn tăng trưởng, xác định thứ tự ưu tiên kênh và xây dựng lộ trình thực thi gắn liền với doanh thu.',
   readingTime: '17 phút đọc',
   updatedDate: '04/10/2026',
   author: {
@@ -9,14 +10,14 @@ export const growthStrategySprintArticle = {
     avatar: '/assets/brand/soho-avatar.png'
   },
   toc: [
-    { id: 'tham-kich-dan-trai-nguon-luc', title: '1. Thực trạng: Thảm kịch "Dàn trải nguồn lực", làm đủ mọi kênh nhưng không kênh nào ra tiền' },
-    { id: 'chi-phi-co-hoi-loay-hoay-doi-agency', title: '2. Chi phí cơ hội: Vòng xoáy đổi agency liên tục và cái giá của sự thiếu chiến lược' },
-    { id: 'ban-chat-growth-sprint-soho', title: '3. Bản chất Phương pháp luận Growth Sprint 30 đến 90 Ngày của SOHO' },
-    { id: '4-tru-cot-chan-doan-chien-luoc', title: '4. 4 Trụ cột chẩn đoán sức khỏe doanh nghiệp & xác định đòn bẩy tăng trưởng' },
-    { id: 'quy-trinh-5-buoc-growth-sprint', title: '5. Quy trình 5 bước vận hành Sprint chiến lược thực chiến' },
-    { id: 'bang-so-sanh-growth-sprint', title: '6. So sánh: Bản kế hoạch tư vấn lý thuyết 100 trang vs Growth Sprint SOHO' },
-    { id: 'checklist-15-tieu-chi-growth-ready', title: '7. Bộ Checklist 15 tiêu chí đánh giá mức độ sẵn sàng tăng trưởng' },
-    { id: 'faq-growth-strategy-sprint', title: '8. Câu hỏi thường gặp (FAQ chuẩn Schema)' }
+    {id: 'tham-kich-dan-trai-nguon-luc', title: '1. Thực trạng: Thảm kịch "Dàn trải nguồn lực", làm đủ mọi kênh nhưng không kênh nào ra tiền'},
+    {id: 'chi-phi-co-hoi-loay-hoay-doi-agency', title: '2. Chi phí cơ hội: Vòng xoáy đổi agency liên tục và cái giá của sự thiếu chiến lược'},
+    {id: 'ban-chat-growth-sprint-soho', title: '3. Bản chất Phương pháp luận Growth Sprint 30 đến 90 Ngày của SOHO'},
+    {id: '4-tru-cot-chan-doan-chien-luoc', title: '4. 4 Trụ cột chẩn đoán sức khỏe doanh nghiệp & xác định đòn bẩy tăng trưởng'},
+    {id: 'quy-trinh-5-buoc-growth-sprint', title: '5. Quy trình 5 bước vận hành Sprint chiến lược thực chiến'},
+    {id: 'bang-so-sanh-growth-sprint', title: '6. So sánh: Bản kế hoạch tư vấn lý thuyết 100 trang vs Growth Sprint SOHO'},
+    {id: 'checklist-15-tieu-chi-growth-ready', title: '7. Bộ Checklist 15 tiêu chí đánh giá mức độ sẵn sàng tăng trưởng'},
+    {id: 'faq-growth-strategy-sprint', title: '8. Câu hỏi thường gặp (FAQ chuẩn Schema)'}
   ],
   sections: [
     {

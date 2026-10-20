@@ -213,7 +213,7 @@ components/
   ui/                    Section (lưới 4/8 có nhãn số), PageHeader, NumberedList, LinkRows, Button, CtaBand
   article/               ArticleBody, Toc ('use client'), Markdown, parseMarkdown
   data/clients.js
-public/brand/soho-logo.webp  logo gốc của SOHO ở header (bản trắng soho-logo-white.webp ở footer)
+public/assets/brand/approved/SOHO_01_Open_Corner_APPROVED.svg   logo đã duyệt, dùng ở header và footer
 ```
 
 Xóa: `globals.css`, `ServiceSectionVisualizer.js`, `ArticleRenderer.js` (thay bằng ArticleBody), `cleanPunctuation.js`, `public/brand/page-*.png` nếu không dùng.

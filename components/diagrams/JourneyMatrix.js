@@ -17,23 +17,35 @@ const WIDTH = ['100%', '88%', '76%'];
 
 const Arrow = ({i}) => (
   <div className={styles.arrow} aria-hidden="true" style={{'--i': i}}>
-    <svg viewBox="0 0 24 40" width="24" height="40"><path d="M12 0v30M4 23l8 9 8-9" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+    <svg viewBox="0 0 24 40" width="24" height="40">
+      <path d="M12 0v30M4 23l8 9 8-9" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
   </div>
 );
 
-export default function JourneyMatrix(){
+export default function JourneyMatrix() {
   return (
     <div className={styles.wrap} data-reveal="journey">
       {/* Header kênh (desktop) */}
       <div className={styles.head}>
-        <div className={styles.corner}><span>Mục tiêu</span><span>Chặng hành trình</span></div>
-        {CHANNELS.map((c, j) => <div key={c.name} className={styles.chHead} data-ch={j}><span className={styles.chDot} style={{background: c.color}}/>{c.name}</div>)}
+        <div className={styles.corner}>
+          <span>Mục tiêu</span>
+          <span>Chặng hành trình</span>
+        </div>
+        {CHANNELS.map((c, j) => (
+          <div key={c.name} className={styles.chHead} data-ch={j}>
+            <span className={styles.chDot} style={{background: c.color}} />
+            {c.name}
+          </div>
+        ))}
       </div>
 
       {STAGES.map((st, i) => (
         <div key={st.code} className={styles.stageWrap}>
           <section className={styles.block} style={{'--w': WIDTH[i], '--i': i}} aria-label={`Chặng ${i + 1}: ${st.name}`}>
-            <div className={`${styles.goal} ${i === 2 ? styles.goalSales : ''}`}><span>{st.owner}</span></div>
+            <div className={`${styles.goal} ${i === 2 ? styles.goalSales : ''}`}>
+              <span>{st.owner}</span>
+            </div>
             <div className={`${styles.stage} ${styles['s' + i]}`}>
               <span className={styles.code}>{st.code}</span>
               <strong>{st.name}</strong>
@@ -42,19 +54,26 @@ export default function JourneyMatrix(){
             <p className={styles.q}>{st.q}</p>
             {CHANNELS.map((c, j) => (
               <div key={c.name} className={styles.cell} data-ch={j}>
-                <p className={styles.cellCh}><span className={styles.chDot} style={{background: c.color}}/>{c.name}</p>
+                <p className={styles.cellCh}>
+                  <span className={styles.chDot} style={{background: c.color}} />
+                  {c.name}
+                </p>
                 <div className={styles.band} style={{background: c.color, color: c.ink}}>
-                  {st.cells[j].map(it => <span key={it}>{it}</span>)}
+                  {st.cells[j].map(it => (
+                    <span key={it}>{it}</span>
+                  ))}
                 </div>
               </div>
             ))}
           </section>
-          {i < 2 && <Arrow i={i}/>}
+          {i < 2 && <Arrow i={i} />}
         </div>
       ))}
 
-      <Arrow i={2}/>
-      <div className={styles.dest}>{JOURNEY_TOTAL.lead} <strong>{JOURNEY_TOTAL.value}</strong></div>
+      <Arrow i={2} />
+      <div className={styles.dest}>
+        {JOURNEY_TOTAL.lead} <strong>{JOURNEY_TOTAL.value}</strong>
+      </div>
     </div>
   );
 }

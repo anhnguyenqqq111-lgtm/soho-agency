@@ -11,13 +11,23 @@ import {sitePath} from '../paths';
 */
 const PANEL = new Set(['gray', 'soft', 'dark', 'fade', 'panel']);
 
-export default function Section({id, kicker, title, intro, aside, children, tone = 'white', align = 'left', spacing = 'md', decor, className = ''}){
+export default function Section({id, kicker, title, intro, aside, children, tone = 'white', align = 'left', spacing = 'md', decor, className = ''}) {
   const panel = PANEL.has(tone);
   return (
-    <section id={id} className={[styles.section, panel ? styles.panel : styles.plain, tone === 'soft' ? styles.mist : '', tone === 'dark' ? `${styles.ink} dark on-dark` : '', styles[`space_${spacing}`], className].join(' ')}>
+    <section
+      id={id}
+      className={[
+        styles.section,
+        panel ? styles.panel : styles.plain,
+        tone === 'soft' ? styles.mist : '',
+        tone === 'dark' ? `${styles.ink} dark on-dark` : '',
+        styles[`space_${spacing}`],
+        className
+      ].join(' ')}
+    >
       {decor && (
         <span className={styles.decor} aria-hidden="true">
-          <img src={sitePath(`/decor/${decor}.webp`)} alt="" width="400" height="400" loading="lazy"/>
+          <img src={sitePath(`/decor/${decor}.webp`)} alt="" width="400" height="400" loading="lazy" />
         </span>
       )}
       <div className={`container ${styles.inner}`}>

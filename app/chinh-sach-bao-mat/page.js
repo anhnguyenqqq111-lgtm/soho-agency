@@ -8,7 +8,7 @@ export const metadata = {
   description: 'Cách SOHO Agency thu thập, sử dụng và bảo vệ thông tin cá nhân bạn gửi qua website.'
 };
 
-const Legal = () => <Fill value={company.legalName} need="CẦN TÊN PHÁP NHÂN"/>;
+const Legal = () => <Fill value={company.legalName} need="CẦN TÊN PHÁP NHÂN" />;
 
 const sections = [
   {
@@ -16,7 +16,9 @@ const sections = [
     title: 'Phạm vi áp dụng',
     body: (
       <p>
-        Chính sách này áp dụng cho thông tin cá nhân mà <Legal/> (sau đây gọi là SOHO) thu thập qua website này, bao gồm form liên hệ và email gửi trực tiếp cho SOHO. Chính sách không áp dụng cho dữ liệu SOHO xử lý thay mặt khách hàng trong quá trình triển khai dịch vụ; phần đó được quy định trong hợp đồng dịch vụ.
+        Chính sách này áp dụng cho thông tin cá nhân mà <Legal /> (sau đây gọi là SOHO) thu thập qua website này, bao gồm form liên hệ và email gửi trực tiếp
+        cho SOHO. Chính sách không áp dụng cho dữ liệu SOHO xử lý thay mặt khách hàng trong quá trình triển khai dịch vụ; phần đó được quy định trong hợp đồng
+        dịch vụ.
       </p>
     )
   },
@@ -34,7 +36,8 @@ const sections = [
           <li>Mục tiêu bạn chọn và ghi chú bạn viết thêm</li>
         </ul>
         <p>
-          Website có thể sử dụng cookie và công cụ đo lường truy cập <Fill value={null} need="CẦN LIỆT KÊ CÔNG CỤ THỰC TẾ, ví dụ Google Analytics 4, Meta Pixel, hoặc ghi rõ là không dùng"/>.
+          Website có thể sử dụng cookie và công cụ đo lường truy cập{' '}
+          <Fill value={null} need="CẦN LIỆT KÊ CÔNG CỤ THỰC TẾ, ví dụ Google Analytics 4, Meta Pixel, hoặc ghi rõ là không dùng" />.
         </p>
       </>
     )
@@ -55,7 +58,8 @@ const sections = [
     title: 'Lưu trữ và thời gian lưu',
     body: (
       <p>
-        Thông tin được lưu tại <Fill value={null} need="CẦN NƠI LƯU TRỮ, ví dụ CRM, Google Workspace"/> và giữ trong <Fill value={null} need="CẦN THỜI HẠN LƯU"/>. Hết thời hạn này, hoặc khi bạn yêu cầu, SOHO xóa thông tin của bạn.
+        Thông tin được lưu tại <Fill value={null} need="CẦN NƠI LƯU TRỮ, ví dụ CRM, Google Workspace" /> và giữ trong{' '}
+        <Fill value={null} need="CẦN THỜI HẠN LƯU" />. Hết thời hạn này, hoặc khi bạn yêu cầu, SOHO xóa thông tin của bạn.
       </p>
     )
   },
@@ -64,7 +68,8 @@ const sections = [
     title: 'Chia sẻ thông tin',
     body: (
       <p>
-        SOHO không bán hoặc cho thuê thông tin cá nhân. Thông tin chỉ được chia sẻ với nhà cung cấp dịch vụ kỹ thuật cần thiết để vận hành website và lưu trữ dữ liệu <Fill value={null} need="CẦN LIỆT KÊ"/>, hoặc khi cơ quan nhà nước có thẩm quyền yêu cầu theo quy định pháp luật.
+        SOHO không bán hoặc cho thuê thông tin cá nhân. Thông tin chỉ được chia sẻ với nhà cung cấp dịch vụ kỹ thuật cần thiết để vận hành website và lưu trữ dữ
+        liệu <Fill value={null} need="CẦN LIỆT KÊ" />, hoặc khi cơ quan nhà nước có thẩm quyền yêu cầu theo quy định pháp luật.
       </p>
     )
   },
@@ -81,7 +86,7 @@ const sections = [
           <li>Rút lại sự đồng ý đã đưa ra khi gửi form.</li>
         </ul>
         <p>
-          Gửi yêu cầu tới <a href={`mailto:${company.email}`}>{company.email}</a>. SOHO phản hồi trong <Fill value={null} need="CẦN THỜI HẠN PHẢN HỒI"/>.
+          Gửi yêu cầu tới <a href={`mailto:${company.email}`}>{company.email}</a>. SOHO phản hồi trong <Fill value={null} need="CẦN THỜI HẠN PHẢN HỒI" />.
         </p>
       </>
     )
@@ -91,7 +96,7 @@ const sections = [
     title: 'Bảo mật thông tin',
     body: (
       <p>
-        <Fill value={null} need="CẦN MÔ TẢ BIỆN PHÁP THỰC TẾ, ví dụ phân quyền truy cập, mật khẩu hai lớp cho tài khoản lưu dữ liệu"/>
+        <Fill value={null} need="CẦN MÔ TẢ BIỆN PHÁP THỰC TẾ, ví dụ phân quyền truy cập, mật khẩu hai lớp cho tài khoản lưu dữ liệu" />
       </p>
     )
   },
@@ -100,16 +105,19 @@ const sections = [
     title: 'Liên hệ',
     body: (
       <p>
-        <Legal/><br/>
-        Địa chỉ: <Fill value={company.address} need="CẦN ĐỊA CHỈ"/><br/>
-        Mã số thuế: <Fill value={company.taxId} need="CẦN MÃ SỐ THUẾ"/><br/>
+        <Legal />
+        <br />
+        Địa chỉ: <Fill value={company.address} need="CẦN ĐỊA CHỈ" />
+        <br />
+        Mã số thuế: <Fill value={company.taxId} need="CẦN MÃ SỐ THUẾ" />
+        <br />
         Email: <a href={`mailto:${company.email}`}>{company.email}</a>
       </p>
     )
   }
 ];
 
-export default function PrivacyPage(){
+export default function PrivacyPage() {
   return (
     <LegalPage
       title="Chính sách bảo mật"

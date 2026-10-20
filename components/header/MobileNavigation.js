@@ -15,7 +15,7 @@ import {DESKTOP_QUERY, isCurrentPath} from './navUtils';
   - Esc hoặc nút Đóng: đóng và trả focus về nút Menu. Xoay màn hình hoặc kéo rộng qua breakpoint desktop thì tự đóng.
   - "Dịch vụ" là accordion; đang ở một trang dịch vụ thì mở sẵn.
 */
-export default function MobileNavigation({items, activeNav, services, cta}){
+export default function MobileNavigation({items, activeNav, services, cta}) {
   const [open, setOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(activeNav === 'services');
   const pathname = usePathname();
@@ -39,15 +39,27 @@ export default function MobileNavigation({items, activeNav, services, cta}){
 
     const focusables = () => [toggleRef.current, ...drawer.querySelectorAll('a[href], button:not([disabled])')].filter(el => el && el.offsetParent !== null);
     const onKey = e => {
-      if (e.key === 'Escape'){ e.preventDefault(); close(); return; }
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        close();
+        return;
+      }
       if (e.key !== 'Tab') return;
       const list = focusables();
-      const first = list[0], last = list[list.length - 1];
-      if (e.shiftKey && document.activeElement === first){ e.preventDefault(); last.focus(); }
-      else if (!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
+      const first = list[0],
+        last = list[list.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
     };
     const mq = window.matchMedia(DESKTOP_QUERY);
-    const onBreakpoint = () => { if (mq.matches) close(false); };
+    const onBreakpoint = () => {
+      if (mq.matches) close(false);
+    };
     document.addEventListener('keydown', onKey);
     mq.addEventListener('change', onBreakpoint);
     return () => {
@@ -70,14 +82,15 @@ export default function MobileNavigation({items, activeNav, services, cta}){
         aria-controls="mobile-navigation"
         onClick={() => (open ? close() : setOpen(true))}
       >
-        <Icon name={open ? 'x' : 'menu'} size={20}/>{open ? 'Đóng' : 'Menu'}
+        <Icon name={open ? 'x' : 'menu'} size={20} />
+        {open ? 'Đóng' : 'Menu'}
       </button>
 
       <nav id="mobile-navigation" ref={drawerRef} className={styles.drawer} aria-label="Điều hướng chính" hidden={!open}>
         <ul className={styles.list}>
           {items.map(item => {
             const active = item.activeFor ? item.activeFor.includes(activeNav) : activeNav === item.key;
-            if (item.megaMenu){
+            if (item.megaMenu) {
               return (
                 <li key={item.key}>
                   <MobileServiceAccordion
@@ -87,8 +100,14 @@ export default function MobileNavigation({items, activeNav, services, cta}){
                     onToggle={() => setServicesOpen(o => !o)}
                     pathname={pathname}
                     active={active}
-                    onSelectService={(service, group) => { track('mega_menu_service_click', {service: service.slug, service_group: group.title}); onNavigate(); }}
-                    onSelectOverview={() => { track('mega_menu_cta_click', {cta: services.overview.label}); onNavigate(); }}
+                    onSelectService={(service, group) => {
+                      track('mega_menu_service_click', {service: service.slug, service_group: group.title});
+                      onNavigate();
+                    }}
+                    onSelectOverview={() => {
+                      track('mega_menu_cta_click', {cta: services.overview.label});
+                      onNavigate();
+                    }}
                   />
                 </li>
               );
@@ -107,7 +126,14 @@ export default function MobileNavigation({items, activeNav, services, cta}){
             );
           })}
         </ul>
-        <MegaMenuCTA cta={services.cta} stacked onSelect={() => { track('mega_menu_cta_click', {cta: cta.label}); onNavigate(); }}/>
+        <MegaMenuCTA
+          cta={services.cta}
+          stacked
+          onSelect={() => {
+            track('mega_menu_cta_click', {cta: cta.label});
+            onNavigate();
+          }}
+        />
       </nav>
     </div>
   );

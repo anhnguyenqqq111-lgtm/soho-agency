@@ -8,12 +8,14 @@ const ITEMS = [
   {title: 'Vòng 2 tuần', text: 'Hai tuần nhìn lại số liệu một lần, rồi quyết định giữ, sửa hay dừng.'}
 ];
 
-export default function Differentiators(){
+export default function Differentiators() {
   return (
     <ol className={styles.list}>
       {ITEMS.map((it, i) => (
         <li key={it.title} data-reveal="" style={{'--reveal-delay': `${i * 90}ms`}}>
-          <span className={styles.num} aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+          <span className={styles.num} aria-hidden="true">
+            {String(i + 1).padStart(2, '0')}
+          </span>
           <h3 className={styles.title}>{it.title}</h3>
           <p className={styles.text}>{it.text}</p>
         </li>

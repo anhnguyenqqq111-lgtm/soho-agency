@@ -1,6 +1,7 @@
 export const googleAdsShoppingArticle = {
   metaTitle: 'Dịch Vụ Google Ads & Shopping 2026: Tối Ưu ROAS Thật & Kiểm Soát Chi Phí Lead B2B/Ecom | SOHO',
-  metaDesc: 'Chiến lược Google Ads, Google Shopping & Performance Max chuyên sâu 2026. Tối ưu chi phí CPA, loại bỏ truy vấn rác và kết nối dữ liệu quảng cáo trực tiếp với doanh thu thực tế.',
+  metaDesc:
+    'Chiến lược Google Ads, Google Shopping & Performance Max chuyên sâu 2026. Tối ưu chi phí CPA, loại bỏ truy vấn rác và kết nối dữ liệu quảng cáo trực tiếp với doanh thu thực tế.',
   readingTime: '17 phút đọc',
   updatedDate: '04/10/2026',
   author: {
@@ -9,14 +10,14 @@ export const googleAdsShoppingArticle = {
     avatar: '/assets/brand/soho-avatar.png'
   },
   toc: [
-    { id: 'tham-kich-dot-tien-google-ads', title: '1. Thực trạng: Click rẻ, báo cáo đẹp nhưng toàn "Lead rác" và đơn ảo' },
-    { id: 'chi-phi-co-hoi-ads-leo-thang', title: '2. Chi phí cơ hội: Khi giá thầu CPC tăng vọt và ăn mòn lợi nhuận ròng' },
-    { id: 'ban-chat-google-ads-soho', title: '3. Bản chất Google Ads định hướng doanh thu & Smart Bidding 2026' },
-    { id: '4-tru-cot-performance-ads', title: '4. 4 Trụ cột tối ưu hóa Google Ads & Shopping của SOHO' },
-    { id: 'quy-trinh-sprint-google-ads', title: '5. Quy trình Sprint 5 bước tối ưu tài khoản Google Ads thực chiến' },
-    { id: 'bang-so-sanh-google-ads', title: '6. So sánh: Agency chạy Ads thông thường vs SOHO Performance' },
-    { id: 'checklist-15-tieu-chi-google-ads', title: '7. Bộ Checklist 15 tiêu chí kiểm toán tài khoản Google Ads' },
-    { id: 'faq-google-ads-shopping', title: '8. Câu hỏi thường gặp (FAQ chuẩn Schema)' }
+    {id: 'tham-kich-dot-tien-google-ads', title: '1. Thực trạng: Click rẻ, báo cáo đẹp nhưng toàn "Lead rác" và đơn ảo'},
+    {id: 'chi-phi-co-hoi-ads-leo-thang', title: '2. Chi phí cơ hội: Khi giá thầu CPC tăng vọt và ăn mòn lợi nhuận ròng'},
+    {id: 'ban-chat-google-ads-soho', title: '3. Bản chất Google Ads định hướng doanh thu & Smart Bidding 2026'},
+    {id: '4-tru-cot-performance-ads', title: '4. 4 Trụ cột tối ưu hóa Google Ads & Shopping của SOHO'},
+    {id: 'quy-trinh-sprint-google-ads', title: '5. Quy trình Sprint 5 bước tối ưu tài khoản Google Ads thực chiến'},
+    {id: 'bang-so-sanh-google-ads', title: '6. So sánh: Agency chạy Ads thông thường vs SOHO Performance'},
+    {id: 'checklist-15-tieu-chi-google-ads', title: '7. Bộ Checklist 15 tiêu chí kiểm toán tài khoản Google Ads'},
+    {id: 'faq-google-ads-shopping', title: '8. Câu hỏi thường gặp (FAQ chuẩn Schema)'}
   ],
   sections: [
     {

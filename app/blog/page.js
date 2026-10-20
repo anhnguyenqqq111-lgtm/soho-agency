@@ -19,39 +19,92 @@ export const metadata = {
   Bố cục: Hero (H1 duy nhất) → "Mới nhất": 3 thẻ có thumbnail → "Theo chủ đề": cột trái là mục lục danh mục
   bám theo khi cuộn, cột phải là các nhóm, mỗi nhóm một danh sách dòng gọn (BlogRow) thay vì lưới thẻ thưa.
 */
-export default function BlogPage(){
+export default function BlogPage() {
   const latest = getLatestArticles(3);
   const groups = getArticlesByCategory();
   const total = groups.reduce((n, g) => n + g.items.length, 0);
   return (
     <>
-      <Header activeNav="blog"/>
+      <Header activeNav="blog" />
       <main id="main">
-        <Hero tone="blog" crumbs={[{label: 'Tin tức'}]} title={<>Blog SOHO Agency: <span className="hl">ghi chép từ việc thật</span></>} tagline="Hướng dẫn từng bước về SEO, quảng cáo và đo lường, viết để đội marketing của bạn làm theo được." visual={<BlogVisual/>}/>
-        <Section id="noi-dung" tone="white" title={<>Bài viết <span className="hl">mới nhất</span></>} spacing="sm">
-          <div className={styles.latest}>{latest.map((p, i) => <BlogCard key={p.slug} post={p} delay={i * 80}/>)}</div>
+        <Hero
+          tone="blog"
+          crumbs={[{label: 'Tin tức'}]}
+          title={
+            <>
+              Blog SOHO Agency: <span className="hl">ghi chép từ việc thật</span>
+            </>
+          }
+          tagline="Hướng dẫn từng bước về SEO, quảng cáo và đo lường, viết để đội marketing của bạn làm theo được."
+          visual={<BlogVisual />}
+        />
+        <Section
+          id="noi-dung"
+          tone="white"
+          title={
+            <>
+              Bài viết <span className="hl">mới nhất</span>
+            </>
+          }
+          spacing="sm"
+        >
+          <div className={styles.latest}>
+            {latest.map((p, i) => (
+              <BlogCard key={p.slug} post={p} delay={i * 80} />
+            ))}
+          </div>
         </Section>
-        <Section id="chu-de" tone="fade" title={<>Theo <span className="hl">chủ đề</span></>} intro={<p>{total} bài, xếp theo danh mục. Nhóm Framework là bài hướng dẫn từng bước, làm theo được ngay.</p>}>
+        <Section
+          id="chu-de"
+          tone="fade"
+          title={
+            <>
+              Theo <span className="hl">chủ đề</span>
+            </>
+          }
+          intro={<p>{total} bài, xếp theo danh mục. Nhóm Framework là bài hướng dẫn từng bước, làm theo được ngay.</p>}
+        >
           <div className={styles.layout}>
             <nav aria-label="Danh mục" className={styles.toc}>
               <p className={styles.tocTitle}>Danh mục</p>
               <ul>
-                {groups.map(g => <li key={g.id}><a href={`#${g.id}`}>{g.name}<span>{g.items.length}</span></a></li>)}
+                {groups.map(g => (
+                  <li key={g.id}>
+                    <a href={`#${g.id}`}>
+                      {g.name}
+                      <span>{g.items.length}</span>
+                    </a>
+                  </li>
+                ))}
               </ul>
             </nav>
             <div className={styles.groups}>
               {groups.map(g => (
                 <section key={g.id} id={g.id} className={styles.group} aria-labelledby={`${g.id}-title`}>
-                  <h3 id={`${g.id}-title`} className={styles.groupTitle}>{g.name} <span>{g.items.length} bài</span></h3>
-                  <div className={styles.list}>{g.items.map((p, i) => <BlogRow key={p.slug} post={p} delay={i * 60} headingLevel="h4" showCategory={false}/>)}</div>
+                  <h3 id={`${g.id}-title`} className={styles.groupTitle}>
+                    {g.name} <span>{g.items.length} bài</span>
+                  </h3>
+                  <div className={styles.list}>
+                    {g.items.map((p, i) => (
+                      <BlogRow key={p.slug} post={p} delay={i * 60} headingLevel="h4" showCategory={false} />
+                    ))}
+                  </div>
                 </section>
               ))}
             </div>
           </div>
         </Section>
-        <CtaBand withForm={false} title={<>Muốn áp dụng vào <span className="hl">doanh nghiệp của bạn?</span></>} text="Gửi website và mục tiêu. SOHO gửi lại 3 việc nên làm trước."/>
+        <CtaBand
+          withForm={false}
+          title={
+            <>
+              Muốn áp dụng vào <span className="hl">doanh nghiệp của bạn?</span>
+            </>
+          }
+          text="Gửi website và mục tiêu. SOHO gửi lại 3 việc nên làm trước."
+        />
       </main>
-      <Footer/>
+      <Footer />
     </>
   );
 }

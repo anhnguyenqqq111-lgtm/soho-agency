@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 220" role="img" aria-labelledby="t d">
-  <title id="t">SOHO concept C — Dynamic S</title><desc id="d">Biểu tượng S tạo bởi hai dải chuyển động liên kết.</desc>
-  <rect width="320" height="220" rx="28" fill="#141218"/>
-  <path d="M246 42h-91c-45 0-75 24-75 60 0 31 23 50 60 53l38 3 18-38-48-4c-14-1-21-7-21-17 0-11 9-18 25-18h75l19-39Z" fill="#F26522"/>
-  <path d="M74 178h91c45 0 75-24 75-60 0-31-23-50-60-53l-38-3-18 38 48 4c14 1 21 7 21 17 0 11-9 18-25 18H93l-19 39Z" fill="#EC4899"/>
-  <path d="m142 62-18 38 48 4 18-38-48-4Z" fill="#6D28D9"/>
-</svg>
