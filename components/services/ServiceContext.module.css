@@ -1,0 +1,230 @@
+/* Khối điểm chạm trên trang dịch vụ: chặng + vai trò, đường đi, 3 thông tin, 3 liên kết có lý do */
+.context {
+  display: grid;
+  gap: 24px;
+}
+
+.stages {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 8px;
+}
+.stage {
+  display: grid;
+  gap: 6px;
+  padding: 12px;
+  border-radius: var(--r-card);
+  border: 1px solid var(--line);
+  color: var(--ink-3);
+}
+.num {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 800;
+}
+.stageName {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+.roleTag {
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.stage[data-role='primary'] {
+  background: var(--brand);
+  border-color: var(--brand);
+  color: var(--ink);
+}
+.stage[data-role='support'] {
+  border-color: var(--ink);
+  color: var(--ink);
+}
+
+/* Đường đi: các bước nối bằng mũi tên chữ */
+.chain {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 6px;
+}
+.chain li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--ink);
+}
+.chain li + li::before {
+  content: '→';
+  color: var(--brand-ink);
+  font-weight: 700;
+}
+
+.facts {
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.facts > div {
+  padding: 16px 20px 16px 0;
+}
+.facts > div + div {
+  padding-left: 20px;
+  border-left: 1px solid var(--line);
+}
+.facts dt {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+.facts dd {
+  margin: 6px 0 0;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--ink);
+}
+
+.links {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 3fr) minmax(0, 4fr);
+  gap: 16px;
+}
+.linkHead {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+.next {
+  display: grid;
+  gap: 4px;
+  padding: 16px;
+  border-radius: var(--r-card);
+  border: 1px solid var(--ink);
+  color: var(--ink);
+  text-decoration: none;
+}
+.next:hover {
+  color: var(--ink);
+  background: var(--canvas);
+}
+.next strong {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-display);
+  font-size: 18px;
+}
+.next span:last-child {
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--ink-2);
+}
+.pair,
+.notYet {
+  display: grid;
+  gap: 6px;
+  align-content: start;
+  padding: 16px 0;
+}
+.pair p,
+.notYet p {
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: var(--ink-2);
+}
+.pair a,
+.notYet a {
+  font-weight: 600;
+  color: var(--brand-ink);
+}
+
+/* Biến thể nền tối (trang Google Ads) */
+.dark .stage {
+  border-color: rgba(255, 255, 255, 0.18);
+  color: var(--on-dark-3);
+}
+.dark .stage[data-role='primary'] {
+  color: var(--ink);
+}
+.dark .stage[data-role='support'] {
+  border-color: var(--white);
+  color: var(--white);
+}
+.dark .chain li,
+.dark .facts dd {
+  color: var(--white);
+}
+.dark .chain li + li::before {
+  color: var(--warm-2);
+}
+.dark .facts,
+.dark .facts > div + div {
+  border-color: rgba(255, 255, 255, 0.18);
+}
+.dark .facts dt,
+.dark .linkHead {
+  color: var(--on-dark-3);
+}
+.dark .next {
+  border-color: var(--white);
+  color: var(--white);
+}
+.dark .next:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--white);
+}
+.dark .next span:last-child,
+.dark .pair p,
+.dark .notYet p {
+  color: var(--on-dark-2);
+}
+.dark .pair a,
+.dark .notYet a {
+  color: var(--warm-2);
+}
+.dark :focus-visible {
+  outline-color: var(--white);
+}
+
+@media (max-width: 900px) {
+  .stages {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .facts,
+  .links {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .facts > div,
+  .facts > div + div {
+    padding: 14px 0;
+    border-left: 0;
+  }
+  .facts > div + div {
+    border-top: 1px solid var(--line);
+  }
+  .dark .facts > div + div {
+    border-top-color: rgba(255, 255, 255, 0.18);
+  }
+}
+@media (max-width: 480px) {
+  .stages {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

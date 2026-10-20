@@ -4,33 +4,6 @@
 */
 import styles from './Hero.module.css';
 
-// Dịch vụ: 9 ô dịch vụ, sáng lên luân phiên
-export function ServicesVisual({labels = []}) {
-  // Dải rộng 4 cột × 3 hàng cho 12 dịch vụ, ô sáng lên luân phiên
-  const cols = 4,
-    w = 280,
-    h = 104,
-    gx = 24,
-    gy = 20;
-  return (
-    <svg viewBox="0 0 1192 372" className={styles.svg} aria-hidden="true">
-      {labels.slice(0, 12).map((label, i) => {
-        const x = 8 + (i % cols) * (w + gx),
-          y = 8 + Math.floor(i / cols) * (h + gy);
-        return (
-          <g key={label} className={styles.tile} style={{'--i': i}}>
-            <rect x={x} y={y} width={w} height={h} rx="16" className={styles.tileBg} />
-            <circle cx={x + 26} cy={y + 30} r="8" className={styles.tileDot} />
-            <text x={x + 22} y={y + 78} className={styles.tileText}>
-              {label}
-            </text>
-          </g>
-        );
-      })}
-    </svg>
-  );
-}
-
 // Giải pháp: 4 lớp chồng lên nhau, nổi nhẹ
 export function SolutionsVisual() {
   const labels = ['Kênh', 'Thông điệp', 'Dữ liệu', 'Mô hình kinh doanh'];

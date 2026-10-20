@@ -1,0 +1,187 @@
+/* Bản đồ hành trình: 5 điểm dừng nối nhau, bảng chi tiết bên dưới */
+.canvas {
+  position: relative;
+  display: grid;
+  gap: 20px;
+}
+.anchor {
+  position: absolute;
+  top: 0;
+}
+.rail {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) minmax(0, 1.1fr);
+  gap: 8px;
+}
+.rail::before {
+  content: '';
+  position: absolute;
+  left: 32px;
+  right: 22%;
+  top: 31px;
+  height: 2px;
+  background: var(--gradient-signature);
+  opacity: 0.6;
+}
+.stop {
+  position: relative;
+  display: grid;
+  justify-items: start;
+  gap: 10px;
+  padding: 12px;
+  border: 1px solid transparent;
+  border-radius: var(--r-card);
+  background: transparent;
+  color: var(--ink);
+  text-align: left;
+  cursor: pointer;
+  transition:
+    background-color var(--t-fast),
+    border-color var(--t-fast);
+}
+.stop:hover {
+  border-color: var(--line);
+  background: var(--white);
+}
+.num {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--gray-2);
+  background: var(--white);
+  color: var(--ink-3);
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 800;
+}
+.stop[data-base] .num {
+  border-style: dashed;
+}
+.stopName {
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+.stop[aria-pressed='true'] {
+  background: var(--white);
+  border-color: var(--ink);
+}
+.stop[aria-pressed='true'] .num {
+  background: var(--brand);
+  border-color: var(--brand);
+  color: var(--ink);
+  box-shadow: 0 0 0 6px rgba(242, 101, 34, 0.16);
+}
+
+.panel {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  gap: 24px;
+  padding: clamp(20px, 2.6vw, 32px);
+  border-radius: var(--r-xl);
+  background: var(--c-ink);
+  color: var(--white);
+}
+.facts {
+  margin: 0;
+  display: grid;
+  gap: 14px;
+}
+.facts dt {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--on-dark-3);
+}
+.facts dd {
+  margin: 4px 0 0;
+  font-size: 16px;
+  line-height: 1.45;
+  color: var(--white);
+}
+.roles {
+  display: grid;
+  gap: 18px;
+  align-content: start;
+}
+.roleHead {
+  margin-bottom: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--warm-2);
+}
+.primary,
+.supporting {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.primary a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 16px;
+  border-radius: var(--r-md);
+  background: var(--brand);
+  color: var(--ink);
+  font-weight: 700;
+  text-decoration: none;
+}
+.primary a:hover {
+  color: var(--ink);
+  background: var(--brand-hover);
+}
+.supporting a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 0 14px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: var(--r-md);
+  color: var(--white);
+  font-weight: 600;
+  text-decoration: none;
+}
+.supporting a:hover {
+  color: var(--white);
+  border-color: var(--white);
+}
+.panel :focus-visible {
+  outline-color: var(--white);
+}
+
+@media (max-width: 1000px) {
+  .rail {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .rail::before {
+    display: none;
+  }
+  .panel {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+@media (max-width: 560px) {
+  .rail {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .stopName {
+    font-size: 15px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .stop {
+    transition: none;
+  }
+}

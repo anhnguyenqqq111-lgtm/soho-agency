@@ -1,0 +1,369 @@
+/* ---------- Hero sáng: chữ trái, thang truy vấn phải ---------- */
+.hero {
+  background:
+    radial-gradient(50% 70% at 100% 10%, rgba(109, 40, 217, 0.08), transparent 60%),
+    radial-gradient(40% 60% at 0% 100%, rgba(242, 101, 34, 0.08), transparent 60%), var(--white);
+  border-bottom: 1px solid var(--line);
+}
+.heroInner {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  gap: 40px clamp(32px, 5vw, 72px);
+  align-items: center;
+  padding-block: clamp(32px, 5vw, 80px);
+}
+.heroCopy {
+  display: grid;
+  gap: 18px;
+  justify-items: start;
+}
+.eyebrow {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--brand-ink);
+}
+.title {
+  font-size: clamp(32px, 4vw, 56px);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  font-weight: 800;
+  max-width: 18ch;
+}
+.lead {
+  max-width: 56ch;
+  font-size: var(--fs-lead);
+  line-height: 1.6;
+  color: var(--ink);
+}
+.promise {
+  max-width: 60ch;
+  font-size: 15.5px;
+  line-height: 1.6;
+  color: var(--ink-2);
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 4px;
+}
+.primary,
+.secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 48px;
+  padding: 0 20px;
+  border-radius: var(--r-md);
+  font-weight: 700;
+  text-decoration: none;
+}
+.primary {
+  background: var(--brand);
+  color: var(--ink);
+}
+.primary:hover {
+  background: var(--brand-hover);
+  color: var(--ink);
+}
+.secondary {
+  border: 1px solid var(--color-border-strong);
+  color: var(--ink);
+}
+.secondary:hover {
+  border-color: var(--ink);
+  color: var(--ink);
+}
+
+/* Thang truy vấn: 4 ô tìm kiếm lệch dần sang phải như bậc thang */
+.ladder {
+  margin: 0;
+  display: grid;
+  gap: 14px;
+}
+.ladder ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+.ladder li {
+  display: grid;
+  gap: 6px;
+  margin-left: calc(var(--i) * 7%);
+  padding: 12px 16px;
+  border-radius: var(--r-card);
+  background: var(--white);
+  border: 1px solid var(--line);
+  box-shadow: 0 12px 30px rgba(20, 18, 24, 0.06);
+}
+.ladder li:last-child {
+  border-color: var(--brand);
+  box-shadow: 0 0 0 2px var(--brand);
+}
+.ladderIntent {
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--brand-ink);
+}
+.ladderQuery {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 1.35;
+}
+.ladderQuery::before {
+  content: '';
+  flex: none;
+  width: 12px;
+  height: 12px;
+  border: 2px solid var(--ink-3);
+  border-radius: 50%;
+}
+.ladder figcaption {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--ink-3);
+}
+
+/* ---------- Ba lớp: mặt cắt, lớp dưới đậm nhất ---------- */
+.layers {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+.layer {
+  display: grid;
+  grid-template-columns: minmax(0, 4fr) minmax(0, 5fr) minmax(0, 3fr);
+  gap: 16px 28px;
+  align-items: start;
+  padding: 22px 24px;
+  border-radius: var(--r-card);
+  border: 1px solid var(--line);
+  background: var(--white);
+}
+.layer[data-layer='noi-dung'] {
+  margin-inline: clamp(0px, 2vw, 24px);
+  background: #f3f1f8;
+}
+.layer[data-layer='ky-thuat'] {
+  margin-inline: clamp(0px, 4vw, 48px);
+  background: var(--c-ink);
+  border-color: var(--c-ink);
+  color: var(--white);
+}
+.layerHead {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr);
+  column-gap: 12px;
+  row-gap: 4px;
+}
+.layerNum {
+  grid-row: span 2;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--brand);
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-weight: 800;
+}
+.layerName {
+  font-size: 22px;
+  line-height: 1.2;
+}
+.layerQ {
+  font-size: 14.5px;
+  line-height: 1.45;
+  color: var(--ink-2);
+}
+.layerChecks {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+  font-size: 15px;
+}
+.layerChecks li {
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+}
+.layerChecks svg {
+  flex: none;
+  color: var(--brand-ink);
+  transform: translateY(2px);
+}
+.layerSign {
+  display: grid;
+  gap: 4px;
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--ink-2);
+}
+.layerSign span {
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+.layer[data-layer='ky-thuat'] .layerQ,
+.layer[data-layer='ky-thuat'] .layerSign {
+  color: var(--on-dark-2);
+}
+.layer[data-layer='ky-thuat'] .layerSign span {
+  color: var(--on-dark-3);
+}
+.layer[data-layer='ky-thuat'] .layerChecks svg {
+  color: var(--warm-2);
+}
+
+.measure {
+  display: grid;
+  gap: 10px;
+  margin-top: 24px;
+  padding: 18px 22px;
+  border-radius: var(--r-card);
+  border: 2px solid var(--ink);
+  background: var(--white);
+}
+.measureHead {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+}
+.measure ul {
+  margin: 0;
+  padding-left: 1.2em;
+  display: grid;
+  gap: 4px;
+  color: var(--ink-2);
+}
+
+/* ---------- Bàn giao + dự án ---------- */
+.handover {
+  display: grid;
+  grid-template-columns: minmax(0, 6fr) minmax(0, 5fr);
+  gap: 24px;
+  align-items: start;
+}
+.files {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+.files li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: var(--r-md);
+  background: var(--white);
+  border: 1px solid var(--line);
+  font-weight: 600;
+  font-size: 15px;
+}
+.files svg {
+  flex: none;
+  color: var(--brand-ink);
+}
+.case {
+  display: grid;
+  overflow: hidden;
+  border-radius: var(--r-xl);
+  background: var(--white);
+  border: 1px solid var(--line);
+  color: var(--ink);
+  text-decoration: none;
+}
+.case:hover {
+  color: var(--ink);
+  border-color: var(--ink);
+}
+.case img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 7;
+  object-fit: cover;
+}
+.caseBody {
+  display: grid;
+  gap: 8px;
+  padding: 18px 20px 20px;
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: var(--ink-2);
+}
+.caseBody strong {
+  font-family: var(--font-display);
+  font-size: 20px;
+  color: var(--ink);
+}
+.caseTag {
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--brand-ink);
+}
+.caseResult {
+  font-weight: 600;
+  color: var(--ink);
+}
+.caseMore {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 700;
+  color: var(--brand-ink);
+}
+.fit {
+  margin-top: 20px;
+  font-size: 14.5px;
+  color: var(--ink-2);
+}
+
+@media (max-width: 1000px) {
+  .heroInner,
+  .handover {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .layer {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+  .layerHead {
+    grid-column: 1 / -1;
+  }
+}
+@media (max-width: 640px) {
+  .layer {
+    grid-template-columns: minmax(0, 1fr);
+    padding: 18px;
+  }
+  .layer[data-layer='noi-dung'],
+  .layer[data-layer='ky-thuat'] {
+    margin-inline: 0;
+  }
+  .ladder li {
+    margin-left: calc(var(--i) * 4%);
+  }
+}
+.layer[data-layer='ky-thuat'] .layerName {
+  color: var(--white);
+}
