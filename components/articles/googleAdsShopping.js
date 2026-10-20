@@ -6,7 +6,7 @@ export const googleAdsShoppingArticle = {
   author: {
     name: 'Nguyễn Thế Tuấn Anh',
     role: 'Head of Growth Strategy @ SOHO Agency',
-    avatar: '/brand/soho-avatar.png'
+    avatar: '/assets/brand/soho-avatar.png'
   },
   toc: [
     { id: 'tham-kich-dot-tien-google-ads', title: '1. Thực trạng: Click rẻ, báo cáo đẹp nhưng toàn "Lead rác" và đơn ảo' },

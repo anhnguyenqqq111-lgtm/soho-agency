@@ -10,6 +10,7 @@
     "dev": "next dev",
     "build": "next build",
     "build:pages": "GITHUB_PAGES=true next build",
+    "brand:export": "node scripts/export-brand-assets.mjs",
     "start": "next start",
     "serve": "npx serve out"
   },

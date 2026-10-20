@@ -17,7 +17,7 @@ export default function SiteHeader({activeNav}){
     <header className={styles.header} data-site-header="">
       <div className={`container ${styles.bar}`}>
         <a className={styles.logo} href={sitePath('/')} aria-label="SOHO Agency, về trang chủ">
-          <img src={sitePath('/brand/soho-logo.webp')} alt="SOHO Agency" width="305" height="120" fetchPriority="high"/>
+          <img src={sitePath('/assets/brand/soho-logo-horizontal.svg')} alt="SOHO Agency" width="400" height="80" fetchPriority="high"/>
         </a>
         <DesktopNavigation items={mainNav} activeNav={activeNav} services={services} cta={CTA}/>
         <MobileNavigation items={mainNav} activeNav={activeNav} services={services} cta={CTA}/>

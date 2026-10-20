@@ -6,7 +6,7 @@ export const metaTiktokAdsArticle = {
   author: {
     name: 'Nguyễn Thế Tuấn Anh',
     role: 'Head of Growth Strategy @ SOHO Agency',
-    avatar: '/brand/soho-avatar.png'
+    avatar: '/assets/brand/soho-avatar.png'
   },
   toc: [
     { id: 'tham-kich-ad-fatigue-social', title: '1. Thực trạng: Vòng xoáy "Ad Fatigue", giá lead tăng vọt sau 3 ngày chạy' },

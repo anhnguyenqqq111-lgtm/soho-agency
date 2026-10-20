@@ -4,7 +4,7 @@
 .footer a:hover{color:var(--warm-2)}
 .grid{display:grid;grid-template-columns:1.6fr 1fr .8fr 1fr;gap:40px var(--gap);padding-bottom:40px}
 .brand{display:grid;gap:16px;align-content:start}
-.logo img{height:56px;width:auto}
+.logo img{display:block;height:44px;width:auto}
 .company{font-family:var(--font-text);font-size:15px;font-weight:600;margin-top:4px;color:#FFFFFF}
 .info{list-style:none;margin:0;padding:0;display:grid;gap:10px;font-size:14px;color:#B8B5C2}
 .info li{display:grid;grid-template-columns:22px minmax(0,1fr);gap:10px;align-items:start}

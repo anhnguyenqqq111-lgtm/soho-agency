@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 360" role="img" aria-labelledby="t d">
+  <title id="t">SOHO logo construction</title><desc id="d">Lưới xây dựng hình học của biểu tượng S.</desc>
+  <rect width="520" height="360" fill="#FAF9FD"/>
+  <g stroke="#6D28D9" stroke-opacity=".18" stroke-width="1"> <path d="M20 40h480M20 80h480M20 120h480M20 160h480M20 200h480M20 240h480M20 280h480M20 320h480"/><path d="M60 20v320M100 20v320M140 20v320M180 20v320M220 20v320M260 20v320M300 20v320M340 20v320M380 20v320M420 20v320M460 20v320"/></g>
+  <g transform="translate(90 10) scale(5)" fill="#F26522"><path d="M58 7H29C15 7 7 14 7 25c0 10 8 16 21 17l12 1c5 0 7 2 7 5s-2 5-8 5H10v10h30c14 0 22-7 22-18 0-10-8-16-21-17l-12-1c-5 0-7-2-7-5s2-5 8-5h28V7Z"/></g>
+  <g fill="#141218" font-family="Arial, sans-serif" font-size="13"><text x="24" y="28">8 × 8 module grid</text><text x="386" y="344">Optical overshoot: 1u</text></g>
+</svg>

@@ -37,6 +37,14 @@ export const metadata = {
     images: [{url: '/og/soho-og-v2.png', width: 1200, height: 630, alt: 'SOHO Agency: từ tìm kiếm đến doanh thu'}]
   },
   twitter: {card: 'summary_large_image'},
+  icons: {
+    icon: [
+      {url: '/assets/brand/favicon.svg', type: 'image/svg+xml'},
+      {url: '/assets/brand/favicon-32x32.png', sizes: '32x32', type: 'image/png'},
+      {url: '/assets/brand/favicon-16x16.png', sizes: '16x16', type: 'image/png'}
+    ],
+    apple: [{url: '/assets/brand/apple-touch-icon.png', sizes: '180x180', type: 'image/png'}]
+  },
   robots: {index: true, follow: true},
   formatDetection: {telephone: false}
 };

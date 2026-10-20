@@ -6,7 +6,7 @@ export const croLandingPageArticle = {
   author: {
     name: 'Nguyễn Thế Tuấn Anh',
     role: 'Head of Growth Strategy @ SOHO Agency',
-    avatar: '/brand/soho-avatar.png'
+    avatar: '/assets/brand/soho-avatar.png'
   },
   toc: [
     { id: 'tham-kich-cai-xo-thung-traffic', title: '1. Thực trạng: Bi kịch "Cái xô thủng", 98% người dùng rời đi không để lại dấu vết' },
