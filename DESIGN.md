@@ -83,7 +83,7 @@ Lý do có tờ giấy này: AI không có gu, nó lấp chỗ trống bằng m�
 | Tiêu đề H1, H2, H3, tên thẻ, con số lớn | **Bricolage Grotesque** (Google Fonts, có bộ tiếng Việt) | H1/H2 đậm 700, H3 và tên thẻ 600, con số kết quả 800. Khoảng chữ −2,2% đến −3,5% ở cỡ lớn. Giãn dòng tối thiểu 1.06 (H1 hero desktop), 1.1 cho H1 còn lại: dấu chồng như Ặ, Ữ cần chỗ |
 | Nội dung, giao diện, nút, H4 | **Plus Jakarta Sans** (Google Fonts, có bộ tiếng Việt) | 400 thân bài, 500 menu, 600 nhãn, 700 nút |
 
-- Nạp bản variable (chỉ trục độ đậm), mỗi phông 2 file cho trang tiếng Việt (latin + vietnamese). Chỉ preload Bricolage vì H1 là phần tử LCP.
+- Nạp bản variable (chỉ trục độ đậm), mỗi phông 2 file cho trang tiếng Việt (latin + vietnamese). Preload cả hai vì phần tử LCP của trang chủ là H1 hoặc đoạn mô tả hero.
 - Không có kiểu nghiêng: chữ nhấn `.hl` dùng màu gradient, không nghiêng.
 - Bài thử: gõ **Ế Ứ Ỡ Ặ Ằ** ở cỡ lớn, đặt phông dự phòng là Comic Sans; chữ nào lệch nét là phông bị vá, loại. Bricolage (600, 700, 800) và Jakarta (400, 500, 700) đều qua, ảnh thử trong báo cáo `docs/REDESIGN-REPORT.md`.
 - Đã loại: Sora, Figtree, DM Sans, Outfit, Instrument Sans, Urbanist, Albert Sans, Red Hat Display (không có bộ tiếng Việt). Bản 10 dùng Fraunces + Be Vietnam Pro.
@@ -155,7 +155,7 @@ Ba lớp token: bảng màu gốc (`--c-*`), token theo vai trò (`--color-*`, `
 - Nút, ô nhập: bo 12px, cao tối thiểu 44px (vùng bấm theo luật giao diện của Apple). Thẻ nội dung: bo 16px, viền 1px, **không đổ bóng**. Nhãn nhỏ: bo 6px.
 - Section xen kẽ (`components/ui/Section.js`, thuộc tính `tone`): nền trắng toàn chiều ngang; khối Soft Canvas viền mảnh (`gray`) hoặc gradient nhạt (`soft`) bo góc lớn thụt vào hai bên; khối Dark Ink (`dark`) cho dự án và quy trình. Không đặt hai khối cùng loại liền nhau.
 - **Không dùng nhãn nhỏ phía trên tiêu đề** (kicker, eyebrow): đó là dấu hiệu khuôn AI.
-- **Hero trang chủ** (`components/hero/HomeHero.js`): kiểu editorial. Dòng Google Partner, rồi H1 rất lớn (tới 88px) trải hết chiều ngang; hàng dưới: mô tả + nút + số điện thoại (trái, có đường kẻ đậm phía trên) và mảng gradient Signature với thẻ biểu đồ "đo bằng lượt truy cập hay doanh thu" (phải).
+- **Hero trang chủ** (`components/hero/HomeHero.js`, Sprint 1): vừa một màn hình desktop. H1 gồm dòng nhỏ tên + nghề ("SOHO Agency · SEO, quảng cáo và website") và thông điệp lớn hai dòng lệch nhau "Từ tìm kiếm / đến doanh thu." (tới 100px). Bên phải: hành trình 3 chặng (dữ liệu `components/data/journey.js`, dùng chung với ma trận hành trình) dạng thẻ kính xếp bậc thang trên trường gradient Signature mờ tràn từ mép phải. Đáy hero: Google Partner và tên các dự án đã công bố. Không dùng JavaScript. Công tắc "hai cách đo" chuyển xuống khối "Khác ở chỗ: đo bằng doanh thu".
 - **Header và Mega Menu** (`components/header/`): cao 76px; menu Trang chủ, Giới thiệu, Dịch vụ, Dự án, Tin tức, Liên hệ + nút Nhận tư vấn. "Dịch vụ" mở panel 3 nhóm, 6 dịch vụ và khối CTA tối; bấm để mở, theo mẫu Disclosure Navigation (không role menu). Dưới 1000px là drawer với accordion. Dữ liệu menu ở `components/header/navigation.js`.
 - **Hero trang con** (`components/hero/Hero.js`): xếp dọc: breadcrumb, H1, một dòng mô tả; minh họa thành dải rộng bên dưới. Trang dịch vụ dùng `long` (H1 dài hơn, cỡ nhỏ hơn).
 
@@ -178,7 +178,7 @@ Bộ 3dicons của Vijay Verma (CC0), kiểu clay, WebP ~5 KB. Chỉ đặt trê
 
 | Ở đâu | Tương tác | File |
 |---|---|---|
-| Hero trang chủ | Công tắc **Đo bằng lượt truy cập / Đo bằng doanh thu** | `components/hero/RevenueToggle.js` |
+| Khối "Khác ở chỗ: đo bằng doanh thu" (trang chủ) | Công tắc **Đo bằng lượt truy cập / Đo bằng doanh thu** | `components/hero/RevenueToggle.js` |
 | Khối dịch vụ trang chủ | Bộ chọn **Bạn đang gặp vấn đề gì?** làm sáng dịch vụ phù hợp | `components/ServiceGroups.js` |
 | Ma trận hành trình | Ba chặng sáng lần lượt khi cuộn; rê chuột vào kênh tô cả cột | `components/diagrams/JourneyMatrix.*` |
 | Huy hiệu Google Partner | Rê chuột hoặc Tab: ba tiêu chí Google xác nhận | `components/proof/PartnerBadge.*` |

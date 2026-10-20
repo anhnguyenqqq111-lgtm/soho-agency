@@ -2,6 +2,8 @@
    Không dùng backdrop-filter: nó biến header thành khung chứa của phần tử fixed và làm lệch drawer mobile. */
 .header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);color:var(--ink);border-bottom:1px solid var(--line);transition:box-shadow var(--t-med),background-color var(--t-med)}
 .header[data-scrolled]{background:var(--white);box-shadow:0 6px 24px rgba(20,18,24,.06)}
+/* Ở đầu trang: bỏ viền đáy để hero (trường gradient) liền mạch với header; cuộn xuống mới hiện viền và bóng */
+.header:not([data-scrolled]){border-bottom-color:transparent}
 .bar{position:relative;height:var(--header-h);display:flex;align-items:center;gap:24px}
 .logo{display:block;flex:none;border-radius:var(--r-sm)}
 .logo img{height:46px;width:auto}
@@ -20,7 +22,7 @@
 .navItem[aria-expanded="true"] .caret{transform:rotate(180deg)}
 /* Mục có Mega Menu không đặt position: panel neo vào .bar để căn giữa theo container */
 .megaItem{position:static}
-.cta{flex:none;display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 18px;border-radius:var(--r-md);background:var(--brand);color:var(--ink);font-size:15px;font-weight:600;text-decoration:none;white-space:nowrap;transition:background-color var(--t-fast),transform var(--t-fast)}
+.cta{flex:none;display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 18px;border-radius:var(--r-md);background:var(--brand);color:var(--ink);font-size:15px;font-weight:700;text-decoration:none;white-space:nowrap;transition:background-color var(--t-fast),transform var(--t-fast)}
 .cta:hover{background:var(--brand-hover);color:var(--ink);transform:translateY(-1px)}
 .ctaIcon{transition:transform var(--t-fast)}
 .cta:hover .ctaIcon{transform:translate(2px,-2px)}

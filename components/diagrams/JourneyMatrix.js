@@ -1,4 +1,5 @@
 import styles from './JourneyMatrix.module.css';
+import {STAGES, JOURNEY_TOTAL} from '../data/journey';
 
 /*
   Ba khối chặng xếp dọc, giữa các khối là mũi tên chỉ xuống.
@@ -11,15 +12,6 @@ const CHANNELS = [
   {name: 'Quảng cáo', color: '#F3F1F8', ink: '#141218'},
   {name: 'Nội dung', color: '#F3F1F8', ink: '#141218'},
   {name: 'Đo lường', color: '#F3F1F8', ink: '#141218'}
-];
-// Ô chỉ số viết bằng tiếng Việt (luật viết chữ: không dùng thuật ngữ tiếng Anh không giải thích)
-const STAGES = [
-  {code: 'Chặng 1', name: 'Được tìm thấy', sub: 'Khách mới biết tới bạn', owner: 'Marketing', q: '“Có ai giải được việc này không?”',
-    cells: [['Độ phủ nhóm từ khóa người muốn mua', 'Được AI của Google nhắc tên'], ['Hiện đúng nhóm khách', 'Tỉ lệ nhớ quảng cáo'], ['Lượt đọc bài viết', 'Số lần thương hiệu được nhắc'], ['Đo đủ hành động quan trọng', 'Biết khách đến từ đâu']]},
-  {code: 'Chặng 2', name: 'Được chọn', sub: 'Khách đang cân nhắc', owner: 'Marketing', q: '“Bên nào đáng tin hơn?”',
-    cells: [['Khách để lại thông tin từ Google'], ['Khách tiềm năng đúng tệp', 'Từ khóa tốn tiền vô ích'], ['Khách đã đọc bài trước khi liên hệ', 'Lượt tải tài liệu'], ['Số quảng cáo khớp sổ bán hàng']]},
-  {code: 'Chặng 3', name: 'Được tin, mua', sub: 'Khách ra quyết định', owner: 'Sales', q: '“Mua thì được gì, bao nhiêu?”',
-    cells: [['Doanh thu từ Google tự nhiên'], ['Chi phí mỗi đơn', 'Lợi nhuận gộp'], ['Kênh góp phần vào đơn'], ['Chia ngân sách theo kênh']]}
 ];
 const WIDTH = ['100%', '88%', '76%'];
 
@@ -62,7 +54,7 @@ export default function JourneyMatrix(){
       ))}
 
       <Arrow i={2}/>
-      <div className={styles.dest}>Tất cả gộp về một con số: <strong>doanh thu theo kênh</strong></div>
+      <div className={styles.dest}>{JOURNEY_TOTAL.lead} <strong>{JOURNEY_TOTAL.value}</strong></div>
     </div>
   );
 }

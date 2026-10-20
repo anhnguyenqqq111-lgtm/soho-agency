@@ -3,11 +3,12 @@
 Nhánh `minimal-v4`. Bản đang chạy (đối chứng "trước") là `main` tại https://soho-agency.vercel.app/.
 Mọi con số trong báo cáo đều đo trên bản build tĩnh (`npm run build`, thư mục `out/`), không ước lượng.
 
-Báo cáo gồm ba phần, làm theo thứ tự yêu cầu:
+Báo cáo gồm các phần, làm theo thứ tự yêu cầu:
 
 1. Master Brief: audit và redesign tổng thể (mục A).
 2. Mega Menu dịch vụ (mục B).
 3. Màu và chữ (mục C).
+4. Full Homepage Redesign, Sprint 1: Header và Hero (mục D).
 
 Phần A mô tả trạng thái sau đợt Master Brief. Phần C đổi lại phông, màu và hero trên nền đó, nên ảnh "sau" cuối cùng nằm ở mục C4.
 
@@ -275,11 +276,154 @@ Bảng đầy đủ kèm tỉ số tương phản ở DESIGN.md mục 2.6. Các 
 
 ---
 
+## D. Full Homepage Redesign, Sprint 1: Header và Hero
+
+Brief: "Modern Creative Agency kết hợp Conversion-focused Digital Marketing". Sprint 1 gồm 4 việc:
+
+1. Audit Header và Hero đang chạy.
+2. Dựng 2 phương án Hero trên cùng hệ thiết kế.
+3. Chụp đối chiếu hai phương án.
+4. Chọn một phương án và đưa vào code.
+
+Không làm trang demo riêng: cả hai phương án được dựng ngay trong trang chủ rồi giữ lại một.
+
+### D1. Audit Header và Hero (bản đang chạy, đo bằng Chrome)
+
+| Khổ màn hình | Hero cao | H1 | Nút "Nhận tư vấn" | Hình minh họa bắt đầu ở |
+|---|---|---|---|---|
+| 1440 × 900 | 1.291 px (khoảng 1,4 màn hình) | 72 ký tự, 3 dòng, 88 px | 743–787 px | 569 px, chỉ lộ 331 px trên màn đầu |
+| 390 × 844 | 1.365 px | 5 dòng | 561–605 px | 772 px, gần như dưới màn đầu |
+| 360 × 740 | 1.435 px | 6 dòng | 631–675 px | 842 px, dưới màn đầu |
+
+**Vấn đề:**
+
+- **Thông điệp dài:** 72 ký tự, chiếm 5 đến 6 dòng trên điện thoại.
+- **Hình không kể hành trình:** biểu đồ "hai cách đo" so sánh lượt truy cập với doanh thu, không cho thấy khách đi từ đâu tới đâu.
+- **Huy hiệu Google Partner lặp hai lần:** ở dòng nhãn trên H1 và ở chip góc hình.
+- **Header:** đường viền đáy cắt rời header khỏi hero. Nút "Nhận tư vấn" trên header đậm 600 trong khi nút cùng nhãn trong hero đậm 700.
+
+**Giữ nguyên:**
+
+- Mega Menu (42/42 kiểm tra đạt).
+- 6 mục menu, nút chính, chiều cao 76 px.
+- Drawer mobile.
+
+### D2. Nguyên tắc lấy từ tham chiếu (không sao chép giao diện)
+
+| Tham chiếu | Nguyên tắc dùng cho hero SOHO |
+|---|---|
+| KOTA | Hero vừa một màn hình. Chữ rất lớn, ngắn, xếp lệch dòng. Trường gradient mờ tràn từ mép. Hàng bằng chứng có tên riêng ở đáy hero |
+| Instrument | Bằng chứng thật đứng ngay cạnh lời hứa (tên dự án, không ảnh kho) |
+| BASIC/DEPT | Chữ editorial lớn, nhãn nhỏ đi kèm |
+| Positivus | Bố cục hai cột rõ việc: lời hứa, nút, hình minh họa |
+
+### D3. Hai phương án
+
+Hai phương án dùng chung:
+
+- **H1:** dòng nhỏ tên + nghề "SOHO Agency · SEO, quảng cáo và website", rồi thông điệp lớn "Từ tìm kiếm đến doanh thu." (H1 vẫn có tên và nghề, đúng luật viết chữ mục 2.4).
+- **Câu mô tả, nút và số điện thoại:** giữ nguyên như bản cũ.
+- **Hình minh họa:** hành trình 3 chặng lấy từ dữ liệu có sẵn của ma trận hành trình: tên chặng, câu hỏi của khách, con số SOHO đo, gộp về doanh thu theo kênh. Không thêm số liệu nào.
+
+**Phương án A, "Gradient art" (KOTA):**
+
+- Thông điệp hai dòng lệch nhau, tới 100 px.
+- Hành trình là các thẻ kính xếp bậc thang trên trường gradient Signature.
+- Đáy hero có Google Partner và tên 4 dự án đã công bố.
+
+**Phương án B, "Conversion split" (Positivus, Instrument):**
+
+- Hai cột.
+- Thẻ Dark Ink chứa stepper 3 chặng.
+- Cuối thẻ là kết quả đã công bố "Le Viva Resort ×2,3 tỉ lệ tin nhắn hỏi đặt phòng".
+
+| | Desktop 1440 | Mobile 390 |
+|---|---|---|
+| A | ![](redesign/s1-A-desktop.jpg) | ![](redesign/s1-A-mobile.jpg) |
+| B | ![](redesign/s1-B-desktop.jpg) | ![](redesign/s1-B-mobile.jpg) |
+
+### D4. So sánh và lựa chọn
+
+Số đo trên cùng máy, cùng cách đo như mục D1.
+
+| Tiêu chí | Hiện tại | A | B |
+|---|---|---|---|
+| Hero cao ở 1440 | 1.291 px | **824 px** (vừa màn hình, gồm cả hàng bằng chứng) | 840 px |
+| Thông điệp chính ở 390 | 5 dòng | **2 dòng** | 2 dòng |
+| Nút "Nhận tư vấn" ở 390 | 561–605 px | **388–432 px** | 446–490 px |
+| Hình hành trình bắt đầu ở 390 | 772 px | **601 px** | 657 px |
+| Hình hành trình bắt đầu ở 360 × 740 | 842 px (dưới màn đầu) | **621 px** (trong màn đầu) | 684 px |
+| Theo nguyên tắc KOTA (chữ lớn, gradient art) | Một phần | Có | Một phần |
+| Bằng chứng trong hero | Google Partner | Google Partner + tên 4 dự án | Google Partner + 1 kết quả có số |
+| Số khối nền tối trên trang chủ | 2 | 2 | **3**, vượt luật tối đa 2 (DESIGN.md mục 2.6) |
+| JavaScript của hero | Có (công tắc biểu đồ) | Không | Không |
+
+**Chọn A**, vì bốn lý do:
+
+1. Đúng hướng KOTA mà brief chọn cho hero.
+2. Vừa một màn hình desktop.
+3. Trên điện thoại, nút và hình hành trình lên cao nhất.
+4. Không thêm khối tối thứ ba.
+
+Điểm mạnh của B là con số đã công bố của Le Viva ngay trong hero. Phần này sẽ đưa vào Trust Bar và Portfolio ở sprint sau, không mất đi.
+
+### D5. Đã triển khai
+
+| File | Thay đổi |
+|---|---|
+| `components/hero/HomeHero.js`, `.module.css` | Hero mới (phương án A), server component, không JavaScript. Chuyển động chỉ bằng CSS, tắt khi giảm chuyển động |
+| `components/data/journey.js` (mới) | 3 chặng hành trình dùng chung cho hero và `JourneyMatrix` |
+| `components/diagrams/JourneyMatrix.js` | Đọc dữ liệu từ `journey.js`, nội dung không đổi |
+| `app/page.js`, `page.module.css` | Công tắc "Cùng một chiến dịch, hai cách đo" chuyển xuống khối "Khác ở chỗ: đo bằng doanh thu", không mất chức năng |
+| `components/header/SiteHeader.module.css` | Ở đầu trang không có viền đáy, hero liền mạch. Nút header đậm 700 như nút trong hero |
+| `app/layout.js` | Preload cả phông nội dung. Đo được: LCP mobile 3,3 → 3,2 giây |
+
+Hành trình trong hero là danh sách có thứ tự (`<ol>`), trình đọc màn hình đọc được. Mỗi chặng đọc kèm "Chặng 1:", "Chặng 2:", "Chặng 3:".
+
+### D6. Trước và sau
+
+| | Trước | Sau Sprint 1 |
+|---|---|---|
+| Desktop 1440 | ![](redesign/s1-truoc-desktop.jpg) | ![](redesign/s1-A-desktop.jpg) |
+| Mobile 390 | ![](redesign/s1-truoc-mobile.jpg) | ![](redesign/s1-A-mobile.jpg) |
+
+### D7. Kiểm tra trên bản build
+
+| Hạng mục | Kết quả |
+|---|---|
+| Build | Đạt, 41 trang HTML |
+| HTML tĩnh | 0 lỗi, 0 link hỏng trên 2.112 link nội bộ |
+| Tràn ngang | 287/287 lần đo đạt. Riêng hero kiểm thêm ở 7 khổ: H1 không vượt lề, ở 320 px kết thúc tại 304 px |
+| Mega Menu (bàn phím, ARIA) | 42/42 đạt, không lỗi console |
+| axe-core WCAG 2.2 AA | 0 lỗi trên 9 trang và trạng thái |
+| Lighthouse mobile, trang chủ, 2 lần | Hiệu năng 93, LCP 3,2 s, CLS 0, truy cập 100, SEO 100 |
+| Lighthouse desktop | 100 / 100 / 100 / 100, LCP 0,7 s |
+
+LCP mobile chưa đạt ngưỡng 2,5 giây và gần như không đổi so với trước (3,2 giây). Phần lớn là thời gian chờ trước khi vẽ (khoảng 2,8 giây: CSS chặn hiển thị và tải phông, trong mô phỏng 4G chậm), không do hero mới. Hướng xử lý ghi ở mục "Còn tồn đọng".
+
+### D8. Các sprint tiếp theo (chưa làm)
+
+| Hạng mục brief | Trạng thái |
+|---|---|
+| 1. Hero | **Xong** (Sprint 1) |
+| 2. Mega Menu đồng bộ với Hero | **Xong phần header** (viền, nút). Mega Menu giữ nguyên vì đạt kiểm tra |
+| 3. Dịch vụ dạng Bento Grid | Chưa làm |
+| 4. Portfolio dạng hình ảnh, kết quả có kiểm chứng | Chưa làm |
+| 5. Ma trận hành trình thành stepper 3 chặng có tương tác | Chưa làm. Dữ liệu đã tách sẵn ở `journey.js` |
+| 6. Gộp "Vì sao SOHO" và "Quy trình" | Chưa làm. Công tắc hai cách đo tạm đặt trong khối khác biệt |
+| 7. Trust Bar và nhận xét | Chưa làm. Dự kiến đưa kết quả Le Viva từ phương án B vào đây |
+| 8. Blog kiểu editorial | Chưa làm |
+| 9. FAQ accordion | Đã có từ trước (FAQ 6 câu, có schema), chưa làm lại |
+| 10. Form gửi dữ liệu thật | Code đã sẵn (`NEXT_PUBLIC_FORM_ENDPOINT`). Cần SOHO chọn nơi nhận |
+| 11. Footer theo hệ thiết kế | Chưa làm |
+
+---
+
 ## Còn tồn đọng
 
 | Việc | Ai cần làm |
 |---|---|
-| LCP mobile 2,9 đến 3,3 giây, vẫn trên ngưỡng 2,5 giây (đo giả lập 4G chậm). Phần lớn là CSS chặn hiển thị | Dev: đo số liệu người dùng thật sau khi lên Vercel trước khi tối ưu thêm |
+| LCP mobile 2,9 đến 3,3 giây, vẫn trên ngưỡng 2,5 giây (đo giả lập 4G chậm). Phần lớn là CSS chặn hiển thị. Đã thử nhúng CSS vào HTML (mục C5): không đáng | Dev: đo số liệu người dùng thật trên Vercel (Speed Insights) trước khi tối ưu thêm |
 | Form chưa có endpoint thật, đang mở ứng dụng email | SOHO chọn Formspree, Google Apps Script hoặc CRM |
 | Chưa cài GA4 hay Google Tag Manager, nên sự kiện Mega Menu và `generate_lead` chưa được gửi | SOHO cấp mã đo lường |
 | Chính sách bảo mật và điều khoản trên sohoagency.vn chép từ PalAmerican | SOHO cung cấp bản riêng |

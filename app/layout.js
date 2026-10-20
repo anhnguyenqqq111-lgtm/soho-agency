@@ -8,7 +8,8 @@ import {siteUrl} from '../components/paths';
 // Hai phông theo brief "SOHO Color & Typography" (DESIGN.md mục 2.3), cả hai có bộ chữ tiếng Việt riêng và đã qua bài thử ẾỨỠẶẰ.
 // Bricolage Grotesque: tiêu đề H1 đến H3, số lớn (600 đến 800). Plus Jakarta Sans: nội dung và giao diện (400 đến 700).
 // Nạp bản variable, chỉ trục độ đậm: mỗi phông 2 file (latin + vietnamese), thay cho một file mỗi độ đậm.
-// Chỉ preload phông tiêu đề vì H1 là phần tử LCP; phông nội dung hiện bằng phông dự phòng đã chỉnh số đo rồi đổi (display: swap).
+// Preload cả hai: phần tử LCP của trang chủ là H1 (Bricolage) hoặc đoạn mô tả hero (Jakarta) tùy khổ màn hình.
+// Đo Sprint 1: preload thêm Jakarta giảm LCP mobile 3,3 → 3,2 giây; phông này trang nào cũng tải nên không tốn thêm.
 const display = Bricolage_Grotesque({
   subsets: ['latin', 'vietnamese'],
   display: 'swap',
@@ -18,7 +19,6 @@ const display = Bricolage_Grotesque({
 const text = Plus_Jakarta_Sans({
   subsets: ['latin', 'vietnamese'],
   display: 'swap',
-  preload: false,
   variable: '--font-jakarta'
 });
 
