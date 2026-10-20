@@ -52,7 +52,7 @@ export default function ProjectCarousel({items}){
           <button type="button" onClick={() => go(idx + 1)} disabled={idx >= pages - 1} aria-label="Dự án tiếp theo"><Icon name="arrow-right" size={18}/></button>
         </div>
       </div>
-      <ul ref={trackRef} className={styles.track} aria-label="Dự án SOHO đã công bố">
+      <ul ref={trackRef} className={styles.track} aria-label="Một số dự án của SOHO">
         {clients.map((c, i) => (
           <li key={c.slug} className={styles.card} data-reveal="" style={{'--reveal-delay': `${i * 90}ms`}}>
             <a href={sitePath(`/du-an/${c.slug}`)} className={styles.link}>

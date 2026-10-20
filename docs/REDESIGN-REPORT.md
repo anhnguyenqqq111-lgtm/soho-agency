@@ -329,7 +329,7 @@ Hai phương án dùng chung:
 
 - Thông điệp hai dòng lệch nhau, tới 100 px.
 - Hành trình là các thẻ kính xếp bậc thang trên trường gradient Signature.
-- Đáy hero có Google Partner và tên 4 dự án đã công bố.
+- Đáy hero có Google Partner và nhãn "Một số dự án" kèm tên 4 dự án.
 
 **Phương án B, "Conversion split" (Positivus, Instrument):**
 

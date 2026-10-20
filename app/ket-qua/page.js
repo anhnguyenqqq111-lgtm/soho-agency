@@ -33,10 +33,10 @@ export default function ResultsPage(){
     <>
       <Header activeNav="results"/>
       <main id="main">
-        <Hero tone="results" crumbs={[{label: 'Dự án'}]} title={<>Dự án SOHO đã làm, <span className="hl">kể bằng kết quả</span></>} tagline="Bốn dự án đã công bố: một khu nghỉ dưỡng, một đơn vị thiết kế thi công, một nhà phân phối đồng hồ, một studio ảnh cưới." visual={<ResultsVisual/>}/>
+        <Hero tone="results" crumbs={[{label: 'Dự án'}]} title={<>Dự án SOHO đã làm, <span className="hl">kể bằng kết quả</span></>} tagline="Một số dự án SOHO đã làm: một khu nghỉ dưỡng, một đơn vị thiết kế thi công, một nhà phân phối đồng hồ, một studio ảnh cưới." visual={<ResultsVisual/>}/>
         <PageHeader title="Đo bằng đơn hàng, không bằng lượt xem" lead="Lượt truy cập và lượt bấm vẫn được theo dõi, nhưng không phải thước đo chính. SOHO nối số liệu quảng cáo với số đơn và doanh thu trong sổ bán hàng của bạn."/>
 
-        <Section title={<>Bốn dự án <span className="hl">đã công bố</span></>} intro="Con số chỉ ghi khi chính dự án đã công bố. Dự án khác đang chạy, số liệu công bố khi khách hàng đồng ý.">
+        <Section title={<>Một số <span className="hl">dự án</span></>} intro="Con số chỉ ghi khi chính dự án đã công bố. Dự án khác đang chạy, số liệu công bố khi khách hàng đồng ý.">
           <ProjectGrid projects={cases}/>
           <div className={styles.partners}><PartnerStrip/></div>
         </Section>

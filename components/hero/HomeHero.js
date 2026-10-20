@@ -12,7 +12,7 @@ import {sitePath} from '../paths';
   Nguyên tắc KOTA: một màn hình, chữ rất lớn và ngắn, trường gradient tràn mép, hàng bằng chứng ở đáy.
   - H1: dòng nhỏ tên + nghề, rồi thông điệp lớn hai dòng lệch nhau "Từ tìm kiếm / đến doanh thu".
   - Phải: hành trình 3 chặng xếp bậc thang (danh sách có thứ tự, đọc được bằng trình đọc màn hình), gộp về doanh thu theo kênh.
-  - Đáy hero: bằng chứng có tên riêng (Google Partner, các dự án đã công bố).
+  - Đáy hero: bằng chứng có tên riêng (Google Partner, một số dự án).
   Không cần JavaScript; chuyển động chỉ bằng CSS và tắt khi giảm chuyển động.
 */
 export default function HomeHero(){
@@ -61,7 +61,7 @@ export default function HomeHero(){
           </a>
         )}
         <p className={styles.cases}>
-          <span className={styles.casesLabel}>Dự án đã công bố</span>
+          <span className={styles.casesLabel}>Một số dự án</span>
           {cases.map(c => <a key={c.slug} href={sitePath(`/du-an/${c.slug}`)}>{c.name}</a>)}
         </p>
       </div>
