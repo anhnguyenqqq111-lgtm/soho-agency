@@ -144,7 +144,7 @@ Sự khác biệt giữa cách chạy quảng cáo ăn may và hệ thống khoa
 | **Chiến lược tiếp cận** | Cố gắng đổi target, nhân nhóm, sao chép chiến dịch liên tục | **Tập trung đổi mới góc tiếp cận sáng tạo (Creative Angles & Hooks)** |
 | **Sản xuất nội dung** | Làm 1 đến 2 video rồi chạy suốt nhiều tháng cho đến khi cạn tệp | **Hệ thống sản xuất và thử nghiệm liên tục từ 10 đến 20 biến thể mới mỗi tháng** |
 | **Đo lường kỹ thuật** | Chỉ cài Pixel cơ bản trên web, mất dữ liệu sau cập nhật iOS | **Cài đặt hệ thống Server-side CAPI & TikTok Events API đạt điểm tối đa** |
-| **Mục tiêu tối thượng** | Khoe giá tin nhắn/lead rẻ nhưng không quan tâm chất lượng | **Cam kết chi phí trên mỗi khách hàng đạt chuẩn (Qualified Lead) và ROAS** |
+| **Mục tiêu tối thượng** | Khoe giá tin nhắn/lead rẻ nhưng không quan tâm chất lượng | **Tối ưu và báo cáo theo chi phí trên mỗi khách hàng đạt chuẩn (Qualified Lead) và ROAS** |
 | **Quy trình báo cáo** | Báo cáo số liệu trong trình quản lý quảng cáo (Ads Manager) | **Dashboard Looker Studio đồng bộ dữ liệu doanh thu và tỷ lệ chốt đơn thực tế** |
 `
     },

@@ -194,7 +194,7 @@ Trước khi quyết định phân bổ ngân sách, các nhà lãnh đạo thư
 | **Mục tiêu cốt lõi** | Báo cáo số lượng từ khóa lên Top | Duy trì khối lượng công việc hàng ngày | **Tăng trưởng Qualified Leads & Doanh thu** |
 | **Phạm vi từ khóa** | Giới hạn 20 đến 50 từ khóa cứng nhắc | Phụ thuộc năng lực cá nhân của nhân sự | **Hàng trăm đến hàng nghìn từ khóa bao phủ toàn ngành** |
 | **Chất lượng nội dung** | Viết bài sơ sài, lạm dụng spin/AI rác | Mất nhiều thời gian đào tạo ngành | **Nội dung chuẩn E-E-A-T, sâu sắc, có quan điểm chuyên gia** |
-| **Bảo mật & Cam kết** | Cam kết miệng, hợp đồng lỏng lẻo | Rủi ro nhân sự nhảy việc, gián đoạn dự án | **Ký cam kết KPI rõ ràng, ràng buộc pháp lý & bảo mật NDA** |
+| **Bảo mật & Hợp đồng** | Thỏa thuận miệng, hợp đồng lỏng lẻo | Rủi ro nhân sự nhảy việc, gián đoạn dự án | **Hợp đồng ghi rõ phạm vi việc, bộ chỉ số theo dõi & bảo mật NDA** |
 | **Tính minh bạch dữ liệu**| Báo cáo PDF tĩnh cuối tháng | Phải tự xây dựng dashboard | **Live Dashboard Looker Studio truy cập 24/7 theo thời gian thực** |
 | **Chi phí cơ hội** | Rủi ro bị Google phạt thuật toán rất cao | Chi phí tuyển dụng, lương, BHXH, công cụ rất lớn | **Tối ưu chi phí, tận dụng đội ngũ chuyên gia đa kỹ năng sẵn có** |
 
@@ -273,10 +273,10 @@ Mọi khoản ngân sách đều được phân bổ chi tiết theo từng spri
 ### Câu hỏi 4: SOHO có cam kết "Lên Top 1 sau 1 tháng" hoặc hoàn tiền 100% không?
 **Trả lời:** **SOHO kiên quyết nói KHÔNG với các lời hứa hẹn ảo thiếu trung thực**. Thuật toán xếp hạng của Google có hơn 200 tín hiệu thay đổi liên tục, và bất kỳ bên nào cam kết "chắc chắn Top 1 sau vài tuần" đều đang sử dụng thủ thuật mũ đen hoặc chọn những từ khóa vô nghĩa không ai tìm kiếm.
 
-Thay vì hứa hẹn ảo, SOHO cam kết:
-* Cam kết các chỉ số hiệu quả thực tế: Tăng trưởng lượng truy cập tự nhiên có mục tiêu, tỷ lệ bao phủ mạng lưới từ khóa thương mại và số lượng Qualified Leads theo hợp đồng kinh tế.
-* Cam kết minh bạch 100% tài nguyên, quy trình và kỹ thuật triển khai.
-* Cơ chế bảo vệ khách hàng: Nếu chiến dịch gặp trở ngại khách quan từ thị trường hoặc cập nhật thuật toán, SOHO cam kết đồng hành tối ưu hóa miễn phí bổ sung cho đến khi đạt được mục tiêu nghiệm thu đã thỏa thuận.
+Thay vì hứa hẹn kết quả, SOHO thống nhất với bạn ngay từ đầu:
+* Bộ chỉ số theo dõi: lượng truy cập tự nhiên có mục tiêu, độ phủ nhóm từ khóa thương mại, số khách tiềm năng đạt chuẩn và doanh thu từ Google tự nhiên, báo cáo sau mỗi vòng 2 tuần.
+* Minh bạch toàn bộ tài nguyên, quy trình và kỹ thuật triển khai.
+* Khi thị trường hoặc thuật toán thay đổi, SOHO báo ngay và đề xuất điều chỉnh kế hoạch. Thứ hạng và doanh thu phụ thuộc nhiều yếu tố ngoài tầm kiểm soát của bất kỳ agency nào, nên SOHO không cam kết con số này.
 
 ### Câu hỏi 5: Sau khi kết thúc hợp đồng, quyền sở hữu website và dữ liệu thuộc về ai?
 **Trả lời:** **100% tài sản thuộc về doanh nghiệp của bạn**. Toàn bộ mã nguồn, nội dung bài viết, cấu trúc dữ liệu, tài khoản Google Search Console, Google Analytics 4 và các bản quyền liên quan đều do doanh nghiệp đứng tên sở hữu tuyệt đối. SOHO cam kết bàn giao đầy đủ tài liệu hướng dẫn vận hành, backlog dự án và hỗ trợ đào tạo nội bộ để đội ngũ của bạn có thể tiếp tục kế thừa và duy trì đà tăng trưởng một cách dễ dàng.

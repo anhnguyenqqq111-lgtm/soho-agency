@@ -75,7 +75,7 @@ Tại SOHO Agency, chúng tôi định nghĩa lại cách vận hành Google Ads
 Thay vì dừng lại ở việc báo cáo số lượng click, CTR hay chi phí mỗi chuyển đổi form (CPL ảo), hệ thống SOHO Performance Ads can thiệp sâu vào toàn bộ chuỗi giá trị:
 1. **Theo dõi chuyển đổi ngoại tuyến (Offline Conversion Tracking, OCT):** Đồng bộ dữ liệu từ phần mềm quản lý bán hàng (CRM / ERP / POS) ngược trở lại tài khoản Google Ads.
 2. **Dạy thuật toán máy học phân biệt Lead chất lượng cao (Value-Based Bidding):** Khi một khách hàng tiềm năng được đội ngũ sales xác nhận là "Lead đạt chuẩn" hoặc "Đã ký hợp đồng", tín hiệu giá trị thực tế này sẽ được gửi về Google Ads để thuật toán chỉ tập trung tìm kiếm những người có tiềm năng mua hàng tương tự.
-3. **Tối ưu hóa theo Biên lợi nhuận gộp (Profit-Driven Optimization):** Phân nhóm chiến dịch theo biên lợi nhuận của từng dòng sản phẩm để đặt mục tiêu ROAS/CPA tương ứng, đảm bảo mọi chiến dịch đều tạo ra lợi nhuận ròng thực tế cho doanh nghiệp.
+3. **Tối ưu hóa theo Biên lợi nhuận gộp (Profit-Driven Optimization):** Phân nhóm chiến dịch theo biên lợi nhuận của từng dòng sản phẩm để đặt mục tiêu ROAS/CPA tương ứng, để mỗi chiến dịch được đánh giá bằng lợi nhuận ròng thực tế của doanh nghiệp.
 `
     },
     {
@@ -142,7 +142,7 @@ Sự khác biệt giữa việc thuê một bên "chạy quảng cáo lấy clic
 
 | Tiêu chí đối chiếu | Agency Chạy Quảng Cáo Thông Thường | SOHO Performance Ads System |
 | :--- | :--- | :--- |
-| **Chỉ số cam kết** | Báo cáo lượt nhấp (Clicks), Lượt hiển thị (Impressions), CTR | **Cam kết chi phí trên mỗi Lead đạt chuẩn (Qualified CPL), ROAS và Doanh thu** |
+| **Chỉ số báo cáo** | Báo cáo lượt nhấp (Clicks), Lượt hiển thị (Impressions), CTR | **Báo cáo chi phí trên mỗi Lead đạt chuẩn (Qualified CPL), ROAS và Doanh thu** |
 | **Quyền sở hữu tài khoản**| Giữ quyền sở hữu tài khoản, khách hàng không được xem chi tiết | **Khách hàng sở hữu 100% tài khoản, tài nguyên dữ liệu và lịch sử đấu thầu** |
 | **Xử lý từ khóa phủ định**| Cài đặt qua loa vài từ khóa cơ bản, không rà soát hàng tuần | **Bộ từ khóa phủ định hơn 1.000 cụm, lọc Search Terms hàng tuần để cắt lỗ ngay lập tức** |
 | **Tối ưu trang đích (CRO)**| "Việc trang đích là việc của khách hàng, agency chỉ kéo traffic" | **Trực tiếp phân tích heatmap, tư vấn tối ưu form và thông điệp landing page để tăng chuyển đổi** |

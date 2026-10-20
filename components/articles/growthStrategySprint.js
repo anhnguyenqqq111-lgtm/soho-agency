@@ -190,13 +190,13 @@ Bảng đối chiếu làm rõ sự khác biệt giữa các dịch vụ tư v�
 **Trả lời:** **Có, đây chính là thế mạnh vượt trội của SOHO Agency!**
 * Khác với các công ty tư vấn thuần túy chỉ bán bản kế hoạch rồi rời đi, SOHO là một **Full-Service Growth Agency** sở hữu đầy đủ các đội ngũ chuyên gia thực chiến hàng đầu về: SEO Tổng Thể, Google Ads, Meta/TikTok Ads, Thiết kế Landing Page CRO và Quản trị Dữ liệu GA4.
 * Sau khi thống nhất lộ trình Sprint, doanh nghiệp có thể lựa chọn:
-  * Phương án 1: Để SOHO trực tiếp đảm nhận toàn bộ việc triển khai các hạng mục kỹ thuật cốt lõi theo cam kết KPI.
+  * Phương án 1: Để SOHO trực tiếp đảm nhận toàn bộ việc triển khai các hạng mục kỹ thuật cốt lõi theo bộ chỉ số đã thống nhất.
   * Phương án 2: Để SOHO đóng vai trò cố vấn chuyên môn (Advisory Board) huấn luyện và giám sát đội ngũ marketing in-house của doanh nghiệp tự triển khai.
 
 ### Câu hỏi 3: Chi phí cho một chương trình Growth Strategy Sprint là bao nhiêu và thời gian hoàn vốn ước tính như thế nào?
 **Trả lời:** Chi phí tư vấn Sprint tại SOHO được tính toán dựa trên quy mô và mức độ phức tạp của mô hình kinh doanh của doanh nghiệp:
 * Khoản đầu tư này thường chỉ tương đương với mức lương 1 đến 2 tháng của một Giám đốc Tiếp thị (CMO) cấp cao, nhưng mang lại cho bạn sự phục vụ của một hội đồng chuyên gia đa ngành có hơn 10 năm kinh nghiệm thực chiến.
-* Về mặt hoàn vốn: Việc loại bỏ ngay lập tức 1 đến 2 kênh quảng cáo đang đốt tiền lãng phí và tối ưu lại tỷ lệ chuyển đổi của các chiến dịch hiện có thường giúp doanh nghiệp **thu hồi 100% chi phí tư vấn ngay trong 60 ngày đầu tiên triển khai lộ trình**.
+* Về mặt hoàn vốn: SOHO không hứa trước thời gian hoàn vốn, vì nó phụ thuộc ngân sách, biên lợi nhuận và tốc độ triển khai của từng doanh nghiệp. Sau buổi khảo sát, SOHO chỉ ra những kênh đang tốn tiền mà chưa mang khách về, để bạn tự ước tính khoản có thể tiết kiệm.
 `
     }
   ]

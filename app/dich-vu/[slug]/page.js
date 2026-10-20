@@ -68,7 +68,7 @@ export default async function ServicePage({params}) {
             </div>
           }
         />
-        <PageHeader title="Kết quả cần đạt" lead={service.promise} bullets={service.outcomes}>
+        <PageHeader title="Mục tiêu hướng tới" lead={service.promise} bullets={service.outcomes}>
           <Button href="#lien-he">Nhận tư vấn</Button>
         </PageHeader>
 
@@ -95,7 +95,7 @@ export default async function ServicePage({params}) {
           }
           intro={service.insight}
         >
-          <BeforeAfter before={service.pains} after={service.outcomes} beforeLabel="Dấu hiệu bạn đang gặp" afterLabel="Kết quả cần đạt" />
+          <BeforeAfter before={service.pains} after={service.outcomes} beforeLabel="Dấu hiệu bạn đang gặp" afterLabel="Mục tiêu hướng tới" />
           <p className={styles.proof}>{service.proof}</p>
         </Section>
 
