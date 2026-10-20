@@ -14,7 +14,9 @@ export default function ServicesGrid({services, partnerLabel}){
         <li key={s.slug} className={s.featured ? styles.featured : ''} data-reveal="" style={{'--reveal-delay': `${(i % 3) * 80}ms`}}>
           <a href={sitePath(`/dich-vu/${s.slug}`)} className={styles.card}>
             <span className={styles.top}>
-              <span className={styles.icon}><Icon name={s.icon} size={24}/></span>
+              <span className={styles.icon}>
+                {s.art ? <img src={sitePath(s.art)} alt="" width="96" height="96" loading="lazy"/> : <Icon name={s.icon} size={24}/>}
+              </span>
               {s.featured && partnerLabel && <span className={styles.badge}>{partnerLabel}</span>}
             </span>
             <span className={styles.name}>{s.coreTitle}</span>

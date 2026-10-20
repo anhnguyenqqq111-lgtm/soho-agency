@@ -56,7 +56,7 @@ export default function Home(){
     legalName: company.legalName,
     url: `${siteUrl}/`,
     logo: `${siteUrl}/brand/soho-logo.png`,
-    image: `${siteUrl}/og/soho-og.png`,
+    image: `${siteUrl}/og/soho-og-v2.png`,
     telephone: company.phone ? `+84${company.phone.replace(/\s/g, '').replace(/^0/, '')}` : undefined,
     email: company.email,
     address: {'@type': 'PostalAddress', streetAddress: '19 Tạ Hiện, phường Cát Lái', addressLocality: 'TP. Hồ Chí Minh', addressCountry: 'VN'},

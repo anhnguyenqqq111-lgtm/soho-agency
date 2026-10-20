@@ -1,0 +1,59 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-10-20",
+  "policy": {
+    "productionStatus": "implemented",
+    "logo": "locked-existing",
+    "projectImagery": "real-approved-only",
+    "newRasterAssetsCreated": true
+  },
+  "existing": {
+    "brand": [
+      {"path": "/brand/soho-logo.svg", "type": "logo", "status": "keep"},
+      {"path": "/brand/soho-logo-white.svg", "type": "logo", "status": "keep"},
+      {"path": "/brand/soho-logo.webp", "dimensions": [305, 120], "status": "keep"},
+      {"path": "/brand/soho-logo-white.webp", "dimensions": [305, 120], "status": "keep"},
+      {"path": "/brand/soho-avatar.png", "dimensions": [256, 256], "status": "keep"}
+    ],
+    "decor": {
+      "directory": "/decor/",
+      "count": 10,
+      "format": "webp",
+      "dimensions": [400, 400],
+      "status": "keep-style-reference"
+    },
+    "projects": [
+      {"slug": "le-viva-resort", "path": "/projects/le-viva-resort.webp", "dimensions": [1200, 457], "status": "real-source-keep"},
+      {"slug": "king-decor-luxury", "path": "/projects/king-decor-luxury.webp", "dimensions": [1200, 542], "status": "real-source-keep"},
+      {"slug": "kronos-luxury-timepieces", "path": "/projects/kronos-luxury-timepieces.webp", "dimensions": [961, 457], "status": "real-source-keep"},
+      {"slug": "helen-bridal", "path": "/projects/helen-bridal.webp", "dimensions": [950, 450], "status": "real-source-keep"}
+    ],
+    "blog": {
+      "directory": "/blog/",
+      "count": 9,
+      "format": "webp",
+      "dimensions": [1600, 1000],
+      "status": "keep-system-normalize-art-direction-only"
+    },
+    "social": [
+      {"path": "/og/soho-og.png", "dimensions": [1200, 630], "status": "legacy-retained"},
+      {"path": "/og/soho-og-v2.png", "dimensions": [1200, 630], "status": "active-site-default"},
+      {"path": "/og/soho-projects-og.png", "dimensions": [1200, 630], "status": "active-results-page"}
+    ]
+  },
+  "proposed": [
+    {"id": "H-01", "name": "hero-desktop", "path": "/hero/customer-journey-desktop.webp", "format": "webp", "dimensions": [1536, 1024], "priority": "P0", "status": "implemented", "integration": "components/hero/HomeHero.js"},
+    {"id": "H-02", "name": "hero-mobile", "path": "/hero/customer-journey-mobile.webp", "format": "webp", "dimensions": [1024, 1536], "priority": "P0", "status": "implemented", "integration": "components/hero/HomeHero.js"},
+    {"id": "S-01", "name": "service-seo", "path": "/services/seo.svg", "format": "svg", "viewBox": [96, 96], "priority": "P0", "status": "implemented", "integration": "components/home/ServicesGrid.js"},
+    {"id": "S-02", "name": "service-google-ads", "path": "/services/google-ads.svg", "format": "svg", "viewBox": [96, 96], "priority": "P0", "status": "implemented", "integration": "components/home/ServicesGrid.js"},
+    {"id": "S-03", "name": "service-meta-tiktok-ads", "path": "/services/meta-tiktok-ads.svg", "format": "svg", "viewBox": [96, 96], "priority": "P0", "status": "implemented", "integration": "components/home/ServicesGrid.js"},
+    {"id": "S-04", "name": "service-website-design", "path": "/services/website-design.svg", "format": "svg", "viewBox": [96, 96], "priority": "P0", "status": "implemented", "integration": "components/home/ServicesGrid.js"},
+    {"id": "S-05", "name": "service-brand-identity", "path": "/services/brand-identity.svg", "format": "svg", "viewBox": [96, 96], "priority": "P0", "status": "implemented", "integration": "components/home/ServicesGrid.js"},
+    {"id": "S-06", "name": "service-mobile-app", "path": "/services/mobile-app.svg", "format": "svg", "viewBox": [96, 96], "priority": "P0", "status": "implemented", "integration": "components/home/ServicesGrid.js"},
+    {"id": "P-01..P-04", "name": "portfolio-cover-treatment", "format": "existing-webp-plus-html", "priority": "P0", "status": "implemented-existing-real-assets", "integration": "components/home/ProjectShowcase.js"},
+    {"id": "B-01..B-09", "name": "blog-thumbnail-system", "format": "webp", "dimensions": [1600, 1000], "priority": "P1", "status": "audited-existing-system-retained", "integration": "components/blogData.js"},
+    {"id": "C-01", "name": "cta-visual", "path": "/cta/conversion-path.svg", "format": "svg", "viewBox": [420, 420], "priority": "P1", "status": "implemented", "integration": "components/ui/CtaBand.js"},
+    {"id": "O-01", "name": "site-og-banner", "path": "/og/soho-og-v2.png", "format": "png", "dimensions": [1200, 630], "priority": "P1", "status": "implemented", "integration": "app/layout.js"},
+    {"id": "O-02", "name": "projects-og-banner", "path": "/og/soho-projects-og.png", "format": "png", "dimensions": [1200, 630], "priority": "P1", "status": "implemented", "integration": "app/ket-qua/page.js"}
+  ]
+}

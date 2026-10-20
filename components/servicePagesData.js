@@ -10,12 +10,12 @@ export const serviceGroups = [
   coreTitle: tên ngắn trên thẻ; coreDesc: một câu lợi ích; icon: tên trong bộ Lucide (components/ui/Icon.js).
 */
 export const coreServices = [
-  {slug: 'seo-tong-the', coreTitle: 'SEO website', icon: 'search', coreDesc: 'Khách tự tìm thấy bạn trên Google khi đang có nhu cầu.'},
-  {slug: 'google-ads-shopping', coreTitle: 'Google Ads', icon: 'mouse-pointer-click', coreDesc: 'Có khách ngay, tối ưu theo đơn có lãi chứ không theo lượt bấm.', featured: true},
-  {slug: 'meta-tiktok-ads', coreTitle: 'Facebook Ads', icon: 'megaphone', coreDesc: 'Quảng cáo Facebook và TikTok tạo nhu cầu, ra tin nhắn và đơn hàng.'},
-  {slug: 'thiet-ke-website', coreTitle: 'Thiết kế website', icon: 'monitor-smartphone', coreDesc: 'Website nhanh, chuẩn SEO, dẫn khách tới bước liên hệ.'},
-  {slug: 'nhan-dien-thuong-hieu', coreTitle: 'Nhận diện thương hiệu', icon: 'palette', coreDesc: 'Logo, màu và chữ nhất quán ở mọi nơi khách gặp bạn.'},
-  {slug: 'thiet-ke-mobile-app', coreTitle: 'Thiết kế Mobile App', icon: 'smartphone', coreDesc: 'App Android và iOS cho đặt lịch, đặt hàng, quản lý nội bộ.'}
+  {slug: 'seo-tong-the', coreTitle: 'SEO website', icon: 'search', art: '/services/seo.svg', coreDesc: 'Khách tự tìm thấy bạn trên Google khi đang có nhu cầu.'},
+  {slug: 'google-ads-shopping', coreTitle: 'Google Ads', icon: 'mouse-pointer-click', art: '/services/google-ads.svg', coreDesc: 'Có khách ngay, tối ưu theo đơn có lãi chứ không theo lượt bấm.', featured: true},
+  {slug: 'meta-tiktok-ads', coreTitle: 'Facebook Ads', icon: 'megaphone', art: '/services/meta-tiktok-ads.svg', coreDesc: 'Quảng cáo Facebook và TikTok tạo nhu cầu, ra tin nhắn và đơn hàng.'},
+  {slug: 'thiet-ke-website', coreTitle: 'Thiết kế website', icon: 'monitor-smartphone', art: '/services/website-design.svg', coreDesc: 'Website nhanh, chuẩn SEO, dẫn khách tới bước liên hệ.'},
+  {slug: 'nhan-dien-thuong-hieu', coreTitle: 'Nhận diện thương hiệu', icon: 'palette', art: '/services/brand-identity.svg', coreDesc: 'Logo, màu và chữ nhất quán ở mọi nơi khách gặp bạn.'},
+  {slug: 'thiet-ke-mobile-app', coreTitle: 'Thiết kế Mobile App', icon: 'smartphone', art: '/services/mobile-app.svg', coreDesc: 'App Android và iOS cho đặt lịch, đặt hàng, quản lý nội bộ.'}
 ];
 
 export const servicePages = [

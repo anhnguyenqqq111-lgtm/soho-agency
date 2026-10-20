@@ -24,7 +24,7 @@ export async function generateMetadata({params}){
     title: `Dự án ${c.name}: ${c.scope.toLowerCase()}`,
     description: `${c.name}, ${c.field.toLowerCase()}. ${c.problem} SOHO: ${c.solution} Kết quả: ${c.result}`,
     alternates: {canonical: `/du-an/${c.slug}/`},
-    openGraph: {images: [{url: c.image, width: 1200, alt: `Dự án ${c.name}`}]}
+    openGraph: {images: [{url: c.image, width: c.imageWidth, height: c.imageHeight, alt: `Dự án ${c.name}`}]}
   };
 }
 
@@ -53,7 +53,7 @@ export default async function ProjectPage({params}){
           title={<>{c.name}: <span className="hl">{c.scope.toLowerCase()}</span></>}
           long
           tagline={`${c.field}. ${c.period}.`}
-          visual={<img src={sitePath(c.image)} alt={`Dự án ${c.name}`} width="1200" height="560" className={styles.cover} fetchPriority="high"/>}
+          visual={<img src={sitePath(c.image)} alt={`Dự án ${c.name}`} width={c.imageWidth} height={c.imageHeight} style={{objectPosition: c.imagePosition}} className={styles.cover} fetchPriority="high"/>}
         />
 
         <Section id="noi-dung">
@@ -92,7 +92,7 @@ export default async function ProjectPage({params}){
             {others.map(o => (
               <li key={o.slug}>
                 <a href={sitePath(`/du-an/${o.slug}`)} className={styles.other}>
-                  <img src={sitePath(o.image)} alt="" width="1200" height="560" loading="lazy"/>
+                  <img src={sitePath(o.image)} alt="" width={o.imageWidth} height={o.imageHeight} style={{objectPosition: o.imagePosition}} loading="lazy"/>
                   <span><strong>{o.name}</strong>{o.field}</span>
                   <Icon name="arrow-right" size={18}/>
                 </a>

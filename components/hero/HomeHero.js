@@ -37,20 +37,26 @@ export default function HomeHero(){
           {tel && <p className={styles.note}>Hoặc gọi <a href={`tel:${tel}`}><Icon name="phone" size={16}/>{company.phone}</a> · {company.hours}</p>}
         </div>
 
-        <ol className={styles.journey} aria-label="Hành trình một khách hàng với SOHO">
-          {STAGES.map((st, i) => (
-            <li key={st.code} className={styles.step} style={{'--i': i}}>
-              <span className={styles.num} aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
-              <p className={styles.name}><span className="visually-hidden">{st.code}: </span>{st.name}</p>
-              <p className={styles.q}>{st.q}</p>
-              <p className={styles.measure}><Icon name="chart-line" size={14}/>{STAGE_MEASURE[i]}</p>
+        <div className={styles.journeyWrap}>
+          <picture className={styles.journeyArt} aria-hidden="true">
+            <source media="(max-width: 980px)" srcSet={sitePath('/hero/customer-journey-mobile.webp')}/>
+            <img src={sitePath('/hero/customer-journey-desktop.webp')} alt="" width="1536" height="1024" fetchPriority="high"/>
+          </picture>
+          <ol className={styles.journey} aria-label="Hành trình một khách hàng với SOHO">
+            {STAGES.map((st, i) => (
+              <li key={st.code} className={styles.step} style={{'--i': i}}>
+                <span className={styles.num} aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+                <p className={styles.name}><span className="visually-hidden">{st.code}: </span>{st.name}</p>
+                <p className={styles.q}>{st.q}</p>
+                <p className={styles.measure}><Icon name="chart-line" size={14}/>{STAGE_MEASURE[i]}</p>
+              </li>
+            ))}
+            <li className={styles.total} style={{'--i': 3}}>
+              <Icon name="target" size={18}/>
+              <span>{JOURNEY_TOTAL.lead} <strong>{JOURNEY_TOTAL.value}</strong></span>
             </li>
-          ))}
-          <li className={styles.total} style={{'--i': 3}}>
-            <Icon name="target" size={18}/>
-            <span>{JOURNEY_TOTAL.lead} <strong>{JOURNEY_TOTAL.value}</strong></span>
-          </li>
-        </ol>
+          </ol>
+        </div>
       </div>
 
       <div className={`container ${styles.proof}`}>

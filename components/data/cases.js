@@ -13,6 +13,9 @@ export const cases = [
     scope: 'Fanpage, quảng cáo Facebook',
     period: 'Từ 01/2025',
     image: '/projects/le-viva-resort.webp',
+    imageWidth: 1200,
+    imageHeight: 457,
+    imagePosition: 'center',
     // Số do SOHO công bố trên trang dự án
     kpis: [
       {value: '+135%', label: 'tương tác tự nhiên trên fanpage sau 2 tháng'},
@@ -33,6 +36,9 @@ export const cases = [
     scope: 'SEO website, quảng cáo Facebook',
     period: 'Từ 05/2025',
     image: '/projects/king-decor-luxury.webp',
+    imageWidth: 1200,
+    imageHeight: 542,
+    imagePosition: 'center',
     result: 'Quảng cáo tạo yêu cầu tư vấn đều, đúng nhóm chủ đầu tư; bớt phụ thuộc khách giới thiệu.',
     context: 'Công trình đẹp, năng lực thi công tốt, nhưng website chưa tối ưu cho tìm kiếm. Chủ đầu tư tìm rất kỹ mẫu, chi phí, diện tích trước khi liên hệ, còn nội dung trên web chưa trả lời đủ.',
     work: 'Tái cấu trúc website theo từng nhóm dịch vụ chính: quán cà phê sân vườn, studio áo cưới, phim trường. Viết bài trả lời đúng câu hỏi của chủ đầu tư về mẫu, chi phí, kinh nghiệm thi công. Quảng cáo Facebook nhắm đúng nhóm chủ đầu tư để có yêu cầu tư vấn nhanh trong lúc chờ SEO lên.'
@@ -47,6 +53,9 @@ export const cases = [
     scope: 'Fanpage, quảng cáo Facebook',
     period: 'Từ 02/2025',
     image: '/projects/kronos-luxury-timepieces.webp',
+    imageWidth: 961,
+    imageHeight: 457,
+    imagePosition: 'center',
     result: 'Tin nhắn hỏi mua tăng mạnh trong các mùa lễ, Tết.',
     context: 'Hình ảnh sản phẩm đẹp nhưng quảng cáo dễ rơi vào "đẹp mà không ra đơn". Mỗi dòng đồng hồ như Cartier, Patek Philippe có nhóm khách khác nhau, các dịp lễ chưa được khai thác hết.',
     work: 'Chia nội dung theo từng dòng sản phẩm và từng dịp tặng quà. Chạy quảng cáo nhắn tin và chốt đơn theo mùa, nhắm riêng nhóm doanh nhân và nhóm mua quà.'
@@ -61,6 +70,9 @@ export const cases = [
     scope: 'Fanpage, quảng cáo Facebook',
     period: 'Từ 08/2024',
     image: '/projects/helen-bridal.webp',
+    imageWidth: 950,
+    imageHeight: 450,
+    imagePosition: 'center',
     result: 'Tin nhắn tư vấn tăng rõ trong mùa cưới.',
     context: 'Fanpage đông người theo dõi, ảnh đẹp, nhưng nội dung chưa dẫn khách tới bước đặt lịch. Thị trường studio cưới rất đông, nhiều nơi có phong cách giống nhau.',
     work: 'Sắp lại nội dung theo hành trình của cô dâu chú rể: concept mới, phim trường riêng, trước và sau trang điểm, ảnh cặp đôi thật. Quảng cáo theo mùa cưới, nhắm vào cảm xúc của cặp đôi thay vì liệt kê dịch vụ.'

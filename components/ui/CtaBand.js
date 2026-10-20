@@ -1,6 +1,7 @@
 import styles from './CtaBand.module.css';
 import Button from './Button';
 import ContactForm from '../ContactForm';
+import {sitePath} from '../paths';
 
 /*
   Khối liên hệ cuối trang: khối tối duy nhất của trang, quầng cam phía sau; form trong thẻ trắng đặc bên dưới.
@@ -16,6 +17,7 @@ export default function CtaBand({
 }){
   return (
     <section id={id} className={`${styles.band} on-dark`}>
+      <img className={styles.visual} src={sitePath('/cta/conversion-path.svg')} alt="" width="420" height="420" loading="lazy"/>
       <div className="container">
         <div className={styles.copy} data-reveal="">
           <h2 className={styles.title}>{title}</h2>

@@ -17,7 +17,7 @@ export default function ProjectShowcase({items}){
     <div className={styles.wrap}>
       <article className={styles.lead} data-reveal="">
         <a href={sitePath(`/du-an/${lead.slug}`)} className={styles.leadLink}>
-          <div className={styles.leadMedia}><img src={sitePath(lead.image)} alt={`Dự án ${lead.name}`} width="1200" height="457" loading="lazy"/></div>
+          <div className={styles.leadMedia}><img src={sitePath(lead.image)} alt={`Dự án ${lead.name}`} width={lead.imageWidth} height={lead.imageHeight} style={{objectPosition: lead.imagePosition}} loading="lazy"/></div>
           <div className={styles.leadBody}>
             <Meta c={lead}/>
             <h3 className={styles.leadName}>{lead.name}</h3>
@@ -38,7 +38,7 @@ export default function ProjectShowcase({items}){
         {rest.map((c, i) => (
           <li key={c.slug} data-reveal="" style={{'--reveal-delay': `${i * 90}ms`}}>
             <a href={sitePath(`/du-an/${c.slug}`)} className={styles.card}>
-              <div className={styles.media}><img src={sitePath(c.image)} alt={`Dự án ${c.name}`} width="1200" height="560" loading="lazy"/></div>
+              <div className={styles.media}><img src={sitePath(c.image)} alt={`Dự án ${c.name}`} width={c.imageWidth} height={c.imageHeight} style={{objectPosition: c.imagePosition}} loading="lazy"/></div>
               <div className={styles.body}>
                 <Meta c={c}/>
                 <h3 className={styles.name}>{c.name}</h3>

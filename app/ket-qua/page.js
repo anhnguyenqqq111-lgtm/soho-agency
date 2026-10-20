@@ -16,7 +16,8 @@ import LogoMarquee from '../../components/proof/LogoMarquee';
 export const metadata = {
   alternates: {canonical: '/ket-qua/'},
   title: 'Dự án SOHO đã làm và cách đo kết quả',
-  description: 'Le Viva Resort, King Decor Luxury, Kronos Luxury Timepieces, Helen Bridal: bối cảnh, việc SOHO đã làm và kết quả. Cách SOHO đo từng kênh bằng đơn hàng và doanh thu.'
+  description: 'Le Viva Resort, King Decor Luxury, Kronos Luxury Timepieces, Helen Bridal: bối cảnh, việc SOHO đã làm và kết quả. Cách SOHO đo từng kênh bằng đơn hàng và doanh thu.',
+  openGraph: {images: [{url: '/og/soho-projects-og.png', width: 1200, height: 630, alt: 'Dự án thật và kết quả SOHO đã công bố'}]}
 };
 
 // Bảng đo theo kênh: viết bằng tiếng Việt, thuật ngữ tiếng Anh (nếu cần) để trong ngoặc

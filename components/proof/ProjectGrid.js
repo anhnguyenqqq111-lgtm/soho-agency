@@ -11,7 +11,7 @@ export default function ProjectGrid({projects}){
       {projects.map((p, i) => (
         <li key={p.slug} className={styles.item} data-reveal="" style={{'--reveal-delay': `${i * 90}ms`}}>
           <a href={sitePath(`/du-an/${p.slug}`)} className={styles.link}>
-            <div className={styles.media}><img src={sitePath(p.image)} alt={`Dự án ${p.name}`} loading="lazy" width="1200" height="560"/></div>
+            <div className={styles.media}><img src={sitePath(p.image)} alt={`Dự án ${p.name}`} loading="lazy" width={p.imageWidth} height={p.imageHeight} style={{objectPosition: p.imagePosition}}/></div>
             <div className={styles.meta}>
               <p className={styles.scope}>{p.scope} · {p.period}</p>
               <h3 className={styles.name}>{p.name}</h3>

@@ -34,7 +34,7 @@ export const metadata = {
     type: 'website',
     locale: 'vi_VN',
     siteName: 'SOHO Agency',
-    images: [{url: '/og/soho-og.png', width: 1200, height: 630, alt: 'SOHO Agency: SEO, quảng cáo và website cho doanh nghiệp TP.HCM'}]
+    images: [{url: '/og/soho-og-v2.png', width: 1200, height: 630, alt: 'SOHO Agency: từ tìm kiếm đến doanh thu'}]
   },
   twitter: {card: 'summary_large_image'},
   robots: {index: true, follow: true},
