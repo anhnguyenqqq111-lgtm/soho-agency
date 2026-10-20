@@ -3,7 +3,6 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Section from '../components/ui/Section';
 import HomeHero from '../components/hero/HomeHero';
-import RevenueToggle from '../components/hero/RevenueToggle';
 import Button from '../components/ui/Button';
 import Faq from '../components/ui/Faq';
 import CtaBand from '../components/ui/CtaBand';
@@ -85,10 +84,6 @@ export default function Home(){
           spacing="lg"
         >
           <Differentiators/>
-          <figure className={styles.measure}>
-            <figcaption className={styles.measureTitle}>Cùng một chiến dịch, hai cách đo</figcaption>
-            <RevenueToggle/>
-          </figure>
           <JourneyMatrix/>
         </Section>
 

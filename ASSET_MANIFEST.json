@@ -43,7 +43,7 @@
   },
   "proposed": [
     {"id": "H-01", "name": "hero-desktop", "path": "/hero/customer-journey-desktop.webp", "format": "webp", "dimensions": [1536, 1024], "priority": "P0", "status": "implemented", "integration": "components/hero/HomeHero.js"},
-    {"id": "H-02", "name": "hero-mobile", "path": "/hero/customer-journey-mobile.webp", "format": "webp", "dimensions": [1024, 1536], "priority": "P0", "status": "implemented", "integration": "components/hero/HomeHero.js"},
+    {"id": "H-02", "name": "hero-mobile", "path": "/hero/customer-journey-mobile.webp", "format": "webp", "dimensions": [1024, 1536], "priority": "P0", "status": "not-used", "note": "Ẩn dưới 981px: nằm sau các thẻ hành trình nên lộ thành mảng vụn trên mobile", "integration": "none"},
     {"id": "S-01", "name": "service-seo", "path": "/services/seo.svg", "format": "svg", "viewBox": [96, 96], "priority": "P0", "status": "implemented", "integration": "components/home/ServicesGrid.js"},
     {"id": "S-02", "name": "service-google-ads", "path": "/services/google-ads.svg", "format": "svg", "viewBox": [96, 96], "priority": "P0", "status": "implemented", "integration": "components/home/ServicesGrid.js"},
     {"id": "S-03", "name": "service-meta-tiktok-ads", "path": "/services/meta-tiktok-ads.svg", "format": "svg", "viewBox": [96, 96], "priority": "P0", "status": "implemented", "integration": "components/home/ServicesGrid.js"},

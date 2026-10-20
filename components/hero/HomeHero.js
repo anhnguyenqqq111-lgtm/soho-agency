@@ -38,10 +38,9 @@ export default function HomeHero(){
         </div>
 
         <div className={styles.journeyWrap}>
-          <picture className={styles.journeyArt} aria-hidden="true">
-            <source media="(max-width: 980px)" srcSet={sitePath('/hero/customer-journey-mobile.webp')}/>
-            <img src={sitePath('/hero/customer-journey-desktop.webp')} alt="" width="1536" height="1024" fetchPriority="high"/>
-          </picture>
+          {/* Hình 3D chỉ trang trí, chỉ hiện từ 981px. Dưới mức đó hình nằm sau các thẻ sẽ lộ thành mảng vụn, nên ẩn;
+              loading="lazy" để trình duyệt không tải ảnh đang bị ẩn. */}
+          <img className={styles.journeyArt} src={sitePath('/hero/customer-journey-desktop.webp')} alt="" aria-hidden="true" width="1536" height="1024" loading="lazy"/>
           <ol className={styles.journey} aria-label="Hành trình một khách hàng với SOHO">
             {STAGES.map((st, i) => (
               <li key={st.code} className={styles.step} style={{'--i': i}}>

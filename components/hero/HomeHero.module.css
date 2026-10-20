@@ -20,8 +20,7 @@
 
 /* Visual 3D chỉ là lớp bổ trợ; danh sách hành trình HTML luôn nằm trên và giữ toàn bộ ý nghĩa. */
 .journeyWrap{position:relative;min-width:0;isolation:isolate}
-.journeyArt{position:absolute;z-index:-1;width:520px;right:-145px;bottom:-92px;pointer-events:none;opacity:.62;filter:drop-shadow(0 24px 34px rgba(20,18,24,.12))}
-.journeyArt img{display:block;width:100%;height:auto}
+.journeyArt{position:absolute;z-index:-1;width:520px;height:auto;max-width:none;right:-145px;bottom:-92px;pointer-events:none;opacity:.62;filter:drop-shadow(0 24px 34px rgba(20,18,24,.12))}
 
 /* Hành trình: thẻ xếp bậc thang, nét nối gạch từ số thứ tự của thẻ trên xuống thẻ dưới */
 .journey{--s:clamp(14px,2.2vw,28px);list-style:none;margin:0;padding:0;display:grid;gap:16px;justify-items:start}
@@ -58,7 +57,7 @@
   .line2{padding-left:.4em}
   .inner{gap:40px}
   .journeyWrap{max-width:620px;width:100%;margin-inline:auto}
-  .journeyArt{width:290px;right:-18px;bottom:-30px;opacity:.34}
+  .journeyArt{display:none}
 }
 @media (max-width:480px){
   /* Dòng "đến doanh thu." không xuống dòng: cỡ chữ co theo màn hình để vừa từ 320px */

@@ -90,7 +90,7 @@ public/blog/                 ảnh bài blog (thumbnail và banner dùng chung),
 DESIGN.md                    "tờ giấy" hệ thiết kế: nguồn tham chiếu, màu, phông, luật viết chữ, từ cấm, icon, ảnh (mục 2). Đọc trước khi sửa giao diện hay câu chữ
 ```
 
-Mỗi component và trang có `.module.css` riêng. Server Component mặc định; client component: `DesktopNavigation`, `MobileNavigation`, `HeaderScroll`, `ContactForm`, `RevealObserver`, `Toc`, `ProjectCarousel`, `RevenueToggle`, `ServiceGroups`, `ProcessAccordion`, `StickyCta`, `ReadingProgress`.
+Mỗi component và trang có `.module.css` riêng. Server Component mặc định; client component: `DesktopNavigation`, `MobileNavigation`, `HeaderScroll`, `ContactForm`, `RevealObserver`, `Toc`, `ProjectCarousel`, `ServiceGroups`, `ProcessAccordion`, `StickyCta`, `ReadingProgress`.
 
 ## Form liên hệ
 
