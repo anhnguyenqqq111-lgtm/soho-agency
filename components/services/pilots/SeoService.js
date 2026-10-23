@@ -1,17 +1,16 @@
 import styles from './SeoService.module.css';
 import ed from '../editorial/editorial.module.css';
-import Icon from '../../ui/Icon';
-import {sitePath} from '../../paths';
 import SeoKnowledgeMap from './SeoKnowledgeMap';
 import {MethodSection} from './PilotParts';
-import {ProblemStatement, Responsibility, MeasurementLadder} from '../insight/Insight';
-import {ServiceTouchpointContext, ContextualServiceCTA} from '../ServiceContext';
-import {cases} from '../../data/cases';
+import {MeasurementLadder} from '../insight/Insight';
+import {ContextualServiceCTA} from '../ServiceContext';
+import {ServiceFit, ScopeSpec, CaseEvidence, NextSteps} from '../modules/Modules';
+import {EXPERIENCE} from '../../data/serviceExperience';
 
 /*
-  Phần dưới sơ đồ của trang SEO tổng thể. Nội dung theo Redesign 3.1 (vấn đề → vì sao → SOHO làm gì → đo → nối vào
-  kinh doanh), bố cục theo V4.0 "phân tích tìm kiếm": nền mở, chữ lớn, bảng và sơ đồ chính xác, ít trang trí.
-  Mọi phần nhắc lại nút trên sơ đồ cụm chủ đề ở hero.
+  Phần dưới sơ đồ của trang SEO tổng thể (V6.0, bố cục "phân tích tìm kiếm" của V4.0).
+  Có hợp với bạn? → bảng ý định tìm kiếm (câu hỏi → ý định → loại trang → bước tiếp theo), mỗi dòng là một nút của
+  sơ đồ cụm chủ đề ở hero, kèm bản đồ ví dụ → SOHO thay đổi gì → dự án thật → phạm vi → đo → bước tiếp theo.
 */
 
 // Mỗi dòng là một nút trên sơ đồ cụm chủ đề ở hero, theo thứ tự gần quyết định dần
@@ -22,7 +21,8 @@ const INTENTS = [
     query: 'mẫu quán cà phê sân vườn đẹp',
     volume: 'Nhiều',
     near: 'Xa',
-    page: 'Bài hướng dẫn có ảnh, dẫn sang bài chi phí'
+    page: 'Bài hướng dẫn có ảnh công trình',
+    next: 'Dẫn sang bài chi phí'
   },
   {
     node: 'So sánh',
@@ -30,7 +30,8 @@ const INTENTS = [
     query: 'nên thuê công ty hay tự làm quán cà phê',
     volume: 'Vừa',
     near: 'Vừa',
-    page: 'Bài so sánh có tiêu chí rõ'
+    page: 'Bài so sánh có tiêu chí rõ',
+    next: 'Dẫn sang trang quy trình'
   },
   {
     node: 'Chi phí',
@@ -38,7 +39,8 @@ const INTENTS = [
     query: 'chi phí làm quán cà phê sân vườn',
     volume: 'Vừa',
     near: 'Gần',
-    page: 'Bài phân tích chi phí, dẫn sang báo giá'
+    page: 'Bài phân tích chi phí',
+    next: 'Dẫn sang trang báo giá'
   },
   {
     node: 'Câu chuyện khách',
@@ -46,7 +48,8 @@ const INTENTS = [
     query: 'công trình quán cà phê đã thi công',
     volume: 'Ít',
     near: 'Gần',
-    page: 'Trang dự án có ảnh thật'
+    page: 'Trang dự án có ảnh thật',
+    next: 'Mời gửi yêu cầu báo giá'
   },
   {
     node: 'Quy trình',
@@ -54,7 +57,8 @@ const INTENTS = [
     query: 'quy trình thi công quán cà phê',
     volume: 'Ít',
     near: 'Gần',
-    page: 'Trang quy trình và bảo hành'
+    page: 'Trang quy trình và bảo hành',
+    next: 'Mời gửi yêu cầu báo giá'
   },
   {
     node: 'Trang dịch vụ',
@@ -62,7 +66,8 @@ const INTENTS = [
     query: 'công ty thi công quán cà phê sân vườn',
     volume: 'Ít',
     near: 'Rất gần',
-    page: 'Trang dịch vụ có giá tham khảo và form',
+    page: 'Trang dịch vụ có giá tham khảo',
+    next: 'Form, nút gọi',
     acc: true
   }
 ];
@@ -102,57 +107,27 @@ function Meter({label, value}) {
 }
 
 export default function SeoService({service, article, names}) {
-  const project = cases.find(c => c.slug === 'king-decor-luxury');
+  const x = EXPERIENCE[service.slug];
   return (
     <>
-      <section id="van-de" className={ed.band} aria-labelledby="van-de-title">
-        <div className="container">
-          <p className={ed.label}>
-            <b>01</b> Vấn đề
-          </p>
-          <h2 id="van-de-title" className={`${ed.statement} ${styles.statement}`}>
-            Có lượt truy cập, <span className="hl">chưa chắc có khách.</span>
-          </h2>
-          <ProblemStatement
-            lead="Sơ đồ ở đầu trang có một điểm đến: trang dịch vụ. Nhiều website có đủ các nhóm bài xung quanh, nhưng mỗi bài đứng riêng, không đường nào dẫn người đọc về điểm đến đó."
-            note="Ví dụ minh họa cho một doanh nghiệp thi công quán cà phê, không phải số liệu của khách hàng."
-            cases={[
-              {
-                tag: 'Nút “Câu hỏi”',
-                label: 'Bài kéo người chưa định mua',
-                text: 'Bài “mẫu quán cà phê đẹp” có nhiều lượt xem từ người tìm ảnh tham khảo. Họ đọc xong rồi đi, vì bài không nói tới chi phí hay cách bắt đầu.'
-              },
-              {
-                tag: 'Nút “Chi phí”',
-                label: 'Người sắp mua không tìm thấy câu trả lời',
-                text: 'Người gõ “chi phí làm quán cà phê sân vườn” đã gần quyết định. Website không có trang trả lời chi phí thì họ đọc trang của đối thủ.'
-              },
-              {
-                tag: 'Nút “Trang dịch vụ”',
-                label: 'Điểm đến là ngõ cụt',
-                text: 'Khách tới được trang dịch vụ nhưng không thấy giá tham khảo, quy trình hay công trình đã làm, nên chưa đủ tin để để lại thông tin.'
-              }
-            ]}
-          />
-        </div>
-      </section>
+      <ServiceFit fit={x.fit} slug={service.slug} names={names} num="01" tone="white" />
 
-      <section id="nguyen-nhan" className={`${ed.band} ${ed.canvas}`} aria-labelledby="nguyen-nhan-title">
+      <section id="y-dinh" className={`${ed.band} ${ed.canvas}`} aria-labelledby="y-dinh-title">
         <div className={`container ${ed.grid}`}>
           <div className={`${ed.side} ${ed.sticky}`}>
             <p className={ed.label}>
-              <b>02</b> Vì sao xảy ra
+              <b>02</b> Bảng ý định tìm kiếm
             </p>
-            <h2 id="nguyen-nhan-title" className={ed.h2}>
-              Lượng tìm kiếm và ý định mua là hai trục khác nhau
+            <h2 id="y-dinh-title" className={ed.h2}>
+              Từ câu hỏi của khách tới hành động
             </h2>
             <p className={`${ed.body} ${styles.sideText}`}>
-              Đọc lại từng nút trên sơ đồ: càng gần trang dịch vụ, người tìm càng gần quyết định nhưng càng ít người gõ. Website chỉ chạy theo lượt truy cập sẽ
-              dồn sức vào nút đầu tiên.
+              Mỗi dòng là một nút trên sơ đồ ở đầu trang. Càng gần trang dịch vụ, người tìm càng gần quyết định nhưng càng ít người gõ. Website chỉ chạy theo
+              lượt truy cập sẽ dồn sức vào dòng đầu tiên.
             </p>
             <p className={`${ed.small} ${styles.sideNote}`}>
-              Mức “số người gõ” và “gần quyết định” là xu hướng thường gặp để so sánh giữa các nhóm, không phải số đo. Số thật của từng ngành lấy từ công cụ
-              nghiên cứu từ khóa và Search Console.
+              Mức “số người gõ” và “gần quyết định” là xu hướng thường gặp để so sánh giữa các nhóm, không phải số đo. Ví dụ minh họa cho một doanh nghiệp thi
+              công quán cà phê.
             </p>
           </div>
           <ol className={`${ed.main} ${ed.rows} ${styles.intents}`} aria-label="Sáu nút trên sơ đồ cụm chủ đề, từ xa tới gần quyết định">
@@ -170,44 +145,31 @@ export default function SeoService({service, article, names}) {
                   <Meter label="Gần quyết định" value={r.near} />
                 </div>
                 <p className={styles.intentPage}>
-                  <span>Trang cần có</span>
-                  {r.page}
+                  <span>Loại trang → bước tiếp theo</span>
+                  {r.page} → {r.next}
                 </p>
               </li>
             ))}
           </ol>
-        </div>
-      </section>
-
-      <section id="ban-do" className={ed.band} aria-labelledby="ban-do-title">
-        <div className={`container ${ed.grid}`}>
-          <div className={ed.side}>
-            <p className={ed.label}>Ví dụ</p>
-            <h2 id="ban-do-title" className={ed.h2}>
-              Cùng cụm đó, vẽ thành các trang thật
-            </h2>
-          </div>
-          <p className={`${ed.main} ${ed.lead} ${styles.mapIntro}`}>
-            Chọn một trang để xem người tìm gõ gì, trang phải trả lời điều gì và dẫn sang đâu tiếp. Các trang được liên kết tới sáng lên trên bản đồ.
-          </p>
-          <div className={ed.full}>
+          <div className={`${ed.full} ${styles.mapBlock}`}>
+            <h3 className={ed.h3}>Cùng cụm đó, vẽ thành các trang thật</h3>
+            <p className={`${ed.body} ${styles.mapIntro}`}>Chọn một trang để xem người tìm gõ gì, trang phải trả lời điều gì và dẫn sang đâu tiếp.</p>
             <SeoKnowledgeMap />
           </div>
         </div>
       </section>
 
-      <section id="giai-phap" className={`${ed.band} ${ed.canvas}`} aria-labelledby="giai-phap-title">
+      <section id="thay-doi" className={ed.band} aria-labelledby="thay-doi-title">
         <div className={`container ${ed.grid}`}>
           <div className={`${ed.side} ${ed.sticky}`}>
             <p className={ed.label}>
-              <b>03</b> SOHO làm gì
+              <b>03</b> SOHO thay đổi gì
             </p>
-            <h2 id="giai-phap-title" className={ed.h2}>
+            <h2 id="thay-doi-title" className={ed.h2}>
               Chẩn đoán từng nút, rồi mới viết thêm
             </h2>
             <p className={`${ed.body} ${styles.sideText}`}>
-              Một nguyên nhân nằm dưới cả sơ đồ: Google không đọc hoặc không lập chỉ mục được trang. Cấu trúc tốt đến đâu cũng không có cơ hội hiện lên, vì vậy
-              bước 1 là kiểm tra kỹ thuật.
+              Một nguyên nhân nằm dưới cả sơ đồ: Google không đọc hoặc không lập chỉ mục được trang. Vì vậy bước 1 trên dải các bước là kiểm tra kỹ thuật.
             </p>
           </div>
           <ol className={`${ed.main} ${ed.rows} ${styles.fixes}`}>
@@ -225,68 +187,18 @@ export default function SeoService({service, article, names}) {
               </li>
             ))}
           </ol>
-          <div className={ed.full}>
-            <Responsibility
-              ours={[
-                'Bản đồ từ khóa theo bước mua và cấu trúc cụm chủ đề',
-                'Dàn ý cho từng trang, từng bài, và kế hoạch liên kết nội bộ',
-                'Danh sách lỗi kỹ thuật kèm cách sửa; sửa trực tiếp hoặc hướng dẫn đội web',
-                'Báo cáo hằng tháng bằng số khách và doanh thu từ Google'
-              ]}
-              yours={[
-                'Quyền xem Search Console, GA4 và quyền quản trị website',
-                'Thông tin thật để viết đúng: khoảng giá, quy trình, công trình, chính sách',
-                'Một người duyệt nội dung chuyên môn trước khi đăng',
-                'Phản hồi từ đội sale về khách đến từ Google: có đúng nhu cầu không'
-              ]}
-            />
-          </div>
-          <h3 className={`${ed.side} ${ed.h3}`}>Hồ sơ bàn giao</h3>
-          <ul className={`${ed.main} ${styles.files}`}>
-            {service.deliverables.map(d => (
-              <li key={d}>
-                <Icon name="file-text" size={18} />
-                {d}
-              </li>
-            ))}
-          </ul>
         </div>
       </section>
 
-      {project && (
-        <section id="du-an" className={ed.band} aria-labelledby="du-an-title">
-          <div className={`container ${ed.grid}`}>
-            <p className={`${ed.full} ${ed.label} ${styles.caseLabel}`}>Dự án thật</p>
-            <a href={sitePath(`/du-an/${project.slug}`)} className={`${ed.full} ${styles.caseMedia}`} tabIndex={-1} aria-hidden="true">
-              <img src={sitePath(project.image)} alt="" width={project.imageWidth} height={project.imageHeight} loading="lazy" />
-            </a>
-            <div className={ed.side}>
-              <h2 id="du-an-title" className={ed.h3}>
-                {project.name}
-              </h2>
-              <p className={`${ed.small} ${styles.caseMeta}`}>
-                {project.field}
-                <br />
-                {project.scope} · {project.period}
-              </p>
-            </div>
-            <div className={ed.main}>
-              <p className={ed.lead}>{project.context}</p>
-              <p className={`${ed.body} ${styles.caseWork}`}>{project.work.split('. ').slice(0, 2).join('. ')}.</p>
-              <p className={`${ed.small} ${styles.caseNote}`}>Kết quả SOHO đã công bố của dự án này là về quảng cáo, chưa có số liệu riêng cho SEO.</p>
-              <a href={sitePath(`/du-an/${project.slug}`)} className={ed.textLink}>
-                Xem dự án {project.name} <Icon name="arrow-right" size={18} />
-              </a>
-            </div>
-          </div>
-        </section>
-      )}
+      <CaseEvidence proof={x.proof} num="04" tone="canvas" title="Dự án có SEO website" />
 
-      <section id="do-luong" className={`${ed.band} ${ed.canvas}`} aria-labelledby="do-luong-title">
+      <ScopeSpec scope={x.scope} deliverables={service.deliverables} slug={service.slug} names={names} num="05" dark />
+
+      <section id="do-luong" className={ed.band} aria-labelledby="do-luong-title">
         <div className={`container ${ed.grid}`}>
           <div className={ed.side}>
             <p className={ed.label}>
-              <b>04</b> Đo thế nào
+              <b>06</b> Đo thế nào
             </p>
             <h2 id="do-luong-title" className={ed.h2}>
               Thứ hạng là bậc đầu, không phải đích
@@ -314,22 +226,9 @@ export default function SeoService({service, article, names}) {
         </div>
       </section>
 
-      <section id="diem-cham" className={ed.band} aria-labelledby="diem-cham-title">
-        <div className="container">
-          <p className={ed.label}>
-            <b>05</b> Nối vào kinh doanh
-          </p>
-          <h2 id="diem-cham-title" className={`${ed.statement} ${styles.chain}`}>
-            Nhu cầu tìm kiếm <span aria-hidden="true">→</span> trang dịch vụ <span aria-hidden="true">→</span> <span className="hl">khách đủ chuẩn</span>
-          </h2>
-          <p className={`${ed.lead} ${styles.chainLead}`}>
-            SEO đưa người đang có nhu cầu tới website. Biến họ thành khách là việc của trang dịch vụ, đo lường và đội sale.
-          </p>
-          <ServiceTouchpointContext slug={service.slug} names={names} />
-        </div>
-      </section>
+      <NextSteps slug={service.slug} names={names} num="07" tone="canvas" />
 
-      <MethodSection article={article} name={service.menuTitle} editorial tone="gray" />
+      <MethodSection article={article} name={service.menuTitle} tone="white" />
 
       <ContextualServiceCTA
         slug={service.slug}

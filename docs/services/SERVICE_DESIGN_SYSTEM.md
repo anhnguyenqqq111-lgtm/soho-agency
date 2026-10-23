@@ -190,3 +190,37 @@ Phần đầu trang thí điểm là `PilotOverview`, gồm 3 kiểu hero. Ba s�
 - ảnh website và app thật đã được khách đồng ý công bố;
 - ảnh quảng cáo Meta, TikTok đã chạy;
 - dự án nhận diện có thể công bố.
+
+## 6. Redesign V6.0: module quyết định và phần riêng cho cả 12 trang
+
+Audit, ma trận quyết định và kết quả kiểm thử: `SERVICE_EXPERIENCE_V6.md`. Mục này ghi cấu trúc trang để làm tiếp cho đúng.
+
+**Cả 12 trang mở đầu bằng `PilotOverview`:** hero có sơ đồ live, rồi dải các bước, rồi sơ đồ "Dấu hiệu → Mục tiêu". Kiểu hero lấy từ `EXPERIENCE[slug].hero`:
+
+- `analysis`: SEO, SEO cho AI, GA4, Tư vấn lộ trình.
+- `performance`: Google Ads, Meta, CRO, Local SEO.
+- `exhibition`: Nhận diện, Website, App, Nội dung. Dải các bước của nhóm này có nền tối.
+
+**Thứ tự phần dưới sơ đồ:**
+
+| Trang | Thứ tự |
+| --- | --- |
+| SEO | có hợp không → bảng ý định tìm kiếm + bản đồ → SOHO thay đổi gì → dự án → phạm vi (tối) → đo → bước tiếp theo → đọc sâu |
+| Google Ads | có hợp không + bảng kiểm → đọc phễu → phép tính (tối) → cấu trúc tài khoản → phạm vi + Google Partner → đo → bước tiếp theo → đọc sâu |
+| Nhận diện | có hợp không → vì sao lệch → triển lãm → khách nói → phạm vi + mốc duyệt → bước tiếp theo |
+| Website, Meta | có hợp không → phần riêng → dự án → phạm vi → bước tiếp theo |
+| SEO cho AI, GA4, Tư vấn lộ trình | có hợp không → phần riêng → phạm vi → bước tiếp theo |
+| Local SEO, CRO, Nội dung | phần riêng → có hợp không → phạm vi → bước tiếp theo |
+| App | có hợp không + 4 câu hỏi → phạm vi → bước tiếp theo |
+
+**Luật:**
+
+- Nền trắng và canvas xen kẽ.
+- Tối đa 2 khối tối mỗi trang, kể cả CTA. Khi dải các bước sáng, khối phạm vi dùng nền tối; Google Ads dành khối tối cho phép tính.
+- Đánh số thứ tự các phần theo đúng thứ tự trên trang.
+
+**Thêm hoặc sửa một trang:**
+
+1. Sửa dữ liệu trong `components/data/serviceExperience.js`.
+2. Sửa thứ tự và phần riêng trong `SIG` ở `components/services/ServiceExperience.js`.
+3. Trang có phần thân hoàn toàn riêng thì thêm vào `CUSTOM` trong `app/dich-vu/[slug]/page.js`.

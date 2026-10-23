@@ -1,58 +1,9 @@
 import styles from './Insight.module.css';
 
 /*
-  Khối nội dung dùng chung cho phần dưới sơ đồ của trang dịch vụ (Redesign 3.1, trình bày theo V4.0: chữ và đường kẻ,
-  không thẻ). Không phải khuôn bắt buộc; mỗi trang tự chọn khối và thứ tự.
-  - ProblemStatement: đoạn dẫn bên trái, 2 đến 3 biểu hiện cụ thể xếp hàng bên phải.
-  - Responsibility: SOHO chịu trách nhiệm gì, bạn cung cấp gì, hai cột chữ.
-  - MeasurementLadder: 4 bậc đo dựng thành bậc thang bằng đường kẻ, kèm giới hạn của phép đo.
+  Thang đo 4 bậc dùng ở trang dịch vụ (hoạt động → trung gian → hành vi khách → kinh doanh), dựng bằng đường kẻ,
+  kèm các giới hạn của phép đo. Không dùng số lớn khi chưa có số thật.
 */
-
-export function ProblemStatement({lead, cases, note}) {
-  return (
-    <div className={styles.problem}>
-      <div className={styles.problemLead}>
-        <p className={styles.lead}>{lead}</p>
-        {note && <p className={styles.note}>{note}</p>}
-      </div>
-      <ol className={styles.cases}>
-        {cases.map((c, i) => (
-          <li key={c.label}>
-            <span className={styles.caseNum}>{String(i + 1).padStart(2, '0')}</span>
-            <div>
-              {c.tag && <p className={styles.caseTag}>{c.tag}</p>}
-              <h3 className={styles.caseLabel}>{c.label}</h3>
-              <p className={styles.caseText}>{c.text}</p>
-            </div>
-          </li>
-        ))}
-      </ol>
-    </div>
-  );
-}
-
-export function Responsibility({ours, yours, oursTitle = 'SOHO chịu trách nhiệm', yoursTitle = 'Bạn cần cung cấp'}) {
-  return (
-    <div className={styles.split}>
-      <div>
-        <h3 className={styles.splitHead}>{oursTitle}</h3>
-        <ul className={styles.splitList}>
-          {ours.map(item => (
-            <li key={item}>{item}</li>
-          ))}
-        </ul>
-      </div>
-      <div>
-        <h3 className={styles.splitHead}>{yoursTitle}</h3>
-        <ul className={`${styles.splitList} ${styles.yours}`}>
-          {yours.map(item => (
-            <li key={item}>{item}</li>
-          ))}
-        </ul>
-      </div>
-    </div>
-  );
-}
 
 const LEVELS = [
   {key: 'activity', name: 'Hoạt động', hint: 'Việc đã làm'},

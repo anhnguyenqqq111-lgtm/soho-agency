@@ -52,6 +52,10 @@ export default function GrowthDiagnostic({names, descs, cases}) {
 
         <dl className={styles.meta}>
           <div>
+            <dt>Vì sao bắt đầu từ đây</dt>
+            <dd>{d.why}</dd>
+          </div>
+          <div>
             <dt>Loại cải thiện có thể kỳ vọng</dt>
             <dd>{d.improve}</dd>
           </div>
@@ -59,15 +63,26 @@ export default function GrowthDiagnostic({names, descs, cases}) {
             <dt>Dự án liên quan</dt>
             <dd>
               {proof ? (
-                <a href={sitePath(`/du-an/${d.caseSlug}`)}>
-                  {proof.name}: {proof.result}
-                </a>
+                <>
+                  <a href={sitePath(`/du-an/${d.caseSlug}`)}>
+                    {proof.name} · {proof.scope}
+                  </a>
+                  <span className={styles.caseNote}>{d.caseNote}</span>
+                </>
               ) : (
-                'Chưa có dự án công bố cho vấn đề này.'
+                'Chưa có dự án đúng kênh này được công bố.'
               )}
             </dd>
           </div>
         </dl>
+
+        <a
+          href={sitePath(`/lien-he/?van-de=${d.key}&dich-vu=${d.first}`)}
+          className={styles.send}
+          onClick={() => track('service_diagnostic_contact', {problem: d.key})}
+        >
+          Gửi bối cảnh này cho SOHO <Icon name="arrow-right" size={18} />
+        </a>
 
         <p className={styles.note}>
           Gợi ý dựa trên vấn đề phổ biến, không thay cho việc xem số liệu thật của bạn. Muốn chắc, gửi website và kênh đang chạy để SOHO xem.

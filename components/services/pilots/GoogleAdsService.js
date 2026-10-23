@@ -5,14 +5,18 @@ import PartnerBadge from '../../proof/PartnerBadge';
 import {sitePath} from '../../paths';
 import AdsProfitSimulator from './AdsProfitSimulator';
 import {MethodSection} from './PilotParts';
-import {ProblemStatement, Responsibility, MeasurementLadder} from '../insight/Insight';
-import {ServiceTouchpointContext, ContextualServiceCTA} from '../ServiceContext';
+import {MeasurementLadder} from '../insight/Insight';
+import {ContextualServiceCTA} from '../ServiceContext';
+import {ServiceFit, ScopeSpec, NextSteps} from '../modules/Modules';
+import {ReadinessChecklist} from '../signatures/Interactive';
+import {EXPERIENCE} from '../../data/serviceExperience';
 import {partners} from '../../data/proof';
 
 /*
-  Phần dưới sơ đồ của trang Google Ads & Shopping. Nội dung theo Redesign 3.1, bố cục theo V4.0 "kinh tế quảng cáo":
-  câu khẳng định lớn → so sánh con số dễ nhìn và con số nên xem ở từng tầng phễu → một dải tối duy nhất cho phép tính
-  (khối tối thứ hai là CTA cuối) → cấu trúc tài khoản → bàn giao và chứng nhận → thang đo → nối vào kinh doanh.
+  Phần dưới sơ đồ của trang Google Ads & Shopping (V6.0, bố cục "kinh tế quảng cáo" của V4.0).
+  Có hợp với bạn? kèm bảng kiểm 6 điều kiện trước khi tăng ngân sách → mỗi tầng phễu có một con số che chỗ rò →
+  phép tính với số của bạn (dải tối duy nhất, khối tối thứ hai là CTA) → SOHO đổi cấu trúc tài khoản → phạm vi, kèm
+  chứng nhận Google Partner → đo → bước tiếp theo. Không tạo số kết quả quảng cáo.
 */
 
 // Mỗi dòng là một tầng của phễu ở hero
@@ -80,46 +84,22 @@ const ARCHITECTURE = [
 const GUARDS = ['Danh sách từ khóa loại trừ dùng chung', 'Một chuyển đổi chính cho mỗi mục tiêu', 'Đơn chốt từ CRM nhập ngược về Google Ads'];
 
 export default function GoogleAdsService({service, article, names}) {
+  const x = EXPERIENCE[service.slug];
   const google = partners.find(p => p.name === 'Google Partner');
   return (
     <>
-      <section id="van-de" className={ed.band} aria-labelledby="van-de-title">
-        <div className="container">
-          <p className={ed.label}>
-            <b>01</b> Vấn đề
-          </p>
-          <h2 id="van-de-title" className={`${ed.statement} ${styles.statement}`}>
-            Báo cáo đẹp <span className="hl">chưa chắc đã có lãi.</span>
-          </h2>
-          <ProblemStatement
-            lead="Phễu ở đầu trang có bốn tầng. Nhiều tài khoản chỉ được nhìn ở tầng thứ hai, giá mỗi lượt bấm. Tiền có thể rò ở ba tầng còn lại trong khi báo cáo vẫn trông ổn."
-            note="Các tình huống thường gặp khi kiểm tra tài khoản, dùng để minh họa, không phải số liệu của một khách hàng cụ thể."
-            cases={[
-              {
-                tag: 'Rò ở tầng truy vấn',
-                label: 'Giá bấm giảm, khách cũng giảm',
-                text: 'Mở rộng từ khóa cho giá bấm rẻ hơn nhưng kéo thêm nhiều người chỉ tìm thông tin. Tầng lượt bấm vẫn trông tốt.'
-              },
-              {
-                tag: 'Rò ở tầng khách đúng tệp',
-                label: 'Nhiều form, sale nói khách không đúng',
-                text: 'Chiến dịch được tối ưu theo số form nên học cách tìm người dễ điền form, không phải người sẽ mua.'
-              },
-              {
-                tag: 'Rò ở tầng đơn có lãi',
-                label: 'ROAS đẹp, lợi nhuận mỏng',
-                text: 'Doanh thu dồn vào nhóm hàng bán chạy nhưng biên thấp. Sau giá vốn và vận chuyển, phần còn lại không đủ bù chi phí quảng cáo.'
-              }
-            ]}
-          />
+      <ServiceFit fit={x.fit} slug={service.slug} names={names} num="01" tone="white">
+        <div className={styles.readyWrap}>
+          <h3 className={ed.h3}>Bảng kiểm trước khi tăng ngân sách</h3>
+          <ReadinessChecklist names={names} />
         </div>
-      </section>
+      </ServiceFit>
 
       <section id="nguyen-nhan" className={`${ed.band} ${ed.canvas}`} aria-labelledby="nguyen-nhan-title">
         <div className={`container ${ed.grid}`}>
           <div className={`${ed.side} ${ed.sticky}`}>
             <p className={ed.label}>
-              <b>02</b> Vì sao xảy ra
+              <b>02</b> Đọc phễu
             </p>
             <h2 id="nguyen-nhan-title" className={ed.h2}>
               Mỗi tầng có một con số che chỗ rò
@@ -165,7 +145,9 @@ export default function GoogleAdsService({service, article, names}) {
       <section id="mo-phong" className={`${ed.band} ${ed.ink} dark on-dark`} aria-labelledby="mo-phong-title">
         <div className={`container ${ed.grid}`}>
           <div className={ed.side}>
-            <p className={ed.label}>Phép tính</p>
+            <p className={ed.label}>
+              <b>03</b> Phép tính
+            </p>
             <h2 id="mo-phong-title" className={ed.h2}>
               Tính thử bằng số của bạn
             </h2>
@@ -180,13 +162,13 @@ export default function GoogleAdsService({service, article, names}) {
         </div>
       </section>
 
-      <section id="giai-phap" className={ed.band} aria-labelledby="giai-phap-title">
+      <section id="thay-doi" className={ed.band} aria-labelledby="thay-doi-title">
         <div className={`container ${ed.grid}`}>
           <div className={ed.side}>
             <p className={ed.label}>
-              <b>03</b> SOHO làm gì
+              <b>04</b> SOHO thay đổi gì
             </p>
-            <h2 id="giai-phap-title" className={ed.h2}>
+            <h2 id="thay-doi-title" className={ed.h2}>
               Chia tài khoản theo ý định và lợi nhuận
             </h2>
           </div>
@@ -221,37 +203,21 @@ export default function GoogleAdsService({service, article, names}) {
               ))}
             </ul>
           </div>
-          <div className={ed.full}>
-            <Responsibility
-              ours={[
-                'Kiểm tra cách đo, mục tiêu chuyển đổi và cấu trúc tài khoản trước khi đổi gì',
-                'Dựng lại chiến dịch theo ý định, danh sách từ khóa loại trừ, bộ mẫu quảng cáo',
-                'Thiết lập nhập đơn chốt từ CRM hoặc sổ bán hàng về Google Ads',
-                'Báo cáo chi phí mỗi đơn, doanh thu trên chi phí và lợi nhuận gộp'
-              ]}
-              yours={[
-                'Quyền truy cập tài khoản Google Ads, GA4 và Google Merchant Center (nếu bán hàng online)',
-                'Biên lợi nhuận theo nhóm hàng hoặc dịch vụ, để đặt mức hòa vốn',
-                'Dữ liệu đơn chốt từ CRM hoặc sổ bán hàng, cập nhật định kỳ',
-                'Phản hồi của đội sale về chất lượng khách từ quảng cáo'
-              ]}
-            />
-          </div>
         </div>
       </section>
 
-      <section id="ban-giao" className={`${ed.band} ${ed.canvas}`} aria-labelledby="ban-giao-title">
-        <div className={`container ${ed.grid}`}>
-          <div className={ed.side}>
-            <p className={ed.label}>Bằng chứng và bàn giao</p>
-            <h2 id="ban-giao-title" className={ed.h2}>
-              Được Google xác nhận, báo cáo bằng lợi nhuận
-            </h2>
-          </div>
-          <div className={`${ed.main} ${styles.partner}`}>
-            <PartnerBadge partner={google} size={112} tipId="tip-google-ads-page" />
+      <ScopeSpec
+        scope={x.scope}
+        deliverables={service.deliverables}
+        slug={service.slug}
+        names={names}
+        num="05"
+        dark={false}
+        aside={
+          <div className={styles.partner}>
+            <PartnerBadge partner={google} size={96} tipId="tip-google-ads-page" />
             <div>
-              <p className={styles.partnerHead}>SOHO là Google Partner. Google xác nhận trên hồ sơ đối tác:</p>
+              <p className={styles.partnerHead}>SOHO là Google Partner. Google xác nhận:</p>
               <ul className={styles.criteria}>
                 {google.criteria.map(c => (
                   <li key={c}>{c}</li>
@@ -260,23 +226,14 @@ export default function GoogleAdsService({service, article, names}) {
               <p className={ed.small}>Bấm huy hiệu để xem hồ sơ. SOHO chưa công bố dự án Google Ads có số liệu.</p>
             </div>
           </div>
-          <h3 className={`${ed.side} ${ed.h3}`}>Bàn giao</h3>
-          <ol className={`${ed.main} ${styles.deliver}`}>
-            {service.deliverables.map((d, i) => (
-              <li key={d}>
-                <span>{String(i + 1).padStart(2, '0')}</span>
-                {d}
-              </li>
-            ))}
-          </ol>
-        </div>
-      </section>
+        }
+      />
 
       <section id="do-luong" className={ed.band} aria-labelledby="do-luong-title">
         <div className={`container ${ed.grid}`}>
           <div className={ed.side}>
             <p className={ed.label}>
-              <b>04</b> Đo thế nào
+              <b>06</b> Đo thế nào
             </p>
             <h2 id="do-luong-title" className={ed.h2}>
               Báo cáo đọc từ cuối phễu ngược lên
@@ -304,22 +261,9 @@ export default function GoogleAdsService({service, article, names}) {
         </div>
       </section>
 
-      <section id="diem-cham" className={`${ed.band} ${ed.canvas}`} aria-labelledby="diem-cham-title">
-        <div className="container">
-          <p className={ed.label}>
-            <b>05</b> Nối vào kinh doanh
-          </p>
-          <h2 id="diem-cham-title" className={`${ed.statement} ${styles.chain}`}>
-            Ý định mua <span aria-hidden="true">→</span> trang đích <span aria-hidden="true">→</span> <span className="hl">đơn có lãi</span>
-          </h2>
-          <p className={`${ed.lead} ${styles.chainLead}`}>
-            Quảng cáo đưa người đang tìm tới ngay, trong lúc SEO còn cần thời gian. Phần còn lại của phễu nằm ở trang đích, đo lường và đội sale.
-          </p>
-          <ServiceTouchpointContext slug={service.slug} names={names} />
-        </div>
-      </section>
+      <NextSteps slug={service.slug} names={names} num="07" tone="canvas" />
 
-      <MethodSection article={article} name={service.menuTitle} editorial tone="white" />
+      <MethodSection article={article} name={service.menuTitle} tone="white" />
 
       <ContextualServiceCTA
         slug={service.slug}

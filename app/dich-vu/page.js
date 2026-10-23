@@ -24,7 +24,7 @@ export const metadata = {
 export default function ServicesIndexPage() {
   const names = Object.fromEntries(servicePages.map(s => [s.slug, s.menuTitle]));
   const descs = Object.fromEntries(servicePages.map(s => [s.slug, s.menuDesc]));
-  const caseInfo = Object.fromEntries(cases.map(c => [c.slug, {name: c.name, result: c.result}]));
+  const caseInfo = Object.fromEntries(cases.map(c => [c.slug, {name: c.name, scope: c.scope}]));
   return (
     <>
       <Header activeNav="services" />

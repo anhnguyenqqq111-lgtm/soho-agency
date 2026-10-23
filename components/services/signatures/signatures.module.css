@@ -1,0 +1,663 @@
+/* Phần riêng của từng dịch vụ (V6.0). Cùng ngôn ngữ biên tập: chữ, đường kẻ; nền tối chỉ cho ô kết quả. */
+
+.note {
+  margin-top: 16px;
+  max-width: 82ch;
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--ink-3);
+}
+.noteDark {
+  margin-top: 12px;
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--on-dark-3);
+}
+.mono {
+  font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+  font-size: 14px;
+}
+.strong {
+  color: var(--ink) !important;
+  font-weight: 600;
+}
+
+/* ---------- Bảng chung ---------- */
+.tableWrap {
+  overflow-x: auto;
+  border-top: 2px solid var(--ink);
+}
+.tableWrap:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 4px;
+}
+.table {
+  width: 100%;
+  min-width: 760px;
+  border-collapse: collapse;
+  font-size: 15px;
+  line-height: 1.5;
+}
+.table th,
+.table td {
+  padding: 16px 12px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--line);
+}
+.table thead th {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+.table tbody th {
+  font-family: var(--font-display);
+  font-size: 17px;
+}
+.table td {
+  color: var(--ink-2);
+}
+.score {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--ink) !important;
+}
+
+/* ---------- Hàng 4 cột: nguồn tín hiệu, hành trình địa phương ---------- */
+.flowRows,
+.journey4,
+.portfolio {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.flowRows > li,
+.portfolio > li {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) repeat(3, minmax(0, 3fr));
+  gap: 12px 24px;
+  padding: clamp(18px, 2vw, 26px) 0;
+  border-bottom: 1px solid var(--line);
+}
+.flowRows,
+.portfolio {
+  border-top: 2px solid var(--ink);
+}
+.flowHead {
+  font-size: clamp(20px, 1.8vw, 26px);
+  line-height: 1.2;
+}
+.flowRows p,
+.journey4 p,
+.portfolio p,
+.portAsset {
+  display: grid;
+  gap: 4px;
+  font-size: 15.5px;
+  line-height: 1.55;
+  color: var(--ink-2);
+}
+.flowRows p span,
+.journey4 p span,
+.portfolio p span,
+.portAsset span {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+.journey4 {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  column-gap: clamp(16px, 2vw, 32px);
+  row-gap: 32px;
+  counter-reset: j;
+}
+.journey4 > li {
+  position: relative;
+  display: grid;
+  align-content: start;
+  gap: 12px;
+  padding-top: 20px;
+  border-top: 2px solid var(--ink);
+}
+.journey4 > li:not(:last-child)::after {
+  content: '→';
+  position: absolute;
+  top: -15px;
+  right: -6px;
+  padding: 0 4px;
+  background: inherit;
+  font-weight: 700;
+  color: var(--brand-ink);
+}
+.journey4 > li:last-child {
+  border-top-color: var(--brand);
+}
+.journeyNum {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--brand-ink);
+}
+.portQ {
+  font-family: var(--font-display);
+  font-size: 19px !important;
+  font-weight: 600;
+  color: var(--ink) !important;
+}
+.portAsset {
+  color: var(--ink);
+  text-decoration: none;
+}
+.portAsset strong {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 6px;
+  font-size: 16px;
+  color: var(--brand-ink);
+}
+
+/* ---------- Bảng kiểm Google Ads ---------- */
+.ready {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  gap: clamp(24px, 3vw, 48px);
+  align-items: start;
+}
+.readyList {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-top: 2px solid var(--ink);
+  min-width: 0;
+}
+.readyLegend {
+  padding: 18px 0 8px;
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  float: left;
+  width: 100%;
+}
+.readyItem {
+  clear: both;
+  display: grid;
+  grid-template-columns: 24px 36px minmax(0, 1fr);
+  gap: 12px;
+  align-items: start;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+  cursor: pointer;
+}
+.readyItem input {
+  width: 22px;
+  height: 22px;
+  margin: 2px 0 0;
+  accent-color: var(--brand-ink);
+  cursor: pointer;
+}
+.readyNum {
+  font-family: var(--font-display);
+  font-weight: 800;
+  color: var(--ink-3);
+  padding-top: 2px;
+}
+.readyItem[data-on] .readyNum {
+  color: var(--brand-ink);
+}
+.readyItem strong {
+  display: block;
+  font-size: 17px;
+}
+.readyText {
+  display: block;
+  margin-top: 4px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--ink-2);
+}
+.readyResult,
+.brief,
+.appResult {
+  position: sticky;
+  top: calc(var(--header-h) + 72px);
+  display: grid;
+  gap: 12px;
+  padding: clamp(20px, 2.4vw, 32px);
+  border-radius: var(--r-card);
+  background: var(--c-ink);
+  color: var(--white);
+}
+.readyResult :focus-visible,
+.brief :focus-visible,
+.appResult :focus-visible {
+  outline-color: var(--white);
+}
+.readyScore {
+  font-size: 16px;
+  color: var(--on-dark-2);
+}
+.readyScore strong {
+  font-family: var(--font-display);
+  font-size: 56px;
+  line-height: 1;
+  color: var(--white);
+}
+.readyVerdict,
+.appVerdict {
+  font-family: var(--font-display);
+  font-size: clamp(19px, 1.7vw, 23px);
+  font-weight: 600;
+  line-height: 1.35;
+}
+.readyFixes {
+  margin: 4px 0 0;
+  padding-left: 1.1em;
+  display: grid;
+  gap: 8px;
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: var(--on-dark-2);
+}
+.readyFixes strong {
+  color: var(--white);
+}
+.readyFixes a,
+.appLink {
+  color: var(--warm-2);
+  font-weight: 700;
+}
+.readyResult .note {
+  color: var(--on-dark-3);
+}
+
+/* ---------- Ghép mẫu quảng cáo ---------- */
+.creative {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  gap: clamp(24px, 3vw, 48px);
+  align-items: start;
+}
+.dims {
+  border-top: 2px solid var(--ink);
+}
+.dim {
+  margin: 0;
+  padding: 18px 0;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  min-width: 0;
+}
+.dim legend {
+  float: left;
+  width: 100%;
+  margin-bottom: 12px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+.chips,
+.yesNo,
+.sortBar,
+.croTabs {
+  clear: both;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.chips button,
+.yesNo button,
+.sortBar button,
+.croTabs button {
+  min-height: 44px;
+  padding: 8px 16px;
+  border-radius: var(--r-pill);
+  border: 1px solid var(--color-border-strong);
+  background: var(--white);
+  color: var(--ink);
+  font: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.chips button:hover,
+.yesNo button:hover,
+.sortBar button:hover,
+.croTabs button:hover {
+  border-color: var(--ink);
+}
+.chips button[aria-pressed='true'],
+.yesNo button[aria-pressed='true'],
+.sortBar button[aria-pressed='true'],
+.croTabs button[aria-pressed='true'] {
+  background: var(--c-ink);
+  border-color: var(--c-ink);
+  color: var(--white);
+}
+.briefLabel {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--warm-2);
+}
+.briefTitle {
+  font-family: var(--font-display);
+  font-size: clamp(20px, 1.9vw, 26px);
+  font-weight: 600;
+  line-height: 1.3;
+}
+.briefFacts {
+  margin: 4px 0 0;
+  display: grid;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+}
+.briefFacts > div {
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+.briefFacts dt {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--on-dark-3);
+}
+.briefFacts dd {
+  margin: 4px 0 0;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--on-dark-2);
+}
+
+/* ---------- Trang đích trước và sau ---------- */
+.cro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 24px;
+}
+.croTabs button span {
+  margin-right: 8px;
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 800;
+  opacity: 0.7;
+}
+.croFrames {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(20px, 3vw, 48px);
+}
+.croFrame {
+  min-width: 0;
+  margin: 0;
+  display: grid;
+  gap: 16px;
+}
+.wire {
+  display: grid;
+  gap: 12px;
+  padding: clamp(20px, 3vw, 36px);
+  min-height: clamp(240px, 26vw, 380px);
+  align-content: start;
+  border-radius: var(--r-card);
+  background: var(--white);
+  box-shadow:
+    0 1px 0 var(--line),
+    0 24px 48px -32px rgba(20, 18, 24, 0.3);
+}
+.wire i {
+  display: block;
+  border-radius: 4px;
+  background: #e9e5ef;
+  transition:
+    background-color var(--t-fast),
+    box-shadow var(--t-fast);
+}
+.wire i[data-part='heading'] {
+  height: 26px;
+  width: 80%;
+}
+.wire i[data-part='sub'] {
+  height: 10px;
+  width: 60%;
+}
+.wire i[data-part='trust'] {
+  height: 36px;
+  width: 100%;
+}
+.wire i[data-part='cta'] {
+  height: 34px;
+  width: 36%;
+  border-radius: var(--r-pill);
+}
+.wire i[data-part='form'] {
+  height: 64px;
+  width: 70%;
+}
+/* bản "trước": bố cục lộn xộn hơn */
+.croFrame[data-side='before'] .wire i[data-part='heading'] {
+  width: 50%;
+}
+.croFrame[data-side='before'] .wire i[data-part='trust'] {
+  order: 5;
+  height: 18px;
+}
+.croFrame[data-side='before'] .wire i[data-part='cta'] {
+  width: 22%;
+}
+.croFrame[data-side='before'] .wire i[data-part='form'] {
+  height: 110px;
+}
+.croFrame[data-side='after'] .wire i[data-part='cta'] {
+  background: var(--brand);
+}
+/* điểm đang so sánh sáng lên ở cả hai khung */
+.croFrame[data-focus='heading'] .wire i[data-part='heading'],
+.croFrame[data-focus='trust'] .wire i[data-part='trust'],
+.croFrame[data-focus='cta'] .wire i[data-part='cta'],
+.croFrame[data-focus='form'] .wire i[data-part='form'] {
+  box-shadow: 0 0 0 3px var(--c-ink);
+}
+.croFrame[data-focus='mobile'] .wire {
+  box-shadow: 0 0 0 3px var(--c-ink);
+}
+.croFrame figcaption {
+  display: grid;
+  gap: 6px;
+  font-size: 16.5px;
+  line-height: 1.55;
+  color: var(--ink);
+}
+.croFrame figcaption span {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 800;
+}
+.croFrame[data-side='after'] figcaption span {
+  color: var(--brand-ink);
+}
+
+/* ---------- App hay website ---------- */
+.app {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  gap: clamp(24px, 3vw, 48px);
+  align-items: start;
+}
+.appQs {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 2px solid var(--ink);
+}
+.appQs li {
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line);
+}
+.appQs fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  min-width: 0;
+}
+.appQs legend {
+  float: left;
+  width: 100%;
+  margin-bottom: 12px;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+/* ---------- Ma trận ưu tiên ---------- */
+.matrix {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 20px;
+}
+
+/* ---------- Website SOHO ---------- */
+.show {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  gap: clamp(24px, 3vw, 56px);
+  align-items: start;
+}
+.showMedia {
+  position: relative;
+  margin: 0;
+  display: grid;
+  gap: 16px;
+}
+.showDesktop {
+  width: 88%;
+  height: auto;
+  border-radius: var(--r-md);
+  box-shadow:
+    0 1px 0 var(--line),
+    0 40px 80px -40px rgba(20, 18, 24, 0.45);
+}
+.showMobile {
+  position: absolute;
+  right: 0;
+  top: 18%;
+  width: 26%;
+  height: auto;
+  border-radius: 18px;
+  border: 6px solid var(--c-ink);
+  box-shadow: 0 30px 60px -30px rgba(20, 18, 24, 0.6);
+}
+.showMedia figcaption {
+  max-width: 60ch;
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--ink-3);
+}
+.showFacts {
+  display: grid;
+  gap: 16px;
+}
+.decisions {
+  list-style: none;
+  margin: 0 0 16px;
+  padding: 0;
+  border-top: 2px solid var(--ink);
+}
+.decisions li {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr);
+  gap: 8px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+}
+.decisions li > span {
+  font-family: var(--font-display);
+  font-weight: 800;
+  color: var(--brand-ink);
+}
+.decisions strong {
+  font-size: 16px;
+}
+.decisions p {
+  margin-top: 4px;
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: var(--ink-2);
+}
+.lh {
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-top: 2px solid var(--ink);
+}
+.lh > div {
+  padding: 14px 8px 14px 0;
+}
+.lh dt {
+  font-size: 12.5px;
+  line-height: 1.3;
+  color: var(--ink-3);
+}
+.lh dd {
+  margin: 6px 0 0;
+  font-family: var(--font-display);
+  font-size: clamp(28px, 2.6vw, 40px);
+  font-weight: 800;
+  line-height: 1;
+}
+
+@media (max-width: 1000px) {
+  .ready,
+  .creative,
+  .app,
+  .show {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .readyResult,
+  .brief,
+  .appResult {
+    position: static;
+  }
+  .journey4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .journey4 > li::after {
+    display: none;
+  }
+  .flowRows > li,
+  .portfolio > li {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .flowHead,
+  .portQ {
+    grid-column: 1 / -1;
+  }
+}
+@media (max-width: 640px) {
+  .journey4,
+  .flowRows > li,
+  .portfolio > li,
+  .croFrames {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .lh {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .showDesktop {
+    width: 100%;
+  }
+  .showMobile {
+    position: static;
+    width: 46%;
+    justify-self: end;
+    margin-top: -30%;
+  }
+}

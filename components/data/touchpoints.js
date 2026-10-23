@@ -218,7 +218,9 @@ export const DIAGNOSES = [
     first: 'seo-tong-the',
     support: 'content-marketing-pr',
     improve: 'Thêm khách tự tìm đến từ tìm kiếm, bớt phụ thuộc quảng cáo về lâu dài.',
-    caseSlug: 'king-decor-luxury'
+    why: 'SEO đưa bạn vào đúng lúc khách đang tìm; nội dung giúp các trang có đủ câu trả lời để được chọn.',
+    caseSlug: 'king-decor-luxury',
+    caseNote: 'Dự án có SEO website. Kết quả SOHO công bố là về quảng cáo Facebook, chưa có số liệu SEO riêng.'
   },
   {
     key: 'quang-cao',
@@ -227,7 +229,8 @@ export const DIAGNOSES = [
     first: 'google-ads-shopping',
     support: 'cro-landing-page',
     improve: 'Chi phí mỗi đơn rõ ràng hơn, ngân sách dồn về nhóm khách có lãi.',
-    caseSlug: 'kronos-luxury-timepieces'
+    why: 'Chi phí cao thường do phễu rò ở truy vấn, trang đích hoặc chất lượng khách. Kiểm tra tài khoản trước, sửa trang đích sau.',
+    caseSlug: null
   },
   {
     key: 'chuyen-doi',
@@ -236,7 +239,8 @@ export const DIAGNOSES = [
     first: 'cro-landing-page',
     support: 'thiet-ke-website',
     improve: 'Tỉ lệ để lại thông tin trên cùng lượng truy cập.',
-    caseSlug: 'helen-bridal'
+    why: 'Đã có người vào trang, nên chỗ nghẽn nằm ở thông điệp, bằng chứng hoặc form. Sửa trang đích thường nhanh hơn làm lại cả website.',
+    caseSlug: null
   },
   {
     key: 'thuong-hieu',
@@ -245,7 +249,9 @@ export const DIAGNOSES = [
     first: 'nhan-dien-thuong-hieu',
     support: 'meta-tiktok-ads',
     improve: 'Khách nhận ra và nhớ bạn, hình ảnh nhất quán ở mọi điểm chạm.',
-    caseSlug: 'le-viva-resort'
+    why: 'Khách cần nhận ra bạn ở lần gặp thứ hai. Hệ nhận diện nhất quán làm điều đó; quảng cáo giúp khách gặp lại đủ số lần.',
+    caseSlug: 'le-viva-resort',
+    caseNote: 'Dự án dựng lại hình ảnh fanpage và chạy quảng cáo Facebook (dịch vụ hỗ trợ). Kết quả công bố là về tin nhắn đặt phòng, không phải về nhận diện.'
   },
   {
     key: 'do-luong',
@@ -254,9 +260,26 @@ export const DIAGNOSES = [
     first: 'ga4-looker-dashboard',
     support: 'tu-van-chien-luoc-sprint',
     improve: 'Một bộ số chung để quyết định tăng hay cắt ngân sách kênh nào.',
+    why: 'Chưa có số đúng thì mọi quyết định ngân sách đều là đoán. Sửa đo lường trước, lập lộ trình sau.',
     caseSlug: null
   }
 ];
+
+// Giá trị phải trùng một lựa chọn trong ô "Dịch vụ quan tâm" của ContactForm (dùng ở CTA trang dịch vụ và liên kết ?dich-vu=)
+export const FORM_SERVICE = {
+  'seo-tong-the': 'SEO website',
+  'seo-ai-overview': 'SEO website',
+  'local-seo-google-maps': 'SEO website',
+  'google-ads-shopping': 'Google Ads',
+  'meta-tiktok-ads': 'Facebook Ads, TikTok Ads',
+  'cro-landing-page': 'Nội dung, đo lường hoặc dịch vụ khác',
+  'thiet-ke-website': 'Thiết kế website',
+  'nhan-dien-thuong-hieu': 'Nhận diện thương hiệu',
+  'thiet-ke-mobile-app': 'Thiết kế Mobile App',
+  'content-marketing-pr': 'Nội dung, đo lường hoặc dịch vụ khác',
+  'ga4-looker-dashboard': 'Nội dung, đo lường hoặc dịch vụ khác',
+  'tu-van-chien-luoc-sprint': 'Chưa rõ, cần tư vấn nên làm gì trước'
+};
 
 // Kết hợp minh họa ở hub: quan hệ chiến lược, không phải gói bắt buộc hay kết quả đảm bảo.
 export const COMBOS = [

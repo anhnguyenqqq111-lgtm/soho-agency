@@ -1,108 +1,3 @@
-/* Phân cấp bằng cỡ chữ, khoảng trắng và đường kẻ. Không thẻ, không bóng. */
-
-/* ---------- Vấn đề: đoạn dẫn 4 cột trái, biểu hiện xếp hàng 8 cột phải ---------- */
-.problem {
-  display: grid;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-  column-gap: clamp(24px, 3vw, 48px);
-  row-gap: 32px;
-}
-.problemLead {
-  grid-column: 1 / span 4;
-  display: grid;
-  gap: 16px;
-  align-content: start;
-}
-.lead {
-  font-size: clamp(18px, 1.45vw, 21px);
-  line-height: 1.6;
-  color: var(--ink-2);
-}
-.note {
-  font-size: 13px;
-  line-height: 1.55;
-  color: var(--ink-3);
-}
-.cases {
-  grid-column: 5 / -1;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  border-top: 2px solid var(--ink);
-}
-.cases > li {
-  display: grid;
-  grid-template-columns: 64px minmax(0, 1fr);
-  gap: 16px;
-  padding: clamp(20px, 2.4vw, 32px) 0;
-  border-bottom: 1px solid var(--line);
-}
-.caseNum {
-  font-family: var(--font-display);
-  font-size: clamp(28px, 2.6vw, 40px);
-  font-weight: 800;
-  line-height: 1;
-  color: var(--brand);
-}
-.caseTag {
-  margin-bottom: 6px;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--ink-3);
-}
-.caseLabel {
-  font-size: clamp(21px, 1.9vw, 26px);
-  line-height: 1.2;
-}
-.caseText {
-  margin-top: 10px;
-  max-width: 62ch;
-  font-size: 17px;
-  line-height: 1.65;
-  color: var(--ink-2);
-}
-
-/* ---------- Trách nhiệm hai bên: hai cột chữ ---------- */
-.split {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  column-gap: clamp(24px, 3vw, 48px);
-  row-gap: 32px;
-}
-.splitHead {
-  padding-bottom: 14px;
-  margin-bottom: 4px;
-  border-bottom: 2px solid var(--ink);
-  font-size: clamp(19px, 1.6vw, 22px);
-}
-.splitList {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-.splitList li {
-  padding: 14px 0 14px 28px;
-  border-bottom: 1px solid var(--line);
-  position: relative;
-  font-size: 16.5px;
-  line-height: 1.55;
-  color: var(--ink);
-}
-.splitList li::before {
-  content: '→';
-  position: absolute;
-  left: 0;
-  top: 14px;
-  font-weight: 700;
-  color: var(--brand-ink);
-}
-.yours li::before {
-  content: '←';
-  color: var(--violet);
-}
-
 /* ---------- Thang đo: 4 cột, đường kẻ trên cùng nâng dần như bậc thang ---------- */
 .measure {
   display: grid;
@@ -181,8 +76,6 @@
 }
 
 @media (max-width: 1000px) {
-  .problemLead,
-  .cases,
   .limitsHead,
   .limits ol {
     grid-column: 1 / -1;
@@ -199,16 +92,7 @@
   }
 }
 @media (max-width: 640px) {
-  .split,
   .ladder {
     grid-template-columns: minmax(0, 1fr);
-  }
-  .cases > li {
-    grid-template-columns: 44px minmax(0, 1fr);
-    gap: 10px;
-  }
-  .caseText,
-  .splitList li {
-    font-size: 16px;
   }
 }

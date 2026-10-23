@@ -1,29 +1,59 @@
 import {notFound} from 'next/navigation';
-import styles from './page.module.css';
 import Header from '../../../components/Header';
 import Footer from '../../../components/Footer';
-import Section from '../../../components/ui/Section';
-import ImageSlot from '../../../components/ui/ImageSlot';
 import {getServicePage, servicePages} from '../../../components/servicePagesData';
 import {getServiceArticle} from '../../../components/serviceArticlesData';
 import ReadingProgress from '../../../components/article/ReadingProgress';
 import {siteUrl} from '../../../components/paths';
-import {ServiceTouchpointContext, ContextualServiceCTA} from '../../../components/services/ServiceContext';
 import SeoService from '../../../components/services/pilots/SeoService';
 import GoogleAdsService from '../../../components/services/pilots/GoogleAdsService';
 import BrandService from '../../../components/services/pilots/BrandService';
-import {MethodSection} from '../../../components/services/pilots/PilotParts';
-import ServiceOverview from '../../../components/services/ServiceOverview';
 import PilotOverview from '../../../components/services/pilots/PilotOverview';
+import ServiceExperience, {experienceNav} from '../../../components/services/ServiceExperience';
+import {EXPERIENCE} from '../../../components/data/serviceExperience';
 import ed from '../../../components/services/editorial/editorial.module.css';
 
-// Trang dịch vụ đã có phần giải thích riêng theo 5 lớp: vấn đề, vì sao, SOHO làm gì, đo lường, nối vào kinh doanh
-// (docs/services/SERVICE_DESIGN_SYSTEM.md).
-// Các trang còn lại dùng phần thân chung bên dưới. Mọi trang đều mở đầu bằng ServiceOverview (các sơ đồ đang live).
-const PILOTS = {
-  'seo-tong-the': {Body: SeoService, variant: 'analysis'},
-  'google-ads-shopping': {Body: GoogleAdsService, variant: 'performance'},
-  'nhan-dien-thuong-hieu': {Body: BrandService, variant: 'exhibition'}
+/*
+  Trang dịch vụ (Redesign V6.0, docs/services/SERVICE_DESIGN_SYSTEM.md mục 6).
+  Mọi trang mở đầu bằng PilotOverview: hero có sơ đồ live, dải "SOHO làm theo N bước", sơ đồ "Dấu hiệu → Mục tiêu".
+  SEO, Google Ads, Nhận diện có phần thân riêng; các trang còn lại dùng ServiceExperience với phần riêng và thứ tự riêng.
+*/
+const CUSTOM = {
+  'seo-tong-the': {
+    Body: SeoService,
+    nav: [
+      ['phu-hop', 'Có hợp không'],
+      ['y-dinh', 'Ý định tìm kiếm'],
+      ['thay-doi', 'SOHO thay đổi gì'],
+      ['du-an', 'Dự án'],
+      ['pham-vi', 'Phạm vi'],
+      ['do-luong', 'Đo lường'],
+      ['tiep-theo', 'Bước tiếp theo']
+    ]
+  },
+  'google-ads-shopping': {
+    Body: GoogleAdsService,
+    nav: [
+      ['phu-hop', 'Có hợp không'],
+      ['nguyen-nhan', 'Đọc phễu'],
+      ['mo-phong', 'Phép tính'],
+      ['thay-doi', 'SOHO thay đổi gì'],
+      ['pham-vi', 'Phạm vi'],
+      ['do-luong', 'Đo lường'],
+      ['tiep-theo', 'Bước tiếp theo']
+    ]
+  },
+  'nhan-dien-thuong-hieu': {
+    Body: BrandService,
+    nav: [
+      ['phu-hop', 'Có hợp không'],
+      ['nguyen-nhan', 'Vì sao lệch'],
+      ['trung-bay', 'Triển lãm'],
+      ['khach-noi', 'Khách nói'],
+      ['pham-vi', 'Phạm vi'],
+      ['tiep-theo', 'Bước tiếp theo']
+    ]
+  }
 };
 
 export function generateStaticParams() {
@@ -48,26 +78,11 @@ export default async function ServicePage({params}) {
   if (!service) notFound();
   const article = getServiceArticle(slug);
   const names = Object.fromEntries(servicePages.map(s => [s.slug, s.menuTitle]));
-  const pilot = PILOTS[slug];
-  const nav = pilot
-    ? [
-        ['cach-lam', 'Cách làm'],
-        ['van-de', 'Vấn đề'],
-        ['nguyen-nhan', 'Vì sao'],
-        ['giai-phap', 'SOHO làm gì'],
-        ['do-luong', 'Đo lường'],
-        ['diem-cham', 'Hành trình khách'],
-        ...(article ? [['phuong-phap', 'Đọc sâu']] : []),
-        ['lien-he', 'Liên hệ']
-      ]
-    : [
-        ['cach-lam', 'Cách làm'],
-        ['vi-sao', 'Vì sao cần'],
-        ['ban-giao', 'Bàn giao'],
-        ['diem-cham', 'Hành trình khách'],
-        ...(article ? [['phuong-phap', 'Đọc sâu']] : []),
-        ['lien-he', 'Liên hệ']
-      ];
+  const variant = EXPERIENCE[slug].hero;
+  const custom = CUSTOM[slug];
+  const nav = custom
+    ? [['cach-lam', 'Cách làm'], ...custom.nav, ...(article ? [['phuong-phap', 'Đọc sâu']] : []), ['lien-he', 'Liên hệ']]
+    : experienceNav(slug, Boolean(article));
 
   const serviceJsonLd = {
     '@context': 'https://schema.org',
@@ -84,57 +99,14 @@ export default async function ServicePage({params}) {
       <Header activeNav="services" />
       <ReadingProgress />
       <main id="main">
-        {pilot ? (
-          <div className={ed.page}>
-            <PilotOverview service={service} nav={nav} variant={pilot.variant} />
-            <pilot.Body service={service} article={article} names={names} />
-          </div>
-        ) : (
-          <>
-            <ServiceOverview service={service} nav={nav} />
-            <Section
-              id="ban-giao"
-              tone="gray"
-              title={
-                <>
-                  Bạn nhận được gì khi làm <span className="hl">{service.menuTitle}</span> với SOHO
-                </>
-              }
-            >
-              <div className={`${styles.deliver} ${service.artifact?.image ? '' : styles.deliverFull}`}>
-                <ol className={styles.deliverList}>
-                  {service.deliverables.map((d, i) => (
-                    <li key={d} data-reveal="" style={{'--reveal-delay': `${i * 80}ms`}}>
-                      <span>{String(i + 1).padStart(2, '0')}</span>
-                      {d}
-                    </li>
-                  ))}
-                </ol>
-                {service.artifact?.image && (
-                  <figure className={styles.artifact} data-reveal="" style={{'--reveal-delay': '200ms'}}>
-                    <ImageSlot src={service.artifact.image} alt={service.artifact.need} need={service.artifact.need} size="1600×1000" />
-                    <figcaption>Ví dụ sản phẩm bàn giao: {service.artifact.need.charAt(0).toLowerCase() + service.artifact.need.slice(1)}.</figcaption>
-                  </figure>
-                )}
-              </div>
-            </Section>
-
-            <Section
-              id="diem-cham"
-              title={
-                <>
-                  {service.menuTitle} trên <span className="hl">hành trình khách hàng</span>
-                </>
-              }
-              intro="Dịch vụ này tạo giá trị ở chặng nào, khách cần gì ở đó, và nên đi tiếp sang đâu."
-            >
-              <ServiceTouchpointContext slug={service.slug} names={names} />
-            </Section>
-
-            <MethodSection article={article} name={service.menuTitle} />
-            <ContextualServiceCTA slug={service.slug} />
-          </>
-        )}
+        <div className={ed.page}>
+          <PilotOverview service={service} nav={nav} variant={variant} />
+          {custom ? (
+            <custom.Body service={service} article={article} names={names} />
+          ) : (
+            <ServiceExperience service={service} article={article} names={names} trackDark={variant === 'exhibition'} />
+          )}
+        </div>
         <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(serviceJsonLd)}} />
       </main>
       <Footer />

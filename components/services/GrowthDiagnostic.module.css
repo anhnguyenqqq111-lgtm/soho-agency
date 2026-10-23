@@ -175,3 +175,28 @@
     transition: none;
   }
 }
+
+.caseNote {
+  display: block;
+  margin-top: 4px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--ink-3);
+}
+.send {
+  justify-self: start;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 48px;
+  padding: 0 20px;
+  border-radius: var(--r-md);
+  background: var(--brand);
+  color: var(--ink);
+  font-weight: 700;
+  text-decoration: none;
+}
+.send:hover {
+  background: var(--brand-hover);
+  color: var(--ink);
+}
