@@ -1,138 +1,3 @@
-/* ---------- Hero sáng: chữ trái, thang truy vấn phải ---------- */
-.hero {
-  background:
-    radial-gradient(50% 70% at 100% 10%, rgba(109, 40, 217, 0.08), transparent 60%),
-    radial-gradient(40% 60% at 0% 100%, rgba(242, 101, 34, 0.08), transparent 60%), var(--white);
-  border-bottom: 1px solid var(--line);
-}
-.heroInner {
-  display: grid;
-  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
-  gap: 40px clamp(32px, 5vw, 72px);
-  align-items: center;
-  padding-block: clamp(32px, 5vw, 80px);
-}
-.heroCopy {
-  display: grid;
-  gap: 18px;
-  justify-items: start;
-}
-.eyebrow {
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--brand-ink);
-}
-.title {
-  font-size: clamp(32px, 4vw, 56px);
-  line-height: 1.08;
-  letter-spacing: -0.03em;
-  font-weight: 800;
-  max-width: 18ch;
-}
-.lead {
-  max-width: 56ch;
-  font-size: var(--fs-lead);
-  line-height: 1.6;
-  color: var(--ink);
-}
-.promise {
-  max-width: 60ch;
-  font-size: 15.5px;
-  line-height: 1.6;
-  color: var(--ink-2);
-}
-.actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 4px;
-}
-.primary,
-.secondary {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  min-height: 48px;
-  padding: 0 20px;
-  border-radius: var(--r-md);
-  font-weight: 700;
-  text-decoration: none;
-}
-.primary {
-  background: var(--brand);
-  color: var(--ink);
-}
-.primary:hover {
-  background: var(--brand-hover);
-  color: var(--ink);
-}
-.secondary {
-  border: 1px solid var(--color-border-strong);
-  color: var(--ink);
-}
-.secondary:hover {
-  border-color: var(--ink);
-  color: var(--ink);
-}
-
-/* Thang truy vấn: 4 ô tìm kiếm lệch dần sang phải như bậc thang */
-.ladder {
-  margin: 0;
-  display: grid;
-  gap: 14px;
-}
-.ladder ol {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  gap: 12px;
-}
-.ladder li {
-  display: grid;
-  gap: 6px;
-  margin-left: calc(var(--i) * 7%);
-  padding: 12px 16px;
-  border-radius: var(--r-card);
-  background: var(--white);
-  border: 1px solid var(--line);
-  box-shadow: 0 12px 30px rgba(20, 18, 24, 0.06);
-}
-.ladder li:last-child {
-  border-color: var(--brand);
-  box-shadow: 0 0 0 2px var(--brand);
-}
-.ladderIntent {
-  font-size: 11.5px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--brand-ink);
-}
-.ladderQuery {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-weight: 600;
-  font-size: 15px;
-  line-height: 1.35;
-}
-.ladderQuery::before {
-  content: '';
-  flex: none;
-  width: 12px;
-  height: 12px;
-  border: 2px solid var(--ink-3);
-  border-radius: 50%;
-}
-.ladder figcaption {
-  font-size: 13px;
-  line-height: 1.5;
-  color: var(--ink-3);
-}
-
 /* ---------- Ba lớp: mặt cắt, lớp dưới đậm nhất ---------- */
 .layers {
   list-style: none;
@@ -340,7 +205,6 @@
 }
 
 @media (max-width: 1000px) {
-  .heroInner,
   .handover {
     grid-template-columns: minmax(0, 1fr);
   }
@@ -359,9 +223,6 @@
   .layer[data-layer='noi-dung'],
   .layer[data-layer='ky-thuat'] {
     margin-inline: 0;
-  }
-  .ladder li {
-    margin-left: calc(var(--i) * 4%);
   }
 }
 .layer[data-layer='ky-thuat'] .layerName {

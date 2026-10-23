@@ -15,20 +15,18 @@ const ALL = [...STAGES, FOUNDATION];
 
 export function ServiceTouchpointContext({slug, names, tone = 'light'}) {
   const r = ROLES[slug];
+  const primary = ALL.find(stage => stage.key === r.primary);
+  const supporting = ALL.filter(stage => r.supporting.includes(stage.key));
   return (
     <div className={`${styles.context} ${tone === 'dark' ? styles.dark : ''}`}>
-      <ol className={styles.stages} aria-label="Chặng trên hành trình khách hàng">
-        {ALL.map(s => {
-          const role = s.key === r.primary ? 'chính' : r.supporting.includes(s.key) ? 'hỗ trợ' : null;
-          return (
-            <li key={s.key} className={styles.stage} data-role={role === 'chính' ? 'primary' : role ? 'support' : undefined}>
-              <span className={styles.num}>{s.num}</span>
-              <span className={styles.stageName}>{s.name}</span>
-              <span className={styles.roleTag}>{role ? `Vai trò ${role}` : ' '}</span>
-            </li>
-          );
-        })}
-      </ol>
+      <div className={styles.position}>
+        <p className={styles.positionLabel}>Vai trò chính trên hành trình</p>
+        <p className={styles.positionMain}>
+          <span>{primary.num}</span>
+          <strong>{primary.name}</strong>
+        </p>
+        {supporting.length > 0 && <p className={styles.positionSupport}>Hỗ trợ: {supporting.map(stage => stage.name).join(' · ')}</p>}
+      </div>
 
       <ol className={styles.chain} aria-label="Đường đi của khách qua điểm chạm này">
         {r.chain.map(step => (
@@ -59,28 +57,30 @@ export function ServiceTouchpointContext({slug, names, tone = 'light'}) {
           </strong>
           <span>{r.next.why}</span>
         </a>
-        <div className={styles.pair}>
-          <span className={styles.linkHead}>Hay đi cùng</span>
-          <p>
-            {r.pair.map((p, i) => (
-              <span key={p}>
-                {i > 0 && ', '}
-                <a href={sitePath(`/dich-vu/${p}`)}>{names[p]}</a>
-              </span>
-            ))}
-          </p>
-        </div>
-        <div className={styles.notYet}>
-          <span className={styles.linkHead}>Khi nào chưa nên làm</span>
-          <p>
-            {r.notYet}
-            {r.notYetSlug && (
-              <>
-                {' '}
-                <a href={sitePath(`/dich-vu/${r.notYetSlug}`)}>Xem {names[r.notYetSlug]}</a>
-              </>
-            )}
-          </p>
+        <div className={styles.related}>
+          <div className={styles.pair}>
+            <span className={styles.linkHead}>Hay đi cùng</span>
+            <p>
+              {r.pair.map((p, i) => (
+                <span key={p}>
+                  {i > 0 && ', '}
+                  <a href={sitePath(`/dich-vu/${p}`)}>{names[p]}</a>
+                </span>
+              ))}
+            </p>
+          </div>
+          <div className={styles.notYet}>
+            <span className={styles.linkHead}>Chưa nên làm khi</span>
+            <p>
+              {r.notYet}
+              {r.notYetSlug && (
+                <>
+                  {' '}
+                  <a href={sitePath(`/dich-vu/${r.notYetSlug}`)}>Xem {names[r.notYetSlug]}</a>
+                </>
+              )}
+            </p>
+          </div>
         </div>
       </div>
     </div>

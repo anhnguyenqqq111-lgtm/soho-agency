@@ -11,7 +11,20 @@ import {sitePath} from '../paths';
 */
 const PANEL = new Set(['gray', 'soft', 'dark', 'fade', 'panel']);
 
-export default function Section({id, kicker, title, intro, aside, children, tone = 'white', align = 'left', spacing = 'md', decor, className = ''}) {
+export default function Section({
+  id,
+  kicker,
+  title,
+  intro,
+  aside,
+  children,
+  tone = 'white',
+  align = 'left',
+  spacing = 'md',
+  decor,
+  surface = 'panel',
+  className = ''
+}) {
   const panel = PANEL.has(tone);
   return (
     <section
@@ -19,6 +32,7 @@ export default function Section({id, kicker, title, intro, aside, children, tone
       className={[
         styles.section,
         panel ? styles.panel : styles.plain,
+        panel && surface === 'flat' ? styles.flat : '',
         tone === 'soft' ? styles.mist : '',
         tone === 'dark' ? `${styles.ink} dark on-dark` : '',
         styles[`space_${spacing}`],

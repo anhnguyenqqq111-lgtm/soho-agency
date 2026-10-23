@@ -2,15 +2,8 @@ import {notFound} from 'next/navigation';
 import styles from './page.module.css';
 import Header from '../../../components/Header';
 import Footer from '../../../components/Footer';
-import Hero from '../../../components/hero/Hero';
-import PageHeader from '../../../components/ui/PageHeader';
 import Section from '../../../components/ui/Section';
-import Button from '../../../components/ui/Button';
-import Track from '../../../components/diagrams/Track';
 import ImageSlot from '../../../components/ui/ImageSlot';
-import ServiceDiagram from '../../../components/diagrams/ServiceDiagrams';
-import BeforeAfter from '../../../components/diagrams/BeforeAfter';
-import ArticleBody from '../../../components/article/ArticleBody';
 import {getServicePage, servicePages} from '../../../components/servicePagesData';
 import {getServiceArticle} from '../../../components/serviceArticlesData';
 import ReadingProgress from '../../../components/article/ReadingProgress';
@@ -19,12 +12,15 @@ import {ServiceTouchpointContext, ContextualServiceCTA} from '../../../component
 import SeoService from '../../../components/services/pilots/SeoService';
 import GoogleAdsService from '../../../components/services/pilots/GoogleAdsService';
 import BrandService from '../../../components/services/pilots/BrandService';
+import {MethodSection} from '../../../components/services/pilots/PilotParts';
+import ServiceOverview from '../../../components/services/ServiceOverview';
 
-// Trang dịch vụ đã có kiến trúc riêng (docs/services/SERVICE_DESIGN_SYSTEM.md). Các trang còn lại dùng khuôn chung bên dưới.
+// Trang dịch vụ đã có phần giải thích riêng (docs/services/SERVICE_DESIGN_SYSTEM.md), kèm mục riêng trên thanh điều hướng.
+// Các trang còn lại dùng phần thân chung bên dưới. Mọi trang đều mở đầu bằng ServiceOverview (các sơ đồ đang live).
 const PILOTS = {
-  'seo-tong-the': SeoService,
-  'google-ads-shopping': GoogleAdsService,
-  'nhan-dien-thuong-hieu': BrandService
+  'seo-tong-the': {Body: SeoService, nav: ['ban-do', 'Bản đồ chủ đề']},
+  'google-ads-shopping': {Body: GoogleAdsService, nav: ['mo-phong', 'Mô phỏng lợi nhuận']},
+  'nhan-dien-thuong-hieu': {Body: BrandService, nav: ['trung-bay', 'Bộ nhận diện']}
 };
 
 export function generateStaticParams() {
@@ -49,7 +45,16 @@ export default async function ServicePage({params}) {
   if (!service) notFound();
   const article = getServiceArticle(slug);
   const names = Object.fromEntries(servicePages.map(s => [s.slug, s.menuTitle]));
-  const Pilot = PILOTS[slug];
+  const pilot = PILOTS[slug];
+  const nav = [
+    ['cach-lam', 'Cách làm'],
+    ['vi-sao', 'Vì sao cần'],
+    ...(pilot ? [pilot.nav] : []),
+    ['ban-giao', 'Bàn giao'],
+    ['diem-cham', 'Hành trình khách'],
+    ...(article ? [['phuong-phap', 'Đọc sâu']] : []),
+    ['lien-he', 'Liên hệ']
+  ];
 
   const serviceJsonLd = {
     '@context': 'https://schema.org',
@@ -66,55 +71,14 @@ export default async function ServicePage({params}) {
       <Header activeNav="services" />
       <ReadingProgress />
       <main id="main">
-        {Pilot ? (
-          <Pilot service={service} article={article} names={names} />
+        <ServiceOverview service={service} nav={nav} />
+        {pilot ? (
+          <pilot.Body service={service} article={article} names={names} />
         ) : (
           <>
-            <Hero
-              tone="services"
-              crumbs={[{label: 'Dịch vụ', href: '/dich-vu'}, {label: service.menuTitle}]}
-              title={service.title}
-              long
-              tagline={service.intro}
-              visual={
-                <div className={styles.heroDiagram}>
-                  <ServiceDiagram slug={service.slug} card />
-                </div>
-              }
-            />
-            <PageHeader title="Mục tiêu hướng tới" lead={service.promise} bullets={service.outcomes}>
-              <Button href="#lien-he">Nhận tư vấn</Button>
-            </PageHeader>
-
-            {/* Quy trình + sơ đồ */}
             <Section
-              tone="dark"
-              decor="calender"
-              title={
-                <>
-                  SOHO làm theo <span className="hl">{service.process.length} bước</span>
-                </>
-              }
-              intro="Mỗi bước có việc cụ thể và con số để bạn kiểm tra."
-            >
-              <Track items={service.process.map(title => ({title}))} />
-            </Section>
-
-            {/* Dấu hiệu và kết quả */}
-            <Section
-              title={
-                <>
-                  Vì sao doanh nghiệp cần <span className="hl">{service.menuTitle}</span>?
-                </>
-              }
-              intro={service.insight}
-            >
-              <BeforeAfter before={service.pains} after={service.outcomes} beforeLabel="Dấu hiệu bạn đang gặp" afterLabel="Mục tiêu hướng tới" />
-              <p className={styles.proof}>{service.proof}</p>
-            </Section>
-
-            {/* Bàn giao */}
-            <Section
+              id="ban-giao"
+              tone="gray"
               title={
                 <>
                   Bạn nhận được gì khi làm <span className="hl">{service.menuTitle}</span> với SOHO
@@ -139,23 +103,6 @@ export default async function ServicePage({params}) {
               </div>
             </Section>
 
-            {/* Bài viết chi tiết */}
-            {article && (
-              <Section
-                tone="gray"
-                title={
-                  <>
-                    Hiểu sâu về <span className="hl">{service.menuTitle}</span>
-                  </>
-                }
-                spacing="lg"
-              >
-                <div className={styles.articleCard}>
-                  <ArticleBody article={article} />
-                </div>
-              </Section>
-            )}
-
             <Section
               id="diem-cham"
               title={
@@ -168,6 +115,7 @@ export default async function ServicePage({params}) {
               <ServiceTouchpointContext slug={service.slug} names={names} />
             </Section>
 
+            <MethodSection article={article} name={service.menuTitle} />
             <ContextualServiceCTA slug={service.slug} />
           </>
         )}

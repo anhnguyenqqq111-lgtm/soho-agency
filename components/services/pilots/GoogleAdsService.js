@@ -4,16 +4,16 @@ import Icon from '../../ui/Icon';
 import PartnerBadge from '../../proof/PartnerBadge';
 import {sitePath} from '../../paths';
 import AdsProfitSimulator from './AdsProfitSimulator';
-import {Crumbs, MethodSection} from './PilotParts';
+import {MethodSection} from './PilotParts';
 import {ServiceTouchpointContext, ContextualServiceCTA} from '../ServiceContext';
 import {partners} from '../../data/proof';
 
 /*
-  Trang Google Ads & Shopping, kiến trúc "Phòng điều khiển hiệu quả":
-  một khối tối liền gồm hero (bảng kiểm trước khi tăng ngân sách) và mô phỏng lợi nhuận có công thức công khai
-  → cấu trúc tài khoản theo ý định và biên lợi nhuận → ba thứ quảng cáo phụ thuộc vào (trang đích, đo lường, dữ liệu đơn)
+  Phần giải thích riêng của trang Google Ads & Shopping, đặt dưới các sơ đồ chung (ServiceOverview):
+  bốn câu kiểm tra trước khi tăng ngân sách và mô phỏng lợi nhuận có công thức công khai (làm rõ bước 5 "báo cáo lợi nhuận")
+  → cấu trúc tài khoản theo ý định và biên lợi nhuận (làm rõ bước 2) → ba thứ quảng cáo phụ thuộc vào, gắn với dấu hiệu ở trên
   → điểm chạm → bàn giao và chứng nhận Google Partner → phương pháp → liên hệ.
-  Trang chỉ có hai khối tối (khối đầu và CTA cuối) theo luật Section.
+  Mô phỏng nằm trong một thẻ tối, không phải khối tối toàn trang: trang chỉ có hai khối tối (dải các bước và CTA cuối).
 */
 
 const PREFLIGHT = [
@@ -76,54 +76,30 @@ export default function GoogleAdsService({service, article, names}) {
   const google = partners.find(p => p.name === 'Google Partner');
   return (
     <>
-      <div className={`${styles.room} dark on-dark`}>
-        <section className={`container ${styles.hero}`}>
-          <div className={styles.heroCopy}>
-            <Crumbs name={service.menuTitle} onDark />
-            <p className={styles.eyebrow}>Phòng điều khiển hiệu quả</p>
-            <h1 className={styles.title}>{service.title}</h1>
-            <p className={styles.lead}>{service.intro}</p>
-            <p className={styles.promise}>{service.promise}</p>
-            <div className={styles.actions}>
-              <a href="#mo-phong" className={styles.primary}>
-                Thử mô phỏng lợi nhuận <Icon name="arrow-down" size={18} />
-              </a>
-              <a href="#lien-he" className={styles.secondary}>
-                Rà soát hiệu quả quảng cáo <Icon name="arrow-right" size={18} />
-              </a>
-            </div>
-          </div>
-          <div className={styles.console}>
-            <p className={styles.consoleHead}>
-              <span className={styles.dot} aria-hidden="true" />
-              Kiểm tra trước khi tăng ngân sách
-            </p>
-            <ol className={styles.checks}>
-              {PREFLIGHT.map((p, i) => (
-                <li key={p.q}>
-                  <span className={styles.checkNum}>{String(i + 1).padStart(2, '0')}</span>
-                  <span className={styles.checkQ}>{p.q}</span>
-                  <span className={styles.checkWhy}>{p.why}</span>
-                </li>
-              ))}
-            </ol>
-            <p className={styles.consoleFoot}>{service.insight}</p>
-          </div>
-        </section>
-
-        <section id="mo-phong" className={`container ${styles.simSection}`} aria-labelledby="mo-phong-title">
-          <div className={styles.simHead}>
-            <h2 id="mo-phong-title" className={styles.simTitle}>
-              Ngân sách này <span className="hl">có lãi không?</span>
-            </h2>
-            <p className={styles.simIntro}>
-              Nhập số của bạn để xem một đồng quảng cáo đi qua phễu và còn lại bao nhiêu sau chi phí. Đây là cách SOHO đặt mục tiêu cho tài khoản: bắt đầu từ
-              lợi nhuận, không từ lượt bấm.
-            </p>
-          </div>
+      <Section
+        id="mo-phong"
+        tone="gray"
+        surface="flat"
+        title={
+          <>
+            Ngân sách này <span className="hl">có lãi không?</span>
+          </>
+        }
+        intro="Bước 5 ở trên đo bằng chi phí mỗi đơn và lợi nhuận gộp, không bằng lượt bấm. Nhập số của bạn để xem một đồng quảng cáo đi qua phễu và còn lại bao nhiêu sau chi phí."
+      >
+        <ol className={styles.checks} aria-label="Bốn câu cần trả lời trước khi tăng ngân sách">
+          {PREFLIGHT.map((p, i) => (
+            <li key={p.q}>
+              <span className={styles.checkNum}>{String(i + 1).padStart(2, '0')}</span>
+              <span className={styles.checkQ}>{p.q}</span>
+              <span className={styles.checkWhy}>{p.why}</span>
+            </li>
+          ))}
+        </ol>
+        <div className={`${styles.simPanel} dark on-dark`}>
           <AdsProfitSimulator />
-        </section>
-      </div>
+        </div>
+      </Section>
 
       <Section
         id="cau-truc"
@@ -132,7 +108,7 @@ export default function GoogleAdsService({service, article, names}) {
             Tài khoản chia theo <span className="hl">ý định và lợi nhuận</span>
           </>
         }
-        intro="Mỗi nhánh có một mục tiêu tối ưu riêng. Từ khóa không ra khách và nhóm hàng không có lãi được tách ra, thay vì dùng chung một ngân sách."
+        intro="Bước 2 ở trên, vẽ ra: mỗi nhánh có một mục tiêu tối ưu riêng. Từ khóa không ra khách và nhóm hàng không có lãi được tách ra, thay vì dùng chung một ngân sách."
       >
         <div className={styles.tree}>
           <p className={styles.root}>Tài khoản Google Ads</p>
@@ -168,12 +144,13 @@ export default function GoogleAdsService({service, article, names}) {
       <Section
         id="phu-thuoc"
         tone="gray"
+        surface="flat"
         title={
           <>
             Quảng cáo chỉ tốt bằng <span className="hl">những gì phía sau nó</span>
           </>
         }
-        intro="Ba thứ nằm ngoài tài khoản quảng cáo nhưng quyết định chi phí có một khách mua."
+        intro="Ba dấu hiệu ở phần trên hiếm khi do riêng tài khoản quảng cáo. Ba thứ nằm ngoài tài khoản quyết định chi phí có một khách mua."
       >
         <ol className={styles.depends}>
           {DEPENDS.map((d, i) => (
@@ -187,14 +164,6 @@ export default function GoogleAdsService({service, article, names}) {
             </li>
           ))}
         </ol>
-        <div className={styles.pains}>
-          <p className={styles.painsHead}>Dấu hiệu tài khoản đang tối ưu sai mục tiêu</p>
-          <ul>
-            {service.pains.map(p => (
-              <li key={p}>{p}</li>
-            ))}
-          </ul>
-        </div>
       </Section>
 
       <Section
@@ -212,6 +181,7 @@ export default function GoogleAdsService({service, article, names}) {
       <Section
         id="ban-giao"
         tone="gray"
+        surface="flat"
         title={
           <>
             Bàn giao và <span className="hl">báo cáo</span>
@@ -244,7 +214,7 @@ export default function GoogleAdsService({service, article, names}) {
         <p className={styles.fit}>{service.proof}</p>
       </Section>
 
-      <MethodSection article={article} name={service.menuTitle} />
+      <MethodSection article={article} name={service.menuTitle} tone="white" />
 
       <ContextualServiceCTA
         slug={service.slug}

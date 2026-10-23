@@ -1,33 +1,55 @@
-.crumbs ol {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  font-size: var(--fs-meta);
-  color: var(--ink-3);
-}
-.crumbs li + li::before {
-  content: '/';
-  margin-right: 6px;
-}
-.crumbs a {
-  color: var(--ink-3);
-}
-.crumbs a:hover {
-  color: var(--ink);
-}
-.crumbsDark ol,
-.crumbsDark a {
-  color: var(--on-dark-3);
-}
-.crumbsDark a:hover {
-  color: var(--white);
-}
-
 .articleCard {
   background: var(--white);
-  border-radius: var(--r-card);
-  padding: clamp(24px, 4vw, 56px);
+  border-top: 1px solid var(--line);
+  padding: clamp(24px, 4vw, 56px) 0 0;
+  margin-top: 24px;
+}
+
+.method {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.method summary {
+  min-height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  cursor: pointer;
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 750;
+  list-style: none;
+}
+.method summary::-webkit-details-marker {
+  display: none;
+}
+.method[open] summary svg {
+  transform: rotate(180deg);
+}
+
+.subnav {
+  position: sticky;
+  z-index: 20;
+  top: var(--header-h);
+  background: color-mix(in srgb, var(--white) 94%, transparent);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(14px);
+}
+.subnavInner {
+  display: flex;
+  gap: 28px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.subnavInner a {
+  flex: none;
+  padding: 14px 0;
+  color: var(--ink-2);
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+}
+.subnavInner a:hover {
+  color: var(--brand-ink);
 }

@@ -1,141 +1,25 @@
-/* ---------- Khối tối liền: hero + mô phỏng ---------- */
-.room {
-  position: relative;
-  isolation: isolate;
-  background:
-    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px) 0 0 / 100% 48px,
-    radial-gradient(60% 50% at 100% 0%, rgba(109, 40, 217, 0.32), transparent 62%),
-    radial-gradient(50% 40% at 0% 60%, rgba(242, 101, 34, 0.14), transparent 60%),
-    var(--c-ink);
-  color: var(--white);
-  padding-bottom: var(--space-md);
-}
-.room :focus-visible {
-  outline-color: var(--white);
-}
-.hero {
-  display: grid;
-  grid-template-columns: minmax(0, 6fr) minmax(0, 5fr);
-  gap: 40px clamp(32px, 5vw, 72px);
-  align-items: center;
-  padding-block: clamp(32px, 5vw, 80px);
-}
-.heroCopy {
-  display: grid;
-  gap: 18px;
-  justify-items: start;
-}
-.eyebrow {
-  font-family: ui-monospace, 'SF Mono', Menlo, monospace;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--warm-2);
-}
-.title {
-  font-size: clamp(32px, 4vw, 56px);
-  line-height: 1.08;
-  letter-spacing: -0.03em;
-  font-weight: 800;
-  color: var(--white);
-  max-width: 18ch;
-}
-.lead {
-  max-width: 54ch;
-  font-size: var(--fs-lead);
-  line-height: 1.6;
-  color: var(--white);
-}
-.promise {
-  max-width: 58ch;
-  font-size: 15.5px;
-  line-height: 1.6;
-  color: var(--on-dark-2);
-}
-.actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 4px;
-}
-.primary,
-.secondary {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  min-height: 48px;
-  padding: 0 20px;
-  border-radius: var(--r-md);
-  font-weight: 700;
-  text-decoration: none;
-}
-.primary {
-  background: var(--brand);
-  color: var(--ink);
-}
-.primary:hover {
-  background: var(--brand-hover);
-  color: var(--ink);
-}
-.secondary {
-  border: 1px solid rgba(255, 255, 255, 0.45);
-  color: var(--white);
-}
-.secondary:hover {
-  border-color: var(--white);
-  color: var(--white);
-}
-
-/* Bảng kiểm dạng màn hình điều khiển */
-.console {
-  display: grid;
-  gap: 14px;
-  padding: 20px;
-  border-radius: var(--r-xl);
-  background: rgba(20, 18, 24, 0.7);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.35);
-}
-.consoleHead {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-family: ui-monospace, 'SF Mono', Menlo, monospace;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--on-dark-2);
-}
-.dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--brand);
-  box-shadow: 0 0 0 4px rgba(242, 101, 34, 0.25);
-}
+/* ---------- Mô phỏng: 4 câu kiểm tra (nền sáng) + thẻ tối chứa mô phỏng ---------- */
 .checks {
   list-style: none;
-  margin: 0;
+  margin: 0 0 20px;
   padding: 0;
   display: grid;
-  gap: 8px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
 }
 .checks li {
   display: grid;
-  grid-template-columns: 32px minmax(0, 1fr);
-  column-gap: 12px;
-  row-gap: 2px;
-  padding: 12px 14px;
-  border-radius: var(--r-md);
-  background: rgba(255, 255, 255, 0.05);
+  align-content: start;
+  gap: 6px;
+  padding: 16px 18px;
+  border-radius: var(--r-card);
+  border: 1px solid var(--line);
+  background: var(--white);
 }
 .checkNum {
-  grid-row: span 2;
   font-family: ui-monospace, 'SF Mono', Menlo, monospace;
   font-weight: 700;
-  color: var(--warm-2);
+  color: var(--brand-ink);
 }
 .checkQ {
   font-weight: 700;
@@ -145,37 +29,16 @@
 .checkWhy {
   font-size: 13.5px;
   line-height: 1.45;
-  color: var(--on-dark-3);
+  color: var(--ink-2);
 }
-.consoleFoot {
-  font-size: 13.5px;
-  line-height: 1.5;
-  color: var(--on-dark-2);
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
-  padding-top: 12px;
-}
-
-.simSection {
-  display: grid;
-  gap: 28px;
-  padding-top: clamp(24px, 4vw, 48px);
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
-}
-.simHead {
-  display: grid;
-  gap: 12px;
-  max-width: 760px;
-}
-.simTitle {
-  font-size: var(--fs-h2);
-  line-height: 1.1;
-  letter-spacing: -0.02em;
+.simPanel {
+  padding: clamp(16px, 3vw, 32px);
+  border-radius: var(--r-xl);
+  background: radial-gradient(60% 50% at 100% 0%, rgba(109, 40, 217, 0.3), transparent 62%), var(--c-ink);
   color: var(--white);
 }
-.simIntro {
-  font-size: var(--fs-lead);
-  line-height: 1.6;
-  color: var(--on-dark-2);
+.simPanel :focus-visible {
+  outline-color: var(--white);
 }
 
 /* ---------- Cây tài khoản ---------- */
@@ -343,22 +206,6 @@
   font-weight: 700;
   color: var(--brand-ink);
 }
-.pains {
-  margin-top: 20px;
-  display: grid;
-  gap: 8px;
-}
-.painsHead {
-  font-weight: 700;
-}
-.pains ul {
-  margin: 0;
-  padding-left: 1.2em;
-  display: grid;
-  gap: 4px;
-  color: var(--ink-2);
-}
-
 /* ---------- Bàn giao + Google Partner ---------- */
 .handover {
   display: grid;
@@ -426,7 +273,9 @@
 }
 
 @media (max-width: 1000px) {
-  .hero,
+  .checks {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
   .handover {
     grid-template-columns: minmax(0, 1fr);
   }
@@ -449,6 +298,9 @@
   }
 }
 @media (max-width: 480px) {
+  .checks {
+    grid-template-columns: minmax(0, 1fr);
+  }
   .partner {
     grid-template-columns: minmax(0, 1fr);
   }

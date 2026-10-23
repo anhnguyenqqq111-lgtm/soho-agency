@@ -3,22 +3,15 @@ import Section from '../../ui/Section';
 import Icon from '../../ui/Icon';
 import {sitePath} from '../../paths';
 import SeoKnowledgeMap from './SeoKnowledgeMap';
-import {Crumbs, MethodSection} from './PilotParts';
+import {MethodSection} from './PilotParts';
 import {ServiceTouchpointContext, ContextualServiceCTA} from '../ServiceContext';
 import {cases} from '../../data/cases';
 
 /*
-  Trang SEO tổng thể, kiến trúc "Hệ sinh thái tìm kiếm":
-  hero dạng thang truy vấn (người tìm đi từ tìm hiểu tới liên hệ) → bản đồ cụm chủ đề tương tác → ba lớp nền SEO
-  (kỹ thuật, nội dung, uy tín) xếp như mặt cắt → điểm chạm trên hành trình → hồ sơ bàn giao → dự án → phương pháp → liên hệ.
+  Phần giải thích riêng của trang SEO tổng thể, đặt dưới các sơ đồ chung (ServiceOverview):
+  bản đồ cụm chủ đề tương tác (nhìn gần sơ đồ trang trụ cột ở hero) → ba lớp nền SEO, mỗi lớp gắn với các bước và
+  dấu hiệu ở trên → điểm chạm → hồ sơ bàn giao và dự án → phương pháp → liên hệ.
 */
-
-const LADDER = [
-  {q: 'mẫu quán cà phê sân vườn đẹp', intent: 'Tìm hiểu'},
-  {q: 'chi phí làm quán cà phê sân vườn', intent: 'So sánh'},
-  {q: 'báo giá thi công quán cà phê 200m2', intent: 'Quyết định'},
-  {q: 'công trình quán cà phê đã thi công', intent: 'Tin tưởng'}
-];
 
 // Ba lớp, đọc từ trên xuống; lớp dưới cùng là nền móng
 const LAYERS = [
@@ -49,58 +42,29 @@ export default function SeoService({service, article, names}) {
   const project = cases.find(c => c.slug === 'king-decor-luxury');
   return (
     <>
-      <section className={styles.hero}>
-        <div className={`container ${styles.heroInner}`}>
-          <div className={styles.heroCopy}>
-            <Crumbs name={service.menuTitle} />
-            <p className={styles.eyebrow}>Hệ sinh thái tìm kiếm</p>
-            <h1 className={styles.title}>{service.title}</h1>
-            <p className={styles.lead}>{service.intro}</p>
-            <p className={styles.promise}>{service.promise}</p>
-            <div className={styles.actions}>
-              <a href="#lien-he" className={styles.primary}>
-                Nhận đánh giá hệ thống SEO <Icon name="arrow-right" size={18} />
-              </a>
-              <a href="#ban-do" className={styles.secondary}>
-                Xem bản đồ chủ đề <Icon name="arrow-down" size={18} />
-              </a>
-            </div>
-          </div>
-          <figure className={styles.ladder}>
-            <ol>
-              {LADDER.map((s, i) => (
-                <li key={s.q} style={{'--i': i}}>
-                  <span className={styles.ladderIntent}>{s.intent}</span>
-                  <span className={styles.ladderQuery}>{s.q}</span>
-                </li>
-              ))}
-            </ol>
-            <figcaption>Một người tìm, bốn lần gõ khác nhau trước khi liên hệ. SEO tổng thể có một trang trả lời cho mỗi lần gõ. Ví dụ minh họa.</figcaption>
-          </figure>
-        </div>
-      </section>
-
       <Section
         id="ban-do"
+        tone="gray"
+        surface="flat"
+        className={styles.signature}
         title={
           <>
             Mỗi câu hỏi của khách, <span className="hl">một trang trả lời</span>
           </>
         }
-        intro={`${service.insight} Chọn một trang trên bản đồ để xem nó trả lời gì và dẫn khách đi đâu tiếp.`}
+        intro="Sơ đồ ở đầu trang là một cụm chủ đề: trang trụ cột ở giữa, xung quanh là các trang trả lời từng câu hỏi của khách. Dưới đây là cùng cụm đó với một ví dụ cụ thể. Chọn một trang để xem nó trả lời gì và dẫn khách đi đâu tiếp."
       >
         <SeoKnowledgeMap />
       </Section>
 
       <Section
         id="ba-lop"
-        tone="gray"
         title={
           <>
             Ba lớp nền, <span className="hl">sửa từ dưới lên</span>
           </>
         }
-        intro="Nội dung tốt không lên được nếu Google không đọc được trang. Uy tín không giữ được khách nếu trang không trả lời đúng câu hỏi. SOHO kiểm tra cả ba lớp trước khi viết bài mới."
+        intro="Năm bước ở trên gom lại thành ba lớp: bước 1 sửa kỹ thuật, bước 2 và 3 dựng nội dung, bước 4 làm rõ uy tín. Mỗi dấu hiệu bạn đang gặp thường nằm ở một lớp. Nội dung tốt không lên được nếu Google không đọc được trang, nên SOHO sửa từ dưới lên."
       >
         <ol className={styles.layers}>
           {LAYERS.map((l, i) => (
@@ -125,21 +89,16 @@ export default function SeoService({service, article, names}) {
             </li>
           ))}
         </ol>
-        <div className={styles.measure}>
-          <p className={styles.measureHead}>
-            <Icon name="chart-line" size={18} />
-            Mục tiêu hướng tới, đo bằng khách và doanh thu từ Google mỗi tháng
-          </p>
-          <ul>
-            {service.outcomes.map(o => (
-              <li key={o}>{o}</li>
-            ))}
-          </ul>
-        </div>
+        <p className={`${styles.measure} ${styles.measureHead}`}>
+          <Icon name="chart-line" size={18} />
+          Bước 5 là thước đo: số khách liên hệ và doanh thu đến từ Google, báo cáo mỗi tháng. Thứ hạng chỉ là chỉ số phụ.
+        </p>
       </Section>
 
       <Section
         id="diem-cham"
+        tone="gray"
+        surface="flat"
         title={
           <>
             SEO đứng ở đâu trên <span className="hl">hành trình khách hàng</span>
@@ -152,7 +111,6 @@ export default function SeoService({service, article, names}) {
 
       <Section
         id="ban-giao"
-        tone="gray"
         title={
           <>
             Hồ sơ <span className="hl">bàn giao</span>

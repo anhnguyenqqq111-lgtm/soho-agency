@@ -1,0 +1,10 @@
+.heroDiagram {
+  color: var(--ink);
+  width: min(100%, 620px);
+}
+.proof {
+  margin-top: 28px;
+  font-size: var(--fs-small);
+  color: var(--ink-2);
+  max-width: 68ch;
+}

@@ -1,4 +1,32 @@
-/* không còn style riêng, giữ file để import không lỗi */
-.x {
-  display: block;
+.catalogBlock + .catalogBlock {
+  margin-top: clamp(52px, 7vw, 88px);
+  padding-top: clamp(32px, 5vw, 56px);
+  border-top: 1px solid var(--line);
+}
+.catalogBlock > h3,
+.catalogHead h3 {
+  margin-bottom: 22px;
+  font-size: clamp(22px, 3vw, 32px);
+}
+.catalogHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 20px;
+  margin-bottom: 22px;
+}
+.catalogHead h3 {
+  margin: 0;
+}
+.catalogHead p {
+  max-width: 44ch;
+  color: var(--ink-2);
+}
+@media (max-width: 680px) {
+  .catalogHead {
+    display: block;
+  }
+  .catalogHead p {
+    margin-top: 8px;
+  }
 }

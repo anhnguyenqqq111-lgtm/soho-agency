@@ -1,16 +1,15 @@
 import styles from './BrandService.module.css';
 import Section from '../../ui/Section';
 import Icon from '../../ui/Icon';
-import SohoMark from './SohoMark';
 import BrandIdentityGallery from './BrandIdentityGallery';
-import {Crumbs, MethodSection} from './PilotParts';
+import {MethodSection} from './PilotParts';
 import {ServiceTouchpointContext, ContextualServiceCTA} from '../ServiceContext';
 import {testimonials} from '../../data/proof';
 
 /*
-  Trang Nhận diện thương hiệu, kiến trúc "Triển lãm nhận diện":
-  hero như một bức tường trưng bày (logo đóng khung, nhãn tác phẩm) → phòng trưng bày tương tác 5 thẻ
-  → lộ trình 6 buổi, mỗi buổi ghi rõ bạn duyệt gì → điểm chạm → hộp bàn giao + nhận xét khách đã đăng công khai → liên hệ.
+  Phần giải thích riêng của trang Nhận diện thương hiệu, đặt dưới các sơ đồ chung (ServiceOverview):
+  phòng trưng bày 5 thẻ (làm rõ sơ đồ hệ nhận diện ở hero) → mỗi bước trong 6 bước bạn duyệt gì → điểm chạm
+  → hộp bàn giao và nhận xét khách đã đăng công khai → liên hệ.
   Chưa có dự án nhận diện nào được công bố, nên phần trưng bày dùng chính hệ nhận diện SOHO và ghi rõ như vậy.
 */
 
@@ -30,56 +29,28 @@ const BRAND_QUOTES = testimonials.filter(t => /nhận diện/i.test(t.quote));
 export default function BrandService({service, article, names}) {
   return (
     <>
-      <section className={styles.hero}>
-        <div className={`container ${styles.heroInner}`}>
-          <div className={styles.heroCopy}>
-            <Crumbs name={service.menuTitle} />
-            <p className={styles.eyebrow}>Triển lãm nhận diện</p>
-            <h1 className={styles.title}>{service.title}</h1>
-            <p className={styles.lead}>{service.intro}</p>
-            <p className={styles.promise}>{service.promise}</p>
-            <div className={styles.actions}>
-              <a href="#trung-bay" className={styles.primary}>
-                Xem một bộ nhận diện <Icon name="arrow-down" size={18} />
-              </a>
-              <a href="#lien-he" className={styles.secondary}>
-                Trao đổi về nhận diện thương hiệu <Icon name="arrow-right" size={18} />
-              </a>
-            </div>
-          </div>
-          <figure className={styles.exhibit}>
-            <div className={styles.frame}>
-              <SohoMark className={styles.frameMark} title="Logo SOHO Agency, phiên bản Open Corner" />
-            </div>
-            <figcaption className={styles.placard}>
-              <strong>Open Corner</strong>
-              <span>Logo SOHO Agency: khung bốn góc mở, chữ S và H cùng màu nét, hai chữ O màu Brand Orange.</span>
-            </figcaption>
-          </figure>
-        </div>
-      </section>
-
       <Section
         id="trung-bay"
         tone="gray"
+        surface="flat"
         title={
           <>
             Một bộ nhận diện <span className="hl">gồm những gì</span>
           </>
         }
-        intro={`${service.insight} Đây là năm phần của một bộ hoàn chỉnh, trình bày bằng chính bộ nhận diện của SOHO.`}
+        intro="Sơ đồ ở đầu trang là một hệ nhận diện dùng chung cho website, mạng xã hội, bao bì và cửa hàng. Dưới đây là năm phần làm nên hệ đó, trình bày bằng chính bộ nhận diện của SOHO."
       >
         <BrandIdentityGallery />
       </Section>
 
       <Section
-        id="lo-trinh"
+        id="duyet"
         title={
           <>
-            Sáu buổi, <span className="hl">mỗi buổi bạn duyệt một thứ</span>
+            Sáu bước ở trên, <span className="hl">mỗi bước bạn duyệt gì</span>
           </>
         }
-        intro={service.proof}
+        intro="Bạn duyệt xong một bước rồi mới sang bước sau, nên ít phải sửa lại từ đầu."
       >
         <ol className={styles.rooms}>
           {service.process.map((step, i) => (
@@ -93,19 +64,12 @@ export default function BrandService({service, article, names}) {
             </li>
           ))}
         </ol>
-        <div className={styles.signs}>
-          <p className={styles.signsHead}>Nên làm lại nhận diện khi</p>
-          <ul>
-            {service.pains.map(p => (
-              <li key={p}>{p}</li>
-            ))}
-          </ul>
-        </div>
       </Section>
 
       <Section
         id="diem-cham"
         tone="gray"
+        surface="flat"
         title={
           <>
             Nhận diện đứng ở đâu trên <span className="hl">hành trình khách hàng</span>
@@ -133,12 +97,6 @@ export default function BrandService({service, article, names}) {
                   <Icon name="check" size={18} />
                   {d}
                 </li>
-              ))}
-            </ul>
-            <p className={styles.outcomesHead}>Mục tiêu hướng tới</p>
-            <ul className={styles.outcomes}>
-              {service.outcomes.map(o => (
-                <li key={o}>{o}</li>
               ))}
             </ul>
           </div>

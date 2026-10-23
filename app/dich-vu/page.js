@@ -4,10 +4,10 @@ import Section from '../../components/ui/Section';
 import CtaBand from '../../components/ui/CtaBand';
 import ProjectGrid from '../../components/proof/ProjectGrid';
 import GrowthDiagnostic from '../../components/services/GrowthDiagnostic';
-import CustomerJourneyCanvas from '../../components/services/CustomerJourneyCanvas';
 import {HubHero, CoreCapabilities, SpecialistSolutions, ConnectedSolutions} from '../../components/services/HubBlocks';
 import {servicePages, getCoreServices} from '../../components/servicePagesData';
 import {cases} from '../../components/data/cases';
+import styles from './page.module.css';
 
 export const metadata = {
   alternates: {canonical: '/dich-vu/'},
@@ -18,8 +18,8 @@ export const metadata = {
 
 /*
   Hub dịch vụ (docs/services/CUSTOMER_JOURNEY_ARCHITECTURE.md): bắt đầu từ vấn đề kinh doanh, không từ tên kênh.
-  Thứ tự: hero có bản đồ hành trình → chẩn đoán theo vấn đề → bản đồ điểm chạm tương tác → 6 năng lực chính
-  → 6 giải pháp chuyên biệt theo ngữ cảnh → kết hợp minh họa → dự án → liên hệ. Mỗi dịch vụ chỉ xuất hiện có lý do ở mỗi khối.
+  Thứ tự: hero có bản đồ hành trình → chẩn đoán theo vấn đề → danh mục dịch vụ thống nhất
+  → kết hợp minh họa → dự án → liên hệ. Mỗi dịch vụ chỉ xuất hiện có lý do ở mỗi khối.
 */
 export default function ServicesIndexPage() {
   const names = Object.fromEntries(servicePages.map(s => [s.slug, s.menuTitle]));
@@ -42,39 +42,27 @@ export default function ServicesIndexPage() {
           <GrowthDiagnostic names={names} descs={descs} cases={caseInfo} />
         </Section>
         <Section
-          id="hanh-trinh"
-          tone="gray"
-          title={
-            <>
-              Mỗi chặng, khách cần <span className="hl">một điều khác</span>
-            </>
-          }
-          intro="Bốn chặng và một nền tảng chạy xuyên suốt. Khách có thể vào từ bất kỳ chặng nào và không đi theo thứ tự; không doanh nghiệp nào cần đủ mọi dịch vụ."
-        >
-          <CustomerJourneyCanvas names={names} />
-        </Section>
-        <Section
           id="nang-luc"
-          title={
-            <>
-              6 năng lực <span className="hl">chính</span>
-            </>
-          }
-          intro="Những việc SOHO làm nhiều nhất, mỗi việc gắn với một chặng trên hành trình."
-        >
-          <CoreCapabilities services={getCoreServices()} />
-        </Section>
-        <Section
-          id="chuyen-biet"
           tone="gray"
+          surface="flat"
           title={
             <>
-              Giải pháp chuyên biệt, <span className="hl">khi cần đến</span>
+              Dịch vụ theo <span className="hl">nhu cầu thực tế</span>
             </>
           }
-          intro="Không phải doanh nghiệp nào cũng cần. Mỗi giải pháp dưới đây dành cho một tình huống cụ thể."
+          intro="Bắt đầu với sáu năng lực chính. Các giải pháp chuyên biệt chỉ dùng khi dữ liệu hoặc bối cảnh cho thấy thực sự cần."
         >
-          <SpecialistSolutions names={names} />
+          <div className={styles.catalogBlock}>
+            <h3>Năng lực chính</h3>
+            <CoreCapabilities services={getCoreServices()} />
+          </div>
+          <div id="chuyen-biet" className={styles.catalogBlock}>
+            <div className={styles.catalogHead}>
+              <h3>Giải pháp chuyên biệt</h3>
+              <p>Chỉ đề xuất khi tình huống của doanh nghiệp cần đến.</p>
+            </div>
+            <SpecialistSolutions names={names} />
+          </div>
         </Section>
         <Section
           id="ket-hop"
@@ -90,6 +78,7 @@ export default function ServicesIndexPage() {
         <Section
           id="du-an"
           tone="gray"
+          surface="flat"
           title={
             <>
               Dự án <span className="hl">đã làm</span>
