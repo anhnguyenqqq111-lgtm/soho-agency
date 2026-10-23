@@ -10,6 +10,7 @@ Hub `/dich-vu/` và trang chi tiết dịch vụ dùng chung token trong `app/st
 | `ContextualServiceCTA` | `components/services/ServiceContext.js` | Cuối mọi trang dịch vụ. Nhãn và lời mời theo dịch vụ, form chọn sẵn dịch vụ. |
 | `ServiceOverview` | `components/services/ServiceOverview.js` | Phần đầu mọi trang, giữ như bản live: hero có sơ đồ riêng của dịch vụ (`ServiceDiagram`), mục tiêu hướng tới, dải "SOHO làm theo N bước" (`Track`), sơ đồ "Dấu hiệu → Mục tiêu" (`BeforeAfter`). |
 | `MethodSection` | `components/services/pilots/PilotParts.js` | Bọc bài viết chi tiết sẵn có (`serviceArticlesData`) thành phần "Phương pháp chi tiết", thu gọn trong `<details>`. Nội dung vẫn có trong HTML cho Google đọc. |
+| `ProblemStatement`, `Responsibility`, `MeasurementLadder` | `components/services/insight/Insight.js` | Khối nội dung cho lớp vấn đề, SOHO làm gì, đo lường. Không phải khuôn bắt buộc. |
 | `ServiceSubnav` | `components/services/pilots/PilotParts.js` | Điều hướng neo dính dưới header. Danh sách mục do `app/dich-vu/[slug]/page.js` lập, trang có phần riêng thêm một mục. |
 | `SohoMark` | `components/services/pilots/SohoMark.js` | Logo Open Corner dạng SVG nội tuyến, đổi màu được. Cùng nét với file đã duyệt trong `public/assets/brand/approved/`. |
 
@@ -25,33 +26,54 @@ Hub `/dich-vu/` và trang chi tiết dịch vụ dùng chung token trong `app/st
 - Không dùng card cho mọi đoạn nội dung. Section nền màu ưu tiên bề mặt phẳng; đường kẻ và khoảng trắng tạo phân cấp trước khi dùng viền, bóng hay bo góc.
 - Mỗi trang chỉ có một tương tác chính. Nội dung phụ dùng progressive disclosure để không cạnh tranh với hành động chính.
 
-## 3. Ba trang có kiến trúc riêng (đợt 1)
+## 3. Ba trang thí điểm theo Redesign 3.1
 
-### SEO tổng thể: "Hệ sinh thái tìm kiếm"
+Ba sơ đồ live ở đầu trang (xem `SERVICE_VISUAL_AUDIT.md`) là luận điểm mở đầu. Phần dưới đi theo 5 lớp: **vấn đề → vì sao → SOHO làm gì → đo thế nào → nối vào kinh doanh**, mỗi lớp nhắc lại nút, tầng hoặc điểm chạm trên sơ đồ mà nó giải thích. Lớp "vì sao" của mỗi trang có cách trình bày riêng.
 
-Dưới phần sơ đồ live: bản đồ cụm chủ đề `SeoKnowledgeMap` (nhìn gần sơ đồ trang trụ cột ở hero) → ba lớp nền xếp như mặt cắt (uy tín, nội dung, kỹ thuật), mỗi lớp gắn với các bước 1 đến 4 và với một dấu hiệu trong sơ đồ "Dấu hiệu → Mục tiêu"; bước 5 là thước đo → điểm chạm → hồ sơ bàn giao và dự án King Decor Luxury → phương pháp → liên hệ.
+Khối dùng chung nằm ở `components/services/insight/Insight.js`:
 
-`SeoKnowledgeMap`: một trang trụ cột, tám trang vệ tinh chia bốn làn ý định (tìm hiểu, so sánh, quyết định, tin tưởng). Chọn một trang để xem truy vấn, loại trang, điều trang phải trả lời và chặng hành trình. Các trang được liên kết tới sáng lên trên bản đồ, và bấm vào từng liên kết sẽ chọn trang đó. Dữ liệu là ví dụ một doanh nghiệp thi công quán cà phê, có ghi chú. Sự kiện: `service_map_select`.
+- `ProblemStatement`: đoạn dẫn nối với sơ đồ, kèm 2–3 biểu hiện cụ thể có ghi chú "ví dụ minh họa".
+- `Responsibility`: SOHO chịu trách nhiệm gì, bạn cung cấp gì.
+- `MeasurementLadder`: 4 bậc đo (hoạt động → trung gian → hành vi khách → kinh doanh) cùng các giới hạn của phép đo.
 
-### Google Ads & Shopping: "Phòng điều khiển hiệu quả"
+Lớp "nối vào kinh doanh" dùng `ServiceTouchpointContext`. Mỗi trang có một CTA theo ngữ cảnh. Nút ở mục "Mục tiêu hướng tới" chỉ dẫn xuống đúng CTA đó.
 
-Dưới phần sơ đồ live: bốn câu kiểm tra trước khi tăng ngân sách và `AdsProfitSimulator` trong một thẻ tối (làm rõ bước 5, đo bằng chi phí mỗi đơn và lợi nhuận) → cây tài khoản theo ý định và biên lợi nhuận, kèm rào chắn chung (làm rõ bước 2) → ba thứ quảng cáo phụ thuộc vào (trang đích, đo lường, biên lợi nhuận), giải thích các dấu hiệu ở trên, mỗi thứ dẫn tới dịch vụ tương ứng → điểm chạm → bàn giao và huy hiệu Google Partner kèm ba tiêu chí Google xác nhận → phương pháp → liên hệ. Mô phỏng là thẻ tối trong section sáng, nên trang vẫn chỉ có hai khối tối toàn chiều ngang (dải các bước và CTA).
+### SEO tổng thể: phân tích tìm kiếm
 
-`AdsProfitSimulator` hiển thị ba đầu vào chính trước; ba giả định bán hàng và biên lợi nhuận nằm trong phần nâng cao. Ba kết quả quan trọng (lợi nhuận, CAC, CAC hòa vốn) luôn hiện; phễu và công thức đầy đủ mở khi người dùng cần kiểm tra. Có nhãn "Mô phỏng giả định, không phải dự báo hay cam kết". Mô phỏng chưa tính mua lại, chi phí cố định và thuế.
+Sơ đồ mở đầu là cụm chủ đề, sáu nhóm bài cùng dẫn về trang dịch vụ.
 
-### Nhận diện thương hiệu: "Triển lãm nhận diện"
+- **Vấn đề:** có lượt truy cập mà không có khách; ba biểu hiện theo ví dụ một doanh nghiệp thi công quán cà phê.
+- **Vì sao:** bảng "lượng tìm kiếm và ý định mua", mỗi dòng là một nút trên sơ đồ, mức tìm kiếm ghi định tính và có chú thích. Kèm `SeoKnowledgeMap` (cùng cụm, vẽ thành trang thật) và ghi chú về lỗi kỹ thuật (bước 1).
+- **SOHO làm gì:** bốn cặp "kiểm tra → thay đổi", trách nhiệm hai bên, hồ sơ bàn giao và dự án King Decor Luxury. Ghi rõ kết quả công bố của dự án này là về quảng cáo, không phải SEO.
+- **Đo:** 4 bậc từ trang đã dựng tới doanh thu từ khách đến qua Google; giới hạn của Search Console, câu trả lời AI và cách GA4 ghi công.
 
-Dưới phần sơ đồ live: `BrandIdentityGallery` (làm rõ sơ đồ hệ nhận diện ở hero: bảng màu, logo, kiểu chữ dùng cho website, mạng xã hội, bao bì, cửa hàng) → mỗi bước trong sáu bước ở trên bạn duyệt gì → điểm chạm → hộp bàn giao và hai nhận xét khách đã đăng công khai → liên hệ. Trang này chưa có bài viết chi tiết nên không có phần phương pháp.
+### Google Ads & Shopping: kinh tế quảng cáo
 
-`BrandIdentityGallery` có năm thẻ theo mẫu ARIA tabs (phím mũi tên, Home, End). Ví dụ là hệ nhận diện của chính SOHO, vì chưa có dự án nhận diện nào được công bố:
+Sơ đồ mở đầu là phễu 4 tầng.
 
-- Logo: bản chính, bản đảo, bản một màu, thử ở cỡ nhỏ.
-- Màu: sáu màu kèm vai trò và tỉ lệ tương phản từ `tokens.css`, cùng tỉ lệ 70/20/10.
-- Chữ: mẫu hai phông với ẾỨỠẶẰ.
-- Ứng dụng: danh thiếp, bài đăng, đầu trang web dựng bằng CSS.
-- Quy tắc dùng: một mẫu nên và ba mẫu không nên.
+- **Vấn đề:** chi phí tăng mà lợi nhuận không tăng; mỗi biểu hiện chỉ rõ tầng nào đang rò.
+- **Vì sao:** bảng "mỗi tầng có một con số che chỗ rò" gồm con số dễ nhìn, điều nó có thể che, con số nên xem, và dịch vụ tầng đó phụ thuộc vào. Kèm `AdsProfitSimulator` trong thẻ tối để tính thử với cùng bốn tầng.
+- **SOHO làm gì:** cây tài khoản theo ý định và lợi nhuận (sửa tầng 1–2), nhập đơn chốt về tài khoản (tầng 3–4), trách nhiệm hai bên, bàn giao, Google Partner. Ghi rõ chưa có dự án Google Ads công bố số liệu.
+- **Đo:** đọc báo cáo từ cuối phễu ngược lên; giới hạn về độ trễ mua hàng, cách mỗi hệ thống ghi công, Performance Max.
 
-Cả năm thẻ đều có trong HTML để Google đọc được. Sự kiện: `service_gallery_tab`.
+### Nhận diện thương hiệu: câu chuyện nhận diện
+
+Sơ đồ mở đầu là hệ nhận diện dùng ở 4 điểm chạm.
+
+- **Vấn đề:** logo đẹp mà khách không nhớ.
+- **Vì sao:** gốc của sự lệch là định vị chưa rõ (bước 2–3), cộng với bốn điểm chạm đúng như trên sơ đồ, mỗi điểm ghi "hay lệch vì" và "quy định cần có".
+- **SOHO làm gì:** `BrandIdentityGallery` (bộ nhận diện của chính SOHO, có ghi chú), trách nhiệm hai bên, các mốc bạn duyệt theo 6 bước, hộp bàn giao, hai nhận xét khách đã đăng công khai.
+- **Đo:** ghi mốc trước khi đổi; lượt tìm tên thương hiệu, lượt truy cập trực tiếp; nêu rõ khó tách riêng đóng góp của nhận diện vào doanh thu.
+
+Các phần đã bỏ vì trùng với sơ đồ live:
+
+- hero riêng của từng trang;
+- khối "3 giai đoạn" (trùng dải các bước);
+- thanh "phù hợp khi" (trùng sơ đồ "Dấu hiệu → Mục tiêu");
+- danh sách mục tiêu trong "Mục tiêu hướng tới" (trùng cột phải của sơ đồ);
+- "ba lớp nền" SEO;
+- bốn câu kiểm tra và khối "phụ thuộc" của Google Ads (đã gộp vào bảng tầng phễu);
+- phòng "6 buổi" của Nhận diện (đã gộp vào mốc duyệt).
 
 ## 4. Chín trang còn lại
 

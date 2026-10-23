@@ -1,0 +1,222 @@
+/* Phong cách biên tập: đường kẻ và khoảng trắng tạo phân cấp, ít thẻ, ít màu. Sơ đồ ở đầu trang mới là nhân vật chính. */
+
+/* ---------- Vấn đề ---------- */
+.problem {
+  display: grid;
+  gap: 28px;
+}
+.lead {
+  max-width: 62ch;
+  font-family: var(--font-display);
+  font-size: clamp(20px, 2vw, 26px);
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+}
+.cases {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 2px solid var(--ink);
+}
+.cases > li {
+  display: grid;
+  align-content: start;
+  gap: 8px;
+  padding: 20px 24px 4px 0;
+}
+.cases > li + li {
+  padding-left: 24px;
+  border-left: 1px solid var(--line);
+}
+.caseNum {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--brand-ink);
+}
+.caseLabel {
+  font-size: 19px;
+  line-height: 1.3;
+}
+.cases p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--ink-2);
+}
+.note {
+  font-size: 13px;
+  color: var(--ink-3);
+}
+
+/* ---------- Trách nhiệm hai bên ---------- */
+.split {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-top: 2px solid var(--ink);
+}
+.split > div {
+  padding: 20px 28px 0 0;
+}
+.split > .yours {
+  padding: 20px 0 0 28px;
+  border-left: 1px solid var(--line);
+}
+.splitHead {
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+.splitList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 10px;
+}
+.splitList li {
+  position: relative;
+  padding-left: 22px;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--ink-2);
+}
+.splitList li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 10px;
+  height: 2px;
+  background: var(--brand);
+}
+.yours .splitList li::before {
+  background: var(--violet);
+}
+
+/* ---------- Thang đo: 4 bậc, bậc kinh doanh đậm nhất ---------- */
+.measure {
+  display: grid;
+  gap: 24px;
+}
+.ladder {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+  align-items: end;
+}
+.ladder > li {
+  display: grid;
+  align-content: start;
+  gap: 6px;
+  padding: 18px;
+  border-radius: var(--r-md);
+  border: 1px solid var(--line);
+  background: var(--white);
+}
+/* bậc thang: mỗi tầng cao hơn tầng trước để đọc được hướng đi lên */
+.ladder > li[data-level='activity'] {
+  min-height: 220px;
+}
+.ladder > li[data-level='interim'] {
+  min-height: 250px;
+}
+.ladder > li[data-level='behavior'] {
+  min-height: 280px;
+}
+.ladder > li[data-level='business'] {
+  min-height: 310px;
+  background: var(--c-ink);
+  border-color: var(--c-ink);
+  color: var(--white);
+}
+.levelNum {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--brand-ink);
+}
+.levelName {
+  font-size: 18px;
+  line-height: 1.25;
+}
+.levelHint {
+  font-size: 13px;
+  color: var(--ink-3);
+}
+.ladder ul {
+  margin: 8px 0 0;
+  padding-left: 1.1em;
+  display: grid;
+  gap: 6px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--ink-2);
+}
+.ladder > li[data-level='business'] .levelNum {
+  color: var(--warm-2);
+}
+.ladder > li[data-level='business'] .levelName {
+  color: var(--white);
+}
+.ladder > li[data-level='business'] .levelHint,
+.ladder > li[data-level='business'] ul {
+  color: var(--on-dark-2);
+}
+.limits {
+  display: grid;
+  gap: 10px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+.limitsHead {
+  font-size: 16px;
+}
+.limits ul {
+  margin: 0;
+  padding-left: 1.2em;
+  display: grid;
+  gap: 6px;
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: var(--ink-2);
+}
+
+@media (max-width: 1000px) {
+  .cases {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .cases > li,
+  .cases > li + li {
+    padding: 18px 0;
+    border-left: 0;
+  }
+  .cases > li + li {
+    border-top: 1px solid var(--line);
+  }
+  .ladder {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: stretch;
+  }
+  .ladder > li[data-level] {
+    min-height: 0;
+  }
+}
+@media (max-width: 640px) {
+  .split,
+  .ladder {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .split > div,
+  .split > .yours {
+    padding: 18px 0;
+    border-left: 0;
+  }
+  .split > .yours {
+    border-top: 1px solid var(--line);
+  }
+}

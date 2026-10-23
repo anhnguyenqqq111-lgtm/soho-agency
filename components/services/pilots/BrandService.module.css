@@ -1,52 +1,3 @@
-/* ---------- Lộ trình: 6 phòng, đánh số lớn ---------- */
-.rooms {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  border-top: 1px solid var(--ink);
-}
-.room {
-  display: grid;
-  align-content: start;
-  gap: 10px;
-  padding: 22px 22px 26px 0;
-  border-bottom: 1px solid var(--line);
-}
-.room:not(:nth-child(3n + 1)) {
-  padding-left: 22px;
-  border-left: 1px solid var(--line);
-}
-.roomNum {
-  font-family: var(--font-display);
-  font-size: 44px;
-  font-weight: 800;
-  line-height: 1;
-  background: var(--gradient-signature-text);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-.roomTitle {
-  font-size: 18px;
-  line-height: 1.35;
-}
-.roomReview {
-  display: grid;
-  gap: 2px;
-  font-size: 14.5px;
-  line-height: 1.5;
-  color: var(--ink-2);
-}
-.roomReview span {
-  font-size: 11.5px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--brand-ink);
-}
-
 /* ---------- Hộp bàn giao + nhận xét ---------- */
 .handover {
   display: grid;
@@ -114,24 +65,135 @@
   .handover {
     grid-template-columns: minmax(0, 1fr);
   }
-  .rooms {
+}
+
+/* ---------- Gốc của sự lệch + 4 điểm chạm trên sơ đồ ---------- */
+.root {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 9fr);
+  gap: 16px 32px;
+  padding: 20px 0 28px;
+  border-top: 2px solid var(--ink);
+}
+.rootLabel {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+}
+.rootText {
+  max-width: 70ch;
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--ink-2);
+}
+.drift {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-top: 1px solid var(--line);
+}
+.drift > li {
+  display: grid;
+  align-content: start;
+  gap: 12px;
+  padding: 20px 20px 0 0;
+}
+.drift > li + li {
+  padding-left: 20px;
+  border-left: 1px solid var(--line);
+}
+.driftPoint {
+  font-size: 20px;
+}
+.drift > li:first-child .driftPoint {
+  color: var(--brand-ink);
+}
+.drift p {
+  display: grid;
+  gap: 4px;
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: var(--ink-2);
+}
+.drift p:last-child {
+  color: var(--ink);
+}
+.driftLabel {
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+/* ---------- Trách nhiệm hai bên + mốc duyệt ---------- */
+.split {
+  display: grid;
+  grid-template-columns: minmax(0, 8fr) minmax(0, 4fr);
+  gap: 32px;
+  margin-top: 56px;
+  align-items: start;
+}
+.milestones {
+  padding-top: 20px;
+  border-top: 2px solid var(--ink);
+}
+.milestonesHead {
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+.milestones ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.milestones li {
+  display: grid;
+  gap: 2px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 14.5px;
+  line-height: 1.45;
+}
+.milestones li span {
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--brand-ink);
+}
+.boxHead {
+  font-size: 18px;
+}
+.handover {
+  margin-top: 48px;
+}
+
+@media (max-width: 1000px) {
+  .drift {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-  .room:not(:nth-child(3n + 1)) {
+  .drift > li:nth-child(3) {
     padding-left: 0;
     border-left: 0;
   }
-  .room:nth-child(even) {
-    padding-left: 22px;
-    border-left: 1px solid var(--line);
-  }
-}
-@media (max-width: 600px) {
-  .rooms {
+  .split {
     grid-template-columns: minmax(0, 1fr);
   }
-  .room:nth-child(even) {
-    padding-left: 0;
+}
+@media (max-width: 640px) {
+  .root,
+  .drift {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .drift > li,
+  .drift > li + li {
+    padding: 18px 0;
     border-left: 0;
+  }
+  .drift > li + li {
+    border-top: 1px solid var(--line);
   }
 }

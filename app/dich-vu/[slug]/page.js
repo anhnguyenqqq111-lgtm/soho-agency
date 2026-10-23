@@ -15,12 +15,13 @@ import BrandService from '../../../components/services/pilots/BrandService';
 import {MethodSection} from '../../../components/services/pilots/PilotParts';
 import ServiceOverview from '../../../components/services/ServiceOverview';
 
-// Trang dịch vụ đã có phần giải thích riêng (docs/services/SERVICE_DESIGN_SYSTEM.md), kèm mục riêng trên thanh điều hướng.
+// Trang dịch vụ đã có phần giải thích riêng theo 5 lớp: vấn đề, vì sao, SOHO làm gì, đo lường, nối vào kinh doanh
+// (docs/services/SERVICE_DESIGN_SYSTEM.md).
 // Các trang còn lại dùng phần thân chung bên dưới. Mọi trang đều mở đầu bằng ServiceOverview (các sơ đồ đang live).
 const PILOTS = {
-  'seo-tong-the': {Body: SeoService, nav: ['ban-do', 'Bản đồ chủ đề']},
-  'google-ads-shopping': {Body: GoogleAdsService, nav: ['mo-phong', 'Mô phỏng lợi nhuận']},
-  'nhan-dien-thuong-hieu': {Body: BrandService, nav: ['trung-bay', 'Bộ nhận diện']}
+  'seo-tong-the': SeoService,
+  'google-ads-shopping': GoogleAdsService,
+  'nhan-dien-thuong-hieu': BrandService
 };
 
 export function generateStaticParams() {
@@ -45,16 +46,25 @@ export default async function ServicePage({params}) {
   if (!service) notFound();
   const article = getServiceArticle(slug);
   const names = Object.fromEntries(servicePages.map(s => [s.slug, s.menuTitle]));
-  const pilot = PILOTS[slug];
-  const nav = [
-    ['cach-lam', 'Cách làm'],
-    ['vi-sao', 'Vì sao cần'],
-    ...(pilot ? [pilot.nav] : []),
-    ['ban-giao', 'Bàn giao'],
-    ['diem-cham', 'Hành trình khách'],
-    ...(article ? [['phuong-phap', 'Đọc sâu']] : []),
-    ['lien-he', 'Liên hệ']
-  ];
+  const Pilot = PILOTS[slug];
+  const nav = Pilot
+    ? [
+        ['van-de', 'Vấn đề'],
+        ['nguyen-nhan', 'Vì sao'],
+        ['giai-phap', 'SOHO làm gì'],
+        ['do-luong', 'Đo lường'],
+        ['diem-cham', 'Hành trình khách'],
+        ...(article ? [['phuong-phap', 'Đọc sâu']] : []),
+        ['lien-he', 'Liên hệ']
+      ]
+    : [
+        ['cach-lam', 'Cách làm'],
+        ['vi-sao', 'Vì sao cần'],
+        ['ban-giao', 'Bàn giao'],
+        ['diem-cham', 'Hành trình khách'],
+        ...(article ? [['phuong-phap', 'Đọc sâu']] : []),
+        ['lien-he', 'Liên hệ']
+      ];
 
   const serviceJsonLd = {
     '@context': 'https://schema.org',
@@ -72,8 +82,8 @@ export default async function ServicePage({params}) {
       <ReadingProgress />
       <main id="main">
         <ServiceOverview service={service} nav={nav} />
-        {pilot ? (
-          <pilot.Body service={service} article={article} names={names} />
+        {Pilot ? (
+          <Pilot service={service} article={article} names={names} />
         ) : (
           <>
             <Section

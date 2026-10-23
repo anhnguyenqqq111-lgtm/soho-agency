@@ -7,10 +7,12 @@ import Track from '../diagrams/Track';
 import BeforeAfter from '../diagrams/BeforeAfter';
 import ServiceDiagram from '../diagrams/ServiceDiagrams';
 import {ServiceSubnav} from './pilots/PilotParts';
+import {ROLES} from '../data/touchpoints';
 
 /*
   Phần đầu chung của mọi trang dịch vụ, giữ đúng như bản đang live: hero có sơ đồ riêng của dịch vụ, mục tiêu hướng tới,
   dải "SOHO làm theo N bước", sơ đồ "Dấu hiệu → Mục tiêu". Phần bên dưới (riêng từng trang) giải thích rõ các sơ đồ này.
+  "Mục tiêu hướng tới" chỉ giữ lời hứa: danh sách mục tiêu đã có ở cột phải của sơ đồ "Dấu hiệu → Mục tiêu" (tránh lặp hai lần).
   nav: các mục của thanh điều hướng trong trang, dạng [id, nhãn].
 */
 export default function ServiceOverview({service, nav}) {
@@ -29,8 +31,8 @@ export default function ServiceOverview({service, nav}) {
         }
       />
       <ServiceSubnav items={nav} />
-      <PageHeader title="Mục tiêu hướng tới" lead={service.promise} bullets={service.outcomes}>
-        <Button href="#lien-he">Nhận tư vấn</Button>
+      <PageHeader title="Mục tiêu hướng tới" lead={service.promise}>
+        <Button href="#lien-he">{ROLES[service.slug]?.cta || 'Nhận tư vấn'}</Button>
       </PageHeader>
 
       <Section

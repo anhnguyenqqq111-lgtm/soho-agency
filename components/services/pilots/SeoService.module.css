@@ -1,146 +1,141 @@
-/* ---------- Ba lớp: mặt cắt, lớp dưới đậm nhất ---------- */
-.layers {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  gap: 8px;
+/* Trang SEO, phong cách phân tích tìm kiếm: bảng, đường kẻ, chữ biên tập. Không thêm sơ đồ trang trí. */
+
+/* ---------- Bảng ý định tìm kiếm, mỗi dòng là một nút của sơ đồ hero ---------- */
+.tableWrap {
+  overflow-x: auto;
+  border-top: 2px solid var(--ink);
 }
-.layer {
-  display: grid;
-  grid-template-columns: minmax(0, 4fr) minmax(0, 5fr) minmax(0, 3fr);
-  gap: 16px 28px;
-  align-items: start;
-  padding: 22px 24px;
-  border-radius: var(--r-card);
-  border: 1px solid var(--line);
-  background: var(--white);
-}
-.layer[data-layer='noi-dung'] {
-  margin-inline: clamp(0px, 2vw, 24px);
-  background: #f3f1f8;
-}
-.layer[data-layer='ky-thuat'] {
-  margin-inline: clamp(0px, 4vw, 48px);
-  background: var(--c-ink);
-  border-color: var(--c-ink);
-  color: var(--white);
-}
-.layerHead {
-  display: grid;
-  grid-template-columns: 36px minmax(0, 1fr);
-  column-gap: 12px;
-  row-gap: 4px;
-}
-.layerNum {
-  grid-row: span 2;
-  display: grid;
-  place-items: center;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background: var(--brand);
-  color: var(--ink);
-  font-family: var(--font-display);
-  font-weight: 800;
-}
-.layerName {
-  font-size: 22px;
-  line-height: 1.2;
-}
-.layerQ {
+.intents {
+  width: 100%;
+  min-width: 760px;
+  border-collapse: collapse;
   font-size: 14.5px;
   line-height: 1.45;
+}
+.intents th,
+.intents td {
+  padding: 14px 12px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--line);
+}
+.intents thead th {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+.intents tbody th {
+  font-family: var(--font-display);
+  font-size: 16px;
+  white-space: nowrap;
+}
+.intents td {
   color: var(--ink-2);
 }
-.layerChecks {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  gap: 8px;
+.query {
+  font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+  font-size: 13px;
+}
+.intents tr[data-acc] th {
+  color: var(--ink);
+  box-shadow: inset 4px 0 0 var(--brand);
+}
+.intents tr[data-acc] {
+  background: var(--color-primary-tint);
+}
+.tableNote {
+  margin-top: 12px;
+  max-width: 80ch;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--ink-3);
+}
+.subhead {
+  margin-top: 48px;
+  font-size: 22px;
+  line-height: 1.25;
+}
+.subintro {
+  margin: 8px 0 20px;
   font-size: 15px;
+  color: var(--ink-2);
 }
-.layerChecks li {
-  display: flex;
-  gap: 8px;
-  align-items: baseline;
+.callout {
+  margin-top: 40px;
+  max-width: 72ch;
+  padding-left: 18px;
+  border-left: 4px solid var(--ink);
+  font-size: 15.5px;
+  line-height: 1.6;
+  color: var(--ink-2);
 }
-.layerChecks svg {
-  flex: none;
-  color: var(--brand-ink);
-  transform: translateY(2px);
+.callout strong {
+  color: var(--ink);
 }
-.layerSign {
+
+/* ---------- Chẩn đoán → thay đổi ---------- */
+.fixes {
+  list-style: none;
+  margin: 0 0 40px;
+  padding: 0;
+  border-top: 2px solid var(--ink);
+}
+.fixes li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  gap: 20px;
+  align-items: start;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line);
+}
+.fixes p {
   display: grid;
   gap: 4px;
-  font-size: 14px;
-  line-height: 1.45;
+  font-size: 15px;
+  line-height: 1.55;
   color: var(--ink-2);
 }
-.layerSign span {
+.fixes p:last-child {
+  color: var(--ink);
+  font-weight: 600;
+}
+.fixes svg {
+  margin-top: 22px;
+  color: var(--brand-ink);
+}
+.fixLabel {
   font-size: 11.5px;
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--ink-3);
 }
-.layer[data-layer='ky-thuat'] .layerQ,
-.layer[data-layer='ky-thuat'] .layerSign {
-  color: var(--on-dark-2);
-}
-.layer[data-layer='ky-thuat'] .layerSign span {
-  color: var(--on-dark-3);
-}
-.layer[data-layer='ky-thuat'] .layerChecks svg {
-  color: var(--warm-2);
-}
 
-.measure {
-  display: grid;
-  gap: 10px;
-  margin-top: 24px;
-  padding: 18px 22px;
-  border-radius: var(--r-card);
-  border: 2px solid var(--ink);
-  background: var(--white);
-}
-.measureHead {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-weight: 700;
-}
-.measure ul {
-  margin: 0;
-  padding-left: 1.2em;
-  display: grid;
-  gap: 4px;
-  color: var(--ink-2);
-}
-
-/* ---------- Bàn giao + dự án ---------- */
+/* ---------- Bàn giao + dự án thật ---------- */
 .handover {
   display: grid;
   grid-template-columns: minmax(0, 6fr) minmax(0, 5fr);
-  gap: 24px;
+  gap: 32px;
   align-items: start;
+  margin-top: 8px;
+}
+.handover .subhead {
+  margin: 32px 0 14px;
 }
 .files {
   list-style: none;
   margin: 0;
   padding: 0;
   display: grid;
-  gap: 8px;
 }
 .files li {
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 14px 16px;
-  border-radius: var(--r-md);
-  background: var(--white);
-  border: 1px solid var(--line);
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
   font-weight: 600;
   font-size: 15px;
 }
@@ -151,6 +146,7 @@
 .case {
   display: grid;
   overflow: hidden;
+  margin-top: 32px;
   border-radius: var(--r-xl);
   background: var(--white);
   border: 1px solid var(--line);
@@ -187,9 +183,9 @@
   text-transform: uppercase;
   color: var(--brand-ink);
 }
-.caseResult {
-  font-weight: 600;
-  color: var(--ink);
+.caseNote {
+  font-size: 13px;
+  color: var(--ink-3);
 }
 .caseMore {
   display: inline-flex;
@@ -198,33 +194,24 @@
   font-weight: 700;
   color: var(--brand-ink);
 }
-.fit {
-  margin-top: 20px;
-  font-size: 14.5px;
-  color: var(--ink-2);
-}
 
 @media (max-width: 1000px) {
   .handover {
     grid-template-columns: minmax(0, 1fr);
   }
-  .layer {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  }
-  .layerHead {
-    grid-column: 1 / -1;
-  }
 }
 @media (max-width: 640px) {
-  .layer {
+  .fixes li {
     grid-template-columns: minmax(0, 1fr);
-    padding: 18px;
+    gap: 8px;
   }
-  .layer[data-layer='noi-dung'],
-  .layer[data-layer='ky-thuat'] {
-    margin-inline: 0;
+  .fixes svg {
+    margin-top: 0;
+    transform: rotate(90deg);
   }
 }
-.layer[data-layer='ky-thuat'] .layerName {
-  color: var(--white);
+
+.tableWrap:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 4px;
 }
