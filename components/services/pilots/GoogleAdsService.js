@@ -1,5 +1,5 @@
 import styles from './GoogleAdsService.module.css';
-import Section from '../../ui/Section';
+import ed from '../editorial/editorial.module.css';
 import Icon from '../../ui/Icon';
 import PartnerBadge from '../../proof/PartnerBadge';
 import {sitePath} from '../../paths';
@@ -10,11 +10,9 @@ import {ServiceTouchpointContext, ContextualServiceCTA} from '../ServiceContext'
 import {partners} from '../../data/proof';
 
 /*
-  Phần dưới sơ đồ của trang Google Ads & Shopping (Redesign 3.1, phong cách "kinh tế quảng cáo"). Sơ đồ mở đầu là phễu
-  4 tầng: truy vấn → lượt bấm → khách đúng tệp → đơn có lãi, mỗi tầng một việc tối ưu. Phần dưới phát triển đúng ý đó:
-  vấn đề (chi phí tăng mà lợi nhuận không tăng) → vì sao (mỗi tầng có một con số dễ nhìn che chỗ rò, kèm phép tính với số
-  của bạn) → SOHO đổi gì ở từng tầng, hai bên làm gì, bàn giao và chứng nhận → đo 4 bậc và giới hạn → nối vào hành trình.
-  Mô phỏng nằm trong một thẻ tối, không phải khối tối toàn trang: trang chỉ có hai khối tối (dải các bước và CTA cuối).
+  Phần dưới sơ đồ của trang Google Ads & Shopping. Nội dung theo Redesign 3.1, bố cục theo V4.0 "kinh tế quảng cáo":
+  câu khẳng định lớn → so sánh con số dễ nhìn và con số nên xem ở từng tầng phễu → một dải tối duy nhất cho phép tính
+  (khối tối thứ hai là CTA cuối) → cấu trúc tài khoản → bàn giao và chứng nhận → thang đo → nối vào kinh doanh.
 */
 
 // Mỗi dòng là một tầng của phễu ở hero
@@ -85,211 +83,243 @@ export default function GoogleAdsService({service, article, names}) {
   const google = partners.find(p => p.name === 'Google Partner');
   return (
     <>
-      <Section
-        id="van-de"
-        tone="gray"
-        surface="flat"
-        kicker="Vấn đề"
-        title={
-          <>
-            Vì sao chi phí quảng cáo tăng <span className="hl">mà lợi nhuận không tăng theo?</span>
-          </>
-        }
-      >
-        <ProblemStatement
-          lead="Phễu ở đầu trang có bốn tầng. Nhiều tài khoản chỉ được nhìn ở tầng thứ hai: giá mỗi lượt bấm. Tiền có thể rò ở ba tầng còn lại trong khi báo cáo vẫn trông ổn."
-          cases={[
-            {
-              label: 'Giá bấm giảm, khách cũng giảm',
-              text: 'Mở rộng từ khóa cho giá bấm rẻ hơn, nhưng kéo thêm nhiều người chỉ tìm thông tin. Tầng truy vấn rò, còn tầng lượt bấm vẫn trông tốt.'
-            },
-            {
-              label: 'Nhiều form, sale nói khách không đúng',
-              text: 'Chiến dịch được tối ưu theo số form nên học cách tìm người dễ điền form, không phải người sẽ mua. Tầng khách đúng tệp rò.'
-            },
-            {
-              label: 'ROAS đẹp, lợi nhuận mỏng',
-              text: 'Doanh thu dồn vào nhóm hàng bán chạy nhưng biên thấp. Sau giá vốn và vận chuyển, phần còn lại không đủ bù chi phí quảng cáo. Tầng đơn có lãi rò.'
-            }
-          ]}
-          note="Các tình huống thường gặp khi kiểm tra tài khoản, dùng để minh họa, không phải số liệu của một khách hàng cụ thể."
-        />
-      </Section>
-
-      <Section
-        id="nguyen-nhan"
-        kicker="Vì sao xảy ra"
-        title={
-          <>
-            Mỗi tầng có một con số <span className="hl">che chỗ rò</span>
-          </>
-        }
-        intro="Con số dễ nhìn nhất ở mỗi tầng thường là con số Google Ads tự tối ưu. Nó tốt lên không có nghĩa tầng đó hết rò. Con số nên xem thường nằm ngoài tài khoản quảng cáo."
-      >
-        <div className={styles.tableWrap} role="region" aria-label="Bảng các tầng phễu, cuộn ngang trên màn hình nhỏ" tabIndex={0}>
-          <table className={styles.leaks}>
-            <caption className="visually-hidden">Con số dễ nhìn và con số nên xem ở từng tầng của phễu Google Ads</caption>
-            <thead>
-              <tr>
-                <th scope="col">Tầng phễu</th>
-                <th scope="col">Con số dễ nhìn</th>
-                <th scope="col">Có thể che điều gì</th>
-                <th scope="col">Con số nên xem</th>
-                <th scope="col">Phụ thuộc vào</th>
-              </tr>
-            </thead>
-            <tbody>
-              {LEAKS.map(r => (
-                <tr key={r.tier} data-acc={r.acc ? '' : undefined}>
-                  <th scope="row">{r.tier}</th>
-                  <td>{r.shown}</td>
-                  <td>{r.hides}</td>
-                  <td className={styles.look}>{r.look}</td>
-                  <td>{r.dep ? <a href={sitePath(`/dich-vu/${r.dep}`)}>{names[r.dep]}</a> : 'Cấu trúc tài khoản'}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+      <section id="van-de" className={ed.band} aria-labelledby="van-de-title">
+        <div className="container">
+          <p className={ed.label}>
+            <b>01</b> Vấn đề
+          </p>
+          <h2 id="van-de-title" className={`${ed.statement} ${styles.statement}`}>
+            Báo cáo đẹp <span className="hl">chưa chắc đã có lãi.</span>
+          </h2>
+          <ProblemStatement
+            lead="Phễu ở đầu trang có bốn tầng. Nhiều tài khoản chỉ được nhìn ở tầng thứ hai, giá mỗi lượt bấm. Tiền có thể rò ở ba tầng còn lại trong khi báo cáo vẫn trông ổn."
+            note="Các tình huống thường gặp khi kiểm tra tài khoản, dùng để minh họa, không phải số liệu của một khách hàng cụ thể."
+            cases={[
+              {
+                tag: 'Rò ở tầng truy vấn',
+                label: 'Giá bấm giảm, khách cũng giảm',
+                text: 'Mở rộng từ khóa cho giá bấm rẻ hơn nhưng kéo thêm nhiều người chỉ tìm thông tin. Tầng lượt bấm vẫn trông tốt.'
+              },
+              {
+                tag: 'Rò ở tầng khách đúng tệp',
+                label: 'Nhiều form, sale nói khách không đúng',
+                text: 'Chiến dịch được tối ưu theo số form nên học cách tìm người dễ điền form, không phải người sẽ mua.'
+              },
+              {
+                tag: 'Rò ở tầng đơn có lãi',
+                label: 'ROAS đẹp, lợi nhuận mỏng',
+                text: 'Doanh thu dồn vào nhóm hàng bán chạy nhưng biên thấp. Sau giá vốn và vận chuyển, phần còn lại không đủ bù chi phí quảng cáo.'
+              }
+            ]}
+          />
         </div>
+      </section>
 
-        <h3 className={styles.subhead}>Tính thử bằng số của bạn</h3>
-        <p className={styles.subintro}>
-          Ngân sách đi qua cùng bốn tầng đó. Đổi tỉ lệ ở một tầng để thấy lợi nhuận cuối phễu thay đổi ra sao, và vì sao tăng ngân sách khi một tầng đang rò chỉ
-          làm lỗ nhanh hơn.
-        </p>
-        <div className={`${styles.simPanel} dark on-dark`}>
-          <AdsProfitSimulator />
-        </div>
-      </Section>
-
-      <Section
-        id="giai-phap"
-        tone="gray"
-        surface="flat"
-        kicker="SOHO làm gì"
-        title={
-          <>
-            Chia tài khoản theo <span className="hl">ý định và lợi nhuận</span>
-          </>
-        }
-        intro="Tầng truy vấn và lượt bấm được sửa bằng cấu trúc tài khoản: mỗi nhánh một mục tiêu riêng, từ khóa không ra khách và nhóm hàng không có lãi được tách ra. Tầng khách đúng tệp và đơn có lãi được sửa bằng dữ liệu đơn chốt đưa ngược về tài khoản."
-      >
-        <div className={styles.tree}>
-          <p className={styles.root}>Tài khoản Google Ads</p>
-          <ul className={styles.branches}>
-            {ARCHITECTURE.map(b => (
-              <li key={b.name} className={styles.branch}>
-                <p className={styles.branchHead}>
-                  <strong>{b.name}</strong>
-                  <span>{b.desc}</span>
+      <section id="nguyen-nhan" className={`${ed.band} ${ed.canvas}`} aria-labelledby="nguyen-nhan-title">
+        <div className={`container ${ed.grid}`}>
+          <div className={`${ed.side} ${ed.sticky}`}>
+            <p className={ed.label}>
+              <b>02</b> Vì sao xảy ra
+            </p>
+            <h2 id="nguyen-nhan-title" className={ed.h2}>
+              Mỗi tầng có một con số che chỗ rò
+            </h2>
+            <p className={`${ed.body} ${styles.sideText}`}>
+              Con số dễ nhìn nhất ở mỗi tầng thường là con số Google Ads tự tối ưu. Nó tốt lên không có nghĩa tầng đó hết rò. Con số nên xem thường nằm ngoài
+              tài khoản quảng cáo.
+            </p>
+          </div>
+          <ol className={`${ed.main} ${ed.rows} ${styles.leaks}`} aria-label="Con số dễ nhìn và con số nên xem ở bốn tầng phễu">
+            {LEAKS.map((r, i) => (
+              <li key={r.tier} data-acc={r.acc ? '' : undefined}>
+                <p className={styles.tier}>
+                  <span>Tầng {i + 1}</span>
+                  {r.tier}
                 </p>
-                <ul className={styles.leaves}>
-                  {b.items.map(it => (
-                    <li key={it.name}>
-                      <span className={styles.leafName}>{it.name}</span>
-                      <span className={styles.leafGoal}>{it.goal}</span>
-                    </li>
-                  ))}
-                </ul>
+                <div className={styles.compare}>
+                  <p className={styles.shown}>
+                    <span>Con số dễ nhìn</span>
+                    {r.shown}
+                  </p>
+                  <Icon name="arrow-right" size={22} />
+                  <p className={styles.look}>
+                    <span>Con số nên xem</span>
+                    {r.look}
+                  </p>
+                </div>
+                <p className={styles.hides}>
+                  <strong>Có thể che: </strong>
+                  {r.hides}
+                </p>
+                {r.dep && (
+                  <a href={sitePath(`/dich-vu/${r.dep}`)} className={styles.dep}>
+                    Phụ thuộc vào {names[r.dep]} <Icon name="arrow-right" size={16} />
+                  </a>
+                )}
               </li>
             ))}
-          </ul>
-          <ul className={styles.guards} aria-label="Rào chắn dùng chung cho mọi nhánh">
-            {GUARDS.map(g => (
-              <li key={g}>
-                <Icon name="check" size={16} />
-                {g}
-              </li>
-            ))}
-          </ul>
+          </ol>
         </div>
+      </section>
 
-        <Responsibility
-          ours={[
-            'Kiểm tra cách đo, mục tiêu chuyển đổi và cấu trúc tài khoản trước khi đổi gì',
-            'Dựng lại chiến dịch theo ý định, danh sách từ khóa loại trừ, bộ mẫu quảng cáo',
-            'Thiết lập nhập đơn chốt từ CRM hoặc sổ bán hàng về Google Ads',
-            'Báo cáo chi phí mỗi đơn, doanh thu trên chi phí và lợi nhuận gộp'
-          ]}
-          yours={[
-            'Quyền truy cập tài khoản Google Ads, GA4 và Google Merchant Center (nếu bán hàng online)',
-            'Biên lợi nhuận theo nhóm hàng hoặc dịch vụ, để đặt mức hòa vốn',
-            'Dữ liệu đơn chốt từ CRM hoặc sổ bán hàng, cập nhật định kỳ',
-            'Phản hồi của đội sale về chất lượng khách từ quảng cáo'
-          ]}
-        />
+      <section id="mo-phong" className={`${ed.band} ${ed.ink} dark on-dark`} aria-labelledby="mo-phong-title">
+        <div className={`container ${ed.grid}`}>
+          <div className={ed.side}>
+            <p className={ed.label}>Phép tính</p>
+            <h2 id="mo-phong-title" className={ed.h2}>
+              Tính thử bằng số của bạn
+            </h2>
+          </div>
+          <p className={`${ed.main} ${ed.lead} ${styles.simIntro}`}>
+            Ngân sách đi qua cùng bốn tầng đó. Đổi tỉ lệ ở một tầng để thấy lợi nhuận cuối phễu thay đổi ra sao, và vì sao tăng ngân sách khi một tầng đang rò
+            chỉ làm lỗ nhanh hơn.
+          </p>
+          <div className={ed.full}>
+            <AdsProfitSimulator />
+          </div>
+        </div>
+      </section>
 
-        <div className={styles.handover}>
-          <div>
-            <h3 className={styles.subhead}>Bàn giao</h3>
-            <ul className={styles.deliver}>
-              {service.deliverables.map((d, i) => (
-                <li key={d}>
-                  <span>{String(i + 1).padStart(2, '0')}</span>
-                  {d}
+      <section id="giai-phap" className={ed.band} aria-labelledby="giai-phap-title">
+        <div className={`container ${ed.grid}`}>
+          <div className={ed.side}>
+            <p className={ed.label}>
+              <b>03</b> SOHO làm gì
+            </p>
+            <h2 id="giai-phap-title" className={ed.h2}>
+              Chia tài khoản theo ý định và lợi nhuận
+            </h2>
+          </div>
+          <p className={`${ed.main} ${ed.lead} ${styles.simIntro}`}>
+            Tầng truy vấn và lượt bấm được sửa bằng cấu trúc tài khoản: mỗi nhánh một mục tiêu, từ khóa không ra khách và nhóm hàng không có lãi được tách ra.
+            Tầng khách đúng tệp và đơn có lãi được sửa bằng dữ liệu đơn chốt đưa ngược về tài khoản.
+          </p>
+          <div className={`${ed.full} ${styles.tree}`}>
+            <p className={styles.root}>Tài khoản Google Ads</p>
+            <ul className={styles.branches}>
+              {ARCHITECTURE.map(b => (
+                <li key={b.name} className={styles.branch}>
+                  <h3 className={styles.branchName}>{b.name}</h3>
+                  <p className={styles.branchDesc}>{b.desc}</p>
+                  <ul className={styles.leaves}>
+                    {b.items.map(it => (
+                      <li key={it.name}>
+                        <span className={styles.leafName}>{it.name}</span>
+                        <span className={styles.leafGoal}>{it.goal}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </li>
+              ))}
+            </ul>
+            <ul className={styles.guards} aria-label="Rào chắn dùng chung cho mọi nhánh">
+              {GUARDS.map(g => (
+                <li key={g}>
+                  <Icon name="check" size={16} />
+                  {g}
                 </li>
               ))}
             </ul>
           </div>
-          <div className={styles.partner}>
-            <PartnerBadge partner={google} size={96} tipId="tip-google-ads-page" />
+          <div className={ed.full}>
+            <Responsibility
+              ours={[
+                'Kiểm tra cách đo, mục tiêu chuyển đổi và cấu trúc tài khoản trước khi đổi gì',
+                'Dựng lại chiến dịch theo ý định, danh sách từ khóa loại trừ, bộ mẫu quảng cáo',
+                'Thiết lập nhập đơn chốt từ CRM hoặc sổ bán hàng về Google Ads',
+                'Báo cáo chi phí mỗi đơn, doanh thu trên chi phí và lợi nhuận gộp'
+              ]}
+              yours={[
+                'Quyền truy cập tài khoản Google Ads, GA4 và Google Merchant Center (nếu bán hàng online)',
+                'Biên lợi nhuận theo nhóm hàng hoặc dịch vụ, để đặt mức hòa vốn',
+                'Dữ liệu đơn chốt từ CRM hoặc sổ bán hàng, cập nhật định kỳ',
+                'Phản hồi của đội sale về chất lượng khách từ quảng cáo'
+              ]}
+            />
+          </div>
+        </div>
+      </section>
+
+      <section id="ban-giao" className={`${ed.band} ${ed.canvas}`} aria-labelledby="ban-giao-title">
+        <div className={`container ${ed.grid}`}>
+          <div className={ed.side}>
+            <p className={ed.label}>Bằng chứng và bàn giao</p>
+            <h2 id="ban-giao-title" className={ed.h2}>
+              Được Google xác nhận, báo cáo bằng lợi nhuận
+            </h2>
+          </div>
+          <div className={`${ed.main} ${styles.partner}`}>
+            <PartnerBadge partner={google} size={112} tipId="tip-google-ads-page" />
             <div>
-              <p className={styles.partnerHead}>SOHO là Google Partner</p>
-              <ul>
+              <p className={styles.partnerHead}>SOHO là Google Partner. Google xác nhận trên hồ sơ đối tác:</p>
+              <ul className={styles.criteria}>
                 {google.criteria.map(c => (
                   <li key={c}>{c}</li>
                 ))}
               </ul>
-              <p className={styles.partnerNote}>
-                Tiêu chí do Google xác nhận trên hồ sơ đối tác. Bấm huy hiệu để xem hồ sơ. SOHO chưa công bố dự án Google Ads có số liệu.
-              </p>
+              <p className={ed.small}>Bấm huy hiệu để xem hồ sơ. SOHO chưa công bố dự án Google Ads có số liệu.</p>
             </div>
           </div>
+          <h3 className={`${ed.side} ${ed.h3}`}>Bàn giao</h3>
+          <ol className={`${ed.main} ${styles.deliver}`}>
+            {service.deliverables.map((d, i) => (
+              <li key={d}>
+                <span>{String(i + 1).padStart(2, '0')}</span>
+                {d}
+              </li>
+            ))}
+          </ol>
         </div>
-      </Section>
+      </section>
 
-      <Section
-        id="do-luong"
-        kicker="Đo thế nào"
-        title={
-          <>
-            Báo cáo đọc từ <span className="hl">cuối phễu ngược lên</span>
-          </>
-        }
-        intro="Bước 5 trên dải các bước là báo cáo chi phí mỗi đơn và lợi nhuận gộp. Bậc 4 cho biết có lãi không; ba bậc dưới cho biết rò ở đâu khi chưa lãi."
-      >
-        <MeasurementLadder
-          metrics={{
-            activity: ['Từ khóa loại trừ đã thêm', 'Số mẫu quảng cáo đang được thử'],
-            interim: ['Tỉ lệ hiển thị ở từ khóa có ý định mua', 'Chi phí mỗi lượt bấm, tỉ lệ bấm'],
-            behavior: ['Tỉ lệ chuyển đổi của trang đích', 'Tỉ lệ khách đủ chuẩn theo sale'],
-            business: ['Chi phí có một khách mua so với mức hòa vốn', 'Lợi nhuận gộp sau quảng cáo']
-          }}
-          limits={[
-            'Khách thường mua sau nhiều ngày. Số của tuần này chưa đủ để kết luận về một chiến dịch.',
-            'Google Ads, GA4 và CRM ghi công theo cách khác nhau, nên số đơn của mỗi bên thường lệch. Lấy CRM làm số gốc cho bậc 4.',
-            'Performance Max cho xem ít dữ liệu về từ khóa hơn chiến dịch tìm kiếm.',
-            'Chưa có dữ liệu đơn chốt thì chỉ tối ưu được tới bậc 3.'
-          ]}
-        />
-      </Section>
+      <section id="do-luong" className={ed.band} aria-labelledby="do-luong-title">
+        <div className={`container ${ed.grid}`}>
+          <div className={ed.side}>
+            <p className={ed.label}>
+              <b>04</b> Đo thế nào
+            </p>
+            <h2 id="do-luong-title" className={ed.h2}>
+              Báo cáo đọc từ cuối phễu ngược lên
+            </h2>
+          </div>
+          <p className={`${ed.main} ${ed.lead} ${styles.simIntro}`}>
+            Bước 5 trên dải các bước là báo cáo chi phí mỗi đơn và lợi nhuận gộp. Bậc 4 cho biết có lãi không; ba bậc dưới cho biết rò ở đâu khi chưa lãi.
+          </p>
+          <div className={ed.full}>
+            <MeasurementLadder
+              metrics={{
+                activity: ['Từ khóa loại trừ đã thêm', 'Số mẫu quảng cáo đang được thử'],
+                interim: ['Tỉ lệ hiển thị ở từ khóa có ý định mua', 'Chi phí mỗi lượt bấm, tỉ lệ bấm'],
+                behavior: ['Tỉ lệ chuyển đổi của trang đích', 'Tỉ lệ khách đủ chuẩn theo sale'],
+                business: ['Chi phí có một khách mua so với mức hòa vốn', 'Lợi nhuận gộp sau quảng cáo']
+              }}
+              limits={[
+                'Khách thường mua sau nhiều ngày. Số của tuần này chưa đủ để kết luận về một chiến dịch.',
+                'Google Ads, GA4 và CRM ghi công theo cách khác nhau, nên số đơn của mỗi bên thường lệch. Lấy CRM làm số gốc cho bậc 4.',
+                'Performance Max cho xem ít dữ liệu về từ khóa hơn chiến dịch tìm kiếm.',
+                'Chưa có dữ liệu đơn chốt thì chỉ tối ưu được tới bậc 3.'
+              ]}
+            />
+          </div>
+        </div>
+      </section>
 
-      <Section
-        id="diem-cham"
-        tone="gray"
-        surface="flat"
-        kicker="Nối vào kinh doanh"
-        title={
-          <>
-            Ý định mua → trang đích → <span className="hl">đơn có lãi</span>
-          </>
-        }
-        intro="Quảng cáo đưa người đang tìm tới ngay, trong lúc SEO còn cần thời gian. Phần còn lại của phễu nằm ở trang đích, đo lường và đội sale."
-      >
-        <ServiceTouchpointContext slug={service.slug} names={names} />
-      </Section>
+      <section id="diem-cham" className={`${ed.band} ${ed.canvas}`} aria-labelledby="diem-cham-title">
+        <div className="container">
+          <p className={ed.label}>
+            <b>05</b> Nối vào kinh doanh
+          </p>
+          <h2 id="diem-cham-title" className={`${ed.statement} ${styles.chain}`}>
+            Ý định mua <span aria-hidden="true">→</span> trang đích <span aria-hidden="true">→</span> <span className="hl">đơn có lãi</span>
+          </h2>
+          <p className={`${ed.lead} ${styles.chainLead}`}>
+            Quảng cáo đưa người đang tìm tới ngay, trong lúc SEO còn cần thời gian. Phần còn lại của phễu nằm ở trang đích, đo lường và đội sale.
+          </p>
+          <ServiceTouchpointContext slug={service.slug} names={names} />
+        </div>
+      </section>
 
-      <MethodSection article={article} name={service.menuTitle} tone="white" />
+      <MethodSection article={article} name={service.menuTitle} editorial tone="white" />
 
       <ContextualServiceCTA
         slug={service.slug}

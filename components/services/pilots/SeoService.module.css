@@ -1,217 +1,229 @@
-/* Trang SEO, phong cách phân tích tìm kiếm: bảng, đường kẻ, chữ biên tập. Không thêm sơ đồ trang trí. */
+/* Trang SEO, V4.0 "phân tích tìm kiếm": nền mở, chữ lớn, hàng ngăn bằng đường kẻ, ít trang trí. */
 
-/* ---------- Bảng ý định tìm kiếm, mỗi dòng là một nút của sơ đồ hero ---------- */
-.tableWrap {
-  overflow-x: auto;
-  border-top: 2px solid var(--ink);
+.statement {
+  margin-bottom: clamp(40px, 5vw, 72px);
 }
-.intents {
-  width: 100%;
-  min-width: 760px;
-  border-collapse: collapse;
-  font-size: 14.5px;
-  line-height: 1.45;
+.sideText {
+  margin-top: 20px;
 }
-.intents th,
-.intents td {
-  padding: 14px 12px;
-  text-align: left;
-  vertical-align: top;
-  border-bottom: 1px solid var(--line);
+.sideNote {
+  margin-top: 16px;
+  max-width: 42ch;
 }
-.intents thead th {
+
+/* ---------- Sáu nút của sơ đồ, xếp từ xa tới gần quyết định ---------- */
+.intents > li {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  column-gap: 32px;
+  row-gap: 12px;
+}
+.intentHead {
+  grid-row: span 3;
+}
+.intentNode {
+  font-size: clamp(22px, 2vw, 28px);
+  line-height: 1.15;
+}
+.intentState {
+  margin-top: 6px;
+  font-size: 15px;
+  color: var(--ink-3);
+}
+.intentQuery {
+  font-size: 16px;
+  color: var(--ink);
+}
+.intentQuery span::before {
+  content: '“';
+  color: var(--ink-3);
+}
+.intentQuery span::after {
+  content: '”';
+  color: var(--ink-3);
+}
+.meters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 28px;
+}
+.meter {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--ink-2);
+}
+.meterLabel {
+  color: var(--ink-3);
+}
+.meterBars {
+  display: inline-flex;
+  gap: 3px;
+}
+.meterBars i {
+  width: 14px;
+  height: 6px;
+  border-radius: 1px;
+  background: var(--line);
+}
+.meterBars i[data-on] {
+  background: var(--ink);
+}
+.meterValue {
+  font-weight: 700;
+  color: var(--ink);
+}
+.intentPage {
+  display: grid;
+  gap: 2px;
+  font-size: 15.5px;
+  line-height: 1.5;
+  color: var(--ink);
+}
+.intentPage span {
   font-size: 12px;
   font-weight: 700;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--ink-3);
 }
-.intents tbody th {
-  font-family: var(--font-display);
-  font-size: 16px;
-  white-space: nowrap;
+/* Nút "Trang dịch vụ" là điểm đến cam trên sơ đồ */
+.intents > li[data-acc] .intentNode {
+  color: var(--brand-ink);
 }
-.intents td {
-  color: var(--ink-2);
+.intents > li[data-acc] .meterBars i[data-on] {
+  background: var(--brand);
 }
-.query {
-  font-family: ui-monospace, 'SF Mono', Menlo, monospace;
-  font-size: 13px;
+.intents > li[data-acc] {
+  border-bottom: 2px solid var(--ink);
 }
-.intents tr[data-acc] th {
-  color: var(--ink);
-  box-shadow: inset 4px 0 0 var(--brand);
-}
-.intents tr[data-acc] {
-  background: var(--color-primary-tint);
-}
-.tableNote {
-  margin-top: 12px;
-  max-width: 80ch;
-  font-size: 13px;
-  line-height: 1.5;
-  color: var(--ink-3);
-}
-.subhead {
-  margin-top: 48px;
-  font-size: 22px;
-  line-height: 1.25;
-}
-.subintro {
-  margin: 8px 0 20px;
-  font-size: 15px;
-  color: var(--ink-2);
-}
-.callout {
-  margin-top: 40px;
-  max-width: 72ch;
-  padding-left: 18px;
-  border-left: 4px solid var(--ink);
-  font-size: 15.5px;
-  line-height: 1.6;
-  color: var(--ink-2);
-}
-.callout strong {
-  color: var(--ink);
+
+.mapIntro {
+  align-self: end;
 }
 
 /* ---------- Chẩn đoán → thay đổi ---------- */
-.fixes {
-  list-style: none;
-  margin: 0 0 40px;
-  padding: 0;
-  border-top: 2px solid var(--ink);
-}
-.fixes li {
+.fixes > li {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
-  gap: 20px;
+  grid-template-columns: 64px minmax(0, 1fr) minmax(0, 1fr);
+  column-gap: 24px;
+  row-gap: 8px;
   align-items: start;
-  padding: 18px 0;
-  border-bottom: 1px solid var(--line);
 }
-.fixes p {
+.fixNum {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 2.6vw, 40px);
+  font-weight: 800;
+  line-height: 1;
+  color: var(--brand);
+}
+.fixCheck,
+.fixChange {
   display: grid;
-  gap: 4px;
-  font-size: 15px;
+  gap: 6px;
+  font-size: 16.5px;
   line-height: 1.55;
+}
+.fixCheck {
   color: var(--ink-2);
 }
-.fixes p:last-child {
+.fixChange {
   color: var(--ink);
   font-weight: 600;
 }
-.fixes svg {
-  margin-top: 22px;
-  color: var(--brand-ink);
-}
-.fixLabel {
-  font-size: 11.5px;
+.fixCheck span,
+.fixChange span {
+  font-size: 12px;
   font-weight: 700;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--ink-3);
 }
-
-/* ---------- Bàn giao + dự án thật ---------- */
-.handover {
-  display: grid;
-  grid-template-columns: minmax(0, 6fr) minmax(0, 5fr);
-  gap: 32px;
-  align-items: start;
-  margin-top: 8px;
-}
-.handover .subhead {
-  margin: 32px 0 14px;
+.fixChange span::before {
+  content: '→ ';
+  color: var(--brand-ink);
 }
 .files {
   list-style: none;
   margin: 0;
   padding: 0;
   display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 32px;
+  border-top: 2px solid var(--ink);
 }
 .files li {
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 12px 0;
+  padding: 14px 0;
   border-bottom: 1px solid var(--line);
   font-weight: 600;
-  font-size: 15px;
+  font-size: 16px;
 }
 .files svg {
   flex: none;
   color: var(--brand-ink);
 }
-.case {
-  display: grid;
+
+/* ---------- Dự án thật: ảnh lớn trải hết khung, chữ bên dưới ---------- */
+.caseLabel {
+  margin-bottom: -12px;
+}
+.caseMedia {
+  display: block;
   overflow: hidden;
-  margin-top: 32px;
-  border-radius: var(--r-xl);
-  background: var(--white);
-  border: 1px solid var(--line);
-  color: var(--ink);
-  text-decoration: none;
+  border-radius: var(--r-card);
 }
-.case:hover {
-  color: var(--ink);
-  border-color: var(--ink);
-}
-.case img {
+.caseMedia img {
   width: 100%;
   height: auto;
-  aspect-ratio: 16 / 7;
+  aspect-ratio: 21 / 9;
   object-fit: cover;
+  transition: transform 600ms var(--ease);
 }
-.caseBody {
-  display: grid;
-  gap: 8px;
-  padding: 18px 20px 20px;
-  font-size: 14.5px;
-  line-height: 1.5;
-  color: var(--ink-2);
+.caseMedia:hover img {
+  transform: scale(1.02);
 }
-.caseBody strong {
-  font-family: var(--font-display);
-  font-size: 20px;
-  color: var(--ink);
+.caseMeta {
+  margin-top: 12px;
 }
-.caseTag {
-  font-size: 11.5px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--brand-ink);
+.caseWork {
+  margin-top: 16px;
 }
 .caseNote {
-  font-size: 13px;
-  color: var(--ink-3);
+  margin: 16px 0 8px;
 }
-.caseMore {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-weight: 700;
-  color: var(--brand-ink);
+
+/* ---------- Nối vào kinh doanh ---------- */
+.chain {
+  max-width: 22ch;
+  font-size: clamp(32px, 4.4vw, 60px);
+}
+.chainLead {
+  margin: 24px 0 clamp(40px, 5vw, 64px);
 }
 
 @media (max-width: 1000px) {
-  .handover {
+  .intents > li {
     grid-template-columns: minmax(0, 1fr);
+  }
+  .intentHead {
+    grid-row: auto;
   }
 }
 @media (max-width: 640px) {
-  .fixes li {
+  .fixes > li {
+    grid-template-columns: 44px minmax(0, 1fr);
+  }
+  .fixChange {
+    grid-column: 2;
+  }
+  .files {
     grid-template-columns: minmax(0, 1fr);
-    gap: 8px;
   }
-  .fixes svg {
-    margin-top: 0;
-    transform: rotate(90deg);
+  .caseMedia img {
+    aspect-ratio: 4 / 3;
   }
-}
-
-.tableWrap:focus-visible {
-  outline: 2px solid var(--color-focus);
-  outline-offset: 4px;
 }

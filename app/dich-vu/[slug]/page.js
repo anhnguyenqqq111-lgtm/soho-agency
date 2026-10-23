@@ -14,14 +14,16 @@ import GoogleAdsService from '../../../components/services/pilots/GoogleAdsServi
 import BrandService from '../../../components/services/pilots/BrandService';
 import {MethodSection} from '../../../components/services/pilots/PilotParts';
 import ServiceOverview from '../../../components/services/ServiceOverview';
+import PilotOverview from '../../../components/services/pilots/PilotOverview';
+import ed from '../../../components/services/editorial/editorial.module.css';
 
 // Trang dịch vụ đã có phần giải thích riêng theo 5 lớp: vấn đề, vì sao, SOHO làm gì, đo lường, nối vào kinh doanh
 // (docs/services/SERVICE_DESIGN_SYSTEM.md).
 // Các trang còn lại dùng phần thân chung bên dưới. Mọi trang đều mở đầu bằng ServiceOverview (các sơ đồ đang live).
 const PILOTS = {
-  'seo-tong-the': SeoService,
-  'google-ads-shopping': GoogleAdsService,
-  'nhan-dien-thuong-hieu': BrandService
+  'seo-tong-the': {Body: SeoService, variant: 'analysis'},
+  'google-ads-shopping': {Body: GoogleAdsService, variant: 'performance'},
+  'nhan-dien-thuong-hieu': {Body: BrandService, variant: 'exhibition'}
 };
 
 export function generateStaticParams() {
@@ -46,9 +48,10 @@ export default async function ServicePage({params}) {
   if (!service) notFound();
   const article = getServiceArticle(slug);
   const names = Object.fromEntries(servicePages.map(s => [s.slug, s.menuTitle]));
-  const Pilot = PILOTS[slug];
-  const nav = Pilot
+  const pilot = PILOTS[slug];
+  const nav = pilot
     ? [
+        ['cach-lam', 'Cách làm'],
         ['van-de', 'Vấn đề'],
         ['nguyen-nhan', 'Vì sao'],
         ['giai-phap', 'SOHO làm gì'],
@@ -81,11 +84,14 @@ export default async function ServicePage({params}) {
       <Header activeNav="services" />
       <ReadingProgress />
       <main id="main">
-        <ServiceOverview service={service} nav={nav} />
-        {Pilot ? (
-          <Pilot service={service} article={article} names={names} />
+        {pilot ? (
+          <div className={ed.page}>
+            <PilotOverview service={service} nav={nav} variant={pilot.variant} />
+            <pilot.Body service={service} article={article} names={names} />
+          </div>
         ) : (
           <>
+            <ServiceOverview service={service} nav={nav} />
             <Section
               id="ban-giao"
               tone="gray"

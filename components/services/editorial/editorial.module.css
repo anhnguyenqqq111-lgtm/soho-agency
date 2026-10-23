@@ -1,0 +1,186 @@
+/*
+  Hệ bố cục biên tập cho trang dịch vụ (Redesign V4.0). Phân cấp bằng cỡ chữ, khoảng trắng và đường kẻ,
+  không bằng thẻ, viền hay bóng. Thông số ở docs/services/DESIGN_REFERENCE_ANALYSIS.md, mục "Thông số SOHO".
+*/
+.page {
+  --container: 1240px;
+  --ed-pad: clamp(56px, 30px + 5vw, 112px);
+  --ed-gap: clamp(24px, 3vw, 48px);
+  --ed-read: 680px;
+}
+
+/* ---------- Dải section ---------- */
+.band {
+  position: relative;
+  padding-block: var(--ed-pad);
+  background: var(--white);
+}
+.band + .band:not(.canvas):not(.ink) {
+  border-top: 1px solid var(--line);
+}
+.canvas {
+  background: var(--canvas);
+}
+.ink {
+  background: var(--c-ink);
+  color: var(--white);
+}
+.ink :focus-visible {
+  outline-color: var(--white);
+}
+.tight {
+  padding-block: clamp(48px, 6vw, 88px);
+}
+
+/* ---------- Chữ ---------- */
+.label {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 20px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+.label b {
+  font-family: var(--font-display);
+  letter-spacing: 0;
+  color: var(--brand-ink);
+}
+.ink .label {
+  color: var(--on-dark-3);
+}
+.ink .label b {
+  color: var(--warm-2);
+}
+.statement {
+  max-width: 17ch;
+  font-family: var(--font-display);
+  font-size: clamp(36px, 5.4vw, 76px);
+  font-weight: 800;
+  line-height: 1.04;
+  letter-spacing: -0.035em;
+}
+.h2 {
+  max-width: 20ch;
+  font-size: clamp(30px, 22px + 2.1vw, 52px);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+}
+.ink .h2,
+.ink .statement {
+  color: var(--white);
+}
+.h3 {
+  font-size: clamp(21px, 1.9vw, 28px);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+.lead {
+  max-width: 62ch;
+  font-size: clamp(18px, 1.45vw, 21px);
+  line-height: 1.6;
+  color: var(--ink-2);
+}
+.body {
+  max-width: var(--ed-read);
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--ink-2);
+}
+.ink .lead,
+.ink .body {
+  color: var(--on-dark-2);
+}
+.small {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--ink-3);
+}
+.ink .small {
+  color: var(--on-dark-3);
+}
+.mono {
+  font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+  font-size: 0.92em;
+}
+
+/* ---------- Lưới 12 cột ---------- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--ed-gap);
+  row-gap: clamp(32px, 4vw, 56px);
+}
+/* Tách đôi: tiêu đề hẹp, nội dung rộng */
+.side {
+  grid-column: 1 / span 4;
+}
+.main {
+  grid-column: 5 / -1;
+}
+.half {
+  grid-column: span 6;
+}
+.full {
+  grid-column: 1 / -1;
+}
+.sticky {
+  position: sticky;
+  top: calc(var(--header-h) + 72px);
+  align-self: start;
+}
+
+/* ---------- Danh sách theo hàng, ngăn bằng đường kẻ ---------- */
+.rows {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 2px solid var(--ink);
+}
+.rows > li {
+  padding: clamp(20px, 2.4vw, 32px) 0;
+  border-bottom: 1px solid var(--line);
+}
+.ink .rows {
+  border-top-color: var(--white);
+}
+.ink .rows > li {
+  border-bottom-color: rgba(255, 255, 255, 0.16);
+}
+
+/* Liên kết chữ có mũi tên */
+.textLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  font-weight: 700;
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 6px;
+  text-decoration-color: var(--brand);
+}
+.textLink:hover {
+  color: var(--brand-ink);
+}
+
+@media (max-width: 1000px) {
+  .side,
+  .main,
+  .half {
+    grid-column: 1 / -1;
+  }
+  .sticky {
+    position: static;
+  }
+}
+@media (max-width: 640px) {
+  .body {
+    font-size: 16px;
+  }
+}

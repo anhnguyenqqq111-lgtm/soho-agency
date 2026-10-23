@@ -1,0 +1,199 @@
+/* ---------- Hero thí điểm: ba bố cục, cùng một sơ đồ live ---------- */
+.hero {
+  --container: 1240px;
+  position: relative;
+  padding-block: clamp(32px, 5vw, 80px) clamp(48px, 7vw, 112px);
+  background: var(--white);
+}
+.heroGrid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: clamp(24px, 3vw, 48px);
+  row-gap: 40px;
+  align-items: center;
+}
+.heroCopy {
+  display: grid;
+  gap: 24px;
+  align-content: start;
+}
+.crumbs ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--ink-3);
+}
+.crumbs li + li::before {
+  content: '/';
+  margin-right: 6px;
+}
+.crumbs a {
+  color: var(--ink-3);
+}
+.crumbs a:hover {
+  color: var(--ink);
+}
+.title {
+  font-size: clamp(38px, 28px + 2.6vw, 64px);
+  font-weight: 800;
+  line-height: 1.04;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+}
+.heroText {
+  display: grid;
+  gap: 16px;
+  align-content: start;
+}
+.intro {
+  max-width: 54ch;
+  font-size: clamp(18px, 1.45vw, 21px);
+  line-height: 1.55;
+  color: var(--ink);
+}
+.promise {
+  max-width: 58ch;
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--ink-2);
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 28px;
+  margin-top: 8px;
+}
+.primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 0 22px;
+  border-radius: var(--r-md);
+  background: var(--brand);
+  color: var(--ink);
+  font-weight: 700;
+  text-decoration: none;
+}
+.primary:hover {
+  background: var(--brand-hover);
+  color: var(--ink);
+}
+.chart {
+  min-width: 0;
+}
+/* Sơ đồ giữ nguyên markup; chỉ đổi khung chứa quanh nó */
+.chart :global(.dg.card) {
+  padding: clamp(16px, 2.4vw, 36px);
+  border: 1px solid var(--line);
+}
+
+/* analysis (SEO): chữ 6 cột trái, sơ đồ 6 cột phải */
+.analysis .heroCopy {
+  grid-column: 1 / span 6;
+}
+.analysis .chart {
+  grid-column: 7 / -1;
+}
+
+/* performance (Google Ads): sơ đồ 7 cột bên trái trên nền canvas, chữ 5 cột bên phải */
+.performance {
+  overflow: hidden;
+  isolation: isolate;
+}
+/* nền canvas chạy từ mép trái màn hình tới hết cột sơ đồ */
+.performance .chart {
+  position: relative;
+}
+.performance .chart::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: -200px;
+  bottom: -200px;
+  left: -100vw;
+  right: calc(clamp(24px, 3vw, 48px) * -0.5);
+  background: var(--canvas);
+}
+.performance .heroCopy {
+  grid-column: 8 / -1;
+  grid-row: 1;
+}
+.performance .chart {
+  grid-column: 1 / span 7;
+  grid-row: 1;
+}
+.performance .title {
+  font-size: clamp(34px, 3.9vw, 56px);
+}
+
+/* exhibition (Nhận diện): H1 trải ngang, bên dưới là chữ 4 cột và sơ đồ 8 cột như tác phẩm treo tường */
+.exhibition {
+  background: var(--canvas);
+}
+.exhibition .heroCopy {
+  display: contents;
+}
+.exhibition .crumbs {
+  grid-column: 1 / -1;
+}
+.exhibition .title {
+  grid-column: 1 / span 10;
+  font-size: clamp(40px, 6vw, 84px);
+  max-width: 16ch;
+}
+.exhibition .heroText {
+  grid-column: 1 / span 4;
+  align-self: end;
+}
+.exhibition .chart {
+  grid-column: 5 / -1;
+}
+.exhibition .chart :global(.dg.card) {
+  padding: clamp(20px, 4vw, 64px);
+  border: 0;
+  box-shadow:
+    0 1px 0 var(--line),
+    0 40px 80px -40px rgba(20, 18, 24, 0.25);
+}
+
+.trackIntro {
+  align-self: end;
+}
+.insight {
+  margin-top: 20px;
+}
+.fit {
+  margin-top: 24px;
+  max-width: 68ch;
+}
+
+@media (max-width: 1000px) {
+  .analysis .heroCopy,
+  .analysis .chart,
+  .performance .heroCopy,
+  .performance .chart,
+  .exhibition .title,
+  .exhibition .heroText,
+  .exhibition .chart {
+    grid-column: 1 / -1;
+    grid-row: auto;
+  }
+  .performance .chart::before {
+    display: none;
+  }
+}
+@media (max-width: 640px) {
+  /* sơ đồ tràn gần hết bề ngang để nhãn trong SVG còn đọc được */
+  .chart {
+    margin-inline: calc(var(--gutter) * -1 + 8px);
+  }
+  .chart :global(.dg.card) {
+    padding: 10px;
+  }
+}

@@ -176,3 +176,42 @@ Phần đầu trang live có một chỗ trùng: "Mục tiêu hướng tới" (`
 | axe (WCAG 2.0 đến 2.2 A, AA) ở 1440 và 390 | 0 lỗi trên 3 trang thí điểm, Meta Ads, GA4, Website. Đã sửa: tương phản chữ ở dòng được tô sáng trong bảng; vùng bảng cuộn ngang nhận focus bàn phím |
 | SEO 12 trang | Title, meta description, canonical, H1, breadcrumb, JSON-LD giống bản live |
 | Link nội bộ | Không có link hỏng |
+
+## 5. Audit hình ảnh cho Redesign V4.0 (23/10/2026)
+
+Ảnh "trước" là bản trên máy ở commit `7d5698f` (3 trang thí điểm, 1440px và 390px), lưu trong thư mục scratchpad `v4/before/`.
+
+### Lỗi chung của cả ba trang
+
+| Vấn đề | Chỗ cụ thể |
+| --- | --- |
+| Hero giống nhau ở cả 12 trang | Breadcrumb, H1 bên trái, sơ đồ đặt trong thẻ trắng rộng tối đa 620px ở giữa bên dưới. Nửa phải cạnh H1 bỏ trống, sơ đồ nhỏ so với trang |
+| Khối gần như rỗng | "Mục tiêu hướng tới" chiếm một section riêng cho 2 dòng chữ và một nút |
+| Trang trí không mang nghĩa | Biểu tượng lịch 3D ở dải các bước. Trên 390px nó **đè lên tiêu đề "5 bước"** (lỗi thật) |
+| Một mẫu tiêu đề cho mọi section | H2 hai dòng, dòng hai tô gradient, có nhãn nhỏ màu xám phía trên. Lặp 8 đến 10 lần mỗi trang |
+| Hai phần "vấn đề" liền nhau | "Vì sao doanh nghiệp cần X?" (sơ đồ dấu hiệu → mục tiêu), ngay sau đó là "Vì sao có lượt truy cập mà không có khách?" |
+| Chữ nội dung nhỏ | Phần lớn 14–15px. Nhãn 11,5px. Đoạn dẫn và chữ bảng thiếu khoảng thở |
+| Quá nhiều khung | Thẻ có viền ở sơ đồ dấu hiệu, bản đồ chủ đề, thang đo, cây tài khoản, hộp bàn giao, nhận xét. Thẻ lồng thẻ ở phòng trưng bày |
+| Nhịp section đều nhau | Xám rồi trắng xen kẽ, cùng khoảng đệm, cùng chiều rộng. Không có section toàn chiều ngang cho hình |
+| Sơ đồ ở hero trên mobile | Thẻ có đệm 16px, sơ đồ chỉ rộng khoảng 320px, nhãn còn khoảng 7–8px, khó đọc |
+| Bảng trên mobile | Bảng 6 cột của SEO và 5 cột của Google Ads phải cuộn ngang, ô bị ép hẹp |
+| Bản đồ chủ đề trên mobile | Hai làn ý định một hàng, cột phải bị cắt mép |
+| CTA | Nút cam ở "Mục tiêu hướng tới" và khối liên hệ cuối trang; giữa trang không có điểm hành động nào gắn với nội dung |
+
+### Riêng từng trang
+
+- **SEO:** phần "vì sao" có bảng 6 cột và bản đồ chủ đề đặt liền nhau, cùng nói một ý nhưng khác hình thức. Dự án King Decor nằm trong thẻ nhỏ, ảnh 16:7 bị thu nhỏ.
+- **Google Ads:** mô phỏng nằm trong thẻ tối giữa section sáng, trông như một ứng dụng nhúng. Cây tài khoản có 9 thẻ con viền xám, chữ 13–14px.
+- **Nhận diện:** phòng trưng bày có thẻ trong thẻ. Bốn điểm chạm là 4 cột chữ nhỏ, không có hình. Nhận xét khách nằm trong thẻ nhỏ cạnh hộp bàn giao. Không có ảnh dự án nhận diện đã công bố, nên hình chỉ có bộ nhận diện SOHO.
+
+## 6. Kết quả kiểm tra sau V4.0 (23/10/2026, trên máy)
+
+| Hạng mục | Kết quả |
+| --- | --- |
+| Hồi quy sơ đồ (so markup với bản live) | 36/36 giống hệt: sơ đồ hero, `Track`, `BeforeAfter` trên 12 trang |
+| `npm run build`, lint, Prettier | Đạt |
+| Tràn ngang, ảnh lỗi, lỗi console ở 320, 375, 390, 430, 768, 1024, 1440, 1920 | 40/40 đạt (hub, 3 trang thí điểm, Thiết kế website) |
+| axe (WCAG 2.0 đến 2.2 A, AA) ở 1440 và 390 | 0 lỗi trên 3 trang thí điểm |
+| SEO 12 trang | Title, meta description, canonical, H1, breadcrumb, JSON-LD giống bản live |
+| Link nội bộ | Không có link hỏng |
+| Lỗi đã sửa | Biểu tượng lịch 3D đè lên tiêu đề trên mobile: đã bỏ ở trang thí điểm. Sơ đồ hero trên mobile: khung tràn gần hết bề ngang, đệm 10px, nên nhãn to hơn |

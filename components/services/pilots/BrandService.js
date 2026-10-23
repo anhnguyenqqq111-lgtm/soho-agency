@@ -1,5 +1,5 @@
 import styles from './BrandService.module.css';
-import Section from '../../ui/Section';
+import ed from '../editorial/editorial.module.css';
 import Icon from '../../ui/Icon';
 import BrandIdentityGallery from './BrandIdentityGallery';
 import {MethodSection} from './PilotParts';
@@ -8,11 +8,9 @@ import {ServiceTouchpointContext, ContextualServiceCTA} from '../ServiceContext'
 import {testimonials} from '../../data/proof';
 
 /*
-  Phần dưới sơ đồ của trang Nhận diện thương hiệu (Redesign 3.1, phong cách "câu chuyện nhận diện"). Sơ đồ mở đầu:
-  bảng màu, logo, kiểu chữ quy định một lần rồi dùng ở 4 điểm chạm (website, mạng xã hội, bao bì, cửa hàng).
-  Phần dưới phát triển đúng ý đó: vấn đề (logo đẹp mà khách không nhớ) → vì sao (định vị chưa rõ, và hệ bị lệch ở
-  từng điểm chạm trên sơ đồ) → SOHO dựng gì (phòng trưng bày), hai bên làm gì, bàn giao, nhận xét khách → đo 4 bậc
-  và giới hạn → nối vào hành trình.
+  Phần dưới sơ đồ của trang Nhận diện thương hiệu. Nội dung theo Redesign 3.1, bố cục theo V4.0 "triển lãm thương hiệu":
+  câu khẳng định lớn → gốc của sự lệch và bốn điểm chạm đúng như sơ đồ hero → phòng trưng bày trải rộng →
+  nhận xét khách dạng trích dẫn lớn và hộp bàn giao → hai bên làm gì, mốc duyệt → thang đo → nối vào kinh doanh.
   Chưa có dự án nhận diện nào được công bố, nên phần trưng bày dùng chính hệ nhận diện SOHO và ghi rõ như vậy.
 */
 
@@ -56,117 +54,111 @@ const BRAND_QUOTES = testimonials.filter(t => /nhận diện/i.test(t.quote));
 export default function BrandService({service, article, names}) {
   return (
     <>
-      <Section
-        id="van-de"
-        tone="gray"
-        surface="flat"
-        kicker="Vấn đề"
-        title={
-          <>
-            Vì sao logo đẹp <span className="hl">mà khách vẫn không nhớ?</span>
-          </>
-        }
-      >
-        <ProblemStatement
-          lead="Sơ đồ ở đầu trang quy định logo, màu và chữ một lần rồi dùng ở bốn điểm chạm. Khách nhớ một thương hiệu qua nhiều lần gặp giống nhau. Vấn đề thường không nằm ở bản thân logo, mà ở chỗ mỗi lần gặp lại trông một khác."
-          cases={[
-            {
-              label: 'Mỗi bên làm một kiểu',
-              text: 'Nhân viên làm bài đăng, nhà in làm bao bì, thợ làm biển hiệu. Mỗi bên tự chọn màu và phông "gần giống", và sau vài tháng có bốn phiên bản thương hiệu.'
-            },
-            {
-              label: 'Đặt cạnh đối thủ thì khó phân biệt',
-              text: 'Màu và kiểu chữ được chọn theo thói quen của ngành, nên trên kệ hàng hay trong bảng tin, khách không nhận ra đâu là bạn.'
-            },
-            {
-              label: 'Chỉ đẹp trên màn hình',
-              text: 'Logo nhiều chi tiết, màu chỉ thử trên máy tính. Khi in nhỏ, in một màu hay đặt lên ảnh thì mất nét.'
-            }
-          ]}
-        />
-      </Section>
-
-      <Section
-        id="nguyen-nhan"
-        kicker="Vì sao xảy ra"
-        title={
-          <>
-            Hệ nhận diện lệch ở <span className="hl">từng điểm chạm</span>
-          </>
-        }
-      >
-        <div className={styles.root}>
-          <p className={styles.rootLabel}>Gốc của sự lệch</p>
-          <p className={styles.rootText}>
-            Khi định vị chưa rõ (bạn bán cho ai, khác đối thủ ở điểm nào), không ai có tiêu chí để chọn màu, chữ hay hình. Thiết kế khi đó đi theo sở thích của
-            người duyệt, và mỗi người duyệt thích một kiểu. Vì vậy bước 2 và 3 trên dải các bước là tìm hiểu doanh nghiệp, khách hàng và đối thủ, trước khi vẽ.
+      <section id="van-de" className={`${ed.band} ${ed.canvas}`} aria-labelledby="van-de-title">
+        <div className="container">
+          <p className={ed.label}>
+            <b>01</b> Vấn đề
           </p>
-        </div>
-
-        <ol className={styles.drift} aria-label="Chỗ hay lệch ở bốn điểm chạm trên sơ đồ">
-          {DRIFT.map(d => (
-            <li key={d.point}>
-              <h3 className={styles.driftPoint}>{d.point}</h3>
-              <p>
-                <span className={styles.driftLabel}>Hay lệch vì</span>
-                {d.why}
-              </p>
-              <p>
-                <span className={styles.driftLabel}>Quy định cần có</span>
-                {d.rule}
-              </p>
-            </li>
-          ))}
-        </ol>
-      </Section>
-
-      <Section
-        id="giai-phap"
-        tone="gray"
-        surface="flat"
-        kicker="SOHO làm gì"
-        title={
-          <>
-            Một hệ quy định một lần, <span className="hl">dùng được ở mọi nơi</span>
-          </>
-        }
-        intro="Năm phần của một bộ nhận diện hoàn chỉnh, mỗi phần trả lời một chỗ hay lệch ở trên. Ví dụ dưới đây là chính bộ nhận diện của SOHO."
-      >
-        <BrandIdentityGallery />
-
-        <div className={styles.split}>
-          <Responsibility
-            ours={[
-              'Nghiên cứu ngành, khách hàng mục tiêu và đối thủ',
-              'Đề xuất hướng màu, chữ, phong cách đồ họa để bạn chọn',
-              'Thiết kế logo và các ứng dụng trên điểm chạm thật',
-              'Bộ hướng dẫn thương hiệu và file gốc cho web, in ấn'
-            ]}
-            yoursTitle="Bạn cung cấp và duyệt"
-            yours={[
-              'Thông tin doanh nghiệp: giá trị, tầm nhìn, khách hàng, đối thủ bạn quan tâm',
-              'Danh sách điểm chạm cần áp dụng: biển hiệu, bao bì, đồng phục, mạng xã hội...',
-              'Logo và tài liệu cũ nếu có',
-              'Một người quyết định duyệt ở mỗi mốc bên dưới'
+          <h2 id="van-de-title" className={`${ed.statement} ${styles.statement}`}>
+            Khách không nhớ logo. <span className="hl">Khách nhớ những lần gặp giống nhau.</span>
+          </h2>
+          <ProblemStatement
+            lead="Sơ đồ ở đầu trang quy định logo, màu và chữ một lần rồi dùng ở bốn điểm chạm. Vấn đề thường không nằm ở bản thân logo, mà ở chỗ mỗi lần gặp lại, thương hiệu trông một khác."
+            cases={[
+              {
+                label: 'Mỗi bên làm một kiểu',
+                text: 'Nhân viên làm bài đăng, nhà in làm bao bì, thợ làm biển hiệu. Mỗi bên tự chọn màu và phông “gần giống”, và sau vài tháng có bốn phiên bản thương hiệu.'
+              },
+              {
+                label: 'Đặt cạnh đối thủ thì khó phân biệt',
+                text: 'Màu và kiểu chữ được chọn theo thói quen của ngành, nên trên kệ hàng hay trong bảng tin, khách không nhận ra đâu là bạn.'
+              },
+              {
+                label: 'Chỉ đẹp trên màn hình',
+                text: 'Logo nhiều chi tiết, màu chỉ thử trên máy tính. Khi in nhỏ, in một màu hay đặt lên ảnh thì mất nét.'
+              }
             ]}
           />
-          <div className={styles.milestones}>
-            <h3 className={styles.milestonesHead}>Các mốc bạn duyệt, theo dải các bước ở trên</h3>
-            <ol>
-              {REVIEWS.map((r, i) => (
-                <li key={r}>
-                  <span>Bước {i + 1}</span>
-                  {r}
-                </li>
-              ))}
-            </ol>
+        </div>
+      </section>
+
+      <section id="nguyen-nhan" className={ed.band} aria-labelledby="nguyen-nhan-title">
+        <div className={`container ${ed.grid}`}>
+          <div className={ed.side}>
+            <p className={ed.label}>
+              <b>02</b> Vì sao xảy ra
+            </p>
+            <h2 id="nguyen-nhan-title" className={ed.h2}>
+              Hệ nhận diện lệch ở từng điểm chạm
+            </h2>
+          </div>
+          <div className={ed.main}>
+            <p className={styles.rootText}>
+              Khi định vị chưa rõ (bạn bán cho ai, khác đối thủ ở điểm nào), không ai có tiêu chí để chọn màu, chữ hay hình. Thiết kế khi đó đi theo sở thích
+              của người duyệt, và mỗi người duyệt thích một kiểu.
+            </p>
+            <p className={`${ed.body} ${styles.rootNote}`}>
+              Vì vậy bước 2 và 3 trên dải các bước là tìm hiểu doanh nghiệp, khách hàng và đối thủ, trước khi vẽ.
+            </p>
+          </div>
+          <ol className={`${ed.full} ${styles.drift}`} aria-label="Chỗ hay lệch ở bốn điểm chạm trên sơ đồ">
+            {DRIFT.map((d, i) => (
+              <li key={d.point}>
+                <span className={styles.driftNum}>{String(i + 1).padStart(2, '0')}</span>
+                <h3 className={styles.driftPoint}>{d.point}</h3>
+                <p className={styles.driftWhy}>
+                  <span>Hay lệch vì</span>
+                  {d.why}
+                </p>
+                <p className={styles.driftRule}>
+                  <span>Quy định cần có</span>
+                  {d.rule}
+                </p>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      <section id="giai-phap" className={`${ed.band} ${ed.canvas}`} aria-labelledby="giai-phap-title">
+        <div className={`container ${ed.grid}`}>
+          <div className={ed.side}>
+            <p className={ed.label}>
+              <b>03</b> SOHO làm gì
+            </p>
+            <h2 id="giai-phap-title" className={ed.h2}>
+              Một hệ quy định một lần, dùng được ở mọi nơi
+            </h2>
+          </div>
+          <p className={`${ed.main} ${ed.lead} ${styles.galleryIntro}`}>
+            Năm phần của một bộ nhận diện hoàn chỉnh, mỗi phần trả lời một chỗ hay lệch ở trên. Ví dụ dưới đây là chính bộ nhận diện của SOHO.
+          </p>
+          <div className={ed.full}>
+            <BrandIdentityGallery />
           </div>
         </div>
+      </section>
 
-        <div className={styles.handover}>
-          <div className={styles.box}>
-            <h3 className={styles.boxHead}>Hộp bàn giao</h3>
-            <ul>
+      {BRAND_QUOTES.length > 0 && (
+        <section id="ban-giao" className={ed.band} aria-labelledby="ban-giao-title">
+          <div className={`container ${ed.grid}`}>
+            <h2 id="ban-giao-title" className="visually-hidden">
+              Nhận xét khách hàng và hộp bàn giao
+            </h2>
+            <p className={`${ed.full} ${ed.label}`}>Khách hàng nói</p>
+            {BRAND_QUOTES.map(q => (
+              <figure key={q.name} className={`${ed.half} ${styles.quote}`}>
+                <blockquote>
+                  <p>“{q.quote}”</p>
+                </blockquote>
+                <figcaption>
+                  <strong>{q.name}</strong>
+                  {q.role}
+                </figcaption>
+              </figure>
+            ))}
+            <h3 className={`${ed.side} ${ed.h3} ${styles.boxHead}`}>Hộp bàn giao</h3>
+            <ul className={`${ed.main} ${styles.box}`}>
               {service.deliverables.map(d => (
                 <li key={d}>
                   <Icon name="check" size={18} />
@@ -175,69 +167,97 @@ export default function BrandService({service, article, names}) {
               ))}
             </ul>
           </div>
-          {BRAND_QUOTES.length > 0 && (
-            <ul className={styles.quotes}>
-              {BRAND_QUOTES.map(q => (
-                <li key={q.name}>
-                  <blockquote>
-                    <p>“{q.quote}”</p>
-                  </blockquote>
-                  <p className={styles.quoteBy}>
-                    <strong>{q.name}</strong>
-                    {q.role}
-                  </p>
-                </li>
-              ))}
-            </ul>
-          )}
+        </section>
+      )}
+
+      <section id="hai-ben" className={`${ed.band} ${ed.canvas}`} aria-labelledby="hai-ben-title">
+        <div className={`container ${ed.grid}`}>
+          <div className={ed.side}>
+            <p className={ed.label}>Làm cùng nhau</p>
+            <h2 id="hai-ben-title" className={ed.h2}>
+              Mỗi bước, bạn duyệt một thứ
+            </h2>
+          </div>
+          <ol className={`${ed.main} ${ed.rows} ${styles.milestones}`} aria-label="Các mốc bạn duyệt theo dải các bước">
+            {REVIEWS.map((r, i) => (
+              <li key={r}>
+                <span>Bước {i + 1}</span>
+                {r}
+              </li>
+            ))}
+          </ol>
+          <div className={ed.full}>
+            <Responsibility
+              ours={[
+                'Nghiên cứu ngành, khách hàng mục tiêu và đối thủ',
+                'Đề xuất hướng màu, chữ, phong cách đồ họa để bạn chọn',
+                'Thiết kế logo và các ứng dụng trên điểm chạm thật',
+                'Bộ hướng dẫn thương hiệu và file gốc cho web, in ấn'
+              ]}
+              yoursTitle="Bạn cung cấp và duyệt"
+              yours={[
+                'Thông tin doanh nghiệp: giá trị, tầm nhìn, khách hàng, đối thủ bạn quan tâm',
+                'Danh sách điểm chạm cần áp dụng: biển hiệu, bao bì, đồng phục, mạng xã hội...',
+                'Logo và tài liệu cũ nếu có',
+                'Một người quyết định duyệt ở mỗi mốc'
+              ]}
+            />
+          </div>
         </div>
-      </Section>
+      </section>
 
-      <Section
-        id="do-luong"
-        kicker="Đo thế nào"
-        title={
-          <>
-            Nhận diện tác động chậm, <span className="hl">nên phải ghi mốc trước</span>
-          </>
-        }
-        intro="Không có con số chung cho “nhận diện tốt”. Cách đo hợp lý là ghi lại hiện trạng trước khi đổi, rồi so sánh sau vài tháng ở cả bốn bậc."
-      >
-        <MeasurementLadder
-          metrics={{
-            activity: ['Số điểm chạm đã chuyển sang hệ mới', 'Bộ hướng dẫn đã gửi cho đội nhà và đối tác'],
-            interim: ['Rà soát định kỳ: điểm chạm nào còn sai màu, chữ, logo so với hướng dẫn'],
-            behavior: [
-              'Số lượt tìm đúng tên thương hiệu trên Google (Search Console)',
-              'Lượt truy cập trực tiếp vào website',
-              'Khách nhắc lại thương hiệu khi liên hệ'
-            ],
-            business: ['Tỉ lệ chốt và mức giá giữ được, so với trước khi đổi']
-          }}
-          limits={[
-            'Tác động của nhận diện thường lộ ra sau nhiều tháng và lẫn với quảng cáo, mùa vụ, sản phẩm mới.',
-            'Khó tách riêng phần đóng góp của nhận diện vào doanh thu; nên đọc bậc 4 cùng với các thay đổi khác trong cùng thời gian.',
-            'Lượt tìm tên thương hiệu chỉ có ý nghĩa khi so với chính bạn trước đó, không so với đối thủ.'
-          ]}
-        />
-      </Section>
+      <section id="do-luong" className={ed.band} aria-labelledby="do-luong-title">
+        <div className={`container ${ed.grid}`}>
+          <div className={ed.side}>
+            <p className={ed.label}>
+              <b>04</b> Đo thế nào
+            </p>
+            <h2 id="do-luong-title" className={ed.h2}>
+              Nhận diện tác động chậm, nên phải ghi mốc trước
+            </h2>
+          </div>
+          <p className={`${ed.main} ${ed.lead} ${styles.galleryIntro}`}>
+            Không có con số chung cho “nhận diện tốt”. Cách đo hợp lý là ghi lại hiện trạng trước khi đổi, rồi so sánh sau vài tháng ở cả bốn bậc.
+          </p>
+          <div className={ed.full}>
+            <MeasurementLadder
+              metrics={{
+                activity: ['Số điểm chạm đã chuyển sang hệ mới', 'Bộ hướng dẫn đã gửi cho đội nhà và đối tác'],
+                interim: ['Rà soát định kỳ: điểm chạm nào còn sai màu, chữ, logo so với hướng dẫn'],
+                behavior: [
+                  'Số lượt tìm đúng tên thương hiệu trên Google (Search Console)',
+                  'Lượt truy cập trực tiếp vào website',
+                  'Khách nhắc lại thương hiệu khi liên hệ'
+                ],
+                business: ['Tỉ lệ chốt và mức giá giữ được, so với trước khi đổi']
+              }}
+              limits={[
+                'Tác động của nhận diện thường lộ ra sau nhiều tháng và lẫn với quảng cáo, mùa vụ, sản phẩm mới.',
+                'Khó tách riêng phần đóng góp của nhận diện vào doanh thu; nên đọc bậc 4 cùng với các thay đổi khác trong cùng thời gian.',
+                'Lượt tìm tên thương hiệu chỉ có ý nghĩa khi so với chính bạn trước đó, không so với đối thủ.'
+              ]}
+            />
+          </div>
+        </div>
+      </section>
 
-      <Section
-        id="diem-cham"
-        tone="gray"
-        surface="flat"
-        kicker="Nối vào kinh doanh"
-        title={
-          <>
-            Nhận ra → tin → cân nhắc → <span className="hl">chọn mua</span>
-          </>
-        }
-        intro="Nhận diện là lần đầu khách gặp bạn, trước khi đọc một chữ nào. Website và quảng cáo là nơi hệ nhận diện được dùng nhiều nhất ngay sau đó."
-      >
-        <ServiceTouchpointContext slug={service.slug} names={names} />
-      </Section>
+      <section id="diem-cham" className={`${ed.band} ${ed.canvas}`} aria-labelledby="diem-cham-title">
+        <div className="container">
+          <p className={ed.label}>
+            <b>05</b> Nối vào kinh doanh
+          </p>
+          <h2 id="diem-cham-title" className={`${ed.statement} ${styles.chain}`}>
+            Nhận ra <span aria-hidden="true">→</span> tin <span aria-hidden="true">→</span> cân nhắc <span aria-hidden="true">→</span>{' '}
+            <span className="hl">chọn mua</span>
+          </h2>
+          <p className={`${ed.lead} ${styles.chainLead}`}>
+            Nhận diện là lần đầu khách gặp bạn, trước khi đọc một chữ nào. Website và quảng cáo là nơi hệ nhận diện được dùng nhiều nhất ngay sau đó.
+          </p>
+          <ServiceTouchpointContext slug={service.slug} names={names} />
+        </div>
+      </section>
 
-      <MethodSection article={article} name={service.menuTitle} tone="white" />
+      <MethodSection article={article} name={service.menuTitle} editorial tone="white" />
 
       <ContextualServiceCTA
         slug={service.slug}

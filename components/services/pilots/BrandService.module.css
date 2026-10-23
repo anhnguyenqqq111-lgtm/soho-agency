@@ -1,90 +1,21 @@
-/* ---------- Hộp bàn giao + nhận xét ---------- */
-.handover {
-  display: grid;
-  grid-template-columns: minmax(0, 6fr) minmax(0, 5fr);
-  gap: 24px;
-  align-items: start;
-}
-.box {
-  display: grid;
-  gap: 14px;
-  padding: 24px;
-  border-radius: var(--r-xl);
-  border: 2px solid var(--ink);
-}
-.box ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  gap: 10px;
-}
-.box li {
-  display: flex;
-  gap: 10px;
-  align-items: baseline;
-  font-weight: 600;
-}
-.box svg {
-  flex: none;
-  color: var(--brand-ink);
-  transform: translateY(3px);
-}
-.quotes {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  gap: 12px;
-}
-.quotes li {
-  display: grid;
-  gap: 10px;
-  padding: 22px;
-  border-radius: var(--r-card);
-  background: var(--canvas);
-  border: 1px solid var(--line);
-}
-.quotes blockquote {
-  margin: 0;
-  font-family: var(--font-display);
-  font-size: 18px;
-  font-weight: 600;
-  line-height: 1.45;
-}
-.quoteBy {
-  display: grid;
-  font-size: 14px;
-  color: var(--ink-2);
-}
-.quoteBy strong {
-  color: var(--ink);
+/* Trang Nhận diện, V4.0 "triển lãm thương hiệu": câu khẳng định lớn, hình chiếm chỗ, trích dẫn lớn, ít khung. */
+
+.statement {
+  max-width: 19ch;
+  margin-bottom: clamp(40px, 5vw, 72px);
 }
 
-@media (max-width: 1000px) {
-  .handover {
-    grid-template-columns: minmax(0, 1fr);
-  }
-}
-
-/* ---------- Gốc của sự lệch + 4 điểm chạm trên sơ đồ ---------- */
-.root {
-  display: grid;
-  grid-template-columns: minmax(0, 3fr) minmax(0, 9fr);
-  gap: 16px 32px;
-  padding: 20px 0 28px;
-  border-top: 2px solid var(--ink);
-}
-.rootLabel {
-  font-family: var(--font-display);
-  font-size: 20px;
-  font-weight: 700;
-}
+/* ---------- Gốc của sự lệch + bốn điểm chạm ---------- */
 .rootText {
-  max-width: 70ch;
-  font-size: 16px;
-  line-height: 1.65;
-  color: var(--ink-2);
+  max-width: 34ch;
+  font-family: var(--font-display);
+  font-size: clamp(22px, 2.3vw, 32px);
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+.rootNote {
+  margin-top: 20px;
 }
 .drift {
   list-style: none;
@@ -92,108 +23,148 @@
   padding: 0;
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  border-top: 1px solid var(--line);
+  column-gap: clamp(20px, 2.4vw, 36px);
+  row-gap: 40px;
 }
 .drift > li {
   display: grid;
   align-content: start;
-  gap: 12px;
-  padding: 20px 20px 0 0;
+  gap: 14px;
+  padding-top: 20px;
+  border-top: 2px solid var(--ink);
 }
-.drift > li + li {
-  padding-left: 20px;
-  border-left: 1px solid var(--line);
+.drift > li:first-child {
+  border-top-color: var(--brand);
+}
+.driftNum {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--ink-3);
 }
 .driftPoint {
-  font-size: 20px;
+  font-size: clamp(24px, 2.3vw, 32px);
+  line-height: 1.1;
 }
-.drift > li:first-child .driftPoint {
-  color: var(--brand-ink);
-}
-.drift p {
+.driftWhy,
+.driftRule {
   display: grid;
-  gap: 4px;
-  font-size: 14.5px;
-  line-height: 1.55;
+  gap: 6px;
+  font-size: 15.5px;
+  line-height: 1.6;
+}
+.driftWhy {
   color: var(--ink-2);
 }
-.drift p:last-child {
+.driftRule {
   color: var(--ink);
+  font-weight: 600;
 }
-.driftLabel {
-  font-size: 11.5px;
+.driftWhy span,
+.driftRule span {
+  font-size: 12px;
   font-weight: 700;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--ink-3);
 }
 
-/* ---------- Trách nhiệm hai bên + mốc duyệt ---------- */
-.split {
-  display: grid;
-  grid-template-columns: minmax(0, 8fr) minmax(0, 4fr);
-  gap: 32px;
-  margin-top: 56px;
-  align-items: start;
+.galleryIntro {
+  align-self: end;
 }
-.milestones {
-  padding-top: 20px;
+
+/* ---------- Trích dẫn lớn, không khung ---------- */
+.quote {
+  margin: 0;
+  display: grid;
+  gap: 20px;
+  align-content: start;
+  padding-top: 24px;
   border-top: 2px solid var(--ink);
 }
-.milestonesHead {
-  font-size: 16px;
-  margin-bottom: 12px;
-}
-.milestones ol {
-  list-style: none;
+.quote blockquote {
   margin: 0;
-  padding: 0;
+  font-family: var(--font-display);
+  font-size: clamp(22px, 2.3vw, 32px);
+  font-weight: 600;
+  line-height: 1.32;
+  letter-spacing: -0.01em;
 }
-.milestones li {
+.quote figcaption {
   display: grid;
   gap: 2px;
-  padding: 10px 0;
-  border-bottom: 1px solid var(--line);
-  font-size: 14.5px;
-  line-height: 1.45;
+  font-size: 15px;
+  color: var(--ink-3);
 }
-.milestones li span {
-  font-size: 11.5px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--brand-ink);
+.quote figcaption strong {
+  color: var(--ink);
 }
 .boxHead {
-  font-size: 18px;
+  margin-top: 16px;
 }
-.handover {
-  margin-top: 48px;
+.box {
+  list-style: none;
+  margin: 16px 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 32px;
+  border-top: 2px solid var(--ink);
+}
+.box li {
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+  font-weight: 600;
+  font-size: 16px;
+}
+.box svg {
+  flex: none;
+  color: var(--brand-ink);
+  transform: translateY(3px);
+}
+
+/* ---------- Mốc duyệt ---------- */
+.milestones > li {
+  display: grid;
+  grid-template-columns: 96px minmax(0, 1fr);
+  gap: 16px;
+  padding-block: 16px !important;
+  font-size: 17px;
+  line-height: 1.5;
+}
+.milestones span {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--brand-ink);
+  padding-top: 4px;
+}
+
+/* ---------- Nối vào kinh doanh ---------- */
+.chain {
+  max-width: 22ch;
+  font-size: clamp(32px, 4.4vw, 60px);
+}
+.chainLead {
+  margin: 24px 0 clamp(40px, 5vw, 64px);
 }
 
 @media (max-width: 1000px) {
   .drift {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-  .drift > li:nth-child(3) {
-    padding-left: 0;
-    border-left: 0;
-  }
-  .split {
-    grid-template-columns: minmax(0, 1fr);
-  }
 }
 @media (max-width: 640px) {
-  .root,
-  .drift {
+  .drift,
+  .box {
     grid-template-columns: minmax(0, 1fr);
   }
-  .drift > li,
-  .drift > li + li {
-    padding: 18px 0;
-    border-left: 0;
-  }
-  .drift > li + li {
-    border-top: 1px solid var(--line);
+  .milestones > li {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 4px;
   }
 }
