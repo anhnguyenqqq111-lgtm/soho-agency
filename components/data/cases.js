@@ -23,9 +23,9 @@ export const cases = [
     imagePosition: 'center',
     // Số do SOHO công bố trên trang dự án
     kpis: [
-      {value: '+135%', label: 'tương tác tự nhiên trên fanpage sau 2 tháng'},
+      {value: '+135%', label: 'lượt thích, bình luận, chia sẻ không trả tiền trên fanpage, sau 2 tháng'},
       {value: '×2,3', label: 'tỉ lệ tin nhắn hỏi đặt phòng so với giai đoạn trước'},
-      {value: '−35%', label: 'chi phí cho 1.000 lượt hiển thị quảng cáo'}
+      {value: '−35%', label: 'tiền quảng cáo cho mỗi 1.000 lần quảng cáo hiện ra'}
     ],
     result: 'Tỉ lệ tin nhắn hỏi đặt phòng gấp 2,3 lần giai đoạn trước.',
     context:
@@ -105,7 +105,7 @@ export const cases = [
     slug: 'seo-studio-chup-anh-tphcm',
     anonymous: true,
     problem: 'Website mạnh về ảnh cưới và phim trường, nhưng người tìm studio chụp ảnh nói chung chưa có trang nào để vào.',
-    solution: 'Viết một trang trụ cột và 5 bài vệ tinh theo hành trình tìm studio, nối liên kết nội bộ, cập nhật bài cũ.',
+    solution: 'Viết một bài tổng quan và 5 bài trả lời câu khách hay hỏi khi tìm studio, nối các bài với nhau, cập nhật bài cũ.',
     services: ['seo-tong-the', 'content-marketing-pr'],
     channel: 'seo-tong-the',
     consent: 'anonymous',
@@ -118,20 +118,20 @@ export const cases = [
     imageWidth: 1600,
     imageHeight: 686,
     imagePosition: 'center',
-    imageAlt: 'Sơ đồ cụm nội dung SOHO viết: trang trụ cột Studio chụp ảnh TP.HCM nối với 5 bài về studio, cặp đôi, chuẩn bị, giá và sản phẩm bàn giao',
+    imageAlt: 'Sơ đồ các bài SOHO viết: bài tổng quan Studio chụp ảnh TP.HCM nối với 5 bài về studio, cặp đôi, chuẩn bị, giá và sản phẩm bàn giao',
     kpis: [
-      {value: '102', label: 'lượt nhấp từ Google vào 6 trang mới, 22/09–22/10/2026'},
-      {value: '4.771', label: 'lượt hiển thị của 6 trang đó trong cùng kỳ'},
-      {value: '4,7', label: 'vị trí trung bình của trang trụ cột cho truy vấn “studio chụp ảnh”'}
+      {value: '102', label: 'lượt khách bấm vào 6 trang mới từ Google, 22/09–22/10/2026'},
+      {value: '4.771', label: 'lần 6 trang đó hiện ra trên Google trong cùng kỳ'},
+      {value: '4,7', label: 'vị trí trung bình của bài tổng quan khi khách tìm “studio chụp ảnh”, tức thường đứng thứ 4 đến 5 ở trang đầu'}
     ],
-    result: '6 trang mới có 102 lượt nhấp từ Google trong tháng đầu. Tổng lượt nhấp toàn website chưa đổi rõ.',
+    result: '6 trang mới có 102 lượt khách bấm vào từ Google trong tháng đầu. Tổng lượt khách vào cả website chưa đổi rõ.',
     context:
       'Website đã có nhiều trang về ảnh cưới, phim trường và bảng giá. Người tìm “studio chụp ảnh” nói chung, như chụp cặp đôi, hỏi giá, hỏi cần chuẩn bị gì, chưa có trang nào trả lời.',
-    work: 'Nghiên cứu nhu cầu tìm studio và xếp theo hành trình: tìm hiểu, so sánh, hỏi giá, liên hệ. Viết trang trụ cột “studio chụp ảnh TP.HCM” và 5 bài vệ tinh (studio là gì, chụp cặp đôi, chuẩn bị, giá, sản phẩm bàn giao), nối liên kết hai chiều với trang trụ cột. Cập nhật 13 bài cũ đang có thứ hạng: nội dung 2026, mục lục, câu hỏi thường gặp, liên kết sang bảng giá và portfolio.',
+    work: 'Tìm hiểu khách hay tìm gì khi chọn studio, xếp theo thứ tự: tìm hiểu, so sánh, hỏi giá, liên hệ. Viết một bài tổng quan “studio chụp ảnh TP.HCM” và 5 bài trả lời câu khách hay hỏi (studio là gì, chụp cặp đôi, cần chuẩn bị gì, giá, nhận được những gì), các bài dẫn qua lại với bài tổng quan. Cập nhật 13 bài cũ đang có thứ hạng: thông tin mới năm 2026, mục lục, câu hỏi thường gặp, đường dẫn sang bảng giá và ảnh mẫu.',
     // 6 trang mới cộng lại, mỗi cột 7 ngày, kết thúc 22/10/2026. Các trang bắt đầu xuất hiện trên Google từ 22–25/09.
     series: {
-      title: 'Lượt nhấp từ Google của 6 trang mới, mỗi cột 7 ngày',
-      note: 'Trước 22/09/2026 cả 6 trang chưa có lượt hiển thị nào.',
+      title: 'Lượt khách bấm vào 6 trang mới từ Google, mỗi cột 7 ngày',
+      note: 'Trước 22/09/2026 cả 6 trang chưa hiện ra lần nào trên Google.',
       weeks: [
         {label: '18–24/09', clicks: 4, impressions: 126},
         {label: '25/09–01/10', clicks: 25, impressions: 1073},
@@ -142,8 +142,8 @@ export const cases = [
     },
     limits: [
       'Đây là số tháng đầu. Kế hoạch SEO của dự án tính theo 6 tháng.',
-      'Tổng lượt nhấp toàn website trong 12 tuần sau khi bắt đầu gần bằng 12 tuần trước đó (1.395 so với 1.349). Phần tăng mới thấy ở các trang mới, chưa thấy ở toàn site.',
-      'Đây là lượt nhấp từ Google, chưa phải lượt đặt lịch. SOHO chưa có số đặt lịch đến từ các trang này.'
+      'Tổng lượt khách bấm vào cả website trong 12 tuần sau khi bắt đầu gần bằng 12 tuần trước đó (1.395 so với 1.349). Phần tăng mới thấy ở các trang mới, chưa thấy ở cả website.',
+      'Đây là lượt bấm vào từ Google, chưa phải lượt đặt lịch. SOHO chưa có số đặt lịch đến từ các trang này.'
     ],
     source: 'Google Search Console của website khách, kéo qua API ngày 23/10/2026. Khách đồng ý công bố số liệu và xin giữ kín tên.'
   }

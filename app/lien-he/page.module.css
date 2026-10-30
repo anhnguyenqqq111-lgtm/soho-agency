@@ -28,7 +28,8 @@
   font-size: 15px;
 }
 .info a {
-  color: var(--accent);
+  color: var(--denim);
+  font-weight: 600;
 }
 @media (max-width: 1000px) {
   .info {

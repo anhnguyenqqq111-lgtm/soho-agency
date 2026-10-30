@@ -1,5 +1,6 @@
 import styles from './Hero.module.css';
 import {sitePath} from '../paths';
+import Glass from '../sq/Glass';
 
 /*
   Hero trang con, xếp dọc (tránh khuôn "nhãn nhỏ + tiêu đề trái + ảnh phải" của thiết kế AI):
@@ -9,6 +10,11 @@ import {sitePath} from '../paths';
 export default function Hero({tone, title, tagline, visual, crumbs = [], long = false}) {
   return (
     <section className={`${styles.hero} ${styles[tone] || ''}`}>
+      <span className={styles.glass} aria-hidden="true">
+        <Glass tone="denim" icon="search" style={{right: '-60px', top: '36px', width: 170, height: 170, transform: 'rotate(-8deg)'}} />
+        <Glass tone="light" style={{right: '120px', top: '150px', width: 120, height: 64, transform: 'rotate(5deg)'}} />
+        <Glass tone="orange" sm style={{right: '200px', top: '40px', width: 24, height: 24, transform: 'rotate(14deg)'}} />
+      </span>
       <div className={`container ${styles.inner}`}>
         <div className={styles.content}>
           {crumbs.length > 0 && (

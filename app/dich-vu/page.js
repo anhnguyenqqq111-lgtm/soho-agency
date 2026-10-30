@@ -1,4 +1,3 @@
-import styles from './page.module.css';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import Hero from '../../components/hero/Hero';
@@ -6,7 +5,8 @@ import {ServicesVisual} from '../../components/hero/Visuals';
 import Section from '../../components/ui/Section';
 import LinkRows from '../../components/ui/LinkRows';
 import CtaBand from '../../components/ui/CtaBand';
-import ServiceGroups from '../../components/ServiceGroups';
+import ProblemPicker from '../../components/sq/ProblemPicker';
+import {PAGE_CTA} from '../../components/data/contactVariants';
 import {getServicesByGroup} from '../../components/servicePagesData';
 
 export const metadata = {
@@ -32,32 +32,30 @@ export default function ServicesIndexPage() {
               Dịch vụ của SOHO Agency: <span className="hl">marketing, website, thương hiệu</span>
             </>
           }
-          tagline="Không bán gói. Mỗi dịch vụ giải một chỗ nghẽn cụ thể trên đường khách tới đơn hàng."
+          tagline="Mười hai việc SOHO làm, chia theo chỗ bạn đang mất khách. Chưa biết tên dịch vụ cũng không sao: chọn tình huống giống bạn nhất ở bên dưới."
           visual={<ServicesVisual labels={groups.flatMap(g => g.items.map(s => s.menuTitle))} />}
         />
         <Section
           id="noi-dung"
-          title={
-            <>
-              Bạn đang tắc <span className="hl">ở chỗ nào?</span>
-            </>
-          }
-          intro="Không ai tìm thấy, có người xem mà không mua, hay có mua mà không biết kênh nào mang lại. Chọn vấn đề, các dịch vụ nên làm trước sẽ sáng lên."
+          tone="soft"
+          kicker="Bắt đầu từ chuyện bạn đang gặp"
+          title="Bạn đang gặp chuyện nào?"
+          intro="Chọn một tình huống. SOHO nói rõ vì sao chuyện đó hay xảy ra, nên làm gì trước, và khi nào chưa nên bỏ tiền."
         >
-          <ServiceGroups groups={groups.map(g => ({group: g.group, items: g.items.map(({slug, menuTitle, menuDesc}) => ({slug, menuTitle, menuDesc}))}))} />
+          <ProblemPicker idPrefix="hub-pk" />
         </Section>
         {groups.map(({group, items}, i) => (
-          <Section key={group} id={IDS[i]} tone={i % 2 ? 'white' : 'gray'} title={group} spacing="sm">
+          <Section key={group} id={IDS[i]} tone={i % 2 ? 'soft' : 'white'} kicker={`Nhóm ${i + 1}`} title={group} spacing="sm">
             <LinkRows items={items.map(s => ({title: s.menuTitle, desc: s.intro, href: `/dich-vu/${s.slug}`}))} />
           </Section>
         ))}
         <CtaBand
           title={
             <>
-              Chưa biết nên <span className="hl">bắt đầu từ đâu?</span>
+              {PAGE_CTA.services.lead} <span className="hl">{PAGE_CTA.services.hl}</span>
             </>
           }
-          text="Gửi website và kênh đang chạy. SOHO chỉ ra điểm nghẽn lớn nhất và việc nên làm trước."
+          text={PAGE_CTA.services.text}
         />
       </main>
       <Footer />

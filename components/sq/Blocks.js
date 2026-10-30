@@ -7,6 +7,7 @@ import {testimonials, partners} from '../data/proof';
 import {company} from '../data/company';
 import {getPerson, team} from '../data/team';
 import {thumbnailOf} from '../blogVisuals';
+import svc from './service.module.css';
 
 /*
   Khối nội dung bản 12 (canvas "Bản vuông, gọn"). Mỗi khối là một section riêng, xếp theo đường đọc:
@@ -83,7 +84,7 @@ export function HomeHeroSq() {
         </div>
         <div className={styles.heroArt}>
           <div className={styles.heroPanel} aria-hidden="true" />
-          <Glass tone="light" icon="chart" style={{right: '8px', top: '58%', width: 150, height: 96, zIndex: 3, transform: 'rotate(5deg)'}} />
+          <Glass tone="light" icon="chart" className="keep-sm" style={{right: '8px', top: '58%', width: 150, height: 96, zIndex: 3, transform: 'rotate(5deg)'}} />
           {pm && (
             <img
               className={styles.heroPerson}
@@ -214,7 +215,7 @@ export function ProcessSteps() {
 }
 
 /* ---------- Cân nhắc: báo cáo bằng lời thường (số thật của case ẩn tên) ---------- */
-export function ReportExplainer() {
+export function ReportExplainer({tone = 'denim'}) {
   const c = getCase('seo-studio-chup-anh-tphcm');
   if (!c) return null;
   const [clicks, impr, pos] = c.kpis;
@@ -222,7 +223,7 @@ export function ReportExplainer() {
   return (
     <SectionShell
       id="bao-cao"
-      tone="denim"
+      tone={tone}
       labelledBy="h-rp"
       glass={
         <>
@@ -300,7 +301,7 @@ export function ReportExplainer() {
 }
 
 /* ---------- Củng cố niềm tin: kết quả, ba thẻ nghiêng (chỉ chỗ này được nghiêng) ---------- */
-export function ResultsScatter({id = 'ket-qua', title = 'Kết quả thật từ khách của SOHO'}) {
+export function ResultsScatter({id = 'ket-qua', title = 'Kết quả thật từ khách của SOHO', showLink = true}) {
   const lv = getCase('le-viva-resort');
   const st = getCase('seo-studio-chup-anh-tphcm');
   return (
@@ -317,11 +318,13 @@ export function ResultsScatter({id = 'ket-qua', title = 'Kết quả thật từ
           <p className={styles.desc} style={{fontSize: 15}}>
             Mỗi con số ghi rõ của ai, trong bao lâu. Khách chưa đồng ý thì SOHO không đăng.
           </p>
-          <div style={{marginTop: 24}}>
-            <Button href="/ket-qua" variant="secondary" arrow="right">
-              Xem tất cả kết quả
-            </Button>
-          </div>
+          {showLink && (
+            <div style={{marginTop: 24}}>
+              <Button href="/ket-qua" variant="secondary" arrow="right">
+                Xem tất cả kết quả
+              </Button>
+            </div>
+          )}
         </div>
         <div className={`${styles.scatter} tilt`}>
           {lv && (
@@ -379,29 +382,31 @@ export function CaseCards({items}) {
     </div>
   );
 }
-export function ProjectsSection() {
+export function ProjectsSection({all = false, showLink = true, tone = 'white'}) {
   return (
-    <SectionShell id="du-an" tone="white" labelledBy="h-da">
+    <SectionShell id="du-an" tone={tone} labelledBy="h-da">
       <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'end', gap: 24, flexWrap: 'wrap', marginBottom: 44}}>
         <div>
           <p className="eyebrow">Dự án</p>
           <h2 id="h-da">Bài toán của khách, và SOHO đã giải thế nào</h2>
         </div>
-        <Button href="/ket-qua" variant="secondary" arrow="right">
-          Xem tất cả dự án
-        </Button>
+        {showLink && (
+          <Button href="/ket-qua" variant="secondary" arrow="right">
+            Xem tất cả dự án
+          </Button>
+        )}
       </div>
-      <CaseCards />
+      <CaseCards items={all ? publishedCases : undefined} />
     </SectionShell>
   );
 }
 
 /* ---------- Củng cố niềm tin: lời khách, nguyên văn ---------- */
-export function QuotesSection() {
+export function QuotesSection({tone = 'tint'}) {
   const [first, ...rest] = testimonials;
   if (!first) return null;
   return (
-    <SectionShell id="khach-hang-noi" tone="tint" labelledBy="h-kn">
+    <SectionShell id="khach-hang-noi" tone={tone} labelledBy="h-kn">
       <div className={styles.quotes}>
         <div>
           <p className="eyebrow">Khách hàng nói</p>
@@ -432,9 +437,9 @@ export function QuotesSection() {
 
 /* ---------- Củng cố niềm tin: tài khoản đứng tên bạn ---------- */
 const ACCOUNTS = ['Quảng cáo Google', 'Fanpage, quảng cáo Facebook', 'Google Analytics, Search Console', 'Tên miền, hosting website'];
-export function AccountOwnership() {
+export function AccountOwnership({tone = 'white'}) {
   return (
-    <SectionShell id="tai-khoan" tone="white" labelledBy="h-tk">
+    <SectionShell id="tai-khoan" tone={tone} labelledBy="h-tk">
       <div className={styles.split}>
         <div>
           <table className={styles.acc}>
@@ -577,6 +582,24 @@ export function BlogSection({posts}) {
         ))}
       </div>
     </SectionShell>
+  );
+}
+
+/* Thẻ người thật nhỏ: dùng ở trang Liên hệ ("Người sẽ gọi lại cho bạn") */
+export function PersonMini({label = 'Người sẽ gọi lại cho bạn'}) {
+  const pm = getPerson('pm');
+  if (!pm) return null;
+  return (
+    <div className={svc.person} style={{marginTop: 24, maxWidth: 520}}>
+      <div className={svc.personImg}>
+        <img src={sitePath(pm.photo)} width={pm.width} height={pm.height} alt={`${pm.name ? pm.name + ', ' : ''}${pm.role.toLowerCase()} của SOHO`} loading="lazy" />
+      </div>
+      <div>
+        <p className={svc.caseTag}>{label}</p>
+        <p className={svc.personRole}>{pm.name || pm.role}</p>
+        <p className={svc.personDoes}>{pm.does}</p>
+      </div>
+    </div>
   );
 }
 

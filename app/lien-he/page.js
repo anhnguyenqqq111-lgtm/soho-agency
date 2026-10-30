@@ -8,6 +8,7 @@ import Section from '../../components/ui/Section';
 import ContactForm from '../../components/ContactForm';
 import Fill from '../../components/ui/Fill';
 import {company} from '../../components/data/company';
+import {PersonMini} from '../../components/sq/Blocks';
 
 export const metadata = {
   alternates: {canonical: '/lien-he/'},
@@ -46,7 +47,9 @@ export default function ContactPage() {
               <ContactForm />
             </div>
           }
-        />
+        >
+          <PersonMini />
+        </PageHeader>
         <Section
           title={
             <>

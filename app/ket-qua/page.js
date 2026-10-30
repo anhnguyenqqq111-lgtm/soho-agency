@@ -6,10 +6,9 @@ import {ResultsVisual} from '../../components/hero/Visuals';
 import PageHeader from '../../components/ui/PageHeader';
 import Section from '../../components/ui/Section';
 import CtaBand from '../../components/ui/CtaBand';
-import ProjectGrid from '../../components/proof/ProjectGrid';
 import PartnerStrip from '../../components/proof/PartnerStrip';
-import Testimonials from '../../components/proof/Testimonials';
-import {cases} from '../../components/data/cases';
+import {ResultsScatter, ProjectsSection, ReportExplainer, QuotesSection} from '../../components/sq/Blocks';
+import {PAGE_CTA} from '../../components/data/contactVariants';
 import {clients} from '../../components/data/clients';
 import LogoMarquee from '../../components/proof/LogoMarquee';
 
@@ -25,27 +24,27 @@ export const metadata = {
 const channels = [
   {
     name: 'SEO',
-    weekly: 'Độ phủ của nhóm từ khóa có ý định mua, lỗi khiến Google không đọc được trang',
-    monthly: 'Khách để lại thông tin và doanh thu đến từ Google tự nhiên',
-    notKpi: 'Tổng lượt truy cập, số bài viết, số liên kết'
+    weekly: 'Bạn hiện ra ở bao nhiêu câu tìm kiếm của người muốn mua, lỗi nào khiến Google không đọc được trang',
+    monthly: 'Số người để lại thông tin và doanh thu đến từ Google (không trả tiền)',
+    notKpi: 'Tổng lượt vào web, số bài viết, số đường dẫn từ web khác'
   },
   {
     name: 'Quảng cáo',
-    weekly: 'Chi phí cho mỗi khách tiềm năng (CPA), doanh thu trên chi phí (ROAS), từ khóa tốn tiền vô ích',
-    monthly: 'Chi phí để có một khách mua, lợi nhuận gộp theo chiến dịch',
-    notKpi: 'Giá mỗi lượt bấm, tỉ lệ bấm, lượt hiển thị'
+    weekly: 'Tốn bao nhiêu cho mỗi người hỏi mua, bỏ ra bao nhiêu mang về bao nhiêu, từ khóa nào tốn tiền mà không ra khách',
+    monthly: 'Tốn bao nhiêu để có một khách mua, lãi theo từng chiến dịch',
+    notKpi: 'Giá mỗi lượt bấm, tỉ lệ bấm, số lần quảng cáo hiện ra'
   },
   {
-    name: 'Trang đích',
-    weekly: 'Tỉ lệ khách để lại thông tin theo từng trang, từng thiết bị',
-    monthly: 'Mức tăng sau mỗi lần thử nghiệm',
-    notKpi: 'Thời gian ở lại trang'
+    name: 'Trang bán hàng',
+    weekly: 'Trong 100 người vào trang, bao nhiêu người để lại số, chia theo trang và theo điện thoại hay máy tính',
+    monthly: 'Tăng bao nhiêu sau mỗi lần sửa thử',
+    notKpi: 'Thời gian khách ở lại trang'
   },
-  {name: 'Nội dung', weekly: 'Tiến độ, bình luận và tin nhắn có chất lượng', monthly: 'Số khách đã đọc bài trước khi liên hệ', notKpi: 'Lượt xem, lượt thích'},
+  {name: 'Nội dung', weekly: 'Tiến độ đăng bài, bình luận và tin nhắn hỏi thật', monthly: 'Số khách đã đọc bài trước khi liên hệ', notKpi: 'Lượt xem, lượt thích'},
   {
     name: 'Đo lường',
-    weekly: 'Hành động bị thiếu hoặc đếm trùng',
-    monthly: 'Số liệu quảng cáo, GA4 và sổ bán hàng có khớp nhau không',
+    weekly: 'Hành động nào bị đếm thiếu hoặc đếm hai lần',
+    monthly: 'Số của quảng cáo, Google Analytics và sổ bán hàng có khớp nhau không',
     notKpi: 'Số biểu đồ trên báo cáo'
   }
 ];
@@ -63,7 +62,7 @@ export default function ResultsPage() {
               Dự án SOHO đã làm, <span className="hl">kể bằng kết quả</span>
             </>
           }
-          tagline="Một số dự án SOHO đã làm: một khu nghỉ dưỡng, một đơn vị thiết kế thi công, một nhà phân phối đồng hồ, một studio ảnh cưới."
+          tagline="Một khu nghỉ dưỡng, một đơn vị thi công quán cà phê và homestay, một nhà phân phối đồng hồ, một studio ảnh cưới, và một studio chụp ảnh xin giữ kín tên. Mỗi dự án kể bối cảnh, việc SOHO làm và kết quả có nguồn."
           visual={<ResultsVisual />}
         />
         <PageHeader
@@ -71,19 +70,13 @@ export default function ResultsPage() {
           lead="Lượt truy cập và lượt bấm vẫn được theo dõi, nhưng không phải thước đo chính. SOHO nối số liệu quảng cáo với số đơn và doanh thu trong sổ bán hàng của bạn."
         />
 
-        <Section
-          title={
-            <>
-              Một số <span className="hl">dự án</span>
-            </>
-          }
-          intro="Con số chỉ ghi khi chính dự án đã công bố. Dự án khác đang chạy, số liệu công bố khi khách hàng đồng ý."
-        >
-          <ProjectGrid projects={cases} />
-          <div className={styles.partners}>
+        <ResultsScatter title="Ba con số khách đã cho phép công bố" showLink={false} />
+        <ProjectsSection all showLink={false} />
+        <section className="bg-white" style={{paddingBottom: 'var(--space-sm)'}}>
+          <div className={`container ${styles.partners}`}>
             <PartnerStrip />
           </div>
-        </Section>
+        </section>
         <LogoMarquee clients={clients} />
 
         <Section
@@ -94,7 +87,8 @@ export default function ResultsPage() {
               Mỗi kênh, SOHO <span className="hl">xem con số nào</span>
             </>
           }
-          intro="Cột cuối là những con số đẹp nhưng không nói lên doanh thu. SOHO vẫn theo dõi, chỉ không dùng để đánh giá."
+          kicker="Cách SOHO đo"
+          intro="Cột cuối là những con số đẹp nhưng không nói lên doanh thu. SOHO vẫn theo dõi, chỉ không dùng để chấm điểm việc làm."
         >
           <div className={styles.tableWrap} tabIndex={0} role="region" aria-label="Bảng con số theo kênh">
             <table className={styles.table}>
@@ -122,24 +116,16 @@ export default function ResultsPage() {
           </div>
         </Section>
 
-        <Section
-          tone="gray"
-          title={
-            <>
-              Khách hàng <span className="hl">nói gì</span>
-            </>
-          }
-        >
-          <Testimonials />
-        </Section>
+        <ReportExplainer tone="white" />
+        <QuotesSection tone="tint" />
 
         <CtaBand
           title={
             <>
-              Muốn biết kênh nào đang <span className="hl">tạo ra doanh thu?</span>
+              {PAGE_CTA.results.lead} <span className="hl">{PAGE_CTA.results.hl}</span>
             </>
           }
-          text="SOHO kiểm tra cách đo, báo cáo và các bước khách đi qua trên web của bạn, rồi chỉ ra chỗ số liệu đang sai hoặc thiếu."
+          text={PAGE_CTA.results.text}
         />
       </main>
       <Footer />

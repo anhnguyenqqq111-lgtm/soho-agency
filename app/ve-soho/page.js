@@ -11,6 +11,8 @@ import {partners} from '../../components/data/proof';
 import {sitePath} from '../../components/paths';
 import CtaBand from '../../components/ui/CtaBand';
 import {company} from '../../components/data/company';
+import {TeamArt, AccountOwnership} from '../../components/sq/Blocks';
+import {PAGE_CTA} from '../../components/data/contactVariants';
 
 export const metadata = {
   alternates: {canonical: '/ve-soho/'},
@@ -44,16 +46,27 @@ export default function AboutPage() {
           crumbs={[{label: 'Giới thiệu'}]}
           title={
             <>
-              SOHO Agency, <span className="hl">đội marketing ở TP.HCM</span>
+              SOHO Agency, đội marketing cho <span className="hl">doanh nghiệp nhỏ và vừa</span> ở TP.HCM
             </>
           }
-          tagline="Lập kế hoạch và tự tay triển khai SEO, quảng cáo, nội dung, đo lường. Báo cáo bằng doanh thu."
+          tagline="SOHO lên kế hoạch và tự tay làm SEO, quảng cáo, website, nội dung cho doanh nghiệp đã có sản phẩm, có khách mua. Mỗi tháng bạn nhận báo cáo bằng số người liên hệ, viết bằng lời thường."
           visual={<AboutVisual />}
         />
         <PageHeader
-          title="Một đội vừa lập kế hoạch, vừa tự làm"
+          title="SOHO là lựa chọn của chủ doanh nghiệp muốn biết rõ tiền marketing đi đâu"
           lead="Người lên kế hoạch cũng là người làm. Không chuyển việc cho đội khác sau khi ký hợp đồng, nên điều đã hứa trong buổi đầu là điều được làm."
         />
+        <Section
+          id="nguoi-ban-gap"
+          tone="soft"
+          kicker="Người thật, việc thật"
+          title="Hai người bạn sẽ gặp đầu tiên"
+          intro="Người phụ trách dự án gặp bạn buổi đầu và theo sát tới khi báo cáo. Người làm marketing và website trực tiếp chạy SEO, quảng cáo, sửa web."
+        >
+          <div className={styles.teamPhotos}>
+            <TeamArt />
+          </div>
+        </Section>
         <Section
           title={
             <>
@@ -120,7 +133,7 @@ export default function AboutPage() {
         <Section
           title={
             <>
-              Những người bạn sẽ <span className="hl">làm việc cùng</span>
+              Cả đội <span className="hl">làm cùng bạn</span>
             </>
           }
         >
@@ -140,13 +153,14 @@ export default function AboutPage() {
             ))}
           </ul>
         </Section>
+        <AccountOwnership tone="tint" />
         <CtaBand
           title={
             <>
-              Bắt đầu bằng <span className="hl">một cuộc trao đổi</span>
+              {PAGE_CTA.about.lead} <span className="hl">{PAGE_CTA.about.hl}</span>
             </>
           }
-          text="Cho SOHO biết website, thị trường và điều bạn muốn cải thiện trong quý tới."
+          text={PAGE_CTA.about.text}
         />
       </main>
       <Footer />

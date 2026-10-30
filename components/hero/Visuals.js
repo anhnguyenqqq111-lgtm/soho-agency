@@ -13,7 +13,7 @@ export function ServicesVisual({labels = []}) {
     gx = 24,
     gy = 20;
   return (
-    <svg viewBox="0 0 1192 372" className={styles.svg} aria-hidden="true">
+    <svg viewBox="0 0 1208 372" className={styles.svg} aria-hidden="true">
       {labels.slice(0, 12).map((label, i) => {
         const x = 8 + (i % cols) * (w + gx),
           y = 8 + Math.floor(i / cols) * (h + gy);

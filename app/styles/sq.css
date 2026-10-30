@@ -152,6 +152,12 @@
     transform: scale(0.6) !important;
   }
 }
+/* Màn hẹp: ẩn khối kính trang trí để không đè lên chữ; chỉ giữ khối nằm trong khung ảnh (keep-sm) */
+@media (max-width: 700px) {
+  .gl:not(.keep-sm) {
+    display: none !important;
+  }
+}
 
 /* Thẻ kính cho nội dung (chữ vẫn đọc rõ) */
 .glassy {
