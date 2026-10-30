@@ -113,7 +113,7 @@ export default function Home() {
           tone="dark"
           title={
             <>
-              6 việc SOHO làm <span className="hl">giỏi nhất</span>
+              Sáu việc SOHO làm <span className="hl">giỏi nhất</span>
             </>
           }
           intro="Mỗi dịch vụ giải một chỗ nghẽn cụ thể trên đường khách tới đơn hàng."
@@ -156,7 +156,7 @@ export default function Home() {
             </Button>
           }
         >
-          <ProjectShowcase items={cases} />
+          <ProjectShowcase items={cases.filter(c => !c.anonymous)} />
         </Section>
 
         <Section

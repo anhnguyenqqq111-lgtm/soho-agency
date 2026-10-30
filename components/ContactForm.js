@@ -5,7 +5,6 @@ import {company} from './data/company';
 import {sitePath} from './paths';
 import Icon from './ui/Icon';
 import {track} from './analytics';
-import {DIAGNOSES, FORM_SERVICE} from './data/touchpoints';
 
 /*
   Form nhận tư vấn.
@@ -44,14 +43,11 @@ function validate(v) {
 
 const EMPTY = {name: '', contact: '', service: '', message: '', consent: false, website_url: ''};
 
-// defaultService: chọn sẵn dịch vụ khi form nằm trên một trang dịch vụ (phải là một giá trị trong SERVICES)
-export default function ContactForm({compact = false, idPrefix = 'cf', defaultService = ''}) {
-  const initial = {...EMPTY, service: SERVICES.includes(defaultService) ? defaultService : ''};
-  const [values, setValues] = useState(initial);
+export default function ContactForm({compact = false, idPrefix = 'cf'}) {
+  const [values, setValues] = useState(EMPTY);
   const [errors, setErrors] = useState({});
   const [tried, setTried] = useState(false);
   const [status, setStatus] = useState('idle'); // idle | sending | success | error | mailto
-  const [problem, setProblem] = useState('');
   const startedAt = useRef(0);
   const formRef = useRef(null);
   const statusRef = useRef(null);
@@ -59,12 +55,6 @@ export default function ContactForm({compact = false, idPrefix = 'cf', defaultSe
 
   useEffect(() => {
     startedAt.current = Date.now();
-    // Bối cảnh mang theo từ hub: /lien-he/?van-de=<chẩn đoán>&dich-vu=<slug dịch vụ>
-    const q = new URLSearchParams(window.location.search);
-    const diag = DIAGNOSES.find(d => d.key === q.get('van-de'));
-    if (diag) setProblem(diag.label);
-    const fromSlug = FORM_SERVICE[q.get('dich-vu')];
-    if (fromSlug) setValues(v => (v.service ? v : {...v, service: fromSlug}));
   }, []);
   useEffect(() => {
     if (status !== 'idle' && status !== 'sending') statusRef.current?.focus();
@@ -81,7 +71,6 @@ export default function ContactForm({compact = false, idPrefix = 'cf', defaultSe
       `Họ và tên: ${values.name}`,
       `Liên hệ: ${values.contact}`,
       `Dịch vụ quan tâm: ${values.service}`,
-      ...(problem ? [`Vấn đề đã chọn: ${problem}`] : []),
       `Nhu cầu: ${values.message || '(chưa ghi)'}`
     ].join('\n');
     return `mailto:${company.email}?subject=${encodeURIComponent(`Yêu cầu tư vấn: ${values.service}`)}&body=${encodeURIComponent(body)}`;
@@ -117,7 +106,6 @@ export default function ContactForm({compact = false, idPrefix = 'cf', defaultSe
           name: values.name.trim(),
           contact: values.contact.trim(),
           service: values.service,
-          problem: problem || undefined,
           message: values.message.trim(),
           consent: true,
           page: window.location.pathname,
@@ -126,7 +114,7 @@ export default function ContactForm({compact = false, idPrefix = 'cf', defaultSe
       });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       setStatus('success');
-      setValues(initial);
+      setValues(EMPTY);
       track('generate_lead', {form: 'nhan-tu-van', service: values.service});
     } catch (err) {
       setStatus('error');
@@ -141,8 +129,7 @@ export default function ContactForm({compact = false, idPrefix = 'cf', defaultSe
         <Icon name="circle-check" size={28} className={styles.okIcon} />
         <p className={styles.resultTitle}>Đã gửi yêu cầu.</p>
         <p>
-          SOHO đã nhận thông tin và sẽ liên hệ lại qua thông tin bạn để lại. Giờ làm việc: {company.hours}. Cần gấp, gọi{' '}
-          <a href={`tel:${tel}`}>{company.phone}</a>.
+          SOHO sẽ liên hệ lại trong giờ làm việc ({company.hours}). Cần gấp, gọi <a href={`tel:${tel}`}>{company.phone}</a>.
         </p>
       </div>
     );
@@ -169,16 +156,6 @@ export default function ContactForm({compact = false, idPrefix = 'cf', defaultSe
 
   return (
     <form ref={formRef} className={styles.form} onSubmit={onSubmit} noValidate aria-describedby={id('note')}>
-      {problem && (
-        <p className={styles.context}>
-          <span>
-            Vấn đề bạn đã chọn: <strong>{problem}</strong>
-          </span>
-          <button type="button" className={styles.linkBtn} onClick={() => setProblem('')}>
-            Bỏ
-          </button>
-        </p>
-      )}
       <div className={styles.row}>
         <div className={styles.field}>
           <label htmlFor={id('name')}>Họ và tên</label>
@@ -314,7 +291,7 @@ export default function ContactForm({compact = false, idPrefix = 'cf', defaultSe
           )}
         </button>
         <p className={styles.note} id={id('note')}>
-          {ENDPOINT ? 'Thông tin chỉ dùng để SOHO liên hệ lại, không gửi cho bên thứ ba.' : 'Bấm gửi sẽ mở ứng dụng email của bạn với nội dung đã điền sẵn.'}
+          {ENDPOINT ? 'SOHO trả lời trong giờ làm việc. Không gửi thông tin cho bên thứ ba.' : 'Bấm gửi sẽ mở ứng dụng email của bạn với nội dung đã điền sẵn.'}
         </p>
       </div>
     </form>

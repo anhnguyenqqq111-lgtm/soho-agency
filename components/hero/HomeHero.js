@@ -68,7 +68,7 @@ export default function HomeHero() {
         )}
         <p className={styles.cases}>
           <span className={styles.casesLabel}>Một số dự án</span>
-          {cases.map(c => (
+          {cases.filter(c => !c.anonymous).map(c => (
             <a key={c.slug} href={sitePath(`/du-an/${c.slug}`)}>
               {c.name}
             </a>

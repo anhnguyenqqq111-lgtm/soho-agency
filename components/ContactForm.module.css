@@ -232,21 +232,3 @@
     animation: none;
   }
 }
-
-/* Bối cảnh mang theo từ phần chẩn đoán ở hub */
-.context {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px 16px;
-  padding: 12px 14px;
-  border-radius: var(--r-md);
-  background: var(--canvas);
-  border: 1px solid var(--line);
-  font-size: 14.5px;
-  color: var(--ink-2);
-}
-.context strong {
-  color: var(--ink);
-}

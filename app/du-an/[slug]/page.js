@@ -7,13 +7,14 @@ import Section from '../../../components/ui/Section';
 import LinkRows from '../../../components/ui/LinkRows';
 import CtaBand from '../../../components/ui/CtaBand';
 import Icon from '../../../components/ui/Icon';
-import {cases, getCase} from '../../../components/data/cases';
+import {publishedCases, getCase} from '../../../components/data/cases';
 import {getServicePage} from '../../../components/servicePagesData';
 import {sitePath, siteUrl} from '../../../components/paths';
+import SearchTrend from '../../../components/services/proof/SearchTrend';
 
 // Trang chi tiết dự án. URL /du-an/<slug> giữ đúng đường dẫn của sohoagency.vn để không mất giá trị SEO khi chuyển tên miền.
 export function generateStaticParams() {
-  return cases.map(c => ({slug: c.slug}));
+  return publishedCases.map(c => ({slug: c.slug}));
 }
 
 export async function generateMetadata({params}) {
@@ -33,7 +34,7 @@ export default async function ProjectPage({params}) {
   const c = getCase(slug);
   if (!c) notFound();
   const services = (c.services || []).map(getServicePage).filter(Boolean);
-  const others = cases.filter(x => x.slug !== c.slug);
+  const others = publishedCases.filter(x => x.slug !== c.slug);
   const breadcrumb = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -61,7 +62,7 @@ export default async function ProjectPage({params}) {
           visual={
             <img
               src={sitePath(c.image)}
-              alt={`Dự án ${c.name}`}
+              alt={c.imageAlt || `Dự án ${c.name}`}
               width={c.imageWidth}
               height={c.imageHeight}
               style={{objectPosition: c.imagePosition}}
@@ -86,6 +87,26 @@ export default async function ProjectPage({params}) {
                 <dt>Kết quả</dt>
                 <dd>{c.result}</dd>
               </div>
+              {c.series && (
+                <div>
+                  <dt>Số liệu theo tuần</dt>
+                  <dd>
+                    <SearchTrend series={c.series} />
+                  </dd>
+                </div>
+              )}
+              {c.series && c.limits?.length > 0 && (
+                <div>
+                  <dt>Giới hạn của số liệu</dt>
+                  <dd>
+                    <ul className={styles.limits}>
+                      {c.limits.map(l => (
+                        <li key={l}>{l}</li>
+                      ))}
+                    </ul>
+                  </dd>
+                </div>
+              )}
             </dl>
             <aside className={styles.side}>
               {c.kpis ? (
@@ -107,7 +128,7 @@ export default async function ProjectPage({params}) {
               <p className={styles.scope}>{c.scope}</p>
               <p className={styles.source}>
                 <Icon name="file-text" size={16} />
-                Nội dung theo trang dự án SOHO đã đăng trên sohoagency.vn.
+                {c.source || 'Nội dung theo trang dự án SOHO đã đăng trên sohoagency.vn.'}
               </p>
             </aside>
           </div>

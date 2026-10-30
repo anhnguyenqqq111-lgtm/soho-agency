@@ -19,3 +19,14 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
+
+# dữ liệu khách hàng chưa được đồng ý công bố (repo public)
+docs/private/
+
+# ảnh chụp và script lưu trữ Figma (nặng, tạo lại được)
+docs/redesign/figma/baseline/
+docs/redesign/figma/scripts/04-archive-*.js
+docs/redesign/figma/verify/
+
+# Log công cụ Figma (máy cục bộ)
+design/

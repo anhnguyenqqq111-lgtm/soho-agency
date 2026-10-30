@@ -46,6 +46,12 @@
   text-transform: uppercase;
   color: var(--ink-3);
 }
+.limits {
+  margin: 0;
+  padding-left: 1.1em;
+  display: grid;
+  gap: 8px;
+}
 .sideNote {
   font-size: 14px;
   line-height: 1.55;

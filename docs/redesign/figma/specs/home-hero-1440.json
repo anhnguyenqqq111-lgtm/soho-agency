@@ -1,0 +1,2520 @@
+{
+  "page": "01 Design",
+  "section": "02 Heroes",
+  "frame": "home / 1440 / v1",
+  "key": "home-hero-1440",
+  "width": 1440,
+  "bg": "color/role/bg",
+  "x": 0,
+  "y": 0,
+  "sections": [
+    {
+      "key": "header",
+      "name": "header (tham chiếu, giữ nguyên)",
+      "layout": "row",
+      "justify": "between",
+      "align": "center",
+      "pad": [
+        0,
+        140
+      ],
+      "h": 76,
+      "bg": "color/role/bg-inverse",
+      "children": [
+        {
+          "type": "text",
+          "style": "Display/H3",
+          "fill": "color/role/text-inverse",
+          "chars": "SOHO"
+        },
+        {
+          "type": "frame",
+          "layout": "row",
+          "gap": 28,
+          "align": "center",
+          "children": [
+            {
+              "type": "text",
+              "style": "Text/Small",
+              "fill": "color/role/text-inverse",
+              "chars": "Trang chủ"
+            },
+            {
+              "type": "text",
+              "style": "Text/Small",
+              "fill": "color/role/text-inverse",
+              "chars": "Giới thiệu"
+            },
+            {
+              "type": "text",
+              "style": "Text/Small",
+              "fill": "color/role/text-inverse",
+              "chars": "Dịch vụ"
+            },
+            {
+              "type": "text",
+              "style": "Text/Small",
+              "fill": "color/role/text-inverse",
+              "chars": "Dự án"
+            },
+            {
+              "type": "text",
+              "style": "Text/Small",
+              "fill": "color/role/text-inverse",
+              "chars": "Tin tức"
+            },
+            {
+              "type": "text",
+              "style": "Text/Small",
+              "fill": "color/role/text-inverse",
+              "chars": "Liên hệ"
+            },
+            {
+              "type": "frame",
+              "layout": "row",
+              "pad": [
+                14,
+                20
+              ],
+              "radius": "radius/md",
+              "bg": "color/role/primary",
+              "children": [
+                {
+                  "type": "text",
+                  "style": "Text/Button",
+                  "fill": "color/role/text",
+                  "chars": "Nhận tư vấn"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "hero",
+      "name": "hero — bàn làm việc",
+      "layout": "row",
+      "gap": 40,
+      "align": "center",
+      "pad": [
+        96,
+        140,
+        88,
+        140
+      ],
+      "children": [
+        {
+          "type": "frame",
+          "name": "copy",
+          "layout": "col",
+          "gap": 24,
+          "w": 600,
+          "children": [
+            {
+              "type": "text",
+              "style": "Text/Note",
+              "fill": "color/role/text-muted",
+              "chars": "Trang chủ"
+            },
+            {
+              "type": "text",
+              "style": "Display/H1",
+              "maxW": 600,
+              "chars": "SOHO Agency, SEO, quảng cáo và website.\nTừ tìm kiếm đến doanh thu.",
+              "ranges": [
+                {
+                  "text": "doanh thu",
+                  "fill": "gradient/signature-text"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "style": "Text/Lead",
+              "fill": "color/role/text-2",
+              "maxW": 520,
+              "chars": "Từ chiến lược đến tự tay triển khai: SEO, Google Ads, Facebook Ads, website và nhận diện thương hiệu. Báo cáo bằng khách hàng và doanh thu, không bằng lượt xem."
+            },
+            {
+              "type": "frame",
+              "layout": "row",
+              "gap": 24,
+              "align": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "layout": "row",
+                  "pad": [
+                    16,
+                    24
+                  ],
+                  "radius": "radius/md",
+                  "bg": "color/role/primary",
+                  "children": [
+                    {
+                      "type": "text",
+                      "style": "Text/Button",
+                      "fill": "color/role/text",
+                      "chars": "Nhận tư vấn  →"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "style": "Text/Body-Strong",
+                  "fill": "color/role/primary-text",
+                  "chars": "Xem SOHO đã làm gì"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "style": "Text/Small",
+              "fill": "color/role/text-muted",
+              "chars": "Hoặc gọi 033 678 2222 · Thứ 2 đến thứ 6, 8:00 đến 17:00"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "name": "paper — sơ đồ hành trình",
+          "layout": "col",
+          "gap": 28,
+          "pad": 32,
+          "w": 520,
+          "radius": "radius/card",
+          "bg": "color/role/bg-soft",
+          "stroke": "color/role/border",
+          "children": [
+            {
+              "type": "text",
+              "style": "Text/Note",
+              "fill": "color/role/text-muted",
+              "chars": "Ba chặng khách đi qua, SOHO đo ở mỗi chặng một con số"
+            },
+            {
+              "type": "frame",
+              "name": "journey",
+              "layout": "row",
+              "gap": 0,
+              "align": "start",
+              "children": [
+                {
+                  "type": "frame",
+                  "layout": "col",
+                  "gap": 10,
+                  "w": 136,
+                  "children": [
+                    {
+                      "type": "ellipse",
+                      "w": "device/stamp",
+                      "stroke": "color/role/primary-text",
+                      "strokeW": 1.5,
+                      "rotate": -6
+                    },
+                    {
+                      "type": "text",
+                      "style": "Display/H3",
+                      "chars": "Được tìm thấy",
+                      "maxW": 136
+                    },
+                    {
+                      "type": "text",
+                      "style": "Text/Small",
+                      "fill": "color/role/text-2",
+                      "maxW": 128,
+                      "chars": "Độ phủ nhóm từ khóa người muốn mua"
+                    }
+                  ]
+                },
+                {
+                  "type": "line",
+                  "w": 24,
+                  "h": "device/rule-ink",
+                  "bend": 2,
+                  "y": 22
+                },
+                {
+                  "type": "frame",
+                  "layout": "col",
+                  "gap": 10,
+                  "w": 136,
+                  "children": [
+                    {
+                      "type": "ellipse",
+                      "w": "device/stamp",
+                      "stroke": "color/role/primary-text",
+                      "strokeW": 1.5,
+                      "rotate": -6
+                    },
+                    {
+                      "type": "text",
+                      "style": "Display/H3",
+                      "chars": "Được chọn",
+                      "maxW": 136
+                    },
+                    {
+                      "type": "text",
+                      "style": "Text/Small",
+                      "fill": "color/role/text-2",
+                      "maxW": 128,
+                      "chars": "Khách để lại thông tin từ Google"
+                    }
+                  ]
+                },
+                {
+                  "type": "line",
+                  "w": 24,
+                  "h": "device/rule-ink",
+                  "bend": -2,
+                  "y": 22
+                },
+                {
+                  "type": "frame",
+                  "layout": "col",
+                  "gap": 10,
+                  "w": 136,
+                  "children": [
+                    {
+                      "type": "ellipse",
+                      "w": "device/stamp",
+                      "bg": "color/role/primary",
+                      "stroke": "color/role/primary-text",
+                      "strokeW": 1.5,
+                      "rotate": -6
+                    },
+                    {
+                      "type": "text",
+                      "style": "Display/H3",
+                      "chars": "Được tin, mua",
+                      "maxW": 136
+                    },
+                    {
+                      "type": "text",
+                      "style": "Text/Small",
+                      "fill": "color/role/text-2",
+                      "maxW": 128,
+                      "chars": "Chi phí mỗi đơn, lợi nhuận gộp"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "line",
+              "w": 456,
+              "h": "device/rule",
+              "color": "color/role/border"
+            },
+            {
+              "type": "frame",
+              "layout": "row",
+              "justify": "between",
+              "align": "end",
+              "children": [
+                {
+                  "type": "frame",
+                  "name": "sticky-note",
+                  "layout": "col",
+                  "pad": [
+                    16,
+                    18
+                  ],
+                  "radius": "radius/sm",
+                  "bg": "color/role/primary",
+                  "stroke": "color/role/border",
+                  "w": 240,
+                  "rotate": -1.2,
+                  "children": [
+                    {
+                      "type": "text",
+                      "style": "Text/Meta",
+                      "fill": "color/role/text",
+                      "chars": "SOHO BÁO CÁO BẰNG"
+                    },
+                    {
+                      "type": "text",
+                      "style": "Text/Body-Strong",
+                      "fill": "color/role/text",
+                      "maxW": 204,
+                      "chars": "Số đơn và doanh thu, không bằng lượt xem."
+                    }
+                  ]
+                },
+                {
+                  "type": "rect",
+                  "name": "decor flag (ảnh 3D, đặt tĩnh)",
+                  "w": 140,
+                  "h": 140,
+                  "bg": "color/role/surface",
+                  "radius": "radius/md"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "proofline",
+      "name": "kẻ sổ: Google Partner + dự án",
+      "layout": "col",
+      "gap": 20,
+      "align": "start",
+      "pad": [
+        0,
+        140,
+        40,
+        140
+      ],
+      "children": [
+        {
+          "type": "line",
+          "w": 1160,
+          "h": "device/rule-ink",
+          "color": "color/role/text"
+        },
+        {
+          "type": "frame",
+          "layout": "row",
+          "gap": 40,
+          "align": "center",
+          "children": [
+            {
+              "type": "text",
+              "style": "Text/Body-Strong",
+              "chars": "Google Partner 2026 · Xem hồ sơ trên Google"
+            },
+            {
+              "type": "text",
+              "style": "Text/Small",
+              "fill": "color/role/text-muted",
+              "chars": "Một số dự án"
+            },
+            {
+              "type": "text",
+              "style": "Text/Small",
+              "chars": "Le Viva Resort · King Decor Luxury · Kronos Luxury Timepieces · Helen Bridal"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "clients",
+      "name": "Khách hàng đang làm cùng SOHO",
+      "layout": "col",
+      "gap": 24,
+      "pad": [
+        72,
+        140,
+        72,
+        140
+      ],
+      "children": [
+        {
+          "type": "frame",
+          "layout": "row",
+          "gap": 40,
+          "align": "start",
+          "fill": true,
+          "children": [
+            {
+              "type": "frame",
+              "layout": "row",
+              "gap": 16,
+              "align": "start",
+              "w": 760,
+              "children": [
+                {
+                  "type": "frame",
+                  "layout": "row",
+                  "w": "device/stamp",
+                  "h": "device/stamp",
+                  "justify": "center",
+                  "align": "center",
+                  "rotate": -6,
+                  "children": [
+                    {
+                      "type": "text",
+                      "style": "Display/H3",
+                      "chars": "01",
+                      "fill": "color/role/primary-text"
+                    }
+                  ],
+                  "stroke": "color/role/primary-text",
+                  "strokeW": 1.5,
+                  "radius": 22
+                },
+                {
+                  "type": "text",
+                  "style": "Display/H2",
+                  "chars": "Doanh nghiệp đang làm cùng SOHO",
+                  "maxW": 700,
+                  "fill": "color/role/text"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "layout": "row",
+              "gap": 8,
+              "w": 360,
+              "children": [
+                {
+                  "type": "rect",
+                  "w": 16,
+                  "h": "device/rule-ink",
+                  "bg": "color/role/text",
+                  "y": 10
+                },
+                {
+                  "type": "text",
+                  "style": "Text/Note",
+                  "chars": "Bốn khách đồng ý nêu tên. Số liệu chỉ ghi khi khách cho phép.",
+                  "maxW": 330,
+                  "fill": "color/role/text-muted"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "rect",
+          "w": 1160,
+          "h": "device/rule-ink",
+          "bg": "color/role/text"
+        },
+        {
+          "type": "frame",
+          "layout": "row",
+          "gap": 24,
+          "align": "baseline",
+          "pad": [
+            18,
+            0
+          ],
+          "fill": true,
+          "children": [
+            {
+              "type": "frame",
+              "layout": "col",
+              "w": 300,
+              "children": [
+                {
+                  "type": "text",
+                  "style": "Text/Body-Strong",
+                  "chars": "May Mặc CTH",
+                  "fill": "color/role/text"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "layout": "col",
+              "w": 500,
+              "children": [
+                {
+                  "type": "text",
+                  "style": "Text/Body",
+                  "chars": "Sản xuất may mặc B2B và xuất khẩu",
+                  "fill": "color/role/text-2"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "layout": "col",
+              "w": 300,
+              "children": [
+                {
+                  "type": "text",
+                  "style": "Text/Small",
+                  "chars": "SEO B2B, Google Ads",
+                  "fill": "color/role/text-muted"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "layout": "row",
+          "gap": 24,
+          "align": "baseline",
+          "pad": [
+            18,
+            0
+          ],
+          "fill": true,
+          "children": [
+            {
+              "type": "frame",
+              "layout": "col",
+              "w": 300,
+              "children": [
+                {
+                  "type": "text",
+                  "style": "Text/Body-Strong",
+                  "chars": "Studio 1 Nhà",
+                  "fill": "color/role/text"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "layout": "col",
+              "w": 500,
+              "children": [
+                {
+                  "type": "text",
+                  "style": "Text/Body",
+                  "chars": "Studio nhiếp ảnh và dịch vụ cưới",
+                  "fill": "color/role/text-2"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "layout": "col",
+              "w": 300,
+              "children": [
+                {
+                  "type": "text",
+                  "style": "Text/Small",
+                  "chars": "Local SEO, Meta Ads",
+                  "fill": "color/role/text-muted"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "layout": "row",
+          "gap": 24,
+          "align": "baseline",
+          "pad": [
+            18,
+            0
+          ],
+          "fill": true,
+          "children": [
+            {
+              "type": "frame",
+              "layout": "col",
+              "w": 300,
+              "children": [
+                {
+                  "type": "text",
+                  "style": "Text/Body-Strong",
+                  "chars": "Everlog",
+                  "fill": "color/role/text"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "layout": "col",
+              "w": 500,
+              "children": [
+                {
+                  "type": "text",
+                  "style": "Text/Body",
+                  "chars": "Vận tải, logistics và chuỗi cung ứng",
+                  "fill": "color/role/text-2"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "layout": "col",
+              "w": 300,
+              "children": [
+                {
+                  "type": "text",
+                  "style": "Text/Small",
+                  "chars": "SEO B2B",
+                  "fill": "color/role/text-muted"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "layout": "row",
+          "gap": 24,
+          "align": "baseline",
+          "pad": [
+            18,
+            0
+          ],
+          "fill": true,
+          "children": [
+            {
+              "type": "frame",
+              "layout": "col",
+              "w": 300,
+              "children": [
+                {
+                  "type": "text",
+                  "style": "Text/Body-Strong",
+                  "chars": "Fitfood VN",
+                  "fill": "color/role/text"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "layout": "col",
+              "w": 500,
+              "children": [
+                {
+                  "type": "text",
+                  "style": "Text/Body",
+                  "chars": "Healthy meal prep",
+                  "fill": "color/role/text-2"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "layout": "col",
+              "w": 300,
+              "children": [
+                {
+                  "type": "text",
+                  "style": "Text/Small",
+                  "chars": "Paid social, tối ưu CRO",
+                  "fill": "color/role/text-muted"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "services",
+      "name": "12 dịch vụ theo 4 nhóm",
+      "layout": "col",
+      "gap": 40,
+      "pad": [
+        72,
+        140,
+        72,
+        140
+      ],
+      "bg": "color/role/bg-soft",
+      "children": [
+        {
+          "type": "frame",
+          "layout": "row",
+          "gap": 40,
+          "align": "start",
+          "fill": true,
+          "children": [
+            {
+              "type": "frame",
+              "layout": "row",
+              "gap": 16,
+              "align": "start",
+              "w": 760,
+              "children": [
+                {
+                  "type": "frame",
+                  "layout": "row",
+                  "w": "device/stamp",
+                  "h": "device/stamp",
+                  "justify": "center",
+                  "align": "center",
+                  "rotate": -6,
+                  "children": [
+                    {
+                      "type": "text",
+                      "style": "Display/H3",
+                      "chars": "02",
+                      "fill": "color/role/primary-text"
+                    }
+                  ],
+                  "stroke": "color/role/primary-text",
+                  "strokeW": 1.5,
+                  "radius": 22
+                },
+                {
+                  "type": "text",
+                  "style": "Display/H2",
+                  "chars": "Mười hai dịch vụ, bốn nhóm, chọn theo chỗ nghẽn",
+                  "maxW": 700,
+                  "fill": "color/role/text"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "layout": "row",
+              "gap": 8,
+              "w": 360,
+              "children": [
+                {
+                  "type": "rect",
+                  "w": 16,
+                  "h": "device/rule-ink",
+                  "bg": "color/role/text",
+                  "y": 10
+                },
+                {
+                  "type": "text",
+                  "style": "Text/Note",
+                  "chars": "Chưa biết bắt đầu từ đâu? Gửi website, SOHO chỉ ra chỗ nghẽn lớn nhất.",
+                  "maxW": 330,
+                  "fill": "color/role/text-muted"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "layout": "row",
+          "gap": 36,
+          "align": "start",
+          "children": [
+            {
+              "type": "frame",
+              "layout": "col",
+              "gap": 0,
+              "w": 262,
+              "children": [
+                {
+                  "type": "text",
+                  "style": "Text/Note",
+                  "chars": "Được tìm thấy trên Google và AI",
+                  "maxW": 262,
+                  "fill": "color/role/text-muted"
+                },
+                {
+                  "type": "rect",
+                  "w": "device/rule-w-1",
+                  "h": "device/rule-ink",
+                  "bg": "color/role/text",
+                  "y": 8
+                },
+                {
+                  "type": "frame",
+                  "layout": "row",
+                  "gap": 12,
+                  "align": "start",
+                  "pad": [
+                    14,
+                    0
+                  ],
+                  "fill": true,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "layout": "row",
+                      "w": "device/stamp-sm",
+                      "h": "device/stamp-sm",
+                      "justify": "center",
+                      "align": "center",
+                      "rotate": -6,
+                      "stroke": "color/role/primary-text",
+                      "strokeW": 1.5,
+                      "radius": 16,
+                      "children": [
+                        {
+                          "type": "text",
+                          "style": "Text/Meta",
+                          "chars": "01",
+                          "fill": "color/role/primary-text"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "layout": "col",
+                      "gap": 4,
+                      "w": 200,
+                      "children": [
+                        {
+                          "type": "text",
+                          "style": "Text/Body-Strong",
+                          "chars": "SEO tổng thể",
+                          "maxW": 200
+                        },
+                        {
+                          "type": "text",
+                          "style": "Text/Small",
+                          "chars": "Sửa kỹ thuật, nội dung và độ uy tín để khách tự tìm đến",
+                          "maxW": 200,
+                          "fill": "color/role/text-2"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "layout": "row",
+                  "gap": 12,
+                  "align": "start",
+                  "pad": [
+                    14,
+                    0
+                  ],
+                  "fill": true,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "layout": "row",
+                      "w": "device/stamp-sm",
+                      "h": "device/stamp-sm",
+                      "justify": "center",
+                      "align": "center",
+                      "rotate": -6,
+                      "stroke": "color/role/primary-text",
+                      "strokeW": 1.5,
+                      "radius": 16,
+                      "children": [
+                        {
+                          "type": "text",
+                          "style": "Text/Meta",
+                          "chars": "02",
+                          "fill": "color/role/primary-text"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "layout": "col",
+                      "gap": 4,
+                      "w": 200,
+                      "children": [
+                        {
+                          "type": "text",
+                          "style": "Text/Body-Strong",
+                          "chars": "SEO cho AI tìm kiếm",
+                          "maxW": 200
+                        },
+                        {
+                          "type": "text",
+                          "style": "Text/Small",
+                          "chars": "Để AI của Google hiểu đúng và nhắc đúng thương hiệu",
+                          "maxW": 200,
+                          "fill": "color/role/text-2"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "layout": "row",
+                  "gap": 12,
+                  "align": "start",
+                  "pad": [
+                    14,
+                    0
+                  ],
+                  "fill": true,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "layout": "row",
+                      "w": "device/stamp-sm",
+                      "h": "device/stamp-sm",
+                      "justify": "center",
+                      "align": "center",
+                      "rotate": -6,
+                      "stroke": "color/role/primary-text",
+                      "strokeW": 1.5,
+                      "radius": 16,
+                      "children": [
+                        {
+                          "type": "text",
+                          "style": "Text/Meta",
+                          "chars": "03",
+                          "fill": "color/role/primary-text"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "layout": "col",
+                      "gap": 4,
+                      "w": 200,
+                      "children": [
+                        {
+                          "type": "text",
+                          "style": "Text/Body-Strong",
+                          "chars": "SEO địa phương & Google Maps",
+                          "maxW": 200
+                        },
+                        {
+                          "type": "text",
+                          "style": "Text/Small",
+                          "chars": "Google Maps, đánh giá của khách và trang theo khu vực",
+                          "maxW": 200,
+                          "fill": "color/role/text-2"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "layout": "col",
+              "gap": 0,
+              "w": 262,
+              "children": [
+                {
+                  "type": "text",
+                  "style": "Text/Note",
+                  "chars": "Quảng cáo ra đơn",
+                  "maxW": 262,
+                  "fill": "color/role/text-muted"
+                },
+                {
+                  "type": "rect",
+                  "w": "device/rule-w-2",
+                  "h": "device/rule-ink",
+                  "bg": "color/role/text",
+                  "y": 8
+                },
+                {
+                  "type": "frame",
+                  "layout": "row",
+                  "gap": 12,
+                  "align": "start",
+                  "pad": [
+                    14,
+                    0
+                  ],
+                  "fill": true,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "layout": "row",
+                      "w": "device/stamp-sm",
+                      "h": "device/stamp-sm",
+                      "justify": "center",
+                      "align": "center",
+                      "rotate": -6,
+                      "stroke": "color/role/primary-text",
+                      "strokeW": 1.5,
+                      "radius": 16,
+                      "children": [
+                        {
+                          "type": "text",
+                          "style": "Text/Meta",
+                          "chars": "04",
+                          "fill": "color/role/primary-text"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "layout": "col",
+                      "gap": 4,
+                      "w": 200,
+                      "children": [
+                        {
+                          "type": "text",
+                          "style": "Text/Body-Strong",
+                          "chars": "Google Ads & Shopping",
+                          "maxW": 200
+                        },
+                        {
+                          "type": "text",
+                          "style": "Text/Small",
+                          "chars": "Quảng cáo tìm kiếm và mua sắm, tối ưu theo lợi nhuận",
+                          "maxW": 200,
+                          "fill": "color/role/text-2"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "layout": "row",
+                  "gap": 12,
+                  "align": "start",
+                  "pad": [
+                    14,
+                    0
+                  ],
+                  "fill": true,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "layout": "row",
+                      "w": "device/stamp-sm",
+                      "h": "device/stamp-sm",
+                      "justify": "center",
+                      "align": "center",
+                      "rotate": -6,
+                      "stroke": "color/role/primary-text",
+                      "strokeW": 1.5,
+                      "radius": 16,
+                      "children": [
+                        {
+                          "type": "text",
+                          "style": "Text/Meta",
+                          "chars": "05",
+                          "fill": "color/role/primary-text"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "layout": "col",
+                      "gap": 4,
+                      "w": 200,
+                      "children": [
+                        {
+                          "type": "text",
+                          "style": "Text/Body-Strong",
+                          "chars": "Meta & TikTok Ads",
+                          "maxW": 200
+                        },
+                        {
+                          "type": "text",
+                          "style": "Text/Small",
+                          "chars": "Thử mẫu quảng cáo liên tục, nhắc lại người đã quan tâm",
+                          "maxW": 200,
+                          "fill": "color/role/text-2"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "layout": "row",
+                  "gap": 12,
+                  "align": "start",
+                  "pad": [
+                    14,
+                    0
+                  ],
+                  "fill": true,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "layout": "row",
+                      "w": "device/stamp-sm",
+                      "h": "device/stamp-sm",
+                      "justify": "center",
+                      "align": "center",
+                      "rotate": -6,
+                      "stroke": "color/role/primary-text",
+                      "strokeW": 1.5,
+                      "radius": 16,
+                      "children": [
+                        {
+                          "type": "text",
+                          "style": "Text/Meta",
+                          "chars": "06",
+                          "fill": "color/role/primary-text"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "layout": "col",
+                      "gap": 4,
+                      "w": 200,
+                      "children": [
+                        {
+                          "type": "text",
+                          "style": "Text/Body-Strong",
+                          "chars": "Tối ưu chuyển đổi (CRO)",
+                          "maxW": 200
+                        },
+                        {
+                          "type": "text",
+                          "style": "Text/Small",
+                          "chars": "Thêm khách từ chính lượt truy cập đang có",
+                          "maxW": 200,
+                          "fill": "color/role/text-2"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "layout": "col",
+              "gap": 0,
+              "w": 262,
+              "children": [
+                {
+                  "type": "text",
+                  "style": "Text/Note",
+                  "chars": "Website và thương hiệu",
+                  "maxW": 262,
+                  "fill": "color/role/text-muted"
+                },
+                {
+                  "type": "rect",
+                  "w": "device/rule-w-3",
+                  "h": "device/rule-ink",
+                  "bg": "color/role/text",
+                  "y": 8
+                },
+                {
+                  "type": "frame",
+                  "layout": "row",
+                  "gap": 12,
+                  "align": "start",
+                  "pad": [
+                    14,
+                    0
+                  ],
+                  "fill": true,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "layout": "row",
+                      "w": "device/stamp-sm",
+                      "h": "device/stamp-sm",
+                      "justify": "center",
+                      "align": "center",
+                      "rotate": -6,
+                      "stroke": "color/role/primary-text",
+                      "strokeW": 1.5,
+                      "radius": 16,
+                      "children": [
+                        {
+                          "type": "text",
+                          "style": "Text/Meta",
+                          "chars": "07",
+                          "fill": "color/role/primary-text"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "layout": "col",
+                      "gap": 4,
+                      "w": 200,
+                      "children": [
+                        {
+                          "type": "text",
+                          "style": "Text/Body-Strong",
+                          "chars": "Thiết kế website",
+                          "maxW": 200
+                        },
+                        {
+                          "type": "text",
+                          "style": "Text/Small",
+                          "chars": "Website nhanh, chuẩn SEO, dễ quản trị, dẫn khách tới bước liên hệ",
+                          "maxW": 200,
+                          "fill": "color/role/text-2"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "layout": "row",
+                  "gap": 12,
+                  "align": "start",
+                  "pad": [
+                    14,
+                    0
+                  ],
+                  "fill": true,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "layout": "row",
+                      "w": "device/stamp-sm",
+                      "h": "device/stamp-sm",
+                      "justify": "center",
+                      "align": "center",
+                      "rotate": -6,
+                      "stroke": "color/role/primary-text",
+                      "strokeW": 1.5,
+                      "radius": 16,
+                      "children": [
+                        {
+                          "type": "text",
+                          "style": "Text/Meta",
+                          "chars": "08",
+                          "fill": "color/role/primary-text"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "layout": "col",
+                      "gap": 4,
+                      "w": 200,
+                      "children": [
+                        {
+                          "type": "text",
+                          "style": "Text/Body-Strong",
+                          "chars": "Nhận diện thương hiệu",
+                          "maxW": 200
+                        },
+                        {
+                          "type": "text",
+                          "style": "Text/Small",
+                          "chars": "Logo, màu, chữ và cách dùng nhất quán ở mọi điểm chạm",
+                          "maxW": 200,
+                          "fill": "color/role/text-2"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "layout": "row",
+                  "gap": 12,
+                  "align": "start",
+                  "pad": [
+                    14,
+                    0
+                  ],
+                  "fill": true,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "layout": "row",
+                      "w": "device/stamp-sm",
+                      "h": "device/stamp-sm",
+                      "justify": "center",
+                      "align": "center",
+                      "rotate": -6,
+                      "stroke": "color/role/primary-text",
+                      "strokeW": 1.5,
+                      "radius": 16,
+                      "children": [
+                        {
+                          "type": "text",
+                          "style": "Text/Meta",
+                          "chars": "09",
+                          "fill": "color/role/primary-text"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "layout": "col",
+                      "gap": 4,
+                      "w": 200,
+                      "children": [
+                        {
+                          "type": "text",
+                          "style": "Text/Body-Strong",
+                          "chars": "Thiết kế Mobile App",
+                          "maxW": 200
+                        },
+                        {
+                          "type": "text",
+                          "style": "Text/Small",
+                          "chars": "Ứng dụng Android và iOS: đặt lịch, đặt hàng, quản lý nội bộ",
+                          "maxW": 200,
+                          "fill": "color/role/text-2"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "layout": "col",
+              "gap": 0,
+              "w": 262,
+              "children": [
+                {
+                  "type": "text",
+                  "style": "Text/Note",
+                  "chars": "Nội dung và đo lường",
+                  "maxW": 262,
+                  "fill": "color/role/text-muted"
+                },
+                {
+                  "type": "rect",
+                  "w": "device/rule-w-1",
+                  "h": "device/rule-ink",
+                  "bg": "color/role/text",
+                  "y": 8
+                },
+                {
+                  "type": "frame",
+                  "layout": "row",
+                  "gap": 12,
+                  "align": "start",
+                  "pad": [
+                    14,
+                    0
+                  ],
+                  "fill": true,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "layout": "row",
+                      "w": "device/stamp-sm",
+                      "h": "device/stamp-sm",
+                      "justify": "center",
+                      "align": "center",
+                      "rotate": -6,
+                      "stroke": "color/role/primary-text",
+                      "strokeW": 1.5,
+                      "radius": 16,
+                      "children": [
+                        {
+                          "type": "text",
+                          "style": "Text/Meta",
+                          "chars": "10",
+                          "fill": "color/role/primary-text"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "layout": "col",
+                      "gap": 4,
+                      "w": 200,
+                      "children": [
+                        {
+                          "type": "text",
+                          "style": "Text/Body-Strong",
+                          "chars": "Nội dung & PR",
+                          "maxW": 200
+                        },
+                        {
+                          "type": "text",
+                          "style": "Text/Small",
+                          "chars": "Bài chuyên sâu, câu chuyện khách hàng và góc cho báo chí",
+                          "maxW": 200,
+                          "fill": "color/role/text-2"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "layout": "row",
+                  "gap": 12,
+                  "align": "start",
+                  "pad": [
+                    14,
+                    0
+                  ],
+                  "fill": true,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "layout": "row",
+                      "w": "device/stamp-sm",
+                      "h": "device/stamp-sm",
+                      "justify": "center",
+                      "align": "center",
+                      "rotate": -6,
+                      "stroke": "color/role/primary-text",
+                      "strokeW": 1.5,
+                      "radius": 16,
+                      "children": [
+                        {
+                          "type": "text",
+                          "style": "Text/Meta",
+                          "chars": "11",
+                          "fill": "color/role/primary-text"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "layout": "col",
+                      "gap": 4,
+                      "w": 200,
+                      "children": [
+                        {
+                          "type": "text",
+                          "style": "Text/Body-Strong",
+                          "chars": "Đo lường & báo cáo GA4",
+                          "maxW": 200
+                        },
+                        {
+                          "type": "text",
+                          "style": "Text/Small",
+                          "chars": "Đo đúng hành động của khách, báo cáo về một nơi",
+                          "maxW": 200,
+                          "fill": "color/role/text-2"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "layout": "row",
+                  "gap": 12,
+                  "align": "start",
+                  "pad": [
+                    14,
+                    0
+                  ],
+                  "fill": true,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "layout": "row",
+                      "w": "device/stamp-sm",
+                      "h": "device/stamp-sm",
+                      "justify": "center",
+                      "align": "center",
+                      "rotate": -6,
+                      "stroke": "color/role/primary-text",
+                      "strokeW": 1.5,
+                      "radius": 16,
+                      "children": [
+                        {
+                          "type": "text",
+                          "style": "Text/Meta",
+                          "chars": "12",
+                          "fill": "color/role/primary-text"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "layout": "col",
+                      "gap": 4,
+                      "w": 200,
+                      "children": [
+                        {
+                          "type": "text",
+                          "style": "Text/Body-Strong",
+                          "chars": "Tư vấn lộ trình 90 ngày",
+                          "maxW": 200
+                        },
+                        {
+                          "type": "text",
+                          "style": "Text/Small",
+                          "chars": "Biết nên làm gì trước trong 30 đến 90 ngày tới",
+                          "maxW": 200,
+                          "fill": "color/role/text-2"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "layout": "col",
+          "gap": 14,
+          "children": [
+            {
+              "type": "rect",
+              "w": 2,
+              "h": 56,
+              "bg": "color/role/primary"
+            },
+            {
+              "type": "text",
+              "style": "Display/H3",
+              "chars": "Mỗi dịch vụ đo một con số riêng, nhưng tất cả gộp về một chỗ: doanh thu.",
+              "maxW": 560
+            },
+            {
+              "type": "text",
+              "style": "Text/Small",
+              "chars": "Xem SOHO làm việc thế nào  ↓",
+              "fill": "color/role/primary-text"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "method",
+      "name": "Cách SOHO làm việc (bảng đen)",
+      "layout": "col",
+      "gap": 40,
+      "pad": [
+        88,
+        140,
+        88,
+        140
+      ],
+      "bg": "color/role/bg-inverse",
+      "children": [
+        {
+          "type": "frame",
+          "layout": "row",
+          "gap": 40,
+          "align": "start",
+          "fill": true,
+          "children": [
+            {
+              "type": "frame",
+              "layout": "row",
+              "gap": 16,
+              "align": "start",
+              "w": 760,
+              "children": [
+                {
+                  "type": "frame",
+                  "layout": "row",
+                  "w": "device/stamp",
+                  "h": "device/stamp",
+                  "justify": "center",
+                  "align": "center",
+                  "rotate": -6,
+                  "children": [
+                    {
+                      "type": "text",
+                      "style": "Display/H3",
+                      "chars": "03",
+                      "fill": "color/role/warm-2"
+                    }
+                  ],
+                  "stroke": "color/role/warm-2",
+                  "strokeW": 1.5,
+                  "radius": 22
+                },
+                {
+                  "type": "text",
+                  "style": "Display/H2",
+                  "chars": "Khác ở chỗ: đo bằng doanh thu",
+                  "maxW": 700,
+                  "fill": "color/role/text-inverse"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "layout": "row",
+              "gap": 8,
+              "w": 360,
+              "children": [
+                {
+                  "type": "rect",
+                  "w": 16,
+                  "h": "device/rule-ink",
+                  "bg": "color/role/text-inverse",
+                  "y": 10
+                },
+                {
+                  "type": "text",
+                  "style": "Text/Note",
+                  "chars": "Khách đi qua ba chặng. Mỗi chặng, mỗi kênh một con số, gộp về doanh thu.",
+                  "maxW": 330,
+                  "fill": "color/role/text-inverse-muted"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "layout": "row",
+          "gap": 40,
+          "align": "start",
+          "children": [
+            {
+              "type": "frame",
+              "layout": "col",
+              "gap": 0,
+              "w": 520,
+              "children": [
+                {
+                  "type": "rect",
+                  "w": 520,
+                  "h": "device/rule-ink",
+                  "bg": "color/role/text-inverse"
+                },
+                {
+                  "type": "frame",
+                  "layout": "col",
+                  "gap": 6,
+                  "pad": [
+                    18,
+                    0
+                  ],
+                  "fill": true,
+                  "children": [
+                    {
+                      "type": "text",
+                      "style": "Display/H3",
+                      "chars": "Người lập kế hoạch cũng là người làm",
+                      "fill": "color/role/text-inverse",
+                      "maxW": 520
+                    },
+                    {
+                      "type": "text",
+                      "style": "Text/Small",
+                      "chars": "Không chuyển việc cho đội khác sau khi ký hợp đồng. Điều hứa ở buổi đầu là điều được làm.",
+                      "fill": "color/role/text-inverse-muted",
+                      "maxW": 500
+                    },
+                    {
+                      "type": "rect",
+                      "w": 520,
+                      "h": "device/rule",
+                      "bg": "color/role/text-inverse-muted"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "layout": "col",
+                  "gap": 6,
+                  "pad": [
+                    18,
+                    0
+                  ],
+                  "fill": true,
+                  "children": [
+                    {
+                      "type": "text",
+                      "style": "Display/H3",
+                      "chars": "Báo cáo bằng doanh thu",
+                      "fill": "color/role/text-inverse",
+                      "maxW": 520
+                    },
+                    {
+                      "type": "text",
+                      "style": "Text/Small",
+                      "chars": "Mỗi kênh có con số gắn với khách và đơn hàng, không dừng ở lượt xem hay lượt bấm.",
+                      "fill": "color/role/text-inverse-muted",
+                      "maxW": 500
+                    },
+                    {
+                      "type": "rect",
+                      "w": 520,
+                      "h": "device/rule",
+                      "bg": "color/role/text-inverse-muted"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "layout": "col",
+                  "gap": 6,
+                  "pad": [
+                    18,
+                    0
+                  ],
+                  "fill": true,
+                  "children": [
+                    {
+                      "type": "text",
+                      "style": "Display/H3",
+                      "chars": "Tài khoản đứng tên bạn",
+                      "fill": "color/role/text-inverse",
+                      "maxW": 520
+                    },
+                    {
+                      "type": "text",
+                      "style": "Text/Small",
+                      "chars": "Google Ads, Meta, GA4 và báo cáo thuộc doanh nghiệp. SOHO chỉ được cấp quyền.",
+                      "fill": "color/role/text-inverse-muted",
+                      "maxW": 500
+                    },
+                    {
+                      "type": "rect",
+                      "w": 520,
+                      "h": "device/rule",
+                      "bg": "color/role/text-inverse-muted"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "layout": "col",
+                  "gap": 6,
+                  "pad": [
+                    18,
+                    0
+                  ],
+                  "fill": true,
+                  "children": [
+                    {
+                      "type": "text",
+                      "style": "Display/H3",
+                      "chars": "Vòng 2 tuần",
+                      "fill": "color/role/text-inverse",
+                      "maxW": 520
+                    },
+                    {
+                      "type": "text",
+                      "style": "Text/Small",
+                      "chars": "Hai tuần nhìn lại số liệu một lần, rồi quyết định giữ, sửa hay dừng.",
+                      "fill": "color/role/text-inverse-muted",
+                      "maxW": 500
+                    },
+                    {
+                      "type": "rect",
+                      "w": 520,
+                      "h": "device/rule",
+                      "bg": "color/role/text-inverse-muted"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "slot",
+              "name": "slot: JourneyMatrix (sơ đồ live, nét trắng)",
+              "ref": "JourneyMatrix 3 chặng × 4 kênh",
+              "w": 600,
+              "h": 420
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "projects",
+      "name": "Dự án có tên",
+      "layout": "col",
+      "gap": 40,
+      "pad": [
+        72,
+        140,
+        72,
+        140
+      ],
+      "children": [
+        {
+          "type": "frame",
+          "layout": "row",
+          "gap": 40,
+          "align": "start",
+          "fill": true,
+          "children": [
+            {
+              "type": "frame",
+              "layout": "row",
+              "gap": 16,
+              "align": "start",
+              "w": 760,
+              "children": [
+                {
+                  "type": "frame",
+                  "layout": "row",
+                  "w": "device/stamp",
+                  "h": "device/stamp",
+                  "justify": "center",
+                  "align": "center",
+                  "rotate": -6,
+                  "children": [
+                    {
+                      "type": "text",
+                      "style": "Display/H3",
+                      "chars": "04",
+                      "fill": "color/role/primary-text"
+                    }
+                  ],
+                  "stroke": "color/role/primary-text",
+                  "strokeW": 1.5,
+                  "radius": 22
+                },
+                {
+                  "type": "text",
+                  "style": "Display/H2",
+                  "chars": "Bốn dự án, kể bằng việc đã làm",
+                  "maxW": 700,
+                  "fill": "color/role/text"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "layout": "row",
+              "gap": 8,
+              "w": 360,
+              "children": [
+                {
+                  "type": "rect",
+                  "w": 16,
+                  "h": "device/rule-ink",
+                  "bg": "color/role/text",
+                  "y": 10
+                },
+                {
+                  "type": "text",
+                  "style": "Text/Note",
+                  "chars": "Con số chỉ ghi khi dự án đã công bố, kèm khoảng thời gian.",
+                  "maxW": 330,
+                  "fill": "color/role/text-muted"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "layout": "row",
+          "gap": 40,
+          "wrap": true,
+          "rowGap": 48,
+          "w": 1160,
+          "children": [
+            {
+              "type": "frame",
+              "layout": "col",
+              "gap": 12,
+              "w": 560,
+              "children": [
+                {
+                  "type": "rect",
+                  "name": "ảnh ghim: Le Viva Resort",
+                  "w": 560,
+                  "h": 300,
+                  "bg": "color/role/surface",
+                  "stroke": "color/role/border",
+                  "radius": "radius/md"
+                },
+                {
+                  "type": "rect",
+                  "w": 18,
+                  "h": 2,
+                  "bg": "color/role/text",
+                  "rotate": -30
+                },
+                {
+                  "type": "text",
+                  "style": "Display/H3",
+                  "chars": "Le Viva Resort"
+                },
+                {
+                  "type": "text",
+                  "style": "Text/Small",
+                  "chars": "Khu nghỉ dưỡng ven biển ở Mũi Né · Fanpage, quảng cáo Facebook · Từ 01/2025",
+                  "fill": "color/role/text-muted",
+                  "maxW": 560
+                },
+                {
+                  "type": "text",
+                  "style": "Text/Body",
+                  "chars": "Tỉ lệ tin nhắn hỏi đặt phòng gấp 2,3 lần giai đoạn trước.",
+                  "maxW": 560
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "layout": "col",
+              "gap": 12,
+              "w": 560,
+              "children": [
+                {
+                  "type": "rect",
+                  "name": "ảnh ghim: King Decor Luxury",
+                  "w": 560,
+                  "h": 300,
+                  "bg": "color/role/surface",
+                  "stroke": "color/role/border",
+                  "radius": "radius/md"
+                },
+                {
+                  "type": "rect",
+                  "w": 18,
+                  "h": 2,
+                  "bg": "color/role/text",
+                  "rotate": -30
+                },
+                {
+                  "type": "text",
+                  "style": "Display/H3",
+                  "chars": "King Decor Luxury"
+                },
+                {
+                  "type": "text",
+                  "style": "Text/Small",
+                  "chars": "Thiết kế, thi công quán cà phê sân vườn · SEO website, quảng cáo Facebook",
+                  "fill": "color/role/text-muted",
+                  "maxW": 560
+                },
+                {
+                  "type": "text",
+                  "style": "Text/Body",
+                  "chars": "Quảng cáo tạo yêu cầu tư vấn đều, đúng nhóm chủ đầu tư.",
+                  "maxW": 560
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "layout": "col",
+              "gap": 12,
+              "w": 560,
+              "children": [
+                {
+                  "type": "rect",
+                  "name": "ảnh ghim: Kronos Luxury Timepieces",
+                  "w": 560,
+                  "h": 300,
+                  "bg": "color/role/surface",
+                  "stroke": "color/role/border",
+                  "radius": "radius/md"
+                },
+                {
+                  "type": "rect",
+                  "w": 18,
+                  "h": 2,
+                  "bg": "color/role/text",
+                  "rotate": -30
+                },
+                {
+                  "type": "text",
+                  "style": "Display/H3",
+                  "chars": "Kronos Luxury Timepieces"
+                },
+                {
+                  "type": "text",
+                  "style": "Text/Small",
+                  "chars": "Phân phối đồng hồ cao cấp · Fanpage, quảng cáo Facebook",
+                  "fill": "color/role/text-muted",
+                  "maxW": 560
+                },
+                {
+                  "type": "text",
+                  "style": "Text/Body",
+                  "chars": "Tin nhắn hỏi mua tăng mạnh trong các mùa lễ, Tết.",
+                  "maxW": 560
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "layout": "col",
+              "gap": 12,
+              "w": 560,
+              "children": [
+                {
+                  "type": "rect",
+                  "name": "ảnh ghim: Helen Bridal",
+                  "w": 560,
+                  "h": 300,
+                  "bg": "color/role/surface",
+                  "stroke": "color/role/border",
+                  "radius": "radius/md"
+                },
+                {
+                  "type": "rect",
+                  "w": 18,
+                  "h": 2,
+                  "bg": "color/role/text",
+                  "rotate": -30
+                },
+                {
+                  "type": "text",
+                  "style": "Display/H3",
+                  "chars": "Helen Bridal"
+                },
+                {
+                  "type": "text",
+                  "style": "Text/Small",
+                  "chars": "Studio ảnh cưới phong cách Hàn Quốc · Fanpage, quảng cáo Facebook",
+                  "fill": "color/role/text-muted",
+                  "maxW": 560
+                },
+                {
+                  "type": "text",
+                  "style": "Text/Body",
+                  "chars": "Tin nhắn tư vấn tăng rõ trong mùa cưới.",
+                  "maxW": 560
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "layout": "col",
+          "gap": 14,
+          "children": [
+            {
+              "type": "rect",
+              "w": 2,
+              "h": 56,
+              "bg": "color/role/primary"
+            },
+            {
+              "type": "text",
+              "style": "Display/H3",
+              "chars": "Cả bốn đi qua cùng một cách làm: bốn bước, vòng hai tuần.",
+              "maxW": 560
+            },
+            {
+              "type": "text",
+              "style": "Text/Small",
+              "chars": "Xem bốn bước  ↓",
+              "fill": "color/role/primary-text"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "process",
+      "name": "Bốn bước (tờ giấy)",
+      "layout": "col",
+      "gap": 40,
+      "pad": [
+        72,
+        140,
+        72,
+        140
+      ],
+      "bg": "color/role/bg-soft",
+      "children": [
+        {
+          "type": "frame",
+          "layout": "row",
+          "gap": 40,
+          "align": "start",
+          "fill": true,
+          "children": [
+            {
+              "type": "frame",
+              "layout": "row",
+              "gap": 16,
+              "align": "start",
+              "w": 760,
+              "children": [
+                {
+                  "type": "frame",
+                  "layout": "row",
+                  "w": "device/stamp",
+                  "h": "device/stamp",
+                  "justify": "center",
+                  "align": "center",
+                  "rotate": -6,
+                  "children": [
+                    {
+                      "type": "text",
+                      "style": "Display/H3",
+                      "chars": "05",
+                      "fill": "color/role/primary-text"
+                    }
+                  ],
+                  "stroke": "color/role/primary-text",
+                  "strokeW": 1.5,
+                  "radius": 22
+                },
+                {
+                  "type": "text",
+                  "style": "Display/H2",
+                  "chars": "Hợp tác với SOHO diễn ra thế nào",
+                  "maxW": 700,
+                  "fill": "color/role/text"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "layout": "row",
+              "gap": 8,
+              "w": 360,
+              "children": [
+                {
+                  "type": "rect",
+                  "w": 16,
+                  "h": "device/rule-ink",
+                  "bg": "color/role/text",
+                  "y": 10
+                },
+                {
+                  "type": "text",
+                  "style": "Text/Note",
+                  "chars": "Bốn bước, áp dụng cho mọi dự án. Hình 3D calender đặt tĩnh góc phải.",
+                  "maxW": 330,
+                  "fill": "color/role/text-muted"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "slot",
+          "name": "slot: Track 4 bước (sơ đồ live)",
+          "ref": "Track · Tiếp nhận và phân tích nhu cầu → Xây dựng chiến lược, đề xuất giải pháp → Triển khai và quản lý dự án → Đo lường, tối ưu và đồng hành",
+          "w": 1160,
+          "h": 220
+        }
+      ]
+    },
+    {
+      "key": "blog",
+      "name": "Ghi chép mới nhất",
+      "layout": "col",
+      "gap": 24,
+      "pad": [
+        72,
+        140,
+        72,
+        140
+      ],
+      "children": [
+        {
+          "type": "frame",
+          "layout": "row",
+          "gap": 40,
+          "align": "start",
+          "fill": true,
+          "children": [
+            {
+              "type": "frame",
+              "layout": "row",
+              "gap": 16,
+              "align": "start",
+              "w": 760,
+              "children": [
+                {
+                  "type": "frame",
+                  "layout": "row",
+                  "w": "device/stamp",
+                  "h": "device/stamp",
+                  "justify": "center",
+                  "align": "center",
+                  "rotate": -6,
+                  "children": [
+                    {
+                      "type": "text",
+                      "style": "Display/H3",
+                      "chars": "06",
+                      "fill": "color/role/primary-text"
+                    }
+                  ],
+                  "stroke": "color/role/primary-text",
+                  "strokeW": 1.5,
+                  "radius": 22
+                },
+                {
+                  "type": "text",
+                  "style": "Display/H2",
+                  "chars": "Ghi chép mới nhất",
+                  "maxW": 700,
+                  "fill": "color/role/text"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "layout": "row",
+              "gap": 8,
+              "w": 360,
+              "children": [
+                {
+                  "type": "rect",
+                  "w": 16,
+                  "h": "device/rule-ink",
+                  "bg": "color/role/text",
+                  "y": 10
+                },
+                {
+                  "type": "text",
+                  "style": "Text/Note",
+                  "chars": "Hướng dẫn từng bước, viết để đội marketing của bạn làm theo được.",
+                  "maxW": 330,
+                  "fill": "color/role/text-muted"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "rect",
+          "w": 1160,
+          "h": "device/rule-ink",
+          "bg": "color/role/text"
+        },
+        {
+          "type": "frame",
+          "layout": "row",
+          "gap": 24,
+          "align": "baseline",
+          "pad": [
+            18,
+            0
+          ],
+          "fill": true,
+          "children": [
+            {
+              "type": "frame",
+              "layout": "col",
+              "w": 120,
+              "children": [
+                {
+                  "type": "text",
+                  "style": "Text/Meta",
+                  "chars": "SEO",
+                  "fill": "color/role/text-muted"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "layout": "col",
+              "w": 700,
+              "children": [
+                {
+                  "type": "text",
+                  "style": "Display/H3",
+                  "chars": "SEO thời AI Search: doanh nghiệp cần đổi gì?",
+                  "fill": "color/role/text"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "layout": "col",
+              "w": 200,
+              "children": [
+                {
+                  "type": "text",
+                  "style": "Text/Small",
+                  "chars": "Đọc bài  →",
+                  "fill": "color/role/primary-text"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "layout": "row",
+          "gap": 24,
+          "align": "baseline",
+          "pad": [
+            18,
+            0
+          ],
+          "fill": true,
+          "children": [
+            {
+              "type": "frame",
+              "layout": "col",
+              "w": 120,
+              "children": [
+                {
+                  "type": "text",
+                  "style": "Text/Meta",
+                  "chars": "Quảng cáo",
+                  "fill": "color/role/text-muted"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "layout": "col",
+              "w": 700,
+              "children": [
+                {
+                  "type": "text",
+                  "style": "Display/H3",
+                  "chars": "Đo Performance Ads bằng doanh thu thực tế",
+                  "fill": "color/role/text"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "layout": "col",
+              "w": 200,
+              "children": [
+                {
+                  "type": "text",
+                  "style": "Text/Small",
+                  "chars": "Đọc bài  →",
+                  "fill": "color/role/primary-text"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "layout": "row",
+          "gap": 24,
+          "align": "baseline",
+          "pad": [
+            18,
+            0
+          ],
+          "fill": true,
+          "children": [
+            {
+              "type": "frame",
+              "layout": "col",
+              "w": 120,
+              "children": [
+                {
+                  "type": "text",
+                  "style": "Text/Meta",
+                  "chars": "Chiến lược",
+                  "fill": "color/role/text-muted"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "layout": "col",
+              "w": 700,
+              "children": [
+                {
+                  "type": "text",
+                  "style": "Display/H3",
+                  "chars": "Khi nào nên đầu tư SEO và Ads cùng lúc?",
+                  "fill": "color/role/text"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "layout": "col",
+              "w": 200,
+              "children": [
+                {
+                  "type": "text",
+                  "style": "Text/Small",
+                  "chars": "Đọc bài  →",
+                  "fill": "color/role/primary-text"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "cta",
+      "name": "Liên hệ (bảng đen, banner C bên phải)",
+      "layout": "row",
+      "gap": 48,
+      "align": "start",
+      "pad": [
+        88,
+        140,
+        88,
+        140
+      ],
+      "bg": "color/role/bg-inverse",
+      "children": [
+        {
+          "type": "frame",
+          "layout": "col",
+          "gap": 24,
+          "w": 520,
+          "children": [
+            {
+              "type": "text",
+              "style": "Display/H2",
+              "chars": "Kể cho SOHO bài toán hiện tại",
+              "fill": "color/role/text-inverse",
+              "maxW": 520,
+              "ranges": [
+                {
+                  "text": "bài toán hiện tại",
+                  "fill": "gradient/signature-on-dark"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "style": "Text/Lead",
+              "chars": "Gửi website và mục tiêu quý tới. SOHO xem các kênh bạn đang chạy và gửi lại 3 việc nên làm trước.",
+              "fill": "color/role/text-inverse-muted",
+              "maxW": 500
+            },
+            {
+              "type": "frame",
+              "name": "form (tờ giấy)",
+              "layout": "col",
+              "gap": 12,
+              "pad": 24,
+              "w": 520,
+              "radius": "radius/card",
+              "bg": "color/role/bg-soft",
+              "stroke": "color/role/border",
+              "children": [
+                {
+                  "type": "rect",
+                  "w": 472,
+                  "h": 44,
+                  "bg": "color/role/bg",
+                  "stroke": "color/role/border-strong",
+                  "radius": "radius/md"
+                },
+                {
+                  "type": "rect",
+                  "w": 472,
+                  "h": 44,
+                  "bg": "color/role/bg",
+                  "stroke": "color/role/border-strong",
+                  "radius": "radius/md"
+                },
+                {
+                  "type": "rect",
+                  "w": 472,
+                  "h": 44,
+                  "bg": "color/role/bg",
+                  "stroke": "color/role/border-strong",
+                  "radius": "radius/md"
+                },
+                {
+                  "type": "rect",
+                  "w": 472,
+                  "h": 96,
+                  "bg": "color/role/bg",
+                  "stroke": "color/role/border-strong",
+                  "radius": "radius/md"
+                },
+                {
+                  "type": "frame",
+                  "layout": "row",
+                  "pad": [
+                    14,
+                    22
+                  ],
+                  "radius": "radius/md",
+                  "bg": "color/role/primary",
+                  "children": [
+                    {
+                      "type": "text",
+                      "style": "Text/Button",
+                      "chars": "Nhận tư vấn  →"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "rect",
+          "name": "banner C (ảnh 3D hiện có, giữ nguyên)",
+          "w": 592,
+          "h": 560,
+          "bg": "color/role/night-2",
+          "radius": "radius/card"
+        }
+      ]
+    }
+  ]
+}
