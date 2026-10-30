@@ -56,7 +56,7 @@
 }
 .block:hover {
   box-shadow: var(--shadow-card);
-  border-color: #ffc08a;
+  border-color: var(--denim-light);
   transform: translateY(-2px);
 }
 .q {
@@ -72,7 +72,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1.5px solid var(--ink);
+  border: 1.5px solid var(--denim);
   border-right: 0;
   border-radius: 6px 0 0 6px;
 }
@@ -83,13 +83,13 @@
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--ink-2);
+  color: var(--denim);
 }
 .goalSales {
-  border-color: var(--violet);
+  border-color: var(--brand);
 }
 .goalSales span {
-  color: #5a3fe0;
+  color: var(--c-orange-deep);
 }
 
 /* Phễu */
@@ -105,14 +105,16 @@
 }
 /* Brand Kit v3: TOFU cam, MOFU san hô, BOFU tím (chữ trắng đặt ở đầu tím đậm) */
 .s0 {
-  background: linear-gradient(90deg, #ffb061, #f26522);
+  background: linear-gradient(120deg, #5b87c5, #2f63a6);
+  color: #ffffff;
 }
 .s1 {
-  background: linear-gradient(90deg, #ff7a8f, #ec4899);
+  background: linear-gradient(120deg, #2a5d9e, #1e4e8c);
+  color: #ffffff;
   margin-right: 30px;
 }
 .s2 {
-  background: linear-gradient(90deg, #6d28d9, #5b21b6);
+  background: linear-gradient(120deg, #173f73, #0f2340);
   color: var(--white);
   margin-right: 60px;
 }
@@ -170,13 +172,13 @@
 .dest {
   padding: 16px 20px;
   border-radius: var(--r-md);
-  background: var(--ink);
+  background: var(--denim-deep);
   color: #ffffff;
   font-size: 15px;
   text-align: center;
 }
 .dest strong {
-  color: var(--brand);
+  color: #ff8a4c;
 }
 
 @media (max-width: 1000px) {
@@ -233,36 +235,40 @@
   transition: background-color var(--t-fast);
 }
 .wrap:has([data-ch='0']:hover) .cell[data-ch='0'] .band {
-  background: #fff3ea !important;
-  border-color: var(--brand);
+  background: #dbe6f5 !important;
+  border-color: var(--denim);
 }
 .wrap:has([data-ch='0']:hover) .chHead[data-ch='0'] {
-  background: var(--grad-cta);
-  color: var(--ink);
+  background: var(--tint);
+  color: var(--denim);
+  border-color: var(--denim);
 }
 .wrap:has([data-ch='1']:hover) .cell[data-ch='1'] .band {
-  background: #fff3ea !important;
-  border-color: var(--brand);
+  background: #dbe6f5 !important;
+  border-color: var(--denim);
 }
 .wrap:has([data-ch='1']:hover) .chHead[data-ch='1'] {
-  background: var(--grad-cta);
-  color: var(--ink);
+  background: var(--tint);
+  color: var(--denim);
+  border-color: var(--denim);
 }
 .wrap:has([data-ch='2']:hover) .cell[data-ch='2'] .band {
-  background: #fff3ea !important;
-  border-color: var(--brand);
+  background: #dbe6f5 !important;
+  border-color: var(--denim);
 }
 .wrap:has([data-ch='2']:hover) .chHead[data-ch='2'] {
-  background: var(--grad-cta);
-  color: var(--ink);
+  background: var(--tint);
+  color: var(--denim);
+  border-color: var(--denim);
 }
 .wrap:has([data-ch='3']:hover) .cell[data-ch='3'] .band {
-  background: #fff3ea !important;
-  border-color: var(--brand);
+  background: #dbe6f5 !important;
+  border-color: var(--denim);
 }
 .wrap:has([data-ch='3']:hover) .chHead[data-ch='3'] {
-  background: var(--grad-cta);
-  color: var(--ink);
+  background: var(--tint);
+  color: var(--denim);
+  border-color: var(--denim);
 }
 
 /* Cuộn tới: ba chặng sáng lần lượt, dải co hẹp như phễu, thanh doanh thu hiện cuối */
@@ -335,4 +341,35 @@
     width: var(--w);
     transition: none;
   }
+}
+
+/* Bản 12: con số chính SOHO theo dõi ở mỗi chặng (STAGE_MEASURE) có viền cam */
+.key {
+  background: #ffffff !important;
+  box-shadow: inset 0 0 0 1.5px var(--brand);
+}
+.key span:first-child {
+  font-weight: 700;
+}
+.code {
+  color: #ffd2b8 !important;
+}
+.sub {
+  color: rgba(255, 255, 255, 0.82) !important;
+}
+.legend {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-top: 14px;
+  font-size: 13px;
+  color: var(--ink-3);
+}
+.legend i {
+  display: inline-block;
+  width: 18px;
+  height: 12px;
+  border-radius: 4px;
+  box-shadow: inset 0 0 0 1.5px var(--brand);
+  background: #ffffff;
 }

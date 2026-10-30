@@ -1,0 +1,219 @@
+/* Bản 12 "vuông, gọn": lớp dùng chung toàn site (sau tokens, base, diagram).
+   Màu 60-30-10: trắng và #EEF3FA / denim #1E4E8C, #0F2340 / cam #F26522 để nhấn.
+   Chữ ký: khối kính vuông và chữ nhật; nền có nét mảnh 1px thay vì nền một màu. */
+:root {
+  --lines-light: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 900' preserveAspectRatio='xMidYMid slice' fill='none' stroke='%231e4e8c' stroke-opacity='0.16' stroke-width='1'%3E%3Crect x='1010' y='-140' width='560' height='540' rx='56'/%3E%3Crect x='1080' y='-70' width='420' height='400' rx='40' stroke-opacity='0.088'/%3E%3Crect x='-180' y='540' width='540' height='480' rx='56'/%3E%3Cpath d='M-40 880 L720 360'/%3E%3Cpath d='M760 -20 L1500 470' stroke-opacity='0.112'/%3E%3Crect x='620' y='70' width='96' height='96' rx='14' stroke-opacity='0.128'/%3E%3C/svg%3E");
+  --lines-white: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 900' preserveAspectRatio='xMidYMid slice' fill='none' stroke='%231e4e8c' stroke-opacity='0.08' stroke-width='1'%3E%3Crect x='1010' y='-140' width='560' height='540' rx='56'/%3E%3Crect x='1080' y='-70' width='420' height='400' rx='40' stroke-opacity='0.044'/%3E%3Crect x='-180' y='540' width='540' height='480' rx='56'/%3E%3Cpath d='M-40 880 L720 360'/%3E%3Cpath d='M760 -20 L1500 470' stroke-opacity='0.056'/%3E%3Crect x='620' y='70' width='96' height='96' rx='14' stroke-opacity='0.064'/%3E%3C/svg%3E");
+  --lines-dark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 900' preserveAspectRatio='xMidYMid slice' fill='none' stroke='%23a9c8f5' stroke-opacity='0.2' stroke-width='1'%3E%3Crect x='1010' y='-140' width='560' height='540' rx='56'/%3E%3Crect x='1080' y='-70' width='420' height='400' rx='40' stroke-opacity='0.110'/%3E%3Crect x='-180' y='540' width='540' height='480' rx='56'/%3E%3Cpath d='M-40 880 L720 360'/%3E%3Cpath d='M760 -20 L1500 470' stroke-opacity='0.140'/%3E%3Crect x='620' y='70' width='96' height='96' rx='14' stroke-opacity='0.160'/%3E%3C/svg%3E");
+}
+
+/* Chữ nhấn trong tiêu đề: nền cam, chữ navy (thay gradient tím). Mỗi tiêu đề tối đa một cụm. */
+.hl,
+.on-dark .hl {
+  background: var(--hl-bg) !important;
+  color: var(--ink-navy) !important;
+  -webkit-text-fill-color: var(--ink-navy) !important;
+  -webkit-background-clip: border-box !important;
+  background-clip: border-box !important;
+  padding: 0 0.16em !important;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+/* Nhãn nhỏ trên tiêu đề */
+.kicker,
+.eyebrow {
+  display: block;
+  margin: 0 0 14px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--denim);
+}
+.dark .kicker,
+.on-dark .kicker,
+.dark .eyebrow,
+.on-dark .eyebrow {
+  color: #ffb38a;
+}
+
+/* Khối tối: denim đậm có nét mảnh */
+.dark {
+  background: var(--lines-dark) center / cover no-repeat, radial-gradient(55% 75% at 12% 0%, rgba(120, 175, 245, 0.28), transparent 70%), var(--denim-deep);
+}
+
+/* Nền có chi tiết */
+.bg-tint {
+  background: var(--lines-light) center / cover no-repeat, radial-gradient(60% 70% at 88% 8%, rgba(30, 78, 140, 0.12), transparent 70%),
+    radial-gradient(50% 60% at 6% 96%, rgba(255, 255, 255, 0.9), transparent 70%), var(--tint);
+}
+.bg-white {
+  background: var(--lines-white) center / cover no-repeat, radial-gradient(45% 55% at 100% 0%, rgba(201, 216, 238, 0.35), transparent 70%), #ffffff;
+}
+.bg-denim {
+  background: var(--lines-dark) center / cover no-repeat, radial-gradient(55% 75% at 12% 0%, rgba(120, 175, 245, 0.38), transparent 70%),
+    radial-gradient(60% 80% at 95% 100%, rgba(15, 35, 64, 0.65), transparent 70%), var(--denim);
+  color: #ffffff;
+}
+.bg-deep {
+  background: var(--lines-dark) center / cover no-repeat, radial-gradient(50% 70% at 90% 0%, rgba(30, 78, 140, 0.55), transparent 70%), var(--denim-deep);
+  color: #ffffff;
+}
+
+/* Khối kính (chữ ký) */
+.gl {
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  background: linear-gradient(140deg, rgba(255, 255, 255, 0.46) 0%, rgba(255, 255, 255, 0.1) 42%, var(--g2) 100%);
+  -webkit-backdrop-filter: blur(8px) saturate(185%) brightness(1.08);
+  backdrop-filter: blur(8px) saturate(185%) brightness(1.08);
+  box-shadow:
+    inset 0 1.5px 0 rgba(255, 255, 255, 0.98),
+    inset 1.5px 0 0 rgba(255, 255, 255, 0.7),
+    inset -2px -2px 0 -1px var(--rim),
+    inset 0 -14px 28px -16px var(--rim),
+    0 0 30px -8px var(--rim),
+    0 30px 60px -24px var(--gs);
+  overflow: hidden;
+}
+.gl::before,
+.gl::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+}
+.gl::before {
+  background: linear-gradient(115deg, transparent 16%, rgba(255, 255, 255, 0.8) 23%, transparent 33%, transparent 60%, rgba(255, 255, 255, 0.28) 66%, transparent 73%);
+}
+.gl::after {
+  background: radial-gradient(18% 18% at 12% 8%, rgba(255, 255, 255, 0.95), transparent 100%), radial-gradient(30% 30% at 94% 96%, var(--rim), transparent 100%);
+  opacity: 0.7;
+}
+.gl.sm {
+  border-radius: 6px;
+}
+.gl-denim {
+  --g2: rgba(30, 78, 140, 0.22);
+  --rim: rgba(96, 156, 240, 0.9);
+  --gs: rgba(15, 35, 64, 0.22);
+}
+.gl-orange {
+  --g2: rgba(242, 101, 34, 0.3);
+  --rim: rgba(255, 160, 100, 0.95);
+  --gs: rgba(242, 101, 34, 0.25);
+}
+.gl-light {
+  --g2: rgba(201, 216, 238, 0.3);
+  --rim: rgba(255, 255, 255, 0.95);
+  --gs: rgba(15, 35, 64, 0.14);
+}
+.gl-white {
+  --g2: rgba(140, 190, 255, 0.1);
+  --rim: rgba(140, 200, 255, 0.95);
+  --gs: rgba(5, 15, 35, 0.45);
+}
+.gl-in {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+}
+.gl-in img {
+  width: 42%;
+  max-width: 96px;
+  height: auto;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 14px;
+}
+.gl-in svg {
+  width: 38%;
+  max-width: 84px;
+  height: auto;
+  stroke: #ffffff;
+  stroke-width: 1.6;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  filter: drop-shadow(0 0 6px var(--rim));
+}
+.gl-light .gl-in svg,
+.gl-denim .gl-in svg {
+  stroke: var(--denim);
+  filter: drop-shadow(0 1px 0 rgba(255, 255, 255, 0.9));
+}
+@media (max-width: 900px) {
+  .gl {
+    transform: scale(0.6) !important;
+  }
+}
+
+/* Thẻ kính cho nội dung (chữ vẫn đọc rõ) */
+.glassy {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.82), rgba(255, 255, 255, 0.5)) !important;
+  border: 1px solid rgba(255, 255, 255, 0.9) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(150%);
+  backdrop-filter: blur(16px) saturate(150%);
+  box-shadow: inset 1px 1px 0 #ffffff, 0 24px 48px rgba(15, 35, 64, 0.14);
+}
+
+/* "Bạn từng gặp?" */
+.pain-k {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+.on-dark .pain-k {
+  color: #c9d8ee;
+}
+.pain-bub {
+  margin: 0;
+  background: #ffffff;
+  color: var(--ink-navy);
+  border: 1px solid var(--line);
+  border-radius: 18px 18px 18px 4px;
+  padding: 16px 18px;
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+/* Thẻ số xếp lệch: chỉ dùng ở dải kết quả */
+.tilt > :nth-child(4n + 1) {
+  transform: rotate(-3deg) translateY(6px);
+}
+.tilt > :nth-child(4n + 2) {
+  transform: rotate(2.5deg) translateY(-10px);
+}
+.tilt > :nth-child(4n + 3) {
+  transform: rotate(-1.5deg) translateY(12px);
+}
+.tilt > :nth-child(4n + 4) {
+  transform: rotate(3deg) translateY(-4px);
+}
+.tilt > * {
+  transition: transform 350ms var(--ease);
+}
+.tilt > *:hover {
+  transform: rotate(0) translateY(-4px);
+}
+@media (max-width: 900px) {
+  .tilt > :nth-child(odd) {
+    transform: rotate(-1.5deg);
+  }
+  .tilt > :nth-child(even) {
+    transform: rotate(1.5deg);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .tilt > * {
+    transition: none;
+  }
+}

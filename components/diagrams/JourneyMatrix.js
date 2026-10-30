@@ -8,12 +8,14 @@ import {STAGES, JOURNEY_TOTAL} from '../data/journey';
   Rê chuột vào một kênh: cả cột kênh đó được tô (CSS :has, không cần JS).
 */
 const CHANNELS = [
-  {name: 'SEO và AI tìm kiếm', color: '#F3F1F8', ink: '#141218'},
-  {name: 'Quảng cáo', color: '#F3F1F8', ink: '#141218'},
-  {name: 'Nội dung', color: '#F3F1F8', ink: '#141218'},
-  {name: 'Đo lường', color: '#F3F1F8', ink: '#141218'}
+  {name: 'SEO và AI tìm kiếm', color: '#EEF3FA', ink: '#13213A'},
+  {name: 'Quảng cáo', color: '#EEF3FA', ink: '#13213A'},
+  {name: 'Nội dung', color: '#EEF3FA', ink: '#13213A'},
+  {name: 'Đo lường', color: '#EEF3FA', ink: '#13213A'}
 ];
 const WIDTH = ['100%', '88%', '76%'];
+// Ô con số chính mỗi chặng (STAGE_MEASURE trong journey.js): [chặng, cột kênh]
+const KEY = new Set(['0-0', '1-0', '2-1']);
 
 const Arrow = ({i}) => (
   <div className={styles.arrow} aria-hidden="true" style={{'--i': i}}>
@@ -58,7 +60,7 @@ export default function JourneyMatrix() {
                   <span className={styles.chDot} style={{background: c.color}} />
                   {c.name}
                 </p>
-                <div className={styles.band} style={{background: c.color, color: c.ink}}>
+                <div className={`${styles.band} ${KEY.has(`${i}-${j}`) ? styles.key : ''}`} style={{background: c.color, color: c.ink}}>
                   {st.cells[j].map(it => (
                     <span key={it}>{it}</span>
                   ))}
@@ -74,6 +76,10 @@ export default function JourneyMatrix() {
       <div className={styles.dest}>
         {JOURNEY_TOTAL.lead} <strong>{JOURNEY_TOTAL.value}</strong>
       </div>
+      <p className={styles.legend}>
+        <i aria-hidden="true" />
+        Viền cam: con số chính SOHO theo dõi ở chặng đó
+      </p>
     </div>
   );
 }

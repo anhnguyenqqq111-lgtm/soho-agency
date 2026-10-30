@@ -1,16 +1,16 @@
-/* Nút: bo 12px (Brex), phẳng, không bóng. Cam chỉ cho hành động chính; mỗi trang một nhãn chính. */
+/* Nút bản 12: hình viên thuốc, phẳng. Cam chỉ cho hành động chính "Nhận tư vấn"; denim cho hành động phụ có nền; viền cho hành động phụ. */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5em;
-  min-height: 44px;
+  min-height: 48px;
   font-family: var(--font-text);
   font-weight: 700;
   text-decoration: none;
   cursor: pointer;
   border: 1px solid transparent;
-  border-radius: var(--r-md);
+  border-radius: var(--r-pill);
   transition:
     background-color 0.18s ease,
     color 0.18s ease,
@@ -24,7 +24,7 @@
 }
 .md {
   font-size: 15px;
-  padding: 12px 20px;
+  padding: 13px 26px;
 }
 .sm {
   font-size: 14px;
@@ -43,19 +43,27 @@
   color: var(--ink);
 }
 .primary:hover {
-  background: var(--brand-hover);
+  background: #ff7a3a;
   color: var(--ink);
-  transform: translateY(-1px);
+}
+
+.denim {
+  background: var(--denim);
+  color: #ffffff;
+}
+.denim:hover {
+  background: #173f73;
+  color: #ffffff;
 }
 
 .secondary {
   background: var(--white);
   color: var(--ink);
-  border-color: var(--gray-2);
+  border: 1.5px solid var(--ink);
 }
 .secondary:hover {
-  border-color: var(--ink);
-  color: var(--ink);
+  border-color: var(--denim);
+  color: var(--denim);
 }
 
 .text {
@@ -91,7 +99,7 @@
 :global(.dark) .secondary {
   background: transparent;
   color: #ffffff;
-  border-color: rgba(255, 255, 255, 0.35);
+  border-color: rgba(255, 255, 255, 0.7);
 }
 .onDark.secondary:hover,
 :global(.dark) .secondary:hover {
@@ -104,7 +112,7 @@
 }
 .onDark.text:hover,
 :global(.dark) .text:hover {
-  color: var(--warm-2);
+  color: #ffb38a;
 }
 .onDark.text > span:first-child,
 :global(.dark) .text > span:first-child {

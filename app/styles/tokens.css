@@ -1,4 +1,5 @@
-/* SOHO design tokens, bản 11 (tháng 10/2026): màu và chữ theo brief "SOHO Color & Typography".
+/* SOHO design tokens, bản 12 "vuông, gọn" (31/10/2026): denim 60-30-10 thay tím. 60% trắng + xanh rất nhạt #EEF3FA, 30% denim #1E4E8C + denim đậm #0F2340, 10% cam #F26522 để nhấn.
+   Bản 11 (tháng 10/2026): màu và chữ theo brief "SOHO Color & Typography".
    Phông: Bricolage Grotesque (tiêu đề, 600 đến 800) + Plus Jakarta Sans (nội dung, 400 đến 700). Xem DESIGN.md mục 2.3 và 2.6.
    Tỉ lệ màu trên một màn hình: khoảng 70% trắng hoặc nền nhạt + chữ tối, 20% cam, 10% tím, san hô và gradient.
    Gradient Signature chỉ dùng ở điểm nhấn: chữ nhấn .hl, mảng hero, khối CTA tối. Không dùng nền #FFF4E9.
@@ -6,36 +7,36 @@
 :root {
   /* 0. Token Brand Identity 3.0 (brief "Approved Brand Identity 3.0 & Banner"), trỏ về cùng giá trị bên dưới */
   --soho-orange: #f26522;
-  --soho-coral: #ec4899;
-  --soho-violet: #6d28d9;
-  --soho-midnight: #141218;
+  --soho-coral: #5b87c5;
+  --soho-violet: #1e4e8c;
+  --soho-midnight: #0f2340;
   --soho-white: #ffffff;
-  --soho-canvas: #faf9fd;
-  --soho-gradient: linear-gradient(115deg, #f26522 0%, #ec4899 48%, #6d28d9 100%);
+  --soho-canvas: #eef3fa;
+  --soho-gradient: linear-gradient(115deg, #2f63a6 0%, #1e4e8c 55%, #0f2340 100%);
 
   /* 1. Bảng màu gốc trong brief */
   --c-orange: #f26522; /* Brand Orange */
   --c-orange-deep: #c2410c; /* Deep Orange: chữ cam, link. 5,18:1 trên trắng */
-  --c-violet: #6d28d9; /* Violet: 7,1:1 trên trắng */
-  --c-coral: #ec4899; /* Coral: chỉ trong gradient và hình, không làm chữ nhỏ (3,5:1) */
-  --c-ink: #141218; /* Dark Ink */
+  --c-violet: #1e4e8c; /* Denim (thay Violet): 8,4:1 trên trắng */
+  --c-coral: #5b87c5; /* Denim sáng: chỉ trong gradient và hình */
+  --c-ink: #13213a; /* Navy Ink */
   --c-white: #ffffff;
-  --c-canvas: #faf9fd; /* Soft Canvas */
-  --c-border: #e9e5ef;
-  --c-muted: #62616c; /* Muted Text: 6,09:1 trên trắng, 5,81:1 trên Soft Canvas */
+  --c-canvas: #eef3fa; /* Xanh rất nhạt (60%) */
+  --c-border: #d6e2f3;
+  --c-muted: #55627a; /* chữ phụ: 6,1:1 trên trắng, 5,5:1 trên #EEF3FA */
 
   /* 2. Token theo vai trò: component dùng nhóm này */
   --color-bg: var(--c-white);
   --color-bg-soft: var(--c-canvas);
-  --color-surface: #f3f1f8; /* ô icon, nền hover, ảnh chờ: đậm hơn Soft Canvas một bậc để còn thấy trên nền trắng */
+  --color-surface: #e3ebf6; /* ô icon, nền hover, ảnh chờ: đậm hơn Soft Canvas một bậc để còn thấy trên nền trắng */
   --color-bg-inverse: var(--c-ink);
   --color-text: var(--c-ink);
-  --color-text-2: #3a3843; /* đoạn văn phụ: 11,5:1 */
+  --color-text-2: #3b4760; /* đoạn văn phụ: 9,4:1 */
   --color-text-muted: var(--c-muted);
   --color-text-inverse: #ffffff;
-  --color-text-inverse-muted: #b8b5c2; /* chữ phụ trên nền tối: 9,2:1 */
+  --color-text-inverse-muted: #c3d1e6; /* chữ phụ trên denim đậm */
   --color-border: var(--c-border);
-  --color-border-strong: #8e8a99; /* viền ô nhập: 3,36:1, đạt mức 3:1 cho thành phần giao diện */
+  --color-border-strong: #7f8ca3; /* viền ô nhập: 3,36:1, đạt mức 3:1 cho thành phần giao diện */
   --color-primary: var(--c-orange); /* nền nút chính, chữ trên nút luôn là Dark Ink (5,9:1) */
   --color-primary-hover: #e0581c; /* Dark Ink trên nền này: 4,94:1 */
   --color-primary-text: var(--c-orange-deep);
@@ -43,11 +44,11 @@
   --color-secondary: var(--c-violet);
   --color-accent: var(--c-coral);
   --color-focus: var(--c-orange-deep);
-  --gradient-signature: linear-gradient(115deg, #f26522 0%, #ec4899 48%, #6d28d9 100%);
-  --gradient-signature-text: linear-gradient(115deg, #c2410c 0%, #db2777 48%, #6d28d9 100%); /* chữ nhấn trên nền sáng: mọi điểm >= 4,6:1 */
-  --gradient-signature-on-dark: linear-gradient(115deg, #f58a4e 0%, #f472b6 48%, #a78bfa 100%); /* chữ nhấn trên nền tối: >= 6,8:1 */
-  --gradient-ink: linear-gradient(120deg, #141218 10%, #2b1a4a 57%, #5a1f4d 100%);
-  --gradient-soft: linear-gradient(120deg, #faf9fd 5%, #efe9fb 53%, #fce7f1 100%);
+  --gradient-signature: linear-gradient(115deg, #2f63a6 0%, #1e4e8c 55%, #0f2340 100%);
+  --gradient-signature-text: linear-gradient(115deg, #1e4e8c 0%, #1e4e8c 100%); /* chữ nhấn trên nền sáng: mọi điểm >= 4,6:1 */
+  --gradient-signature-on-dark: linear-gradient(115deg, #ffb38a 0%, #ffb38a 100%); /* chữ nhấn trên nền tối: >= 6,8:1 */
+  --gradient-ink: linear-gradient(120deg, #0f2340 10%, #173f73 60%, #1e4e8c 100%);
+  --gradient-soft: linear-gradient(120deg, #ffffff 5%, #eef3fa 60%, #e3ebf6 100%);
 
   /* 3. Tên cũ, trỏ về token mới để component cũ không lỗi */
   --brand: var(--color-primary);
@@ -65,7 +66,7 @@
   --warm-2: #f58a4e;
   --midnight: var(--c-ink);
   --glow-warm:
-    radial-gradient(circle at 80% 18%, rgba(109, 40, 217, 0.14), transparent 40%), radial-gradient(circle at 12% 88%, rgba(242, 101, 34, 0.12), transparent 45%);
+    radial-gradient(circle at 80% 18%, rgba(30, 78, 140, 0.14), transparent 40%), radial-gradient(circle at 12% 88%, rgba(242, 101, 34, 0.1), transparent 45%);
 
   --white: #ffffff;
   --paper: #ffffff;
@@ -77,14 +78,14 @@
   --ink: var(--color-text);
   --ink-2: var(--color-text-2);
   --ink-3: var(--color-text-muted);
-  --silver: #c9c5d3;
+  --silver: #c9d8ee;
   --accent: var(--color-primary-text);
 
   /* Khối tối (portfolio, CTA cuối trang) */
   --night: var(--c-ink);
-  --night-2: #1e1b25;
+  --night-2: #16305a;
   --on-dark: var(--color-text-inverse);
-  --on-dark-2: #d9d6e0;
+  --on-dark-2: #d6e2f3;
   --on-dark-3: var(--color-text-inverse-muted);
   --line-dark: rgba(255, 255, 255, 0.14);
 
@@ -104,12 +105,12 @@
   /* Chữ */
   --font-text: var(--font-jakarta), 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --font-display: var(--font-bricolage), 'Bricolage Grotesque', var(--font-text);
-  --fw-display: 700; /* H1, H2 */
-  --fw-display-strong: 800; /* số lớn, chữ hero */
+  --fw-display: 500; /* H1, H2: Bricolage 500 như canvas */
+  --fw-display-strong: 600; /* số lớn */
   --fw-title: 600; /* H3, tên thẻ */
 
-  --fs-h1: clamp(40px, 5.4vw, 76px);
-  --fs-h2: clamp(30px, 3.6vw, 52px);
+  --fs-h1: clamp(38px, 4.6vw, 62px);
+  --fs-h2: clamp(30px, 3.3vw, 46px);
   --fs-h3: clamp(19px, 1.6vw, 22px);
   --fs-lead: clamp(17px, 1.35vw, 19px);
   --fs-body: 16px;
@@ -127,9 +128,17 @@
 
   --r-pill: 999px;
   --r-xl: 20px;
-  --r-card: 16px;
+  --r-card: 20px;
   --r-md: 12px;
   --r-sm: 6px;
+
+  /* Bản 12: denim và nền có nét mảnh */
+  --denim: #1e4e8c;
+  --denim-deep: #0f2340;
+  --denim-light: #c9d8ee;
+  --tint: #eef3fa;
+  --ink-navy: #13213a;
+  --hl-bg: #f26522;
 
   --shadow-card: none;
   --shadow-pop: 0 20px 50px rgba(20, 18, 24, 0.12);

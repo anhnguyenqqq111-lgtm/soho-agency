@@ -1,4 +1,4 @@
-/* CTA cuối trang, Concept C: nền Midnight, ảnh điêu khắc bên phải, lớp phủ tối phía trái giữ tương phản cho chữ và form */
+/* CTA cuối trang, Concept C: nền denim đậm #0F2340 (bản 12), ảnh điêu khắc bên phải, lớp phủ tối phía trái giữ tương phản cho chữ và form */
 .band {
   position: relative;
   overflow: hidden;
@@ -26,7 +26,7 @@
   position: absolute;
   z-index: -1;
   inset: 0;
-  background: linear-gradient(90deg, rgba(20, 18, 24, 0.94) 0, rgba(20, 18, 24, 0.7) 40%, rgba(20, 18, 24, 0) 58%);
+  background: linear-gradient(90deg, rgba(15, 35, 64, 0.96) 0, rgba(15, 35, 64, 0.72) 42%, rgba(15, 35, 64, 0) 62%);
 }
 .inner {
   position: relative;
@@ -41,8 +41,8 @@
 }
 .title {
   color: #ffffff;
-  font-weight: 800;
-  letter-spacing: -0.03em;
+  font-weight: 500;
+  letter-spacing: -0.02em;
 }
 .text {
   color: var(--on-dark-2);

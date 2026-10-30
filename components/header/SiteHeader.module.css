@@ -1,6 +1,6 @@
 /* Header dính: nền trắng, viền mảnh; đã cuộn thì thêm bóng nhẹ (data-scrolled do HeaderScroll gắn).
    Không dùng backdrop-filter: nó biến header thành khung chứa của phần tử fixed và làm lệch drawer mobile. */
-/* Brand Identity 3.0: header nền Midnight, logo Open Corner bản trắng-cam, chữ menu trắng */
+/* Bản 12: header nền denim đậm #0F2340 (logo Open Corner trắng-cam giữ nguyên), chữ menu in hoa giãn, nút viên thuốc cam */
 .header {
   position: sticky;
   top: 0;
@@ -68,8 +68,10 @@
   border: 0;
   cursor: pointer;
   font: inherit;
-  font-size: 15px;
-  font-weight: 500;
+  font-size: 13.5px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   color: var(--white);
   text-decoration: none;
   white-space: nowrap;
@@ -96,7 +98,7 @@
 }
 /* Đang mở: đổi màu chữ và lật mũi tên, không dùng gạch chân để khỏi nhầm với trang hiện tại */
 .navItem[aria-expanded='true'] {
-  color: var(--warm-2);
+  color: #ffb38a;
 }
 .navItem[aria-expanded='true']::after {
   transform: scaleX(0);
@@ -118,7 +120,8 @@
   gap: 8px;
   min-height: 44px;
   padding: 0 18px;
-  border-radius: var(--r-md);
+  border-radius: var(--r-pill);
+  padding: 0 22px;
   background: var(--brand);
   color: var(--ink);
   font-size: 15px;

@@ -2,54 +2,39 @@ import styles from './page.module.css';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Section from '../components/ui/Section';
-import HomeHero from '../components/hero/HomeHero';
-import Button from '../components/ui/Button';
 import Faq from '../components/ui/Faq';
 import CtaBand from '../components/ui/CtaBand';
 import JourneyMatrix from '../components/diagrams/JourneyMatrix';
-import BlogCard from '../components/BlogCard';
 import LogoMarquee from '../components/proof/LogoMarquee';
-import Testimonials from '../components/proof/Testimonials';
-import ServicesGrid from '../components/home/ServicesGrid';
-import Differentiators from '../components/home/Differentiators';
-import ProjectShowcase from '../components/home/ProjectShowcase';
-import ProcessAccordion from '../components/home/ProcessAccordion';
+import ProblemPicker from '../components/sq/ProblemPicker';
+import Button from '../components/ui/Button';
+import {
+  HomeHeroSq,
+  PersonInCharge,
+  ProcessSteps,
+  ReportExplainer,
+  BlogSection,
+  ResultsScatter,
+  ProjectsSection,
+  QuotesSection,
+  AccountOwnership,
+  AboutSoho
+} from '../components/sq/Blocks';
 import {clients} from '../components/data/clients';
-import {cases} from '../components/data/cases';
 import {partners} from '../components/data/proof';
-import {getCoreServices} from '../components/servicePagesData';
 import {getLatestArticles} from '../components/blogData';
 import {company} from '../components/data/company';
+import {PAGE_CTA} from '../components/data/contactVariants';
 import {siteUrl} from '../components/paths';
 
 /*
-  Thứ tự theo hành trình nhận thức (brief Phase 3), mỗi khối trả lời một câu hỏi:
-  Hero (SOHO là ai) → Trust (vì sao tin) → Dịch vụ (giải quyết gì) → Khác biệt (khác agency khác ở đâu)
-  → Dự án (bằng chứng) → Quy trình (hợp tác thế nào) → Nhận xét → Bài viết (có chuyên môn không) → FAQ → Liên hệ.
-  Câu chữ theo DESIGN.md mục 2.4.
+  Trang chủ bản 12 (canvas "Bản vuông, gọn", 31/10/2026). Đường đọc:
+  Nhận biết vấn đề: hero định vị (người thật) → logo khách → "Bạn đang gặp chuyện nào?" → ba chặng "đo bằng doanh thu"
+  Cân nhắc: một người phụ trách → quy trình 4 bước → báo cáo bằng lời thường → bài viết
+  Củng cố niềm tin: kết quả thật (thẻ nghiêng) → dự án → lời khách → tài khoản đứng tên bạn → về SOHO → câu hỏi thường gặp
+  Để lại liên hệ: form live.
+  Chữ viết theo docs/redesign/WRITING_GUIDE.md.
 */
-const process = [
-  {
-    title: 'Tiếp nhận và phân tích nhu cầu',
-    text: 'Bạn gửi website và mục tiêu. SOHO xem các kênh bạn đang chạy, số liệu, đối thủ, rồi hẹn một buổi gọi 30 phút.',
-    points: ['Xem website, quảng cáo, cách đo đang có', 'Gửi lại một trang ghi chú: chỗ nghẽn chính và 3 việc nên làm trước']
-  },
-  {
-    title: 'Xây dựng chiến lược, đề xuất giải pháp',
-    text: 'Xếp việc theo tác động và độ khó. Ít kênh, làm kỹ. Mỗi việc có con số cần đạt và cách đo.',
-    points: ['Lộ trình 30 đến 90 ngày', 'Báo giá theo phạm vi việc, không bán gói cứng']
-  },
-  {
-    title: 'Triển khai và quản lý dự án',
-    text: 'Người lập kế hoạch cũng là người làm. Việc chia theo vòng 2 tuần, mỗi vòng có giả thuyết, danh sách việc và con số theo dõi.',
-    points: ['Tài khoản quảng cáo, GA4 và báo cáo đứng tên bạn', 'Báo cáo tiến độ mỗi vòng']
-  },
-  {
-    title: 'Đo lường, tối ưu và đồng hành',
-    text: 'Mỗi 2 tuần nhìn lại số liệu: việc ra kết quả thì làm rộng ra, việc không ra thì dừng. Sau khi bàn giao, SOHO vẫn hỗ trợ khi bạn cần.',
-    points: ['Báo cáo bằng khách hàng và doanh thu', 'Giữ, sửa hoặc dừng dựa trên số liệu']
-  }
-];
 const faqs = [
   {
     q: 'SOHO cung cấp những dịch vụ gì?',
@@ -104,121 +89,66 @@ export default function Home() {
     <>
       <Header activeNav="home" />
       <main id="main">
-        <HomeHero />
-
+        {/* Nhận biết vấn đề */}
+        <HomeHeroSq />
         <LogoMarquee clients={clients} label="Doanh nghiệp đang làm cùng SOHO" />
 
         <Section
           id="dich-vu"
-          tone="dark"
-          title={
-            <>
-              Sáu việc SOHO làm <span className="hl">giỏi nhất</span>
-            </>
-          }
-          intro="Mỗi dịch vụ giải một chỗ nghẽn cụ thể trên đường khách tới đơn hàng."
+          tone="soft"
+          kicker="Dịch vụ"
+          title="Bạn đang gặp chuyện nào?"
+          intro="Chọn tình huống giống bạn nhất. SOHO nói rõ vì sao chuyện đó hay xảy ra, nên làm gì trước, và khi nào chưa nên bỏ tiền."
           aside={
-            <Button href="/dich-vu" variant="text" arrow="right">
+            <Button href="/dich-vu" variant="secondary" arrow="right">
               Xem đủ 12 dịch vụ
             </Button>
           }
         >
-          <ServicesGrid services={getCoreServices()} partnerLabel={google ? `${google.name} ${google.year}` : null} />
+          <ProblemPicker idPrefix="home-pk" />
         </Section>
 
         <Section
-          tone="soft"
-          decor="target"
+          id="do-bang-doanh-thu"
+          kicker="Cách SOHO đo"
           title={
             <>
               Khác ở chỗ: <span className="hl">đo bằng doanh thu</span>
             </>
           }
           intro="Khách đi qua ba chặng: tìm thấy bạn, cân nhắc, rồi mua. Ở mỗi chặng, mỗi kênh có một con số riêng, và tất cả gộp về doanh thu."
-          spacing="lg"
         >
-          <Differentiators />
           <JourneyMatrix />
         </Section>
 
-        <Section
-          id="du-an"
-          tone="dark"
-          title={
-            <>
-              Dự án nổi bật, <span className="hl">kể bằng kết quả</span>
-            </>
-          }
-          intro="Con số chỉ ghi khi dự án đã công bố."
-          aside={
-            <Button href="/ket-qua" variant="text" arrow="right">
-              Xem tất cả dự án
-            </Button>
-          }
-        >
-          <ProjectShowcase items={cases.filter(c => !c.anonymous)} />
-        </Section>
+        {/* Cân nhắc */}
+        <PersonInCharge />
+        <ProcessSteps />
+        <ReportExplainer />
+        <BlogSection posts={latest} />
 
-        <Section
-          id="quy-trinh"
-          tone="gray"
-          decor="flag"
-          title={
-            <>
-              Hợp tác với SOHO <span className="hl">diễn ra thế nào</span>
-            </>
-          }
-          intro="Bốn bước, áp dụng cho mọi dự án."
-        >
-          <ProcessAccordion items={process} />
-        </Section>
+        {/* Củng cố niềm tin */}
+        <ResultsScatter />
+        <ProjectsSection />
+        <QuotesSection />
+        <AccountOwnership />
+        <AboutSoho />
 
-        <Section
-          title={
-            <>
-              Khách hàng <span className="hl">nói gì</span>
-            </>
-          }
-        >
-          <Testimonials />
-        </Section>
-
-        <Section
-          tone="gray"
-          title={
-            <>
-              Ghi chép <span className="hl">mới nhất</span>
-            </>
-          }
-          intro="Hướng dẫn từng bước về SEO, quảng cáo và đo lường, viết để đội marketing của bạn làm theo được."
-          aside={
-            <Button href="/blog" variant="text" arrow="right">
-              Đọc tất cả bài viết
-            </Button>
-          }
-        >
-          <div className={styles.blogGrid}>
-            {latest.map((post, i) => (
-              <BlogCard key={post.slug} post={post} delay={i * 100} />
-            ))}
-          </div>
-        </Section>
-
-        <Section
-          decor="chat-bubble"
-          title={
-            <>
-              Câu hỏi <span className="hl">trước khi liên hệ</span>
-            </>
-          }
-          spacing="lg"
-        >
+        <Section id="hoi-dap" kicker="Hỏi đáp" title="Câu hỏi trước khi liên hệ" spacing="md">
           <div className={styles.faqWrap}>
             <Faq items={faqs} />
           </div>
         </Section>
 
-        <CtaBand />
+        {/* Để lại liên hệ: form live */}
+        <CtaBand
+          title={
+            <>
+              {PAGE_CTA.home.lead} <span className="hl">{PAGE_CTA.home.hl}</span>
+            </>
+          }
+          text={PAGE_CTA.home.text}
+        />
         <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(orgLd)}} />
       </main>
       <Footer />

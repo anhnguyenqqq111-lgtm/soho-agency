@@ -1,0 +1,864 @@
+/* Các khối bản 12 "vuông, gọn" (canvas SqHome). Bo góc: khối lớn vuông, nút viên thuốc, ô nhập 12px, thẻ nổi và ảnh 20 đến 28px. */
+
+/* ---------- Hero trang chủ ---------- */
+.hero {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  padding: clamp(56px, 7vw, 96px) 0 clamp(64px, 8vw, 104px);
+}
+.heroGrid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: clamp(32px, 5vw, 72px);
+  align-items: center;
+}
+.heroTitle {
+  font-size: var(--fs-h1);
+  line-height: 1.1;
+}
+.heroLead {
+  margin-top: 20px;
+  max-width: 50ch;
+  font-size: var(--fs-lead);
+  line-height: 1.65;
+  color: var(--ink-2);
+}
+.heroBtns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 32px;
+}
+.heroStats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 220px));
+  gap: 18px;
+  margin-top: 40px;
+}
+.stat {
+  border-radius: 16px;
+  padding: 20px 22px;
+}
+.stat b {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 38px;
+  line-height: 1;
+}
+.stat span {
+  display: block;
+  margin-top: 8px;
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--ink-3);
+}
+.heroArt {
+  position: relative;
+  min-height: 520px;
+  padding: 28px 28px 0;
+}
+.heroPanel {
+  position: absolute;
+  inset: 40px 0 0 40px;
+  border-radius: 28px;
+  background: radial-gradient(70% 60% at 30% 20%, rgba(120, 175, 245, 0.45), transparent 70%), linear-gradient(160deg, #2f63a6, #1e4e8c 55%, #0f2340);
+  overflow: hidden;
+}
+.heroPanel::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--lines-dark) center / cover no-repeat;
+  opacity: 0.8;
+}
+.heroPerson {
+  position: relative;
+  z-index: 2;
+  display: block;
+  width: auto;
+  height: 500px;
+  max-width: none;
+  margin: 0 auto 0 auto;
+  transform: translateX(6%);
+  filter: drop-shadow(0 30px 40px rgba(5, 15, 35, 0.35));
+}
+.heroCap {
+  position: absolute;
+  z-index: 3;
+  right: 0;
+  bottom: 28px;
+  max-width: 250px;
+  padding: 14px 18px;
+  border-radius: 16px;
+  font-size: 13.5px;
+  line-height: 1.45;
+  color: var(--ink);
+}
+.heroCap b {
+  display: block;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--denim);
+  margin-bottom: 4px;
+}
+.partnerPill {
+  position: absolute;
+  z-index: 3;
+  left: 0;
+  top: 88px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px 12px 12px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--ink) !important;
+}
+.partnerPill img {
+  width: 40px;
+  height: 38px;
+}
+
+/* ---------- Section dùng chung: tiêu đề hai cột ---------- */
+.headSplit {
+  display: grid;
+  grid-template-columns: minmax(0, 6fr) minmax(0, 5fr);
+  gap: 24px 48px;
+  align-items: end;
+  margin-bottom: 44px;
+}
+.headSplit p {
+  color: var(--ink-2);
+  font-size: var(--fs-lead);
+  line-height: 1.6;
+}
+:global(.on-dark) .headSplit p {
+  color: var(--on-dark-2);
+}
+.split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(32px, 6vw, 72px);
+  align-items: center;
+}
+.pain {
+  display: grid;
+  gap: 10px;
+  max-width: 46ch;
+  margin-top: 24px;
+}
+.desc {
+  margin-top: 18px;
+  max-width: 50ch;
+  color: var(--ink-2);
+  font-size: 17px;
+  line-height: 1.65;
+}
+:global(.on-dark) .desc {
+  color: var(--on-dark-2);
+}
+
+/* ---------- Người phụ trách ---------- */
+.personCard {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 30px 70px -40px rgba(15, 35, 64, 0.45);
+}
+.personPhoto {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  min-height: 360px;
+  background: radial-gradient(70% 60% at 40% 20%, rgba(120, 175, 245, 0.45), transparent 70%), linear-gradient(160deg, #2f63a6, #1e4e8c 60%, #0f2340);
+  overflow: hidden;
+}
+.personPhoto img {
+  position: relative;
+  z-index: 1;
+  height: 340px;
+  width: auto;
+  max-width: none;
+}
+.personBody {
+  padding: 26px 26px 24px;
+  display: grid;
+  gap: 14px;
+  align-content: center;
+}
+.personRole {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--denim);
+}
+.personDoes {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--ink-2);
+}
+.tl {
+  display: grid;
+  gap: 8px;
+}
+.tlLabel {
+  margin: 0;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--ink-3);
+}
+.tlLabel.soho {
+  color: var(--c-orange-deep);
+}
+.tlRow {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.tlRow::before {
+  content: '';
+  position: absolute;
+  left: 12%;
+  right: 12%;
+  top: 17px;
+  height: 2px;
+  background: var(--denim-light);
+}
+.tlRow.soho::before {
+  background: var(--brand);
+}
+.tlStep {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--ink-3);
+  text-align: center;
+}
+.tlStep i {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 3px solid #ffffff;
+  color: #ffffff;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 13px;
+}
+
+/* ---------- Quy trình 4 khối ---------- */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.step {
+  padding: 40px 28px;
+  background: var(--tint);
+}
+.step:nth-child(2) {
+  background: var(--denim);
+  color: #ffffff;
+}
+.step:nth-child(4) {
+  background: var(--denim-deep);
+  color: #ffffff;
+}
+.stepNum {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 64px;
+  line-height: 1;
+  color: var(--denim);
+}
+.step:nth-child(2) .stepNum,
+.step:nth-child(4) .stepNum {
+  color: #ffffff;
+}
+.stepNum i {
+  font-style: normal;
+  color: var(--brand);
+}
+.step h3 {
+  margin-top: 20px;
+  font-size: 21px;
+}
+.step p {
+  margin-top: 12px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--ink-2);
+}
+.step:nth-child(2) p,
+.step:nth-child(4) p {
+  color: var(--on-dark-2);
+}
+
+/* ---------- Báo cáo bằng lời thường ---------- */
+.doc {
+  background: #ffffff;
+  color: var(--ink);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 30px 70px -30px rgba(5, 15, 35, 0.6);
+}
+.docHead {
+  padding: 22px 28px;
+  border-bottom: 1px solid #e3eaf5;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: end;
+  flex-wrap: wrap;
+}
+.docTag {
+  margin: 0;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--c-orange-deep);
+}
+.docTitle {
+  margin: 4px 0 0;
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+.docDate {
+  margin: 0;
+  font-size: 13px;
+  color: var(--ink-3);
+  white-space: nowrap;
+}
+.docRow {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);
+  gap: 20px;
+  padding: 18px 28px;
+  border-bottom: 1px dashed var(--line);
+  align-items: start;
+}
+.docNum {
+  font-family: var(--font-display);
+  font-size: 34px;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--denim);
+}
+.docNum small {
+  display: block;
+  margin-top: 6px;
+  font-family: var(--font-text);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink-3);
+}
+.docRow p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.5;
+}
+.docRow .mean {
+  margin-top: 6px;
+  font-size: 14px;
+  color: var(--ink-2);
+}
+.mean b {
+  color: var(--c-orange-deep);
+}
+.docWarn {
+  background: #fff4ec;
+}
+.docWarn .docNum {
+  color: var(--c-orange-deep);
+  font-size: 20px;
+  line-height: 1.3;
+}
+.docFoot {
+  margin: 0;
+  padding: 14px 28px 18px;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--ink-3);
+}
+
+/* ---------- Kết quả: thẻ xếp lệch ---------- */
+.kqGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 4fr) minmax(0, 8fr);
+  gap: 48px;
+  align-items: center;
+}
+.scatter {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  align-items: start;
+}
+.sc {
+  position: relative;
+  min-height: 236px;
+  padding: 22px 22px 20px;
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 18px 36px -14px rgba(5, 15, 35, 0.45);
+}
+.scLab {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1.35;
+  max-width: 17ch;
+}
+.scNum {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 60px;
+  line-height: 0.95;
+  text-align: right;
+  letter-spacing: -0.02em;
+}
+.scSrc {
+  margin: 8px 0 0;
+  font-size: 12.5px;
+  line-height: 1.4;
+  text-align: right;
+}
+.scWhite {
+  background: #ffffff;
+  color: var(--ink);
+}
+.scWhite .scLab,
+.scWhite .scSrc {
+  color: var(--ink-3);
+}
+.scWhite .scNum {
+  color: var(--denim);
+}
+.scOrange {
+  background: var(--brand);
+  color: var(--ink);
+}
+.scGlass {
+  color: #ffffff;
+  background: linear-gradient(140deg, rgba(255, 255, 255, 0.26), rgba(15, 35, 64, 0.55) 45%, rgba(15, 35, 64, 0.7));
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  -webkit-backdrop-filter: blur(10px) saturate(180%);
+  backdrop-filter: blur(10px) saturate(180%);
+  box-shadow:
+    inset 0 1.5px 0 rgba(255, 255, 255, 0.95),
+    inset 0 -14px 28px -16px rgba(140, 200, 255, 0.95),
+    0 0 30px -8px rgba(140, 200, 255, 0.8),
+    0 18px 36px -14px rgba(5, 15, 35, 0.45);
+}
+.scGlass .scSrc {
+  color: var(--on-dark-2);
+}
+
+/* ---------- Dự án: bài toán → kết quả ---------- */
+.cases {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+}
+.caseCard {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: var(--ink) !important;
+}
+.caseImg {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  border-radius: 20px;
+  transition: transform 300ms var(--ease);
+}
+.caseCard:hover .caseImg {
+  transform: translateY(-4px);
+}
+.caseTag {
+  align-self: flex-start;
+  background: var(--denim);
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 999px;
+}
+.caseCard h3 {
+  font-size: 20px;
+}
+.caseField {
+  margin: -4px 0 0;
+  font-size: 13px;
+  color: var(--ink-3);
+}
+.caseLine {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--ink-2);
+}
+.caseLine b {
+  color: var(--ink);
+}
+
+/* ---------- Lời khách ---------- */
+.quotes {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+.bigQuote {
+  margin: 0;
+  background: var(--denim);
+  color: #ffffff;
+  padding: 40px;
+  border-radius: 28px;
+}
+.bigQuote p {
+  font-family: var(--font-display);
+  font-size: 24px;
+  line-height: 1.4;
+}
+.bigQuote footer {
+  margin-top: 24px;
+  font-weight: 700;
+}
+.bigQuote footer span {
+  display: block;
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--on-dark-2);
+}
+.smallQuotes {
+  display: grid;
+  gap: 14px;
+}
+.smallQuotes blockquote {
+  margin: 0;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 24px 26px;
+}
+.smallQuotes p {
+  font-weight: 600;
+  line-height: 1.55;
+}
+.smallQuotes footer {
+  margin-top: 10px;
+  font-size: 14px;
+  color: var(--ink-3);
+}
+.quoteSrc {
+  margin: 6px 0 0;
+  font-size: 13px;
+  color: var(--ink-3);
+}
+
+/* ---------- Tài khoản ---------- */
+.acc {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  overflow: hidden;
+  font-size: 15px;
+}
+.acc th {
+  text-align: left;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  padding: 12px 16px;
+  background: #f6f9fd;
+  font-weight: 800;
+}
+.acc td {
+  padding: 14px 16px;
+  border-top: 1px solid #e3eaf5;
+  vertical-align: middle;
+}
+.chip {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 3px 10px;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.chipOwn {
+  background: var(--denim);
+  color: #ffffff;
+}
+.chipAcc {
+  border: 1.5px solid var(--denim);
+  color: var(--denim);
+}
+.stopLabel {
+  margin: 24px 0 10px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--denim);
+}
+.stop {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+.stop div {
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 16px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--ink-2);
+}
+.stop b {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--denim);
+  margin-bottom: 4px;
+}
+
+/* ---------- Về SOHO: ảnh đội ngũ thật ---------- */
+.teamArt {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 16px;
+  align-items: end;
+}
+.teamCard {
+  position: relative;
+  margin: 0;
+  border-radius: 24px;
+  overflow: hidden;
+  background: radial-gradient(70% 60% at 40% 20%, rgba(120, 175, 245, 0.45), transparent 70%), linear-gradient(160deg, #2f63a6, #1e4e8c 60%, #0f2340);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.teamCard img {
+  display: block;
+  width: auto;
+  max-width: none;
+  margin: 18px auto 0;
+}
+.teamCard:first-child img {
+  height: 340px;
+}
+.teamCard:last-child img {
+  height: 270px;
+}
+.teamCard figcaption {
+  position: relative;
+  z-index: 1;
+  background: #ffffff;
+  color: var(--ink);
+  padding: 12px 16px;
+  font-size: 13px;
+  line-height: 1.45;
+  font-weight: 600;
+}
+.count {
+  position: absolute;
+  right: -10px;
+  top: -18px;
+  z-index: 2;
+  background: var(--brand);
+  color: var(--ink);
+  padding: 18px 22px;
+  border-radius: 14px;
+  box-shadow: 0 18px 36px -14px rgba(15, 35, 64, 0.4);
+}
+.count b {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 1;
+}
+.count span {
+  font-size: 13px;
+  font-weight: 600;
+}
+.checks {
+  list-style: none;
+  margin: 28px 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px 24px;
+}
+.checks li {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 1.45;
+}
+.checks li::before {
+  content: '';
+  flex: none;
+  width: 22px;
+  height: 22px;
+  margin-top: 1px;
+  border-radius: 50%;
+  background: var(--brand)
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2313213a' stroke-width='3'><path d='M5 12l5 5L19 7'/></svg>")
+    center / 14px no-repeat;
+}
+
+/* ---------- Bài viết ---------- */
+.posts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+.post {
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  overflow: hidden;
+  color: var(--ink) !important;
+}
+.post img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+.postBody {
+  padding: 24px 26px 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+.postMeta {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--denim);
+}
+.post h3 {
+  font-size: 20px;
+}
+.post p {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--ink-2);
+}
+.more {
+  margin-top: auto;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--denim);
+}
+
+@media (max-width: 1000px) {
+  .heroGrid,
+  .split,
+  .headSplit,
+  .kqGrid,
+  .quotes {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .heroArt {
+    min-height: 0;
+    max-width: 520px;
+  }
+  .heroPerson {
+    height: 420px;
+  }
+  .steps,
+  .cases {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .posts {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+@media (max-width: 640px) {
+  .heroStats,
+  .scatter,
+  .steps,
+  .cases,
+  .checks,
+  .stop {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .heroPerson {
+    height: 360px;
+  }
+  .heroCap {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    margin-top: -40px;
+    max-width: none;
+  }
+  .partnerPill {
+    top: 24px;
+  }
+  .personCard {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .docRow {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 8px;
+  }
+  .teamArt {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.8fr);
+  }
+  .teamCard:first-child img {
+    height: 240px;
+  }
+  .teamCard:last-child img {
+    height: 200px;
+  }
+  .acc {
+    font-size: 13.5px;
+  }
+  .acc th,
+  .acc td {
+    padding: 10px;
+  }
+}

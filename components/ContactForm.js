@@ -43,8 +43,10 @@ function validate(v) {
 
 const EMPTY = {name: '', contact: '', service: '', message: '', consent: false, website_url: ''};
 
-export default function ContactForm({compact = false, idPrefix = 'cf'}) {
-  const [values, setValues] = useState(EMPTY);
+// defaultService: chọn sẵn dịch vụ khi form nằm trên một trang dịch vụ (phải là một giá trị trong SERVICES)
+export default function ContactForm({compact = false, idPrefix = 'cf', defaultService = ''}) {
+  const initial = {...EMPTY, service: SERVICES.includes(defaultService) ? defaultService : ''};
+  const [values, setValues] = useState(initial);
   const [errors, setErrors] = useState({});
   const [tried, setTried] = useState(false);
   const [status, setStatus] = useState('idle'); // idle | sending | success | error | mailto
@@ -114,7 +116,7 @@ export default function ContactForm({compact = false, idPrefix = 'cf'}) {
       });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       setStatus('success');
-      setValues(EMPTY);
+      setValues(initial);
       track('generate_lead', {form: 'nhan-tu-van', service: values.service});
     } catch (err) {
       setStatus('error');

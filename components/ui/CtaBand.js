@@ -19,7 +19,8 @@ export default function CtaBand({
   text = 'Gửi website và mục tiêu quý tới. SOHO xem các kênh bạn đang chạy và gửi lại 3 việc nên làm trước.',
   withForm = true,
   href = '/lien-he',
-  label = 'Nhận tư vấn'
+  label = 'Nhận tư vấn',
+  service = ''
 }) {
   return (
     <section id={id} className={`${styles.band} dark on-dark`}>
@@ -39,7 +40,7 @@ export default function CtaBand({
         </div>
         {withForm && (
           <div className={styles.card} data-reveal="" style={{'--reveal-delay': '150ms'}}>
-            <ContactForm />
+            <ContactForm defaultService={service} />
           </div>
         )}
       </div>

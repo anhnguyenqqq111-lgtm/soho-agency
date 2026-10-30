@@ -2,6 +2,7 @@ import {Bricolage_Grotesque, Plus_Jakarta_Sans} from 'next/font/google';
 import './styles/tokens.css';
 import './styles/base.css';
 import './styles/diagram.css';
+import './styles/sq.css';
 import RevealObserver from '../components/RevealObserver';
 import {siteUrl} from '../components/paths';
 
