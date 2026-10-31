@@ -32,7 +32,7 @@ export const team = [
     role: 'Lên kế hoạch và thực thi marketing cho từng dự án',
     short: 'Người lên kế hoạch và triển khai',
     exp: 'Hơn 10 năm làm marketing',
-    bio: 'Hơn 10 năm làm marketing ở nhiều ngành. Từng là quản lý marketing, chạy chiến dịch ở VNG, FPT, KingSport và nhiều doanh nghiệp nhỏ.',
+    bio: 'Hơn 10 năm làm marketing ở nhiều ngành. Từng là quản lý marketing, chạy chiến dịch ở VNG, FPT, KingSport và nhiều doanh nghiệp lớn nhỏ khác nhau.',
     does: 'Lên kế hoạch cho dự án của bạn, rồi trực tiếp làm SEO, quảng cáo, website và đo lường. Cứ 2 tuần xem lại số liệu và điều chỉnh.',
     photo: '/media/team/hoang-chan-dung.webp',
     width: 420,
