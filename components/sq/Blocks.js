@@ -86,6 +86,7 @@ export function HomeHeroSq() {
         <div className={styles.heroArt}>
           <div className={styles.heroPanel} aria-hidden="true" />
           <Glass tone="light" icon="chart" className="keep-sm" style={{right: '8px', top: '58%', width: 150, height: 96, zIndex: 3, transform: 'rotate(5deg)'}} />
+          {/* Không đặt fetchPriority="high": trên điện thoại ảnh nằm dưới đoạn mở đầu (LCP là chữ), ưu tiên cao làm ảnh giành băng thông với CSS và phông. */}
           {pm && (
             <img
               className={styles.heroPerson}
@@ -95,7 +96,6 @@ export function HomeHeroSq() {
               width={pm.photos.cutout.width}
               height={pm.photos.cutout.height}
               alt={personAlt(pm)}
-              fetchPriority="high"
             />
           )}
           {google?.profileUrl && (
