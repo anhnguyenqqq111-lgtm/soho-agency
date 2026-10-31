@@ -1,5 +1,6 @@
 // Tạo bản thu nhỏ cho ảnh lớn để trình duyệt chọn theo màn hình (srcset), bớt tải ảnh 1600px cho điện thoại.
-// Quy ước: <tên>-480.webp, <tên>-960.webp đặt cạnh ảnh gốc; chỉ tạo khi ảnh gốc rộng hơn mốc đó.
+// Quy ước: <tên>-480.webp, <tên>-640.webp, <tên>-960.webp đặt cạnh ảnh gốc; chỉ tạo khi ảnh gốc rộng hơn mốc đó.
+// Mốc 640: điện thoại DPR 2 hiển thị ảnh ~300px CSS cần ~600px thật, mốc 480 không đủ nét, mốc 960 thừa.
 // Hàm srcSet() trong components/paths.js dựng chuỗi srcset theo đúng quy ước này, nên thêm ảnh mới thì chạy lại:
 //   node scripts/make-image-variants.mjs
 // Kết quả được commit cùng ảnh gốc, build không cần sharp.
@@ -7,7 +8,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import sharp from 'sharp';
 
-export const VARIANT_WIDTHS = [480, 960];
+export const VARIANT_WIDTHS = [480, 640, 960];
 const QUALITY = 78;
 
 const ROOT = path.resolve(new URL('..', import.meta.url).pathname);

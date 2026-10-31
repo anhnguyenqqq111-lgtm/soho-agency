@@ -242,6 +242,18 @@
   line-height: 1.5;
   color: var(--ink-2);
 }
+.team {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+.team[data-count='2'] {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.team[data-count='1'] {
+  grid-template-columns: minmax(0, 1fr);
+}
 .articleCard {
   background: #ffffff;
   border: 1px solid var(--line);
@@ -252,6 +264,10 @@
 @media (max-width: 960px) {
   .heroGrid,
   .deliver {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .team,
+  .team[data-count='2'] {
     grid-template-columns: minmax(0, 1fr);
   }
   .stats {

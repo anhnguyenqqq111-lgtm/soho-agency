@@ -35,7 +35,7 @@
 }
 .thumb img {
   width: 100%;
-  aspect-ratio: 16/10;
+  aspect-ratio: 16/9; /* thumbnail 1200×675; ảnh có tỉ lệ khác được ghi đè bằng style aspect-ratio trên thẻ img */
   object-fit: cover;
   transition: transform var(--t-med);
 }

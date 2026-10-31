@@ -149,6 +149,11 @@ export default function ServiceTemplate({service, article, related}) {
                 </a>
               </div>
             )}
+          </div>
+        </div>
+        {/* Người phụ trách xếp hàng ngang dưới danh sách: để trong cột phải thì cột phải cao gấp đôi cột trái, hở mảng trống. */}
+        {people.length > 0 && (
+          <div className={styles.team} data-count={people.length}>
             {people.map(({p, tag}) => (
               <div key={p.key} className={styles.person}>
                 <div className={styles.personImg}>
@@ -165,7 +170,7 @@ export default function ServiceTemplate({service, article, related}) {
               </div>
             ))}
           </div>
-        </div>
+        )}
       </Section>
 
       {article && (

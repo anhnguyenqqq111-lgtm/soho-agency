@@ -9,9 +9,9 @@ export const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || 'https://soho-agency
   - thêm dấu "/" cuối cho trang (khớp trailingSlash: true), tránh một lần chuyển hướng 308 mỗi lần bấm.
   File có phần mở rộng (.svg, .webp...) giữ nguyên.
 */
-// Chuỗi srcset cho ảnh có bản thu nhỏ do scripts/make-image-variants.mjs tạo (<tên>-480.webp, <tên>-960.webp).
+// Chuỗi srcset cho ảnh có bản thu nhỏ do scripts/make-image-variants.mjs tạo (<tên>-480/-640/-960.webp).
 // width là bề rộng ảnh gốc; chỉ liệt kê bản nhỏ hơn ảnh gốc, đúng quy tắc script đã tạo file.
-export const VARIANT_WIDTHS = [480, 960];
+export const VARIANT_WIDTHS = [480, 640, 960];
 export function srcSet(src, width) {
   if (!src || !width || !src.endsWith('.webp')) return undefined;
   const base = src.slice(0, -5);

@@ -779,7 +779,7 @@
 }
 .post img {
   width: 100%;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 16 / 9; /* thumbnail Image Studio 1200×675, có chữ sát mép nên không cắt */
   object-fit: cover;
 }
 .postBody {

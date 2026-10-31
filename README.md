@@ -87,7 +87,7 @@ public/banners/              banner 3D Concept C cho CTA cuối trang, desktop 1
 public/partners/             huy hiệu đối tác chính thức (google-partner.svg)
 public/clients/              logo khách hàng
 public/blog/                 ảnh bài blog (thumbnail và banner dùng chung), render bằng skill creating-images-soho
-scripts/make-image-variants.mjs tạo bản thu nhỏ -480/-960 cho ảnh lớn (hero, dự án, banner blog, cover bài dịch vụ); chạy lại khi thêm ảnh, commit kết quả. `srcSet()` trong components/paths.js dựng srcset theo quy ước này
+scripts/make-image-variants.mjs tạo bản thu nhỏ -480/-640/-960 cho ảnh lớn (hero, dự án, banner blog, cover bài dịch vụ); chạy lại khi thêm ảnh, commit kết quả. `srcSet()` trong components/paths.js dựng srcset theo quy ước này
 docs/REDESIGN-REPORT.md      báo cáo các đợt redesign; docs/brand/: tài liệu audit tài sản hình và logo
 DESIGN.md                    "tờ giấy" hệ thiết kế: nguồn tham chiếu, màu, phông, luật viết chữ, từ cấm, icon, ảnh (mục 2). Đọc trước khi sửa giao diện hay câu chữ
 ```
