@@ -5,17 +5,20 @@
   --lines-light: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 900' preserveAspectRatio='xMidYMid slice' fill='none' stroke='%231e4e8c' stroke-opacity='0.16' stroke-width='1'%3E%3Crect x='1010' y='-140' width='560' height='540' rx='56'/%3E%3Crect x='1080' y='-70' width='420' height='400' rx='40' stroke-opacity='0.088'/%3E%3Crect x='-180' y='540' width='540' height='480' rx='56'/%3E%3Cpath d='M-40 880 L720 360'/%3E%3Cpath d='M760 -20 L1500 470' stroke-opacity='0.112'/%3E%3Crect x='620' y='70' width='96' height='96' rx='14' stroke-opacity='0.128'/%3E%3C/svg%3E");
   --lines-white: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 900' preserveAspectRatio='xMidYMid slice' fill='none' stroke='%231e4e8c' stroke-opacity='0.08' stroke-width='1'%3E%3Crect x='1010' y='-140' width='560' height='540' rx='56'/%3E%3Crect x='1080' y='-70' width='420' height='400' rx='40' stroke-opacity='0.044'/%3E%3Crect x='-180' y='540' width='540' height='480' rx='56'/%3E%3Cpath d='M-40 880 L720 360'/%3E%3Cpath d='M760 -20 L1500 470' stroke-opacity='0.056'/%3E%3Crect x='620' y='70' width='96' height='96' rx='14' stroke-opacity='0.064'/%3E%3C/svg%3E");
   --lines-dark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 900' preserveAspectRatio='xMidYMid slice' fill='none' stroke='%23a9c8f5' stroke-opacity='0.2' stroke-width='1'%3E%3Crect x='1010' y='-140' width='560' height='540' rx='56'/%3E%3Crect x='1080' y='-70' width='420' height='400' rx='40' stroke-opacity='0.110'/%3E%3Crect x='-180' y='540' width='540' height='480' rx='56'/%3E%3Cpath d='M-40 880 L720 360'/%3E%3Cpath d='M760 -20 L1500 470' stroke-opacity='0.140'/%3E%3Crect x='620' y='70' width='96' height='96' rx='14' stroke-opacity='0.160'/%3E%3C/svg%3E");
+  --hl-crayon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 100' preserveAspectRatio='none'%3E%3Cfilter id='e' x='-6%' y='-18%' width='112%' height='136%'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.08 0.16' numOctaves='2' seed='3'/%3E%3CfeDisplacementMap in='SourceGraphic' scale='9' xChannelSelector='R' yChannelSelector='G'/%3E%3C/filter%3E%3Cfilter id='s' x='0' y='0' width='100%' height='100%'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.02 0.45' numOctaves='3' seed='7' result='n'/%3E%3CfeColorMatrix in='n' type='matrix' values='0 0 0 0 0.949 0 0 0 0 0.396 0 0 0 0 0.133 0 0 0 0.75 0.6' result='c'/%3E%3CfeComposite in='c' in2='SourceGraphic' operator='in'/%3E%3C/filter%3E%3Cg filter='url(%23e)'%3E%3Cg filter='url(%23s)'%3E%3Crect x='6' y='13' width='382' height='30' rx='9' opacity='0.93' transform='rotate(-1.3 197.0 28.0)'/%3E%3Crect x='16' y='31' width='378' height='30' rx='9' opacity='0.82' transform='rotate(0.9 205.0 46.0)'/%3E%3Crect x='0' y='49' width='376' height='30' rx='9' opacity='0.95' transform='rotate(-0.7 188.0 64.0)'/%3E%3Crect x='22' y='66' width='370' height='27' rx='9' opacity='0.86' transform='rotate(1.2 207.0 79.5)'/%3E%3Crect x='132' y='20' width='124' height='52' rx='9' opacity='0.5' transform='rotate(0.4 194.0 46.0)'/%3E%3Crect x='300' y='36' width='84' height='44' rx='9' opacity='0.45' transform='rotate(-2.0 342.0 58.0)'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 
 /* Chữ nhấn trong tiêu đề: nền cam, chữ navy (thay gradient tím). Mỗi tiêu đề tối đa một cụm. */
 .hl,
 .on-dark .hl {
-  background: var(--hl-bg) !important;
+  /* Vệt bút sáp cam tô tay: SVG nền gồm 6 nét ngang chồng lệch (dài ngắn, cao thấp, đậm nhạt khác nhau), vân sọc để lộ nền, mép răng cưa
+     (feTurbulence + feDisplacementMap). Mỗi dòng chữ một vệt riêng nhờ box-decoration-break. */
+  background: var(--hl-crayon) center / 100% 100% no-repeat !important;
   color: var(--ink-navy) !important;
   -webkit-text-fill-color: var(--ink-navy) !important;
   -webkit-background-clip: border-box !important;
   background-clip: border-box !important;
-  padding: 0 0.16em !important;
+  padding: 0.02em 0.24em !important;
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
 }

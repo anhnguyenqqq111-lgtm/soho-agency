@@ -125,11 +125,11 @@ export const cases = [
     imagePosition: 'center',
     imageAlt: 'Trang chủ website studio1nha.vn, chụp ngày 31/10/2026',
     kpis: [
-      {value: '102', label: 'lượt nhấp từ Google vào 6 trang mới, 22/09–22/10/2026'},
+      {value: '102', label: 'lượt nhấp từ Google vào 6 trang mới, 22/09–22/10/2026; phần lớn từ người đang tìm dịch vụ (“studio chụp ảnh”, “chụp ảnh studio tphcm”), không phải tìm tên studio'},
       {value: '4.771', label: 'lượt hiển thị trên Google của 6 trang đó trong cùng kỳ'},
       {value: '4,7', label: 'vị trí trung bình của bài tổng quan với từ khóa “studio chụp ảnh”, thường nằm trong top 5'}
     ],
-    result: '6 trang mới có 102 lượt nhấp từ Google trong tháng đầu. Tổng lượt nhấp từ Google của cả website chưa thay đổi rõ.',
+    result: '6 trang mới có 102 lượt nhấp từ Google trong tháng đầu, phần lớn từ người đang tìm studio chụp ảnh ở TP.HCM chứ không phải tìm tên studio. Tổng lượt nhấp của cả website chưa thay đổi rõ.',
     meta: 'Studio 1 Nhà, studio chụp ảnh ở TP.HCM: SOHO làm SEO và viết nội dung, 6 trang mới có 102 lượt nhấp từ Google trong tháng đầu. Số liệu từ Search Console.',
     context:
       'Website đã có nhiều trang về ảnh cưới, phim trường và bảng giá. Nhưng người tìm “studio chụp ảnh” nói chung lại hỏi chuyện khác: chụp ảnh cặp đôi, giá bao nhiêu, cần chuẩn bị gì. Chưa có trang nào trả lời những câu đó.',

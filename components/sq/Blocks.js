@@ -272,7 +272,7 @@ export function ReportExplainer({tone = 'denim'}) {
             <div>
               <p>Lượt nhấp từ Google vào 6 bài này</p>
               <p className={styles.mean}>
-                <b>Nghĩa là:</b> cứ khoảng {ratio} lượt hiển thị thì có 1 lượt nhấp.
+                <b>Nghĩa là:</b> cứ khoảng {ratio} lượt hiển thị thì có 1 lượt nhấp; phần lớn từ người đang tìm dịch vụ (“studio chụp ảnh”, “chụp ảnh studio tphcm”), không phải tìm tên studio.
               </p>
             </div>
           </div>
@@ -371,10 +371,10 @@ export function ResultsScatter({id = 'ket-qua', title = 'Kết quả thật từ
           )}
           {st && (
             <a href={sitePath(`/du-an/${st.slug}/`)} className={`${styles.sc} ${styles.scGlass}`}>
-              <p className={styles.scLab}>Lượt nhấp từ Google</p>
+              <p className={styles.scLab}>Lượt nhấp từ người đang tìm dịch vụ</p>
               <div>
                 <div className={styles.scNum}>{st.kpis[0].value}</div>
-                <p className={styles.scSrc}>tháng đầu của 6 bài viết mới · Studio 1 Nhà, 22/09–22/10/2026</p>
+                <p className={styles.scSrc}>vào 6 bài mới trong tháng đầu, từ các từ khóa như “studio chụp ảnh”, “chụp ảnh studio tphcm” · Studio 1 Nhà, 22/09–22/10/2026</p>
               </div>
             </a>
           )}
