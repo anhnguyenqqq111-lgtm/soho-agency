@@ -83,7 +83,7 @@ components/
   articles/*.js              bài viết dài cho từng dịch vụ (markdown trong chuỗi)
 
 public/assets/brand/approved/ logo đã duyệt: SOHO_01_Open_Corner_APPROVED.svg (header, footer) và soho-logo-open-corner.png (schema, chia sẻ)
-public/banners/              banner 3D Concept C cho CTA cuối trang, desktop 1920×960 + mobile 900×1200
+public/media/cta/            khối kính 3D của khối liên hệ cuối trang (ảnh minh họa Codex vẽ, prompt ở docs/private/raw/cta/)
 public/partners/             huy hiệu đối tác chính thức (google-partner.svg)
 public/clients/              logo khách hàng
 public/blog/                 ảnh bài blog (thumbnail và banner dùng chung), render bằng skill creating-images-soho

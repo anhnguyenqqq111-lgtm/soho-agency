@@ -130,7 +130,7 @@ Ngoại lệ được giữ: tên sản phẩm (Google Ads, Meta, TikTok, GA4, L
 ### 2.5b. Logo và banner (Brand Identity 3.0)
 
 - Logo: SOHO Concept 01 Open Corner, file đã duyệt `public/assets/brand/approved/SOHO_01_Open_Corner_APPROVED.svg` (bản trắng-cam cho nền tối), dùng nguyên vẹn ở header (52px, 44px trên mobile) và footer (72px). Logo cũ giữ nguyên trong `public/brand/` và `public/assets/brand/` làm bản dự phòng.
-- Banner: CTA cuối trang dùng Concept C "Chromatic Impact" (`public/banners/C_*`); Concept A ở hero đã bỏ, hero trang chủ dùng ảnh người phụ trách. Ảnh không chứa chữ, nút hay logo; mobile dùng ảnh dựng riêng 900×1200, chỉ lấy phần hình ở đáy.
+- Khối liên hệ cuối trang: nền denim đậm có vân kẻ, mép trên gợn sóng có đường sáng cam; bên phải khối kính 3D "cuộc trao đổi thành 3 việc" (ảnh minh họa, `public/media/cta/`) và 5 ô kính biểu tượng kênh. Banner 3D tím cam (Concept A, C) đã bỏ vì lệch tông. Không dùng logo Google, Meta làm biểu tượng kính.
 - Thẻ dịch vụ: 6 hình hình học SVG vẽ tay (`components/home/ServiceArt.js`), không phải ảnh render 3D.
 
 ### 2.6. Màu (`app/styles/tokens.css`)

@@ -14,15 +14,18 @@ export default function LogoMarquee({clients, label = 'Doanh nghiệp đang làm
   );
   return (
     <section className={styles.band} aria-label={label}>
+      {/* Đóng khung: nhãn nằm trên viền khung như một tab, logo chạy bên trong */}
       <div className="container">
-        <p className={styles.label}>{label}</p>
-      </div>
-      <div className={styles.viewport}>
-        <div className={styles.track}>
-          {row(false)}
-          {row(true)}
-          {row(true)}
-          {row(true)}
+        <div className={styles.frame}>
+          <p className={styles.label}>{label}</p>
+          <div className={styles.viewport}>
+            <div className={styles.track}>
+              {row(false)}
+              {row(true)}
+              {row(true)}
+              {row(true)}
+            </div>
+          </div>
         </div>
       </div>
     </section>

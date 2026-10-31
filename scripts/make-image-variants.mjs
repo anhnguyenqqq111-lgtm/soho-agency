@@ -20,8 +20,7 @@ const TARGETS = [
   {dir: 'projects', match: /\.webp$/},
   {dir: 'blog/generated/banners', match: /\.webp$/},
   {dir: 'blog/generated/thumbnails', match: /\.webp$/},
-  {dir: 'media/articles', match: /-hero\.webp$/, recursive: true},
-  {dir: 'banners', match: /^C_desktop_1920x960\.webp$/}
+  {dir: 'media/articles', match: /-hero\.webp$/, recursive: true}
 ];
 
 const isVariant = name => /-(480|960)\.webp$/.test(name);

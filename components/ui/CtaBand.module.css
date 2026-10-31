@@ -1,43 +1,48 @@
-/* CTA cuối trang, Concept C: nền denim đậm #0F2340 (bản 12), ảnh điêu khắc bên phải, lớp phủ tối phía trái giữ tương phản cho chữ và form */
+/* CTA cuối trang: nền .bg-deep (denim đậm, vân kẻ) đặt ở section; trái tiêu đề + form, phải khối kính 3D và biểu tượng kênh */
 .band {
   position: relative;
   overflow: hidden;
   isolation: isolate;
-  background: var(--soho-midnight);
   color: #ffffff;
-  padding-block: var(--space-md);
+  padding-block: calc(var(--space-md) + 56px) var(--space-md);
+  /* Mép trên gợn sóng: khối chồng lên đáy khối trước 72px, phần trên đường sóng trong suốt */
+  margin-top: -72px;
+  --wave-h: 80px;
+  -webkit-mask:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 80' preserveAspectRatio='none'%3E%3Cpath d='M0 40 C120 8 240 8 360 30 S600 70 720 44 S960 0 1080 22 S1320 64 1440 30 L1440 80 L0 80 Z'/%3E%3C/svg%3E") top / 100% var(--wave-h) no-repeat,
+    linear-gradient(#000, #000) 0 calc(var(--wave-h) - 1px) / 100% 100% no-repeat;
+  mask:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 80' preserveAspectRatio='none'%3E%3Cpath d='M0 40 C120 8 240 8 360 30 S600 70 720 44 S960 0 1080 22 S1320 64 1440 30 L1440 80 L0 80 Z'/%3E%3C/svg%3E") top / 100% var(--wave-h) no-repeat,
+    linear-gradient(#000, #000) 0 calc(var(--wave-h) - 1px) / 100% 100% no-repeat;
 }
-.art {
+/* Đường sáng chạy theo mép sóng (cam ở giữa, xanh nhạt hai đầu) */
+.wave {
   position: absolute;
-  z-index: -2;
-  inset: 0;
-  pointer-events: none;
-}
-.art img {
-  display: block;
+  z-index: 2;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 100%;
-  max-width: none;
-  object-fit: cover;
-  object-position: right center;
-}
-.band::before {
-  content: '';
-  position: absolute;
-  z-index: -1;
-  inset: 0;
-  background: linear-gradient(90deg, rgba(15, 35, 64, 0.96) 0, rgba(15, 35, 64, 0.72) 42%, rgba(15, 35, 64, 0) 62%);
+  height: var(--wave-h);
+  pointer-events: none;
 }
 .inner {
   position: relative;
   z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  gap: 40px;
+  align-items: center;
+}
+.main {
+  display: grid;
+  gap: 32px;
+  justify-items: start;
 }
 .copy {
   display: grid;
   gap: 16px;
   justify-items: start;
-  max-width: min(52%, 620px);
-  margin-bottom: 32px;
+  max-width: 620px;
 }
 .title {
   color: #ffffff;
@@ -53,35 +58,23 @@
   margin-top: 8px;
 }
 .card {
-  max-width: min(52%, 620px);
+  width: 100%;
+  max-width: 620px;
   background: var(--white);
   color: var(--ink);
   border-radius: 20px;
   padding: 32px;
-  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
 }
 @media (max-width: 900px) {
   .band {
-    padding-top: 0;
+    --wave-h: 48px;
+    margin-top: -44px;
+    padding-top: calc(var(--space-md) + 32px);
   }
-  .band::before {
-    display: none;
-  }
-  .art {
-    position: relative;
-    z-index: 0;
-    inset: auto;
-    display: block;
-    width: 100%;
-    margin-bottom: -12%;
-  }
-  .art img {
-    height: auto;
-    aspect-ratio: 900 / 600;
-    object-fit: cover;
-    object-position: center bottom;
-    -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 20%, #000 70%, transparent 100%);
-    mask-image: linear-gradient(180deg, transparent 0, #000 20%, #000 70%, transparent 100%);
+  .inner {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
   }
   .copy,
   .card {
@@ -91,5 +84,30 @@
 @media (max-width: 640px) {
   .card {
     padding: 22px;
+  }
+}
+
+/* Khối kính 3D (ảnh Codex, nền ảnh gần #0F2340 hòa vào nền khối, mép mờ dần) và 5 ô kính biểu tượng kênh */
+.block {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.block img {
+  display: block;
+  width: 100%;
+  max-width: 440px;
+  height: auto;
+  -webkit-mask-image: radial-gradient(closest-side, #000 72%, transparent 100%);
+  mask-image: radial-gradient(closest-side, #000 72%, transparent 100%);
+}
+/* Biểu tượng kênh: to hơn mặc định của .gl-in để nhận ra ngay */
+.block :global(.gl-in) svg {
+  width: 52%;
+  stroke-width: 1.8;
+}
+@media (max-width: 900px) {
+  .block img {
+    max-width: 300px;
   }
 }
