@@ -39,7 +39,7 @@ import {siteUrl} from '../components/paths';
 const faqs = [
   {
     q: 'SOHO cung cấp những dịch vụ gì?',
-    a: 'Sáu dịch vụ chính: SEO website, Google Ads, Facebook và TikTok Ads, thiết kế website, nhận diện thương hiệu, thiết kế Mobile App. Ngoài ra có SEO cho AI tìm kiếm, SEO địa phương và Google Maps, tối ưu trang đích, nội dung và PR, đo lường GA4, tư vấn lộ trình 90 ngày. Bạn có thể làm một dịch vụ hoặc gộp theo mục tiêu.'
+    a: 'Bảy dịch vụ chính: SEO website, Google Ads, Facebook Ads, TikTok Ads, thiết kế website, nhận diện thương hiệu, thiết kế Mobile App. Ngoài ra có SEO cho AI tìm kiếm, SEO địa phương và Google Maps, tối ưu trang đích, nội dung và PR, đo lường GA4, tư vấn lộ trình 90 ngày. Bạn có thể làm một dịch vụ hoặc gộp theo mục tiêu.'
   },
   {
     q: 'Chi phí phụ thuộc vào yếu tố nào?',
@@ -102,7 +102,7 @@ export default function Home() {
           intro="Chọn tình huống giống bạn nhất. SOHO chỉ ra nguyên nhân thường gặp, việc nên làm trước và khi nào chưa nên chi tiền."
           aside={
             <Button href="/dich-vu" variant="secondary" arrow="right">
-              Xem đủ 12 dịch vụ
+              Xem đủ 13 dịch vụ
             </Button>
           }
         >

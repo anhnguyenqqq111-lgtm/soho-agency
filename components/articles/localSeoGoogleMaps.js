@@ -4,7 +4,7 @@ export const localSeoGoogleMapsArticle = {
     'Ba yếu tố Google dùng để xếp hạng trên Maps, cách làm hồ sơ đầy đủ, xin đánh giá đúng chính sách, giữ tên, địa chỉ, số điện thoại nhất quán.',
   readingTime: '11 phút đọc',
   updatedDate: '31/10/2026',
-  author: {name: 'Nguyễn Thế Tuấn Anh', role: 'Phụ trách chiến lược tăng trưởng, SOHO Agency'},
+  authorKey: 'seo',
   cover: {
     src: '/media/articles/local-seo-google-maps/local-seo-google-maps-hero.webp',
     alt: 'Tiêu đề SEO Google Maps: tối ưu Google Business Profile bên cạnh bản đồ cắm ghim nhiều màu',
@@ -137,7 +137,7 @@ Cách làm đơn giản:
 
 Trên website, đặt thông tin này ở chân trang và trang liên hệ, khớp từng chữ với hồ sơ Google. Có thể thêm dữ liệu có cấu trúc LocalBusiness, đoạn mã giúp Google đọc đúng tên, địa chỉ, giờ mở cửa. Theo [Google](https://developers.google.com/search/docs/appearance/structured-data/local-business), mỗi địa điểm thực tế nên được khai báo thành một mục riêng.
 
-Phần tối ưu nội dung, tốc độ và cấu trúc của cả website là việc riêng của SEO website, xem [trang SEO tổng thể](/dich-vu/seo-tong-the/).
+Phần tối ưu nội dung, tốc độ và cấu trúc của cả website là việc riêng của SEO website, xem [trang SEO tổng thể](/seo-tong-the/).
 `
     },
     {
@@ -171,7 +171,7 @@ Hồ sơ đã xác minh có phần [Hiệu suất](https://support.google.com/bu
 
 Ba chỉ số nên theo dõi hằng tháng là cuộc gọi, lượt chỉ đường và lượt nhấp vào website, vì chúng gần với khách thật nhất. Lượt xem tăng mà cuộc gọi không đổi thường là dấu hiệu hồ sơ chưa đủ thuyết phục: ảnh, đánh giá hoặc giờ mở cửa có vấn đề.
 
-Nếu muốn biết khách từ Maps vào website có điền form, đặt lịch hay không, có thể gắn mã theo dõi vào link website trên hồ sơ và nối với công cụ đo trên website. Cách cài xem [trang GA4 và Looker Studio](/dich-vu/ga4-looker-dashboard/).
+Nếu muốn biết khách từ Maps vào website có điền form, đặt lịch hay không, có thể gắn mã theo dõi vào link website trên hồ sơ và nối với công cụ đo trên website. Cách cài xem [trang GA4 và Looker Studio](/ga4-looker-dashboard/).
 
 Với cửa hàng, hãy hỏi thêm khách mới "anh chị biết tiệm qua đâu" và ghi lại. Con số này đơn giản nhưng bù được phần mà công cụ không đo hết, như khách xem Maps rồi đi bộ tới mà không gọi.
 `

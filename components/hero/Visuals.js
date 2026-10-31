@@ -4,17 +4,17 @@
 */
 import styles from './Hero.module.css';
 
-// Dịch vụ: 9 ô dịch vụ, sáng lên luân phiên
 export function ServicesVisual({labels = []}) {
-  // Dải rộng 4 cột × 3 hàng cho 12 dịch vụ, ô sáng lên luân phiên
+  // Dải rộng 4 cột, số hàng theo số dịch vụ, ô sáng lên luân phiên
   const cols = 4,
     w = 280,
     h = 104,
     gx = 24,
     gy = 20;
+  const rows = Math.max(1, Math.ceil(labels.length / cols));
   return (
-    <svg viewBox="0 0 1208 372" className={styles.svg} aria-hidden="true">
-      {labels.slice(0, 12).map((label, i) => {
+    <svg viewBox={`0 0 1208 ${16 + rows * h + (rows - 1) * gy}`} className={styles.svg} aria-hidden="true">
+      {labels.map((label, i) => {
         const x = 8 + (i % cols) * (w + gx),
           y = 8 + Math.floor(i / cols) * (h + gy);
         return (

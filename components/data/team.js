@@ -66,7 +66,7 @@ export const team = [
     photo: '/media/team/pony-chan-dung.webp',
     width: 420,
     height: 502,
-    services: ['content-marketing-pr', 'meta-tiktok-ads'],
+    services: ['content-marketing-pr', 'facebook-ads', 'tiktok-ads'],
     consentRef: 'SOHO gửi ảnh và tên ngày 31/10/2026, yêu cầu đăng lên web'
   },
   {

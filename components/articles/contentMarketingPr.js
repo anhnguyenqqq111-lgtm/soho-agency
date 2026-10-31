@@ -4,7 +4,7 @@ export const contentMarketingPrArticle = {
     'Làm content marketing theo giai đoạn mua, lập lịch nội dung, dùng câu chuyện khách hàng, làm PR báo chí đúng Luật Quảng cáo và đo hiệu quả bài viết.',
   readingTime: '11 phút đọc',
   updatedDate: '31/10/2026',
-  author: {name: 'Nguyễn Thế Tuấn Anh', role: 'Phụ trách chiến lược tăng trưởng, SOHO Agency'},
+  authorKey: 'content',
   cover: {
     src: '/media/articles/content-marketing-pr/content-marketing-pr-hero.webp',
     alt: 'Máy đánh chữ cũ có tờ giấy trắng, cạnh tiêu đề Content marketing và PR báo chí cho doanh nghiệp',
@@ -43,7 +43,7 @@ Vì vậy trước khi viết, mỗi bài cần trả lời được ba câu:
 - Khách có câu hỏi gì mà bài trả lời tốt hơn bài của người khác?
 - Đọc xong, khách nên làm gì tiếp: đọc bài khác, xem bảng giá hay liên hệ?
 
-Phần kỹ thuật giúp bài lên Google (tốc độ trang, cấu trúc website, liên kết) thuộc về SEO, xem ở [trang SEO tổng thể](/dich-vu/seo-tong-the/). Bài này nói chuyện viết gì, cho ai, đăng ở đâu và đo thế nào.
+Phần kỹ thuật giúp bài lên Google (tốc độ trang, cấu trúc website, liên kết) thuộc về SEO, xem ở [trang SEO tổng thể](/seo-tong-the/). Bài này nói chuyện viết gì, cho ai, đăng ở đâu và đo thế nào.
 `
     },
     {
@@ -73,7 +73,7 @@ Nguồn tốt nhất nằm ngay trong doanh nghiệp: tin nhắn fanpage, Zalo k
 
 Dự án SOHO làm cho [Studio 1 Nhà](/du-an/seo-studio-chup-anh-tphcm/) đi đúng đường này. SOHO xếp từ khóa khách hay tìm khi chọn studio theo từng giai đoạn: tìm hiểu, so sánh, hỏi giá, liên hệ. Sau đó viết 1 bài tổng quan và 5 bài trả lời câu khách hay hỏi. Sáu trang mới có 102 lượt nhấp từ Google trong tháng đầu (Search Console, 22/09–22/10/2026). Đây mới là lượt nhấp, chưa phải lượt đặt lịch. Tổng lượt nhấp của cả website cũng chưa thay đổi rõ.
 
-Muốn bài được trích trong AI Overview hay ChatGPT thì có thêm yêu cầu riêng, xem ở [trang SEO AI Overview](/dich-vu/seo-ai-overview/).
+Muốn bài được trích trong AI Overview hay ChatGPT thì có thêm yêu cầu riêng, xem ở [trang SEO AI Overview](/seo-ai-overview/).
 `
     },
     {
@@ -133,7 +133,7 @@ Câu hỏi khách hay hỏi nhất, sản phẩm bán chạy theo mùa, lỗi kh
 
 ### Đánh giá của khách
 
-Đánh giá trên Google, fanpage hay sàn thương mại điện tử có thể trích vào bài, ghi rõ nguồn. Không viết đánh giá giả, không sửa lời khách. Cách xin đánh giá trên Google đúng chính sách xem ở [trang SEO Google Maps](/dich-vu/local-seo-google-maps/).
+Đánh giá trên Google, fanpage hay sàn thương mại điện tử có thể trích vào bài, ghi rõ nguồn. Không viết đánh giá giả, không sửa lời khách. Cách xin đánh giá trên Google đúng chính sách xem ở [trang SEO Google Maps](/local-seo-google-maps/).
 `
     },
     {
@@ -190,14 +190,14 @@ Theo [Analytics Help](https://support.google.com/analytics/answer/12195621), GA4
 
 Tầng quan trọng nhất và khó đo nhất. Nên làm cả hai cách:
 
-- **Trên website**: đo hành động liên hệ (gửi form, bấm gọi, bấm Zalo) và xem người liên hệ đã đọc bài nào trước đó. Cài đặt đo xem ở [trang GA4 và báo cáo Looker](/dich-vu/ga4-looker-dashboard/).
+- **Trên website**: đo hành động liên hệ (gửi form, bấm gọi, bấm Zalo) và xem người liên hệ đã đọc bài nào trước đó. Cài đặt đo xem ở [trang GA4 và báo cáo Looker](/ga4-looker-dashboard/).
 - **Khi nói chuyện với khách**: nhân viên hỏi "anh chị biết bên em qua đâu?" rồi ghi vào sổ khách hàng. Nhiều khách đọc trên điện thoại, vài ngày sau mới gọi, công cụ đo không ghi nhận hết.
 
 ### Đọc số cho đúng
 
 Bài tìm hiểu nên chấm bằng lượt hiển thị và lượt đọc. Bài ở giai đoạn mua nên chấm bằng số khách liên hệ sau khi đọc.
 
-Content marketing thường cần vài tháng mới thấy rõ xu hướng, tùy độ cạnh tranh của ngành và tình trạng website. Cần khách ngay trong tháng thì nên chạy quảng cáo song song, xem [trang quảng cáo Google](/dich-vu/google-ads-shopping/) hoặc [trang quảng cáo Facebook, TikTok](/dich-vu/meta-tiktok-ads/).
+Content marketing thường cần vài tháng mới thấy rõ xu hướng, tùy độ cạnh tranh của ngành và tình trạng website. Cần khách ngay trong tháng thì nên chạy quảng cáo song song, xem [trang quảng cáo Google](/google-ads-shopping/) hoặc trang [quảng cáo Facebook](/facebook-ads/), [quảng cáo TikTok](/tiktok-ads/).
 `
     },
     {

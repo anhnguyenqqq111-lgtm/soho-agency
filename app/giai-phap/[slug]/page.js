@@ -11,6 +11,7 @@ import Button from '../../../components/ui/Button';
 import CtaBand from '../../../components/ui/CtaBand';
 import {getSolutionPage, solutionPages} from '../../../components/solutionPagesData';
 import {getServicePage} from '../../../components/servicePagesData';
+import {servicePath} from '../../../components/paths';
 
 export function generateStaticParams() {
   return solutionPages.map(solution => ({slug: solution.slug}));
@@ -60,7 +61,7 @@ export default async function SolutionDetailPage({params}) {
               </>
             }
           >
-            <LinkRows items={services.map(s => ({title: s.menuTitle, desc: s.menuDesc, href: `/dich-vu/${s.slug}`}))} />
+            <LinkRows items={services.map(s => ({title: s.menuTitle, desc: s.menuDesc, href: servicePath(s.slug)}))} />
           </Section>
         )}
         <CtaBand />

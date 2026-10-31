@@ -1,30 +1,25 @@
 import {notFound} from 'next/navigation';
-import Header from '../../../components/Header';
-import Footer from '../../../components/Footer';
-import ServiceTemplate from '../../../components/sq/ServiceTemplate';
-import {getServicePage, servicePages} from '../../../components/servicePagesData';
-import {getServiceArticle} from '../../../components/serviceArticlesData';
-import ReadingProgress from '../../../components/article/ReadingProgress';
-import {siteUrl} from '../../../components/paths';
+import Header from '../Header';
+import Footer from '../Footer';
+import ServiceTemplate from '../sq/ServiceTemplate';
+import {getServicePage, servicePages} from '../servicePagesData';
+import {getServiceArticle} from '../serviceArticlesData';
+import ReadingProgress from '../article/ReadingProgress';
+import {siteUrl, servicePath} from '../paths';
 
-export function generateStaticParams() {
-  return servicePages.map(service => ({slug: service.slug}));
-}
-
-export async function generateMetadata({params}) {
-  const {slug} = await params;
+// Trang chi tiết dịch vụ. Route là app/[slug]/page.js (URL /<slug>/, không có tiền tố /dich-vu/), dùng chung với bài blog.
+export function serviceMetadata(slug) {
   const service = getServicePage(slug);
   if (!service) return {title: 'Không tìm thấy dịch vụ'};
   const article = getServiceArticle(slug);
   return {
     title: article?.metaTitle ? {absolute: article.metaTitle} : service.menuTitle,
     description: article?.metaDesc || service.intro,
-    alternates: {canonical: `/dich-vu/${service.slug}/`}
+    alternates: {canonical: `${servicePath(service.slug)}/`}
   };
 }
 
-export default async function ServicePage({params}) {
-  const {slug} = await params;
+export default function ServicePage({slug}) {
   const service = getServicePage(slug);
   if (!service) notFound();
   const article = getServiceArticle(slug);

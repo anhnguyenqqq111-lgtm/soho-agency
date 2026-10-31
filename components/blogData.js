@@ -1,3 +1,5 @@
+import {getPerson} from './data/team.js';
+
 // Thứ tự danh mục trên trang /blog. Nhóm Framework là bài hướng dẫn từng bước.
 export const categories = [
   'Framework Marketing',
@@ -17,7 +19,7 @@ export const categories = [
   - image (bắt buộc): {src, alt}. Một ảnh 1600×1000 dùng chung: thumbnail trên thẻ bài viết và banner dưới H1
     (cả hai hiển thị 16:10, không cắt). Chữ trái là H1, bên phải là cảnh dựng từ nội dung bài. Render bằng skill
     creating-images-soho (goha-seo-ws2), preset cover; file ra chép vào public/blog/<slug>.webp.
-  Các trường khác: category, excerpt (đoạn dẫn trên thẻ và đầu bài), metaDescription (mô tả cho Google ≤160 ký tự, không có thì dùng excerpt), readTime, date (dd/mm/yyyy), author, authorRole, content (HTML trong chuỗi).
+  Các trường khác: category, excerpt (đoạn dẫn trên thẻ và đầu bài), metaDescription (mô tả cho Google ≤160 ký tự, không có thì dùng excerpt), readTime, date (dd/mm/yyyy), authorKey (key người trong components/data/team.js; tên và chức danh lấy từ đó), content (HTML trong chuỗi).
 */
 export const articles = [
   {
@@ -30,8 +32,7 @@ export const articles = [
     metaDescription: 'Cách xây nội dung, thực thể thương hiệu và tín hiệu E-E-A-T để website vẫn được nhắc tới khi khách tìm bằng Google AI Overviews, Perplexity, ChatGPT.',
     readTime: '7 phút đọc',
     date: '02/10/2026',
-    author: 'Nguyễn Tuấn Anh',
-    authorRole: 'Head of Growth SEO @ SOHO',
+    authorKey: 'seo',
     featured: true,
     image: {src: '/blog/seo-ky-nguyen-ai-search.webp', alt: 'Kính lúp và tia sáng, minh họa SEO thời AI Search'},
     content: `
@@ -64,8 +65,7 @@ export const articles = [
       'Vì sao giá click rẻ mà vẫn không ra doanh số? Hướng dẫn thiết lập phễu đo lường từ lượt hiển thị, lượt nhấp đến lead đủ điều kiện, CAC và ROAS thực tế.',
     readTime: '5 phút đọc',
     date: '28/09/2026',
-    author: 'Trần Minh Quân',
-    authorRole: 'Performance Marketing Lead @ SOHO',
+    authorKey: 'mkt',
     featured: false,
     image: {src: '/blog/toi-uu-roas-performance-ads.webp', alt: 'Biểu đồ cột tăng dần, minh họa đo quảng cáo bằng doanh thu'},
     content: `
@@ -94,8 +94,7 @@ export const articles = [
       'Cách chia ngân sách hợp lý giữa kênh ngắn hạn (Paid Ads) và kênh dài hạn (Organic SEO), theo giai đoạn phát triển của doanh nghiệp và mức cạnh tranh của ngành.',
     readTime: '6 phút đọc',
     date: '24/09/2026',
-    author: 'Lê Hoàng Yến',
-    authorRole: 'Strategy Director @ SOHO',
+    authorKey: 'mkt',
     featured: false,
     image: {src: '/blog/chien-luoc-seo-ads-song-hanh.webp', alt: 'Bia ba vòng, minh họa chiến lược phân bổ SEO và Ads'},
     content: `
@@ -117,8 +116,7 @@ export const articles = [
     excerpt: '7 thử nghiệm A/B cốt lõi đã giúp khách hàng của SOHO tăng tỷ lệ điền form từ 2.1% lên 6.8% mà không cần chi thêm ngân sách quảng cáo.',
     readTime: '8 phút đọc',
     date: '18/09/2026',
-    author: 'Đỗ Gia Huy',
-    authorRole: 'CRO & Data Analyst @ SOHO',
+    authorKey: 'dev',
     featured: false,
     image: {src: '/blog/toi-uu-cro-landing-page.webp', alt: 'Nút bấm và con trỏ, minh họa tối ưu chuyển đổi landing page'},
     content: `
@@ -142,8 +140,7 @@ export const articles = [
     excerpt: 'Cách liên kết trang trụ (Pillar Page) với các bài viết vệ tinh (Sub-topics) để truyền PageRank và khẳng định uy tín chuyên môn trong ngành.',
     readTime: '6 phút đọc',
     date: '12/09/2026',
-    author: 'Phạm Thùy Linh',
-    authorRole: 'Content Strategist @ SOHO',
+    authorKey: 'content',
     featured: false,
     image: {src: '/blog/content-hub-topic-cluster.webp', alt: 'Tâm và năm vệ tinh nối nhau, minh họa mô hình Topic Cluster'},
     content: `
@@ -162,8 +159,7 @@ export const articles = [
     excerpt: 'Tại sao Pixel truyền thống đang mất tới 35% dữ liệu chuyển đổi và cách thiết lập Server-side Tagging với Google Tag Manager để cứu ROAS.',
     readTime: '7 phút đọc',
     date: '05/09/2026',
-    author: 'Nguyễn Tuấn Anh',
-    authorRole: 'Technical Director @ SOHO',
+    authorKey: 'dev',
     featured: false,
     image: {src: '/blog/tracking-ga4-capi-2026.webp', alt: 'Chữ f trong vòng tròn, minh họa Facebook Conversion API'},
     content: `
@@ -184,8 +180,7 @@ export const articles = [
     metaDescription: 'Quy trình 7 bước SOHO dùng khi nhận kế hoạch marketing mới: chốt mục tiêu bằng số, vẽ hành trình khách, chọn kênh, chia ngân sách, đo lường, lịch 90 ngày.',
     readTime: '12 phút đọc',
     date: '08/10/2026',
-    author: 'Lê Hoàng Yến',
-    authorRole: 'Strategy Director @ SOHO',
+    authorKey: 'mkt',
     featured: false,
     image: {src: '/blog/framework-marketing-90-ngay.webp', alt: 'Ba ô đánh số xếp bậc, minh họa framework marketing 7 bước'},
     content: `
@@ -302,8 +297,7 @@ export const articles = [
     metaDescription: 'Trình tự 8 bước SOHO làm SEO cho một website: audit kỹ thuật, từ khóa theo ý định, cụm chủ đề, brief, on-page, nội dung cho AI Search, liên kết, đo bằng lead.',
     readTime: '14 phút đọc',
     date: '07/10/2026',
-    author: 'Nguyễn Tuấn Anh',
-    authorRole: 'Head of Growth SEO @ SOHO',
+    authorKey: 'seo',
     featured: false,
     image: {src: '/blog/framework-seo-8-buoc.webp', alt: 'Kính lúp, minh họa framework SEO 8 bước'},
     content: `
@@ -431,8 +425,7 @@ export const articles = [
     metaDescription: '6 bước SOHO áp dụng cho mọi tài khoản quảng cáo mới: tính chi phí mỗi lead cho phép, cắm tracking, dựng cấu trúc, thử sáng tạo, tối ưu theo tuần, mở rộng.',
     readTime: '13 phút đọc',
     date: '06/10/2026',
-    author: 'Trần Minh Quân',
-    authorRole: 'Performance Marketing Lead @ SOHO',
+    authorKey: 'mkt',
     featured: false,
     image: {src: '/blog/framework-ads-6-buoc.webp', alt: 'Vòng bốn màu Google, minh họa framework chạy quảng cáo'},
     content: `
@@ -538,9 +531,15 @@ export const articles = [
   }
 ];
 
-// Quy tắc blog: H1 ≤ 50, metaTitle ≤ 60, có image {src, alt}. Vi phạm là build dừng.
+// Tác giả là người thật trong đội (team.js), gắn theo chủ đề bài (SOHO chốt 31/10/2026).
+// Quy tắc blog: H1 ≤ 50, metaTitle ≤ 60, có image {src, alt}, authorKey có trong team.js. Vi phạm là build dừng.
 for (const a of articles) {
   const where = `Bài blog "${a.slug}"`;
+  const person = getPerson(a.authorKey);
+  if (!person) throw new Error(`${where}: authorKey "${a.authorKey}" không có trong components/data/team.js.`);
+  a.author = person.name;
+  a.authorRole = person.title;
+  a.authorPhoto = {src: person.photo, width: person.width, height: person.height};
   if (!a.title || a.title.length > 50) throw new Error(`${where}: title (H1) phải có và tối đa 50 ký tự, hiện ${(a.title || '').length}.`);
   if (!a.metaTitle || a.metaTitle.length > 60) throw new Error(`${where}: metaTitle phải có và tối đa 60 ký tự, hiện ${(a.metaTitle || '').length}.`);
   if (!a.image || !a.image.src || !a.image.alt) throw new Error(`${where} thiếu image {src, alt}. Xem chú thích đầu components/blogData.js`);

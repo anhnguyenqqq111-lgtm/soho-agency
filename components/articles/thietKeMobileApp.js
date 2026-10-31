@@ -4,7 +4,7 @@ export const thietKeMobileAppArticle = {
     'Trước khi làm app: so với website và Zalo Mini App, bản đầu gọn, native hay Flutter, React Native, chính sách duyệt App Store, Google Play và chi phí.',
   readingTime: '10 phút đọc',
   updatedDate: '31/10/2026',
-  author: {name: 'Nguyễn Thế Tuấn Anh', role: 'Phụ trách chiến lược tăng trưởng, SOHO Agency'},
+  authorKey: 'dev',
   cover: {
     src: '/media/articles/thiet-ke-mobile-app/thiet-ke-mobile-app-hero.webp',
     alt: 'Máy tính bảng và điện thoại đặt cạnh nhau trên tay ghế sofa, hai thiết bị khách dùng để mở app',
@@ -57,7 +57,7 @@ Ngược lại, có những tình huống app giải quyết được việc web
 | Phù hợp với | Giới thiệu, bán hàng, nhận khách mới | Đặt lịch, tích điểm cho khách đã quen dùng Zalo | Khách dùng nhiều lần mỗi tuần, tính năng phức tạp |
 | Phải qua duyệt | Không | Zalo duyệt | Apple và Google duyệt |
 
-Có một điểm cần biết trước khi quyết định. [Hướng dẫn duyệt của Apple](https://developer.apple.com/app-store/review/guidelines/) (mục 4.2) yêu cầu app phải có tính năng, nội dung, giao diện vượt lên trên một website được đóng gói lại. App chỉ bọc website trong một khung app có thể bị từ chối. Nếu bạn chỉ định làm vậy, có lẽ website tốt trên điện thoại là đủ, xem [trang Thiết kế website](/dich-vu/thiet-ke-website/).
+Có một điểm cần biết trước khi quyết định. [Hướng dẫn duyệt của Apple](https://developer.apple.com/app-store/review/guidelines/) (mục 4.2) yêu cầu app phải có tính năng, nội dung, giao diện vượt lên trên một website được đóng gói lại. App chỉ bọc website trong một khung app có thể bị từ chối. Nếu bạn chỉ định làm vậy, có lẽ website tốt trên điện thoại là đủ, xem [trang Thiết kế website](/thiet-ke-website/).
 `
     },
     {
@@ -113,7 +113,7 @@ Một dự án app thường đi qua năm giai đoạn. Bỏ qua giai đoạn đ
 
 - **Làm rõ việc chính.** Viết bản mô tả tính năng, ai dùng, dùng để làm gì, cái gì làm sau.
 - **Phác màn hình.** Vẽ khung trắng đen từng màn hình và đường đi giữa chúng. Bấm thử trên điện thoại bằng bản mẫu tương tác trước khi tô màu.
-- **Thiết kế giao diện.** Áp nhận diện thương hiệu, chọn cỡ chữ, cỡ nút đủ lớn để bấm bằng ngón cái. Nếu chưa có logo, màu sắc thống nhất, xem [trang Nhận diện thương hiệu](/dich-vu/nhan-dien-thuong-hieu/).
+- **Thiết kế giao diện.** Áp nhận diện thương hiệu, chọn cỡ chữ, cỡ nút đủ lớn để bấm bằng ngón cái. Nếu chưa có logo, màu sắc thống nhất, xem [trang Nhận diện thương hiệu](/nhan-dien-thuong-hieu/).
 - **Lập trình và kiểm tra.** Làm app, trang quản trị, máy chủ. Kiểm tra trên nhiều đời máy, cả máy Android giá rẻ đang phổ biến.
 - **Đưa lên kho ứng dụng.** Chuẩn bị ảnh màn hình, mô tả, chính sách quyền riêng tư, tài khoản dùng thử cho người duyệt.
 `

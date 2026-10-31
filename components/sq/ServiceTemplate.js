@@ -8,13 +8,13 @@ import Track from '../diagrams/Track';
 import BeforeAfter from '../diagrams/BeforeAfter';
 import ServiceDiagram from '../diagrams/ServiceDiagrams';
 import ArticleBody from '../article/ArticleBody';
-import {sitePath} from '../paths';
+import {sitePath, servicePath} from '../paths';
 import {publishedCases} from '../data/cases';
 import {getPerson, personAlt} from '../data/team';
 import {serviceCta, NOT_YET} from '../data/contactVariants';
 
 /*
-  Mẫu chung 12 trang dịch vụ, bản 12 (canvas SqService). Giữ 3 sơ đồ live: ServiceDiagram, Track, BeforeAfter.
+  Mẫu chung 13 trang dịch vụ, bản 12 (canvas SqService). Giữ 3 sơ đồ live: ServiceDiagram, Track, BeforeAfter.
   Đường đọc: định vị (hợp với ai, chưa hợp nếu) → chuyện bạn đang gặp → SOHO làm theo các bước → bạn nhận gì và việc thật đã làm
   → người phụ trách → bài đọc kỹ → dịch vụ cùng nhóm → form live theo biến thể của dịch vụ (chọn sẵn dịch vụ).
 */
@@ -183,7 +183,7 @@ export default function ServiceTemplate({service, article, related}) {
 
       {related.length > 0 && (
         <Section kicker="Dịch vụ liên quan" title="Thường làm kèm" spacing="sm">
-          <LinkRows items={related.map(s => ({title: s.menuTitle, desc: s.menuDesc, href: `/dich-vu/${s.slug}`}))} />
+          <LinkRows items={related.map(s => ({title: s.menuTitle, desc: s.menuDesc, href: servicePath(s.slug)}))} />
         </Section>
       )}
 

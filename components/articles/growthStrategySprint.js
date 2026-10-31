@@ -4,7 +4,7 @@ export const growthStrategySprintArticle = {
     'Khi nào cần tư vấn chiến lược marketing, cần chuẩn bị gì, chọn kênh theo giai đoạn doanh nghiệp, chia ngân sách thử nghiệm và lập lộ trình 90 ngày.',
   readingTime: '9 phút đọc',
   updatedDate: '31/10/2026',
-  author: {name: 'Nguyễn Thế Tuấn Anh', role: 'Phụ trách chiến lược tăng trưởng, SOHO Agency'},
+  authorKey: 'mkt',
   cover: {
     src: '/media/articles/tu-van-chien-luoc-sprint/tu-van-chien-luoc-sprint-hero.webp',
     alt: 'La bàn đặt trên cuốn bản đồ đang mở, cạnh tiêu đề Lộ trình marketing 90 ngày: tư vấn chiến lược',
@@ -98,11 +98,11 @@ Mỗi kênh làm một việc khác nhau. Hiểu vai trò của từng kênh th�
 
 | Giai đoạn | Tình trạng thường gặp | Nên ưu tiên |
 |---|---|---|
-| Mới bắt đầu | Ít người biết, chưa có số liệu | Một kênh bắt nhu cầu có kết quả nhanh như [quảng cáo Google](/dich-vu/google-ads-shopping/) hoặc [Google Maps](/dich-vu/local-seo-google-maps/) nếu bán tại chỗ; đo lường cơ bản |
-| Có khách nhưng không đều | Phụ thuộc khách giới thiệu, lúc đông lúc vắng | Thêm một kênh đều đặn: [SEO](/dich-vu/seo-tong-the/) cho dài hạn, [quảng cáo Facebook, TikTok](/dich-vu/meta-tiktok-ads/) cho ngắn hạn |
-| Muốn mở rộng | Một kênh đã chạy tốt, chi phí bắt đầu tăng | [Sửa chỗ khách rời đi trên website](/dich-vu/cro-landing-page/), [nội dung](/dich-vu/content-marketing-pr/) cho khách cân nhắc lâu, [đo lường đầy đủ](/dich-vu/ga4-looker-dashboard/) để chia ngân sách |
+| Mới bắt đầu | Ít người biết, chưa có số liệu | Một kênh bắt nhu cầu có kết quả nhanh như [quảng cáo Google](/google-ads-shopping/) hoặc [Google Maps](/local-seo-google-maps/) nếu bán tại chỗ; đo lường cơ bản |
+| Có khách nhưng không đều | Phụ thuộc khách giới thiệu, lúc đông lúc vắng | Thêm một kênh đều đặn: [SEO](/seo-tong-the/) cho dài hạn, [quảng cáo Facebook](/facebook-ads/), [TikTok](/tiktok-ads/) cho ngắn hạn |
+| Muốn mở rộng | Một kênh đã chạy tốt, chi phí bắt đầu tăng | [Sửa chỗ khách rời đi trên website](/cro-landing-page/), [nội dung](/content-marketing-pr/) cho khách cân nhắc lâu, [đo lường đầy đủ](/ga4-looker-dashboard/) để chia ngân sách |
 
-Bảng này là điểm khởi đầu, không phải công thức. Ngành nghề, biên lợi nhuận và cách khách mua có thể đảo thứ tự. Ví dụ website quá chậm hay không có nút liên hệ thì nên [sửa website](/dich-vu/thiet-ke-website/) trước khi chạy bất kỳ quảng cáo nào.
+Bảng này là điểm khởi đầu, không phải công thức. Ngành nghề, biên lợi nhuận và cách khách mua có thể đảo thứ tự. Ví dụ website quá chậm hay không có nút liên hệ thì nên [sửa website](/thiet-ke-website/) trước khi chạy bất kỳ quảng cáo nào.
 
 ### Phối hợp: kênh nhanh nuôi kênh chậm
 

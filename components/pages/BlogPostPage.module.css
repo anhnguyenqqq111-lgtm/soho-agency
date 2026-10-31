@@ -1,0 +1,272 @@
+/* Đầu bài trên nền kem */
+.head {
+  background: var(--paper);
+  padding-block: clamp(36px, 5vw, 64px) clamp(28px, 4vw, 44px);
+}
+.headInner {
+  display: grid;
+  gap: 14px;
+  justify-items: start;
+}
+.crumbs ol {
+  list-style: none;
+  margin: 0 0 6px;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  font-size: var(--fs-meta);
+  color: var(--ink-3);
+}
+.crumbs li + li::before {
+  content: '/';
+  margin-right: 6px;
+  color: var(--gray-2);
+}
+.crumbs a {
+  color: var(--ink-2);
+}
+.crumbs a:hover {
+  color: var(--accent);
+}
+.eyebrow {
+  font-size: var(--fs-meta);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.title {
+  font-size: clamp(32px, 4.4vw, 58px);
+  line-height: 1.06;
+  letter-spacing: -0.025em;
+  max-width: 22ch;
+}
+.lead {
+  font-size: var(--fs-lead);
+  line-height: 1.55;
+  color: var(--ink-2);
+  max-width: 62ch;
+}
+.byline {
+  font-size: var(--fs-small);
+  color: var(--ink-3);
+  padding-top: 4px;
+}
+.byline strong {
+  color: var(--ink);
+}
+
+/* Banner dùng chung ảnh với thumbnail, hiển thị nguyên 16:10, rộng hơn cột chữ một chút */
+.banner {
+  margin: 0 auto;
+  padding-block: 8px 0;
+}
+.banner img {
+  display: block;
+  width: 100%;
+  max-width: 1040px;
+  margin-inline: auto;
+  aspect-ratio: 16/10;
+  object-fit: cover;
+  background: var(--gray);
+  border-radius: var(--r-card);
+  box-shadow: var(--shadow-card);
+}
+.credit {
+  max-width: 1040px;
+  margin: 8px auto 0;
+  font-size: var(--fs-meta);
+  color: var(--ink-3);
+  text-align: right;
+}
+.credit a {
+  color: var(--ink-3);
+}
+.credit a:hover {
+  color: var(--accent);
+}
+
+.wrap {
+  padding-block: clamp(28px, 4vw, 48px) var(--space-md);
+}
+/* Hai cột: mục lục dính bên trái, thân bài bên phải; dưới 1100px mục lục thành ô thu gọn trong thẻ bài */
+.layout {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 760px) 300px;
+  justify-content: center;
+  gap: 32px;
+  align-items: start;
+  max-width: 1440px;
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+.toc,
+.side {
+  align-self: stretch;
+}
+/* Form cột phải dính theo khi cuộn */
+.sideInner {
+  position: sticky;
+  top: calc(var(--header-h) + 28px);
+}
+.card {
+  max-width: 860px;
+  margin-inline: auto;
+  width: 100%;
+  background: var(--white);
+  border-radius: var(--r-card);
+  padding: clamp(24px, 4vw, 56px);
+  box-shadow: var(--shadow-card);
+}
+.body {
+  max-width: none;
+  font-size: 17px;
+  line-height: 1.6;
+}
+/* Nhịp chữ trong bài blog: khoảng cách đều, gọn hơn mặc định của .prose */
+.body > * + * {
+  margin-top: 0.85em;
+}
+.body :global(h2) {
+  margin-top: 1.9em;
+  padding: 8px 14px 8px 16px;
+  border-left: 4px solid var(--denim);
+  border-radius: 0 10px 10px 0;
+  background: linear-gradient(90deg, var(--tint) 0%, rgba(238, 243, 250, 0.35) 70%, transparent 100%);
+  line-height: 1.3;
+}
+.body :global(h3) {
+  margin-top: 1.4em;
+}
+.body :global(h2) + *,
+.body :global(h3) + * {
+  margin-top: 0.5em;
+}
+.body :global(li) + :global(li) {
+  margin-top: 0.3em;
+}
+.body :global(ul),
+.body :global(ol) {
+  margin-block: 0.6em 0;
+}
+/* Sapo: đoạn mở đầu, nền nhấn và vạch cam */
+.sapo {
+  padding: 16px 20px;
+  border-left: 4px solid var(--c-orange);
+  border-radius: 0 12px 12px 0;
+  background: #fff4ec;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.6;
+  color: var(--ink);
+}
+/* Những điểm chính */
+.takeaways {
+  margin: 20px 0 28px;
+  padding: 18px 22px 16px;
+  border: 1px solid #c9d8ee;
+  border-radius: 14px;
+  background: var(--tint);
+}
+.takeawaysTitle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 12px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #c9d8ee;
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--ink);
+}
+.takeawaysTitle::before {
+  content: '';
+  width: 14px;
+  height: 18px;
+  background: var(--denim);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 75%, 0 100%);
+}
+.takeaways ul {
+  margin: 0;
+  padding-left: 1.1em;
+  display: grid;
+  gap: 8px;
+}
+.takeaways li {
+  font-size: 15.5px;
+  line-height: 1.55;
+  color: var(--ink-2);
+}
+.takeaways li::marker {
+  color: var(--denim);
+}
+.takeaways strong {
+  color: var(--ink);
+  font-weight: 700;
+}
+.author {
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr);
+  gap: 16px;
+  align-items: center;
+  margin-top: 48px;
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+}
+.avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--grad-brand);
+  object-fit: cover;
+  object-position: 50% 15%;
+}
+.authorName {
+  font-weight: 600;
+}
+.authorRole {
+  font-size: var(--fs-meta);
+  color: var(--ink-2);
+}
+.related {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--gap);
+}
+@media (max-width: 900px) {
+  .related {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+@media (max-width: 640px) {
+  .banner img {
+    border-radius: var(--r-md);
+  }
+}
+
+/* 1100–1360px: bỏ cột mục lục (thành ô thu gọn ở đầu), giữ bài + form. Dưới 1100px: một cột, form sau thân bài. */
+@media (max-width: 1400px) {
+  .layout {
+    grid-template-columns: minmax(0, 780px) 300px;
+  }
+  .toc {
+    grid-column: 1 / -1;
+    width: 100%;
+    max-width: 1112px;
+    justify-self: center;
+  }
+}
+@media (max-width: 1100px) {
+  .layout {
+    grid-template-columns: minmax(0, 780px);
+    gap: 0;
+  }
+  .side {
+    margin-top: 28px;
+  }
+  .sideInner {
+    position: static;
+  }
+}

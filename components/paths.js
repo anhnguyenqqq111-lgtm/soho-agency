@@ -21,6 +21,11 @@ export function srcSet(src, width) {
   return parts.join(', ');
 }
 
+// Trang dịch vụ và bài blog nằm ngay dưới gốc (/seo-tong-the/, /framework-seo-8-buoc/), không có tiền tố /dich-vu/ hay /blog/.
+// Trang danh sách vẫn là /dich-vu/ và /blog/. URL cũ có tiền tố được chuyển hướng 301 trong vercel.json.
+export const servicePath = slug => `/${slug}`;
+export const postPath = slug => `/${slug}`;
+
 export function sitePath(path) {
   if (!path) return path;
   if (/^(https?:|mailto:|tel:|#)/.test(path)) return path;

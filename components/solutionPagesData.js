@@ -19,7 +19,7 @@ export const solutionPages = [
     slug: 'ecommerce-ban-le',
     group: 'Theo mô hình kinh doanh',
     menuDesc: 'Doanh thu, lợi nhuận mỗi đơn và khách mua lại',
-    relatedServices: ['google-ads-shopping', 'meta-tiktok-ads', 'cro-landing-page', 'seo-tong-the'],
+    relatedServices: ['google-ads-shopping', 'facebook-ads', 'tiktok-ads', 'cro-landing-page', 'seo-tong-the'],
     title: 'Bán hàng online và bán lẻ',
     eyebrow: 'Bán lẻ',
     desc: 'Dành cho shop online và chuỗi bán lẻ cần thêm đơn hàng có lãi. SOHO kết hợp SEO trang sản phẩm, quảng cáo Google Shopping, quảng cáo bám đuổi người đã xem hàng và tối ưu trang thanh toán.',

@@ -4,7 +4,7 @@ export const thietKeWebsiteArticle = {
     'Website doanh nghiệp cần gì để khách liên hệ: sơ đồ trang, tốc độ theo Core Web Vitals, chuẩn SEO khi dựng, chọn nền tảng, quyền sở hữu tên miền, chi phí.',
   readingTime: '11 phút đọc',
   updatedDate: '31/10/2026',
-  author: {name: 'Nguyễn Thế Tuấn Anh', role: 'Phụ trách chiến lược tăng trưởng, SOHO Agency'},
+  authorKey: 'dev',
   cover: {
     src: '/media/articles/thiet-ke-website/thiet-ke-website-hero.webp',
     alt: 'Laptop, điện thoại, sổ ghi chép có phác thảo và tách cà phê trên bàn gỗ, góc làm việc khi lên kế hoạch website',
@@ -45,7 +45,7 @@ Nên làm mới khi website cũ có từ hai dấu hiệu sau trở lên:
 - Muốn sửa một dòng chữ cũng phải nhờ người khác.
 - Không ai biết mật khẩu quản trị, tên miền đang đứng tên ai.
 
-Nếu website vẫn nhanh, hiển thị tốt và có khách liên hệ đều, chỉ một vài trang có tỉ lệ chuyển đổi thấp, thì chưa cần làm lại cả web. Sửa và thử nghiệm từng trang sẽ rẻ hơn, xem [trang Tối ưu chuyển đổi](/dich-vu/cro-landing-page/).
+Nếu website vẫn nhanh, hiển thị tốt và có khách liên hệ đều, chỉ một vài trang có tỉ lệ chuyển đổi thấp, thì chưa cần làm lại cả web. Sửa và thử nghiệm từng trang sẽ rẻ hơn, xem [trang Tối ưu chuyển đổi](/cro-landing-page/).
 `
     },
     {
@@ -121,7 +121,7 @@ Kiểm tra bằng PageSpeed Insights và [báo cáo Core Web Vitals trong Search
       id: 'chuan-seo-khi-dung',
       heading: '4. Chuẩn SEO ngay từ lúc dựng',
       content: `
-Có những việc gần như không tốn thêm tiền nếu làm lúc dựng web, nhưng sửa sau thì phải sửa cả trăm trang. SEO dài hạn (nội dung theo từ khóa, liên kết, đo thứ hạng) là việc riêng, xem [trang SEO tổng thể](/dich-vu/seo-tong-the/).
+Có những việc gần như không tốn thêm tiền nếu làm lúc dựng web, nhưng sửa sau thì phải sửa cả trăm trang. SEO dài hạn (nội dung theo từ khóa, liên kết, đo thứ hạng) là việc riêng, xem [trang SEO tổng thể](/seo-tong-the/).
 
 ![Mã HTML phần đầu trang trên màn hình, có thẻ title và thẻ meta, nơi khai báo tiêu đề và thông tin trang cho Google](/media/articles/thiet-ke-website/thiet-ke-website-anh-03.webp "1200x800")
 *Tiêu đề trang, đường dẫn, alt ảnh và sitemap làm đúng một lần lúc dựng thì không phải sửa lại cả trăm trang.*
@@ -158,7 +158,7 @@ Không có nền tảng tốt nhất cho mọi doanh nghiệp. Câu hỏi đúng
 | Chi phí ban đầu | Thấp đến vừa | Thấp, trả phí theo tháng | Cao hơn hai cách kia |
 | Điểm cần để ý | Cập nhật bảo mật đều; nhiều plugin làm web chậm | Giao diện, tốc độ phụ thuộc nền tảng; khó chuyển đi | Phụ thuộc đội lập trình; cần tài liệu bàn giao kỹ |
 
-Nếu khách của bạn cần dùng lại nhiều lần mỗi tháng, như đặt lịch hay tích điểm, có thể bạn cần thêm app, xem [trang Thiết kế Mobile App](/dich-vu/thiet-ke-mobile-app/).
+Nếu khách của bạn cần dùng lại nhiều lần mỗi tháng, như đặt lịch hay tích điểm, có thể bạn cần thêm app, xem [trang Thiết kế Mobile App](/thiet-ke-mobile-app/).
 `
     },
     {
@@ -175,7 +175,7 @@ Trước khi nghiệm thu, đòi đủ những thứ trong danh sách dưới đ
 Vài lưu ý thêm:
 
 - **Tên miền:** bật tự động gia hạn, ghi ngày hết hạn vào lịch. Nếu còn trống, giữ cả bản .vn và .com để người khác không đăng ký mất.
-- **Đo lường:** website nên được cài sẵn đo cuộc gọi, nhắn Zalo, gửi form ngay từ ngày ra mắt. Có số này, bạn mới biết kênh nào mang khách về. Cách cài chi tiết xem [trang GA4 và báo cáo](/dich-vu/ga4-looker-dashboard/).
+- **Đo lường:** website nên được cài sẵn đo cuộc gọi, nhắn Zalo, gửi form ngay từ ngày ra mắt. Có số này, bạn mới biết kênh nào mang khách về. Cách cài chi tiết xem [trang GA4 và báo cáo](/ga4-looker-dashboard/).
 - **Bảo trì:** hỏi rõ ai cập nhật phiên bản, ai sao lưu, bao lâu một lần, lỗi thì ai sửa và trong bao lâu.
 `
     },
@@ -193,7 +193,7 @@ Hai báo giá chênh nhau nhiều thường là vì hai bên báo cho hai phạm
 - **Làm lại web cũ.** Chuyển dữ liệu, ảnh, bài viết cũ sang và cài chuyển hướng cho từng đường dẫn.
 - **Chi phí hằng năm.** Tên miền, hosting, giấy phép plugin hoặc phông chữ, phí bảo trì.
 
-Ngoài giá làm, hãy hỏi chi phí năm thứ hai. Một website rẻ lúc đầu mà mỗi lần sửa đều tính tiền có thể tốn hơn một website báo giá cao nhưng bạn tự sửa được. Nếu chưa có logo, màu sắc và kiểu chữ thống nhất, nên làm phần đó trước để web không phải sửa lại, xem [trang Nhận diện thương hiệu](/dich-vu/nhan-dien-thuong-hieu/).
+Ngoài giá làm, hãy hỏi chi phí năm thứ hai. Một website rẻ lúc đầu mà mỗi lần sửa đều tính tiền có thể tốn hơn một website báo giá cao nhưng bạn tự sửa được. Nếu chưa có logo, màu sắc và kiểu chữ thống nhất, nên làm phần đó trước để web không phải sửa lại, xem [trang Nhận diện thương hiệu](/nhan-dien-thuong-hieu/).
 `
     },
     {

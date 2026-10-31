@@ -8,12 +8,13 @@ import CtaBand from '../../components/ui/CtaBand';
 import ProblemPicker from '../../components/sq/ProblemPicker';
 import {PAGE_CTA} from '../../components/data/contactVariants';
 import {getServicesByGroup} from '../../components/servicePagesData';
+import {servicePath} from '../../components/paths';
 
 export const metadata = {
   alternates: {canonical: '/dich-vu/'},
   title: 'Dịch vụ',
   description:
-    'Dịch vụ của SOHO Agency: SEO, Google Ads, Facebook và TikTok Ads, website, nhận diện thương hiệu, mobile app, nội dung và đo lường. Chọn theo vấn đề đang gặp.'
+    'Dịch vụ của SOHO Agency: SEO, Google Ads, Facebook Ads, TikTok Ads, website, nhận diện thương hiệu, mobile app, nội dung và đo lường. Chọn theo vấn đề đang gặp.'
 };
 
 const IDS = ['tim-kiem', 'quang-cao', 'website-thuong-hieu', 'noi-dung-do-luong'];
@@ -32,7 +33,7 @@ export default function ServicesIndexPage() {
               Dịch vụ của SOHO Agency: <span className="hl">marketing, website, thương hiệu</span>
             </>
           }
-          tagline="12 dịch vụ, chia theo chỗ bạn đang mất khách. Chưa biết mình cần dịch vụ nào? Chọn tình huống giống bạn nhất ở bên dưới."
+          tagline="13 dịch vụ, chia theo chỗ bạn đang mất khách. Chưa biết mình cần dịch vụ nào? Chọn tình huống giống bạn nhất ở bên dưới."
           visual={<ServicesVisual labels={groups.flatMap(g => g.items.map(s => s.menuTitle))} />}
         />
         <Section
@@ -46,7 +47,7 @@ export default function ServicesIndexPage() {
         </Section>
         {groups.map(({group, items}, i) => (
           <Section key={group} id={IDS[i]} tone={i % 2 ? 'soft' : 'white'} kicker={`Nhóm ${i + 1}`} title={group} spacing="sm">
-            <LinkRows items={items.map(s => ({title: s.menuTitle, desc: s.intro, href: `/dich-vu/${s.slug}`}))} />
+            <LinkRows items={items.map(s => ({title: s.menuTitle, desc: s.intro, href: servicePath(s.slug)}))} />
           </Section>
         ))}
         <CtaBand

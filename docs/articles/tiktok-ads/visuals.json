@@ -1,0 +1,11 @@
+{
+  "title": "Chạy quảng cáo TikTok cho doanh nghiệp nhỏ",
+  "category": "Quảng cáo ra đơn",
+  "theme": "coral",
+  "hero": {"photo": "tiktok-ads-a3e8fb01.jpg", "focal": [0.35, 0.5]},
+  "inArticle": [
+    {"photo": "tiktok-ads-143731d0.jpg", "label": "Vài giây đầu quyết định người xem ở lại", "focal": [0.5, 0.45]},
+    {"photo": "tiktok-ads-dc400eea.jpg", "label": "Làm việc với người sáng tạo nội dung", "focal": [0.5, 0.4]},
+    {"photo": "tiktok-ads-6daf711a.jpg", "label": "TikTok Shop và GMV Max cho người bán online", "focal": [0.5, 0.5]}
+  ]
+}

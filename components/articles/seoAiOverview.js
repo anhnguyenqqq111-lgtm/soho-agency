@@ -4,7 +4,7 @@ export const seoAiOverviewArticle = {
     'AI Overview và ChatGPT chọn nguồn thế nào, khác gì SEO thường, cách viết để được trích dẫn, việc không cần làm và cách đo trong Search Console.',
   readingTime: '11 phút đọc',
   updatedDate: '31/10/2026',
-  author: {name: 'Nguyễn Thế Tuấn Anh', role: 'Phụ trách chiến lược tăng trưởng, SOHO Agency'},
+  authorKey: 'seo',
   cover: {
     src: '/media/articles/seo-ai-overview/seo-ai-overview-hero.webp',
     alt: 'Tiêu đề SEO AI Overview: để ChatGPT, Gemini nhắc tên bạn bên cạnh một robot màu trắng',
@@ -64,7 +64,7 @@ Với ChatGPT, cách tìm nguồn do OpenAI quyết định. Điều chắc ch�
       id: 'khac-gi-seo-truyen-thong',
       heading: '3. Khác gì so với SEO quen thuộc',
       content: `
-Google xem việc tối ưu cho tìm kiếm bằng AI vẫn là SEO. Những cái tên như AEO hay GEO mà bạn có thể nghe, theo [Google](https://developers.google.com/search/docs/fundamentals/third-party-seo), chỉ là cách gọi khác của cùng một việc. Nền móng giữ nguyên: website đọc được, nội dung hữu ích, liên kết hợp lý. Phần nền đó được nói kỹ ở [trang SEO tổng thể](/dich-vu/seo-tong-the/).
+Google xem việc tối ưu cho tìm kiếm bằng AI vẫn là SEO. Những cái tên như AEO hay GEO mà bạn có thể nghe, theo [Google](https://developers.google.com/search/docs/fundamentals/third-party-seo), chỉ là cách gọi khác của cùng một việc. Nền móng giữ nguyên: website đọc được, nội dung hữu ích, liên kết hợp lý. Phần nền đó được nói kỹ ở [trang SEO tổng thể](/seo-tong-the/).
 
 Cái thay đổi là cách bạn nhìn kết quả và cách bạn chọn nội dung để viết.
 
@@ -123,7 +123,7 @@ Khách hỏi "may 50 áo thun đồng phục mất mấy ngày", câu đầu ti�
 
 ### Giữ thông tin luôn đúng
 
-Giá, giờ mở cửa, chính sách đổi trả thay đổi thì sửa ngay trên website. Câu trả lời của AI dựa trên trang đang có trong chỉ mục, nên thông tin cũ trên website có thể bị nhắc lại cho khách. Lịch viết và cập nhật bài định kỳ xem [trang Content marketing](/dich-vu/content-marketing-pr/).
+Giá, giờ mở cửa, chính sách đổi trả thay đổi thì sửa ngay trên website. Câu trả lời của AI dựa trên trang đang có trong chỉ mục, nên thông tin cũ trên website có thể bị nhắc lại cho khách. Lịch viết và cập nhật bài định kỳ xem [trang Content marketing](/content-marketing-pr/).
 `
     },
     {
@@ -147,7 +147,7 @@ Theo [Google](https://developers.google.com/search/docs/appearance/structured-da
 
 Một thay đổi cần biết: phần hỏi đáp mở rộng (FAQ rich result) đã ngừng hiển thị trên Google Search từ tháng 5/2026, theo [nhật ký cập nhật của Google](https://developers.google.com/search/updates). Mục câu hỏi thường gặp vẫn có ích vì trả lời đúng câu khách hỏi, nhưng đừng trả tiền cho ai hứa "gắn schema FAQ để hiện thêm dòng trên Google".
 
-Với cửa hàng có địa chỉ và shop bán online, Google còn dùng thông tin từ hồ sơ Google Business Profile và Merchant Center. Phần hồ sơ trên Google Maps xem [trang SEO Google Maps](/dich-vu/local-seo-google-maps/).
+Với cửa hàng có địa chỉ và shop bán online, Google còn dùng thông tin từ hồ sơ Google Business Profile và Merchant Center. Phần hồ sơ trên Google Maps xem [trang SEO Google Maps](/local-seo-google-maps/).
 `
     },
     {
@@ -169,7 +169,7 @@ Những giới hạn cần biết khi đọc số:
 - Hai link của cùng website trong một câu trả lời chỉ tính là một lượt hiển thị trên biểu đồ.
 - Theo [Google](https://developers.google.com/search/docs/appearance/ai-features), mỗi AI Overview chiếm một vị trí trên trang kết quả, mọi link bên trong cùng nhận vị trí đó. Vị trí trung bình đẹp chưa chắc nghĩa là khách thấy tên bạn đầu tiên.
 
-Với ChatGPT và các trợ lý khác, chưa có báo cáo chính thức tương tự. Cách làm thực tế là xem nguồn giới thiệu trong công cụ đo trên website. Định kỳ tự hỏi trợ lý những câu khách hay hỏi để xem họ nói gì về bạn. Cài đặt nguồn truy cập chi tiết xem [trang GA4 và Looker Studio](/dich-vu/ga4-looker-dashboard/).
+Với ChatGPT và các trợ lý khác, chưa có báo cáo chính thức tương tự. Cách làm thực tế là xem nguồn giới thiệu trong công cụ đo trên website. Định kỳ tự hỏi trợ lý những câu khách hay hỏi để xem họ nói gì về bạn. Cài đặt nguồn truy cập chi tiết xem [trang GA4 và Looker Studio](/ga4-looker-dashboard/).
 
 Cuối cùng, con số quan trọng vẫn là khách liên hệ. Lượt hiển thị trong AI tăng mà cuộc gọi không đổi thì cần xem lại trang đang được trích dẫn có dẫn khách tới bước liên hệ không.
 `

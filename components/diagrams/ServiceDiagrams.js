@@ -188,7 +188,7 @@ function AdsFunnel({card}) {
   );
 }
 
-// Meta & TikTok: ma trận creative
+// Facebook Ads: ma trận creative
 function CreativeMatrix({card}) {
   const x0 = 100,
     y0 = 52,
@@ -237,6 +237,50 @@ function CreativeMatrix({card}) {
       <TL x={x0 + 3 * cw + 30} y={y0 + ch + ch / 2 - 4} lines={['Mở rộng', 'ngân sách']} c="acc" d={2200} />
       <T x={x0 + 2 * cw + 12} y={y0 + ch + 26} c="acc" d={1900}>
         Thắng
+      </T>
+    </Figure>
+  );
+}
+
+// TikTok Ads: đường giữ chân người xem theo thời lượng video
+function VideoRetention({card}) {
+  const ax = 210,
+    ay = 236,
+    ex = 455;
+  const marks = [
+    {x: 250, label: '3 giây'},
+    {x: 350, label: 'Giữa'},
+    {x: ex, label: 'Hết video'}
+  ];
+  return (
+    <Figure
+      card={card}
+      id="dg-tiktok"
+      viewBox="0 0 480 300"
+      title="Đường giữ chân người xem video TikTok"
+      desc="Một khung điện thoại dựng đứng và biểu đồ: video mở đầu hấp dẫn giữ được người xem tới cuối, video mở đầu nhạt bị lướt qua ngay mấy giây đầu."
+      caption="Người xem quyết định xem tiếp hay lướt đi trong mấy giây đầu. SOHO giữ video có đường giữ chân cao và ra đơn."
+    >
+      <R x={28} y={40} w={116} h={214} d={0} />
+      <R x={41} y={56} w={90} h={150} d={150} c="fill2" />
+      <P path="M76 112 L76 150 L106 131 Z" d={500} c="fillAcc acc" />
+      <L x1={64} y1={232} x2={108} y2={232} d={400} c="soft" />
+      <L x1={ax} y1={52} x2={ax} y2={ay} d={300} />
+      <L x1={ax} y1={ay} x2={ex} y2={ay} d={400} />
+      <L x1={250} y1={60} x2={250} y2={ay} d={700} c="dash soft" />
+      <P path={`M${ax} 70 C232 74 240 120 262 128 S360 146 ${ex} 156`} d={900} c="acc" />
+      <P path={`M${ax} 70 C224 96 232 196 262 210 S380 226 ${ex} 230`} d={1100} c="soft" />
+      <TL x={300} y={112} lines={['Mở đầu đúng điều', 'người xem quan tâm']} c="acc" d={1500} />
+      <T x={300} y={202} c="" d={1700}>
+        Mở đầu nhạt, bị lướt qua
+      </T>
+      {marks.map((m, i) => (
+        <T key={m.label} x={m.x} y={ay + 22} c="mid" d={1800 + i * 80}>
+          {m.label}
+        </T>
+      ))}
+      <T x={ax + 8} y={52} c="" d={600}>
+        Số người còn xem
       </T>
     </Figure>
   );
@@ -556,7 +600,8 @@ const MAP = {
   'seo-ai-overview': AiEntity,
   'local-seo-google-maps': LocalMap,
   'google-ads-shopping': AdsFunnel,
-  'meta-tiktok-ads': CreativeMatrix,
+  'facebook-ads': CreativeMatrix,
+  'tiktok-ads': VideoRetention,
   'cro-landing-page': CroWireframe,
   'content-marketing-pr': ContentJourney,
   'ga4-looker-dashboard': DataFlow,

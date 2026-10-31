@@ -1,21 +1,62 @@
 import {notFound} from 'next/navigation';
-import styles from './page.module.css';
-import Header from '../../../components/Header';
-import Footer from '../../../components/Footer';
-import Section from '../../../components/ui/Section';
-import BlogCard from '../../../components/BlogCard';
-import CtaBand from '../../../components/ui/CtaBand';
-import {sitePath, siteUrl, srcSet} from '../../../components/paths';
-import {articles, getLatestArticles, toISODate} from '../../../components/blogData';
-import ReadingProgress from '../../../components/article/ReadingProgress';
-import {heroOf, shareImageOf, creditOf, contentWithVisuals} from '../../../components/blogVisuals';
+import styles from './BlogPostPage.module.css';
+import Header from '../Header';
+import Footer from '../Footer';
+import Section from '../ui/Section';
+import BlogCard from '../BlogCard';
+import CtaBand from '../ui/CtaBand';
+import {sitePath, siteUrl, srcSet, postPath} from '../paths';
+import {articles, getLatestArticles, toISODate} from '../blogData';
+import ReadingProgress from '../article/ReadingProgress';
+import BlogToc from '../article/BlogToc';
+import QuickForm from '../QuickForm';
+import {heroOf, shareImageOf, creditOf, contentWithVisuals} from '../blogVisuals';
 
-export function generateStaticParams() {
-  return articles.map(article => ({slug: article.slug}));
+// Gắn id cho từng H2 của thân bài và lấy danh sách cho mục lục; bỏ số thứ tự đầu tiêu đề ("1. ") vì mục lục tự đánh số.
+const slugify = text =>
+  text
+    .replace(/<[^>]+>/g, '')
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/đ/g, 'd')
+    .replace(/Đ/g, 'D')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+// "Những điểm chính": mỗi H2 một dòng, gồm tiêu đề và câu đầu tiên của đoạn văn đầu tiên dưới H2 đó (lấy đúng chữ trong bài).
+// Bài nào cần viết tay thì thêm mảng takeaways [{label, text}] trong blogData.js.
+const plain = html => html.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+function takeawaysOf(html) {
+  const parts = html.split(/<h2\b[^>]*>/).slice(1);
+  return parts
+    .map(part => {
+      const [h, rest = ''] = part.split(/<\/h2>/);
+      const label = plain(h).replace(/^\s*\d+\.\s*/, '');
+      const p = rest.match(/<p\b[^>]*>([\s\S]*?)<\/p>/);
+      const first = p ? plain(p[1]).match(/^.*?[.!?](\s|$)/) : null;
+      return {label, text: first ? first[0].trim() : ''};
+    })
+    .filter(t => t.label)
+    .slice(0, 8);
 }
+
+function withHeadingIds(html) {
+  const items = [];
+  const used = new Set();
+  const out = html.replace(/<h2\b([^>]*)>([\s\S]*?)<\/h2>/g, (match, attrs, inner) => {
+    const title = inner.replace(/<[^>]+>/g, '').replace(/^\s*\d+\.\s*/, '').trim();
+    let id = slugify(title) || `muc-${items.length + 1}`;
+    while (used.has(id)) id += '-2';
+    used.add(id);
+    items.push({id, title});
+    return /\bid=/.test(attrs) ? match : `<h2 id="${id}"${attrs}>${inner}</h2>`;
+  });
+  return {html: out, items};
+}
+
+// Trang bài blog. Route là app/[slug]/page.js (URL /<slug>/, không có tiền tố /blog/), dùng chung với trang dịch vụ.
 // metaTitle (≤ 60 ký tự) là <title>, đặt absolute để không thêm hậu tố; title (≤ 50) là H1 duy nhất trên trang.
-export async function generateMetadata({params}) {
-  const {slug} = await params;
+export function postMetadata(slug) {
   const article = articles.find(item => item.slug === slug);
   if (!article) return {title: 'Không tìm thấy bài viết'};
   // Ảnh chia sẻ: thumbnail từ Image Studio khi bài đã có, không thì ảnh gốc. Tiêu đề và mô tả giữ nguyên từ blogData.js.
@@ -24,7 +65,7 @@ export async function generateMetadata({params}) {
   return {
     title: {absolute: article.metaTitle},
     description,
-    alternates: {canonical: `/blog/${article.slug}/`},
+    alternates: {canonical: `${postPath(article.slug)}/`},
     openGraph: {
       type: 'article',
       title: article.metaTitle,
@@ -34,8 +75,7 @@ export async function generateMetadata({params}) {
   };
 }
 
-export default async function BlogPostPage({params}) {
-  const {slug} = await params;
+export default function BlogPostPage({slug}) {
   const article = articles.find(item => item.slug === slug);
   if (!article) notFound();
   const others = getLatestArticles().filter(a => a.slug !== article.slug);
@@ -44,7 +84,8 @@ export default async function BlogPostPage({params}) {
   const credit = creditOf(article);
   const share = shareImageOf(article);
   const description = article.metaDescription || article.excerpt;
-  const body = contentWithVisuals(article, sitePath);
+  const {html: body, items: tocItems} = withHeadingIds(contentWithVisuals(article, sitePath));
+  const takeaways = article.takeaways || takeawaysOf(article.content);
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Article',
@@ -55,9 +96,9 @@ export default async function BlogPostPage({params}) {
     publisher: {'@type': 'Organization', name: 'SOHO Agency'},
     inLanguage: 'vi',
     image: `${siteUrl}${share.src}`,
-    mainEntityOfPage: `${siteUrl}/blog/${article.slug}/`
+    mainEntityOfPage: `${siteUrl}${postPath(article.slug)}/`
   };
-  const role = article.authorRole.replace(/\s*@\s*SOHO$/, '');
+  const role = article.authorRole;
   return (
     <>
       <Header activeNav="blog" />
@@ -81,7 +122,6 @@ export default async function BlogPostPage({params}) {
             </nav>
             <p className={styles.eyebrow}>{article.category}</p>
             <h1 className={styles.title}>{article.title}</h1>
-            <p className={styles.lead}>{article.excerpt}</p>
             <p className={styles.byline}>
               <strong>{article.author}</strong>, {role} · <time dateTime={toISODate(article.date)}>{article.date}</time> · {article.readTime}
             </p>
@@ -112,17 +152,46 @@ export default async function BlogPostPage({params}) {
           )}
         </figure>
         <section className={styles.wrap}>
-          <div className="container">
+          <div className={styles.layout}>
+            {tocItems.length > 1 && (
+              <aside className={styles.toc}>
+                <BlogToc items={tocItems} targetId="than-bai" />
+              </aside>
+            )}
             <div className={styles.card}>
-              <div className={`prose ${styles.body}`} dangerouslySetInnerHTML={{__html: body}} />
+              {/* Sapo (đoạn mở đầu) và Những điểm chính đặt ở đầu thân bài, đều có nền nhấn */}
+              <p className={styles.sapo}>{article.excerpt}</p>
+              {takeaways.length > 1 && (
+                <div className={styles.takeaways}>
+                  <p className={styles.takeawaysTitle}>Những điểm chính</p>
+                  <ul>
+                    {takeaways.map(t => (
+                      <li key={t.label}>
+                        <strong>{t.label}</strong>
+                        {t.text ? `: ${t.text}` : ''}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+              <div id="than-bai" className={`prose ${styles.body}`} dangerouslySetInnerHTML={{__html: body}} />
               <div className={styles.author}>
-                <span className={styles.avatar} aria-hidden="true" />
+                {article.authorPhoto?.src ? (
+                  <img className={styles.avatar} src={sitePath(article.authorPhoto.src)} width={article.authorPhoto.width} height={article.authorPhoto.height} alt={article.author} loading="lazy" />
+                ) : (
+                  <span className={styles.avatar} aria-hidden="true" />
+                )}
                 <div>
                   <p className={styles.authorName}>{article.author}</p>
                   <p className={styles.authorRole}>{role}, SOHO Agency</p>
                 </div>
               </div>
             </div>
+            <aside className={styles.side} aria-label="Nhận tư vấn">
+              <div className={styles.sideInner}>
+                <QuickForm source={article.title} />
+              </div>
+            </aside>
           </div>
         </section>
         <Section

@@ -1,4 +1,4 @@
-import {siteUrl} from '../components/paths';
+import {siteUrl, servicePath, postPath} from '../components/paths';
 import {servicePages} from '../components/servicePagesData';
 import {solutionPages} from '../components/solutionPagesData';
 import {cases} from '../components/data/cases';
@@ -15,9 +15,9 @@ export default function sitemap() {
   );
   return [
     ...pages,
-    ...servicePages.map(s => ({url: url(`/dich-vu/${s.slug}/`), lastModified: now, changeFrequency: 'monthly', priority: 0.8})),
+    ...servicePages.map(s => ({url: url(`${servicePath(s.slug)}/`), lastModified: now, changeFrequency: 'monthly', priority: 0.8})),
     ...solutionPages.map(s => ({url: url(`/giai-phap/${s.slug}/`), lastModified: now, changeFrequency: 'yearly', priority: 0.5})),
     ...cases.map(c => ({url: url(`/du-an/${c.slug}/`), lastModified: now, changeFrequency: 'yearly', priority: 0.6})),
-    ...articles.map(a => ({url: url(`/blog/${a.slug}/`), lastModified: new Date(toISODate(a.date)), changeFrequency: 'yearly', priority: 0.6}))
+    ...articles.map(a => ({url: url(`${postPath(a.slug)}/`), lastModified: new Date(toISODate(a.date)), changeFrequency: 'yearly', priority: 0.6}))
   ];
 }

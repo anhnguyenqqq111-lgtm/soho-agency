@@ -10,7 +10,7 @@ window.DATA = {
     {n: 6, label: 'Dồn tiền mẫu ra đơn', sub: 'theo khách mua thật'}
   ]},
   category: 'Quảng cáo ra đơn',
-  title: 'Quảng cáo Facebook và TikTok ra đơn',
-  highlight: 'Facebook và TikTok',
+  title: 'Chạy quảng cáo Facebook ra đơn',
+  highlight: 'Facebook',
   note: 'SOHO Agency'
 };

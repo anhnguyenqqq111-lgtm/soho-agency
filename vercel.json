@@ -28,32 +28,22 @@
     },
     {
       "source": "/seo-website",
-      "destination": "/dich-vu/seo-tong-the/",
+      "destination": "/seo-tong-the/",
       "permanent": true
     },
     {
       "source": "/quang-cao-google-ads",
-      "destination": "/dich-vu/google-ads-shopping/",
+      "destination": "/google-ads-shopping/",
       "permanent": true
     },
     {
-      "source": "/facebook-ads",
-      "destination": "/dich-vu/meta-tiktok-ads/",
+      "source": "/dich-vu/meta-tiktok-ads",
+      "destination": "/facebook-ads/",
       "permanent": true
     },
     {
-      "source": "/thiet-ke-website",
-      "destination": "/dich-vu/thiet-ke-website/",
-      "permanent": true
-    },
-    {
-      "source": "/nhan-dien-thuong-hieu",
-      "destination": "/dich-vu/nhan-dien-thuong-hieu/",
-      "permanent": true
-    },
-    {
-      "source": "/thiet-ke-mobile-app",
-      "destination": "/dich-vu/thiet-ke-mobile-app/",
+      "source": "/dich-vu/meta-tiktok-ads/",
+      "destination": "/facebook-ads/",
       "permanent": true
     },
     {
@@ -64,6 +54,26 @@
     {
       "source": "/terms-conditions",
       "destination": "/dieu-khoan-su-dung/",
+      "permanent": true
+    },
+    {
+      "source": "/dich-vu/:slug([a-z0-9-]+)",
+      "destination": "/:slug/",
+      "permanent": true
+    },
+    {
+      "source": "/dich-vu/:slug([a-z0-9-]+)/",
+      "destination": "/:slug/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/:slug([a-z0-9-]+)",
+      "destination": "/:slug/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/:slug([a-z0-9-]+)/",
+      "destination": "/:slug/",
       "permanent": true
     }
   ]

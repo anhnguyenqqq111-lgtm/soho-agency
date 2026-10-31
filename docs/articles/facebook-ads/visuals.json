@@ -1,11 +1,11 @@
 {
-  "title": "Chạy quảng cáo Facebook và TikTok ra đơn",
+  "title": "Chạy quảng cáo Facebook ra đơn",
   "category": "Quảng cáo ra đơn",
   "theme": "violet",
   "hero": {"photo": "meta-tiktok-ads-a700f12e.jpg", "focal": [0.7, 0.5]},
   "inArticle": [
     {"photo": "meta-tiktok-ads-e1f04e8d.jpg", "label": "Quảng cáo phải tự làm người xem dừng tay", "focal": [0.5, 0.5]},
-    {"photo": "meta-tiktok-ads-143731d0.jpg", "label": "TikTok: video dọc, tự quay, có tiếng", "focal": [0.5, 0.5]},
+    {"photo": "meta-tiktok-ads-8d90ff2e.jpg", "label": "Chạy tin nhắn hay chạy chuyển đổi", "focal": [0.6, 0.55]},
     {"photo": "meta-tiktok-ads-2a8da3e9.jpg", "label": "Đọc kết quả theo khách mua thật", "focal": [0.5, 0.5]}
   ]
 }

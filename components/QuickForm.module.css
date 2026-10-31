@@ -1,0 +1,98 @@
+/* Form ngắn cột phải bài blog: thẻ trắng, viền trên denim, nút cam, nút gọi bên dưới */
+.box {
+  position: relative;
+  display: grid;
+  gap: 14px;
+  padding: 24px 22px 20px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  box-shadow: 0 18px 40px -24px rgba(15, 35, 64, 0.3);
+  overflow: hidden;
+}
+.box::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto;
+  height: 4px;
+  background: linear-gradient(90deg, var(--denim), var(--c-orange));
+}
+.kicker {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--denim);
+}
+.title {
+  margin-top: -6px;
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--ink);
+}
+.sub {
+  margin-top: -4px;
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: var(--ink-2);
+}
+.form {
+  display: grid;
+  gap: 12px;
+}
+.req {
+  color: var(--c-orange-deep);
+}
+.check {
+  font-size: 13px;
+}
+.submit {
+  min-height: 48px;
+  border: 0;
+  border-radius: 12px;
+  background: var(--c-orange);
+  color: var(--ink-navy);
+  font: inherit;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+}
+.submit:hover {
+  filter: brightness(1.05);
+}
+.submit:disabled {
+  opacity: 0.7;
+  cursor: progress;
+}
+.note {
+  font-size: 13px;
+  text-align: center;
+  color: var(--ink-3);
+}
+.done {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 14px;
+  border-radius: 12px;
+  background: var(--tint);
+  font-size: 15px;
+  color: var(--ink);
+}
+.call {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 46px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  font-weight: 700;
+  color: var(--ink) !important;
+  text-decoration: none;
+}
+.call:hover {
+  background: var(--tint);
+}

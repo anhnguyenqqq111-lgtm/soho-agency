@@ -20,7 +20,8 @@ const ENDPOINT = process.env.NEXT_PUBLIC_FORM_ENDPOINT || '';
 const SERVICES = [
   'SEO website',
   'Google Ads',
-  'Facebook Ads, TikTok Ads',
+  'Facebook Ads',
+  'TikTok Ads',
   'Thiết kế website',
   'Nhận diện thương hiệu',
   'Thiết kế Mobile App',

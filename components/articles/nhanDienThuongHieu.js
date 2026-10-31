@@ -4,7 +4,7 @@ export const nhanDienThuongHieuArticle = {
     'Bộ nhận diện thương hiệu gồm những gì, quy trình từ định vị tới sổ tay, khi nào nên làm mới, dùng nhất quán trên kênh online và thủ tục bảo hộ nhãn hiệu.',
   readingTime: '11 phút đọc',
   updatedDate: '31/10/2026',
-  author: {name: 'Nguyễn Thế Tuấn Anh', role: 'Phụ trách chiến lược tăng trưởng, SOHO Agency'},
+  authorKey: 'mkt',
   cover: {
     src: '/media/articles/nhan-dien-thuong-hieu/nhan-dien-thuong-hieu-hero.webp',
     alt: 'Hộp màu nước, cọ vẽ và sổ phác thảo trang trắng trên bàn gỗ, điểm bắt đầu khi dựng bộ nhận diện thương hiệu',
@@ -129,7 +129,7 @@ Rất nhiều lần khách gặp thương hiệu của bạn diễn ra trên mà
 ### Những điểm hay lệch
 
 - **Ảnh đại diện.** Khung tròn cắt mất góc logo. Dùng bản chỉ có biểu tượng hoặc bản chữ rút gọn, căn giữa.
-- **Tên hiển thị.** Mỗi kênh một cách viết tên. Chọn một cách viết và dùng ở mọi nơi. Riêng hồ sơ Google Maps, tên phải là tên thật đang dùng, xem [trang SEO Google Maps](/dich-vu/local-seo-google-maps/).
+- **Tên hiển thị.** Mỗi kênh một cách viết tên. Chọn một cách viết và dùng ở mọi nơi. Riêng hồ sơ Google Maps, tên phải là tên thật đang dùng, xem [trang SEO Google Maps](/local-seo-google-maps/).
 - **Màu chữ trên nền.** Màu thương hiệu sáng như vàng, cam nhạt thường khó đọc khi đặt chữ trắng lên trên. Theo tiêu chuẩn [WCAG 2.2](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html), chữ thường cần độ tương phản tối thiểu 4,5:1 so với nền, chữ lớn tối thiểu 3:1. Kiểm tra khi chọn màu, đừng đợi tới lúc làm website.
 - **Mẫu bài đăng.** Nhân viên tự chọn phông, tự chọn màu cho từng bài. Làm sẵn bộ mẫu trên Canva hoặc Figma, khóa sẵn màu và chữ, nhân viên chỉ thay nội dung.
 
@@ -137,7 +137,7 @@ Rất nhiều lần khách gặp thương hiệu của bạn diễn ra trên mà
 
 Mỗi quý, mở tất cả các kênh trên điện thoại, chụp màn hình đặt cạnh nhau. Chỗ nào lệch thì sửa. Việc này mất chừng một buổi nhưng giữ được công sức đã bỏ ra.
 
-Website là nơi bộ nhận diện được dùng nhiều nhất và lâu nhất. Cách đưa nhận diện vào một website nhận khách xem [trang Thiết kế website](/dich-vu/thiet-ke-website/).
+Website là nơi bộ nhận diện được dùng nhiều nhất và lâu nhất. Cách đưa nhận diện vào một website nhận khách xem [trang Thiết kế website](/thiet-ke-website/).
 `
     },
     {

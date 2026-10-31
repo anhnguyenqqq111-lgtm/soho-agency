@@ -1,4 +1,5 @@
 import {getCoreServices} from '../servicePagesData';
+import {servicePath} from '../paths';
 
 /*
   Dữ liệu điều hướng chính và Mega Menu "Dịch vụ".
@@ -24,7 +25,8 @@ const SERVICE_GROUPS = [
     items: [
       ['seo-tong-the', 'SEO Website'],
       ['google-ads-shopping', 'Google Ads'],
-      ['meta-tiktok-ads', 'Facebook Ads']
+      ['facebook-ads', 'Facebook Ads'],
+      ['tiktok-ads', 'TikTok Ads']
     ]
   },
   {
@@ -46,7 +48,7 @@ export function getServicesMenu() {
     overview: {label: 'Xem tất cả dịch vụ', href: '/dich-vu'},
     groups: SERVICE_GROUPS.map(group => ({
       ...group,
-      items: group.items.map(([slug, label]) => ({slug, label, href: `/dich-vu/${slug}`, desc: core.get(slug).coreDesc, icon: core.get(slug).icon}))
+      items: group.items.map(([slug, label]) => ({slug, label, href: servicePath(slug), desc: core.get(slug).coreDesc, icon: core.get(slug).icon}))
     })),
     cta: {title: 'Bạn chưa biết bắt đầu từ đâu?', text: 'Cùng SOHO tìm giải pháp phù hợp.', ...CTA}
   };

@@ -23,7 +23,7 @@ const TARGETS = [
   {dir: 'media/articles', match: /-hero\.webp$/, recursive: true}
 ];
 
-const isVariant = name => /-(480|960)\.webp$/.test(name);
+const isVariant = name => new RegExp(`-(${VARIANT_WIDTHS.join('|')})\\.webp$`).test(name);
 
 function* walk(dir, recursive) {
   for (const entry of fs.readdirSync(dir, {withFileTypes: true})) {

@@ -47,8 +47,8 @@ export const SITUATIONS = [
   {
     key: 'meta',
     icon: 'meta',
-    service: 'Quảng cáo Facebook, TikTok',
-    slug: 'meta-tiktok-ads',
+    service: 'Quảng cáo Facebook',
+    slug: 'facebook-ads',
     title: 'Đăng bài đều mà ít ai nhắn hỏi',
     why: [
       'Bài đăng chỉ tới người đã theo dõi trang, ít người mới thấy.',

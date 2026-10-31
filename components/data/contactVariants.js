@@ -9,7 +9,8 @@ export const FORM_SERVICE = {
   'seo-ai-overview': 'SEO website',
   'local-seo-google-maps': 'SEO website',
   'google-ads-shopping': 'Google Ads',
-  'meta-tiktok-ads': 'Facebook Ads, TikTok Ads',
+  'facebook-ads': 'Facebook Ads',
+  'tiktok-ads': 'TikTok Ads',
   'cro-landing-page': 'Nội dung, đo lường hoặc dịch vụ khác',
   'thiet-ke-website': 'Thiết kế website',
   'nhan-dien-thuong-hieu': 'Nhận diện thương hiệu',
@@ -22,7 +23,8 @@ export const FORM_SERVICE = {
 // Chặng chính của từng dịch vụ (tên chặng như bản live) dùng trong câu mời mặc định
 const STAGE = {
   'nhan-dien-thuong-hieu': 'Nhận biết',
-  'meta-tiktok-ads': 'Nhận biết',
+  'facebook-ads': 'Nhận biết',
+  'tiktok-ads': 'Nhận biết',
   'content-marketing-pr': 'Nhận biết',
   'seo-tong-the': 'Tìm kiếm và cân nhắc',
   'seo-ai-overview': 'Tìm kiếm và cân nhắc',
@@ -40,7 +42,8 @@ const SERVICE_CTA = {
     title: 'Trao đổi về nhận diện thương hiệu',
     text: 'Kể SOHO bạn đang ở đâu: mới ra mắt, đổi định vị hay hình ảnh đang mỗi nơi một kiểu. SOHO đề xuất phạm vi vừa đủ, không bắt làm trọn bộ.'
   },
-  'meta-tiktok-ads': {title: 'Rà soát tài khoản Meta, TikTok'},
+  'facebook-ads': {title: 'Rà soát tài khoản quảng cáo Facebook'},
+  'tiktok-ads': {title: 'Trao đổi kế hoạch quảng cáo TikTok'},
   'content-marketing-pr': {title: 'Trao đổi kế hoạch nội dung'},
   'seo-tong-the': {
     title: 'Nhận đánh giá hệ thống SEO',
@@ -62,7 +65,8 @@ const SERVICE_CTA = {
 // "Khi nào chưa nên làm" theo bản live (touchpoints.js ROLES.notYet), dùng ở hero trang dịch vụ
 export const NOT_YET = {
   'nhan-dien-thuong-hieu': 'Chưa rõ bán cho ai và khác đối thủ ở đâu: làm tư vấn lộ trình trước, nhận diện sau.',
-  'meta-tiktok-ads': 'Chưa có nội dung, hình ảnh để chạy thử nhiều mẫu: chuẩn bị nội dung trước.',
+  'facebook-ads': 'Chưa có nội dung, hình ảnh để chạy thử nhiều mẫu: chuẩn bị nội dung trước.',
+  'tiktok-ads': 'Chưa có người quay hoặc chưa có sản phẩm mẫu để quay video: chuẩn bị nguồn video trước.',
   'content-marketing-pr': 'Chưa có người duyệt nội dung chuyên môn phía bạn: thống nhất người duyệt trước.',
   'seo-tong-the': 'Cần khách trong vài tuần tới: SEO thường cần vài tháng, nên chạy Google Ads song song.',
   'seo-ai-overview': 'Website chưa có nền SEO cơ bản: làm SEO tổng thể trước.',

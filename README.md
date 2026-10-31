@@ -55,9 +55,10 @@ app/
   styles/base.css            reset, typography, .prose, hiệu ứng hé lộ
   styles/diagram.css         style chung cho sơ đồ SVG
   page.js                    trang chủ
-  dich-vu/                   danh sách + chi tiết 9 dịch vụ
+  [slug]/                    trang chi tiết 13 dịch vụ và các bài blog, URL ngay dưới gốc (/seo-tong-the/, /framework-seo-8-buoc/); nội dung ở components/pages/
+  dich-vu/                   trang danh sách dịch vụ
   giai-phap/                 danh sách + chi tiết 6 giải pháp
-  ket-qua/  ve-soho/  lien-he/  blog/
+  ket-qua/  ve-soho/  lien-he/  blog/ (danh sách bài)
   chinh-sach-bao-mat/  dieu-khoan-su-dung/   trang pháp lý (bản nháp)
 
 components/
@@ -77,7 +78,7 @@ components/
   data/company.js            thông tin công ty (địa chỉ, điện thoại, năm thành lập...)
   data/clients.js            khách hàng, dự án
   data/proof.js              chứng nhận đối tác, nhận xét khách hàng
-  servicePagesData.js        9 dịch vụ
+  servicePagesData.js        13 dịch vụ
   solutionPagesData.js       6 giải pháp
   blogData.js                bài blog (HTML trong chuỗi), danh mục, ảnh banner/thumbnail
   articles/*.js              bài viết dài cho từng dịch vụ (markdown trong chuỗi)

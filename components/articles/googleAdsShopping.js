@@ -4,7 +4,7 @@ export const googleAdsShoppingArticle = {
     'Khi nào chạy Search, Shopping hay Performance Max, cách chia tài khoản, lọc từ khóa phủ định, chọn giá thầu và đọc báo cáo theo lãi thật.',
   readingTime: '11 phút đọc',
   updatedDate: '31/10/2026',
-  author: {name: 'Nguyễn Thế Tuấn Anh', role: 'Phụ trách chiến lược tăng trưởng, SOHO Agency'},
+  authorKey: 'mkt',
   cover: {
     src: '/media/articles/google-ads-shopping/google-ads-shopping-hero.webp',
     alt: 'Giỏ hàng siêu thị xếp thành hàng, ảnh đầu bài quảng cáo Google Ads và Google Shopping',
@@ -42,11 +42,11 @@ Google Ads hợp với:
 
 Nên dừng lại trước khi bỏ tiền nếu:
 
-1. **Chưa đo được đơn hàng hay cuộc gọi.** Khi đó Google chỉ còn tối ưu theo lượt nhấp. Cách cài đo xem ở [trang Đo lường GA4 và Looker Studio](/dich-vu/ga4-looker-dashboard/).
-2. **Trang đích chưa sẵn sàng.** Khách nhấp vào mà không biết bấm đâu thì tiền trôi đi. Xem [trang Tối ưu chuyển đổi](/dich-vu/cro-landing-page/).
+1. **Chưa đo được đơn hàng hay cuộc gọi.** Khi đó Google chỉ còn tối ưu theo lượt nhấp. Cách cài đo xem ở [trang Đo lường GA4 và Looker Studio](/ga4-looker-dashboard/).
+2. **Trang đích chưa sẵn sàng.** Khách nhấp vào mà không biết bấm đâu thì tiền trôi đi. Xem [trang Tối ưu chuyển đổi](/cro-landing-page/).
 3. **Biên lợi nhuận quá mỏng.** Tính ROAS hòa vốn ở mục 7 trước khi chạy.
 
-Sản phẩm mới hoàn toàn, chưa ai tìm, thường hợp với quảng cáo tạo nhu cầu hơn. Xem [trang Quảng cáo Facebook và TikTok](/dich-vu/meta-tiktok-ads/).
+Sản phẩm mới hoàn toàn, chưa ai tìm, thường hợp với quảng cáo tạo nhu cầu hơn. Xem trang [quảng cáo Facebook](/facebook-ads/) và [quảng cáo TikTok](/tiktok-ads/).
 `
     },
     {
@@ -151,7 +151,7 @@ ROAS là doanh thu quảng cáo mang về chia cho tiền quảng cáo. CPA là 
 
 **Cho hệ thống thời gian học.** Sau khi đổi chiến lược hay mục tiêu, trạng thái có thể hiện "Đang học". Google cho biết trạng thái này không quá 7 ngày, hiệu quả thường ổn định sau 1 đến 2 chu kỳ chuyển đổi ([Google Ads Help](https://support.google.com/google-ads/answer/13020501?hl=en)). Chu kỳ chuyển đổi là thời gian từ lúc nhấp tới lúc mua, có thể vài giờ hoặc vài tuần. Đừng đổi mục tiêu liên tục trong khoảng đó.
 
-**Giá thầu chỉ tốt bằng dữ liệu đưa vào.** Nếu chuyển đổi chính là "xem trang liên hệ", Google sẽ tìm thêm người xem trang liên hệ, không phải người mua. Hãy chọn chuyển đổi gần tiền nhất: đơn hàng có giá trị, cuộc gọi đủ dài, form đã được xác nhận là khách thật. Việc gửi đơn đã chốt ngược về Google Ads thuộc [trang Đo lường GA4 và Looker Studio](/dich-vu/ga4-looker-dashboard/).
+**Giá thầu chỉ tốt bằng dữ liệu đưa vào.** Nếu chuyển đổi chính là "xem trang liên hệ", Google sẽ tìm thêm người xem trang liên hệ, không phải người mua. Hãy chọn chuyển đổi gần tiền nhất: đơn hàng có giá trị, cuộc gọi đủ dài, form đã được xác nhận là khách thật. Việc gửi đơn đã chốt ngược về Google Ads thuộc [trang Đo lường GA4 và Looker Studio](/ga4-looker-dashboard/).
 `
     },
     {
@@ -202,7 +202,7 @@ Biên lợi nhuận gộp tính sau giá vốn, phí vận chuyển, phí thanh 
 3. **Khách hàng tiềm năng có thành khách thật không?** Với B2B, đối chiếu danh sách form với sổ bán hàng.
 4. **Tiền đang bị giới hạn ở đâu?** Chiến dịch có lãi mà thiếu ngân sách thì nên nhận thêm.
 
-Báo cáo tốt gói trong một trang: chi phí, số đơn, chi phí mỗi đơn, doanh thu, ROAS, lãi sau giá vốn theo nhóm hàng, kèm ghi chú tháng này đã đổi gì. Báo cáo tự cập nhật bằng Looker Studio là việc của [trang Đo lường GA4 và Looker Studio](/dich-vu/ga4-looker-dashboard/).
+Báo cáo tốt gói trong một trang: chi phí, số đơn, chi phí mỗi đơn, doanh thu, ROAS, lãi sau giá vốn theo nhóm hàng, kèm ghi chú tháng này đã đổi gì. Báo cáo tự cập nhật bằng Looker Studio là việc của [trang Đo lường GA4 và Looker Studio](/ga4-looker-dashboard/).
 `
     },
     {

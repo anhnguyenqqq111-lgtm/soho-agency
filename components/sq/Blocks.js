@@ -1,7 +1,7 @@
 import styles from './sq.module.css';
 import Glass from './Glass';
 import Button from '../ui/Button';
-import {sitePath, srcSet} from '../paths';
+import {sitePath, srcSet, postPath} from '../paths';
 import {getCase, publishedCases} from '../data/cases';
 import {testimonials, partners} from '../data/proof';
 import {company} from '../data/company';
@@ -663,7 +663,7 @@ export function BlogSection({posts}) {
       </div>
       <div className={styles.posts}>
         {posts.map(p => (
-          <a key={p.slug} href={sitePath(`/blog/${p.slug}/`)} className={styles.post}>
+          <a key={p.slug} href={sitePath(postPath(p.slug))} className={styles.post}>
             {p.image && (() => {
               const t = thumbnailOf(p);
               return <img src={sitePath(t.src)} srcSet={srcSet(t.src, t.width)} sizes="(max-width: 640px) calc(100vw - 32px), (max-width: 1000px) 50vw, 400px" alt="" loading="lazy" width={t.width} height={t.height} />;

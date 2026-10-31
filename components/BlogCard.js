@@ -1,5 +1,5 @@
 import styles from './BlogCard.module.css';
-import {sitePath, srcSet} from './paths';
+import {sitePath, srcSet, postPath} from './paths';
 import {thumbnailOf} from './blogVisuals';
 
 /*
@@ -8,7 +8,7 @@ import {thumbnailOf} from './blogVisuals';
 */
 export default function BlogCard({post, delay = 0, headingLevel = 'h3'}) {
   const Heading = headingLevel;
-  const href = sitePath(`/blog/${post.slug}`);
+  const href = sitePath(postPath(post.slug));
   // Thumbnail: ảnh 1200×675 từ Image Studio nếu bài đã có, không thì ảnh gốc 1600×1000; tỉ lệ khung theo đúng ảnh.
   const thumb = post.image ? thumbnailOf(post) : null;
   return (

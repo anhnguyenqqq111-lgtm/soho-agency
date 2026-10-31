@@ -1,5 +1,5 @@
 import styles from './Footer.module.css';
-import {sitePath} from './paths';
+import {sitePath, servicePath} from './paths';
 import {getCoreServices} from './servicePagesData';
 import {company} from './data/company';
 import {partners} from './data/proof';
@@ -11,7 +11,7 @@ import Icon from './ui/Icon';
 export default function Footer() {
   const year = new Date().getFullYear();
   const columns = [
-    {title: 'Dịch vụ', links: [...getCoreServices().map(s => ({label: s.coreTitle, href: `/dich-vu/${s.slug}`})), {label: 'Tất cả dịch vụ', href: '/dich-vu'}]},
+    {title: 'Dịch vụ', links: [...getCoreServices().map(s => ({label: s.coreTitle, href: servicePath(s.slug)})), {label: 'Tất cả dịch vụ', href: '/dich-vu'}]},
     {
       title: 'Công ty',
       links: [

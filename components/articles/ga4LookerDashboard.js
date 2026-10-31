@@ -4,7 +4,7 @@ export const ga4LookerDashboardArticle = {
     'Cài sự kiện và sự kiện chính trong GA4, đặt UTM, chế độ đồng ý, gắn thẻ phía máy chủ, Meta CAPI và dựng báo cáo Looker Studio tự cập nhật.',
   readingTime: '11 phút đọc',
   updatedDate: '31/10/2026',
-  author: {name: 'Nguyễn Thế Tuấn Anh', role: 'Phụ trách chiến lược tăng trưởng, SOHO Agency'},
+  authorKey: 'dev',
   cover: {
     src: '/media/articles/ga4-looker-dashboard/ga4-looker-dashboard-hero.webp',
     alt: 'Máy tính xách tay mở trang báo cáo có biểu đồ và số liệu, cạnh tiêu đề GA4, đo lường chuyển đổi và báo cáo Looker Studio',
@@ -43,7 +43,7 @@ Chuyện này rất hay gặp. Thường không phải do ai làm sai. Có ba l�
 
 Không có công cụ nào cho con số khớp hoàn toàn. Mục tiêu thực tế là: mỗi hành động quan trọng được đo một cách thống nhất, biết rõ phần nào đo được, phần nào không. Mọi người cùng nhìn một bộ số.
 
-Bài này nói về cách cài đặt đo và dựng báo cáo. Cách chạy quảng cáo xem ở [trang quảng cáo Google](/dich-vu/google-ads-shopping/) và [trang quảng cáo Facebook, TikTok](/dich-vu/meta-tiktok-ads/).
+Bài này nói về cách cài đặt đo và dựng báo cáo. Cách chạy quảng cáo xem ở [trang quảng cáo Google](/google-ads-shopping/) và trang [quảng cáo Facebook](/facebook-ads/), [quảng cáo TikTok](/tiktok-ads/).
 `
     },
     {
@@ -186,7 +186,7 @@ Vì vậy, đừng chốt số của ngày hôm qua vào sáng sớm hôm nay. N
 
 GA4 cho biết khách đến từ đâu. Sổ bán hàng cho biết đơn nào thật sự thu được tiền. Mỗi tháng nên đặt hai bộ số cạnh nhau. Chênh lệch nhỏ là bình thường. Chênh lệch lớn hoặc đột ngột thường là dấu hiệu mã theo dõi hỏng sau một lần sửa website.
 
-Có số đúng rồi, bước tiếp theo là sửa chỗ khách rời đi trên website, xem [trang tối ưu chuyển đổi](/dich-vu/cro-landing-page/).
+Có số đúng rồi, bước tiếp theo là sửa chỗ khách rời đi trên website, xem [trang tối ưu chuyển đổi](/cro-landing-page/).
 `
     },
     {

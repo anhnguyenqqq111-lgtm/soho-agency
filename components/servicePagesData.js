@@ -1,7 +1,7 @@
 export const serviceGroups = ['Được tìm thấy trên Google và AI', 'Quảng cáo ra đơn', 'Website và thương hiệu', 'Nội dung và đo lường'];
 
 /*
-  Sáu dịch vụ chính hiện ở trang chủ (đúng danh mục SOHO đang bán trên sohoagency.vn), theo thứ tự hiển thị.
+  Bảy dịch vụ chính (danh mục SOHO đang bán; Facebook Ads và TikTok Ads tách riêng từ 31/10/2026), theo thứ tự hiển thị trong menu và chân trang.
   coreTitle: tên ngắn trên thẻ; coreDesc: một câu lợi ích; icon: tên trong bộ Lucide (components/ui/Icon.js).
 */
 export const coreServices = [
@@ -21,11 +21,18 @@ export const coreServices = [
     featured: true
   },
   {
-    slug: 'meta-tiktok-ads',
+    slug: 'facebook-ads',
     coreTitle: 'Facebook Ads',
     icon: 'megaphone',
-    art: '/services/meta-tiktok-ads.svg',
-    coreDesc: 'Quảng cáo Facebook và TikTok nhắm tới tin nhắn và đơn hàng, không chỉ lượt xem.'
+    art: '/services/facebook-ads.svg',
+    coreDesc: 'Quảng cáo Facebook và Instagram nhắm tới tin nhắn và đơn hàng, không chỉ lượt xem.'
+  },
+  {
+    slug: 'tiktok-ads',
+    coreTitle: 'TikTok Ads',
+    icon: 'video',
+    art: '/services/tiktok-ads.svg',
+    coreDesc: 'Video ngắn đúng kiểu người xem TikTok, quảng cáo nhắm tới đơn hàng, không chỉ lượt xem.'
   },
   {
     slug: 'thiet-ke-website',
@@ -212,7 +219,7 @@ export const servicePages = [
     proof: 'Hợp với shop online, doanh nghiệp B2B cần khách hàng tiềm năng, dịch vụ giá cao và doanh nghiệp đang tăng ngân sách quảng cáo.'
   },
   {
-    slug: 'meta-tiktok-ads',
+    slug: 'facebook-ads',
     menuDesc: 'Liên tục thử mẫu quảng cáo mới, chạy quảng cáo bám đuổi người đã quan tâm',
     deliverables: [
       'Chân dung khách hàng và lý do họ còn chần chừ',
@@ -222,15 +229,15 @@ export const servicePages = [
       'Báo cáo mẫu nào ra khách và khách đó có mua thật không'
     ],
     artifact: {image: null, need: 'Ma trận creative thật cùng các mẫu quảng cáo đã chạy'},
-    eyebrow: 'Meta & TikTok Ads',
-    title: 'Quảng cáo Facebook và TikTok cho thương hiệu cần thêm khách và đơn hàng',
-    menuTitle: 'Meta & TikTok Ads',
+    eyebrow: 'Facebook Ads',
+    title: 'Quảng cáo Facebook cho thương hiệu cần thêm tin nhắn và đơn hàng',
+    menuTitle: 'Facebook Ads',
     category: 'Quảng cáo ra đơn',
     intro: 'Dành cho sản phẩm mà khách cần xem ảnh, video và nghe người đã mua kể lại rồi mới quyết định.',
     promise:
       'SOHO liên tục thử mẫu quảng cáo mới, nhắm đúng tệp khách và chạy quảng cáo bám đuổi người đã quan tâm. Mục tiêu là tiền quảng cáo ra đơn hàng, hoặc ra khách hàng tiềm năng dễ chốt.',
     insight:
-      'Quảng cáo Facebook, Instagram và TikTok không hiệu quả hơn nhờ đổi tệp khách liên tục. Điều quyết định là mẫu quảng cáo kể chuyện gì, ưu đãi gì và landing page sau khi khách nhấp. Tiếp theo là phản hồi của nhân viên bán hàng: khách đó tốt hay không.',
+      'Quảng cáo Facebook và Instagram không hiệu quả hơn nhờ đổi tệp khách liên tục. Điều quyết định là mẫu quảng cáo kể chuyện gì, ưu đãi gì và landing page sau khi khách nhấp. Tiếp theo là phản hồi của nhân viên bán hàng: khách đó tốt hay không.',
     outcomes: [
       'Luôn có mẫu quảng cáo mới đang chạy thử',
       'Không phụ thuộc vào một mẫu quảng cáo duy nhất',
@@ -249,6 +256,45 @@ export const servicePages = [
       'Báo cáo từng mẫu: chi phí mỗi khách, khách có mua thật không, mang về bao nhiêu doanh thu'
     ],
     proof: 'Hợp với sản phẩm bán cho người tiêu dùng, giáo dục, làm đẹp, bất động sản, dịch vụ địa phương và sản phẩm khách cần cân nhắc lâu.'
+  },
+  {
+    slug: 'tiktok-ads',
+    menuDesc: 'Kịch bản video ngắn, chạy thử nhiều video, giữ video ra đơn hàng thật',
+    deliverables: [
+      'Chân dung người xem sẽ mua của bạn và điều khiến họ dừng lướt',
+      'Kịch bản video ngắn: mấy giây mở đầu, phần giữa, lời mời mua',
+      'Kế hoạch quay và chạy thử video mới mỗi tuần',
+      'Cài mã theo dõi của TikTok (Pixel) lên website, gửi cả đơn hàng thật về TikTok',
+      'Báo cáo video nào giữ được người xem, video nào ra đơn'
+    ],
+    artifact: {image: null, need: 'Video quảng cáo TikTok đã chạy cùng số liệu từng video'},
+    eyebrow: 'TikTok Ads',
+    title: 'Quảng cáo TikTok cho sản phẩm bán tốt nhờ video ngắn',
+    menuTitle: 'TikTok Ads',
+    category: 'Quảng cáo ra đơn',
+    intro: 'Dành cho sản phẩm dễ bán qua video ngắn: làm đẹp, thời trang, đồ ăn, đồ gia dụng, khóa học, khách hàng trẻ.',
+    promise:
+      'SOHO viết kịch bản, cùng bạn quay video ngắn và chạy quảng cáo TikTok nhắm tới tin nhắn, đơn hàng. Tuần nào cũng có video mới để thử, ngân sách dồn cho video ra khách mua thật.',
+    insight:
+      'Người xem TikTok lướt rất nhanh. Video quảng cáo trông như một video bình thường, mở đầu bằng điều người xem quan tâm, thường giữ người xem tốt hơn video quay chỉn chu kiểu quảng cáo truyền hình. Vì vậy cần nhiều video để thử, không phải một video thật đẹp.',
+    outcomes: [
+      'Luôn có video mới đang chạy thử',
+      'Biết video nào ra đơn, không chỉ video nào nhiều lượt xem',
+      'Đơn hàng từ TikTok được ghi nhận đúng trong báo cáo'
+    ],
+    pains: [
+      'Video nhiều lượt xem mà không ai mua',
+      'Không có người quay, không biết tuần này quay gì',
+      'Quảng cáo chạy vài ngày là chi phí mỗi đơn tăng vọt'
+    ],
+    process: [
+      'Tìm hiểu khách mua là ai, họ hay xem kiểu video nào trên TikTok',
+      'Viết kịch bản theo câu mở đầu, cách dùng sản phẩm và lời người đã mua',
+      'Quay hoặc dựng nhiều video ngắn, chạy thử cùng lúc',
+      'Giữ video ra đơn, đẩy thêm bài đăng tự nhiên đang được xem nhiều',
+      'Báo cáo từng video: tỉ lệ xem hết, chi phí mỗi đơn, doanh thu mang về'
+    ],
+    proof: 'Hợp với shop online, sản phẩm giá vừa phải bán cho người tiêu dùng, và thương hiệu có thể quay video đều đặn.'
   },
   {
     slug: 'cro-landing-page',

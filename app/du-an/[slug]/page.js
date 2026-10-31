@@ -9,7 +9,7 @@ import CtaBand from '../../../components/ui/CtaBand';
 import Icon from '../../../components/ui/Icon';
 import {publishedCases, getCase} from '../../../components/data/cases';
 import {getServicePage} from '../../../components/servicePagesData';
-import {sitePath, siteUrl, srcSet} from '../../../components/paths';
+import {sitePath, siteUrl, srcSet, servicePath} from '../../../components/paths';
 import SearchTrend from '../../../components/services/proof/SearchTrend';
 
 // Viết thường chữ đầu cho câu đứng sau dấu hai chấm, giữ chữ viết tắt (SEO) và tên riêng (Facebook).
@@ -149,7 +149,7 @@ export default async function ProjectPage({params}) {
             }
             spacing="sm"
           >
-            <LinkRows items={services.map(s => ({title: s.menuTitle, desc: s.menuDesc, href: `/dich-vu/${s.slug}`}))} />
+            <LinkRows items={services.map(s => ({title: s.menuTitle, desc: s.menuDesc, href: servicePath(s.slug)}))} />
           </Section>
         )}
 

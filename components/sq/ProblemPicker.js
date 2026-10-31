@@ -1,5 +1,5 @@
 import styles from './picker.module.css';
-import {sitePath} from '../paths';
+import {sitePath, servicePath, postPath} from '../paths';
 import {SITUATIONS} from '../data/situations';
 import {getCase} from '../data/cases';
 
@@ -29,7 +29,7 @@ export default function ProblemPicker({idPrefix = 'pk'}) {
         <div>
           {SITUATIONS.map((s, i) => {
             const proj = s.caseSlug ? getCase(s.caseSlug) : null;
-            const goHref = sitePath(`/dich-vu/${s.slug}/`);
+            const goHref = sitePath(servicePath(s.slug));
             return (
               <article key={s.key} className={styles.panel} data-i={i} aria-label={s.title}>
                 <header className={styles.head}>
@@ -72,7 +72,7 @@ export default function ProblemPicker({idPrefix = 'pk'}) {
                   {(proj || s.blogSlug) && (
                     <p className={styles.case}>
                       <b>{proj ? 'Dự án thực tế' : 'Đọc thêm'}</b>
-                      <a href={sitePath(proj ? `/du-an/${proj.slug}/` : `/blog/${s.blogSlug}/`)}>{s.proof}</a>
+                      <a href={sitePath(proj ? `/du-an/${proj.slug}/` : postPath(s.blogSlug))}>{s.proof}</a>
                     </p>
                   )}
                   <p className={styles.go}>

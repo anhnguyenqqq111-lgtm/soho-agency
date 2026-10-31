@@ -4,7 +4,7 @@ export const seoTongTheArticle = {
     'Một dự án SEO tổng thể gồm kỹ thuật, nội dung, liên kết và đo lường. Bao lâu thấy kết quả, chi phí phụ thuộc gì và cách chọn đơn vị SEO đáng tin.',
   readingTime: '11 phút đọc',
   updatedDate: '31/10/2026',
-  author: {name: 'Nguyễn Thế Tuấn Anh', role: 'Phụ trách chiến lược tăng trưởng, SOHO Agency'},
+  authorKey: 'seo',
   cover: {
     src: '/media/articles/seo-tong-the/seo-tong-the-hero.webp',
     alt: 'Tiêu đề Dịch vụ SEO tổng thể: gồm gì, bao lâu, chi phí bên cạnh laptop trên bàn làm việc có chồng sách',
@@ -73,7 +73,7 @@ Cùng một sản phẩm, khách tìm bằng những câu rất khác nhau tùy 
 - **So sánh:** "may áo thun đồng phục ở đâu uy tín", "giá may áo thun đồng phục". Cần bài so sánh, bảng giá, ảnh mẫu thật.
 - **Sắp mua:** "xưởng may đồng phục quận Tân Bình". Cần trang dịch vụ rõ ràng, có số điện thoại và nút liên hệ.
 
-Từ đó dựng một sơ đồ bài viết: một bài tổng quan cho chủ đề lớn, các bài nhỏ trả lời từng câu hỏi, tất cả đặt link về trang dịch vụ. Lịch đăng bài, cách viết từng bài và cách tái sử dụng nội dung là phần riêng, xem [trang Content marketing](/dich-vu/content-marketing-pr/).
+Từ đó dựng một sơ đồ bài viết: một bài tổng quan cho chủ đề lớn, các bài nhỏ trả lời từng câu hỏi, tất cả đặt link về trang dịch vụ. Lịch đăng bài, cách viết từng bài và cách tái sử dụng nội dung là phần riêng, xem [trang Content marketing](/content-marketing-pr/).
 
 Google khuyên tự hỏi ba câu cho mỗi bài: **ai** viết, viết **thế nào**, viết **để làm gì**. Theo [tài liệu nội dung hữu ích](https://developers.google.com/search/docs/fundamentals/creating-helpful-content), câu "để làm gì" quan trọng nhất: bài viết phải nhằm giúp người đọc, không phải nhằm kéo lượt truy cập. Bài có kinh nghiệm thật của người làm nghề, như giá thật, quy trình thật, lỗi thường gặp ở xưởng, sẽ khác hẳn bài tổng hợp lại từ mạng.
 
@@ -87,7 +87,7 @@ Liên kết từ website khác giống như lời giới thiệu. Cách bền v�
 
 ### Phần 4: Đo bằng khách hàng, không chỉ bằng thứ hạng
 
-Thứ hạng chỉ là con số trung gian. Báo cáo SEO tốt có hai lớp. Lớp thứ nhất là lượt hiển thị, lượt nhấp, vị trí trung bình từ Search Console. Lớp thứ hai là số cuộc gọi, form, đơn hàng đến từ Google. Cách cài sự kiện và báo cáo tự cập nhật xem [trang GA4 và Looker Studio](/dich-vu/ga4-looker-dashboard/).
+Thứ hạng chỉ là con số trung gian. Báo cáo SEO tốt có hai lớp. Lớp thứ nhất là lượt hiển thị, lượt nhấp, vị trí trung bình từ Search Console. Lớp thứ hai là số cuộc gọi, form, đơn hàng đến từ Google. Cách cài sự kiện và báo cáo tự cập nhật xem [trang GA4 và Looker Studio](/ga4-looker-dashboard/).
 `
     },
     {
@@ -180,10 +180,10 @@ Câu trả lời tốt thường có điều kiện, có số liệu kèm nguồ
       content: `
 SEO không hợp với mọi tình huống. Nên cân nhắc lại nếu:
 
-- **Bạn cần khách trong tuần này.** SEO chậm hơn quảng cáo. Nếu cần đơn ngay, chạy [quảng cáo Google](/dich-vu/google-ads-shopping/) trước, làm SEO song song để giảm phụ thuộc về sau.
-- **Website sắp làm lại.** Tối ưu một website sắp bỏ là phí. Nên làm SEO ngay từ lúc dựng web mới, xem [trang Thiết kế website](/dich-vu/thiet-ke-website/).
+- **Bạn cần khách trong tuần này.** SEO chậm hơn quảng cáo. Nếu cần đơn ngay, chạy [quảng cáo Google](/google-ads-shopping/) trước, làm SEO song song để giảm phụ thuộc về sau.
+- **Website sắp làm lại.** Tối ưu một website sắp bỏ là phí. Nên làm SEO ngay từ lúc dựng web mới, xem [trang Thiết kế website](/thiet-ke-website/).
 - **Sản phẩm, giá, khách hàng mục tiêu chưa rõ.** SEO khuếch đại thông điệp đang có. Thông điệp chưa rõ thì khuếch đại cũng không ra khách.
-- **Khách của bạn chủ yếu tìm quanh khu vực.** Quán ăn, phòng khám, tiệm sửa xe nên ưu tiên hồ sơ Google Maps trước, xem [trang SEO Google Maps](/dich-vu/local-seo-google-maps/).
+- **Khách của bạn chủ yếu tìm quanh khu vực.** Quán ăn, phòng khám, tiệm sửa xe nên ưu tiên hồ sơ Google Maps trước, xem [trang SEO Google Maps](/local-seo-google-maps/).
 
 Ngược lại, SEO đáng đầu tư khi khách hay tìm hiểu kỹ trên Google trước khi liên hệ và bạn muốn bớt phụ thuộc vào quảng cáo về lâu dài.
 `
@@ -206,7 +206,7 @@ Thường không tụt ngay, vì những gì đã làm vẫn nằm trên website
 
 ### Phần trả lời bằng AI trên Google có làm SEO hết tác dụng không?
 
-Không. Google cho biết các tính năng AI của tìm kiếm dựa trên chính hệ thống xếp hạng của Google Search, nên nền SEO vẫn là điều kiện cần. Cách viết để được AI trích dẫn và cách đo riêng phần này có ở [trang SEO cho AI Overview](/dich-vu/seo-ai-overview/).
+Không. Google cho biết các tính năng AI của tìm kiếm dựa trên chính hệ thống xếp hạng của Google Search, nên nền SEO vẫn là điều kiện cần. Cách viết để được AI trích dẫn và cách đo riêng phần này có ở [trang SEO cho AI Overview](/seo-ai-overview/).
 `
     }
   ]

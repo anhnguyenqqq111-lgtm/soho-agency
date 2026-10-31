@@ -4,7 +4,7 @@ export const croLandingPageArticle = {
     'Tìm chỗ khách rời trang bằng GA4 và bản đồ nhiệt, sắp lại landing page, sửa form, tăng tốc trên điện thoại và chạy A/B test đủ mẫu, đủ thời gian.',
   readingTime: '9 phút đọc',
   updatedDate: '31/10/2026',
-  author: {name: 'Nguyễn Thế Tuấn Anh', role: 'Phụ trách chiến lược tăng trưởng, SOHO Agency'},
+  authorKey: 'dev',
   cover: {
     src: '/media/articles/cro-landing-page/cro-landing-page-hero.webp',
     alt: 'Bàn tay phác khung bố cục trang web trên giấy, ảnh đầu bài tối ưu tỷ lệ chuyển đổi landing page',
@@ -42,9 +42,9 @@ Nên làm khi:
 
 Chưa nên làm, hoặc làm việc khác trước, khi:
 
-- Trang chỉ có vài chục lượt truy cập mỗi tháng. Số liệu quá ít để biết thay đổi nào có tác dụng. Lúc này cần thêm lượt truy cập trước, xem [trang Google Ads và Shopping](/dich-vu/google-ads-shopping/) hoặc [trang Quảng cáo Facebook và TikTok](/dich-vu/meta-tiktok-ads/).
+- Trang chỉ có vài chục lượt truy cập mỗi tháng. Số liệu quá ít để biết thay đổi nào có tác dụng. Lúc này cần thêm lượt truy cập trước, xem [trang Google Ads và Shopping](/google-ads-shopping/) hoặc trang [quảng cáo Facebook](/facebook-ads/) và [quảng cáo TikTok](/tiktok-ads/).
 - Giá hoặc sản phẩm không cạnh tranh. Trang tốt không bù được ưu đãi kém.
-- Cả website cũ, chậm, khó sửa. Khi đó nên làm lại website, xem [trang Thiết kế website](/dich-vu/thiet-ke-website/).
+- Cả website cũ, chậm, khó sửa. Khi đó nên làm lại website, xem [trang Thiết kế website](/thiet-ke-website/).
 `
     },
     {
@@ -57,7 +57,7 @@ Lỗi hay gặp nhất là sửa theo cảm giác: đổi màu nút, thay ảnh 
 
 Báo cáo khám phá phễu của GA4 cho bạn đặt các bước khách cần đi qua, tối đa 10 bước, rồi xem bao nhiêu người rơi ra ở mỗi bước ([Analytics Help](https://support.google.com/analytics/answer/9327974?hl=en)). Ví dụ: vào trang, cuộn tới bảng giá, mở form, gửi form. Bạn có thể chia phễu theo thiết bị để so điện thoại với máy tính. Chênh lệch lớn giữa hai loại thiết bị thường là manh mối đầu tiên.
 
-Phễu chỉ đọc được khi các hành động đã được đo. Cách cài sự kiện xem ở [trang Đo lường GA4 và Looker Studio](/dich-vu/ga4-looker-dashboard/).
+Phễu chỉ đọc được khi các hành động đã được đo. Cách cài sự kiện xem ở [trang Đo lường GA4 và Looker Studio](/ga4-looker-dashboard/).
 
 ![Bốn bước tìm chỗ khách rời landing page: phễu GA4, bản đồ nhiệt, ghi phiên, hỏi nhân viên](/media/articles/cro-landing-page/soho-cro-landing-page-steps-01.webp "1360x850")
 *Phễu cho biết khách rời ở bước nào. Bản đồ nhiệt, ghi phiên và nhân viên bán hàng cho biết vì sao.*
@@ -148,7 +148,7 @@ Ngưỡng được tính ở phân vị 75 của các lượt tải trang, tách
 - Quá nhiều mã theo dõi, khung chat, cửa sổ bật lên cùng tải một lúc.
 - Phông chữ tải từ nhiều nguồn.
 
-CLS cao thường thấy khi nút liên hệ bị đẩy xuống lúc ảnh hay quảng cáo tải xong. Khách định bấm nút thì bấm trúng thứ khác. Việc tối ưu tốc độ cho cả website, gồm hosting và nền tảng, thuộc [trang Thiết kế website](/dich-vu/thiet-ke-website/).
+CLS cao thường thấy khi nút liên hệ bị đẩy xuống lúc ảnh hay quảng cáo tải xong. Khách định bấm nút thì bấm trúng thứ khác. Việc tối ưu tốc độ cho cả website, gồm hosting và nền tảng, thuộc [trang Thiết kế website](/thiet-ke-website/).
 `
     },
     {
