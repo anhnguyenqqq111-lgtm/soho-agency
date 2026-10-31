@@ -28,10 +28,6 @@ export default function LegalPage({title, lead, updated, sections}) {
               boxShadow: 'var(--shadow-card)'
             }}
           >
-            <p className="placeholder" style={{marginBottom: 32, maxWidth: '68ch'}}>
-              [BẢN NHÁP: nội dung dưới đây là khung tham khảo, cần bộ phận pháp chế hoặc luật sư rà soát và đối chiếu quy định hiện hành về bảo vệ dữ liệu cá
-              nhân trước khi xuất bản]
-            </p>
             <div className="prose" style={{maxWidth: 'none'}}>
               {sections.map((s, i) => (
                 <section key={s.id} id={s.id}>
