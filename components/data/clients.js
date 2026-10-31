@@ -1,4 +1,4 @@
-// Khách hàng và dự án. Logo trong public/clients, ảnh dự án đặt vào public/projects.
+// Khách hàng và dự án. Logo trong public/clients (ghi kích thước thật để trình duyệt giữ chỗ, tránh nhảy bố cục), ảnh dự án đặt vào public/projects.
 // Trường null sẽ hiện placeholder [CẦN ...] trên trang.
 export const clients = [
   {
@@ -7,6 +7,8 @@ export const clients = [
     field: 'Sản xuất may mặc B2B và xuất khẩu',
     scope: 'SEO B2B, Google Ads',
     logo: '/clients/cth.png',
+    logoWidth: 276,
+    logoHeight: 164,
     url: 'https://maymaccth.com',
     image: null, // ví dụ '/projects/cth.jpg', 1600×1000
     imageNeed: 'Website hoặc kết quả tìm kiếm Google của CTH',
@@ -20,6 +22,8 @@ export const clients = [
     field: 'Studio nhiếp ảnh và dịch vụ cưới',
     scope: 'Local SEO, Meta Ads',
     logo: '/clients/studio1nha.png',
+    logoWidth: 82,
+    logoHeight: 50,
     url: 'https://studio1nha.vn',
     image: null,
     imageNeed: 'Hồ sơ Google Maps hoặc ảnh studio',
@@ -33,6 +37,8 @@ export const clients = [
     field: 'Vận tải, logistics và chuỗi cung ứng',
     scope: 'SEO B2B, inbound pipeline',
     logo: '/clients/everlog-dark.png',
+    logoWidth: 631,
+    logoHeight: 489,
     url: 'https://everlog.com.vn',
     image: null,
     imageNeed: 'Website Everlog hoặc báo cáo lead inbound đã che số',
@@ -46,6 +52,8 @@ export const clients = [
     field: 'Healthy meal prep',
     scope: 'Paid social, tối ưu CRO',
     logo: '/clients/fitfood-dark.png',
+    logoWidth: 151,
+    logoHeight: 50,
     url: 'https://fitfood.vn',
     image: null,
     imageNeed: 'Landing page hoặc mẫu quảng cáo của Fitfood',

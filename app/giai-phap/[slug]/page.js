@@ -19,7 +19,7 @@ export async function generateMetadata({params}) {
   const {slug} = await params;
   const solution = getSolutionPage(slug);
   if (!solution) return {title: 'Không tìm thấy giải pháp'};
-  return {title: solution.title, description: solution.desc, alternates: {canonical: `/giai-phap/${solution.slug}/`}};
+  return {title: solution.title, description: solution.metaDescription || solution.desc, alternates: {canonical: `/giai-phap/${solution.slug}/`}};
 }
 
 export default async function SolutionDetailPage({params}) {

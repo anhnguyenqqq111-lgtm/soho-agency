@@ -8,6 +8,7 @@ export const solutionPages = [
     title: 'Bán cho doanh nghiệp và dịch vụ chuyên môn',
     eyebrow: 'Bán cho doanh nghiệp',
     desc: 'Dành cho doanh nghiệp bán hợp đồng giá trị lớn, mất nhiều tháng mới chốt và khách cần tin rồi mới liên hệ. SOHO giúp bạn có khách hàng tiềm năng đều đặn, đúng tệp. Kết quả đo bằng số hợp đồng chứ không bằng số form.',
+    metaDescription: 'Giải pháp cho doanh nghiệp bán hợp đồng giá trị lớn, chốt lâu: SOHO giúp có khách hàng tiềm năng đều, đúng tệp. Đo bằng số hợp đồng, không bằng số form.',
     outcomes: [
       'Xác định đúng công ty và người ra quyết định cần tiếp cận',
       'Làm landing page và bài viết trả lời đúng điều khách lo trước khi mua',
@@ -22,6 +23,7 @@ export const solutionPages = [
     title: 'Bán hàng online và bán lẻ',
     eyebrow: 'Bán lẻ',
     desc: 'Dành cho shop online và chuỗi bán lẻ cần thêm đơn hàng có lãi. SOHO kết hợp SEO trang sản phẩm, quảng cáo Google Shopping, quảng cáo bám đuổi người đã xem hàng và tối ưu trang thanh toán.',
+    metaDescription: 'Giải pháp cho shop online và chuỗi bán lẻ cần thêm đơn có lãi: SEO trang sản phẩm, Google Shopping, quảng cáo bám đuổi, tối ưu trang thanh toán.',
     outcomes: [
       'Tập trung vào nhóm hàng vừa có lãi vừa có nhiều người mua',
       'Tối ưu danh mục sản phẩm, landing page và cách đo đơn hàng',

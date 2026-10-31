@@ -49,7 +49,7 @@ Không thêm biến môi trường nào trên Vercel. Nếu lỡ đặt `GITHUB_
 
 ```text
 app/
-  layout.js                  font Bricolage Grotesque (tiêu đề) + Plus Jakarta Sans (nội dung), metadata mặc định, RevealObserver
+  layout.js                  font Bricolage Grotesque (tiêu đề) + Plus Jakarta Sans (nội dung) tự host từ app/fonts, metadata mặc định, RevealObserver
   favicon.ico, icon.png, apple-icon.png   favicon: logo Open Corner trên nền Midnight (quy ước file của Next)
   styles/tokens.css          biến màu, chữ, khoảng cách theo màu SOHO Brand Kit v3.0 (nền trắng, màu ở điểm quan trọng) (toàn bộ màu định nghĩa ở đây)
   styles/base.css            reset, typography, .prose, hiệu ứng hé lộ
@@ -83,16 +83,16 @@ components/
   articles/*.js              bài viết dài cho từng dịch vụ (markdown trong chuỗi)
 
 public/assets/brand/approved/ logo đã duyệt: SOHO_01_Open_Corner_APPROVED.svg (header, footer) và soho-logo-open-corner.png (schema, chia sẻ)
-public/banners/              banner 3D Concept A (hero) và C (CTA cuối), desktop 1920×960 + mobile 900×1200
+public/banners/              banner 3D Concept C cho CTA cuối trang, desktop 1920×960 + mobile 900×1200
 public/partners/             huy hiệu đối tác chính thức (google-partner.svg)
-public/decor/                hình 3D trang trí CC0 từ 3dicons.co (dùng qua thuộc tính decor của Section)
 public/clients/              logo khách hàng
 public/blog/                 ảnh bài blog (thumbnail và banner dùng chung), render bằng skill creating-images-soho
+scripts/make-image-variants.mjs tạo bản thu nhỏ -480/-960 cho ảnh lớn (hero, dự án, banner blog, cover bài dịch vụ); chạy lại khi thêm ảnh, commit kết quả. `srcSet()` trong components/paths.js dựng srcset theo quy ước này
 docs/REDESIGN-REPORT.md      báo cáo các đợt redesign; docs/brand/: tài liệu audit tài sản hình và logo
 DESIGN.md                    "tờ giấy" hệ thiết kế: nguồn tham chiếu, màu, phông, luật viết chữ, từ cấm, icon, ảnh (mục 2). Đọc trước khi sửa giao diện hay câu chữ
 ```
 
-Mỗi component và trang có `.module.css` riêng. Server Component mặc định; client component: `DesktopNavigation`, `MobileNavigation`, `HeaderScroll`, `ContactForm`, `RevealObserver`, `Toc`, `ServiceGroups`, `ProcessAccordion`, `StickyCta`, `ReadingProgress`.
+Mỗi component và trang có `.module.css` riêng. Server Component mặc định; client component: `DesktopNavigation`, `MobileNavigation`, `HeaderScroll`, `ContactForm`, `RevealObserver`, `Toc`, `StickyCta`, `ReadingProgress`.
 
 ## Kiểm tra code
 

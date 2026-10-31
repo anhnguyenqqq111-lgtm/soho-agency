@@ -16,6 +16,7 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "visuals:check": "node --no-warnings scripts/check-blog-visuals.mjs",
+    "images:variants": "node scripts/make-image-variants.mjs",
     "prebuild": "node --no-warnings scripts/check-blog-visuals.mjs"
   },
   "dependencies": {

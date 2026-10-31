@@ -2,7 +2,7 @@ import styles from './ArticleBody.module.css';
 import Toc from './Toc';
 import {Block, Inline} from './Markdown';
 import {parseMarkdown, plainText} from './parseMarkdown';
-import {sitePath} from '../paths';
+import {sitePath, srcSet} from '../paths';
 
 const isFaq = heading => /FAQ|Câu hỏi thường gặp/i.test(heading);
 
@@ -79,7 +79,7 @@ export default function ArticleBody({article}) {
       <div className={styles.body}>
         {article.cover && (
           <figure className={styles.cover}>
-            <img src={sitePath(article.cover.src)} alt={article.cover.alt} width={article.cover.width || 1600} height={article.cover.height || 1000} loading="lazy" />
+            <img src={sitePath(article.cover.src)} srcSet={srcSet(article.cover.src, article.cover.width || 1600)} sizes="(max-width: 860px) calc(100vw - 32px), 800px" alt={article.cover.alt} width={article.cover.width || 1600} height={article.cover.height || 1000} loading="lazy" />
           </figure>
         )}
         {sections.map(section => (

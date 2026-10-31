@@ -80,8 +80,8 @@ Lý do có tờ giấy này: AI không có gu, nó lấp chỗ trống bằng m�
 
 | Vai trò | Phông | Ghi chú |
 |---|---|---|
-| Tiêu đề H1, H2, H3, tên thẻ, con số lớn | **Bricolage Grotesque** (Google Fonts, có bộ tiếng Việt) | H1/H2 đậm 700, H3 và tên thẻ 600, con số kết quả 800. Khoảng chữ −2,2% đến −3,5% ở cỡ lớn. Giãn dòng tối thiểu 1.06 (H1 hero desktop), 1.1 cho H1 còn lại: dấu chồng như Ặ, Ữ cần chỗ |
-| Nội dung, giao diện, nút, H4 | **Plus Jakarta Sans** (Google Fonts, có bộ tiếng Việt) | 400 thân bài, 500 menu, 600 nhãn, 700 nút |
+| Tiêu đề H1, H2, H3, tên thẻ, con số lớn | **Bricolage Grotesque** (tự host `app/fonts/`, 1 file latin + tiếng Việt, OFL) | H1/H2 đậm 700, H3 và tên thẻ 600, con số kết quả 800. Khoảng chữ −2,2% đến −3,5% ở cỡ lớn. Giãn dòng tối thiểu 1.06 (H1 hero desktop), 1.1 cho H1 còn lại: dấu chồng như Ặ, Ữ cần chỗ |
+| Nội dung, giao diện, nút, H4 | **Plus Jakarta Sans** (tự host `app/fonts/`, 1 file latin + tiếng Việt, OFL) | 400 thân bài, 500 menu, 600 nhãn, 700 nút |
 
 - Nạp bản variable (chỉ trục độ đậm), mỗi phông 2 file cho trang tiếng Việt (latin + vietnamese). Preload cả hai vì phần tử LCP của trang chủ là H1 hoặc đoạn mô tả hero.
 - Không có kiểu nghiêng: chữ nhấn `.hl` dùng màu gradient, không nghiêng.
@@ -130,7 +130,7 @@ Ngoại lệ được giữ: tên sản phẩm (Google Ads, Meta, TikTok, GA4, L
 ### 2.5b. Logo và banner (Brand Identity 3.0)
 
 - Logo: SOHO Concept 01 Open Corner, file đã duyệt `public/assets/brand/approved/SOHO_01_Open_Corner_APPROVED.svg` (bản trắng-cam cho nền tối), dùng nguyên vẹn ở header (52px, 44px trên mobile) và footer (72px). Logo cũ giữ nguyên trong `public/brand/` và `public/assets/brand/` làm bản dự phòng.
-- Banner: hero dùng Concept A "SOHO Unfold" (`public/banners/A_*`), CTA cuối trang dùng Concept C "Chromatic Impact" (`public/banners/C_*`). Ảnh không chứa chữ, nút hay logo; mobile dùng ảnh dựng riêng 900×1200, chỉ lấy phần hình ở đáy.
+- Banner: CTA cuối trang dùng Concept C "Chromatic Impact" (`public/banners/C_*`); Concept A ở hero đã bỏ, hero trang chủ dùng ảnh người phụ trách. Ảnh không chứa chữ, nút hay logo; mobile dùng ảnh dựng riêng 900×1200, chỉ lấy phần hình ở đáy.
 - Thẻ dịch vụ: 6 hình hình học SVG vẽ tay (`components/home/ServiceArt.js`), không phải ảnh render 3D.
 
 ### 2.6. Màu (`app/styles/tokens.css`)
@@ -176,10 +176,6 @@ Ba lớp token: bảng màu gốc (`--c-*`), token theo vai trò (`--color-*`, `
 
 Chỉ đặt ở chỗ giúp người xem hiểu hoặc quyết định nhanh hơn (xem bảng 2.10). Tắt hết khi bật giảm chuyển động. Không hiệu ứng chuột, hạt bay, parallax nặng.
 
-### 2.9b. Hình 3D trang trí (`public/decor/`, thuộc tính `decor` của `Section`)
-
-Bộ 3dicons của Vijay Verma (CC0), kiểu clay, WebP ~5 KB. Chỉ đặt trên khối nền (sáng hoặc tối), góc phải, trôi chậm.
-
 ### 2.10. Tương tác có ý nghĩa
 
 | Ở đâu | Tương tác | File |
@@ -196,7 +192,7 @@ Bộ 3dicons của Vijay Verma (CC0), kiểu clay, WebP ~5 KB. Chỉ đặt trê
 
 ```
 app/
-  layout.js              next/font (Bricolage Grotesque, Plus Jakarta Sans), import styles
+  layout.js              next/font/local (Bricolage Grotesque, Plus Jakarta Sans tự host ở app/fonts), import styles
   styles/
     tokens.css           biến màu, chữ, khoảng cách
     base.css             reset, typography, link, prose (nội dung bài viết)

@@ -5,7 +5,7 @@ import Footer from '../../../components/Footer';
 import Section from '../../../components/ui/Section';
 import BlogCard from '../../../components/BlogCard';
 import CtaBand from '../../../components/ui/CtaBand';
-import {sitePath, siteUrl} from '../../../components/paths';
+import {sitePath, siteUrl, srcSet} from '../../../components/paths';
 import {articles, getLatestArticles, toISODate} from '../../../components/blogData';
 import ReadingProgress from '../../../components/article/ReadingProgress';
 import {heroOf, shareImageOf, creditOf, contentWithVisuals} from '../../../components/blogVisuals';
@@ -20,14 +20,15 @@ export async function generateMetadata({params}) {
   if (!article) return {title: 'Không tìm thấy bài viết'};
   // Ảnh chia sẻ: thumbnail từ Image Studio khi bài đã có, không thì ảnh gốc. Tiêu đề và mô tả giữ nguyên từ blogData.js.
   const share = shareImageOf(article);
+  const description = article.metaDescription || article.excerpt;
   return {
     title: {absolute: article.metaTitle},
-    description: article.excerpt,
+    description,
     alternates: {canonical: `/blog/${article.slug}/`},
     openGraph: {
       type: 'article',
       title: article.metaTitle,
-      description: article.excerpt,
+      description,
       images: [{url: share.src, width: share.width, height: share.height, alt: share.alt}]
     }
   };
@@ -42,6 +43,7 @@ export default async function BlogPostPage({params}) {
   const hero = heroOf(article);
   const credit = creditOf(article);
   const share = shareImageOf(article);
+  const description = article.metaDescription || article.excerpt;
   const body = contentWithVisuals(article, sitePath);
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -89,6 +91,8 @@ export default async function BlogPostPage({params}) {
         <figure className={`container ${styles.banner}`}>
           <img
             src={sitePath(hero.src)}
+            srcSet={srcSet(hero.src, hero.width)}
+            sizes="(max-width: 1072px) calc(100vw - 32px), 1040px"
             alt={hero.alt}
             width={hero.width}
             height={hero.height}

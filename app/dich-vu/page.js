@@ -13,7 +13,7 @@ export const metadata = {
   alternates: {canonical: '/dich-vu/'},
   title: 'Dịch vụ',
   description:
-    'Dịch vụ của SOHO Agency: SEO, Google Ads, Facebook và TikTok Ads, thiết kế website, nhận diện thương hiệu, mobile app, nội dung và đo lường. Chọn theo vấn đề bạn đang gặp.'
+    'Dịch vụ của SOHO Agency: SEO, Google Ads, Facebook và TikTok Ads, website, nhận diện thương hiệu, mobile app, nội dung và đo lường. Chọn theo vấn đề đang gặp.'
 };
 
 const IDS = ['tim-kiem', 'quang-cao', 'website-thuong-hieu', 'noi-dung-do-luong'];

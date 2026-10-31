@@ -4,7 +4,7 @@ import Section from '../components/ui/Section';
 import Button from '../components/ui/Button';
 import LinkRows from '../components/ui/LinkRows';
 
-export const metadata = {title: 'Không tìm thấy trang', robots: {index: false}};
+export const metadata = {title: 'Không tìm thấy trang', description: 'Trang bạn tìm không có hoặc đã chuyển địa chỉ. Xem dịch vụ, dự án tiêu biểu hoặc liên hệ SOHO Agency.', robots: {index: false}, alternates: {canonical: null}};
 
 // Trang 404: nói rõ chuyện gì xảy ra và đưa ra lối đi tiếp, không để người xem kẹt lại.
 export default function NotFound() {

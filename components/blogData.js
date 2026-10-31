@@ -17,7 +17,7 @@ export const categories = [
   - image (bắt buộc): {src, alt}. Một ảnh 1600×1000 dùng chung: thumbnail trên thẻ bài viết và banner dưới H1
     (cả hai hiển thị 16:10, không cắt). Chữ trái là H1, bên phải là cảnh dựng từ nội dung bài. Render bằng skill
     creating-images-soho (goha-seo-ws2), preset cover; file ra chép vào public/blog/<slug>.webp.
-  Các trường khác: category, excerpt (mô tả meta), readTime, date (dd/mm/yyyy), author, authorRole, content (HTML trong chuỗi).
+  Các trường khác: category, excerpt (đoạn dẫn trên thẻ và đầu bài), metaDescription (mô tả cho Google ≤160 ký tự, không có thì dùng excerpt), readTime, date (dd/mm/yyyy), author, authorRole, content (HTML trong chuỗi).
 */
 export const articles = [
   {
@@ -27,6 +27,7 @@ export const articles = [
     category: 'SEO & AI Search',
     excerpt:
       'Cách xây dựng nội dung, tối ưu thực thể thương hiệu (Entity) và tín hiệu E-E-A-T khi người dùng chuyển mạnh sang tìm kiếm trên các nền tảng AI như Google AI Overviews, Perplexity và ChatGPT.',
+    metaDescription: 'Cách xây nội dung, thực thể thương hiệu và tín hiệu E-E-A-T để website vẫn được nhắc tới khi khách tìm bằng Google AI Overviews, Perplexity, ChatGPT.',
     readTime: '7 phút đọc',
     date: '02/10/2026',
     author: 'Nguyễn Tuấn Anh',
@@ -180,6 +181,7 @@ export const articles = [
     category: 'Framework Marketing',
     excerpt:
       'Quy trình 7 bước SOHO dùng khi nhận một kế hoạch marketing mới: chốt mục tiêu bằng số, vẽ hành trình 3 chặng, chọn kênh theo chặng, dựng thông điệp, chia ngân sách, cắm đo lường và xếp lịch 90 ngày.',
+    metaDescription: 'Quy trình 7 bước SOHO dùng khi nhận kế hoạch marketing mới: chốt mục tiêu bằng số, vẽ hành trình khách, chọn kênh, chia ngân sách, đo lường, lịch 90 ngày.',
     readTime: '12 phút đọc',
     date: '08/10/2026',
     author: 'Lê Hoàng Yến',
@@ -297,6 +299,7 @@ export const articles = [
     category: 'Framework SEO',
     excerpt:
       'Trình tự SOHO triển khai SEO cho một website: audit kỹ thuật, nghiên cứu từ khóa theo ý định, dựng cấu trúc theo cụm chủ đề, viết brief, tối ưu on-page và thực thể, nội dung sẵn sàng cho AI Search, liên kết, rồi đo bằng lead.',
+    metaDescription: 'Trình tự 8 bước SOHO làm SEO cho một website: audit kỹ thuật, từ khóa theo ý định, cụm chủ đề, brief, on-page, nội dung cho AI Search, liên kết, đo bằng lead.',
     readTime: '14 phút đọc',
     date: '07/10/2026',
     author: 'Nguyễn Tuấn Anh',
@@ -425,6 +428,7 @@ export const articles = [
     category: 'Framework Ads',
     excerpt:
       'Trình tự SOHO áp dụng cho mọi tài khoản quảng cáo mới: tính chi phí mỗi lead cho phép, cắm tracking trước khi tiêu tiền, dựng cấu trúc tài khoản, thử nghiệm sáng tạo và trang đích, tối ưu theo tuần, rồi mở rộng ngân sách theo doanh thu.',
+    metaDescription: '6 bước SOHO áp dụng cho mọi tài khoản quảng cáo mới: tính chi phí mỗi lead cho phép, cắm tracking, dựng cấu trúc, thử sáng tạo, tối ưu theo tuần, mở rộng.',
     readTime: '13 phút đọc',
     date: '06/10/2026',
     author: 'Trần Minh Quân',

@@ -1,4 +1,4 @@
-import {Bricolage_Grotesque, Plus_Jakarta_Sans} from 'next/font/google';
+import localFont from 'next/font/local';
 import './styles/tokens.css';
 import './styles/base.css';
 import './styles/diagram.css';
@@ -8,17 +8,21 @@ import {siteUrl} from '../components/paths';
 
 // Hai phông theo brief "SOHO Color & Typography" (DESIGN.md mục 2.3), cả hai có bộ chữ tiếng Việt riêng và đã qua bài thử ẾỨỠẶẰ.
 // Bricolage Grotesque: tiêu đề H1 đến H3, số lớn (600 đến 800). Plus Jakarta Sans: nội dung và giao diện (400 đến 700).
-// Nạp bản variable, chỉ trục độ đậm: mỗi phông 2 file (latin + vietnamese), thay cho một file mỗi độ đậm.
-// Preload cả hai: phần tử LCP của trang chủ là H1 (Bricolage) hoặc đoạn mô tả hero (Jakarta) tùy khổ màn hình.
-// Đo Sprint 1: preload thêm Jakarta giảm LCP mobile 3,3 → 3,2 giây; phông này trang nào cũng tải nên không tốn thêm.
-const display = Bricolage_Grotesque({
-  subsets: ['latin', 'vietnamese'],
+// Tự host một file mỗi phông (app/fonts, bản variable chỉ trục độ đậm, gộp bảng chữ latin + tiếng Việt, giấy phép OFL kèm theo).
+// Lý do bỏ next/font/google (31/10/2026): Google chia phông thành subset latin / latin-ext / vietnamese, chữ tiếng Việt khớp cả
+// latin-ext nên mỗi trang tải 6 file phông (124 KB), 2 file trong đó không được preload và về muộn. Gộp lại còn 2 file, 59 KB.
+// Tạo lại file: fonttools subset từ bản variable trên github.com/google/fonts, unicode theo subset latin + vietnamese của Google,
+// Bricolage ghim opsz 14 và wdth 100, giữ wght 400–800; Jakarta giữ wght 400–700.
+const display = localFont({
+  src: './fonts/bricolage-grotesque-latin-vi.woff2',
+  weight: '400 800',
   display: 'swap',
   variable: '--font-bricolage'
 });
 
-const text = Plus_Jakarta_Sans({
-  subsets: ['latin', 'vietnamese'],
+const text = localFont({
+  src: './fonts/plus-jakarta-sans-latin-vi.woff2',
+  weight: '400 700',
   display: 'swap',
   variable: '--font-jakarta'
 });
@@ -31,7 +35,7 @@ export const metadata = {
     template: '%s | SOHO Agency'
   },
   description:
-    'SOHO Agency làm SEO, Google Ads, Facebook Ads, thiết kế website, nhận diện thương hiệu và mobile app cho doanh nghiệp vừa và nhỏ ở TP.HCM. Google Partner 2026. Báo cáo bằng khách hàng và doanh thu.',
+    'SOHO Agency làm SEO, Google Ads, Facebook Ads, website, thương hiệu và mobile app cho doanh nghiệp ở TP.HCM. Google Partner 2026. Báo cáo bằng doanh thu.',
   alternates: {canonical: '/'},
   openGraph: {
     type: 'website',

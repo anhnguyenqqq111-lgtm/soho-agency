@@ -1,5 +1,5 @@
 import styles from './BlogCard.module.css';
-import {sitePath} from './paths';
+import {sitePath, srcSet} from './paths';
 import {thumbnailOf} from './blogVisuals';
 
 /*
@@ -17,6 +17,8 @@ export default function BlogCard({post, delay = 0, headingLevel = 'h3'}) {
         <a href={href} className={styles.thumb} tabIndex={-1} aria-hidden="true">
           <img
             src={sitePath(thumb.src)}
+            srcSet={srcSet(thumb.src, thumb.width)}
+            sizes="(max-width: 640px) calc(100vw - 32px), (max-width: 1000px) 50vw, 400px"
             alt=""
             loading="lazy"
             width={thumb.width}

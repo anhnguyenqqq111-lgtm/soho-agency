@@ -3,6 +3,7 @@
 // problem, solution: một dòng tóm tắt từ context và work, không thêm ý mới. services: slug dịch vụ liên quan.
 // Luật viết chữ số 5: chỉ ghi con số khi chính trang dự án đã công bố; không thêm số mới.
 // Dự án mới không có trên sohoagency.vn thì ghi nguồn riêng ở trường source, kèm limits (giới hạn của số liệu).
+// meta: mô tả cho Google (≤160 ký tự), viết tay, không ghép từ context/result. metaTitle: chỉ khi tên + scope quá 60 ký tự.
 export const cases = [
   {
     slug: 'le-viva-resort',
@@ -28,6 +29,7 @@ export const cases = [
       {value: '−35%', label: 'chi phí cho mỗi 1.000 lượt hiển thị quảng cáo'}
     ],
     result: 'Tỉ lệ tin nhắn hỏi đặt phòng gấp 2,3 lần giai đoạn trước.',
+    meta: 'Le Viva Resort, khu nghỉ dưỡng ở Mũi Né: SOHO làm lại fanpage và chạy quảng cáo Facebook theo mùa. Tin nhắn hỏi đặt phòng gấp 2,3 lần giai đoạn trước.',
     context:
       'Resort chưa có định vị rõ ở thị trường Mũi Né. Fanpage đăng bài đều nhưng hình ảnh không thống nhất, chưa cho thấy trải nghiệm ở resort. Quảng cáo chạy theo mùa, lúc hiệu quả lúc không.',
     work: 'Làm lại hình ảnh và giọng văn của fanpage theo phong cách thiên nhiên, ven biển. Chạy quảng cáo tin nhắn và quảng cáo nhắc lại theo mùa, nhắm khách đi nghỉ cuối tuần từ TP.HCM, Đồng Nai, Bình Dương. Soạn sẵn tin nhắn chào và trả lời tự động để chốt đặt phòng nhanh hơn.'
@@ -50,6 +52,7 @@ export const cases = [
     imageHeight: 542,
     imagePosition: 'center',
     result: 'Quảng cáo mang về yêu cầu tư vấn đều đặn, đúng nhóm chủ đầu tư. Công ty bớt phụ thuộc vào khách giới thiệu.',
+    meta: 'King Decor Luxury, thiết kế thi công quán cà phê sân vườn: SOHO làm SEO website và quảng cáo Facebook, mang về yêu cầu tư vấn đều đặn, đúng nhóm chủ đầu tư.',
     context:
       'Công trình đẹp, năng lực thi công tốt, nhưng website chưa được tối ưu SEO. Chủ đầu tư thường tìm hiểu rất kỹ về mẫu, chi phí và diện tích trước khi liên hệ. Nội dung trên website chưa trả lời đủ những câu đó.',
     work: 'Sắp xếp lại website theo từng nhóm dịch vụ chính: quán cà phê sân vườn, studio áo cưới, phim trường. Viết bài trả lời đúng câu hỏi của chủ đầu tư về mẫu, chi phí và kinh nghiệm thi công. Chạy quảng cáo Facebook nhắm đúng nhóm chủ đầu tư để có yêu cầu tư vấn ngay, trong lúc chờ SEO có kết quả.'
@@ -72,6 +75,8 @@ export const cases = [
     imageHeight: 457,
     imagePosition: 'center',
     result: 'Lượng tin nhắn hỏi hàng tăng mạnh vào các dịp lễ, Tết.',
+    metaTitle: 'Kronos Luxury Timepieces: quảng cáo Facebook',
+    meta: 'Kronos Luxury Timepieces, phân phối đồng hồ cao cấp: SOHO xây fanpage và chạy quảng cáo Facebook, tin nhắn hỏi hàng tăng mạnh dịp lễ, Tết.',
     context:
       'Hình ảnh sản phẩm đẹp, nhưng quảng cáo dễ rơi vào cảnh “đẹp mà không ra đơn”. Mỗi dòng đồng hồ như Cartier hay Patek Philippe có nhóm khách riêng. Các dịp lễ chưa được khai thác hết.',
     work: 'Làm nội dung riêng cho từng dòng sản phẩm và từng dịp tặng quà. Chạy quảng cáo tin nhắn theo mùa để chốt đơn, nhắm riêng nhóm doanh nhân và nhóm khách mua làm quà.'
@@ -94,6 +99,7 @@ export const cases = [
     imageHeight: 450,
     imagePosition: 'center',
     result: 'Lượng tin nhắn hỏi tư vấn tăng rõ vào mùa cưới.',
+    meta: 'Helen Bridal, studio ảnh cưới phong cách Hàn Quốc: SOHO làm fanpage và quảng cáo Facebook, tin nhắn hỏi tư vấn tăng rõ vào mùa cưới.',
     context:
       'Fanpage đông người theo dõi, ảnh đẹp, nhưng nội dung chưa khiến khách đặt lịch. Thị trường studio cưới cạnh tranh gay gắt, nhiều nơi có phong cách na ná nhau.',
     work: 'Sắp xếp lại nội dung theo hành trình chuẩn bị cưới của cô dâu chú rể: concept mới, phim trường riêng, ảnh trước và sau trang điểm, ảnh thật của các cặp đôi. Chạy quảng cáo theo mùa cưới, chạm vào cảm xúc của cặp đôi thay vì liệt kê dịch vụ.'
@@ -124,6 +130,7 @@ export const cases = [
       {value: '4,7', label: 'vị trí trung bình của bài tổng quan với từ khóa “studio chụp ảnh”, thường nằm trong top 5'}
     ],
     result: '6 trang mới có 102 lượt nhấp từ Google trong tháng đầu. Tổng lượt nhấp từ Google của cả website chưa thay đổi rõ.',
+    meta: 'Studio 1 Nhà, studio chụp ảnh ở TP.HCM: SOHO làm SEO và viết nội dung, 6 trang mới có 102 lượt nhấp từ Google trong tháng đầu. Số liệu từ Search Console.',
     context:
       'Website đã có nhiều trang về ảnh cưới, phim trường và bảng giá. Nhưng người tìm “studio chụp ảnh” nói chung lại hỏi chuyện khác: chụp ảnh cặp đôi, giá bao nhiêu, cần chuẩn bị gì. Chưa có trang nào trả lời những câu đó.',
     work: 'Nghiên cứu từ khóa khách hay tìm khi chọn studio, xếp theo từng giai đoạn: tìm hiểu, so sánh, hỏi giá, liên hệ. Viết 1 bài tổng quan “studio chụp ảnh TP.HCM” và 5 bài trả lời câu khách hay hỏi: studio là gì, chụp ảnh cặp đôi, cần chuẩn bị gì, giá, nhận được những gì. Các bài liên kết qua lại với bài tổng quan. Cập nhật 13 bài cũ đang có thứ hạng: thêm thông tin mới năm 2026, mục lục, câu hỏi thường gặp, liên kết sang bảng giá và ảnh mẫu.',
@@ -171,6 +178,7 @@ export const cases = [
       {value: '25', label: 'lượt nhấp từ Google vào bài “Giá EXW là gì” từ 01/09 đến 29/10/2026, sau khi SOHO sửa lại. Cả 8 tháng đầu năm 2026, bài chỉ có 1 lượt'}
     ],
     result: 'Bài mới về in mã vạch hải quan có 8.130 lượt hiển thị trên Google sau 7 tuần. Bài “Giá EXW là gì” sau khi sửa có 25 lượt nhấp trong 2 tháng.',
+    meta: 'Everest Logistics, dịch vụ hải quan ở TP.HCM: SOHO làm SEO và nội dung, bài về in mã vạch hải quan đạt 8.130 lượt hiển thị trên Google sau 7 tuần.',
     context:
       'Everest Logistics làm thủ tục hải quan và vận chuyển hàng quốc tế. Website có nhiều bài về thủ tục xuất nhập khẩu. Nhưng các bài về điều kiện giao hàng (EXW, CIF, CFR, DDP) nằm từ trang 2 Google trở đi, gần như không có lượt nhấp.',
     work: 'Tháng 9/2026: viết mới 3 bài theo từ khóa khách hay tìm (in mã vạch tờ khai hải quan, Incoterms, gửi hàng đi Mỹ) và viết lại hoàn toàn bài về giá DDP. Sửa lại 7 bài cũ và 2 trang dịch vụ (vận chuyển đường biển, đường hàng không): bố cục, nội dung, tiêu đề và đoạn mô tả hiển thị trên Google. Thêm liên kết qua lại giữa các bài và về trang dịch vụ.',
@@ -206,6 +214,7 @@ export const cases = [
       {value: '24', label: 'lượt nhấp từ Google vào website trong cùng kỳ'}
     ],
     result: 'Website mới bắt đầu xuất hiện trên Google: tháng 10 có 192 lượt hiển thị, gấp 3,6 lần tháng 9.',
+    meta: 'May Mặc CTH, xưởng may đồng phục: SOHO chăm sóc website và làm SEO, tháng 10 có 192 lượt hiển thị trên Google, gấp 3,6 lần tháng 9.',
     context: 'Xưởng may bán đồng phục và áo thun qua website mới. Website đã làm xong nhưng chưa làm SEO, gần như chưa xuất hiện trên Google.',
     work: 'SOHO nhận website khi chưa làm SEO gì. Việc đã làm: rà soát lại website, tối ưu từng trang theo kế hoạch đã gửi xưởng, viết bài tin tức cho website.',
     limits: [

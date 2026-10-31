@@ -7,7 +7,7 @@ export default function LogoMarquee({clients, label = 'Doanh nghiệp đang làm
     <ul className={styles.row} aria-hidden={hidden || undefined}>
       {clients.map(c => (
         <li key={c.slug}>
-          <img src={sitePath(c.logo)} alt={hidden ? '' : c.name} loading="lazy" />
+          <img src={sitePath(c.logo)} alt={hidden ? '' : c.name} width={c.logoWidth} height={c.logoHeight} loading="lazy" />
         </li>
       ))}
     </ul>

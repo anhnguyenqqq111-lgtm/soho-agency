@@ -9,7 +9,7 @@ import CtaBand from '../../../components/ui/CtaBand';
 import Icon from '../../../components/ui/Icon';
 import {publishedCases, getCase} from '../../../components/data/cases';
 import {getServicePage} from '../../../components/servicePagesData';
-import {sitePath, siteUrl} from '../../../components/paths';
+import {sitePath, siteUrl, srcSet} from '../../../components/paths';
 import SearchTrend from '../../../components/services/proof/SearchTrend';
 
 // Viết thường chữ đầu cho câu đứng sau dấu hai chấm, giữ chữ viết tắt (SEO) và tên riêng (Facebook).
@@ -25,8 +25,8 @@ export async function generateMetadata({params}) {
   const c = getCase(slug);
   if (!c) return {};
   return {
-    title: `Dự án ${c.name}: ${lowerFirst(c.scope)}`,
-    description: `${c.name}, ${lowerFirst(c.field)}. ${c.problem} SOHO: ${c.solution} Kết quả: ${c.result}`,
+    title: c.metaTitle || `${c.name}: ${lowerFirst(c.scope)}`,
+    description: c.meta || `${c.name}, ${lowerFirst(c.field)}. ${c.result}`,
     alternates: {canonical: `/du-an/${c.slug}/`},
     openGraph: {images: [{url: c.image, width: c.imageWidth, height: c.imageHeight, alt: `Dự án ${c.name}`}]}
   };
@@ -65,6 +65,8 @@ export default async function ProjectPage({params}) {
           visual={
             <img
               src={sitePath(c.image)}
+              srcSet={srcSet(c.image, c.imageWidth)}
+              sizes="(max-width: 900px) calc(100vw - 32px), 640px"
               alt={c.imageAlt || `Dự án ${c.name}`}
               width={c.imageWidth}
               height={c.imageHeight}

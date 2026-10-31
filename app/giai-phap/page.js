@@ -12,7 +12,7 @@ export const metadata = {
   alternates: {canonical: '/giai-phap/'},
   title: 'Giải pháp',
   description:
-    'Giải pháp marketing của SOHO Agency theo mô hình kinh doanh: bán cho doanh nghiệp (B2B), bán hàng online, doanh nghiệp nhỏ. Làm theo chu kỳ 2 tuần, đo bằng doanh thu.'
+    'Giải pháp marketing của SOHO Agency theo mô hình kinh doanh: bán cho doanh nghiệp (B2B), bán hàng online, doanh nghiệp nhỏ. Chu kỳ 2 tuần, đo bằng doanh thu.'
 };
 
 const copy = {

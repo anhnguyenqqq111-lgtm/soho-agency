@@ -1,7 +1,7 @@
 import styles from './CtaBand.module.css';
 import Button from './Button';
 import ContactForm from '../ContactForm';
-import {sitePath} from '../paths';
+import {sitePath, srcSet} from '../paths';
 
 /*
   Khối liên hệ cuối trang, Brand Identity 3.0, banner Concept C "Chromatic Impact".
@@ -26,7 +26,7 @@ export default function CtaBand({
     <section id={id} className={`${styles.band} dark on-dark`}>
       <picture className={styles.art}>
         <source media="(max-width: 900px)" srcSet={sitePath('/banners/C_mobile_900x1200.webp')} width="900" height="1200" />
-        <img src={sitePath('/banners/C_desktop_1920x960.webp')} alt="" width="1920" height="960" loading="lazy" />
+        <img src={sitePath('/banners/C_desktop_1920x960.webp')} srcSet={srcSet('/banners/C_desktop_1920x960.webp', 1920)} sizes="100vw" alt="" width="1920" height="960" loading="lazy" />
       </picture>
       <div className={`container ${styles.inner}`}>
         <div className={styles.copy} data-reveal="">

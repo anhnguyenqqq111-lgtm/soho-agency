@@ -1,7 +1,7 @@
 import styles from './sq.module.css';
 import Glass from './Glass';
 import Button from '../ui/Button';
-import {sitePath} from '../paths';
+import {sitePath, srcSet} from '../paths';
 import {getCase, publishedCases} from '../data/cases';
 import {testimonials, partners} from '../data/proof';
 import {company} from '../data/company';
@@ -90,6 +90,8 @@ export function HomeHeroSq() {
             <img
               className={styles.heroPerson}
               src={sitePath(pm.photos.cutout.src)}
+              srcSet={srcSet(pm.photos.cutout.src, pm.photos.cutout.width)}
+              sizes="(max-width: 1000px) 300px, 360px"
               width={pm.photos.cutout.width}
               height={pm.photos.cutout.height}
               alt={personAlt(pm)}
@@ -139,7 +141,7 @@ export function PersonInCharge() {
         <div className={styles.personCard}>
           {pm && (
             <div className={styles.personPhoto}>
-              <img src={sitePath(pm.photos.vest.src)} width={pm.photos.vest.width} height={pm.photos.vest.height} alt={personAlt(pm)} loading="lazy" />
+              <img src={sitePath(pm.photos.vest.src)} srcSet={srcSet(pm.photos.vest.src, pm.photos.vest.width)} sizes="(max-width: 700px) calc(100vw - 32px), 420px" width={pm.photos.vest.width} height={pm.photos.vest.height} alt={personAlt(pm)} loading="lazy" />
             </div>
           )}
           <div className={styles.personBody}>
@@ -391,7 +393,7 @@ export function CaseCards({items}) {
     <div className={styles.cases}>
       {list.map(c => (
         <a key={c.slug} href={sitePath(`/du-an/${c.slug}/`)} className={styles.caseCard} data-reveal="">
-          {c.image && <img className={styles.caseImg} src={sitePath(c.image)} alt={c.imageAlt || ''} loading="lazy" style={{objectPosition: c.imagePosition || 'center'}} />}
+          {c.image && <img className={styles.caseImg} src={sitePath(c.image)} srcSet={srcSet(c.image, c.imageWidth)} sizes="(max-width: 640px) calc(100vw - 32px), (max-width: 1000px) 50vw, 300px" alt={c.imageAlt || ''} width={c.imageWidth} height={c.imageHeight} loading="lazy" style={{objectPosition: c.imagePosition || 'center'}} />}
           <span className={styles.caseTag}>{c.scope}</span>
           <h3>{c.name}</h3>
           <p className={styles.caseField}>{c.field}</p>
@@ -578,7 +580,7 @@ export function PersonFeature({person = 'pm', tone = 'tint', reverse = false}) {
     <SectionShell id={f.id} tone={tone} labelledBy={hid}>
       <div className={`${styles.founder} ${reverse ? styles.founderRev : ''}`}>
         <div className={styles.founderPic}>
-          <img src={sitePath(main.src)} width={main.width} height={main.height} alt={personAlt(p)} loading="lazy" />
+          <img src={sitePath(main.src)} srcSet={srcSet(main.src, main.width)} sizes="(max-width: 700px) calc(100vw - 32px), 460px" width={main.width} height={main.height} alt={personAlt(p)} loading="lazy" />
         </div>
         <div>
           <p className="eyebrow">{f.eyebrow}</p>
@@ -664,7 +666,7 @@ export function BlogSection({posts}) {
           <a key={p.slug} href={sitePath(`/blog/${p.slug}/`)} className={styles.post}>
             {p.image && (() => {
               const t = thumbnailOf(p);
-              return <img src={sitePath(t.src)} alt="" loading="lazy" width={t.width} height={t.height} />;
+              return <img src={sitePath(t.src)} srcSet={srcSet(t.src, t.width)} sizes="(max-width: 640px) calc(100vw - 32px), (max-width: 1000px) 50vw, 400px" alt="" loading="lazy" width={t.width} height={t.height} />;
             })()}
             <div className={styles.postBody}>
               <span className={styles.postMeta}>

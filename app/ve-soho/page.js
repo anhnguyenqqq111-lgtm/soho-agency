@@ -19,7 +19,7 @@ export const metadata = {
   alternates: {canonical: '/ve-soho/'},
   title: 'Giới thiệu',
   description:
-    'SOHO Agency (Công ty TNHH SOHO Agency) là đội SEO, quảng cáo, nội dung và đo lường tại TP.HCM, Google Partner 2026. Lên kế hoạch, trực tiếp triển khai và báo cáo bằng doanh thu.'
+    'SOHO Agency là đội SEO, quảng cáo, nội dung và đo lường tại TP.HCM, Google Partner 2026. Lên kế hoạch, trực tiếp triển khai và báo cáo bằng doanh thu.'
 };
 
 const principles = [

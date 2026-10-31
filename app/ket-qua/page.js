@@ -16,7 +16,7 @@ export const metadata = {
   alternates: {canonical: '/ket-qua/'},
   title: 'Dự án tiêu biểu và cách SOHO đo kết quả',
   description:
-    'Dự án tiêu biểu của SOHO như Le Viva Resort, Studio 1 Nhà, Everest Logistics: bối cảnh, việc đã làm, kết quả có nguồn. Kèm cách SOHO đo từng kênh bằng đơn hàng và doanh thu.',
+    'Dự án tiêu biểu của SOHO: Le Viva Resort, Studio 1 Nhà, Everest Logistics. Bối cảnh, việc đã làm, kết quả có nguồn và cách SOHO đo từng kênh bằng doanh thu.',
   openGraph: {images: [{url: '/og/soho-projects-og.png', width: 1200, height: 630, alt: 'Dự án tiêu biểu và kết quả nổi bật của SOHO'}]}
 };
 
