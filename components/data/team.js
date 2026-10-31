@@ -1,4 +1,4 @@
-// Người thật của SOHO. Ảnh do SOHO gửi; không vẽ lại, không đổi mặt, dáng, trang phục.
+// Người thật của SOHO. title: chức danh tiếng Anh (SOHO chốt 31/10/2026), role: mô tả việc bằng tiếng Việt. Ảnh do SOHO gửi; không vẽ lại, không đổi mặt, dáng, trang phục.
 // Chung NG: 3 ảnh và tên SOHO gửi ngày 31/10/2026 kèm yêu cầu đăng web. Ảnh hero tách nền bằng Apple Vision; các ảnh khác giữ nền thật, chỉ cắt khung.
 // Ảnh áo thun cắt trên ngực nên chữ in trên áo không hiện. Bản gốc ở docs/private/team/ (không commit).
 // Hoàng VH: 3 ảnh và giới thiệu SOHO gửi ngày 31/10/2026. Ảnh giữ nền thật, chỉ cắt khung.
@@ -11,7 +11,7 @@ export const team = [
   {
     key: 'pm',
     name: 'Chung NG',
-    title: 'Nhà sáng lập SOHO',
+    title: 'Founder & Account Director',
     role: 'Phụ trách dự án và làm việc trực tiếp với khách hàng',
     short: 'Người phụ trách dự án',
     does: 'Trực tiếp gặp bạn buổi đầu, theo sát từng đầu việc và báo cáo kết quả cho bạn.',
@@ -28,7 +28,7 @@ export const team = [
   {
     key: 'mkt',
     name: 'Hoàng VH',
-    title: null,
+    title: 'Co-founder & Chief Strategy Officer',
     role: 'Lên kế hoạch và thực thi marketing cho từng dự án',
     short: 'Người lên kế hoạch và triển khai',
     exp: 'Hơn 10 năm làm marketing',
@@ -46,7 +46,7 @@ export const team = [
   {
     key: 'seo',
     name: 'Thanh Hằng',
-    title: null,
+    title: 'SEO & AIO Specialist',
     role: 'Chuyên viên SEO và tối ưu cho AI (AIO)',
     short: 'Người trực tiếp làm SEO',
     does: 'Trực tiếp làm SEO cho website và tối ưu nội dung để được Google và các công cụ AI như ChatGPT, Gemini nhắc tới.',
@@ -59,7 +59,7 @@ export const team = [
   {
     key: 'content',
     name: 'Pony Diễm Quỳnh',
-    title: null,
+    title: 'Content & Social Media Specialist',
     role: 'Chuyên viên nội dung và mạng xã hội',
     short: 'Người làm nội dung và mạng xã hội',
     does: 'Viết bài, lên lịch đăng, làm nội dung cho fanpage, TikTok và mẫu quảng cáo, giữ giọng thương hiệu thống nhất trên mọi kênh.',
@@ -72,7 +72,7 @@ export const team = [
   {
     key: 'dev',
     name: 'Nam Hoàng',
-    title: null,
+    title: 'Full-stack Developer',
     role: 'Lập trình viên full stack',
     short: 'Người lập trình website và app',
     does: 'Trực tiếp code website, landing page và app, lo phần kỹ thuật để trang tải nhanh và Google đọc được.',

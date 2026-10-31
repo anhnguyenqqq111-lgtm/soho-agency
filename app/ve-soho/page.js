@@ -29,7 +29,7 @@ const principles = [
   {title: 'Làm theo chu kỳ 2 tuần: thử, đo rồi mở rộng đúng lúc', text: 'Cứ 2 tuần, SOHO cùng bạn xem lại số liệu và quyết định giữ, sửa hay dừng.'}
 ];
 // Đội trên web: đúng những người trong components/data/team.js (SOHO chốt 31/10/2026).
-const teamList = team.map(p => ({name: p.name, role: p.title || p.role, photo: p.photo, width: p.width, height: p.height}));
+const teamList = team.map(p => ({name: p.name, title: p.title, role: p.role, photo: p.photo, width: p.width, height: p.height}));
 
 export default function AboutPage() {
   const google = partners.find(p => p.verified && p.logo);
@@ -129,6 +129,7 @@ export default function AboutPage() {
               <li key={p.name} data-reveal="" style={{'--reveal-delay': `${i * 80}ms`}}>
                 <img src={sitePath(p.photo)} alt={p.name} className={styles.photo} loading="lazy" width={p.width} height={p.height} />
                 <p className={styles.name}>{p.name}</p>
+                <p className={styles.title}>{p.title}</p>
                 <p className={styles.role}>{p.role}</p>
               </li>
             ))}

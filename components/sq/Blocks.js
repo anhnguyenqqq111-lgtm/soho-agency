@@ -105,7 +105,7 @@ export function HomeHeroSq() {
           {pm && (
             <p className={`${styles.heroCap} glassy`}>
               <b>Người làm việc với bạn</b>
-              {pm.name}, {pm.title.charAt(0).toLowerCase() + pm.title.slice(1)}. Trực tiếp phụ trách dự án của bạn từ buổi tư vấn đầu tiên đến khi báo cáo.
+              {pm.name}, {pm.title}. Trực tiếp phụ trách dự án của bạn từ buổi tư vấn đầu tiên đến khi báo cáo.
             </p>
           )}
         </div>
@@ -553,7 +553,7 @@ const FEATURE = {
   },
   mkt: {
     id: 'nguoi-len-ke-hoach',
-    eyebrow: 'Người lên kế hoạch và làm',
+    eyebrow: 'Đồng sáng lập, giám đốc chiến lược',
     title: (
       <>
         Kế hoạch do <span className="hl">người trực tiếp làm</span> viết ra
