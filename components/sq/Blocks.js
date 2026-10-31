@@ -5,9 +5,10 @@ import {sitePath} from '../paths';
 import {getCase, publishedCases} from '../data/cases';
 import {testimonials, partners} from '../data/proof';
 import {company} from '../data/company';
-import {getPerson, team} from '../data/team';
+import {getPerson, team, personAlt, personTitle} from '../data/team';
 import {thumbnailOf} from '../blogVisuals';
 import svc from './service.module.css';
+import ReportDashboards from './ReportDashboards';
 
 /*
   Khối nội dung bản 12 (canvas "Bản vuông, gọn"). Mỗi khối là một section riêng, xếp theo đường đọc:
@@ -50,14 +51,14 @@ export function HomeHeroSq() {
       <Glass tone="orange" sm style={{left: '32px', bottom: '56px', width: 26, height: 26, transform: 'rotate(14deg)'}} />
       <div className={`container ${styles.heroGrid}`}>
         <div>
-          <p className="eyebrow">Agency marketing cho doanh nghiệp nhỏ và vừa · TP.HCM</p>
+          <p className="eyebrow">Agency marketing online cho doanh nghiệp vừa và nhỏ · TP.HCM</p>
           <h1 id="h1" className={styles.heroTitle}>
-            Thêm khách <span className="hl">hỏi mua</span> từ Google, Facebook và website của bạn
+            Có thêm <span className="hl">khách hàng mới</span> đều đặn từ Google, Facebook và website
           </h1>
           <p className={styles.heroLead}>
-            SOHO làm marketing online cho doanh nghiệp đã có sản phẩm, có khách mua, và muốn có thêm khách đều đặn. Bạn lo bán hàng. SOHO lo đưa khách tới: hiện lên khi
-            khách tìm trên Google, đưa quảng cáo Facebook, TikTok tới đúng người, làm website dễ gọi, dễ đặt. Mỗi tháng bạn nhận báo cáo bằng số người liên hệ, viết
-            bằng lời thường.
+            SOHO làm SEO, chạy quảng cáo Facebook, TikTok, Google và thiết kế website cho doanh nghiệp đã có sản phẩm, đã có khách và muốn bán được nhiều hơn. Bạn
+            tập trung bán hàng, việc tìm khách để SOHO lo. Cuối mỗi tháng bạn nhận báo cáo ngắn gọn, dễ hiểu: bao nhiêu khách đã liên hệ, đến từ kênh nào, tiền quảng
+            cáo đã chi vào đâu.
           </p>
           <div className={styles.heroBtns}>
             <Button href="#lien-he" variant="denim" arrow={false}>
@@ -73,11 +74,11 @@ export function HomeHeroSq() {
             <div className={styles.heroStats}>
               <div className={`${styles.stat} glassy`}>
                 <b>×2,3</b>
-                <span>tỉ lệ khách nhắn tin hỏi đặt phòng so với trước, Le Viva Resort</span>
+                <span>tỉ lệ khách nhắn tin hỏi đặt phòng so với giai đoạn trước · Le Viva Resort</span>
               </div>
               <div className={`${styles.stat} glassy`}>
                 <b>+135%</b>
-                <span>{k['+135%'] ? 'lượt thích, bình luận tự nhiên trên fanpage Le Viva sau 2 tháng' : ''}</span>
+                <span>{k['+135%'] ? 'lượt tương tác tự nhiên trên fanpage sau 2 tháng · Le Viva Resort' : ''}</span>
               </div>
             </div>
           )}
@@ -88,10 +89,10 @@ export function HomeHeroSq() {
           {pm && (
             <img
               className={styles.heroPerson}
-              src={sitePath(pm.photo)}
-              width={pm.width}
-              height={pm.height}
-              alt={`${pm.name ? pm.name + ', ' : ''}${pm.role.toLowerCase()} của SOHO`}
+              src={sitePath(pm.photos.cutout.src)}
+              width={pm.photos.cutout.width}
+              height={pm.photos.cutout.height}
+              alt={personAlt(pm)}
               fetchPriority="high"
             />
           )}
@@ -104,8 +105,7 @@ export function HomeHeroSq() {
           {pm && (
             <p className={`${styles.heroCap} glassy`}>
               <b>Người làm việc với bạn</b>
-              {pm.name ? `${pm.name}, ` : ''}
-              {pm.role.charAt(0).toLowerCase() + pm.role.slice(1)} của SOHO.
+              {pm.name}, {pm.title.charAt(0).toLowerCase() + pm.title.slice(1)}. Trực tiếp phụ trách dự án của bạn từ buổi tư vấn đầu tiên đến khi báo cáo.
             </p>
           )}
         </div>
@@ -115,7 +115,7 @@ export function HomeHeroSq() {
 }
 
 /* ---------- Cân nhắc: một người phụ trách ---------- */
-const STEPS4 = ['Tư vấn', 'Lên kế hoạch', 'Làm', 'Báo cáo'];
+const STEPS4 = ['Tư vấn', 'Lên kế hoạch', 'Triển khai', 'Báo cáo'];
 const PERSON_ICON = (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
     <circle cx="12" cy="8" r="4" />
@@ -129,17 +129,17 @@ export function PersonInCharge() {
       <div className={styles.split}>
         <div>
           <p className="eyebrow">Ai làm việc với bạn</p>
-          <h2 id="h-pt">Một người phụ trách, từ buổi đầu tới báo cáo</h2>
-          <Pain>Ký hợp đồng xong, người tư vấn không còn liên lạc. Người làm là một bạn mới, bạn phải kể lại từ đầu.</Pain>
+          <h2 id="h-pt">Một đầu mối duy nhất, từ buổi tư vấn đến báo cáo</h2>
+          <Pain>Ký hợp đồng xong, người tư vấn không còn liên lạc. Người làm là một bạn mới, bạn lại phải kể từ đầu.</Pain>
           <p className={styles.desc}>
-            Ở SOHO, người gặp bạn buổi đầu cũng là người lên kế hoạch, trực tiếp làm và báo cáo. Bạn chỉ cần nhớ một đầu mối, và người đó hiểu chuyện của bạn từ ngày
-            đầu.
+            Ở SOHO, người tư vấn cho bạn từ buổi đầu cũng là người theo dự án đến khi báo cáo. Người lên kế hoạch là người trực tiếp làm. Bạn chỉ làm việc với một đầu
+            mối, không phải kể lại chuyện của mình nhiều lần.
           </p>
         </div>
         <div className={styles.personCard}>
           {pm && (
             <div className={styles.personPhoto}>
-              <img src={sitePath(pm.photo)} width={pm.width} height={pm.height} alt={`${pm.name ? pm.name + ', ' : ''}${pm.role.toLowerCase()} của SOHO`} loading="lazy" />
+              <img src={sitePath(pm.photos.vest.src)} width={pm.photos.vest.width} height={pm.photos.vest.height} alt={personAlt(pm)} loading="lazy" />
             </div>
           )}
           <div className={styles.personBody}>
@@ -147,12 +147,12 @@ export function PersonInCharge() {
               <>
                 <p className={styles.personRole}>{pm.name || pm.short}</p>
                 <p className={styles.personDoes}>
-                  {pm.role}. {pm.does}
+                  {personTitle(pm)}. {pm.does}
                 </p>
               </>
             )}
-            <div className={styles.tl} role="img" aria-label="Cách thường gặp: mỗi bước một người. Ở SOHO: cùng một người từ tư vấn tới báo cáo.">
-              <p className={styles.tlLabel}>Cách thường gặp: mỗi bước một người</p>
+            <div className={styles.tl} role="img" aria-label="Nhiều nơi: mỗi bước một người. Ở SOHO: một đầu mối suốt dự án, từ tư vấn đến báo cáo.">
+              <p className={styles.tlLabel}>Nhiều nơi: mỗi bước một người</p>
               <div className={styles.tlRow}>
                 {STEPS4.map((s, i) => (
                   <div key={s} className={styles.tlStep}>
@@ -162,7 +162,7 @@ export function PersonInCharge() {
                 ))}
               </div>
               <p className={`${styles.tlLabel} ${styles.soho}`} style={{marginTop: 8}}>
-                Ở SOHO: cùng một người
+                Ở SOHO: một đầu mối suốt dự án
               </p>
               <div className={`${styles.tlRow} ${styles.soho}`}>
                 {STEPS4.map(s => (
@@ -182,10 +182,10 @@ export function PersonInCharge() {
 
 /* ---------- Cân nhắc: quy trình 4 bước ---------- */
 const PROCESS = [
-  ['Nghe bạn kể', 'Một buổi gọi hoặc gặp 30 phút. SOHO xem trước website, fanpage, quảng cáo bạn đang có.'],
-  ['Chọn việc làm trước', 'Không làm mọi thứ cùng lúc. SOHO chỉ ra chỗ đang mất khách nhiều nhất và con số cần đạt.'],
-  ['Bắt tay vào làm', 'Người lên kế hoạch trực tiếp làm. Bạn duyệt nội dung, hình ảnh trước khi đăng.'],
-  ['Xem kết quả, sửa tiếp', 'Hai tuần một lần cùng xem số: việc nào hiệu quả thì làm tiếp, việc nào không thì sửa hoặc dừng.']
+  ['Trao đổi ban đầu', 'Một buổi gọi hoặc gặp 30 phút. Trước buổi đó, SOHO xem website, fanpage và quảng cáo bạn đang chạy.'],
+  ['Chọn việc cần làm trước', 'Không làm mọi thứ cùng lúc. SOHO chỉ ra chỗ đang mất khách nhiều nhất và chỉ số cần đạt.'],
+  ['Triển khai', 'Người lên kế hoạch trực tiếp làm. Bạn duyệt nội dung và hình ảnh trước khi đăng.'],
+  ['Đo kết quả, điều chỉnh', 'Hai tuần một lần cùng bạn xem số liệu: việc nào hiệu quả thì làm tiếp, việc nào chưa thì sửa hoặc dừng.']
 ];
 export function ProcessSteps() {
   return (
@@ -194,7 +194,7 @@ export function ProcessSteps() {
         <p className="eyebrow">Quy trình</p>
         <h2 id="h-qt">Làm việc với SOHO diễn ra thế nào?</h2>
         <p className={styles.desc} style={{maxWidth: '58ch'}}>
-          Người phụ trách đi cùng bạn qua bốn bước. Bạn không cần chuẩn bị tài liệu hay biết thuật ngữ. Chỉ cần website hoặc fanpage, và vài dòng về điều bạn muốn cải
+          Người phụ trách đi cùng bạn qua bốn bước. Bạn không cần chuẩn bị tài liệu hay biết thuật ngữ, chỉ cần website hoặc fanpage và vài dòng về điều bạn muốn cải
           thiện.
         </p>
       </div>
@@ -214,7 +214,7 @@ export function ProcessSteps() {
   );
 }
 
-/* ---------- Cân nhắc: báo cáo bằng lời thường (số thật của case ẩn tên) ---------- */
+/* ---------- Cân nhắc: báo cáo ngắn gọn, dễ hiểu (số thật của Studio 1 Nhà) ---------- */
 export function ReportExplainer({tone = 'denim'}) {
   const c = getCase('seo-studio-chup-anh-tphcm');
   if (!c) return null;
@@ -234,74 +234,96 @@ export function ReportExplainer({tone = 'denim'}) {
     >
       <div className={styles.split}>
         <div>
-          <p className="eyebrow">Mỗi tháng bạn nhận gì</p>
-          <h2 id="h-rp">Báo cáo bằng lời thường, đọc 2 phút là hiểu</h2>
-          <Pain>Mỗi tháng nhận một bảng số toàn chữ tiếng Anh: impression, CTR, reach… mà không biết có thêm khách hay không.</Pain>
+          <p className="eyebrow">Báo cáo hằng tháng</p>
+          <h2 id="h-rp">Báo cáo ngắn gọn, đọc 2 phút là hiểu</h2>
+          <Pain>Mỗi tháng nhận một bảng số toàn tiếng Anh như impression, CTR, reach… mà không biết có thêm khách hay không.</Pain>
           <p className={styles.desc}>
-            Báo cáo của SOHO trả lời ba câu: bao nhiêu người tìm thấy bạn, bao nhiêu người bấm vào hay liên hệ, họ đến từ đâu. Con số nào cũng kèm một câu “nghĩa là
-            gì”, và nói thẳng chỗ chưa tốt.
+            Báo cáo của SOHO trả lời ba câu hỏi: bao nhiêu người thấy bạn trên Google, bao nhiêu người vào website hoặc liên hệ, họ đến từ đâu. Mỗi con số đều có giải
+            thích ngắn. Chỗ nào chưa tốt, báo cáo nói thẳng.
           </p>
         </div>
         <div className={styles.doc}>
           <div className={styles.docHead}>
             <div>
-              <p className={styles.docTag}>Trích báo cáo thật</p>
-              <p className={styles.docTitle}>6 bài mới cho một studio chụp ảnh ở TP.HCM</p>
+              <p className={styles.docTag}>Trích từ báo cáo thật</p>
+              <p className={styles.docTitle}>6 bài mới cho Studio 1 Nhà</p>
             </div>
             <p className={styles.docDate}>22/09–22/10/2026</p>
           </div>
           <div className={styles.docRow}>
             <div className={styles.docNum}>
               {impr.value}
-              <small>lần hiện ra</small>
+              <small>lượt hiển thị</small>
             </div>
             <div>
-              <p>Các bài mới của bạn hiện ra trên Google</p>
+              <p>Lượt hiển thị của 6 bài mới trên Google</p>
               <p className={styles.mean}>
-                <b>Nghĩa là:</b> đã có người tìm đúng chủ đề này, và Google bắt đầu đưa bạn ra.
+                <b>Nghĩa là:</b> đã có người tìm đúng chủ đề này và Google bắt đầu đưa bài của bạn lên kết quả tìm kiếm.
               </p>
             </div>
           </div>
           <div className={styles.docRow}>
             <div className={styles.docNum}>
               {clicks.value}
-              <small>lần bấm vào</small>
+              <small>lượt nhấp</small>
             </div>
             <div>
-              <p>Số lần khách bấm vào xem</p>
+              <p>Lượt nhấp từ Google vào 6 bài này</p>
               <p className={styles.mean}>
-                <b>Nghĩa là:</b> cứ khoảng {ratio} lần hiện ra thì có 1 lần khách bấm vào.
+                <b>Nghĩa là:</b> cứ khoảng {ratio} lượt hiển thị thì có 1 lượt nhấp.
               </p>
             </div>
           </div>
           <div className={styles.docRow}>
             <div className={styles.docNum}>
-              thứ 4–5
-              <small>vị trí thường gặp</small>
+              Top 5
+              <small>trên Google</small>
             </div>
             <div>
-              <p>Khi khách tìm “studio chụp ảnh”, bạn thường đứng (trung bình {pos.value})</p>
+              <p>Vị trí khi khách tìm “studio chụp ảnh” (trung bình {pos.value})</p>
               <p className={styles.mean}>
-                <b>Nghĩa là:</b> đã ở trang đầu Google, chưa vào nhóm 3 vị trí đầu.
+                <b>Nghĩa là:</b> đã lên trang đầu Google, chưa vào top 3.
               </p>
             </div>
           </div>
           <div className={`${styles.docRow} ${styles.docWarn}`}>
             <div className={styles.docNum}>Chưa tốt</div>
             <div>
-              <p>Tổng lượt khách vào cả website chưa thay đổi rõ.</p>
-              <p className={styles.mean}>Đây mới là tháng đầu của 6 bài mới. Cần thêm thời gian trước khi kết luận.</p>
+              <p>Tổng lượt truy cập của cả website chưa tăng rõ.</p>
+              <p className={styles.mean}>Đây mới là tháng đầu của 6 bài mới, cần thêm thời gian để đánh giá.</p>
             </div>
           </div>
-          <p className={styles.docFoot}>Khách đồng ý công bố số, xin giữ kín tên. Nguồn: Google Search Console của website khách.</p>
+          <p className={styles.docFoot}>Nguồn: Google Search Console của studio1nha.vn.</p>
         </div>
       </div>
     </SectionShell>
   );
 }
 
+/* ---------- Cân nhắc: báo cáo tự cập nhật (ảnh báo cáo thật, số đã làm mờ) ---------- */
+export function ReportLive({tone = 'white', idPrefix = 'rp'}) {
+  return (
+    <SectionShell id="bao-cao-tu-cap-nhat" tone={tone} labelledBy={`h-${idPrefix}`}>
+      <div style={{maxWidth: '68ch', marginBottom: 36}}>
+        <p className="eyebrow">Báo cáo tự cập nhật</p>
+        <h2 id={`h-${idPrefix}`}>
+          Theo dõi số liệu <span className="hl">bất cứ lúc nào</span>, không phải chờ cuối tháng
+        </h2>
+        <p className={styles.desc}>
+          Ngoài báo cáo hằng tháng, SOHO dựng cho bạn một trang báo cáo kết nối trực tiếp với Google Ads, Facebook Ads, Google Analytics và Search Console. Số liệu
+          tự cập nhật, bạn xem được trên điện thoại hay máy tính mà không cần đăng nhập từng nền tảng.
+        </p>
+        <p className={styles.desc} style={{fontSize: 14}}>
+          Hình dưới là báo cáo thật SOHO đang làm cho một khách bán hàng online. Số liệu và tên khách đã được làm mờ.
+        </p>
+      </div>
+      <ReportDashboards idPrefix={idPrefix} />
+    </SectionShell>
+  );
+}
+
 /* ---------- Củng cố niềm tin: kết quả, ba thẻ nghiêng (chỉ chỗ này được nghiêng) ---------- */
-export function ResultsScatter({id = 'ket-qua', title = 'Kết quả thật từ khách của SOHO', showLink = true}) {
+export function ResultsScatter({id = 'ket-qua', title = 'Kết quả thật từ khách hàng của SOHO', showLink = true}) {
   const lv = getCase('le-viva-resort');
   const st = getCase('seo-studio-chup-anh-tphcm');
   return (
@@ -313,10 +335,10 @@ export function ResultsScatter({id = 'ket-qua', title = 'Kết quả thật từ
     >
       <div className={styles.kqGrid}>
         <div>
-          <p className="eyebrow">Kết quả đã công bố</p>
+          <p className="eyebrow">Kết quả nổi bật</p>
           <h2 id="h-kq">{title}</h2>
           <p className={styles.desc} style={{fontSize: 15}}>
-            Mỗi con số ghi rõ của ai, trong bao lâu. Khách chưa đồng ý thì SOHO không đăng.
+            Mỗi con số đều ghi rõ của khách nào, trong khoảng thời gian nào.
           </p>
           {showLink && (
             <div style={{marginTop: 24}}>
@@ -332,25 +354,25 @@ export function ResultsScatter({id = 'ket-qua', title = 'Kết quả thật từ
               <p className={styles.scLab}>Khách nhắn tin hỏi đặt phòng</p>
               <div>
                 <div className={styles.scNum}>×2,3</div>
-                <p className={styles.scSrc}>gấp 2,3 lần giai đoạn trước, Le Viva Resort</p>
+                <p className={styles.scSrc}>gấp 2,3 lần giai đoạn trước · Le Viva Resort</p>
               </div>
             </a>
           )}
           {lv && (
             <a href={sitePath('/du-an/le-viva-resort/')} className={`${styles.sc} ${styles.scOrange}`}>
-              <p className={styles.scLab}>Tiền quảng cáo cho mỗi 1.000 lần hiện ra</p>
+              <p className={styles.scLab}>Chi phí cho 1.000 lượt hiển thị quảng cáo</p>
               <div>
                 <div className={styles.scNum}>−35%</div>
-                <p className={styles.scSrc}>cùng số tiền, quảng cáo tới được nhiều người hơn. Le Viva Resort</p>
+                <p className={styles.scSrc}>cùng ngân sách, quảng cáo đến được nhiều người hơn · Le Viva Resort</p>
               </div>
             </a>
           )}
           {st && (
             <a href={sitePath(`/du-an/${st.slug}/`)} className={`${styles.sc} ${styles.scGlass}`}>
-              <p className={styles.scLab}>Lượt khách bấm vào từ Google</p>
+              <p className={styles.scLab}>Lượt nhấp từ Google</p>
               <div>
                 <div className={styles.scNum}>{st.kpis[0].value}</div>
-                <p className={styles.scSrc}>tháng đầu của 6 bài mới, một studio chụp ảnh ở TP.HCM (giữ kín tên), 22/09–22/10/2026</p>
+                <p className={styles.scSrc}>tháng đầu của 6 bài viết mới · Studio 1 Nhà, 22/09–22/10/2026</p>
               </div>
             </a>
           )}
@@ -361,8 +383,10 @@ export function ResultsScatter({id = 'ket-qua', title = 'Kết quả thật từ
 }
 
 /* ---------- Củng cố niềm tin: dự án, bài toán → kết quả ---------- */
+// Trang chủ: 4 dự án, đủ hai kênh quảng cáo và SEO. Trang Kết quả hiện tất cả.
+const HOME_CASES = ['le-viva-resort', 'seo-studio-chup-anh-tphcm', 'everest-logistics', 'king-decor-luxury'];
 export function CaseCards({items}) {
-  const list = items || publishedCases.filter(c => !c.anonymous);
+  const list = items || HOME_CASES.map(getCase).filter(Boolean);
   return (
     <div className={styles.cases}>
       {list.map(c => (
@@ -387,8 +411,8 @@ export function ProjectsSection({all = false, showLink = true, tone = 'white'}) 
     <SectionShell id="du-an" tone={tone} labelledBy="h-da">
       <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'end', gap: 24, flexWrap: 'wrap', marginBottom: 44}}>
         <div>
-          <p className="eyebrow">Dự án</p>
-          <h2 id="h-da">Bài toán của khách, và SOHO đã giải thế nào</h2>
+          <p className="eyebrow">Dự án tiêu biểu</p>
+          <h2 id="h-da">Bài toán của khách và cách SOHO giải quyết</h2>
         </div>
         {showLink && (
           <Button href="/ket-qua" variant="secondary" arrow="right">
@@ -410,7 +434,7 @@ export function QuotesSection({tone = 'tint'}) {
       <div className={styles.quotes}>
         <div>
           <p className="eyebrow">Khách hàng nói</p>
-          <h2 id="h-kn">Lời từ người đã làm cùng SOHO</h2>
+          <h2 id="h-kn">Khách hàng nói gì về SOHO</h2>
           <blockquote className={styles.bigQuote} style={{marginTop: 40}}>
             <p>“{first.quote}”</p>
             <footer>
@@ -428,7 +452,7 @@ export function QuotesSection({tone = 'tint'}) {
               </footer>
             </blockquote>
           ))}
-          <p className={styles.quoteSrc}>Nhận xét đã đăng trên sohoagency.vn, giữ nguyên văn.</p>
+          <p className={styles.quoteSrc}>Trích nguyên văn nhận xét của khách hàng.</p>
         </div>
       </div>
     </SectionShell>
@@ -480,10 +504,10 @@ export function AccountOwnership({tone = 'white'}) {
         <div>
           <p className="eyebrow">Tài khoản và dữ liệu</p>
           <h2 id="h-tk">Mọi tài khoản đứng tên doanh nghiệp bạn</h2>
-          <Pain>Nghỉ thuê agency thì mất luôn tài khoản quảng cáo, fanpage, có khi cả tên miền website.</Pain>
+          <Pain>Ngừng thuê agency là mất luôn tài khoản quảng cáo, fanpage, có khi cả tên miền website.</Pain>
           <p className={styles.desc}>
-            SOHO tạo mới hoặc chuyển tài khoản về tên bạn ngay từ đầu, rồi xin bạn cấp quyền để làm. Dừng hợp tác thì bạn gỡ quyền, mọi thứ còn nguyên: quảng cáo,
-            fanpage, dữ liệu khách, website.
+            Ngay từ đầu, SOHO tạo mới hoặc chuyển các tài khoản về tên doanh nghiệp bạn, sau đó xin bạn cấp quyền quản lý. Khi dừng hợp tác, bạn chỉ cần gỡ quyền.
+            Quảng cáo, fanpage, dữ liệu khách hàng và website vẫn còn nguyên.
           </p>
         </div>
       </div>
@@ -495,15 +519,87 @@ export function AccountOwnership({tone = 'white'}) {
 export function TeamArt() {
   return (
     <div className={styles.teamArt}>
-      {team.map(p => (
-        <figure key={p.key} className={styles.teamCard}>
-          <img src={sitePath(p.photo)} width={p.width} height={p.height} alt={`${p.name ? p.name + ', ' : ''}${p.role.toLowerCase()} của SOHO`} loading="lazy" />
-          <figcaption>{p.name ? `${p.name} · ${p.role}` : p.role}</figcaption>
-        </figure>
-      ))}
+      {team.filter(p => p.photos).map(p => {
+        const real = p.photos?.smile;
+        return (
+          <figure key={p.key} className={`${styles.teamCard} ${real ? styles.teamCardReal : ''}`}>
+            <img src={sitePath(real ? real.src : p.photo)} width={real ? real.width : p.width} height={real ? real.height : p.height} alt={personAlt(p)} loading="lazy" />
+            <figcaption>{p.name ? `${p.name} · ${p.title || p.role}` : p.role}</figcaption>
+          </figure>
+        );
+      })}
     </div>
   );
 }
+
+/* ---------- Về SOHO: hai người bạn làm việc cùng, mỗi người một ảnh thật ---------- */
+const FEATURE = {
+  pm: {
+    id: 'nguoi-sang-lap',
+    eyebrow: 'Người sáng lập, đầu mối của bạn',
+    title: (
+      <>
+        Người lập ra SOHO cũng là <span className="hl">người làm việc với bạn</span>
+      </>
+    ),
+    intro: 'Ở nhiều nơi, người ký hợp đồng với bạn và người trực tiếp làm là hai người khác nhau. Ở SOHO, người sáng lập nhận dự án và là đầu mối của bạn từ đầu đến cuối:',
+    does: [
+      'Gặp bạn buổi đầu, tìm hiểu khách hàng và cách bạn đang bán',
+      'Báo giá rõ từng hạng mục trước khi bắt đầu',
+      'Theo sát dự án, là người bạn liên hệ khi cần',
+      'Hai tuần một lần cùng bạn xem số liệu, quyết định làm tiếp hay điều chỉnh'
+    ],
+    pic: p => p.photos.vest
+  },
+  mkt: {
+    id: 'nguoi-len-ke-hoach',
+    eyebrow: 'Người lên kế hoạch và làm',
+    title: (
+      <>
+        Kế hoạch do <span className="hl">người trực tiếp làm</span> viết ra
+      </>
+    ),
+    intro: 'Người viết kế hoạch cho dự án của bạn cũng là người trực tiếp triển khai, nên kế hoạch không chỉ nằm trên giấy:',
+    does: [
+      'Chọn kênh làm trước và phân bổ ngân sách theo chỉ số cần đạt',
+      'Trực tiếp làm SEO, chạy quảng cáo, tối ưu website theo kế hoạch đã thống nhất',
+      'Đo kết quả và điều chỉnh sau mỗi 2 tuần'
+    ],
+    pic: p => p.photos.main
+  }
+};
+export function PersonFeature({person = 'pm', tone = 'tint', reverse = false}) {
+  const p = getPerson(person);
+  const f = FEATURE[person];
+  if (!p?.photos || !f) return null;
+  const main = f.pic(p);
+  const hid = `h-${f.id}`;
+  return (
+    <SectionShell id={f.id} tone={tone} labelledBy={hid}>
+      <div className={`${styles.founder} ${reverse ? styles.founderRev : ''}`}>
+        <div className={styles.founderPic}>
+          <img src={sitePath(main.src)} width={main.width} height={main.height} alt={personAlt(p)} loading="lazy" />
+        </div>
+        <div>
+          <p className="eyebrow">{f.eyebrow}</p>
+          <h2 id={hid}>{f.title}</h2>
+          <p className={styles.founderName}>
+            <b>{p.name}</b>
+            {personTitle(p)}
+          </p>
+          {p.bio && <p className={styles.founderBio}>{p.bio}</p>}
+          <p className={styles.desc}>{f.intro}</p>
+          <ul className={`${styles.checks} ${styles.checks1}`}>
+            {f.does.map(t => (
+              <li key={t}>{t}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </SectionShell>
+  );
+}
+
 export function AboutSoho() {
   const count = publishedCases.length;
   return (
@@ -513,15 +609,15 @@ export function AboutSoho() {
           <TeamArt />
           <div className={styles.count}>
             <b>{count}</b>
-            <span>dự án khách cho phép công bố</span>
+            <span>dự án tiêu biểu</span>
           </div>
         </div>
         <div>
           <p className="eyebrow">Về SOHO</p>
           <h2 id="h-gt">SOHO là lựa chọn của chủ doanh nghiệp muốn biết rõ tiền marketing đi đâu</h2>
           <p className={styles.desc}>
-            Một đội nhỏ, làm việc thẳng với chủ doanh nghiệp. SOHO đã làm cho resort, đơn vị thi công quán cà phê và homestay, nhà phân phối đồng hồ, studio ảnh cưới,
-            xưởng may. Bạn nói chuyện trực tiếp với người làm, không qua nhiều lớp trung gian, và luôn biết việc đang tới đâu.
+            Một đội nhỏ, làm việc trực tiếp với chủ doanh nghiệp. SOHO đã làm cho resort, đơn vị thi công quán cà phê và homestay, nhà phân phối đồng hồ, studio ảnh
+            cưới, công ty logistics và xưởng may. Bạn trao đổi thẳng với người làm, không qua nhiều lớp trung gian, và luôn biết dự án đang tới đâu.
           </p>
           <ul className={styles.checks}>
             <li>
@@ -544,15 +640,15 @@ export function AboutSoho() {
 
 /* ---------- Cân nhắc: bài viết ---------- */
 const PLAIN = {
-  'seo-ky-nguyen-ai-search': 'Khách bắt đầu hỏi Google AI, ChatGPT thay vì tự bấm từng trang. Website cần làm gì để vẫn được nhắc tên.',
-  'toi-uu-roas-performance-ads': 'Vì sao giá mỗi lượt bấm rẻ mà vẫn không ra đơn, và cách biết quảng cáo mang về bao nhiêu khách thật.',
+  'seo-ky-nguyen-ai-search': 'Khách hàng bắt đầu hỏi AI của Google và ChatGPT thay vì tự mở từng trang. Website cần làm gì để vẫn được nhắc tên.',
+  'toi-uu-roas-performance-ads': 'Vì sao giá mỗi lượt nhấp rẻ mà vẫn không ra đơn, và cách biết quảng cáo thật sự mang về bao nhiêu khách.',
   'chien-luoc-seo-ads-song-hanh': 'Ngân sách có hạn: lúc nào nên chạy quảng cáo để có khách ngay, lúc nào nên làm SEO cho lâu dài.',
-  'toi-uu-cro-landing-page': 'Có người vào trang mà ít ai để lại số: những chỗ nên sửa trước trên trang bán hàng.',
-  'content-hub-topic-cluster': 'Cách sắp xếp bài viết thành một cụm, để Google hiểu bạn giỏi chủ đề nào và khách đi tới trang dịch vụ.',
-  'tracking-ga4-capi-2026': 'Vì sao số đơn trên Facebook và số đơn thật lệch nhau, và cách đếm lại cho đúng.',
-  'framework-marketing-90-ngay': '7 bước SOHO làm khi nhận một khách mới: chọn kênh, chia tiền, đặt con số, xem lại sau 90 ngày.',
-  'framework-seo-8-buoc': '8 bước SOHO làm SEO cho một website, từ khám lỗi tới khi có khách liên hệ.',
-  'framework-ads-6-buoc': '6 bước SOHO nhận một tài khoản quảng cáo: tính tiền cho mỗi khách, đếm đúng, thử mẫu, rồi mới tăng tiền.'
+  'toi-uu-cro-landing-page': 'Nhiều người vào trang nhưng ít ai để lại thông tin: những chỗ nên sửa trước trên landing page.',
+  'content-hub-topic-cluster': 'Cách sắp xếp bài viết theo cụm chủ đề để Google hiểu bạn mạnh về lĩnh vực nào và dẫn khách đến trang dịch vụ.',
+  'tracking-ga4-capi-2026': 'Vì sao số đơn Facebook báo và số đơn thực tế lệch nhau, và cách đo lại cho đúng.',
+  'framework-marketing-90-ngay': '7 bước SOHO làm khi nhận khách mới: chọn kênh, phân bổ ngân sách, đặt mục tiêu, đánh giá lại sau 90 ngày.',
+  'framework-seo-8-buoc': '8 bước SOHO làm SEO cho một website, từ kiểm tra lỗi đến khi có khách liên hệ.',
+  'framework-ads-6-buoc': '6 bước khi SOHO nhận một tài khoản quảng cáo: tính chi phí cho mỗi khách, đo cho đúng, thử mẫu quảng cáo rồi mới tăng ngân sách.'
 };
 export function BlogSection({posts}) {
   if (!posts?.length) return null;
@@ -561,7 +657,7 @@ export function BlogSection({posts}) {
       <div style={{textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: 48}}>
         <p className="eyebrow">Bài viết</p>
         <h2 id="h-bv">Đọc trước khi bỏ tiền làm marketing</h2>
-        <p className={styles.desc}>Mỗi bài trả lời một câu chủ doanh nghiệp hay hỏi SOHO.</p>
+        <p className={styles.desc}>Mỗi bài trả lời một câu hỏi chủ doanh nghiệp hay đặt ra cho SOHO.</p>
       </div>
       <div className={styles.posts}>
         {posts.map(p => (
@@ -592,12 +688,15 @@ export function PersonMini({label = 'Người sẽ gọi lại cho bạn'}) {
   return (
     <div className={svc.person} style={{marginTop: 24, maxWidth: 520}}>
       <div className={svc.personImg}>
-        <img src={sitePath(pm.photo)} width={pm.width} height={pm.height} alt={`${pm.name ? pm.name + ', ' : ''}${pm.role.toLowerCase()} của SOHO`} loading="lazy" />
+        <img src={sitePath(pm.photo)} width={pm.width} height={pm.height} alt={personAlt(pm)} loading="lazy" />
       </div>
       <div>
         <p className={svc.caseTag}>{label}</p>
         <p className={svc.personRole}>{pm.name || pm.role}</p>
-        <p className={svc.personDoes}>{pm.does}</p>
+        <p className={svc.personDoes}>
+          {pm.title ? `${pm.title}. ` : ''}
+          {pm.does}
+        </p>
       </div>
     </div>
   );

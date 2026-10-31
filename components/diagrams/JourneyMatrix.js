@@ -31,8 +31,8 @@ export default function JourneyMatrix() {
       {/* Header kênh (desktop) */}
       <div className={styles.head}>
         <div className={styles.corner}>
-          <span>Mục tiêu</span>
-          <span>Chặng hành trình</span>
+          <span>Bộ phận</span>
+          <span>Giai đoạn mua hàng</span>
         </div>
         {CHANNELS.map((c, j) => (
           <div key={c.name} className={styles.chHead} data-ch={j}>
@@ -44,7 +44,7 @@ export default function JourneyMatrix() {
 
       {STAGES.map((st, i) => (
         <div key={st.code} className={styles.stageWrap}>
-          <section className={styles.block} style={{'--w': WIDTH[i], '--i': i}} aria-label={`Chặng ${i + 1}: ${st.name}`}>
+          <section className={styles.block} style={{'--w': WIDTH[i], '--i': i}} aria-label={`Giai đoạn ${i + 1}: ${st.name}`}>
             <div className={`${styles.goal} ${i === 2 ? styles.goalSales : ''}`}>
               <span>{st.owner}</span>
             </div>
@@ -78,7 +78,7 @@ export default function JourneyMatrix() {
       </div>
       <p className={styles.legend}>
         <i aria-hidden="true" />
-        Viền cam: con số chính SOHO theo dõi ở chặng đó
+        Viền cam: con số chính SOHO theo dõi ở giai đoạn đó
       </p>
     </div>
   );

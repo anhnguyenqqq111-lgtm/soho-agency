@@ -220,6 +220,23 @@ mark[data-verify] {
 .prose > * + * {
   margin-top: 1.1em;
 }
+/* Ảnh trong bài đọc (sơ đồ mẫu SOHO, 1360 rộng) */
+.prose .artFig {
+  margin: 28px 0;
+}
+.prose .artFig img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  border: 1px solid var(--line);
+}
+.prose .artFig figcaption {
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--ink-3);
+}
 .prose h2 {
   font-size: clamp(24px, 2.4vw, 30px);
   margin-top: 2.2em;

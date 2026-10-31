@@ -1,0 +1,11 @@
+{
+  "title": "Content marketing và PR báo chí cho doanh nghiệp",
+  "category": "Nội dung và đo lường",
+  "theme": "coral",
+  "hero": {"photo": "content-marketing-pr-77a50967.jpg", "focal": [0.3, 0.5]},
+  "inArticle": [
+    {"photo": "content-marketing-pr-a4d35445.jpg", "label": "Lịch nội dung và cách dùng lại một bài", "focal": [0.5, 0.4]},
+    {"photo": "content-marketing-pr-3cabc7d2.jpg", "label": "Câu chuyện khách hàng và số liệu riêng", "focal": [0.5, 0.35]},
+    {"photo": "content-marketing-pr-00d0abf4.jpg", "label": "PR báo chí: làm đúng luật, kỳ vọng đúng mức", "focal": [0.5, 0.6]}
+  ]
+}

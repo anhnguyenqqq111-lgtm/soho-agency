@@ -184,11 +184,12 @@
   overflow: hidden;
 }
 .personPhoto img {
-  position: relative;
-  z-index: 1;
-  height: 340px;
-  width: auto;
-  max-width: none;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 55% 22%;
 }
 .personBody {
   padding: 26px 26px 24px;
@@ -311,7 +312,7 @@
   color: var(--on-dark-2);
 }
 
-/* ---------- Báo cáo bằng lời thường ---------- */
+/* ---------- Báo cáo hằng tháng, dễ hiểu ---------- */
 .doc {
   background: #ffffff;
   color: var(--ink);
@@ -686,6 +687,17 @@
 .teamCard:last-child img {
   height: 270px;
 }
+.teamCardReal img,
+.teamCard.teamCardReal:first-child img {
+  width: 100%;
+  height: 340px;
+  margin: 0;
+  object-fit: cover;
+  object-position: 64% 30%;
+}
+.teamCard.teamCardReal:last-child img {
+  object-position: 50% 25%;
+}
 .teamCard figcaption {
   position: relative;
   z-index: 1;
@@ -696,16 +708,16 @@
   line-height: 1.45;
   font-weight: 600;
 }
+/* Nằm dưới hai ảnh, không đè lên mặt ai */
 .count {
-  position: absolute;
-  right: -10px;
-  top: -18px;
-  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 16px;
   background: var(--brand);
   color: var(--ink);
-  padding: 18px 22px;
+  padding: 14px 20px;
   border-radius: 14px;
-  box-shadow: 0 18px 36px -14px rgba(15, 35, 64, 0.4);
 }
 .count b {
   display: block;
@@ -725,6 +737,10 @@
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 14px 24px;
+}
+.checks1 {
+  grid-template-columns: minmax(0, 1fr);
+  margin-top: 20px;
 }
 .checks li {
   display: flex;
@@ -793,8 +809,57 @@
   color: var(--denim);
 }
 
+/* ---------- Người sáng lập (Về SOHO): 3 ảnh thật, nền thật ---------- */
+.founder {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(32px, 6vw, 72px);
+  align-items: center;
+}
+.founderPic {
+  width: 100%;
+  max-width: 460px;
+  justify-self: center;
+}
+.founderPic img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: 50% 20%;
+  border-radius: 24px;
+  box-shadow: 0 24px 50px -30px rgba(15, 35, 64, 0.5);
+}
+.founderRev .founderPic {
+  order: 2;
+}
+.founderBio {
+  margin: 12px 0 0;
+  max-width: 52ch;
+  font-size: 15px;
+  line-height: 1.6;
+  font-weight: 600;
+  color: var(--ink);
+}
+.founderName {
+  margin: 18px 0 0;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--ink-2);
+}
+.founderName b {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 1.2;
+  color: var(--ink);
+}
+
 @media (max-width: 1000px) {
   .heroGrid,
+  .founder,
   .split,
   .headSplit,
   .kqGrid,
@@ -835,8 +900,26 @@
     margin-top: -40px;
     max-width: none;
   }
+  /* Điện thoại: khung Google Partner nằm trên khung ảnh, không đè lên mặt người */
+  .heroArt {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+  }
+  .heroPanel {
+    inset: 74px 0 0 0;
+  }
   .partnerPill {
-    top: 24px;
+    position: relative;
+    top: auto;
+    left: auto;
+    order: -1;
+    align-self: flex-start;
+    margin: 0 0 22px;
+  }
+  .heroPerson {
+    margin-top: 6px;
+    transform: none;
   }
   .personCard {
     grid-template-columns: minmax(0, 1fr);
@@ -853,6 +936,12 @@
   }
   .teamCard:last-child img {
     height: 200px;
+  }
+  .teamCard.teamCardReal:first-child img {
+    height: 240px;
+  }
+  .founderRev .founderPic {
+    order: 0;
   }
   .acc {
     font-size: 13.5px;

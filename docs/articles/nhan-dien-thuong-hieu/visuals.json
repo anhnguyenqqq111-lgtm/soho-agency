@@ -1,0 +1,11 @@
+{
+  "title": "Thiết kế nhận diện thương hiệu: gồm gì, làm ra sao",
+  "category": "Website và thương hiệu",
+  "theme": "coral",
+  "hero": {"photo": "nhan-dien-thuong-hieu-c6e784c4.jpg", "focal": [0.35, 0.5]},
+  "inArticle": [
+    {"photo": "nhan-dien-thuong-hieu-5ddf862b.jpg", "label": "Bảng màu, kiểu chữ và logo là phần lõi", "focal": [0.5, 0.3]},
+    {"photo": "nhan-dien-thuong-hieu-48021e24.jpg", "label": "Làm mới toàn bộ hay chỉ cần chỉnh", "focal": [0.5, 0.4]},
+    {"photo": "nhan-dien-thuong-hieu-7916dd67.jpg", "label": "Bảo hộ nhãn hiệu: tra cứu trước khi chốt", "focal": [0.55, 0.45]}
+  ]
+}

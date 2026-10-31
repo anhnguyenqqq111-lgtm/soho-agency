@@ -1,8 +1,33 @@
 import {Fragment} from 'react';
 import {parseMarkdown, isClaim} from './parseMarkdown';
+import {sitePath} from '../paths';
 
-// **đậm** và *nghiêng*
+// [chữ](https://…) cho nguồn tham khảo (mở tab mới), [chữ](/dich-vu/…) cho link nội bộ, **đậm** và *nghiêng*
+const LINK = /(\[[^\]]+\]\((?:https?:\/\/|\/)[^)\s]*\))/g;
 export function Inline({text}) {
+  if (LINK.test(text)) {
+    LINK.lastIndex = 0;
+    return text.split(LINK).map((part, i) => {
+      const m = part.match(/^\[([^\]]+)\]\(((?:https?:\/\/|\/)[^)\s]*)\)$/);
+      if (!m) {
+        return (
+          <Fragment key={i}>
+            <Inline text={part} />
+          </Fragment>
+        );
+      }
+      const external = /^https?:/.test(m[2]);
+      return external ? (
+        <a key={i} href={m[2]} target="_blank" rel="noopener nofollow">
+          {m[1]}
+        </a>
+      ) : (
+        <a key={i} href={sitePath(m[2])}>
+          {m[1]}
+        </a>
+      );
+    });
+  }
   const parts = text.split(/(\*\*[^*]+?\*\*)/g);
   return parts.map((part, i) => {
     if (/^\*\*[^*]+\*\*$/.test(part)) return <strong key={i}>{part.slice(2, -2)}</strong>;
@@ -77,6 +102,17 @@ export function Block({block}) {
             </li>
           ))}
         </ul>
+      );
+    case 'img':
+      return (
+        <figure className="artFig">
+          <img src={sitePath(block.src)} alt={block.alt} width={block.width} height={block.height} loading="lazy" />
+          {block.caption && (
+            <figcaption>
+              <Inline text={block.caption} />
+            </figcaption>
+          )}
+        </figure>
       );
     case 'table':
       return (

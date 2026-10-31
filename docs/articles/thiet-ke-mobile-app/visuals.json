@@ -1,0 +1,38 @@
+{
+  "title": "Thiết kế app mobile: có cần không, làm thế nào",
+  "category": "Website và thương hiệu",
+  "theme": "orange",
+  "hero": {
+    "photo": "thiet-ke-mobile-app-5ba051e9.jpg",
+    "focal": [
+      0.4,
+      0.6
+    ]
+  },
+  "inArticle": [
+    {
+      "photo": "thiet-ke-mobile-app-de2e0444.jpg",
+      "label": "Bắt đầu bằng bản đầu tiên thật gọn",
+      "focal": [
+        0.5,
+        0.35
+      ]
+    },
+    {
+      "photo": "thiet-ke-mobile-app-09c4effe.jpg",
+      "label": "Native hay đa nền tảng",
+      "focal": [
+        0.5,
+        0.4
+      ]
+    },
+    {
+      "photo": "thiet-ke-mobile-app-01ceaad5.jpg",
+      "label": "Sau ra mắt: bảo trì là việc hằng năm",
+      "focal": [
+        0.5,
+        0.4
+      ]
+    }
+  ]
+}

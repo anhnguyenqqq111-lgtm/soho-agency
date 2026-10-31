@@ -1,0 +1,30 @@
+{
+  "title": "GA4, đo lường chuyển đổi và báo cáo Looker Studio",
+  "category": "Nội dung và đo lường",
+  "theme": "violet",
+  "hero": {
+    "photo": "ga4-looker-dashboard-65734c56.jpg",
+    "focal": [
+      0.15,
+      0.5
+    ]
+  },
+  "inArticle": [
+    {
+      "photo": "ga4-looker-dashboard-d4aaa45c.jpg",
+      "label": "Vì sao mỗi nơi báo một con số",
+      "focal": [
+        0.5,
+        0.55
+      ]
+    },
+    {
+      "photo": "ga4-looker-dashboard-74b022ae.jpg",
+      "label": "UTM: gắn nhãn cho mọi đường link",
+      "focal": [
+        0.5,
+        0.3
+      ]
+    }
+  ]
+}

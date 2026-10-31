@@ -5,7 +5,8 @@ const compat = new FlatCompat({baseDirectory: import.meta.dirname});
 
 const config = [
   ...compat.extends('next/core-web-vitals'),
-  {ignores: ['out/**', '.next/**', 'node_modules/**']},
+  // docs/ và tools/ chứa script Figma, template ảnh chạy trong trình duyệt (window.*), không phải mã của site
+  {ignores: ['out/**', '.next/**', 'node_modules/**', 'docs/**', 'tools/**', 'public/**']},
   {
     rules: {
       // Site xuất tĩnh với images.unoptimized: next/image không tối ưu được gì, dùng <img> có width/height là đủ

@@ -24,31 +24,33 @@ Goha viết cho trưởng phòng marketing B2B nên dùng nhiều chữ tiếng 
 
 Thêm một khuôn của riêng SOHO: **"Bạn từng gặp? → SOHO làm thế này → bằng chứng"**. Khuôn này dùng cho khối "Khác ở đâu" và bộ chọn tình huống dịch vụ.
 
-## 3. Luật câu chữ
+## 3. Luật câu chữ (sửa ngày 31/10/2026)
 
-1. Mở bằng tình huống của khách, không mở bằng tên dịch vụ. Tên dịch vụ để làm nhãn nhỏ.
-2. Tiêu đề ngắn được, nhưng câu ngay dưới phải nối ngữ cảnh. Không để nhãn hay con số đứng một mình.
-3. Mỗi con số đi kèm: của ai, trong bao lâu, nguồn, và một câu "nghĩa là gì" với chủ doanh nghiệp.
-4. Thuật ngữ đổi sang lời thường. Nếu buộc phải giữ, thêm "nói dễ hiểu là…" ngay sau.
-5. Nói cả khi nào chưa nên làm. Điều này cho thấy SOHO hiểu bài toán, và tránh bán thứ khách chưa cần.
-6. Không hứa thứ hạng, không hứa doanh thu. Hứa cách làm: ai làm, báo cáo thế nào, tài khoản đứng tên ai.
+Bản trước bảo "đổi thuật ngữ sang lời thường", dẫn tới chữ tự chế nghe như dịch máy: "hiện ra trên Google", "khách bấm vào",
+"khách hỏi mua", "báo cáo bằng lời thường". Bỏ hẳn hướng đó. Luật mới:
 
-## 4. Bảng đổi thuật ngữ
+1. **Viết như người Việt làm marketing nói chuyện với chủ doanh nghiệp.** Câu tự nhiên, đọc to lên không vấp. Không dịch từng chữ từ tiếng Anh, không tự chế cụm mới để né thuật ngữ.
+2. **Dùng từ phổ biến mà chủ doanh nghiệp đã nghe**: SEO, quảng cáo Facebook, lên top Google, lượt truy cập, lượt hiển thị, lượt nhấp, khách hàng tiềm năng, đơn hàng, tỉ lệ chuyển đổi, landing page. Từ nào thật sự lạ (ROAS, CPM, schema) thì giải thích một lần, ngắn, trong ngoặc hoặc ngay câu sau.
+3. **Câu ngắn, rõ ai làm gì.** Một ý một câu. Không xếp ba bốn mệnh đề nối bằng dấu phẩy. Không đặt dấu phẩy trước "và" kiểu tiếng Anh.
+4. **Không nói chuyện nội bộ lên web**: không viết "khách cho phép công bố", "khách chưa đồng ý thì SOHO không đăng", "ảnh dựng", "ví dụ dựng". Xin phép vẫn làm, nhưng là việc nội bộ. Trên web gọi là "dự án tiêu biểu", "kết quả nổi bật".
+5. **Số phải đúng và có thời gian, nguồn.** Ghi gọn: "102 lượt nhấp từ Google trong tháng đầu (Search Console, 22/09–22/10/2026)". Phần giới hạn ghi ở trang chi tiết dự án, không nhồi vào mọi chỗ.
+6. Mở bằng tình huống của khách. Nói cả khi nào chưa nên làm. Không hứa thứ hạng, không hứa doanh thu.
 
-| Đừng viết | Viết |
+## 4. Cụm cần tránh và cách viết thay
+
+| Tránh (gượng, dịch máy) | Viết |
 |---|---|
-| Lượt hiển thị, impression | Số lần hiện ra khi có người tìm |
-| Lượt nhấp, click, CTR | Số lần khách bấm vào xem |
-| Vị trí trung bình 4,7 | Thường đứng thứ 4 đến 5 ở trang đầu Google |
-| Chi phí 1.000 lượt hiển thị (CPM) | Tiền quảng cáo cho mỗi 1.000 lần quảng cáo hiện ra |
-| Tương tác tự nhiên | Lượt thích, bình luận, chia sẻ không trả tiền |
-| Lead, khách tiềm năng đạt chuẩn | Người gọi, nhắn, để lại số hỏi mua |
-| Chuyển đổi, CRO | Khách bấm gọi, nhắn, đặt; làm cho nhiều người làm việc đó hơn |
-| Trang trụ cột, cụm chủ đề, bài vệ tinh | Bài tổng quan, các bài trả lời câu khách hay hỏi, đều dẫn về trang dịch vụ |
-| Dữ liệu cấu trúc, E-E-A-T, thực thể | Ghi rõ doanh nghiệp là ai, ai viết, địa chỉ, chứng nhận, theo cách Google đọc được |
-| Điểm chạm, hành trình khách hàng, phễu | Lúc khách mới tìm hiểu, lúc đang so sánh, lúc sắp mua |
-| Vanity traffic | Lượt xem tăng mà khách không tăng |
-| ROI, ROAS | Bỏ ra bao nhiêu, mang về bao nhiêu |
+| Thêm khách hỏi mua | Thêm khách hàng, thêm đơn hàng, thêm khách liên hệ |
+| Báo cáo bằng lời thường | Báo cáo ngắn gọn, dễ hiểu |
+| Hiện lên khi khách tìm trên Google | Khách tìm trên Google là thấy bạn; lên top Google |
+| Số lần hiện ra trên Google | Lượt hiển thị trên Google |
+| Lượt khách bấm vào | Lượt nhấp, lượt truy cập |
+| Người gọi, nhắn, để lại số hỏi mua | Khách hàng tiềm năng, khách liên hệ |
+| Đưa khách tới | Mang khách về |
+| Hợp với bạn nếu / Chưa hợp nếu | Phù hợp với / Chưa phù hợp nếu |
+| Dự án khách cho phép công bố | Dự án tiêu biểu |
+| Chặng, điểm chạm | Giai đoạn: tìm hiểu, cân nhắc, mua |
+| Vị trí trung bình 4,7 | Vị trí trung bình 4,7 (thường nằm trong top 5) |
 
 ## 5. Trước và sau
 

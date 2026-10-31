@@ -223,10 +223,12 @@
   align-items: flex-end;
   justify-content: center;
 }
+/* Ảnh thật giữ nền: lấp đầy khung */
 .personImg img {
-  height: 132px;
-  width: auto;
-  max-width: none;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 20%;
 }
 .personRole {
   margin: 4px 0 0;
@@ -269,8 +271,5 @@
   }
   .personImg {
     height: 116px;
-  }
-  .personImg img {
-    height: 110px;
   }
 }

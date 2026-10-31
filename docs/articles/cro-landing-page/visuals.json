@@ -1,0 +1,10 @@
+{
+  "title": "Tối ưu tỷ lệ chuyển đổi landing page",
+  "category": "Quảng cáo ra đơn",
+  "theme": "coral",
+  "hero": {"photo": "cro-landing-page-8cb5687f.jpg", "focal": [0.05, 0.8]},
+  "inArticle": [
+    {"photo": "cro-landing-page-5249d93f.jpg", "label": "Tốc độ trên điện thoại", "focal": [0.5, 0.9]},
+    {"photo": "cro-landing-page-3e79ce6d.jpg", "label": "A/B test: hai bản, mỗi lần một thay đổi", "focal": [0.5, 0.4]}
+  ]
+}

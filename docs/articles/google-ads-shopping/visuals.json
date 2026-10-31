@@ -1,0 +1,11 @@
+{
+  "title": "Quảng cáo Google Ads và Google Shopping",
+  "category": "Quảng cáo ra đơn",
+  "theme": "orange",
+  "hero": {"photo": "google-ads-shopping-a5e1b1a7.jpg", "focal": [0.5, 0.5]},
+  "inArticle": [
+    {"photo": "google-ads-shopping-6218a263.jpg", "label": "Shopping hiển thị theo dữ liệu từng mã hàng", "focal": [0.5, 0.5]},
+    {"photo": "google-ads-shopping-2cf9ab97.jpg", "label": "Từ khóa quyết định ai thấy quảng cáo", "focal": [0.5, 0.5]},
+    {"photo": "google-ads-shopping-cb478a1e.jpg", "label": "Ngân sách thử tính từ số khách cần có", "focal": [0.5, 0.45]}
+  ]
+}

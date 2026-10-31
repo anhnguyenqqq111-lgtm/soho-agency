@@ -12,7 +12,7 @@ export const metadata = {
   alternates: {canonical: '/giai-phap/'},
   title: 'Giải pháp',
   description:
-    'Giải pháp của SOHO Agency theo mô hình kinh doanh: bán cho doanh nghiệp, bán hàng online, doanh nghiệp nhỏ. Làm theo vòng 2 tuần, đo bằng doanh thu.'
+    'Giải pháp marketing của SOHO Agency theo mô hình kinh doanh: bán cho doanh nghiệp (B2B), bán hàng online, doanh nghiệp nhỏ. Làm theo chu kỳ 2 tuần, đo bằng doanh thu.'
 };
 
 const copy = {
@@ -22,15 +22,15 @@ const copy = {
         Ba mô hình, <span className="hl">ba thứ tự ưu tiên</span> khác nhau
       </>
     ),
-    intro: 'Cùng là SEO hay quảng cáo, nhưng bán cho doanh nghiệp, bán hàng online và doanh nghiệp nhỏ cần thứ tự ưu tiên rất khác nhau.'
+    intro: 'Cùng là SEO hay quảng cáo, nhưng doanh nghiệp B2B, bán hàng online và doanh nghiệp nhỏ cần ưu tiên những việc rất khác nhau.'
   },
   'Cách SOHO làm việc': {
     title: (
       <>
-        Phần <span className="hl">giống nhau</span> ở mọi dự án
+        Điều <span className="hl">giống nhau</span> ở mọi dự án
       </>
     ),
-    intro: 'Chia việc theo vòng 2 tuần, đo bằng doanh thu, báo cáo để cả chủ doanh nghiệp và người vận hành đọc được.'
+    intro: 'Chia việc theo chu kỳ 2 tuần, đo bằng doanh thu. Báo cáo ngắn gọn, chủ doanh nghiệp và nhân viên đều đọc hiểu.'
   }
 };
 
@@ -48,12 +48,12 @@ export default function SolutionsPage() {
               Giải pháp của SOHO <span className="hl">theo mô hình kinh doanh</span>
             </>
           }
-          tagline="Bán cho doanh nghiệp, bán hàng online hay doanh nghiệp nhỏ: mỗi mô hình một thứ tự ưu tiên."
+          tagline="Bán cho doanh nghiệp, bán hàng online hay doanh nghiệp nhỏ: mỗi mô hình cần ưu tiên những việc khác nhau."
           visual={<SolutionsVisual />}
         />
         <PageHeader
           title="Bắt đầu từ mô hình kinh doanh của bạn"
-          lead="Mỗi giải pháp xuất phát từ thị trường, biên lợi nhuận, chu kỳ bán hàng và năng lực vận hành hiện có, rồi mới chọn kênh."
+          lead="SOHO xem thị trường, biên lợi nhuận, chu kỳ bán hàng và đội ngũ hiện có của bạn trước, rồi mới chọn kênh."
         />
         {groups.map(({group, items}, i) => (
           <Section key={group} tone={i ? 'gray' : 'white'} title={copy[group].title} intro={copy[group].intro}>

@@ -1,0 +1,38 @@
+{
+  "title": "Lộ trình marketing 90 ngày: tư vấn chiến lược",
+  "category": "Nội dung và đo lường",
+  "theme": "orange",
+  "hero": {
+    "photo": "tu-van-chien-luoc-sprint-ffb9929e.jpg",
+    "focal": [
+      0.9,
+      0.5
+    ]
+  },
+  "inArticle": [
+    {
+      "photo": "tu-van-chien-luoc-sprint-634aac55.jpg",
+      "label": "Khi nào cần tư vấn lộ trình marketing",
+      "focal": [
+        0.5,
+        0.3
+      ]
+    },
+    {
+      "photo": "tu-van-chien-luoc-sprint-85890431.jpg",
+      "label": "Chọn kênh theo giai đoạn của doanh nghiệp",
+      "focal": [
+        0.5,
+        0.4
+      ]
+    },
+    {
+      "photo": "tu-van-chien-luoc-sprint-0ad863f8.jpg",
+      "label": "Nhịp rà soát 2 tuần một lần",
+      "focal": [
+        0.5,
+        0.35
+      ]
+    }
+  ]
+}

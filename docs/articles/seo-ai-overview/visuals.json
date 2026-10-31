@@ -1,0 +1,38 @@
+{
+  "title": "SEO AI Overview: để ChatGPT, Gemini nhắc tên bạn",
+  "category": "Được tìm thấy trên Google và AI",
+  "theme": "violet",
+  "hero": {
+    "photo": "seo-ai-overview-b265d61e.jpg",
+    "focal": [
+      0.55,
+      0.35
+    ]
+  },
+  "inArticle": [
+    {
+      "photo": "seo-ai-overview-e291112f.jpg",
+      "label": "Nền SEO giữ nguyên, cách nghĩ về kết quả thay đổi",
+      "focal": [
+        0.5,
+        0.55
+      ]
+    },
+    {
+      "photo": "seo-ai-overview-13cce889.jpg",
+      "label": "Schema: đoạn mã giúp Google đọc đúng thông tin",
+      "focal": [
+        0.4,
+        0.4
+      ]
+    },
+    {
+      "photo": "seo-ai-overview-dd2f35ad.jpg",
+      "label": "Đo lượt hiển thị trong AI bằng Search Console",
+      "focal": [
+        0.5,
+        0.6
+      ]
+    }
+  ]
+}

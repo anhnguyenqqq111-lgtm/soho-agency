@@ -13,7 +13,7 @@ export const metadata = {
   alternates: {canonical: '/dich-vu/'},
   title: 'Dịch vụ',
   description:
-    'Dịch vụ của SOHO Agency: SEO, Google Ads, Facebook và TikTok Ads, thiết kế website, nhận diện thương hiệu, mobile app, nội dung và đo lường. Chọn theo chỗ đang nghẽn.'
+    'Dịch vụ của SOHO Agency: SEO, Google Ads, Facebook và TikTok Ads, thiết kế website, nhận diện thương hiệu, mobile app, nội dung và đo lường. Chọn theo vấn đề bạn đang gặp.'
 };
 
 const IDS = ['tim-kiem', 'quang-cao', 'website-thuong-hieu', 'noi-dung-do-luong'];
@@ -32,15 +32,15 @@ export default function ServicesIndexPage() {
               Dịch vụ của SOHO Agency: <span className="hl">marketing, website, thương hiệu</span>
             </>
           }
-          tagline="Mười hai việc SOHO làm, chia theo chỗ bạn đang mất khách. Chưa biết tên dịch vụ cũng không sao: chọn tình huống giống bạn nhất ở bên dưới."
+          tagline="12 dịch vụ, chia theo chỗ bạn đang mất khách. Chưa biết mình cần dịch vụ nào? Chọn tình huống giống bạn nhất ở bên dưới."
           visual={<ServicesVisual labels={groups.flatMap(g => g.items.map(s => s.menuTitle))} />}
         />
         <Section
           id="noi-dung"
           tone="soft"
-          kicker="Bắt đầu từ chuyện bạn đang gặp"
-          title="Bạn đang gặp chuyện nào?"
-          intro="Chọn một tình huống. SOHO nói rõ vì sao chuyện đó hay xảy ra, nên làm gì trước, và khi nào chưa nên bỏ tiền."
+          kicker="Bắt đầu từ vấn đề của bạn"
+          title="Bạn đang gặp vấn đề nào?"
+          intro="Chọn một tình huống. SOHO giải thích vì sao nó hay xảy ra, nên làm gì trước và khi nào chưa nên bỏ tiền."
         >
           <ProblemPicker idPrefix="hub-pk" />
         </Section>

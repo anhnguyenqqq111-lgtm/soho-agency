@@ -172,3 +172,29 @@
     margin-bottom: 40px;
   }
 }
+
+/* Ảnh bìa bài (mẫu SOHO, 1600×1000) */
+.cover {
+  margin: 0 0 40px;
+}
+.cover img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  border: 1px solid var(--line);
+}
+
+/* Ghi nguồn ảnh CC0 ở cuối bài */
+.credits {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--ink-3);
+}
+.credits a {
+  color: inherit;
+  text-decoration: underline;
+}

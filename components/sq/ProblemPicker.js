@@ -40,7 +40,7 @@ export default function ProblemPicker({idPrefix = 'pk'}) {
                 </header>
                 <div className={styles.cols}>
                   <div>
-                    <h4>Vì sao hay xảy ra</h4>
+                    <h4>Nguyên nhân thường gặp</h4>
                     <ul>
                       {s.why.map(x => (
                         <li key={x}>{x}</li>
@@ -48,7 +48,7 @@ export default function ProblemPicker({idPrefix = 'pk'}) {
                     </ul>
                   </div>
                   <div>
-                    <h4>SOHO làm gì trước</h4>
+                    <h4>SOHO làm gì trước tiên</h4>
                     <ol>
                       {s.first.map(x => (
                         <li key={x}>{x}</li>
@@ -69,10 +69,12 @@ export default function ProblemPicker({idPrefix = 'pk'}) {
                     <b>Khi nào chưa nên làm</b>
                     {s.notYet}
                   </p>
-                  <p className={styles.case}>
-                    <b>Việc thật đã làm</b>
-                    {proj ? <a href={sitePath(`/du-an/${proj.slug}/`)}>{s.proof}</a> : s.blogSlug ? <a href={sitePath(`/blog/${s.blogSlug}/`)}>{s.proof}</a> : s.proof}
-                  </p>
+                  {(proj || s.blogSlug) && (
+                    <p className={styles.case}>
+                      <b>{proj ? 'Dự án thực tế' : 'Đọc thêm'}</b>
+                      <a href={sitePath(proj ? `/du-an/${proj.slug}/` : `/blog/${s.blogSlug}/`)}>{s.proof}</a>
+                    </p>
+                  )}
                   <p className={styles.go}>
                     <a href={goHref} className={styles.goBtn}>
                       Xem dịch vụ

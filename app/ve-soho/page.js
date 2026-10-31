@@ -11,29 +11,25 @@ import {partners} from '../../components/data/proof';
 import {sitePath} from '../../components/paths';
 import CtaBand from '../../components/ui/CtaBand';
 import {company} from '../../components/data/company';
-import {TeamArt, AccountOwnership} from '../../components/sq/Blocks';
+import {PersonFeature, AccountOwnership} from '../../components/sq/Blocks';
+import {team} from '../../components/data/team';
 import {PAGE_CTA} from '../../components/data/contactVariants';
 
 export const metadata = {
   alternates: {canonical: '/ve-soho/'},
   title: 'Giới thiệu',
   description:
-    'SOHO Agency (Công ty TNHH SOHO Agency) là đội SEO, quảng cáo, nội dung và đo lường tại TP.HCM, Google Partner 2026. Lập kế hoạch và tự triển khai, báo cáo bằng doanh thu.'
+    'SOHO Agency (Công ty TNHH SOHO Agency) là đội SEO, quảng cáo, nội dung và đo lường tại TP.HCM, Google Partner 2026. Lên kế hoạch, trực tiếp triển khai và báo cáo bằng doanh thu.'
 };
 
 const principles = [
-  {title: 'Tự tay làm, không chỉ gửi khuyến nghị', text: 'SOHO nhận cả phần làm: sửa lỗi kỹ thuật, dựng chiến dịch, viết nội dung, cài đặt cách đo.'},
-  {title: 'Công khai số liệu, ngân sách và lý do làm trước', text: 'Bạn biết tiền đang chi vào đâu, việc nào đang làm và vì sao.'},
-  {title: 'SEO, quảng cáo, nội dung và đo lường cùng một đội', text: 'Từ khóa ra đơn trên quảng cáo thành chủ đề SEO, câu hỏi của khách thành bài viết.'},
-  {title: 'Làm theo vòng 2 tuần để thử, học và làm rộng ra đúng lúc', text: 'Mỗi 2 tuần nhìn lại số liệu và quyết định giữ, sửa hay dừng.'}
+  {title: 'Tự tay làm, không chỉ gửi đề xuất', text: 'SOHO nhận cả phần triển khai: sửa lỗi kỹ thuật, dựng chiến dịch, viết nội dung, cài đặt đo lường.'},
+  {title: 'Minh bạch số liệu, ngân sách và lý do ưu tiên', text: 'Bạn biết tiền đang chi vào đâu, việc nào đang làm và vì sao làm việc đó trước.'},
+  {title: 'SEO, quảng cáo, nội dung và đo lường trong cùng một đội', text: 'Từ khóa ra đơn trên quảng cáo trở thành chủ đề SEO, câu hỏi của khách trở thành bài viết.'},
+  {title: 'Làm theo chu kỳ 2 tuần: thử, đo rồi mở rộng đúng lúc', text: 'Cứ 2 tuần, SOHO cùng bạn xem lại số liệu và quyết định giữ, sửa hay dừng.'}
 ];
-const team = [
-  {name: 'Nguyễn Thế Tuấn Anh', role: 'Phụ trách chiến lược tăng trưởng', verify: true},
-  {name: 'Lê Hoàng Yến', role: 'Giám đốc chiến lược'},
-  {name: 'Trần Minh Quân', role: 'Trưởng nhóm quảng cáo'},
-  {name: 'Đỗ Gia Huy', role: 'Phân tích số liệu và tối ưu trang đích'},
-  {name: 'Phạm Thùy Linh', role: 'Chiến lược nội dung'}
-];
+// Đội trên web: đúng những người trong components/data/team.js (SOHO chốt 31/10/2026).
+const teamList = team.map(p => ({name: p.name, role: p.title || p.role, photo: p.photo, width: p.width, height: p.height}));
 
 export default function AboutPage() {
   const google = partners.find(p => p.verified && p.logo);
@@ -46,27 +42,18 @@ export default function AboutPage() {
           crumbs={[{label: 'Giới thiệu'}]}
           title={
             <>
-              SOHO Agency, đội marketing cho <span className="hl">doanh nghiệp nhỏ và vừa</span> ở TP.HCM
+              SOHO Agency: đội marketing online cho <span className="hl">doanh nghiệp vừa và nhỏ</span> tại TP.HCM
             </>
           }
-          tagline="SOHO lên kế hoạch và tự tay làm SEO, quảng cáo, website, nội dung cho doanh nghiệp đã có sản phẩm, có khách mua. Mỗi tháng bạn nhận báo cáo bằng số người liên hệ, viết bằng lời thường."
+          tagline="SOHO lên kế hoạch và trực tiếp triển khai SEO, quảng cáo, website và nội dung cho doanh nghiệp đã có sản phẩm, đã có khách hàng. Mỗi tháng bạn nhận báo cáo ngắn gọn, dễ hiểu về số khách liên hệ và hiệu quả từng kênh."
           visual={<AboutVisual />}
         />
         <PageHeader
           title="SOHO là lựa chọn của chủ doanh nghiệp muốn biết rõ tiền marketing đi đâu"
-          lead="Người lên kế hoạch cũng là người làm. Không chuyển việc cho đội khác sau khi ký hợp đồng, nên điều đã hứa trong buổi đầu là điều được làm."
+          lead="Người lên kế hoạch cũng là người làm. Sau khi ký hợp đồng, SOHO không chuyển việc cho đội khác, nên những gì đã thống nhất ở buổi đầu sẽ được làm đúng như vậy."
         />
-        <Section
-          id="nguoi-ban-gap"
-          tone="soft"
-          kicker="Người thật, việc thật"
-          title="Hai người bạn sẽ gặp đầu tiên"
-          intro="Người phụ trách dự án gặp bạn buổi đầu và theo sát tới khi báo cáo. Người làm marketing và website trực tiếp chạy SEO, quảng cáo, sửa web."
-        >
-          <div className={styles.teamPhotos}>
-            <TeamArt />
-          </div>
-        </Section>
+        <PersonFeature person="pm" />
+        <PersonFeature person="mkt" tone="white" reverse />
         <Section
           title={
             <>
@@ -82,8 +69,8 @@ export default function AboutPage() {
                 Việc đầu tiên SOHO làm luôn là đo cho đúng, rồi mới tăng ngân sách.
               </p>
               <p>
-                SOHO đã làm cho một khu nghỉ dưỡng ở Mũi Né, một đơn vị thiết kế thi công, một nhà phân phối đồng hồ cao cấp và một studio ảnh cưới.{' '}
-                <a href={sitePath('/ket-qua')}>Xem SOHO đã làm gì</a>.
+                SOHO đã làm cho một khu nghỉ dưỡng ở Mũi Né, một đơn vị thiết kế thi công, một nhà phân phối đồng hồ cao cấp, hai studio ảnh, một công ty logistics và một xưởng may.{' '}
+                <a href={sitePath('/ket-qua')}>Xem các dự án tiêu biểu</a>.
               </p>
             </div>
             <aside className={styles.facts} data-reveal="" style={{'--reveal-delay': '150ms'}}>
@@ -133,20 +120,14 @@ export default function AboutPage() {
         <Section
           title={
             <>
-              Cả đội <span className="hl">làm cùng bạn</span>
+              Đội ngũ <span className="hl">SOHO</span>
             </>
           }
         >
           <ul className={styles.team}>
-            {team.map((p, i) => (
+            {teamList.map((p, i) => (
               <li key={p.name} data-reveal="" style={{'--reveal-delay': `${i * 80}ms`}}>
-                {p.photo ? (
-                  <img src={sitePath(p.photo)} alt={p.name} className={styles.photo} loading="lazy" width="800" height="800" />
-                ) : (
-                  <span className={styles.mono} aria-hidden="true">
-                    {p.name.split(' ').slice(-1)[0][0]}
-                  </span>
-                )}
+                <img src={sitePath(p.photo)} alt={p.name} className={styles.photo} loading="lazy" width={p.width} height={p.height} />
                 <p className={styles.name}>{p.name}</p>
                 <p className={styles.role}>{p.role}</p>
               </li>

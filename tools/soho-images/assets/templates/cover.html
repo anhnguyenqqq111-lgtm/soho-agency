@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>SOHO · ảnh bìa và ảnh chia sẻ</title>
+<!--
+  Template ảnh bìa (preset cover) và ảnh chia sẻ mạng xã hội (preset og) cho bài blog SOHO.
+  Không sửa file này cho từng bài: ghi dữ liệu vào một file <tên>.data.js trong thư mục images/src/
+  của bài viết rồi truyền qua tham số ?data=. Lệnh render: xem creating-images-soho/SKILL.md.
+  Token màu và chữ lấy theo data/reference/persona-brand/SOHO/visual-identity-SOHO.md.
+  Trường `palette` chọn màu theo ngữ cảnh bài (assets/palettes.js: tên bảng, hoặc {accent, mode} từ một màu bất kỳ).
+  Minh họa cột phải thumbnail, một trong ba: `scene` là cảnh dựng từ nội dung bài có nhãn (assets/scenes.js: flow,
+  funnel, hub, merge), `visualImage` là ảnh minh họa (AI hoặc ảnh thật, đường dẫn tương đối so với file dữ liệu),
+  `visual` là một hình khối SVG (assets/visuals.js). Banner chỉ nhận visual hoặc visualImage.
+  Ba preset: og (1200×630) và cover (1600×1000, thumbnail trên website) có chữ bên trái, minh họa bên phải;
+  banner (1600×800, ảnh dưới H1 trên website) chỉ có minh họa, không chữ.
+  `layout` cho cover/og khi dùng visualImage: 'split' (ảnh ở cột phải, bo góc) hoặc 'full' (ảnh phủ toàn khung,
+  chữ nằm trên lớp mờ bên trái).
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;800&display=block">
+<script src="../palettes.js"></script>
+<script src="../visuals.js"></script>
+<script src="../scenes.js"></script>
+<style>
+  :root{
+    --paper:#F7F3EC; --line:#E1DBD0;
+    --ink:#1B1611; --ink-3:#766D62;
+    --red:#A82E10; --accent:#C9391A;
+    --grad-brand:linear-gradient(90deg,#E8A800 0%,#F26716 50%,#C9391A 100%);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:var(--paper);overflow:hidden}
+  body{font-family:'Be Vietnam Pro',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased}
+  .canvas{position:relative;display:flex;flex-direction:column;overflow:hidden;background:var(--paper)}
+  .bar{position:absolute;top:0;left:0;right:0;background:var(--grad-brand)}
+  .top{display:flex;align-items:center;justify-content:space-between;gap:24px}
+  .eyebrow{font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--red)}
+  .logo{display:block;flex:none}
+  .titleBox{flex:1;display:flex;align-items:center;gap:48px;min-height:0;overflow:hidden}
+  .titleBox h1{flex:1;min-width:0}
+  .visual{flex:none;display:none}
+  .visual svg{display:block;width:100%;height:100%}
+  .visual svg text{paint-order:stroke}
+  .visual img{display:block;width:100%;height:100%;object-fit:cover;border-radius:28px}
+  .canvas.full .titleBox .visual{position:absolute;inset:0;width:auto!important;height:auto!important;isolation:auto}
+  .canvas.full .visual img{border-radius:0}
+  .canvas.full::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,var(--paper) 0%,var(--paper) 38%,color-mix(in srgb,var(--paper) 55%,transparent) 62%,transparent 100%);z-index:1}
+  .canvas.full .top,.canvas.full .titleBox h1,.canvas.full .bottom,.canvas.full .bar{position:relative;z-index:2}
+  .canvas.full .titleBox h1{max-width:58%}
+  .canvas.bannerOnly.full .visual::before{display:none}
+  .canvas.bannerOnly.full::after{display:none}
+  .canvas.bannerOnly .top,.canvas.bannerOnly .bottom,.canvas.bannerOnly .bar,.canvas.bannerOnly h1{display:none}
+  .canvas.bannerOnly .titleBox{justify-content:center;gap:0}
+  .canvas.bannerOnly .visual{position:relative;isolation:isolate}
+  .nb{white-space:nowrap}
+  .canvas.bannerOnly .visual::before{content:'';position:absolute;inset:-18%;border-radius:50%;background:var(--paper-2);z-index:-1}
+  h1{font-weight:800;line-height:1.12;letter-spacing:-.015em;text-wrap:balance}
+  h1 .hl{color:var(--accent)}
+  .bottom{display:flex;justify-content:space-between;gap:24px;border-top:2px solid var(--line);color:var(--ink-3);font-weight:600}
+  .warn{position:absolute;left:0;right:0;bottom:0;padding:10px 16px;background:#B00020;color:#fff;font:600 18px/1.35 system-ui,sans-serif;z-index:9}
+  #logo{background:#0F2340;border-radius:12px;padding:6px;box-sizing:content-box}
+</style>
+</head>
+<body>
+<div class="canvas" id="canvas">
+  <div class="bar" id="bar"></div>
+  <div class="top"><span class="eyebrow" id="eyebrow"></span><img class="logo" id="logo" src="../soho-logo.svg" alt=""></div>
+  <div class="titleBox"><h1 id="title"></h1><div class="visual" id="visual"></div></div>
+  <div class="bottom" id="bottom"><span id="note"></span><span id="url"></span></div>
+</div>
+<script>
+  // Mở template không kèm ?data= thì hiện dữ liệu mẫu này để xem thử bố cục.
+  const SAMPLE = {
+    preset: 'og',
+    category: 'SEO & AI Search',
+    title: 'SEO trong kỷ nguyên AI Search: doanh nghiệp cần thay đổi điều gì?',
+    highlight: 'AI Search',
+    visual: 'ai',
+    note: 'Blog SOHO Agency',
+    url: ''
+  };
+  const DEFAULTS = {preset: 'og', palette: 'denim', category: '', title: '', highlight: '', visual: '', visualImage: '', scene: null, layout: 'split', note: 'Blog SOHO Agency', url: ''};
+
+  // w, h: kích thước canvas (px CSS). title/min: cỡ chữ tiêu đề lớn nhất và nhỏ nhất được phép co tới.
+  // visual: bề rộng minh họa (px). bannerOnly: chỉ minh họa, không chữ.
+  const PRESETS = {
+    og:     {w: 1200, h: 630,  pad: 64, bar: 10, eyebrow: 22, logo: 46, title: 64, min: 40, note: 20, visual: 300},
+    cover:  {w: 1600, h: 1000, pad: 96, bar: 12, eyebrow: 26, logo: 60, title: 88, min: 52, note: 24, visual: 440},
+    banner: {w: 1600, h: 800,  pad: 96, bar: 0,  eyebrow: 0,  logo: 0,  title: 0,  min: 0,  note: 0,  visual: 420, bannerOnly: true}
+  };
+
+  const $ = id => document.getElementById(id);
+  const escapeHtml = s => String(s).replace(/[&<>"]/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;'}[c]));
+  // Mất mạng thì Chrome lặng lẽ dùng font hệ thống; kiểm tra để in cảnh báo thay vì ra ảnh sai font.
+  const fontLoaded = () => [...document.fonts].some(f => f.family.replace(/["']/g, '') === 'Be Vietnam Pro' && f.status === 'loaded');
+
+  function warn(message){
+    const box = document.createElement('div');
+    box.className = 'warn';
+    box.textContent = message;
+    $('canvas').appendChild(box);
+  }
+
+  function render(data){
+    const p = PRESETS[data.preset];
+    if (!p){
+      document.body.style.cssText = 'font:600 24px system-ui;color:#B00020;padding:24px';
+      document.body.textContent = 'preset không hợp lệ: ' + data.preset + ' (dùng og hoặc cover)';
+      return;
+    }
+    const palette = window.applyPalette ? window.applyPalette(data.palette) : null;
+    if (!palette) warn(`palette không hợp lệ: ${data.palette} (xem assets/palettes.js). Đang dùng soho.`);
+    $('logo').src = (palette && palette.logo === 'light') ? '../soho-logo-white.svg' : '../soho-logo.svg';
+    $('canvas').classList.toggle('bannerOnly', !!p.bannerOnly);
+    Object.assign($('canvas').style, {
+      width: p.w + 'px', height: p.h + 'px', gap: p.pad * 0.5 + 'px',
+      padding: `${p.pad + p.bar}px ${p.pad}px ${p.pad * 0.75}px`
+    });
+    $('bar').style.height = p.bar + 'px';
+
+    // Minh họa: ảnh (visualImage) hoặc hình khối SVG (visual). Cover/og: bên phải tiêu đề; banner: một mình.
+    const vis = $('visual');
+    const full = data.layout === 'full' || !!(p.bannerOnly && data.visualImage);
+    $('canvas').classList.toggle('full', full);
+    const found = data.visual && window.SOHO_VISUALS && window.SOHO_VISUALS[data.visual];
+    if (data.scene && !p.bannerOnly && window.buildScene){
+      // Cảnh dựng từ nội dung bài (assets/scenes.js): chiếm cả cột phải, cao bằng khối tiêu đề.
+      const built = window.buildScene(data.scene);
+      vis.innerHTML = built.svg;
+      built.warnings.forEach(warn);
+      Object.assign(vis.style, {display: 'block', width: Math.round(p.w * 0.42) + 'px', height: '100%', alignSelf: 'stretch'});
+      if (data.visual || data.visualImage) warn('Có scene thì bỏ visual và visualImage ở thumbnail.');
+    } else if (data.visualImage){
+      vis.innerHTML = `<img src="${escapeHtml(data._imageUrl)}" alt="">`;
+      Object.assign(vis.style, {display: 'block', width: Math.round(p.w * 0.42) + 'px', height: '100%', alignSelf: 'stretch'});
+      if (data.visual) warn('Chỉ dùng một trong hai: visual hoặc visualImage.');
+      if (data._imageFailed) warn('Không tải được visualImage: ' + data.visualImage);
+    } else if (found){
+      vis.innerHTML = found.svg;
+      Object.assign(vis.style, {display: 'block', width: p.visual + 'px', height: p.visual + 'px', alignSelf: 'center'});
+    } else {
+      vis.innerHTML = '';
+      vis.style.display = 'none';
+      if (data.visual) warn(`visual không hợp lệ: ${data.visual} (xem assets/visuals.js)`);
+      if (p.bannerOnly) warn('Preset banner cần visual hoặc visualImage.');
+    }
+    $('eyebrow').textContent = data.category;
+    $('eyebrow').style.fontSize = p.eyebrow + 'px';
+    $('logo').style.height = p.logo + 'px';
+    $('note').textContent = data.note;
+    $('url').textContent = data.url;
+    $('bottom').style.fontSize = p.note + 'px';
+    $('bottom').style.paddingTop = p.pad * 0.3 + 'px';
+
+    const title = $('title');
+    let html = escapeHtml(data.title);
+    if (data.highlight && data.title.includes(data.highlight)){
+      html = html.replace(escapeHtml(data.highlight), `<span class="hl">${escapeHtml(data.highlight)}</span>`);
+    }
+    // Từ có gạch nối (Server-side, Cookie-less) không được ngắt dòng tại gạch nối.
+    html = html.replace(/[^\s<>]+-[^\s<>]+/g, m => `<span class="nb">${m}</span>`);
+    title.innerHTML = html;
+
+    // Co cỡ chữ tiêu đề tới khi vừa khung; không cắt chữ, không thêm dấu "...".
+    const box = title.parentElement;
+    let size = p.title;
+    title.style.fontSize = size + 'px';
+    while ((title.scrollHeight > box.clientHeight || title.scrollWidth > box.clientWidth) && size > p.min){
+      size -= 2;
+      title.style.fontSize = size + 'px';
+    }
+    if (!p.bannerOnly && title.scrollHeight > box.clientHeight) warn(`Tiêu đề quá dài cho preset ${data.preset}. Rút gọn title trong file dữ liệu.`);
+    if (!p.bannerOnly && !data.title) warn('Thiếu title trong file dữ liệu.');
+    if (!p.bannerOnly && data.title.length > 50) warn(`Title ${data.title.length} ký tự, quy tắc blog SOHO: H1 và chữ trên thumbnail tối đa 50.`);
+    if (!fontLoaded()) warn('Chưa tải được font Be Vietnam Pro (mất mạng?). Kiểm tra mạng rồi render lại.');
+    // Chrome headless báo innerHeight lệch so với --window-size nên không kiểm tra cửa sổ ở đây;
+    // kích thước ảnh được kiểm tra sau khi render (bước sips trong SKILL.md).
+  }
+
+  function start(data, baseUrl){
+    const text = [data.title, data.category, data.note].join(' ');
+    const jobs = [
+      document.fonts.load('800 40px "Be Vietnam Pro"', text),
+      document.fonts.load('600 20px "Be Vietnam Pro"', text)
+    ];
+    if (data.visualImage){
+      data._imageUrl = baseUrl ? new URL(data.visualImage, baseUrl).href : data.visualImage;
+      jobs.push(new Promise(resolve => {
+        const im = new Image();
+        im.onload = resolve;
+        im.onerror = () => { data._imageFailed = true; resolve(); };
+        im.src = data._imageUrl;
+      }));
+    }
+    Promise.all(jobs).catch(() => {}).then(() => render(data));
+  }
+
+  const src = new URLSearchParams(location.search).get('data');
+  if (!src){
+    start(SAMPLE);
+  } else {
+    const script = document.createElement('script');
+    script.src = src;
+    script.onload = () => start(Object.assign({}, DEFAULTS, window.DATA || {}), src);
+    script.onerror = () => { start(SAMPLE); setTimeout(() => warn('Không tải được file dữ liệu: ' + src), 0); };
+    document.head.appendChild(script);
+  }
+</script>
+</body>
+</html>

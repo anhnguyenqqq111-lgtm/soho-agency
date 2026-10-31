@@ -125,7 +125,7 @@ export default async function BlogPostPage({params}) {
           tone="gray"
           title={
             <>
-              Đọc <span className="hl">tiếp</span>
+              Bài viết <span className="hl">liên quan</span>
             </>
           }
           spacing="sm"

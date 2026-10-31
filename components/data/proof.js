@@ -14,7 +14,7 @@ export const partners = [
     // Ba tiêu chí Google xác nhận trên hồ sơ đối tác (kiểm tra 10/2026), hiện trong ô giải thích khi rê chuột vào huy hiệu
     criteria: [
       'Điểm tối ưu hóa tài khoản từ 70% trở lên',
-      'Quản lý tối thiểu 10.000 USD chi tiêu quảng cáo trong 90 ngày',
+      'Quản lý ít nhất 10.000 USD chi phí quảng cáo trong 90 ngày',
       'Ít nhất một nửa chuyên viên có chứng chỉ Google Ads'
     ]
   }

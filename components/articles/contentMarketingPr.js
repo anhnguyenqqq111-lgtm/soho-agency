@@ -1,205 +1,228 @@
 export const contentMarketingPrArticle = {
-  metaTitle: 'Dịch Vụ Content Marketing & Digital PR 2026: Xây Dựng Uy Tín Chuyên Môn & Tạo Niềm Tin Trước Khi Bán | SOHO',
+  metaTitle: 'Content marketing và PR báo chí cho doanh nghiệp | SOHO',
   metaDesc:
-    'Chiến lược Content Marketing & Digital PR chuyên sâu 2026. Xây dựng phễu nội dung nuôi dưỡng nhu cầu, thiết lập vị thế chuyên gia (Thought Leadership) và hỗ trợ đội ngũ sales chốt đơn hiệu quả.',
-  readingTime: '17 phút đọc',
-  updatedDate: '04/10/2026',
-  author: {
-    name: 'Nguyễn Thế Tuấn Anh',
-    role: 'Head of Growth Strategy @ SOHO Agency'
+    'Làm content marketing theo giai đoạn mua, lập lịch nội dung, dùng câu chuyện khách hàng, làm PR báo chí đúng Luật Quảng cáo và đo hiệu quả bài viết.',
+  readingTime: '11 phút đọc',
+  updatedDate: '31/10/2026',
+  author: {name: 'Nguyễn Thế Tuấn Anh', role: 'Phụ trách chiến lược tăng trưởng, SOHO Agency'},
+  cover: {
+    src: '/media/articles/content-marketing-pr/content-marketing-pr-hero.webp',
+    alt: 'Máy đánh chữ cũ có tờ giấy trắng, cạnh tiêu đề Content marketing và PR báo chí cho doanh nghiệp',
+    width: 1600,
+    height: 900
   },
+  credits: [
+    {text: 'Vintage black typewriter (Unsplash), Daniel McCullough d_mccullough, Wikimedia Commons (CC0)', url: 'https://commons.wikimedia.org/wiki/File:Vintage_black_typewriter_(Unsplash).jpg'},
+    {text: 'Planning over coffee (Unsplash), Hope House Press hopehousepress, Wikimedia Commons (CC0)', url: 'https://commons.wikimedia.org/wiki/File:Planning_over_coffee_(Unsplash).jpg'},
+    {text: 'Writing with a fountain pen (Unsplash), Aaron Burden aaronburden, Wikimedia Commons (CC0)', url: 'https://commons.wikimedia.org/wiki/File:Writing_with_a_fountain_pen_(Unsplash).jpg'},
+    {text: 'Glasses and a magazine (Unsplash), Nick Hillier nhillier, Wikimedia Commons (CC0)', url: 'https://commons.wikimedia.org/wiki/File:Glasses_and_a_magazine_(Unsplash).jpg'}
+  ],
   toc: [
-    {id: 'tham-kich-content-rac-khong-chuyen-doi', title: '1. Thực trạng: Bi kịch "Nội dung rác", đăng bài đều đặn nhưng không ai đọc'},
-    {id: 'chi-phi-co-hoi-mat-uy-tin-chuyen-mon', title: '2. Chi phí cơ hội: Mất vị thế chuyên gia đầu ngành vào tay đối thủ'},
-    {id: 'ban-chat-content-marketing-soho', title: '3. Bản chất Content Marketing B2B & Digital PR định hướng niềm tin'},
-    {id: '4-tru-cot-tai-san-noi-dung', title: '4. 4 Trụ cột xây dựng hệ sinh thái nội dung giá trị cao của SOHO'},
-    {id: 'quy-trinh-sprint-content-marketing', title: '5. Quy trình Sprint 5 bước sản xuất nội dung chuyên sâu thực chiến'},
-    {id: 'bang-so-sanh-content-marketing', title: '6. So sánh: "Viết bài theo bài" giá rẻ vs Content Chiến Lược @ SOHO'},
-    {id: 'checklist-15-tieu-chi-content', title: '7. Bộ Checklist 15 tiêu chí kiểm toán chất lượng tài sản nội dung'},
-    {id: 'faq-content-marketing-pr', title: '8. Câu hỏi thường gặp (FAQ chuẩn Schema)'}
+    {id: 'vi-sao-dang-bai-khong-ra-khach', title: '1. Vì sao đăng bài đều mà không thấy khách'},
+    {id: 'noi-dung-theo-giai-doan-mua', title: '2. Nội dung theo ba giai đoạn mua'},
+    {id: 'lich-noi-dung-va-dung-lai', title: '3. Lịch nội dung và cách dùng lại một bài'},
+    {id: 'bang-chung-tao-niem-tin', title: '4. Bằng chứng: câu chuyện khách hàng và số liệu riêng'},
+    {id: 'pr-bao-chi-dung-luat', title: '5. PR báo chí: làm đúng luật, kỳ vọng đúng mức'},
+    {id: 'do-hieu-qua-noi-dung', title: '6. Đo hiệu quả nội dung'},
+    {id: 'cau-hoi-thuong-gap', title: '7. Câu hỏi thường gặp'}
   ],
   sections: [
     {
-      id: 'tham-kich-content-rac-khong-chuyen-doi',
-      heading: '1. Thực trạng: Bi kịch "Nội dung rác", đăng bài đều đặn nhưng không ai đọc',
+      id: 'vi-sao-dang-bai-khong-ra-khach',
+      heading: '1. Vì sao đăng bài đều mà không thấy khách',
       content: `
-### 1.1. Nghịch lý xuất bản: Fanpage đầy ắp bài, Blog hàng trăm bài nhưng khách hàng không tin
+Nhiều doanh nghiệp đăng bài rất chăm, mỗi tuần vài bài trên website và fanpage. Sau nửa năm, chủ doanh nghiệp hỏi có khách nào đến từ mấy bài đó không. Thường không ai trả lời được.
 
-Một trong những hoạt động tiêu tốn nhiều thời gian và công sức nhất của các doanh nghiệp nhưng lại mang lại ít giá trị kinh doanh nhất chính là việc: **sản xuất nội dung để "cho có bài đăng"**:
-* Doanh nghiệp thuê nhân viên hoặc agency ngoài viết mỗi tuần 5 đến 7 bài trên Fanpage, mỗi tháng 20 đến 30 bài chuẩn SEO trên website.
-* Chi phí nhân sự và chi phí bài viết hàng tháng lên tới hàng chục triệu đồng.
-* Nhưng khi nhìn vào kết quả thực tế: Mỗi bài đăng chỉ có vài lượt like của người quen nội bộ; các bài viết blog không ai chia sẻ; và quan trọng nhất: **khách hàng trước khi ký hợp đồng vẫn luôn đặt ra những câu hỏi hoài nghi về năng lực của công ty**.
+Lý do hay gặp nhất không nằm ở câu chữ. Bài được viết vì "phải có bài", không vì một câu hỏi cụ thể của khách. Đọc xong, khách không biết thêm gì để quyết định mua.
 
-Nguyên nhân là bởi vì 90% nội dung đó là **"Nội dung rác" (Commodity Content)**: các bài viết sao chép xào xáo lại từ đối thủ, sử dụng AI sinh văn bản chung chung không có linh hồn, nói những điều hiển nhiên ai cũng biết và hoàn toàn thiếu vắng quan điểm chuyên gia độc bản (Unique Point of View).
+[Hướng dẫn về nội dung hữu ích](https://developers.google.com/search/docs/fundamentals/creating-helpful-content) của Google khuyên viết trước hết cho người đọc, có thông tin riêng và kinh nghiệm thực tế. Viết thật nhiều bài về đủ chủ đề, mong vài bài lên top, là dấu hiệu Google cảnh báo.
 
-### 1.2. 3 Điểm nghẽn khiến nội dung không tạo ra doanh số
+Vì vậy trước khi viết, mỗi bài cần trả lời được ba câu:
 
-1. **Nhầm lẫn giữa "Viết bài quảng cáo" và "Content Marketing thực thụ":**
-   Bài viết nào cũng mở đầu bằng việc khen ngợi công ty và kết thúc bằng câu thúc giục mua hàng. Khách hàng thông minh ngày nay có cơ chế kháng thể tự nhiên với quảng cáo lộ liễu. Họ không đọc bài để nghe bạn tự khen mình, họ đọc để tìm giải pháp cho khó khăn của chính họ.
+- Bài dành cho khách đang ở giai đoạn nào: mới tìm hiểu, đang so sánh hay sắp mua?
+- Khách có câu hỏi gì mà bài trả lời tốt hơn bài của người khác?
+- Đọc xong, khách nên làm gì tiếp: đọc bài khác, xem bảng giá hay liên hệ?
 
-2. **Thiếu sự kết nối với Đội ngũ Bán hàng (Sales Disconnect):**
-   Đội ngũ content ngồi trong phòng máy lạnh tự nghĩ ra đề tài để viết, trong khi đội ngũ kinh doanh hàng ngày phải đối mặt với hàng chục lời từ chối và thắc mắc thực tế của khách hàng ngoài thị trường. Kết quả là nhân viên sales không thể dùng bất kỳ bài viết nào trên website để thuyết phục khách hàng.
-
-3. **Chỉ tập trung vào phần ngọn (Top of Funnel):**
-   Chỉ viết các bài mẹo vặt bề nổi để câu view, hoàn toàn bỏ trống các nội dung có giá trị chuyển đổi cao ở đáy phễu như: Báo cáo phân tích bài toán ngành, Case Study chuyển đổi thực tế, Bảng so sánh giải pháp và Hướng dẫn tính toán chi phí đầu tư.
+Phần kỹ thuật giúp bài lên Google (tốc độ trang, cấu trúc website, liên kết) thuộc về SEO, xem ở [trang SEO tổng thể](/dich-vu/seo-tong-the/). Bài này nói chuyện viết gì, cho ai, đăng ở đâu và đo thế nào.
 `
     },
     {
-      id: 'chi-phi-co-hoi-mat-uy-tin-chuyen-mon',
-      heading: '2. Chi phí cơ hội: Mất vị thế chuyên gia đầu ngành vào tay đối thủ',
+      id: 'noi-dung-theo-giai-doan-mua',
+      heading: '2. Nội dung theo ba giai đoạn mua',
       content: `
-### 2.1. Trong thời đại bão hòa thông tin, "Niềm tin" là tài sản đắt giá nhất
+Khách ít khi mua ngay lần đầu biết đến bạn. Họ đi qua ba giai đoạn: tìm hiểu, cân nhắc, mua. Mỗi giai đoạn họ hỏi những câu khác nhau, nên cần loại bài khác nhau.
 
-Khi các sản phẩm và dịch vụ trên thị trường ngày càng trở nên tương đồng về mặt tính năng và giá cả, điều gì khiến một khách hàng quyết định chọn ký hợp đồng trị giá hàng trăm triệu với công ty A thay vì công ty B?
+![Ba giai đoạn mua: tìm hiểu, cân nhắc, mua, kèm loại nội dung hợp với từng giai đoạn](/media/articles/content-marketing-pr/soho-content-marketing-pr-steps-01.webp "1360x850")
+*Mỗi giai đoạn mua cần một loại nội dung riêng.*
 
-Câu trả lời duy nhất là: **Sự tin tưởng vào năng lực chuyên môn (Perceived Expertise & Trust)**.
+### Tìm hiểu: khách mới nhận ra vấn đề
 
-Theo khảo sát của Edelman & LinkedIn về tác động của nội dung chuyên gia (Thought Leadership Impact):
-* **65% người ra quyết định cấp cao (C-level & VPs) cho biết một bài viết phân tích chuyên sâu xuất sắc đã trực tiếp khiến họ đồng ý trao đổi hợp tác với một doanh nghiệp mà trước đó họ chưa từng biết đến.**
-* **71% các nhà lãnh đạo cho rằng nội dung chất lượng kém làm xói mòn nghiêm trọng uy tín thương hiệu và khiến họ loại bỏ doanh nghiệp đó khỏi danh sách đấu thầu.**
+Khách chưa biết tên giải pháp, chỉ biết mình đang gặp chuyện gì, như chủ quán tìm "quán vắng khách buổi sáng". Hợp với giai đoạn này là bài giải thích nguyên nhân, bài hướng dẫn, bài trả lời câu hỏi thường gặp. Bài không bán hàng, chỉ cần để khách gặp bạn sớm và thấy bạn hiểu nghề.
 
-Khi doanh nghiệp của bạn bỏ bê việc xây dựng các tài sản nội dung chuyên sâu, bạn đang tự nguyện nhường vị thế "Người dẫn đầu ngành" (Category Leader) vào tay các đối thủ cạnh tranh có chiến lược nội dung bài bản.
+### Cân nhắc: khách đang so sánh
 
-### 2.2. Cái giá đắt đỏ của chu kỳ bán hàng kéo dài (Long Sales Cycle)
+Khách đã biết mình cần gì và đang chọn giữa vài lựa chọn. Họ hỏi loại nào hợp với mình, giá bao nhiêu, cần chuẩn bị gì. Hợp là bài so sánh, bảng giá có giải thích, bài nói rõ khi nào không nên mua. Đây là giai đoạn nhiều doanh nghiệp bỏ trống nhất. Khách sẽ đi đọc bài so sánh của đối thủ.
 
-Khi khách hàng truy cập website mà không tìm thấy các tài liệu giải đáp cặn kẽ về quy trình, báo giá và bằng chứng năng lực, đội ngũ bán hàng của bạn phải mất hàng tuần, thậm chí hàng tháng để họp hành giải thích lặp đi lặp lại những câu hỏi cơ bản. 
+### Mua: khách cần thêm một lý do để tin
 
-Một hệ thống Content Marketing & PR xuất sắc hoạt động như một **nhân viên kinh doanh xuất chúng làm việc 24/7**: nó giáo dục thị trường, giải tỏa trước mọi nghi ngại và khiến khách hàng "chốt đơn trong tâm trí" trước cả khi họ nhấc máy gọi điện cho nhân viên sales.
+Khách gần như đã chọn, chỉ cần chắc chắn lần cuối. Hợp là câu chuyện khách hàng, quy trình làm việc, chính sách bảo hành. Loại bài này ít lượt truy cập nhưng giúp chốt đơn.
+
+### Lấy câu hỏi từ đâu
+
+Nguồn tốt nhất nằm ngay trong doanh nghiệp: tin nhắn fanpage, Zalo khách hỏi trước khi mua; ghi chú của nhân viên bán hàng về lý do khách chần chừ; từ khóa đã có lượt hiển thị trong Search Console; đánh giá của khách về bạn và về đối thủ.
+
+Dự án SOHO làm cho [Studio 1 Nhà](/du-an/seo-studio-chup-anh-tphcm/) đi đúng đường này. SOHO xếp từ khóa khách hay tìm khi chọn studio theo từng giai đoạn: tìm hiểu, so sánh, hỏi giá, liên hệ. Sau đó viết 1 bài tổng quan và 5 bài trả lời câu khách hay hỏi. Sáu trang mới có 102 lượt nhấp từ Google trong tháng đầu (Search Console, 22/09–22/10/2026). Đây mới là lượt nhấp, chưa phải lượt đặt lịch. Tổng lượt nhấp của cả website cũng chưa thay đổi rõ.
+
+Muốn bài được trích trong AI Overview hay ChatGPT thì có thêm yêu cầu riêng, xem ở [trang SEO AI Overview](/dich-vu/seo-ai-overview/).
 `
     },
     {
-      id: 'ban-chat-content-marketing-soho',
-      heading: '3. Bản chất Content Marketing B2B & Digital PR định hướng niềm tin',
+      id: 'lich-noi-dung-va-dung-lai',
+      heading: '3. Lịch nội dung và cách dùng lại một bài',
       content: `
-### 3.1. Content Marketing định hướng doanh thu là gì?
+Lịch nội dung tốt cho biết mỗi tháng làm bài gì, cho giai đoạn nào, ai viết, ai duyệt, đăng ở đâu.
 
-Tại SOHO Agency, chúng tôi xây dựng nội dung dựa trên triết lý: **Mỗi bài viết được xuất bản phải là một Tài sản Tri thức (Knowledge Asset) có khả năng giảm thiểu rủi ro mua hàng cho khách hàng**.
+![Sổ kế hoạch mở trên bàn gỗ cạnh tách cà phê và cây bút chì, chờ ghi lịch đăng bài](/media/articles/content-marketing-pr/content-marketing-pr-anh-01.webp "1200x800")
+*Lịch nội dung ghi rõ mỗi tháng viết bài gì, cho ai, đăng ở đâu.*
 
-Chúng tôi không đếm số lượng chữ để tính tiền. Một chiến lược Content Marketing chuẩn mực tại SOHO tập trung vào 3 giá trị cốt lõi:
-1. **Thiết lập quyền uy chuyên môn (Thought Leadership):** Đưa ra các phân tích thị trường sắc bén, dự báo xu hướng và khung phương pháp luận độc quyền mà đối thủ không thể sao chép.
-2. **Hỗ trợ trực tiếp cho phòng kinh doanh (Sales Enablement):** Cung cấp các tài liệu nghiên cứu chuyên sâu, bảng so sánh đa chiều và case study thực tế để nhân viên sales gửi cho khách hàng trong quá trình đàm phán hợp đồng.
-3. **Lan tỏa uy tín qua Digital PR chính thống:** Đưa tiếng nói của thương hiệu xuất hiện trên các trang báo điện tử kinh tế, công nghệ và các diễn đàn chuyên môn hàng đầu để xây dựng lòng tin tuyệt đối.
+### Bắt đầu từ bài tổng quan
+
+Mỗi nhóm sản phẩm hoặc dịch vụ chính nên có một bài tổng quan trả lời câu hỏi lớn nhất. Quanh nó là các bài nhỏ, mỗi bài trả lời một câu hỏi cụ thể và liên kết về bài tổng quan, về trang dịch vụ. Khách đọc tiếp dễ hơn, Google cũng hiểu website nói về chủ đề gì.
+
+### Một bài gốc, nhiều cách dùng
+
+Bài chuyên sâu tốn công viết, đừng để nó chỉ nằm trên website.
+
+- **Website**: bản đầy đủ, có mục lục và câu hỏi thường gặp.
+- **Mạng xã hội**: tách mỗi ý chính thành một bài ngắn hoặc một bộ ảnh.
+- **Video ngắn**: một người trong công ty nói về một ý trong bài, khoảng một phút.
+- **Email, Zalo**: gửi khách cũ bản tóm tắt kèm link.
+- **Tài liệu bán hàng**: nhân viên gửi bài cho khách đang hỏi đúng câu đó.
+
+Điểm cuối hay bị quên. Có sẵn bài viết kỹ, nhân viên chỉ cần gửi link thay vì trả lời lại từ đầu.
+
+### Bao nhiêu bài là đủ
+
+Không có con số chung. Hai bài tốt mỗi tháng thường lợi hơn mười bài na ná nhau. Cứ trả lời hết các câu hỏi quan trọng của khách trước.
+
+### Đừng quên bài cũ
+
+Bài cũ đã có lượt hiển thị thường dễ cải thiện hơn bài mới: cập nhật thông tin, thêm mục lục, thêm liên kết sang bảng giá. Ở [dự án Everest Logistics](/du-an/everest-logistics/), bài "Giá EXW là gì" sau khi SOHO sửa có 25 lượt nhấp từ Google từ 01/09 đến 29/10/2026, trong khi cả 8 tháng đầu năm chỉ có 1 lượt (Search Console). Số còn nhỏ, nhưng cho thấy sửa bài cũ đáng làm.
 `
     },
     {
-      id: '4-tru-cot-tai-san-noi-dung',
-      heading: '4. 4 Trụ cột xây dựng hệ sinh thái nội dung giá trị cao của SOHO',
+      id: 'bang-chung-tao-niem-tin',
+      heading: '4. Bằng chứng: câu chuyện khách hàng và số liệu riêng',
       content: `
-Hệ sinh thái Content Marketing & PR tại SOHO được kiến tạo trên **4 trụ cột tài sản số**:
+Khách đọc bài để khỏi mua nhầm. Lời tự khen không giúp được họ, bằng chứng thì có.
 
-### Trụ cột 1: Trung tâm Tri thức Chuyên sâu (Content Hubs & Pillar Architecture)
-Xây dựng website thành một thư viện chuyên môn đồ sộ theo mô hình Topic Cluster:
-* **Trang chủ đề trụ cột (Pillar Pages):** Hướng dẫn toàn diện từ A đến Z về các bài toán lớn nhất trong ngành, có độ dài từ 3.000 đến 5.000 từ, cấu trúc logic, bảng biểu và mục lục thông minh.
-* **Cụm bài viết phân tích ngách (Cluster Articles):** Đào sâu giải quyết từng câu hỏi hóc búa, từng rào cản kỹ thuật cụ thể mà khách hàng thường gặp phải.
-* **Tài liệu nghiên cứu có thể tải về (Downloadable Whitepapers & Guides):** Hoạt động như những nam châm thu hút khách hàng tiềm năng chất lượng cao (Lead Magnets).
+![Ngòi bút máy đang viết chữ tay trên trang giấy kẻ dòng](/media/articles/content-marketing-pr/content-marketing-pr-anh-02.webp "1200x800")
+*Câu chuyện khách hàng nên có bối cảnh, việc đã làm và kết quả có số.*
 
-### Trụ cột 2: Hệ thống Case Study Thực Chiến Đa Chiều (Data-Backed Case Studies)
-Bằng chứng thành công thực tế là vũ khí chốt đơn mạnh nhất:
-* Không viết case study chung chung kiểu kể chuyện vô thưởng vô phạt.
-* Cấu trúc case study chuẩn quốc tế của SOHO: *Bối cảnh thách thức ban đầu của khách hàng ➔ Sai lầm trước đây họ từng mắc phải ➔ Chiến lược can thiệp chuyên sâu của SOHO ➔ Kết quả đo lường bằng số liệu thực tế (Doanh thu, CAC, ROAS)* kèm hình ảnh biểu đồ và video phỏng vấn khách hàng thật.
+### Câu chuyện khách hàng viết thế nào
 
-### Trụ cột 3: Tài sản Hỗ trợ Bán hàng (Sales Enablement Content)
-Xây dựng kho vũ khí sắc bén cho đội ngũ sales sử dụng hàng ngày:
-* **Bảng so sánh đối chiếu trực diện (Comparison Guides):** Đối chiếu công tâm ưu nhược điểm giữa giải pháp của bạn và các phương án khác trên thị trường.
-* **Tài liệu hướng dẫn tính toán chi phí (ROI & Pricing Calculators):** Giúp người mua hàng dễ dàng tự tính toán thời gian hoàn vốn và lợi ích tài chính khi đầu tư.
-* **Cẩm nang trả lời các phản bác kinh điển (Objection Handling One-Pagers):** Các bài viết ngắn gọn giải quyết triệt để các nỗi lo về bảo mật, rủi ro chuyển giao công nghệ và hỗ trợ sau bán hàng.
+Đi theo ba phần: bối cảnh, việc đã làm, kết quả. Kết quả nên có số, có khoảng thời gian, có nguồn, như cách ghi số của Studio 1 Nhà ở mục 2. Nên viết cả giới hạn: số này đo bằng gì, chưa đo được gì. Khách thấy bạn nói thật thì tin phần còn lại hơn.
 
-### Trụ cột 4: Chiến lược Digital PR & Nhận thức Đa Kênh (Authority PR & Entity Links)
-* Biên soạn các bài viết góc nhìn chuyên gia (Opinion Pieces) mang tính thời sự cao để xuất bản trên các trang báo uy tín hàng đầu (CafeF, VnExpress, Brands Vietnam, v.v.).
-* Kết nối thương hiệu với các nghiên cứu học thuật và báo cáo ngành, giúp Google và AI Search nhận diện thương hiệu là một Thực thể có uy tín tối thượng trong ngành.
+### Xin phép trước khi nêu tên
+
+Câu chuyện có tên khách, ảnh, số liệu kinh doanh thì cần khách đồng ý, nên có tin nhắn hoặc văn bản xác nhận. [Luật Bảo vệ dữ liệu cá nhân số 91/2025/QH15](https://hatinh.gov.vn/vi/bai-viet/luat-bao-ve-du-lieu-ca-nhan-chinh-thuc-co-hieu-luc-thi-hanh-tu-ngay-112026) có hiệu lực từ 01/01/2026, nên càng cần cẩn thận khi dùng thông tin cá nhân của khách. Trường hợp cụ thể nên hỏi luật sư. Khách chưa đồng ý nêu tên thì thay bằng mô tả ngành và quy mô, giữ số liệu thật.
+
+### Số liệu riêng là thứ đối thủ không chép được
+
+Câu hỏi khách hay hỏi nhất, sản phẩm bán chạy theo mùa, lỗi khách hay gặp là dữ liệu người ngoài không có. Biến chúng thành bài viết là cách tạo góc nhìn riêng, đúng thứ Google đánh giá cao: thông tin và phân tích gốc.
+
+### Đánh giá của khách
+
+Đánh giá trên Google, fanpage hay sàn thương mại điện tử có thể trích vào bài, ghi rõ nguồn. Không viết đánh giá giả, không sửa lời khách. Cách xin đánh giá trên Google đúng chính sách xem ở [trang SEO Google Maps](/dich-vu/local-seo-google-maps/).
 `
     },
     {
-      id: 'quy-trinh-sprint-content-marketing',
-      heading: '5. Quy trình Sprint 5 bước sản xuất nội dung chuyên sâu thực chiến',
+      id: 'pr-bao-chi-dung-luat',
+      heading: '5. PR báo chí: làm đúng luật, kỳ vọng đúng mức',
       content: `
-SOHO vận hành cỗ máy sản xuất nội dung theo quy trình 5 bước nghiêm ngặt:
+PR báo chí là việc doanh nghiệp xuất hiện trên báo: bài nói về doanh nghiệp, ý kiến chuyên gia của chủ doanh nghiệp, tin về sản phẩm mới. Có hai cách, mỗi cách xử lý về luật khác nhau.
 
-### Bước 1: Khai Thác Dữ Liệu & Phỏng Vấn Chuyên Gia Nội Bộ (Insight Mining)
-* Phỏng vấn trực tiếp Founder, Giám đốc kỹ thuật và các chuyên viên tư vấn kỳ cựu của doanh nghiệp để trích xuất các bí quyết nghề nghiệp, câu chuyện ca khó và phát kiến độc quyền.
-* Rà soát các câu hỏi và rào cản thường gặp nhất trong các bản ghi âm cuộc gọi bán hàng thực tế.
+![Cặp kính đặt trên tờ tạp chí đang mở](/media/articles/content-marketing-pr/content-marketing-pr-anh-03.webp "1200x800")
+*Bài báo giúp người tìm tên bạn thấy nguồn uy tín nói về bạn, ít khi mang đơn về ngay.*
 
-### Bước 2: Thiết Lập Kế Hoạch Nội Dung Theo Phễu Chuyển Đổi (Content Roadmap)
-* Lập ma trận nội dung phân bổ đều cho 3 giai đoạn nhận thức: Thu hút (TOFU, 30%), Cân nhắc (MOFU, 40%), Quyết định (BOFU, 30%).
-* Xác định rõ mục tiêu chuyển đổi của từng bài viết: bài nào để kéo nhận diện, bài nào để thu thập thông tin lead, bài nào để hỗ trợ sales chốt đơn.
+### Bài trả tiền và tin báo tự viết
 
-### Bước 3: Biên Soạn Độc Bản Chuẩn E-E-A-T & Phong Cách Chuyên Nghiệp
-* Đội ngũ biên tập viên chuyên sâu về kinh tế và công nghệ tiến hành nghiên cứu số liệu sơ cấp, vẽ biểu đồ minh họa và viết bài với văn phong sắc sảo, tự tin, mạch lạc.
-* Tuyệt đối không sử dụng văn bản sao chép hoặc AI sinh tự động không qua kiểm duyệt chuyên gia.
+**Bài trả tiền** là khi doanh nghiệp trả phí để báo đăng bài giới thiệu mình, tức mang tính quảng cáo. Theo [Luật Quảng cáo, bản hợp nhất 88/VBHN-VPQH](https://luatvietnam.vn/thuong-mai/van-ban-hop-nhat-88-vbhn-vpqh-nam-2025-do-van-phong-quoc-hoi-ban-hanh-hop-nhat-luat-quang-cao-409764-d5.html) (gồm phần sửa đổi của Luật 75/2025/QH15, hiệu lực từ 01/01/2026):
 
-### Bước 4: Tối Ưu Hóa Kỹ Thuật Đa Kênh (On-page SEO & Social Distribution)
-* Tối ưu hóa thẻ Heading, thẻ Meta, Schema Article, Author và các khối trả lời trực tiếp cho AI Overviews.
-* Tái đóng gói bài viết dài thành các định dạng ngắn gọn cho mạng xã hội: Infographic tóm tắt, bài chia sẻ LinkedIn chuyên sâu và chuỗi bài đăng Fanpage.
+- Quảng cáo trên báo in phải có dấu hiệu phân biệt nội dung quảng cáo với các nội dung khác (Điều 21).
+- Quảng cáo trên mạng, gồm cả báo điện tử, phải có dấu hiệu nhận diện rõ ràng bằng chữ, số, ký hiệu, hình ảnh hoặc âm thanh (Điều 23).
 
-### Bước 5: Đo Lường Hiệu Quả Đóng Góp Doanh Thu (Assisted Conversions)
-* Sử dụng Google Analytics 4 để theo dõi chỉ số Chuyển đổi có hỗ trợ (Assisted Conversions): bài viết nào đã đóng vai trò nuôi dưỡng giúp khách hàng quyết định mua hàng sau đó.
-* Định kỳ cập nhật và làm mới các bài viết quan trọng mỗi 6 tháng để duy trì vị thế dẫn đầu trên công cụ tìm kiếm.
+Vì vậy bài trả tiền thường mang nhãn như "Thông tin doanh nghiệp" hay "Quảng cáo". Đơn vị nào hứa đăng bài trả tiền trông y như tin tức, không nhãn, thì nên cân nhắc lại.
+
+**Tin báo tự viết** là khi phóng viên thấy câu chuyện đáng đưa tin nên tự viết, doanh nghiệp chỉ cung cấp thông tin. Người đọc tin loại này hơn, nhưng không ai đảm bảo được báo sẽ đăng hay viết thế nào.
+
+### Có gì đáng để báo viết
+
+"Công ty X ra mắt dịch vụ" ít khi đủ. Phóng viên quan tâm hơn tới số liệu riêng về ngành, ý kiến chuyên môn về một vấn đề đang được bàn, câu chuyện có con người (người sáng lập, nhân viên lâu năm, khách hàng đặc biệt), hoặc việc làm cho cộng đồng có kết quả đo được.
+
+### Khi mời người có ảnh hưởng
+
+Điều 15a của Luật Quảng cáo (bản hợp nhất nói trên) yêu cầu người có ảnh hưởng thông báo rõ việc quảng cáo ngay trước và trong khi quảng cáo. Họ cũng không được giới thiệu sản phẩm chưa dùng hoặc chưa hiểu rõ. Nên đưa các điều này vào hợp đồng với KOL.
+
+### Kỳ vọng đúng mức
+
+Một bài báo hiếm khi mang về đơn hàng ngay. Giá trị của nó là khi khách tìm tên bạn trên Google sẽ thấy nguồn uy tín nói về bạn. Vì vậy PR nên làm sau, khi website và các bài trả lời câu hỏi của khách đã có. Khách đọc báo rồi vào website mà không thấy gì thì bài báo phí đi phần lớn.
 `
     },
     {
-      id: 'bang-so-sanh-content-marketing',
-      heading: '6. So sánh: "Viết bài theo bài" giá rẻ vs Content Chiến Lược @ SOHO',
+      id: 'do-hieu-qua-noi-dung',
+      heading: '6. Đo hiệu quả nội dung',
       content: `
-Bảng đối chiếu làm rõ sự khác biệt giữa dịch vụ viết bài đối phó số lượng và chiến lược nội dung chuyên gia tại SOHO:
+Lượt xem, lượt thích dễ đếm nhưng ít nói lên chuyện bán hàng. Nên đo theo ba tầng.
 
-| Tiêu chí đối chiếu | Dịch Vụ Viết Bài Thuê Giá Rẻ | SOHO Content Marketing & PR Strategy |
-| :--- | :--- | :--- |
-| **Bản chất công việc** | Giao cho cộng tác viên viết bài theo từ khóa với giá vài chục nghìn | **Chuyên gia chiến lược phỏng vấn nội bộ và sản xuất tài sản tri thức độc bản** |
-| **Nguồn kiến thức** | Tìm kiếm Google rồi xào xáo, viết lại văn phong hời hợt | **Dữ liệu thực nghiệm độc quyền, case study thực tế và góc nhìn chuyên môn sâu** |
-| **Mục tiêu đo lường** | Đếm số lượng bài viết xuất bản đủ KPI tháng | **Đo lường thời gian đọc thực tế, số lượng Qualified Leads và hỗ trợ chốt hợp đồng** |
-| **Giá trị sử dụng** | Đăng lên không ai đọc, không ai dám gửi cho khách hàng xem | **Đội ngũ sales tự hào sử dụng làm tài liệu đàm phán hợp đồng hàng ngày** |
-| **Tác động thương hiệu** | Làm loãng website, giảm uy tín chuyên môn của doanh nghiệp | **Thiết lập vị thế Chuyên gia đầu ngành (Thought Leader) và củng cố tín hiệu E-E-A-T** |
+![Danh sách chỉ số cần theo dõi để biết nội dung có giúp bán hàng hay không](/media/articles/content-marketing-pr/soho-content-marketing-pr-checklist-01.webp "1360x850")
+*Những chỉ số nên theo dõi cho từng bài viết, từ lượt hiển thị đến khách mua.*
+
+### Tầng 1: bài có được tìm thấy không
+
+Search Console cho biết mỗi bài có bao nhiêu lượt hiển thị, lượt nhấp từ Google và ở vị trí nào. Bài mới thường cần vài tuần mới có số đáng kể, nên xem theo tuần.
+
+### Tầng 2: người đọc có đọc thật không
+
+Theo [Analytics Help](https://support.google.com/analytics/answer/12195621), GA4 tính một phiên là có tương tác khi kéo dài hơn 10 giây, hoặc có sự kiện chính, hoặc xem từ 2 trang trở lên. Bài nhiều lượt truy cập mà tỉ lệ tương tác thấp thường là bài sai ý định tìm kiếm. Xem thêm khách đọc xong đi đâu: nhiều người sang trang dịch vụ hay bảng giá là bài đang làm đúng việc.
+
+### Tầng 3: người đọc có thành khách không
+
+Tầng quan trọng nhất và khó đo nhất. Nên làm cả hai cách:
+
+- **Trên website**: đo hành động liên hệ (gửi form, bấm gọi, bấm Zalo) và xem người liên hệ đã đọc bài nào trước đó. Cài đặt đo xem ở [trang GA4 và báo cáo Looker](/dich-vu/ga4-looker-dashboard/).
+- **Khi nói chuyện với khách**: nhân viên hỏi "anh chị biết bên em qua đâu?" rồi ghi vào sổ khách hàng. Nhiều khách đọc trên điện thoại, vài ngày sau mới gọi, công cụ đo không ghi nhận hết.
+
+### Đọc số cho đúng
+
+Bài tìm hiểu nên chấm bằng lượt hiển thị và lượt đọc. Bài ở giai đoạn mua nên chấm bằng số khách liên hệ sau khi đọc.
+
+Content marketing thường cần vài tháng mới thấy rõ xu hướng, tùy độ cạnh tranh của ngành và tình trạng website. Cần khách ngay trong tháng thì nên chạy quảng cáo song song, xem [trang quảng cáo Google](/dich-vu/google-ads-shopping/) hoặc [trang quảng cáo Facebook, TikTok](/dich-vu/meta-tiktok-ads/).
 `
     },
     {
-      id: 'checklist-15-tieu-chi-content',
-      heading: '7. Bộ Checklist 15 tiêu chí kiểm toán chất lượng tài sản nội dung',
+      id: 'cau-hoi-thuong-gap',
+      heading: '7. Câu hỏi thường gặp',
       content: `
-Đánh giá chất lượng của từng bài viết trước khi bấm nút xuất bản theo **15 tiêu chuẩn khắt khe**:
+### Doanh nghiệp nhỏ có cần làm content marketing không?
 
-#### Nhóm 1: Giá trị Tri thức & Sự Độc bản (Originality & Depth)
-- [ ] **1. Có quan điểm chuyên môn riêng biệt (Strong POV):** Bài viết thể hiện rõ lập trường và góc nhìn phản biện của doanh nghiệp, không nói chung chung như Wikipedia.
-- [ ] **2. Chứa đựng dữ liệu thực nghiệm hoặc case study thật:** Có ít nhất một ví dụ thực tế hoặc số liệu thống kê chứng minh cho lập luận.
-- [ ] **3. Giải quyết trọn vẹn nỗi đau của người đọc:** Người đọc sau khi đọc xong bài viết có được câu trả lời rõ ràng và biết chính xác cần làm gì tiếp theo.
-- [ ] **4. Không chứa câu chữ sáo rỗng (Zero Fluff):** Loại bỏ hoàn toàn các đoạn văn mở bài lê thê, các từ đệm vô nghĩa chỉ nhằm mục đích kéo dài số lượng từ.
+Cần, nếu khách của bạn tìm hiểu trước khi mua. Ngành nào khách hay hỏi giá, hỏi cách chọn thì nội dung giúp bán hàng rõ nhất. Khách mua theo thói quen, không tìm hiểu gì thì nên ưu tiên việc khác trước.
 
-#### Nhóm 2: Cấu trúc Trình bày & Trải nghiệm Đọc (Readability & UX)
-- [ ] **5. Bố cục phân cấp Heading rõ ràng:** Sử dụng các thẻ H2, H3, H4 logic, giúp người đọc dễ dàng đọc lướt và nắm bắt ý chính trong 30 giây.
-- [ ] **6. Định dạng khối thông tin trực quan:** Tích hợp bảng so sánh, danh sách có thứ tự và các khối trích dẫn nổi bật để giảm bớt sự nặng nề của văn bản.
-- [ ] **7. Tích hợp mục lục bài viết (Table of Contents):** Giúp người đọc dễ dàng nhảy đến phần nội dung họ đang quan tâm nhất.
-- [ ] **8. Định danh chuyên gia tác giả rõ ràng:** Hiển thị box thông tin tác giả có tên, chức vụ, kinh nghiệm và liên kết hồ sơ chuyên nghiệp.
+### Nên tự viết hay thuê ngoài?
 
-#### Nhóm 3: Tối ưu Chuyển đổi & SEO (Conversion & Distribution)
-- [ ] **9. Lời kêu gọi hành động (CTA) phù hợp ngữ cảnh:** Không ép khách hàng mua hàng ngay; đưa ra lời đề nghị tải tài liệu chuyên sâu hoặc nhận tư vấn tương ứng với chủ đề bài viết.
-- [ ] **10. Liên kết nội bộ (Internal Links) có tính chiến lược:** Trỏ link hợp lý sang các trang dịch vụ chuyển đổi và các bài viết liên quan trong cùng Topic Cluster.
-- [ ] **11. Tối ưu hóa chuẩn đón đầu AI Overview:** Có khối định nghĩa câu trả lời trực tiếp ngắn gọn dưới 60 từ ở phần mở đầu.
-- [ ] **12. Kế hoạch tái đóng gói đa kênh (Repurposing Plan):** Bài viết có thể dễ dàng chuyển đổi thành bài đăng mạng xã hội, video ngắn hoặc slide thuyết trình.
-- [ ] **13. Kiểm tra tính toàn vẹn của mã Schema:** Trang web chứa mã cấu trúc dữ liệu Article và Author hợp lệ trên công cụ Google Rich Results Test.
-- [ ] **14. Đội ngũ sales được đào tạo về bài viết:** Nhân viên bán hàng biết rõ bài viết này giải quyết vấn đề gì để chủ động gửi cho khách hàng tiềm năng.
-- [ ] **15. Thiết lập theo dõi chuyển đổi trong GA4:** Cài đặt đo lường hành vi tải tài liệu hoặc bấm vào các nút liên hệ bên trong bài viết.
-`
-    },
-    {
-      id: 'faq-content-marketing-pr',
-      heading: '8. Câu hỏi thường gặp (FAQ chuẩn Schema)',
-      content: `
-### Câu hỏi 1: Làm thế nào để đo lường được hiệu quả tài chính thực tế của các chiến dịch Content Marketing?
-**Trả lời:** Chúng tôi theo dõi hiệu quả nội dung qua 3 tầng số liệu minh bạch trên Google Analytics 4 và CRM:
-1. **Chuyển đổi trực tiếp (First-click / Last-click Conversions):** Số lượng người dùng đọc bài viết và lập tức điền form tư vấn hoặc tải tài liệu.
-2. **Chuyển đổi có hỗ trợ (Assisted Conversions):** Khách hàng tìm thấy website qua một bài viết chuyên môn, 2 tuần sau họ quay lại qua kênh trực tiếp hoặc quảng cáo để ký hợp đồng. GA4 ghi nhận bài viết đó đã đóng góp công sức vào phễu chuyển đổi.
-3. **Tác động rút ngắn chu kỳ bán hàng:** Đội ngũ kinh doanh sử dụng case study và bài viết so sánh để gửi cho khách hàng, giúp giảm thời gian đàm phán hợp đồng từ 30 ngày xuống chỉ còn 12 ngày.
+Cách hay dùng là kết hợp: người trong công ty cung cấp kiến thức, ví dụ, số liệu; người viết chuyên nghiệp sắp xếp thành bài và lo phần SEO. Dù chọn cách nào, nên có người trong công ty duyệt phần chuyên môn.
 
-### Câu hỏi 2: Doanh nghiệp của tôi hoạt động trong lĩnh vực kỹ thuật đặc thù, rất khó để agency ngoài hiểu sâu được ngành?
-**Trả lời:** Đây chính là lý do vì sao SOHO áp dụng quy trình **Phỏng vấn chuyên gia nội bộ (Subject Matter Expert Interview)**:
-* Chúng tôi không tự ngồi suy đoán kiến thức kỹ thuật của bạn. Thay vào đó, đội ngũ biên tập viên chiến lược của SOHO đóng vai trò như những nhà báo kinh tế: chúng tôi chuẩn bị bộ câu hỏi sắc bén và phỏng vấn trực tiếp các kỹ sư, chuyên gia đầu ngành trong công ty của bạn trong 45 phút.
-* Chúng tôi ghi âm, chắt lọc những tinh hoa tri thức quý giá đó và chuyển hóa chúng thành những bài viết chuyên môn sâu sắc, chuẩn SEO và có văn phong thuyết phục nhất mà không làm sai lệch bất kỳ thuật ngữ chuyên ngành nào.
+### Dùng AI viết bài có được không?
 
-### Câu hỏi 3: Chi phí triển khai dịch vụ Content Marketing & Digital PR tại SOHO bao gồm những hạng mục nào?
-**Trả lời:** Chúng tôi cung cấp giải pháp trọn gói bao gồm:
-* Chiến lược nội dung tổng thể và sơ đồ chủ đề (Topic Cluster Matrix) theo hành trình khách hàng.
-* Sản xuất các bài viết chuyên sâu độc bản (Pillar Pages, Case Studies chuyên sâu, Hướng dẫn nghiệp vụ) có đồ họa minh họa riêng.
-* Sản xuất các tài liệu tải về chất lượng cao (Ebook/Whitepaper PDF) để làm phễu thu thập lead.
-* Quản trị và phân phối bài viết trên các kênh báo chí kinh tế chính thống (Digital PR) có cam kết vị trí xuất bản và liên kết thực thể uy tín.
+Có thể dùng AI để lập dàn ý hay sửa câu. Nhưng bài vẫn cần kinh nghiệm thật và thông tin riêng của doanh nghiệp, thứ AI không có. Google cũng khuyên nói rõ việc dùng AI khi người đọc có thể thắc mắc.
+
+### Đăng bài PR trên báo có giúp SEO không?
+
+Bài báo giúp người tìm tên thương hiệu thấy nguồn uy tín nói về bạn. Đừng mua bài chỉ để lấy liên kết về website. Theo [Google Search Central](https://developers.google.com/search/docs/crawling-indexing/qualify-outbound-links), liên kết trả tiền cần được đánh dấu là liên kết tài trợ, nên không được tính như một lời giới thiệu tự nhiên.
+
+### Bao lâu nên cập nhật một bài cũ?
+
+Không có lịch cố định. Nên xem lại khi thông tin đã cũ (giá, quy định, sản phẩm), khi lượt hiển thị giảm dần qua vài tháng, hoặc khi khách hỏi những câu bài chưa trả lời. Mỗi quý rà lại các bài nhiều lượt truy cập nhất là nhịp dễ theo.
 `
     }
   ]

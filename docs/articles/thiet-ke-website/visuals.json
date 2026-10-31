@@ -1,0 +1,11 @@
+{
+  "title": "Thiết kế website doanh nghiệp để có khách liên hệ",
+  "category": "Website và thương hiệu",
+  "theme": "violet",
+  "hero": {"photo": "thiet-ke-website-483dd4d1.jpg", "focal": [0.45, 0.5]},
+  "inArticle": [
+    {"photo": "thiet-ke-website-3824c4bf.jpg", "label": "Nội dung đi trước giao diện", "focal": [0.5, 0.4]},
+    {"photo": "thiet-ke-website-a0e3ed21.jpg", "label": "Tốc độ trên điện thoại và Core Web Vitals", "focal": [0.55, 0.4]},
+    {"photo": "thiet-ke-website-d725e985.jpg", "label": "Chuẩn SEO ngay từ lúc dựng", "focal": [0.4, 0.3]}
+  ]
+}

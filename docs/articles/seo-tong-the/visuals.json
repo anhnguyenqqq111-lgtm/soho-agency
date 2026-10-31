@@ -1,0 +1,11 @@
+{
+  "title": "Dịch vụ SEO tổng thể: gồm gì, bao lâu, chi phí",
+  "category": "Được tìm thấy trên Google và AI",
+  "theme": "orange",
+  "hero": {"photo": "seo-tong-the-f9b63495.jpg", "focal": [0.42, 0.6]},
+  "inArticle": [
+    {"photo": "seo-tong-the-1e127b78.jpg", "label": "Google tìm, đọc rồi mới xếp hạng trang", "focal": [0.5, 0.95]},
+    {"photo": "seo-tong-the-3f0a9c98.jpg", "label": "Kết quả SEO lớn dần theo tháng", "focal": [0.5, 0.5]},
+    {"photo": "seo-tong-the-7e315885.jpg", "label": "Chi phí theo khối lượng việc thật", "focal": [0.6, 0.9]}
+  ]
+}

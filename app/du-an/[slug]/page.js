@@ -12,6 +12,9 @@ import {getServicePage} from '../../../components/servicePagesData';
 import {sitePath, siteUrl} from '../../../components/paths';
 import SearchTrend from '../../../components/services/proof/SearchTrend';
 
+// Viết thường chữ đầu cho câu đứng sau dấu hai chấm, giữ chữ viết tắt (SEO) và tên riêng (Facebook).
+const lowerFirst = t => (/^[A-ZĐ]{2}/.test(t) ? t : t.charAt(0).toLowerCase() + t.slice(1));
+
 // Trang chi tiết dự án. URL /du-an/<slug> giữ đúng đường dẫn của sohoagency.vn để không mất giá trị SEO khi chuyển tên miền.
 export function generateStaticParams() {
   return publishedCases.map(c => ({slug: c.slug}));
@@ -22,8 +25,8 @@ export async function generateMetadata({params}) {
   const c = getCase(slug);
   if (!c) return {};
   return {
-    title: `Dự án ${c.name}: ${c.scope.toLowerCase()}`,
-    description: `${c.name}, ${c.field.toLowerCase()}. ${c.problem} SOHO: ${c.solution} Kết quả: ${c.result}`,
+    title: `Dự án ${c.name}: ${lowerFirst(c.scope)}`,
+    description: `${c.name}, ${lowerFirst(c.field)}. ${c.problem} SOHO: ${c.solution} Kết quả: ${c.result}`,
     alternates: {canonical: `/du-an/${c.slug}/`},
     openGraph: {images: [{url: c.image, width: c.imageWidth, height: c.imageHeight, alt: `Dự án ${c.name}`}]}
   };
@@ -54,7 +57,7 @@ export default async function ProjectPage({params}) {
           crumbs={[{label: 'Dự án', href: '/ket-qua'}, {label: c.name}]}
           title={
             <>
-              {c.name}: <span className="hl">{c.scope.toLowerCase()}</span>
+              {c.name}: <span className="hl">{lowerFirst(c.scope)}</span>
             </>
           }
           long
@@ -95,9 +98,9 @@ export default async function ProjectPage({params}) {
                   </dd>
                 </div>
               )}
-              {c.series && c.limits?.length > 0 && (
+              {c.limits?.length > 0 && (
                 <div>
-                  <dt>Giới hạn của số liệu</dt>
+                  <dt>Lưu ý về số liệu</dt>
                   <dd>
                     <ul className={styles.limits}>
                       {c.limits.map(l => (
@@ -111,7 +114,7 @@ export default async function ProjectPage({params}) {
             <aside className={styles.side}>
               {c.kpis ? (
                 <>
-                  <p className={styles.sideTitle}>Số liệu đã công bố</p>
+                  <p className={styles.sideTitle}>Số liệu nổi bật</p>
                   <ul className={styles.kpis}>
                     {c.kpis.map(k => (
                       <li key={k.label}>
@@ -122,13 +125,13 @@ export default async function ProjectPage({params}) {
                   </ul>
                 </>
               ) : (
-                <p className={styles.sideNote}>Dự án này chưa công bố số liệu cụ thể. Kết quả ghi theo mô tả SOHO đã đăng.</p>
+                <p className={styles.sideNote}>Dự án này chưa có số liệu cụ thể. Kết quả ghi theo mô tả trên trang dự án.</p>
               )}
               <p className={styles.sideTitle}>Phạm vi</p>
               <p className={styles.scope}>{c.scope}</p>
               <p className={styles.source}>
                 <Icon name="file-text" size={16} />
-                {c.source || 'Nội dung theo trang dự án SOHO đã đăng trên sohoagency.vn.'}
+                {c.source || 'Nội dung theo trang dự án trên sohoagency.vn.'}
               </p>
             </aside>
           </div>

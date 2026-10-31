@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>SOHO · sơ đồ và biểu đồ trong bài</title>
+<!--
+  Template sơ đồ, biểu đồ chèn trong bài blog SOHO. 5 loại: steps, funnel, compare, checklist, bars.
+  Không sửa file này cho từng bài: ghi dữ liệu vào images/src/<tên>.data.js của bài viết
+  rồi truyền qua tham số ?data=. Schema dữ liệu và lệnh render: xem creating-images-soho/SKILL.md.
+  Thiết kế ở đúng bề rộng cột chữ blog (680px) và render ở tỉ lệ 2x cho nét.
+  Trường `palette` trong file dữ liệu chọn bảng màu theo chủ đề (assets/palettes.js); mặc định soho.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=block">
+<script src="../palettes.js"></script>
+<style>
+  :root{
+    --white:#FFFFFF; --paper:#F7F3EC; --paper-2:#EFE9DE; --line:#E1DBD0;
+    --ink:#1B1611; --ink-2:#4F473E; --ink-3:#766D62;
+    --red:#A82E10; --accent:#C9391A; --orange:#F26716; --gold:#E8A800;
+    --grad-brand:linear-gradient(90deg,#E8A800 0%,#F26716 50%,#C9391A 100%);
+    --k:1;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:var(--paper);overflow:hidden}
+  body{font-family:'Be Vietnam Pro',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased}
+  .canvas{position:relative;display:flex;flex-direction:column;gap:calc(var(--k)*12px);padding:calc(var(--k)*24px) calc(var(--k)*28px) calc(var(--k)*14px);overflow:hidden;background:var(--paper)}
+  .bar{position:absolute;top:0;left:0;right:0;height:4px;background:var(--grad-brand)}
+  .kicker{font-size:calc(var(--k)*11px);font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--red)}
+  .title{font-size:calc(var(--k)*21px);font-weight:800;line-height:1.25;margin-top:calc(var(--k)*4px);text-wrap:balance}
+  .body{flex:1;min-height:0;display:flex;flex-direction:column;justify-content:center;overflow:hidden}
+  .foot{display:flex;align-items:center;justify-content:space-between;gap:16px;border-top:1px solid var(--line);padding-top:calc(var(--k)*8px);font-size:calc(var(--k)*11px);color:var(--ink-3)}
+  .foot img{height:calc(var(--k)*15px);flex:none}
+  .label{font-weight:700;font-size:calc(var(--k)*15px);line-height:1.35;text-wrap:balance}
+  .detail{font-size:calc(var(--k)*13px);line-height:1.45;color:var(--ink-2);margin-top:calc(var(--k)*2px);text-wrap:pretty}
+
+  /* steps: danh sách đánh số có đường kẻ; vòng số chặng cuối dùng gradient thương hiệu */
+  .steps{list-style:none;display:grid;gap:calc(var(--k)*12px)}
+  .steps.h{grid-auto-flow:column;grid-auto-columns:1fr;gap:calc(var(--k)*14px)}
+  .steps li{position:relative;display:flex;gap:calc(var(--k)*12px);align-items:flex-start}
+  .steps.h li{flex-direction:column;gap:calc(var(--k)*8px)}
+  .steps li::before{content:'';position:absolute;background:var(--line)}
+  .steps.v li::before{left:calc(var(--k)*15px - 1px);top:calc(var(--k)*30px);bottom:calc(var(--k)*-12px);width:2px}
+  .steps.h li::before{top:calc(var(--k)*15px - 1px);left:calc(var(--k)*30px);right:calc(var(--k)*-14px);height:2px}
+  .steps li:last-child::before{display:none}
+  .num{position:relative;z-index:1;flex:none;width:calc(var(--k)*30px);height:calc(var(--k)*30px);border-radius:50%;background:var(--red);color:#fff;font-weight:800;font-size:calc(var(--k)*14px);display:flex;align-items:center;justify-content:center}
+  .steps li:last-child .num{background:var(--grad-brand)}
+
+  /* funnel: các dải hẹp dần theo chặng; nhãn và chi tiết không ngắt giữa cụm, thiếu chỗ thì chi tiết xuống dòng nguyên cụm */
+  .funnel{display:flex;flex-direction:column;align-items:center;gap:calc(var(--k)*6px)}
+  .stage{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:calc(var(--k)*2px) calc(var(--k)*12px);padding:calc(var(--k)*9px) calc(var(--k)*16px);border-radius:calc(var(--k)*8px)}
+  .stage .label,.stage .detail{white-space:nowrap}
+  .stage .detail{color:inherit;opacity:.9;margin:0}
+
+  /* compare: cột b là cách làm được khuyến nghị */
+  .compare{display:grid;grid-template-columns:1fr 1.25fr 1.25fr;border:1px solid var(--line);border-radius:calc(var(--k)*8px);overflow:hidden;background:var(--white)}
+  .compare > div{padding:calc(var(--k)*8px) calc(var(--k)*12px);font-size:calc(var(--k)*13px);line-height:1.4;border-top:1px solid var(--line);text-wrap:pretty}
+  .compare .ch{border-top:0;background:var(--paper-2);font-weight:800;font-size:calc(var(--k)*14px);text-wrap:balance}
+  .compare .ch.b{color:var(--red);box-shadow:inset 0 3px 0 var(--red)}
+  .compare .crit{font-weight:700}
+  .compare .a{color:var(--ink-2)}
+  .compare .b{font-weight:600}
+
+  /* checklist */
+  .checks{list-style:none;display:grid;gap:calc(var(--k)*9px) calc(var(--k)*20px)}
+  .checks li{display:flex;gap:calc(var(--k)*10px);align-items:flex-start;font-size:calc(var(--k)*14px);line-height:1.4;font-weight:500;text-wrap:pretty}
+  .box{flex:none;width:calc(var(--k)*20px);height:calc(var(--k)*20px);margin-top:1px;border-radius:calc(var(--k)*5px);background:var(--gold);color:var(--ink);display:flex;align-items:center;justify-content:center;font-size:calc(var(--k)*12px);font-weight:800}
+
+  /* bars: biểu đồ thanh ngang, chỉ dùng số liệu thật có nguồn */
+  .bars{display:grid;grid-template-columns:minmax(0,36%) 1fr;gap:calc(var(--k)*9px) calc(var(--k)*12px);align-items:center}
+  .bars .name{font-size:calc(var(--k)*13px);font-weight:600;line-height:1.3}
+  .row{display:flex;align-items:center;gap:calc(var(--k)*8px)}
+  .fill{height:calc(var(--k)*22px);border-radius:4px;background:var(--ink-3);min-width:2px}
+  .fill.hl{background:var(--red)}
+  .val{flex:none;font-size:calc(var(--k)*13px);font-weight:700;white-space:nowrap}
+
+  .warn{position:absolute;left:0;right:0;bottom:0;padding:8px 12px;background:#B00020;color:#fff;font:600 13px/1.35 system-ui,sans-serif;z-index:9}
+  #logo{background:#0F2340;border-radius:12px;padding:6px;box-sizing:content-box}
+</style>
+</head>
+<body>
+<div class="canvas" id="canvas">
+  <div class="bar"></div>
+  <div class="head"><p class="kicker" id="kicker"></p><h2 class="title" id="title"></h2></div>
+  <div class="body" id="body"></div>
+  <div class="foot"><span id="foot"></span><img id="logo" src="../soho-logo.svg" alt=""></div>
+</div>
+<script>
+  // Mở template không kèm ?data= thì hiện dữ liệu mẫu này để xem thử bố cục.
+  const SAMPLE = {
+    preset: 'inline',
+    type: 'steps',
+    title: 'Quy trình 5 bước tối ưu nội dung cho AI Search',
+    items: [
+      {label: 'Rà soát thực thể thương hiệu', detail: 'Schema Organization, hồ sơ tác giả, thông tin nhất quán trên mọi kênh'},
+      {label: 'Chọn cụm câu hỏi', detail: 'Lấy từ Search Console, PAA và câu hỏi thật của đội sales'},
+      {label: 'Viết câu trả lời đặt trước', detail: 'Trả lời trực tiếp trong 2 câu đầu mỗi mục'},
+      {label: 'Bổ sung dữ liệu riêng', detail: 'Số liệu nội bộ, ảnh quy trình thật, nhận định của chuyên gia'},
+      {label: 'Đo trích dẫn và cập nhật', detail: 'Theo dõi truy vấn, CTR và câu trả lời AI mỗi tháng'}
+    ]
+  };
+  const DEFAULTS = {preset: 'inline', palette: 'denim', type: 'steps', kicker: '', title: '', items: [], columns: {a: '', b: ''}, rows: [], unit: '', highlight: -1, layout: 'auto', cols: 0, source: '', note: 'SOHO Agency'};
+  const PRESETS = {inline: {w: 680, h: 425}, 'inline-tall': {w: 680, h: 560}, square: {w: 680, h: 680}};
+  const KICKERS = {steps: 'Quy trình', funnel: 'Phễu', compare: 'So sánh', checklist: 'Checklist', bars: 'Số liệu'};
+  // Màu dải phễu theo chặng: vàng → cam → đỏ nhấn → đỏ gạch → nâu đen; chữ đậm trên nền sáng, chữ trắng trên nền tối.
+  // Màu tầng phễu lấy theo bảng màu đang áp (bản gốc viết cứng vàng, cam, đỏ gạch của bảng 'soho'): nhạt dần sang đậm, tầng cuối là màu nhấn cam với chữ tối.
+  const STAGES = [['var(--paper-2)', 'var(--ink)'], ['color-mix(in srgb, var(--accent) 28%, var(--white))', 'var(--ink)'], ['color-mix(in srgb, var(--accent) 62%, var(--white))', 'var(--ink)'], ['var(--accent)', '#FFFFFF']];
+  const LAST_STAGE = ['var(--orange)', 'var(--ink)'];
+
+  const $ = id => document.getElementById(id);
+  const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;'}[c]));
+  const text = item => typeof item === 'string' ? {label: item} : item;
+  const warnings = [];
+  // Mất mạng thì Chrome lặng lẽ dùng font hệ thống; kiểm tra để in cảnh báo thay vì ra ảnh sai font.
+  const fontLoaded = () => [...document.fonts].some(f => f.family.replace(/["']/g, '') === 'Be Vietnam Pro' && f.status === 'loaded');
+
+  const BUILDERS = {
+    steps(d){
+      const horizontal = d.layout === 'horizontal' || (d.layout === 'auto' && d.items.length <= 4);
+      return `<ol class="steps ${horizontal ? 'h' : 'v'}">${d.items.map(text).map((it, i) =>
+        `<li><span class="num">${i + 1}</span><div><p class="label">${esc(it.label)}</p>${it.detail ? `<p class="detail">${esc(it.detail)}</p>` : ''}</div></li>`
+      ).join('')}</ol>`;
+    },
+    funnel(d){
+      const n = d.items.length;
+      return `<div class="funnel">${d.items.map(text).map((it, i) => {
+        const [bg, fg] = i === n - 1 ? LAST_STAGE : STAGES[Math.min(i, STAGES.length - 1)];
+        const width = 100 - i * (n > 1 ? 30 / (n - 1) : 0);
+        return `<div class="stage" style="width:${width}%;background:${bg};color:${fg}"><p class="label">${esc(it.label)}</p>${it.detail ? `<p class="detail">${esc(it.detail)}</p>` : ''}</div>`;
+      }).join('')}</div>`;
+    },
+    compare(d){
+      const head = `<div class="ch"></div><div class="ch">${esc(d.columns.a)}</div><div class="ch b">${esc(d.columns.b)}</div>`;
+      const rows = d.rows.map(r => `<div class="crit">${esc(r.criterion)}</div><div class="a">${esc(r.a)}</div><div class="b">${esc(r.b)}</div>`).join('');
+      return `<div class="compare">${head}${rows}</div>`;
+    },
+    checklist(d){
+      const cols = d.cols || (d.items.length > 5 ? 2 : 1);
+      return `<ul class="checks" style="grid-template-columns:repeat(${cols},1fr)">${d.items.map(text).map(it =>
+        `<li><span class="box">✓</span><span>${esc(it.label)}</span></li>`
+      ).join('')}</ul>`;
+    },
+    bars(d){
+      if (!d.source || /\[|ĐIỀN|CẦN/i.test(d.source)) warnings.push('Biểu đồ số liệu phải có source là nguồn thật, không để trống hay chữ chờ như [ĐIỀN ...], [CẦN SỐ LIỆU THẬT]. Không có nguồn thì không dùng biểu đồ.');
+      const max = Math.max(...d.items.map(it => Number(it.value) || 0), 0) || 1;
+      return `<div class="bars">${d.items.map((it, i) => {
+        const ratio = (Number(it.value) || 0) / max;
+        return `<span class="name">${esc(it.label)}</span><div class="row"><div class="fill${i === d.highlight ? ' hl' : ''}" style="width:calc((100% - 72px) * ${ratio})"></div><span class="val">${esc(it.value)}${esc(d.unit)}</span></div>`;
+      }).join('')}</div>`;
+    }
+  };
+
+  function render(d){
+    const p = PRESETS[d.preset];
+    const build = BUILDERS[d.type];
+    if (!p) warnings.push(`preset không hợp lệ: ${d.preset} (dùng inline, inline-tall hoặc square)`);
+    if (!build) warnings.push(`type không hợp lệ: ${d.type} (dùng steps, funnel, compare, checklist hoặc bars)`);
+    const palette = window.applyPalette ? window.applyPalette(d.palette) : null;
+    if (!palette) warnings.push(`palette không hợp lệ: ${d.palette} (xem assets/palettes.js). Đang dùng soho.`);
+    $('logo').src = (palette && palette.logo === 'light') ? '../soho-logo-white.svg' : '../soho-logo.svg';
+    const size = p || PRESETS.inline;
+    Object.assign($('canvas').style, {width: size.w + 'px', height: size.h + 'px'});
+    $('kicker').textContent = d.kicker || KICKERS[d.type] || '';
+    $('title').textContent = d.title;
+    if (!d.title) $('title').remove();
+    $('foot').textContent = d.source ? 'Nguồn: ' + d.source : d.note;
+    if (build) $('body').innerHTML = build(d);
+
+    // Chỉnh hệ số --k cho chữ vừa khung: phóng to tới 1.32 khi còn trống nhiều, thu nhỏ tới 0.76 khi tràn.
+    // Chrome headless báo innerHeight lệch so với --window-size nên không kiểm tra cửa sổ ở đây;
+    // kích thước ảnh được kiểm tra sau khi render (bước sips trong SKILL.md).
+    const root = document.documentElement;
+    const body = $('body');
+    const used = () => body.firstElementChild ? body.firstElementChild.getBoundingClientRect().height : 0;
+    const setK = v => root.style.setProperty('--k', v.toFixed(2));
+    let k = 1;
+    while (used() < body.clientHeight * 0.7 && k < 1.32){ k += 0.04; setK(k); }
+    while (used() > body.clientHeight && k > 0.76){ k -= 0.04; setK(k); }
+    if (used() > body.clientHeight + 1) warnings.push(`Nội dung tràn khung ${d.preset}. Rút gọn chữ, bớt mục hoặc dùng preset inline-tall / square.`);
+    if ([...document.querySelectorAll('.stage')].some(el => el.scrollWidth > el.clientWidth + 1)) warnings.push('Nhãn hoặc chi tiết của một tầng phễu dài hơn bề rộng tầng. Rút gọn chữ ở tầng đó.');
+    if (!fontLoaded()) warnings.push('Chưa tải được font Be Vietnam Pro (mất mạng?). Kiểm tra mạng rồi render lại.');
+    if (warnings.length){
+      const box = document.createElement('div');
+      box.className = 'warn';
+      box.textContent = warnings.join(' | ');
+      $('canvas').appendChild(box);
+    }
+  }
+
+  function start(d){
+    const sample = [d.title, JSON.stringify(d.items), JSON.stringify(d.rows), JSON.stringify(d.columns)].join(' ');
+    Promise.all(['800 21px', '700 15px', '600 13px', '500 14px', '400 13px'].map(f => document.fonts.load(`${f} "Be Vietnam Pro"`, sample)))
+      .catch(() => {}).then(() => render(d));
+  }
+
+  const src = new URLSearchParams(location.search).get('data');
+  if (!src){
+    start(Object.assign({}, DEFAULTS, SAMPLE));
+  } else {
+    const script = document.createElement('script');
+    script.src = src;
+    script.onload = () => start(Object.assign({}, DEFAULTS, window.DATA || {}));
+    script.onerror = () => { warnings.push('Không tải được file dữ liệu: ' + src); start(Object.assign({}, DEFAULTS, SAMPLE)); };
+    document.head.appendChild(script);
+  }
+</script>
+</body>
+</html>

@@ -7,6 +7,7 @@
     - [ ] / - [x]         checklist (chỉ hiển thị)
     | a | b |             bảng, bỏ qua dòng căn lề :---
     > text                trích dẫn
+    ![alt](src "WxH")     ảnh (mặc định 1360x850); dòng *nghiêng* ngay sau là chú thích
     **đậm**, *nghiêng*
 */
 
@@ -32,6 +33,8 @@ const UL = /^\s*[*-]\s+(?!\[[ xX]\])/;
 const OL = /^\s*\d+\.\s+/;
 const TASK = /^\s*[-*]\s+\[([ xX])\]\s+/;
 const TABLE_SEP = /^\|?\s*:?-{3,}/;
+const IMG = /^!\[([^\]]*)\]\(\s*([^)\s]+)(?:\s+"(\d+)x(\d+)")?\s*\)\s*$/;
+const CAPTION = /^\*([^*].*[^*])\*$/;
 
 function splitRow(line) {
   return line
@@ -46,6 +49,7 @@ function splitRow(line) {
    {type:'ul'|'ol', items:[{text, children:[block]}]}
    {type:'tasks', items:[{text, done}]}
    {type:'table', head:[...], rows:[[...]]}
+   {type:'img', alt, src, width, height, caption}
 */
 export function parseMarkdown(src) {
   const lines = src.replace(/\r/g, '').split('\n');
@@ -74,6 +78,20 @@ export function parseMarkdown(src) {
     }
     if (t.startsWith('## ')) {
       blocks.push({type: 'h3', text: t.slice(3)});
+      i++;
+      continue;
+    }
+
+    const img = t.match(IMG);
+    if (img) {
+      let caption = '';
+      let j = i + 1;
+      while (j < lines.length && isBlank(lines[j])) j++;
+      if (j < lines.length && CAPTION.test(lines[j].trim())) {
+        caption = lines[j].trim().slice(1, -1);
+        i = j;
+      }
+      blocks.push({type: 'img', alt: img[1], src: img[2], width: Number(img[3] || 1360), height: Number(img[4] || 850), caption});
       i++;
       continue;
     }
@@ -160,7 +178,7 @@ export function parseMarkdown(src) {
     while (
       i < lines.length &&
       !isBlank(lines[i]) &&
-      !/^\s*(#{2,4} |>|\|)/.test(lines[i]) &&
+      !/^\s*(#{2,4} |>|\||!\[)/.test(lines[i]) &&
       !TASK.test(lines[i]) &&
       !((UL.test(lines[i]) || OL.test(lines[i])) && indentOf(lines[i]) < 2)
     ) {
@@ -176,6 +194,7 @@ export function parseMarkdown(src) {
 // Văn bản thuần, dùng cho JSON-LD.
 export function plainText(src) {
   return src
+    .replace(/\[([^\]]+)\]\((?:https?:\/\/|\/)[^)\s]*\)/g, '$1')
     .replace(/\*\*(.+?)\*\*/g, '$1')
     .replace(/\*(\S[^*]*?)\*/g, '$1')
     .replace(/^\s*(#{1,6}|[-*]|\d+\.|>)\s+/gm, '')

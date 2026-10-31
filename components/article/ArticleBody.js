@@ -2,6 +2,7 @@ import styles from './ArticleBody.module.css';
 import Toc from './Toc';
 import {Block, Inline} from './Markdown';
 import {parseMarkdown, plainText} from './parseMarkdown';
+import {sitePath} from '../paths';
 
 const isFaq = heading => /FAQ|Câu hỏi thường gặp/i.test(heading);
 
@@ -31,6 +32,7 @@ function blocksToText(blocks) {
       if (b.text) return plainText(b.text);
       if (b.items) return b.items.map(it => plainText(it.text) + ' ' + blocksToText(it.children || [])).join(' ');
       if (b.rows) return [b.head, ...b.rows].map(r => r.join(', ')).join('. ');
+      if (b.type === 'img') return b.caption ? plainText(b.caption) : '';
       return '';
     })
     .join(' ')
@@ -75,6 +77,11 @@ export default function ArticleBody({article}) {
       </aside>
 
       <div className={styles.body}>
+        {article.cover && (
+          <figure className={styles.cover}>
+            <img src={sitePath(article.cover.src)} alt={article.cover.alt} width={article.cover.width || 1600} height={article.cover.height || 1000} loading="lazy" />
+          </figure>
+        )}
         {sections.map(section => (
           <section key={section.id} id={section.id} className={styles.section}>
             <p className={styles.index}>{section.index}</p>
@@ -105,6 +112,20 @@ export default function ArticleBody({article}) {
             )}
           </section>
         ))}
+        {article.credits?.length > 0 && (
+          <p className={styles.credits}>
+            Nguồn ảnh:{' '}
+            {article.credits.map((c, i) => (
+              <span key={c.url}>
+                {i > 0 && '; '}
+                <a href={c.url} target="_blank" rel="noopener nofollow">
+                  {c.text}
+                </a>
+              </span>
+            ))}
+            .
+          </p>
+        )}
       </div>
 
       {faqJsonLd && <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(faqJsonLd)}} />}

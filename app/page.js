@@ -13,6 +13,7 @@ import {
   PersonInCharge,
   ProcessSteps,
   ReportExplainer,
+  ReportLive,
   BlogSection,
   ResultsScatter,
   ProjectsSection,
@@ -30,7 +31,7 @@ import {siteUrl} from '../components/paths';
 /*
   Trang chủ bản 12 (canvas "Bản vuông, gọn", 31/10/2026). Đường đọc:
   Nhận biết vấn đề: hero định vị (người thật) → logo khách → "Bạn đang gặp chuyện nào?" → ba chặng "đo bằng doanh thu"
-  Cân nhắc: một người phụ trách → quy trình 4 bước → báo cáo bằng lời thường → bài viết
+  Cân nhắc: một người phụ trách → quy trình 4 bước → báo cáo dễ hiểu → báo cáo tự cập nhật → bài viết
   Củng cố niềm tin: kết quả thật (thẻ nghiêng) → dự án → lời khách → tài khoản đứng tên bạn → về SOHO → câu hỏi thường gặp
   Để lại liên hệ: form live.
   Chữ viết theo docs/redesign/WRITING_GUIDE.md.
@@ -50,7 +51,7 @@ const faqs = [
   },
   {
     q: 'Dự án mất bao lâu?',
-    a: 'Tùy loại việc. Quảng cáo thường có tín hiệu sau vài tuần, SEO thường cần vài tháng. Website và nhận diện thương hiệu có mốc thời gian cố định ghi trong hợp đồng, tùy số trang và số hạng mục. SOHO chỉ đưa mốc cụ thể sau khi xem số liệu, không hứa trước.'
+    a: 'Tùy loại việc. Quảng cáo thường thấy kết quả ban đầu sau vài tuần, SEO thường cần vài tháng. Website và nhận diện thương hiệu có mốc thời gian cố định ghi trong hợp đồng, tùy số trang và số hạng mục. SOHO chỉ đưa mốc cụ thể sau khi xem số liệu.'
   },
   {
     q: 'SOHO có hỗ trợ sau triển khai không?',
@@ -97,8 +98,8 @@ export default function Home() {
           id="dich-vu"
           tone="soft"
           kicker="Dịch vụ"
-          title="Bạn đang gặp chuyện nào?"
-          intro="Chọn tình huống giống bạn nhất. SOHO nói rõ vì sao chuyện đó hay xảy ra, nên làm gì trước, và khi nào chưa nên bỏ tiền."
+          title="Bạn đang gặp vấn đề nào?"
+          intro="Chọn tình huống giống bạn nhất. SOHO chỉ ra nguyên nhân thường gặp, việc nên làm trước và khi nào chưa nên chi tiền."
           aside={
             <Button href="/dich-vu" variant="secondary" arrow="right">
               Xem đủ 12 dịch vụ
@@ -113,10 +114,10 @@ export default function Home() {
           kicker="Cách SOHO đo"
           title={
             <>
-              Khác ở chỗ: <span className="hl">đo bằng doanh thu</span>
+              Điểm khác của SOHO: <span className="hl">đo bằng doanh thu</span>
             </>
           }
-          intro="Khách đi qua ba chặng: tìm thấy bạn, cân nhắc, rồi mua. Ở mỗi chặng, mỗi kênh có một con số riêng, và tất cả gộp về doanh thu."
+          intro="Khách hàng thường đi qua ba giai đoạn: tìm hiểu, cân nhắc rồi mua. Ở mỗi giai đoạn, mỗi kênh có chỉ số riêng. SOHO theo dõi đủ các chỉ số đó và quy về doanh thu."
         >
           <JourneyMatrix />
         </Section>
@@ -125,6 +126,7 @@ export default function Home() {
         <PersonInCharge />
         <ProcessSteps />
         <ReportExplainer />
+        <ReportLive />
         <BlogSection posts={latest} />
 
         {/* Củng cố niềm tin */}

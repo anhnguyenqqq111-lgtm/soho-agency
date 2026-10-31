@@ -1,225 +1,202 @@
 export const seoAiOverviewArticle = {
-  metaTitle: 'Tối Ưu SEO Cho Google AI Overviews & AI Search 2026: Chiếm Lĩnh Trích Dẫn & Tăng Trưởng Khách Hàng | SOHO',
+  metaTitle: 'SEO AI Overview: để ChatGPT, Gemini nhắc tên bạn | SOHO',
   metaDesc:
-    'Chiến lược tối ưu hóa Generative Engine Optimization (GEO) chuyên sâu 2026. Hướng dẫn cách đưa thương hiệu vào câu trả lời tổng hợp của Google AI Overviews, ChatGPT Search và Gemini.',
-  readingTime: '17 phút đọc',
-  updatedDate: '04/10/2026',
-  author: {
-    name: 'Nguyễn Thế Tuấn Anh',
-    role: 'Head of Growth Strategy @ SOHO Agency'
+    'AI Overview và ChatGPT chọn nguồn thế nào, khác gì SEO thường, cách viết để được trích dẫn, việc không cần làm và cách đo trong Search Console.',
+  readingTime: '11 phút đọc',
+  updatedDate: '31/10/2026',
+  author: {name: 'Nguyễn Thế Tuấn Anh', role: 'Phụ trách chiến lược tăng trưởng, SOHO Agency'},
+  cover: {
+    src: '/media/articles/seo-ai-overview/seo-ai-overview-hero.webp',
+    alt: 'Tiêu đề SEO AI Overview: để ChatGPT, Gemini nhắc tên bạn bên cạnh một robot màu trắng',
+    width: 1600,
+    height: 900
   },
+  credits: [
+    {text: 'Alex Knight 2017-01-30 (Unsplash), Alex Knight agkdesign, Wikimedia Commons (CC0)', url: 'https://commons.wikimedia.org/wiki/File:Alex_Knight_2017-01-30_(Unsplash).jpg'},
+    {text: 'Light bulb on green grass (Unsplash), Ashes Sitoula awesome, Wikimedia Commons (CC0)', url: 'https://commons.wikimedia.org/wiki/File:Light_bulb_on_green_grass_(Unsplash).jpg'},
+    {text: 'CSS code on a screen (Unsplash), Sai Kiran Anagani _imkiran, Wikimedia Commons (CC0)', url: 'https://commons.wikimedia.org/wiki/File:CSS_code_on_a_screen_(Unsplash).jpg'},
+    {text: 'Lake Louise Autumn (Unsplash), Shane Hauser shanehauser, Wikimedia Commons (CC0)', url: 'https://commons.wikimedia.org/wiki/File:Lake_Louise_Autumn_(Unsplash).jpg'}
+  ],
   toc: [
-    {id: 'tham-kich-zero-click-ai-search', title: '1. Thảm kịch Zero-Click: Khi AI Search nuốt chửng lượt truy cập'},
-    {id: 'chi-phi-co-hoi-khi-vo-hinh-truoc-ai', title: '2. Chi phí cơ hội: Nguy cơ vô hình trước thế hệ khách hàng mới'},
-    {id: 'ban-chat-geo-va-entity-first', title: '3. Giải pháp: Bản chất Generative Engine Optimization (GEO)'},
-    {id: '4-tru-cot-ky-thuat-ai-search', title: '4. 4 Trụ cột kỹ thuật giúp website được AI trích dẫn nguồn'},
-    {id: 'quy-trinh-5-buoc-toi-uu-geo', title: '5. Quy trình 5 bước triển khai tối ưu hóa AI Search thực chiến'},
-    {id: 'bang-so-sanh-seo-vs-geo', title: '6. So sánh: Traditional SEO vs Generative Engine Optimization'},
-    {id: 'checklist-12-tieu-chi-ai-overview', title: '7. Bộ Checklist 12 tiêu chí tối ưu nội dung cho AI Overviews'},
-    {id: 'faq-ai-overview-search', title: '8. Câu hỏi thường gặp (FAQ chuẩn Schema)'}
+    {id: 'ai-overview-la-gi', title: '1. AI Overview, AI Mode và trợ lý AI là gì'},
+    {id: 'ai-chon-nguon-the-nao', title: '2. AI chọn nguồn để trích dẫn thế nào'},
+    {id: 'khac-gi-seo-truyen-thong', title: '3. Khác gì so với SEO quen thuộc'},
+    {id: 'nhung-viec-khong-can-lam', title: '4. Những việc không cần làm'},
+    {id: 'cach-viet-de-duoc-trich-dan', title: '5. Cách viết để dễ được trích dẫn'},
+    {id: 'du-lieu-co-cau-truc', title: '6. Dữ liệu có cấu trúc: cần gì, không cần gì'},
+    {id: 'do-luong-va-gioi-han', title: '7. Đo được gì và giới hạn của số liệu'},
+    {id: 'cau-hoi-thuong-gap', title: '8. Câu hỏi thường gặp về SEO cho AI'}
   ],
   sections: [
     {
-      id: 'tham-kich-zero-click-ai-search',
-      heading: '1. Thảm kịch Zero-Click: Khi AI Search nuốt chửng lượt truy cập',
+      id: 'ai-overview-la-gi',
+      heading: '1. AI Overview, AI Mode và trợ lý AI là gì',
       content: `
-### 1.1. Cú sốc lớn nhất lịch sử tìm kiếm: Top 1 Google nhưng CTR sụt giảm 50%
+Gõ một câu hỏi lên Google, nhiều khi bạn thấy một đoạn trả lời viết sẵn nằm trên cùng, kèm vài đường link nhỏ. Đó là **AI Overview** (phần tổng quan do AI tạo). **AI Mode** là chế độ hỏi đáp riêng của Google, cho phép hỏi tiếp nhiều lượt như trò chuyện. Ngoài Google còn có các trợ lý như ChatGPT, Gemini: khách hỏi, trợ lý tìm trên web rồi trả lời kèm nguồn.
 
-Năm 2026, thế giới tìm kiếm đã bước vào một trật tự hoàn toàn mới. Nếu như trước đây, việc chiếm lĩnh vị trí Top 1 hoặc Top 3 trên trang nhất Google đồng nghĩa với việc doanh nghiệp nắm chắc từ 25% đến 35% tỷ lệ nhấp chuột (CTR), thì hiện tại, **Google AI Overviews (SGE), OpenAI ChatGPT Search, Gemini và Perplexity** đã đảo lộn hoàn toàn quy luật này.
+Với chủ doanh nghiệp, câu hỏi thực tế là: khi khách hỏi "xưởng nào may đồng phục số lượng ít", "phòng khám nha khoa nào gần quận 7 làm niềng răng", thì câu trả lời có nhắc tới mình không, có link về website mình không, nói về mình có đúng không.
 
-Khi người dùng tìm kiếm một truy vấn mang tính phân tích, so sánh hoặc chẩn đoán, Google không còn đưa ra danh sách 10 liên kết màu xanh như trước. Thay vào đó, một khối tóm tắt bằng trí tuệ nhân tạo (AI Overview) xuất hiện ngay trên đỉnh màn hình, chiếm tới 70% không gian hiển thị (Above the fold). 
-
-Hậu quả đối với những doanh nghiệp chỉ làm SEO theo kiểu cũ:
-* **Hiện tượng Zero-Click Searches tăng vọt:** Người dùng đọc xong câu trả lời do AI tổng hợp ngay trên trang tìm kiếm và rời đi mà không nhấp vào bất kỳ đường link nào bên dưới.
-* **Tỷ lệ nhấp chuột tự nhiên của các vị trí Top 1 đến 5 giảm từ 30% đến 55%** trên các truy vấn có xuất hiện khung AI Overview.
-* Những bài viết dài dòng, lan man chỉ nhằm mục đích nhồi từ khóa bị AI quét qua, lấy mất ý chính để trả lời người dùng, nhưng doanh nghiệp không nhận lại được bất kỳ lượt truy cập (traffic) hay chuyển đổi (lead) nào.
-
-### 1.2. 3 Sai lầm khiến website của bạn hoàn toàn "vô hình" trước các cỗ máy AI
-
-Tại sao AI lại trích dẫn website của đối thủ làm nguồn dẫn uy tín (Citation Link) mà lại hoàn toàn bỏ qua website của bạn? Qua quá trình phân tích hàng nghìn truy vấn AI Search tại SOHO, chúng tôi nhận thấy 3 tử huyệt:
-
-1. **Nội dung viết theo kiểu "văn xuôi câu chữ" hời hợt, thiếu cấu trúc dữ liệu nguyên tử:** 
-   Các mô hình ngôn ngữ lớn (LLMs) cần trích xuất thông tin theo dạng khẳng định chắc chắn (Factual Statements), số liệu kiểm chứng và định nghĩa cô đọng. Những bài viết dài 2.000 từ nhưng 500 từ đầu tiên chỉ toàn những câu chào hỏi, dẫn dắt sáo rỗng sẽ bị bộ lọc của AI lập tức bỏ qua.
-
-2. **Thiếu vắng hoàn toàn Thực thể Thương hiệu (Entity Ambiguity):**
-   Trong cơ sở dữ liệu Sơ đồ Tri thức (Knowledge Graph) của Google, nếu thương hiệu của bạn chưa được xác thực rõ ràng là một "Tổ chức chuyên môn" (Organization) trong ngành, có các "Chuyên gia tác giả" (Persons) có thật đứng sau thẩm định, AI sẽ xếp website của bạn vào nhóm "nguồn thông tin chưa được kiểm chứng" và từ chối trích dẫn.
-
-3. **Cung cấp thông tin cũ kỹ, thiếu dữ liệu thực nghiệm độc quyền:**
-   AI đã đọc hàng tỷ trang web. Nếu bài viết của bạn chỉ tổng hợp lại những gì thị trường đã nói 3 năm trước mà không có số liệu khảo sát mới, case study thực tế hay phát kiến độc bản, AI sẽ ưu tiên trích dẫn các nguồn gốc tạo ra dữ liệu ban đầu thay vì trang web xào xáo lại.
+Không phải câu hỏi nào cũng có AI Overview. Theo [Google](https://developers.google.com/search/docs/appearance/ai-features), phần này chỉ hiện khi hệ thống đánh giá nó thật sự bổ sung cho kết quả tìm kiếm thường. AI Overview và AI Mode có thể dùng mô hình khác nhau, nên link được chọn cũng có thể khác nhau.
 `
     },
     {
-      id: 'chi-phi-co-hoi-khi-vo-hinh-truoc-ai',
-      heading: '2. Chi phí cơ hội: Nguy cơ vô hình trước thế hệ khách hàng mới',
+      id: 'ai-chon-nguon-the-nao',
+      heading: '2. AI chọn nguồn để trích dẫn thế nào',
       content: `
-### 2.1. Hành vi tìm kiếm của người ra quyết định (B2B Buyers & Executives) đã thay đổi
+Google đã công bố khá rõ cách các tính năng AI tìm nguồn, trong [hướng dẫn tối ưu cho tính năng AI tạo sinh](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide) và trang [Tính năng AI và website của bạn](https://developers.google.com/search/docs/appearance/ai-features). Tóm lại thành bốn bước:
 
-Trong phân khúc B2B và các dịch vụ giá trị cao, các nhà quản lý, giám đốc tài chính (CFO), giám đốc công nghệ (CTO) và chủ doanh nghiệp không còn đủ kiên nhẫn để click mở 10 tab trình duyệt rồi tự ngồi đọc từng bài viết quảng cáo.
+![Bốn bước AI của Google tìm nguồn: nhận câu hỏi, tách thành nhiều câu tìm phụ, lấy trang từ chỉ mục, viết câu trả lời kèm link](/media/articles/seo-ai-overview/soho-seo-ai-overview-steps-01.webp "1360x850")
+*AI của Google không tự nghĩ ra câu trả lời. Nó tìm trang trong chỉ mục rồi tổng hợp, kèm link nguồn.*
 
-Họ sử dụng AI Search như một **trợ lý nghiên cứu chiến lược (Executive Research Assistant)**:
-* *"Hãy so sánh ưu nhược điểm của 3 giải pháp ERP tốt nhất cho doanh nghiệp sản xuất quy mô 200 nhân sự."*
-* *"Chi phí trung bình để triển khai hệ thống quản trị dữ liệu Looker Studio tại Việt Nam là bao nhiêu?"*
-* *"Đơn vị nào uy tín nhất trong mảng tư vấn SEO B2B báo cáo hiệu quả theo doanh thu?"*
+1. **Nhận câu hỏi** của người dùng.
+2. **Tách thành nhiều câu tìm phụ.** Google gọi là *query fan-out*: hệ thống tự chạy thêm nhiều lượt tìm về các khía cạnh liên quan. Câu "may đồng phục số lượng ít" có thể được tách thành câu về số lượng tối thiểu, giá, thời gian may, chất liệu.
+3. **Lấy trang từ chỉ mục của Google Search.** Google gọi đây là *grounding*: câu trả lời được neo vào các trang web có thật, đang được lưu trong chỉ mục.
+4. **Viết câu trả lời và gắn link** tới những trang đã dùng.
 
-Khi câu trả lời của AI xuất hiện, chỉ có **3 đến 5 nguồn dẫn uy tín nhất** được đính kèm ở góc trên cùng của khối AI Overview. Đây chính là "Bất động sản vàng" mới trên Internet. Nếu thương hiệu của bạn không xuất hiện trong danh sách trích dẫn này, bạn đã chính thức bị loại khỏi danh sách cân nhắc mua hàng ngay từ bước sàng lọc đầu tiên của khách hàng.
+Điều quan trọng nhất rút ra: các tính năng này dựa trên chính hệ thống xếp hạng và chất lượng của Google Search. Muốn được chọn, trang phải được lưu vào chỉ mục và đủ điều kiện hiện đoạn trích (snippet) trong kết quả tìm kiếm. Theo [Google](https://developers.google.com/search/docs/appearance/ai-features), ngoài điều đó không có yêu cầu riêng nào khác. Google cũng nói rõ việc được lưu và được hiển thị không bao giờ được bảo đảm.
 
-### 2.2. Nguy cơ thương hiệu bị AI mô tả sai lệch hoặc khuyến nghị đối thủ
+Còn một điều kiện mới: trong Search Console có mục [Search generative AI](https://support.google.com/webmasters/answer/16908024?hl=en) cho phép chủ website chọn cho hay không cho nội dung xuất hiện trong AI Overview và AI Mode. Mặc định là cho phép. Nếu ai đó lỡ chọn loại trừ, website sẽ không có mặt ở đây dù nội dung tốt đến đâu.
 
-Khi doanh nghiệp không chủ động xây dựng mạng lưới dữ liệu thực thể (Semantic Entity Graph), các công cụ AI sẽ tự động thu thập dữ liệu rác trôi nổi trên Internet để trả lời người dùng. Chúng tôi đã từng chứng kiến nhiều doanh nghiệp lớn bị AI trả lời sai về bảng giá dịch vụ, nhầm lẫn người đại diện pháp luật, thậm chí khi khách hàng hỏi về doanh nghiệp A thì AI lại đưa ra kết luận: *"Doanh nghiệp A có dịch vụ hạn chế, bạn nên cân nhắc sử dụng dịch vụ của đối thủ B"*.
-
-Việc làm chủ chiến lược SEO AI Overview không chỉ nhằm mục đích thu hút khách hàng mới, mà còn là **hàng rào bảo vệ uy tín thương hiệu tối thượng** trong kỷ nguyên thông tin được lọc qua lăng kính của trí tuệ nhân tạo.
+Với ChatGPT, cách tìm nguồn do OpenAI quyết định. Điều chắc chắn là theo [tài liệu của OpenAI](https://developers.openai.com/api/docs/bots), website cần cho phép bot tên OAI-SearchBot truy cập trong file robots.txt thì mới có thể hiện trong câu trả lời tìm kiếm của ChatGPT. Bot GPTBot là chuyện khác: nó thu thập dữ liệu để huấn luyện mô hình. Chặn GPTBot không làm bạn mất mặt trong kết quả tìm kiếm của ChatGPT.
 `
     },
     {
-      id: 'ban-chat-geo-va-entity-first',
-      heading: '3. Giải pháp: Bản chất Generative Engine Optimization (GEO)',
+      id: 'khac-gi-seo-truyen-thong',
+      heading: '3. Khác gì so với SEO quen thuộc',
       content: `
-### 3.1. Generative Engine Optimization (GEO) là gì?
+Google xem việc tối ưu cho tìm kiếm bằng AI vẫn là SEO. Những cái tên như AEO hay GEO mà bạn có thể nghe, theo [Google](https://developers.google.com/search/docs/fundamentals/third-party-seo), chỉ là cách gọi khác của cùng một việc. Nền móng giữ nguyên: website đọc được, nội dung hữu ích, liên kết hợp lý. Phần nền đó được nói kỹ ở [trang SEO tổng thể](/dich-vu/seo-tong-the/).
 
-Nếu như SEO truyền thống là nghệ thuật tối ưu hóa để thuật toán xếp hạng website trên danh sách liên kết, thì **Generative Engine Optimization (GEO, Tối ưu hóa cho các công cụ AI tạo sinh)** là phương pháp luận kỹ thuật nhằm mục tiêu: **giúp các mô hình ngôn ngữ lớn (Google Gemini, OpenAI, Claude, Perplexity) hiểu sâu sắc, tin tưởng và lựa chọn nội dung của bạn làm nguồn dữ liệu trích dẫn chính thức trong các câu trả lời tổng hợp**.
+Cái thay đổi là cách bạn nhìn kết quả và cách bạn chọn nội dung để viết.
 
-GEO không bài trừ SEO truyền thống, mà là sự tiến hóa bậc cao của SEO. Một chiến lược GEO chuẩn mực tại SOHO dựa trên triết lý **Entity-First & Information Gain**:
-* **Entity-First:** Biến mọi nội dung trên website thành các thực thể dữ liệu có mối quan hệ ngữ nghĩa chặt chẽ (Semantic Relations) được mã hóa bằng Schema Markup chuẩn quốc tế.
-* **Information Gain Score (Điểm gia tăng giá trị thông tin):** Thuật toán Google đo lường mức độ thông tin mới mà bài viết của bạn cung cấp so với các bài viết đã có trên Internet. Bài viết có điểm Information Gain cao sẽ được AI ưu tiên trích xuất vào câu trả lời trực tiếp.
+![Bóng đèn tròn nằm trên cỏ xanh, nhãn: Nền SEO giữ nguyên, cách nghĩ về kết quả thay đổi](/media/articles/seo-ai-overview/seo-ai-overview-anh-01.webp "1200x800")
+*Nền SEO giữ nguyên. Thay đổi nằm ở mục tiêu, đơn vị nội dung và cách đo.*
 
-### 3.2. Cơ chế AI thẩm định và lựa chọn nguồn trích dẫn
-
-Để được AI lựa chọn, nội dung của bạn phải vượt qua được 3 bộ lọc khắt khe của mô hình RAG (Retrieval-Augmented Generation):
-1. **Bộ lọc Trích xuất (Relevance & Directness):** Nội dung có câu trả lời trực tiếp, rõ ràng cho câu hỏi người dùng đặt ra trong vòng 2 đến 3 câu đầu tiên không?
-2. **Bộ lọc Thẩm quyền (Authority & E-E-A-T):** Tác giả bài viết là ai? Tổ chức xuất bản có hồ sơ uy tín không? Có các nguồn báo chí chính thống nhắc đến thực thể này không?
-3. **Bộ lọc Tính chính xác & Dữ liệu (Fact-checking & Consensus):** Các số liệu và tuyên bố trong bài viết có khớp với các cơ sở dữ liệu học thuật và thực tiễn ngành hay không?
+- **Mục tiêu.** Trước đây là một vị trí trong mười link. Giờ còn là việc được trích dẫn đúng trong một câu trả lời tổng hợp.
+- **Đơn vị nội dung.** Một trang không chỉ phục vụ một từ khóa. Vì AI tách câu hỏi thành nhiều câu phụ, trang trả lời đủ các khía cạnh liên quan có nhiều cơ hội được chọn hơn.
+- **Giá trị của thông tin riêng.** Bài viết lại những gì trên mạng đã có rất khó được chọn, vì AI đã có hàng chục nguồn giống thế. Google gọi đây là nội dung "hàng phổ thông" và khuyên tránh.
+- **Cách đo.** Lượt nhấp từ một câu hỏi có thể giảm vì khách đọc câu trả lời ngay trên Google. Cần theo dõi thêm lượt hiển thị trong phần AI và chất lượng khách đến.
 `
     },
     {
-      id: '4-tru-cot-ky-thuat-ai-search',
-      heading: '4. 4 Trụ cột kỹ thuật giúp website được AI trích dẫn nguồn',
+      id: 'nhung-viec-khong-can-lam',
+      heading: '4. Những việc không cần làm',
       content: `
-Tại SOHO Agency, chúng tôi phát triển giải pháp tối ưu SEO AI Overview dựa trên **4 trụ cột công nghệ then chốt**:
+Từ khi AI Overview xuất hiện, thị trường có nhiều lời khuyên và dịch vụ mới. Một số không cần thiết. [Hướng dẫn của Google](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide) liệt kê rõ:
 
-### Trụ cột 1: Cấu trúc câu trả lời trực tiếp (Direct Answer & Atomic Content Blocks)
-AI không đọc văn bản như con người; nó chia nhỏ bài viết thành các khối thông tin nguyên tử (Chunks). Chúng tôi thiết kế cấu trúc nội dung đặc thù để AI dễ dàng trích xuất:
-* **Khối định nghĩa 45 đến 60 từ:** Đặt ngay dưới các thẻ H2/H3, đưa ra định nghĩa hoặc kết luận trực diện không vòng vo.
-* **Bảng so sánh đa chiều (Comparison Matrix):** Bảng biểu HTML là định dạng ưa thích nhất của AI khi trả lời các câu hỏi so sánh hoặc đánh giá chi phí.
-* **Quy trình dạng danh sách có thứ tự (Ordered Steps):** Định dạng 1-2-3 rõ ràng giúp AI dễ dàng tạo các bước hướng dẫn chuẩn xác cho người dùng.
+- **File llms.txt hay file riêng cho AI.** Google nói không cần tạo file, đánh dấu hay bản Markdown riêng cho máy đọc. Có cũng không giúp, không hại thứ hạng trên Google Search.
+- **Cắt bài thành mẩu nhỏ.** Không cần chia bài thành những đoạn thật ngắn để AI dễ hiểu. Google cũng nói không có độ dài bài lý tưởng.
+- **Viết theo kiểu riêng cho AI.** Không cần. Hệ thống hiểu từ đồng nghĩa và ý chung của câu, nên cũng không cần săn từng biến thể từ khóa dài.
+- **Đi "rải tên" khắp nơi.** Tạo hàng loạt lời nhắc giả về thương hiệu trên diễn đàn, mạng xã hội không có tác dụng như nhiều người tưởng. Hệ thống chống spam của Google được dựng để chặn việc thao túng này.
+- **Đoạn mã schema đặc biệt cho AI.** Không có loại nào như vậy.
 
-### Trụ cột 2: Hệ thống Schema Dữ liệu Ngữ nghĩa Chuyên sâu (Advanced Semantic Schema)
-Đây là "ngôn ngữ mẹ đẻ" giúp AI hiểu nội dung mà không cần phải đoán mò:
-* **Schema Organization & SameAs:** Khai báo liên kết thực thể doanh nghiệp với Wikipedia, Wikidata, hồ sơ mạng xã hội chính thức và mã số thuế quốc gia.
-* **Schema Person (Tác giả chuyên gia):** Gắn thông tin định danh chuyên gia phụ trách nội dung với các chứng chỉ, bằng cấp và bài báo khoa học liên quan.
-* **Schema FAQPage & HowTo:** Mã hóa từng cặp câu hỏi và câu trả lời để AI lập tức trích xuất vào các khối câu trả lời nhanh.
-* **Schema Dataset & ClaimReview:** Khai báo dữ liệu khảo sát và bảng số liệu độc quyền để nâng cao điểm tin cậy đối với các truy vấn khoa học và tài chính.
-
-### Trụ cột 3: Chiến lược Tăng điểm Gia tăng Thông tin (Information Gain Strategy)
-Để AI không coi nội dung của bạn là bản sao của người khác, SOHO tích hợp các yếu tố độc quyền vào từng trang dịch vụ:
-* **Dữ liệu thực nghiệm độc quyền từ các dự án thực tế:** Đưa ra các tỷ lệ phần trăm, số liệu chi phí và thời gian triển khai đo lường thực tế từ hơn 150 khách hàng của SOHO.
-* **Góc nhìn phản biện chuyên gia (Contrarian Perspectives):** Nêu bật những điểm thị trường đang làm sai, chỉ ra các góc khuất và đưa ra giải pháp mới lạ mà các bài viết AI tạo sinh đại trà không bao giờ biết được.
-* **Trích dẫn nghiên cứu và nguồn sơ cấp (Primary Sources):** Đính kèm các báo cáo chính thức từ Google, HubSpot, Gartner để củng cố độ vững chắc của lập luận.
-
-### Trụ cột 4: Mạng lưới Thực thể Thương hiệu Đa Kênh (Brand Graph & Co-occurrence)
-AI không chỉ đọc website của bạn, nó học từ toàn bộ Internet. SOHO triển khai chiến lược bao phủ thực thể:
-* **Thương hiệu xuất hiện đồng thời cùng từ khóa ngành (Brand Co-occurrence):** Đảm bảo tên thương hiệu của bạn được nhắc đến trong các cuộc thảo luận chuyên sâu trên các diễn đàn chất lượng, cộng đồng chuyên gia và báo chí kinh tế.
-* **Xây dựng uy tín Digital PR chính thống:** Đưa tên tuổi Founder và Chuyên gia của doanh nghiệp xuất hiện trên các trang báo uy tín, tạo các liên kết thực thể (Entity Links) vững chắc mà tiền mua link chợ đen không thể nào có được.
+Cũng cẩn thận với công cụ hay dịch vụ nói đo được "điểm AI" hoặc biết cách AI của Google chấm điểm. Theo [Google](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide), không công cụ bên thứ ba nào truy cập được hệ thống xếp hạng hay hệ thống AI nội bộ của Google.
 `
     },
     {
-      id: 'quy-trinh-5-buoc-toi-uu-geo',
-      heading: '5. Quy trình 5 bước triển khai tối ưu hóa AI Search thực chiến',
+      id: 'cach-viet-de-duoc-trich-dan',
+      heading: '5. Cách viết để dễ được trích dẫn',
       content: `
-SOHO áp dụng quy trình 5 bước bài bản để đưa website của doanh nghiệp từ chỗ vô hình trở thành nguồn trích dẫn hàng đầu trên Google AI Overviews và các công cụ AI:
+Theo [Google](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide), yếu tố có lẽ ảnh hưởng lớn nhất về lâu dài là nội dung độc đáo, đến từ kinh nghiệm và chuyên môn thật. Với doanh nghiệp nhỏ, đó lại là lợi thế: bạn biết những điều mà người viết thuê không biết.
 
-### Bước 1: Audit Thực Thể & Đo lường Độ Phủ AI Search Hiện Tại
-* Kiểm tra mức độ hiện diện của thương hiệu trên các câu hỏi AI phổ biến nhất trong ngành (sử dụng công cụ kiểm thử tự động trên Google AI Overview, ChatGPT Search và Perplexity).
-* Rà soát toàn bộ cấu trúc Schema hiện tại, phát hiện các khoảng trống ngữ nghĩa và lỗi không đồng nhất dữ liệu thực thể.
-* Phân tích các đối thủ đang được AI trích dẫn để tìm ra lý do vì sao nội dung của họ được thuật toán lựa chọn.
+![Checklist viết bài để dễ được AI trích dẫn: trả lời thẳng ở đầu mục, thông tin riêng, tác giả thật, bảng và các bước](/media/articles/seo-ai-overview/soho-seo-ai-overview-checklist-01.webp "1360x1360")
+*Tám điểm kiểm tra trước khi đăng một bài muốn được AI trích dẫn.*
 
-### Bước 2: Tái Cấu Trúc Nội Dung Theo Mô Hình Q&A & Semantic Chunks
-* Chuyển đổi toàn bộ các trang dịch vụ và bài viết cốt lõi sang bố cục phân tầng: Khái niệm cô đọng ➔ Phân tích chuyên sâu ➔ Bảng dữ liệu so sánh ➔ Lời khuyên hành động.
-* Bổ sung các câu hỏi người dùng thực tế tìm kiếm (People Also Ask / Conversational Queries) vào vị trí các thẻ Heading phụ.
-* Viết lại các đoạn mở đầu theo công thức BLUF (Bottom Line Up Front, Đưa kết luận quan trọng nhất lên đầu câu).
+### Trả lời thẳng ngay đầu mục
 
-### Bước 3: Triển Khai Bộ Schema Thực Thể Đa Tầng Nâng Cao
-* Cài đặt bộ mã JSON-LD Schema hoàn chỉnh bao gồm Organization, WebSite, Service, Article, Author, FAQPage và ItemList.
-* Thiết lập liên kết liên miền (Cross-domain Entity Linking) giữa website doanh nghiệp và các nền tảng định danh uy tín toàn cầu.
-* Kiểm tra và xác thực tính hợp lệ của mã nguồn thông qua Google Rich Results Test và Schema.org Validator.
+Khách hỏi "may 50 áo thun đồng phục mất mấy ngày", câu đầu tiên nên là con số và điều kiện, không phải đoạn giới thiệu công ty. Phần giải thích để sau. Tiêu đề mục đặt theo đúng câu khách hỏi.
 
-### Bước 4: Tích Hợp Số Liệu Khảo Sát & Case Studies Độc Quyền
-* Phối hợp cùng ban lãnh đạo và chuyên viên kỹ thuật của doanh nghiệp để đúc kết các con số kinh doanh thực tế, tỷ lệ chuyển đổi, và kinh nghiệm xử lý ca khó trong ngành.
-* Chuyển hóa các kinh nghiệm vô giá này thành các bảng thống kê, sơ đồ quy trình và case study có thể xác minh. Đây là vũ khí tối thượng giúp điểm Information Gain của website đạt mức tối đa.
+### Đưa thông tin chỉ bạn mới có
 
-### Bước 5: Giám Sát Tần Suất Xuất Hiện & Tối Ưu Tỷ Lệ Nhấp Trích Dẫn
-* Theo dõi liên tục tỷ lệ xuất hiện của website trong các khung AI Overviews trên Google Search Console và các công cụ tracking chuyên biệt.
-* Tối ưu hóa tiêu đề liên kết trích dẫn (Anchor Text & Citation Snippet) để kích thích người dùng nhấp từ câu trả lời của AI vào đọc sâu hơn trên website của bạn.
-* Cập nhật nội dung định kỳ 3 tháng một lần để đảm bảo thông tin luôn mới nhất, duy trì vị thế nguồn dẫn độc quyền trước sự cạnh tranh của đối thủ.
+- Số liệu của chính doanh nghiệp: thời gian giao thực tế, mức giá theo số lượng, lỗi khách hay gặp.
+- Quy trình thật, ảnh chụp tại xưởng, tại cửa hàng.
+- Ví dụ cụ thể từ khách đã phục vụ, có xin phép.
+
+Đây là thứ AI không tìm được ở nơi khác, nên có lý do để chọn trang của bạn.
+
+### Cho biết ai viết và viết dựa trên đâu
+
+[Tài liệu nội dung hữu ích](https://developers.google.com/search/docs/fundamentals/creating-helpful-content) gợi ý ghi tên tác giả, dẫn tới trang giới thiệu người đó và nói rõ bài được làm thế nào. Trong các yếu tố về độ tin cậy, Google nói sự tin cậy là quan trọng nhất. Mỗi con số nên có nguồn ngay trong câu.
+
+### Trình bày dễ đọc, dễ tách ý
+
+Đoạn văn rõ ràng, mục có tiêu đề, bước làm đánh số, bảng so sánh khi có nhiều lựa chọn. Thông tin quan trọng phải ở dạng chữ, không chỉ nằm trong ảnh. Thêm ảnh, video thật khi chúng giúp người đọc hiểu hơn.
+
+### Giữ thông tin luôn đúng
+
+Giá, giờ mở cửa, chính sách đổi trả thay đổi thì sửa ngay trên website. Câu trả lời của AI dựa trên trang đang có trong chỉ mục, nên thông tin cũ trên website có thể bị nhắc lại cho khách. Lịch viết và cập nhật bài định kỳ xem [trang Content marketing](/dich-vu/content-marketing-pr/).
 `
     },
     {
-      id: 'bang-so-sanh-seo-vs-geo',
-      heading: '6. So sánh: Traditional SEO vs Generative Engine Optimization',
+      id: 'du-lieu-co-cau-truc',
+      heading: '6. Dữ liệu có cấu trúc: cần gì, không cần gì',
       content: `
-Dưới đây là bảng đối chiếu chi tiết giúp các nhà quản lý hiểu rõ sự khác biệt bản chất giữa cách làm SEO truyền thống và phương pháp tiếp cận GEO hiện đại tại SOHO:
+Dữ liệu có cấu trúc (schema) là đoạn mã ẩn trên trang, giúp Google đọc đúng các thông tin như tên công ty, địa chỉ, tác giả, giá sản phẩm. Theo [Google](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide), schema không bắt buộc để xuất hiện trong phần trả lời bằng AI, nhưng vẫn nên dùng trong chiến lược SEO chung.
 
-| Tiêu chí so sánh | SEO Truyền Thống (Traditional SEO) | Generative Engine Optimization (GEO @ SOHO) |
-| :--- | :--- | :--- |
-| **Mục tiêu tối thượng** | Lọt Top 1 đến 10 danh sách liên kết màu xanh | **Được AI trích dẫn nguồn trong câu trả lời trực tiếp (Top 0)** |
-| **Cơ chế hoạt động** | Khớp từ khóa, mật độ từ khóa, số lượng backlink | **Hiểu ngữ nghĩa (Semantics), Điểm gia tăng thông tin, Thực thể E-E-A-T** |
-| **Định dạng nội dung** | Bài viết dài dòng, nhiều chữ đệm để kéo độ dài | **Nội dung nguyên tử, súc tích, có bảng biểu, Q&A và dữ liệu kiểm chứng** |
-| **Tối ưu kỹ thuật** | Thẻ Title, Meta Description, Thẻ H1-H2 cơ bản | **Semantic Schema nâng cao (About, Mentions, SameAs, Author Graph)** |
-| **Hành vi người dùng** | Gõ 2 đến 4 từ khóa rời rạc | **Đặt các câu hỏi hội thoại dài, truy vấn so sánh phức tạp** |
-| **Hiệu quả chuyển đổi** | Traffic lớn nhưng tỷ lệ thoát trang cao | **Lượng truy cập có chất lượng vượt trội vì người đọc đã tin tưởng AI trích dẫn** |
-| **Khả năng chống chịu** | Dễ bị sụt giảm thứ hạng sau các đợt cập nhật | **Bền vững dài hạn vì xây dựng dựa trên bản chất giá trị thực thể của thương hiệu** |
+![Màn hình hiện các dòng mã HTML với thẻ meta và link, nhãn: Schema, đoạn mã giúp Google đọc đúng thông tin](/media/articles/seo-ai-overview/seo-ai-overview-anh-02.webp "1200x800")
+*Schema là đoạn mã khách không thấy, giúp Google đọc đúng tên công ty, địa chỉ, tác giả, giá sản phẩm.*
+
+Những loại đáng làm với doanh nghiệp nhỏ:
+
+| Loại | Đặt ở đâu | Giúp gì |
+|---|---|---|
+| Organization | Trang chủ hoặc trang giới thiệu | Cho Google biết tên, logo, địa chỉ, số điện thoại, các trang mạng xã hội chính thức. Giúp phân biệt bạn với công ty trùng tên |
+| Article | Từng bài viết | Khai báo tác giả, ngày đăng, ngày cập nhật |
+| Product | Trang sản phẩm | Giá, tình trạng còn hàng |
+
+Theo [Google](https://developers.google.com/search/docs/appearance/structured-data/organization), schema Organization nên đặt ở trang chủ, không cần lặp lại ở mọi trang. Luật quan trọng nhất: thông tin trong schema phải khớp với chữ người đọc thấy trên trang.
+
+Một thay đổi cần biết: phần hỏi đáp mở rộng (FAQ rich result) đã ngừng hiển thị trên Google Search từ tháng 5/2026, theo [nhật ký cập nhật của Google](https://developers.google.com/search/updates). Mục câu hỏi thường gặp vẫn có ích vì trả lời đúng câu khách hỏi, nhưng đừng trả tiền cho ai hứa "gắn schema FAQ để hiện thêm dòng trên Google".
+
+Với cửa hàng có địa chỉ và shop bán online, Google còn dùng thông tin từ hồ sơ Google Business Profile và Merchant Center. Phần hồ sơ trên Google Maps xem [trang SEO Google Maps](/dich-vu/local-seo-google-maps/).
 `
     },
     {
-      id: 'checklist-12-tieu-chi-ai-overview',
-      heading: '7. Bộ Checklist 12 tiêu chí tối ưu nội dung cho AI Overviews',
+      id: 'do-luong-va-gioi-han',
+      heading: '7. Đo được gì và giới hạn của số liệu',
       content: `
-Trước khi xuất bản bất kỳ bài viết chiến lược nào, đội ngũ SOHO luôn kiểm tra nghiêm ngặt qua **Bộ Checklist 12 tiêu chí chuẩn GEO**:
+Từ 31/08/2026, Search Console có [báo cáo hiệu suất AI tạo sinh](https://support.google.com/webmasters/answer/16984139?hl=en) cho mọi website. Báo cáo này cho biết:
 
-#### Nhóm 1: Định dạng & Khả năng trích xuất của AI (Extractability)
-- [ ] **1. Trả lời trực diện trong 50 từ đầu:** Ngay dưới thẻ tiêu đề H2/H3 chính, có một câu hoặc đoạn văn 45 đến 60 từ tóm lược chính xác câu trả lời mà không chứa từ đệm sáo rỗng.
-- [ ] **2. Tích hợp bảng so sánh đa chiều:** Sử dụng bảng HTML có tiêu đề cột rõ ràng để đối chiếu ít nhất 2 đến 3 phương án hoặc tiêu chí.
-- [ ] **3. Danh sách các bước có thứ tự:** Các quy trình hoặc hướng dẫn kỹ thuật được định dạng bằng thẻ danh sách 1, 2, 3 có in đậm từ khóa hành động ở đầu mỗi bước.
-- [ ] **4. Sử dụng ngôn ngữ khẳng định, khách quan:** Tránh các từ ngữ cảm tính ("tuyệt vời nhất", "siêu rẻ"); sử dụng ngôn từ mang tính định lượng, khoa học và logic.
+- **Lượt hiển thị** của link về website trong AI Overview và AI Mode.
+- Chia theo **trang**, **quốc gia**, **thiết bị** và **ngày**.
 
-#### Nhóm 2: Thẩm quyền Thực thể & Dữ liệu (Authority & Facts)
-- [ ] **5. Tích hợp số liệu thực tế độc quyền:** Bài viết chứa ít nhất 2 đến 3 số liệu nghiên cứu nội bộ, tỷ lệ phần trăm hoặc kết quả đo lường thực tế từ dự án của doanh nghiệp.
-- [ ] **6. Định danh tác giả rõ ràng:** Hiển thị box thông tin tác giả có tên thật, chức vụ chuyên môn, ảnh đại diện và liên kết đến trang Profile/LinkedIn của chuyên gia.
-- [ ] **7. Trích dẫn nguồn sơ cấp uy tín:** Dẫn link ra các báo cáo chính thức, văn bản quy phạm pháp luật hoặc nghiên cứu gốc của các đơn vị đầu ngành.
-- [ ] **8. Triển khai đầy đủ Schema JSON-LD:** Trang đích chứa mã Schema Article, Author, FAQPage và Service hợp lệ trên công cụ kiểm tra của Google.
+![Ống nhòm ngắm cảnh hướng ra hồ và núi tuyết, nhãn: Đo lượt hiển thị trong AI bằng Search Console](/media/articles/seo-ai-overview/seo-ai-overview-anh-03.webp "1200x800")
+*Báo cáo mới cho biết trang nào được AI dẫn link, nhưng chưa tách riêng được lượt nhấp và câu hỏi.*
 
-#### Nhóm 3: Đáp ứng Ý định Tìm kiếm Hội thoại (Conversational Intent)
-- [ ] **9. Bao phủ các câu hỏi "Vì sao", "Làm thế nào", "Bao nhiêu":** Thẻ Heading phản ánh chính xác các câu hỏi tự nhiên mà người dùng thường hỏi AI.
-- [ ] **10. Tối ưu cấu trúc Silo ngữ nghĩa:** Bài viết liên kết chặt chẽ với trang chủ đề trụ cột (Pillar Page) và các bài viết phụ trợ trong cùng Topic Cluster.
-- [ ] **11. Tốc độ phản hồi trang cực nhanh:** Đạt điểm xanh trên Google Core Web Vitals để bot AI không bị timeout khi thu thập dữ liệu thời gian thực.
-- [ ] **12. Kiểm thử thực tế trên các công cụ AI:** Đặt các câu hỏi liên quan trên Gemini, ChatGPT Search và Perplexity để kiểm tra xem nội dung đã bắt đầu được nhận diện và trích dẫn hay chưa.
+Những giới hạn cần biết khi đọc số:
+
+- Báo cáo chỉ có lượt hiển thị. Lượt nhấp từ phần AI vẫn nằm chung trong báo cáo Hiệu suất, loại tìm kiếm "Web", không tách riêng được.
+- Trang trợ giúp không liệt kê chiều "truy vấn", nên bạn biết trang nào được trích dẫn nhưng khó biết từ câu hỏi nào.
+- Hai link của cùng website trong một câu trả lời chỉ tính là một lượt hiển thị trên biểu đồ.
+- Theo [Google](https://developers.google.com/search/docs/appearance/ai-features), mỗi AI Overview chiếm một vị trí trên trang kết quả, mọi link bên trong cùng nhận vị trí đó. Vị trí trung bình đẹp chưa chắc nghĩa là khách thấy tên bạn đầu tiên.
+
+Với ChatGPT và các trợ lý khác, chưa có báo cáo chính thức tương tự. Cách làm thực tế là xem nguồn giới thiệu trong công cụ đo trên website. Định kỳ tự hỏi trợ lý những câu khách hay hỏi để xem họ nói gì về bạn. Cài đặt nguồn truy cập chi tiết xem [trang GA4 và Looker Studio](/dich-vu/ga4-looker-dashboard/).
+
+Cuối cùng, con số quan trọng vẫn là khách liên hệ. Lượt hiển thị trong AI tăng mà cuộc gọi không đổi thì cần xem lại trang đang được trích dẫn có dẫn khách tới bước liên hệ không.
 `
     },
     {
-      id: 'faq-ai-overview-search',
-      heading: '8. Câu hỏi thường gặp (FAQ chuẩn Schema)',
+      id: 'cau-hoi-thuong-gap',
+      heading: '8. Câu hỏi thường gặp về SEO cho AI',
       content: `
-### Câu hỏi 1: Làm thế nào để biết website của doanh nghiệp đã xuất hiện trên Google AI Overviews hay chưa?
-**Trả lời:** Doanh nghiệp có thể kiểm tra qua 3 phương thức chính:
-1. **Kiểm tra trực tiếp trên SERP:** Sử dụng các trình duyệt ở chế độ ẩn danh hoặc công cụ VPN đổi sang các thị trường đã triển khai rộng rãi AI Overviews (như Mỹ, Nhật Bản, Ấn Độ và các thị trường thử nghiệm) với các truy vấn dài trong ngành.
-2. **Báo cáo Google Search Console:** Theo dõi các trang đích có chỉ số hiển thị tăng đột biến nhưng CTR có biến động khác thường ở các cụm từ khóa hỏi đáp phức tạp.
-3. **Sử dụng hệ thống tracking chuyên dụng của SOHO:** Chúng tôi sử dụng các bộ API theo dõi trực tiếp các khối AI Overviews và trích xuất danh sách nguồn trích dẫn hàng ngày để báo cáo minh bạch cho doanh nghiệp.
+### AI Overview có làm website mất lượt nhấp không?
 
-### Câu hỏi 2: Nếu AI đã tóm tắt câu trả lời ngay trên Google, liệu người dùng có còn nhấp vào website của tôi không?
-**Trả lời:** Có, và lượng nhấp chuột này mang lại **giá trị chuyển đổi cao gấp 3 lần** so với click thông thường:
-* Người dùng chỉ tìm kiếm thông tin đơn giản (như "thời tiết hôm nay", "sinh năm 1990 mệnh gì") sẽ không click. Đây là tệp người dùng không có giá trị thương mại cao.
-* Tuy nhiên, đối với các bài toán kinh doanh, mua sắm dịch vụ đắt tiền hoặc hợp đồng B2B, người mua **bắt buộc phải nhấp vào link nguồn trích dẫn được AI đề xuất** để kiểm chứng chi tiết, xem bằng chứng năng lực, tham khảo bảng giá và liên hệ với đơn vị cung cấp. Vì được AI "bảo chứng" uy tín ngay từ đầu, tỷ lệ chuyển đổi của tệp khách hàng này thành đơn hàng là cực kỳ cao.
+Có thể, tùy loại câu hỏi. Câu hỏi đơn giản như định nghĩa, khách đọc xong câu trả lời là đủ. Câu hỏi cần so sánh, cần báo giá, cần xem mẫu thì khách vẫn nhấp vào. Google không công bố con số chung cho từng ngành. Cách chắc nhất là so lượt hiển thị và lượt nhấp của chính website bạn trong Search Console theo từng nhóm trang.
 
-### Câu hỏi 3: Chi phí để triển khai chiến dịch tối ưu hóa AI Search (GEO) có đắt hơn SEO truyền thống không?
-**Trả lời:** Tại SOHO Agency, dịch vụ tối ưu hóa AI Search được tích hợp chặt chẽ trong gói **SEO Tổng Thể Định Hướng Doanh Thu**, không phát sinh chi phí ẩn:
-* Chúng tôi không tách rời SEO và GEO thành hai dịch vụ đối đầu nhau, bởi vì một website muốn được AI trích dẫn thì trước hết nền tảng kỹ thuật và cấu trúc nội dung phải đạt chuẩn SEO xuất sắc.
-* Thay vì chỉ viết bài để đối phó với số lượng từ khóa, chúng tôi dồn nguồn lực vào việc sản xuất nội dung nguyên tử chuyên sâu, nâng cấp Schema ngữ nghĩa và củng cố tín hiệu thực thể E-E-A-T đa kênh. Ngân sách đầu tư tương đương nhưng hiệu quả kinh doanh mang lại bền vững hơn gấp nhiều lần.
+### Có nên chặn AI đọc website của mình không?
 
-### Câu hỏi 4: Doanh nghiệp đã có nhiều bài viết cũ trên website thì có cần phải xóa đi viết lại từ đầu không?
-**Trả lời:** Tuyệt đối không xóa bài viết cũ vì điều này có thể làm mất đi sức mạnh liên kết tích lũy (PageRank) và tuổi đời của tên miền. Thay vào đó, SOHO sẽ tiến hành quy trình **Content Refactoring (Tái cấu trúc nội dung)**:
-* Rà soát các bài viết đang có thứ hạng tốt nhưng chưa được AI trích dẫn.
-* Tái cấu trúc lại phần mở đầu bằng các khối Direct Answer ngắn gọn, bổ sung bảng so sánh dữ liệu và danh sách bước triển khai rõ ràng.
-* Bổ sung mã Schema FAQPage và định danh chuyên gia tác giả.
-* Quy trình này giúp tiết kiệm 60% chi phí so với việc sản xuất nội dung mới, đồng thời giúp website nhanh chóng bật Top trên các khối câu trả lời AI chỉ sau 3 đến 6 tuần tối ưu.
+Tùy mục đích. Có nhiều lựa chọn khác nhau. Mục Search generative AI trong Search Console chỉ ảnh hưởng việc xuất hiện trong AI Overview, AI Mode, không ảnh hưởng thứ hạng tìm kiếm thường. Muốn hạn chế dùng nội dung để huấn luyện mô hình thì dùng Google-Extended với Google, GPTBot với OpenAI. Với doanh nghiệp cần khách tìm thấy mình, chặn hết thường thiệt nhiều hơn lợi.
+
+### Bao lâu thì bài viết được AI trích dẫn?
+
+Không ai hứa được mốc thời gian. Trang phải được Google đọc và lưu vào chỉ mục trước. Theo [Google](https://developers.google.com/search/docs/appearance/ai-features), việc đọc lại trang có thể mất từ vài ngày tới vài tháng. Sau đó việc được chọn còn tùy câu hỏi, đối thủ và chất lượng trang.
+
+### Làm sao biết AI đang nói gì về công ty mình?
+
+Tự hỏi Google và các trợ lý AI những câu khách hay hỏi, kèm tên công ty và tên sản phẩm. Ghi lại câu trả lời mỗi tháng, đánh dấu chỗ sai. Thông tin sai thường bắt nguồn từ website cũ chưa sửa, hồ sơ trên các trang khác ghi lệch, hoặc thiếu một trang giải thích rõ ràng. Sửa từ gốc đó.
+
+### Doanh nghiệp nhỏ có cần làm phần này không?
+
+Nếu khách của bạn hay hỏi Google trước khi mua thì có. Phần lớn việc trùng với SEO bạn nên làm sẵn: website đọc được, bài viết trả lời thẳng, thông tin doanh nghiệp đúng và nhất quán. Không cần một gói dịch vụ riêng tốn kém chỉ để "tối ưu cho AI".
 `
     }
   ]

@@ -10,7 +10,7 @@ import ServiceDiagram from '../diagrams/ServiceDiagrams';
 import ArticleBody from '../article/ArticleBody';
 import {sitePath} from '../paths';
 import {publishedCases} from '../data/cases';
-import {getPerson} from '../data/team';
+import {getPerson, personAlt} from '../data/team';
 import {serviceCta, NOT_YET} from '../data/contactVariants';
 
 /*
@@ -22,7 +22,13 @@ export default function ServiceTemplate({service, article, related}) {
   const cta = serviceCta(service.slug);
   const notYet = NOT_YET[service.slug];
   const proj = publishedCases.find(c => c.channel === service.slug) || publishedCases.find(c => c.services?.includes(service.slug));
-  const pm = getPerson('pm');
+  const people = [
+    {p: getPerson('pm'), tag: 'Đầu mối làm việc với bạn'},
+    {p: getPerson('mkt'), tag: 'Người lên kế hoạch và làm'},
+    {p: getPerson('seo'), tag: 'Người trực tiếp làm SEO', only: true},
+    {p: getPerson('content'), tag: 'Người làm nội dung và mạng xã hội', only: true},
+    {p: getPerson('dev'), tag: 'Người lập trình website và app', only: true}
+  ].filter(x => x.p && (!x.only || x.p.services?.includes(service.slug)));
   return (
     <>
       <section className={`${styles.hero} bg-denim dark on-dark`} aria-labelledby="h1">
@@ -44,12 +50,12 @@ export default function ServiceTemplate({service, article, related}) {
             <p className={styles.lead}>{service.intro}</p>
             <dl className={styles.fit}>
               <div>
-                <dt>Hợp với bạn nếu</dt>
-                <dd>{service.proof.replace(/^Hợp với\s*/i, '').replace(/^./, c => c.toUpperCase())}</dd>
+                <dt>Phù hợp với</dt>
+                <dd>{service.proof.replace(/^(Phù hợp với|Hợp với)\s*/i, '').replace(/^./, c => c.toUpperCase())}</dd>
               </div>
               {notYet && (
                 <div>
-                  <dt>Chưa hợp nếu</dt>
+                  <dt>Chưa phù hợp nếu</dt>
                   <dd>{notYet.replace(/^./, c => c.toUpperCase())}</dd>
                 </div>
               )}
@@ -75,21 +81,21 @@ export default function ServiceTemplate({service, article, related}) {
         <div className={styles.stats}>
           <div className={styles.statDenim}>
             <b>{service.process.length} bước</b>
-            <span>làm theo thứ tự, bước nào bạn cũng thấy SOHO đã làm gì</span>
+            <span>triển khai theo thứ tự, bước nào cũng báo lại cho bạn</span>
           </div>
           <div className={styles.statOrange}>
-            <b>{service.deliverables.length} thứ bàn giao</b>
-            <span>tài liệu và tài khoản đều đứng tên doanh nghiệp bạn</span>
+            <b>{service.deliverables.length} hạng mục bàn giao</b>
+            <span>tài liệu và tài khoản đều thuộc về doanh nghiệp bạn</span>
           </div>
           <div className={styles.statWhite}>
             <b>2 tuần</b>
-            <span>một lần cùng bạn xem số, quyết định làm tiếp hay sửa</span>
+            <span>một lần cùng bạn xem số liệu và điều chỉnh</span>
           </div>
         </div>
       </div>
 
-      <Section id="dau-hieu" kicker="Bạn có đang gặp chuyện này?" title={service.insightTitle || 'Dấu hiệu bạn đang gặp, và điều SOHO hướng tới'} intro={service.insight}>
-        <BeforeAfter before={service.pains} after={service.outcomes} beforeLabel="Dấu hiệu bạn đang gặp" afterLabel="Làm xong, bạn hướng tới" />
+      <Section id="dau-hieu" kicker="Bạn có đang gặp tình trạng này?" title={service.insightTitle || 'Dấu hiệu thường gặp và mục tiêu SOHO hướng tới'} intro={service.insight}>
+        <BeforeAfter before={service.pains} after={service.outcomes} beforeLabel="Dấu hiệu thường gặp" afterLabel="Mục tiêu sau khi làm" />
       </Section>
 
       <Section
@@ -106,7 +112,7 @@ export default function ServiceTemplate({service, article, related}) {
         <Track items={service.process.map(title => ({title}))} />
       </Section>
 
-      <Section id="ban-giao" kicker="Bàn giao" title="Bạn nhận được gì" intro="Tài liệu nào cũng viết để bạn đọc hiểu. Tài khoản và dữ liệu đứng tên doanh nghiệp bạn.">
+      <Section id="ban-giao" kicker="Bàn giao" title="Bạn nhận được gì" intro="Tài liệu viết dễ hiểu. Tài khoản và dữ liệu đều đứng tên doanh nghiệp bạn.">
         <div className={styles.deliver}>
           <ol className={styles.deliverList}>
             {service.deliverables.map((d, i) => (
@@ -119,7 +125,7 @@ export default function ServiceTemplate({service, article, related}) {
           <div className={styles.side}>
             {proj ? (
               <a href={sitePath(`/du-an/${proj.slug}/`)} className={styles.caseCard}>
-                <p className={styles.caseTag}>Việc thật đã làm</p>
+                <p className={styles.caseTag}>Dự án thực tế</p>
                 <p className={styles.caseName}>{proj.name}</p>
                 <p>
                   <b>Bối cảnh:</b> {proj.problem}
@@ -132,35 +138,38 @@ export default function ServiceTemplate({service, article, related}) {
                     <strong>{proj.kpis[0].value}</strong> {proj.kpis[0].label}
                   </p>
                 )}
-                <span className={styles.caseMore}>Xem cả dự án →</span>
+                <span className={styles.caseMore}>Xem chi tiết dự án →</span>
               </a>
             ) : (
               <div className={styles.caseCard}>
-                <p className={styles.caseTag}>Việc thật đã làm</p>
-                <p>Chưa có dự án {service.menuTitle} được khách cho phép công bố số. SOHO không đăng số khi khách chưa đồng ý.</p>
+                <p className={styles.caseTag}>Dự án thực tế</p>
+                <p>SOHO đang cập nhật dự án tiêu biểu cho dịch vụ {service.menuTitle}. Trong lúc đó, bạn có thể xem kết quả ở các dịch vụ khác.</p>
                 <a href={sitePath('/ket-qua/')} className={styles.caseMore}>
-                  Xem các dự án đã công bố →
+                  Xem các dự án tiêu biểu →
                 </a>
               </div>
             )}
-            {pm && (
-              <div className={styles.person}>
+            {people.map(({p, tag}) => (
+              <div key={p.key} className={styles.person}>
                 <div className={styles.personImg}>
-                  <img src={sitePath(pm.photo)} width={pm.width} height={pm.height} alt={`${pm.name ? pm.name + ', ' : ''}${pm.role.toLowerCase()} của SOHO`} loading="lazy" />
+                  <img src={sitePath(p.photo)} width={p.width} height={p.height} alt={personAlt(p)} loading="lazy" />
                 </div>
                 <div>
-                  <p className={styles.caseTag}>Người làm việc với bạn</p>
-                  <p className={styles.personRole}>{pm.name || pm.role}</p>
-                  <p className={styles.personDoes}>{pm.does}</p>
+                  <p className={styles.caseTag}>{tag}</p>
+                  <p className={styles.personRole}>{p.name || p.role}</p>
+                  <p className={styles.personDoes}>
+                    {p.title ? `${p.title}. ` : p.exp ? `${p.exp}. ` : ''}
+                    {p.does}
+                  </p>
                 </div>
               </div>
-            )}
+            ))}
           </div>
         </div>
       </Section>
 
       {article && (
-        <Section id="doc-ky" tone="soft" kicker="Đọc kỹ trước khi làm" title={`${service.menuTitle}: giải thích đầy đủ`} spacing="lg">
+        <Section id="doc-ky" tone="soft" kicker="Tìm hiểu kỹ" title={`${service.menuTitle}: những điều cần biết`} spacing="lg">
           <div className={styles.articleCard}>
             <ArticleBody article={article} />
           </div>
@@ -168,7 +177,7 @@ export default function ServiceTemplate({service, article, related}) {
       )}
 
       {related.length > 0 && (
-        <Section kicker="Dịch vụ cùng nhóm" title="Thường làm cùng" spacing="sm">
+        <Section kicker="Dịch vụ liên quan" title="Thường làm kèm" spacing="sm">
           <LinkRows items={related.map(s => ({title: s.menuTitle, desc: s.menuDesc, href: `/dich-vu/${s.slug}`}))} />
         </Section>
       )}

@@ -1,202 +1,233 @@
 export const growthStrategySprintArticle = {
-  metaTitle: 'Tư Vấn Chiến Lược Tăng Trưởng Sprint 30-90 Ngày: Xóa Bỏ Dàn Trải & Tối Ưu Lợi Nhuận | SOHO',
+  metaTitle: 'Lộ trình marketing 90 ngày: tư vấn chiến lược | SOHO',
   metaDesc:
-    'Dịch vụ tư vấn chiến lược Digital Marketing & Growth Sprint 30-90 ngày chuyên sâu 2026. Chẩn đoán điểm nghẽn tăng trưởng, xác định thứ tự ưu tiên kênh và xây dựng lộ trình thực thi gắn liền với doanh thu.',
-  readingTime: '17 phút đọc',
-  updatedDate: '04/10/2026',
-  author: {
-    name: 'Nguyễn Thế Tuấn Anh',
-    role: 'Head of Growth Strategy @ SOHO Agency'
+    'Khi nào cần tư vấn chiến lược marketing, cần chuẩn bị gì, chọn kênh theo giai đoạn doanh nghiệp, chia ngân sách thử nghiệm và lập lộ trình 90 ngày.',
+  readingTime: '9 phút đọc',
+  updatedDate: '31/10/2026',
+  author: {name: 'Nguyễn Thế Tuấn Anh', role: 'Phụ trách chiến lược tăng trưởng, SOHO Agency'},
+  cover: {
+    src: '/media/articles/tu-van-chien-luoc-sprint/tu-van-chien-luoc-sprint-hero.webp',
+    alt: 'La bàn đặt trên cuốn bản đồ đang mở, cạnh tiêu đề Lộ trình marketing 90 ngày: tư vấn chiến lược',
+    width: 1600,
+    height: 900
   },
+  credits: [
+    {text: 'Let the adventures begin (Unsplash), Chris Lawton chrislawton, Wikimedia Commons (CC0)', url: 'https://commons.wikimedia.org/wiki/File:Let_the_adventures_begin_(Unsplash).jpg'},
+    {text: 'Lost in the Wilderness (Unsplash wfVC 75JB9I), Raul Petri raulpetri, Wikimedia Commons (CC0)', url: 'https://commons.wikimedia.org/wiki/File:Lost_in_the_Wilderness_(Unsplash_wfVC_75JB9I).jpg'},
+    {text: 'Vintage chess pieces (Unsplash), Lou Levit loulevit, Wikimedia Commons (CC0)', url: 'https://commons.wikimedia.org/wiki/File:Vintage_chess_pieces_(Unsplash).jpg'},
+    {text: 'Alarm clock on a chair (Unsplash), Szűcs László szucslaszlo, Wikimedia Commons (CC0)', url: 'https://commons.wikimedia.org/wiki/File:Alarm_clock_on_a_chair_(Unsplash).jpg'}
+  ],
   toc: [
-    {id: 'tham-kich-dan-trai-nguon-luc', title: '1. Thực trạng: Thảm kịch "Dàn trải nguồn lực", làm đủ mọi kênh nhưng không kênh nào ra tiền'},
-    {id: 'chi-phi-co-hoi-loay-hoay-doi-agency', title: '2. Chi phí cơ hội: Vòng xoáy đổi agency liên tục và cái giá của sự thiếu chiến lược'},
-    {id: 'ban-chat-growth-sprint-soho', title: '3. Bản chất Phương pháp luận Growth Sprint 30 đến 90 Ngày của SOHO'},
-    {id: '4-tru-cot-chan-doan-chien-luoc', title: '4. 4 Trụ cột chẩn đoán sức khỏe doanh nghiệp & xác định đòn bẩy tăng trưởng'},
-    {id: 'quy-trinh-5-buoc-growth-sprint', title: '5. Quy trình 5 bước vận hành Sprint chiến lược thực chiến'},
-    {id: 'bang-so-sanh-growth-sprint', title: '6. So sánh: Bản kế hoạch tư vấn lý thuyết 100 trang vs Growth Sprint SOHO'},
-    {id: 'checklist-15-tieu-chi-growth-ready', title: '7. Bộ Checklist 15 tiêu chí đánh giá mức độ sẵn sàng tăng trưởng'},
-    {id: 'faq-growth-strategy-sprint', title: '8. Câu hỏi thường gặp (FAQ chuẩn Schema)'}
+    {id: 'khi-nao-can-tu-van', title: '1. Khi nào cần tư vấn lộ trình marketing'},
+    {id: 'dau-vao-can-chuan-bi', title: '2. Cần chuẩn bị gì trước buổi tư vấn'},
+    {id: 'chon-kenh-theo-giai-doan', title: '3. Chọn kênh theo giai đoạn của doanh nghiệp'},
+    {id: 'chia-ngan-sach-thu-nghiem', title: '4. Chia ngân sách thử nghiệm'},
+    {id: 'nhip-hai-tuan', title: '5. Nhịp rà soát 2 tuần một lần'},
+    {id: 'ke-hoach-90-ngay', title: '6. Đầu ra: kế hoạch 90 ngày gồm những gì'},
+    {id: 'cau-hoi-thuong-gap', title: '7. Câu hỏi thường gặp'}
   ],
   sections: [
     {
-      id: 'tham-kich-dan-trai-nguon-luc',
-      heading: '1. Thực trạng: Thảm kịch "Dàn trải nguồn lực", làm đủ mọi kênh nhưng không kênh nào ra tiền',
+      id: 'khi-nao-can-tu-van',
+      heading: '1. Khi nào cần tư vấn lộ trình marketing',
       content: `
-### 1.1. Căn bệnh phổ biến nhất của các doanh nghiệp SME & Scale-up
+Hầu hết chủ doanh nghiệp không thiếu ý tưởng. Người này khuyên làm SEO, người kia khuyên chạy TikTok, nhân viên muốn làm lại website. Việc nào cũng có lý. Cái khó là chọn làm gì trước khi tiền và người đều có hạn.
 
-Trong quá trình tư vấn chiến lược cho hàng trăm nhà sáng lập (Founders) và Giám đốc điều hành (CEOs), chúng tôi thường nghe thấy cùng một tiếng thở dài ngao ngán:
-* *"Công ty tôi cái gì cũng làm: vừa chạy Google Ads, vừa thuê người chạy Facebook, vừa xây kênh TikTok, vừa thuê viết bài SEO, lại vừa làm email marketing."*
-* *"Nhân viên marketing lúc nào cũng bận rộn tối mắt tối mũi từ sáng đến đêm, các cuộc họp báo cáo diễn ra liên tục."*
-* *"Nhưng khi nhìn vào kết quả kinh doanh cuối quý: Doanh thu vẫn đi ngang, chi phí vận hành ngày càng phình to, và không một ai trong công ty, kể cả trưởng phòng marketing, có thể trả lời được chính xác: Kênh nào thực sự là động lực tăng trưởng chính của doanh nghiệp!"*
+![Cột biển chỉ đường hai mũi tên ngược hướng in bóng trên nền trời hoàng hôn](/media/articles/tu-van-chien-luoc-sprint/tu-van-chien-luoc-sprint-anh-01.webp "1200x800")
+*Nhiều lời khuyên chỉ nhiều hướng. Tư vấn lộ trình giúp chọn đi hướng nào trước.*
 
-Đây chính là căn bệnh kinh điển mang tên **"Dàn trải nguồn lực" (Resource Dilution Trap)**. Doanh nghiệp có ngân sách tiếp thị giới hạn nhưng lại cố gắng xuất hiện trên mọi mặt trận chỉ vì thấy đối thủ đang làm hoặc nghe theo những lời khuyên chung chung trên mạng. 
+Tư vấn lộ trình marketing là một đợt làm việc ngắn để trả lời câu hỏi đó. Kết quả không phải bản kế hoạch dày cả trăm trang. Kết quả là danh sách việc cho 90 ngày tới, có thứ tự, có chỉ tiêu và có người chịu trách nhiệm.
 
-Khi bạn rải 100 triệu đồng cho 5 kênh khác nhau (mỗi kênh 20 triệu), bạn không đủ nguồn lực để vượt qua ngưỡng tới hạn (Critical Mass) ở bất kỳ kênh nào: SEO làm dở dang không lên được Top, Ads chi tiền nhỏ giọt không đủ dữ liệu máy học, TikTok video nghèo nàn không ai xem. Kết quả là toàn bộ 100 triệu đồng bị bốc hơi không để lại dấu vết.
+### Dấu hiệu nên làm
 
-### 1.2. 3 Sai lầm chí mạng trong việc hoạch định kế hoạch tiếp thị
+- Đang làm nhiều kênh cùng lúc nhưng không biết kênh nào mang khách về.
+- Đã đổi vài bên làm marketing, mỗi bên làm một kiểu, mọi thứ vẫn rời rạc.
+- Sắp tăng ngân sách quảng cáo, mở chi nhánh hay ra sản phẩm mới và muốn chắc trước khi chi.
+- Đội ngũ ai cũng bận nhưng không rõ việc nào giúp bán được hàng.
 
-1. **Nhầm lẫn giữa "Chiến thuật" và "Chiến lược":**
-   Nhiều nhà quản lý nghĩ rằng chọn chạy Facebook hay làm SEO là chiến lược. Không phải! Đó chỉ là chiến thuật (Tactics). **Chiến lược (Strategy) là việc đưa ra lựa chọn: Làm việc gì trước, làm việc gì sau, và quan trọng nhất là DŨNG CẢM TỪ BỎ những việc gì không phù hợp với nguồn lực hiện tại của doanh nghiệp**.
+### Khi nào chưa cần
 
-2. **Xây dựng kế hoạch hàng năm cứng nhắc, thiếu tính thích ứng (Static Annual Plans):**
-   Mất 2 tháng để vẽ ra một bản kế hoạch marketing 12 tháng dày hàng trăm trang với những dự báo tài chính xa vời. Sau đó chỉ sau 30 ngày triển khai thực tế, thị trường thay đổi, thuật toán cập nhật, sản phẩm mới gặp trục trặc, và toàn bộ bản kế hoạch biến thành tập giấy lộn nằm phủ bụi trong ngăn kéo.
-
-3. **Thiếu sự thấu hiểu về Đơn vị Kinh tế Cốt lõi (Unit Economics):**
-   Đẩy mạnh tiếp thị cho những dòng sản phẩm có biên lợi nhuận quá mỏng, chi phí đóng gói vận chuyển cao và tỷ lệ khách hàng mua lại bằng 0. Càng tăng trưởng doanh số thì doanh nghiệp càng lỗ nặng.
+- Doanh nghiệp đã có một kênh chạy tốt, đo được, chỉ cần làm đều hơn. Lúc đó cần người làm, chưa cần lộ trình.
+- Sản phẩm chưa rõ giá bán, chưa có khách mua thử. Nên kiểm tra sản phẩm với một nhóm khách nhỏ trước khi lập kế hoạch marketing.
+- Chủ doanh nghiệp chưa sẵn sàng chia sẻ số liệu bán hàng. Thiếu số, lộ trình chỉ dựa trên cảm giác.
 `
     },
     {
-      id: 'chi-phi-co-hoi-loay-hoay-doi-agency',
-      heading: '2. Chi phí cơ hội: Vòng xoáy đổi agency liên tục và cái giá của sự thiếu chiến lược',
+      id: 'dau-vao-can-chuan-bi',
+      heading: '2. Cần chuẩn bị gì trước buổi tư vấn',
       content: `
-### 2.1. Vòng luẩn quẩn: Thuê agency ➔ Thất vọng ➔ Đổi agency mới ➔ Thất vọng tiếp
+Lộ trình tốt hay không phụ thuộc nhiều vào đầu vào. Không cần số đẹp, chỉ cần số thật.
 
-Một chi phí cơ hội vô cùng đắt đỏ mà các doanh nghiệp thường phải trả chính là việc **lãng phí từ 1 đến 2 năm cuộc đời trong vòng xoáy đổi đối tác**:
-* Doanh nghiệp thuê một bên làm SEO: Sau 6 tháng chỉ thấy vài bài viết hời hợt, không có lead. Doanh nghiệp chấm dứt hợp đồng trong cay đắng.
-* Doanh nghiệp chuyển sang thuê một bên chạy Ads: Sau 3 tháng thấy chi phí ngày càng đắt đỏ, đơn hàng ảo nhiều. Lại chia tay và tiếp tục đi tìm bên thứ ba.
-* Bên thứ ba vào lại chê bai toàn bộ những gì hai bên trước đã làm và yêu cầu đập đi xây lại từ đầu.
+### Về kinh doanh
 
-Sau 2 năm loay hoay, doanh nghiệp mất hàng tỷ đồng tiền phí dịch vụ và tiền ngân sách thử nghiệm. Nhưng mất mát lớn nhất không phải là tiền bạc, mà là **Thời gian và Thị phần**: Trong 2 năm bạn dậm chân tại chỗ đó, các đối thủ cạnh tranh có chiến lược bài bản đã kịp chiếm lĩnh toàn bộ thị trường và xây dựng hàng rào niềm tin vững chắc trong tâm trí khách hàng.
+- **Lợi nhuận gộp theo nhóm sản phẩm.** Giá bán trừ giá vốn. Đây là con số quyết định bạn được phép chi bao nhiêu để có một đơn.
+- **Số đơn hoặc số khách theo nguồn** trong 3 đến 6 tháng gần nhất, dù chỉ là ước lượng từ sổ bán hàng.
+- **Tỉ lệ chốt**: trong 10 khách hỏi, bao nhiêu người mua.
+- **Khách có quay lại không**, bao lâu một lần. Khách mua nhiều lần thì có thể chấp nhận chi phí có khách lần đầu cao hơn.
 
-### 2.2. Chiến lược đúng đắn là chiếc la bàn cứu rỗi doanh nghiệp
+### Về marketing
 
-Một cuộc khảo sát của McKinsey đã chỉ ra rằng: Các doanh nghiệp áp dụng mô hình quản trị chiến lược linh hoạt (Agile Growth Strategy) có tốc độ ra quyết định nhanh hơn gấp 3 lần và tỷ lệ hoàn vốn đầu tư tiếp thị (Marketing ROI) cao hơn 45% so với các doanh nghiệp vận hành theo lối mòn truyền thống.
+- Chi phí marketing từng tháng, chia theo kênh.
+- Quyền xem tài khoản quảng cáo, GA4, Search Console nếu có. Chỉ cần quyền xem, không cần quyền sửa.
+- Những câu khách hay hỏi trước khi mua và lý do khách từ chối.
 
-Trước khi chi một đồng nào cho SEO, Ads hay Content, việc đầu tư vào một **Sprint Chẩn Đoán & Hoạch Định Chiến Lược** chính là khoản đầu tư thông minh nhất để bảo toàn vốn và tối đa hóa cơ hội chiến thắng.
+### Về đội ngũ
+
+- Ai đang làm marketing, mỗi tuần dành bao nhiêu giờ.
+- Ai trả lời tin nhắn, ai gọi lại cho khách, trong bao lâu.
+
+Điểm cuối hay bị bỏ qua. Kênh nào mang về nhiều khách hỏi mà không ai trả lời kịp thì khách cũng mất.
 `
     },
     {
-      id: 'ban-chat-growth-sprint-soho',
-      heading: '3. Bản chất Phương pháp luận Growth Sprint 30 đến 90 Ngày của SOHO',
+      id: 'chon-kenh-theo-giai-doan',
+      heading: '3. Chọn kênh theo giai đoạn của doanh nghiệp',
       content: `
-### 3.1. Growth Strategy Sprint là gì?
+Mỗi kênh làm một việc khác nhau. Hiểu vai trò của từng kênh thì dễ chọn hơn.
 
-**Growth Strategy Sprint (Sprint Chiến Lược Tăng Trưởng)** tại SOHO Agency là chương trình tư vấn và chẩn đoán chuyên sâu kéo dài từ 2 đến 4 tuần nhằm mục tiêu: **giúp Ban lãnh đạo doanh nghiệp nhìn rõ toàn cảnh bức tranh kinh doanh, xác định chính xác nút thắt cổ chai (Bottleneck) đang kìm hãm doanh số, và thiết lập một lộ trình hành động tinh gọn 30 đến 90 ngày rõ việc, rõ người, rõ KPI và gắn liền với dòng tiền thực tế**.
+![Những quân cờ cổ bằng kim loại xếp hàng trên bàn cờ gỗ](/media/articles/tu-van-chien-luoc-sprint/tu-van-chien-luoc-sprint-anh-02.webp "1200x800")
+*Mỗi kênh như một quân cờ có vai trò riêng, đi quân nào trước tùy thế cờ của doanh nghiệp.*
 
-Chúng tôi không mang đến những lý thuyết hàn lâm từ sách vở nước ngoài. Phương pháp luận Growth Sprint của SOHO dựa trên 3 nguyên tắc thực chiến:
-1. **Focus on Constraints (Tập trung vào điểm nghẽn):** Theo thuyết điểm nghẽn (Theory of Constraints), một hệ thống chỉ mạnh bằng mắt xích yếu nhất của nó. Nếu tỷ lệ chuyển đổi trang đích của bạn đang là 0.5%, thì việc đổ thêm tiền quảng cáo chỉ làm bạn nghèo đi. SOHO giúp bạn tìm ra và giải quyết đúng mắt xích yếu nhất đó trước tiên.
-2. **Short-Cycle Execution (Thực thi theo chu kỳ ngắn):** Chia nhỏ lộ trình thành các sprint 2 tuần. Thử nghiệm nhanh, học hỏi nhanh, cắt lỗ sớm những việc không hiệu quả và dồn toàn lực mở rộng những hoạt động tạo ra kết quả đột phá.
-3. **Data-Driven Prioritization (Ưu tiên dựa trên dữ liệu):** Sử dụng ma trận chấm điểm khoa học (ICE Score: Impact, Confidence, Ease) để xếp hạng các ý tưởng, chấm dứt tình trạng tranh cãi cảm tính giữa các phòng ban.
+### Bắt nhu cầu và tạo nhu cầu
+
+- **Bắt nhu cầu**: khách đã có nhu cầu và đang tìm. Kênh hợp là quảng cáo Google, SEO, Google Maps. Khách tìm "sửa máy lạnh quận 7" là đang muốn mua.
+- **Tạo nhu cầu**: khách chưa tìm, bạn đưa sản phẩm tới trước mắt họ. Kênh hợp là quảng cáo Facebook, TikTok, nội dung mạng xã hội. Hợp với sản phẩm mới, sản phẩm mua theo cảm xúc, hoặc khi ít người tìm trên Google.
+- **Nền tảng**: website, đo lường, câu chuyện khách hàng. Không tự mang khách về nhưng quyết định khách có ở lại và liên hệ hay không.
+
+### Kênh nào trước, theo giai đoạn
+
+| Giai đoạn | Tình trạng thường gặp | Nên ưu tiên |
+|---|---|---|
+| Mới bắt đầu | Ít người biết, chưa có số liệu | Một kênh bắt nhu cầu có kết quả nhanh như [quảng cáo Google](/dich-vu/google-ads-shopping/) hoặc [Google Maps](/dich-vu/local-seo-google-maps/) nếu bán tại chỗ; đo lường cơ bản |
+| Có khách nhưng không đều | Phụ thuộc khách giới thiệu, lúc đông lúc vắng | Thêm một kênh đều đặn: [SEO](/dich-vu/seo-tong-the/) cho dài hạn, [quảng cáo Facebook, TikTok](/dich-vu/meta-tiktok-ads/) cho ngắn hạn |
+| Muốn mở rộng | Một kênh đã chạy tốt, chi phí bắt đầu tăng | [Sửa chỗ khách rời đi trên website](/dich-vu/cro-landing-page/), [nội dung](/dich-vu/content-marketing-pr/) cho khách cân nhắc lâu, [đo lường đầy đủ](/dich-vu/ga4-looker-dashboard/) để chia ngân sách |
+
+Bảng này là điểm khởi đầu, không phải công thức. Ngành nghề, biên lợi nhuận và cách khách mua có thể đảo thứ tự. Ví dụ website quá chậm hay không có nút liên hệ thì nên [sửa website](/dich-vu/thiet-ke-website/) trước khi chạy bất kỳ quảng cáo nào.
+
+### Phối hợp: kênh nhanh nuôi kênh chậm
+
+SEO thường cần vài tháng mới có kết quả rõ, còn quảng cáo có thể mang khách hỏi ngay khi bật. Hai kênh nên chạy cùng nhau. Ở [dự án King Decor Luxury](/du-an/king-decor-luxury/), SOHO sắp xếp lại website và viết bài trả lời câu hỏi của chủ đầu tư, đồng thời chạy quảng cáo Facebook để có yêu cầu tư vấn ngay trong lúc chờ SEO có kết quả. Theo trang dự án, kết quả đó đến từ quảng cáo Facebook, chưa phải từ SEO.
+
+Một nguyên tắc nữa: làm ít kênh nhưng làm tới nơi. Hai kênh làm đúng thường tốt hơn năm kênh làm nửa vời.
 `
     },
     {
-      id: '4-tru-cot-chan-doan-chien-luoc',
-      heading: '4. 4 Trụ cột chẩn đoán sức khỏe doanh nghiệp & xác định đòn bẩy tăng trưởng',
+      id: 'chia-ngan-sach-thu-nghiem',
+      heading: '4. Chia ngân sách thử nghiệm',
       content: `
-Khung chẩn đoán chiến lược của SOHO rà soát toàn diện **4 trụ cột kinh doanh cốt lõi**:
+Câu hỏi hay gặp nhất là "nên chi bao nhiêu". Câu trả lời bắt đầu từ lợi nhuận, không từ con số của đối thủ.
 
-### Trụ cột 1: Chẩn đoán Đơn vị Kinh tế & Biên Lợi nhuận (Unit Economics & Margin Audit)
-Chúng tôi bắt đầu từ các con số tài chính chứ không bắt đầu từ các kênh tiếp thị:
-* Phân tích biên lợi nhuận gộp, biên lợi nhuận ròng của từng dòng sản phẩm/dịch vụ.
-* Tính toán các chỉ số tài chính sống còn: Giá trị trọn đời của khách hàng (LTV), Chi phí mua một khách hàng tối đa có thể chịu đựng được (Target CAC), và Thời gian thu hồi vốn đầu tư (Payback Period).
-* Xác định dòng sản phẩm "Mũi nhọn mở phễu" (Front-end Offer) và dòng sản phẩm "Tạo ra lợi nhuận chính" (Back-end Profit Engine).
+### Tính ngược từ lợi nhuận
 
-### Trụ cột 2: Chẩn đoán Trải nghiệm Khách hàng & Phễu Chuyển đổi (Funnel & Friction Audit)
-* Rà soát toàn bộ hành trình từ lúc khách hàng phát sinh nhận thức đến khi ký hợp đồng và giới thiệu người quen.
-* Phát hiện chính xác điểm rơi rụng (Drop-off Rate) lớn nhất nằm ở đâu: Do chất lượng traffic kém? Do trang đích không thuyết phục? Hay do quy trình tư vấn và báo giá của bộ phận sales quá chậm chạp?
+Ví dụ giả định:
 
-### Trụ cột 3: Kiểm Toán Năng Lực Cạnh Tranh & Cơ Hội Thị Trường (Competitive Matrix)
-* Đào sâu phân tích chiến lược của 3 đối thủ đáng gờm nhất trên thị trường: Họ đang mạnh ở kênh nào? Họ đang bỏ trống phân khúc khách hàng nào? Thông điệp định vị của họ có lỗ hổng gì mà bạn có thể khai thác?
-* Xác định Lợi thế cạnh tranh độc quyền (Unfair Advantage) của doanh nghiệp bạn mà đối thủ không thể sao chép trong một sớm một chiều.
+- Một đơn trung bình 2.000.000đ, lợi nhuận gộp 40%, tức 800.000đ.
+- Chủ doanh nghiệp muốn giữ lại ít nhất một nửa, nên chi phí tối đa cho mỗi đơn là 400.000đ.
+- Cứ 5 khách hỏi thì chốt được 1 đơn. Vậy chi phí tối đa cho mỗi khách hỏi là 80.000đ.
 
-### Trụ cột 4: Thiết Lập Ma Trận Ưu Tiên Tinh Gọn (ICE Prioritization Backlog)
-* Chuyển hóa toàn bộ các phát hiện sau buổi audit thành một danh sách hành động (Action Backlog) được chấm điểm khoa học theo 3 tiêu chí:
-  * **Tác động (Impact):** Hoạt động này có khả năng mang lại mức tăng trưởng doanh thu bao nhiêu phần trăm?
-  * **Độ tự tin (Confidence):** Mức độ chắc chắn về mặt dữ liệu và năng lực thực thi là bao nhiêu?
-  * **Độ dễ dàng (Ease):** Tốn bao nhiêu thời gian và chi phí để triển khai (làm trong 3 ngày hay mất 3 tháng)?
-* Chọn ra Top 3 việc có điểm số cao nhất để đưa vào triển khai ngay trong Sprint đầu tiên.
+Có mức trần này, mọi kênh được chấm bằng cùng một thước đo. Kênh nào ra khách hỏi dưới 80.000đ và khách đó chốt được là kênh đáng giữ.
+
+![So sánh chia đều ngân sách cho mọi kênh và chia ngân sách thử nghiệm có điều kiện dừng](/media/articles/tu-van-chien-luoc-sprint/soho-tu-van-chien-luoc-sprint-compare-01.webp "1360x850")
+*Ngân sách thử nghiệm nhỏ, có mức trần và hạn dừng rõ trước khi bắt đầu.*
+
+### Phần chính và phần thử
+
+Chia ngân sách thành hai phần:
+
+- **Phần chính** cho kênh đã có bằng chứng chạy tốt. Phần này giữ doanh thu ổn định.
+- **Phần thử** cho kênh hoặc cách làm mới. Mỗi thử nghiệm cần ghi rõ trước khi bắt đầu: chi bao nhiêu, trong bao lâu, đạt mức nào thì giữ, mức nào thì dừng.
+
+Với ví dụ trên, thử một kênh mới với 10 triệu đồng trong 4 tuần thì kênh đó phải mang về ít nhất 125 khách hỏi mới đạt mức trần. Sau 2 tuần mà chi phí mỗi khách hỏi vẫn gấp đôi mức trần và không có dấu hiệu giảm, nên dừng hoặc đổi cách làm.
+
+Chưa có kênh nào chạy tốt thì cả ngân sách đều là phần thử. Lúc đó càng cần mức trần rõ ràng.
+
+### Đừng thử quá nhiều thứ một lúc
+
+Ngân sách nhỏ chia cho năm kênh thì kênh nào cũng không đủ dữ liệu để kết luận. Các nền tảng quảng cáo cũng cần thời gian học sau mỗi lần thay đổi lớn, như Meta giải thích trong bài [giai đoạn máy học](https://www.facebook.com/business/help/112167992830700). Thử một hai thứ, chờ đủ số rồi mới quyết.
 `
     },
     {
-      id: 'quy-trinh-5-buoc-growth-sprint',
-      heading: '5. Quy trình 5 bước vận hành Sprint chiến lược thực chiến',
+      id: 'nhip-hai-tuan',
+      heading: '5. Nhịp rà soát 2 tuần một lần',
       content: `
-Chương trình tư vấn chiến lược Sprint của SOHO diễn ra cô đọng trong 4 tuần làm việc chuyên sâu:
+Kế hoạch 90 ngày không có nghĩa là làm theo một mạch suốt ba tháng. Thị trường đổi, quảng cáo có lúc tốt lúc xấu, có việc làm nhanh hơn dự tính. Vì vậy cần một nhịp rà soát đều đặn. SOHO dùng nhịp 2 tuần.
 
-### Tuần 1: Khởi Động & Phỏng Vấn Sâu Ban Lãnh Đạo (Discovery Workshop)
-* Tổ chức buổi làm việc chuyên sâu 1:1 cùng Founder, CEO, Giám đốc kinh doanh và Trưởng phòng tiếp thị để làm rõ bức tranh mục tiêu 12 tháng, những trăn trở lớn nhất và các rào cản nội bộ.
-* Tiếp nhận toàn bộ quyền truy cập dữ liệu để chuẩn bị cho giai đoạn kiểm toán kỹ thuật.
+![Chiếc đồng hồ báo thức đặt trên ghế gỗ ngoài ban công](/media/articles/tu-van-chien-luoc-sprint/tu-van-chien-luoc-sprint-anh-03.webp "1200x800")
+*Đến hẹn 2 tuần, cả nhóm cùng xem số và quyết định bước tiếp theo.*
 
-### Tuần 2: Kiểm Toán Dữ Liệu 360° & Nghiên Cứu Thị Trường (Deep Audit Phase)
-* Đội ngũ chuyên gia của SOHO tiến hành rà soát độc lập trên toàn bộ hệ thống: Mã nguồn website, tài khoản quảng cáo, dữ liệu GA4, quy trình xử lý lead trên CRM và nghiên cứu thị trường ngách.
-* Lập bảng báo cáo chẩn đoán điểm nghẽn với đầy đủ bằng chứng số liệu cụ thể, chỉ rõ những chỗ rò rỉ ngân sách cần bịt lại ngay lập tức.
+### Mỗi 2 tuần làm gì
 
-### Tuần 3: Thiết Kế Bản Đồ Chiến Lược & Lộ Trình Sprint 30 đến 90 Ngày (Strategy Formulation)
-* Xây dựng bản đồ chiến lược tăng trưởng bao gồm: Thông điệp định vị sắc bén, Danh mục kênh tiếp thị cần ưu tiên, Ngân sách phân bổ tối ưu và Kế hoạch hành động chi tiết theo từng sprint 2 tuần.
-* Đặt ra các chỉ số đo lường hiệu quả (North Star Metric & KPIs) gắn liền với mục tiêu doanh thu của hội đồng quản trị.
+- **Xem lại số**: mỗi kênh ra bao nhiêu khách hỏi, chi phí mỗi khách hỏi, bao nhiêu đơn chốt được.
+- **Quyết định cho từng thử nghiệm**: giữ, tăng, sửa hay dừng, dựa trên mức đã ghi từ đầu.
+- **Chọn việc cho 2 tuần tới**: tối đa vài việc chính, mỗi việc có một người chịu trách nhiệm.
+- **Ghi lại điều học được**: cái gì hiệu quả, cái gì không, vì sao.
 
-### Tuần 4: Bàn Giao Chiến Lược & Huấn Luyện Đội Ngũ Thực Thi (Handover & Alignment)
-* Tổ chức buổi thuyết trình chiến lược trực tiếp trước Ban giám đốc và toàn thể đội ngũ thực thi (marketing & sales) để tạo sự đồng thuận tuyệt đối về mặt tư tưởng.
-* Bàn giao toàn bộ tài liệu hướng dẫn, bảng phân công nhiệm vụ (RACI Matrix) và bộ công cụ đo lường theo dõi tiến độ.
+### Vì sao là 2 tuần
 
-### Giai Đoạn Hậu Sprint: Đồng Hành Cố Vấn Định Kỳ (Bi-weekly Advisory)
-* SOHO tiếp tục đồng hành cùng doanh nghiệp trong 60 ngày tiếp theo qua các buổi họp giao ban định kỳ mỗi 2 tuần để đánh giá tiến độ, gỡ khó kỹ thuật và điều chỉnh chiến lược kịp thời theo dữ liệu thực tế.
+Một tuần thường quá ngắn để số liệu ổn định, nhất là với ngân sách nhỏ. Một tháng thì dài: một chiến dịch kém có thể tiêu hết ngân sách trước khi ai nhận ra. Hai tuần đủ để có số, vẫn đủ nhanh để sửa sai.
+
+Nhịp này không có nghĩa là mỗi 2 tuần thay đổi mọi thứ. SEO và nội dung cần nhiều tháng, nên ở các buổi rà soát chỉ xem việc có làm đúng tiến độ không. Quảng cáo thì xem kỹ hơn, nhưng cũng không nên sửa liên tục.
+
+### Ai nên có mặt
+
+Người ra quyết định ngân sách, người làm marketing và người bán hàng. Người bán hàng biết khách hỏi có chất lượng hay không, điều mà báo cáo quảng cáo không cho thấy. Buổi rà soát khoảng một giờ là đủ nếu số đã được chuẩn bị sẵn.
 `
     },
     {
-      id: 'bang-so-sanh-growth-sprint',
-      heading: '6. So sánh: Bản kế hoạch tư vấn lý thuyết 100 trang vs Growth Sprint SOHO',
+      id: 'ke-hoach-90-ngay',
+      heading: '6. Đầu ra: kế hoạch 90 ngày gồm những gì',
       content: `
-Bảng đối chiếu làm rõ sự khác biệt giữa các dịch vụ tư vấn lý thuyết xa rời thực tế và phương pháp Growth Sprint của SOHO:
+Một kế hoạch 90 ngày dùng được thường chia làm ba chặng.
 
-| Tiêu chí đối chiếu | Dịch Vụ Tư Vấn Chiến Lược Lý Thuyết | Growth Strategy Sprint @ SOHO |
-| :--- | :--- | :--- |
-| **Sản phẩm bàn giao** | Tập tài liệu PowerPoint/PDF dày 100 đến 200 trang toàn mô hình sách vở | **Bảng lộ trình hành động tinh gọn 30 đến 90 ngày rõ việc, rõ người, rõ KPI** |
-| **Tính ứng dụng** | Rất khó thực thi, nhân sự đọc xong không biết thứ 2 tuần sau phải làm gì | **Thực thi được ngay lập tức từ ngày hôm sau với các đầu việc cụ thể** |
-| **Thời gian triển khai** | Mất từ 3 đến 6 tháng nghiên cứu rườm rà, lãng phí thời gian cơ hội | **Hoàn thành chẩn đoán và đóng gói lộ trình chiến lược chỉ trong 2 đến 4 tuần** |
-| **Cơ sở dữ liệu** | Dựa trên các báo cáo ngành chung chung của nước ngoài | **Đào sâu vào số liệu tài chính, dữ liệu CRM và khách hàng thực tế của doanh nghiệp** |
-| **Sự đồng hành** | Thuyết trình xong là hết trách nhiệm, mặc kệ doanh nghiệp tự bơi | **Đồng hành cố vấn chuyên môn mỗi 2 tuần trong suốt 60 đến 90 ngày thực thi** |
+![Ba chặng của lộ trình 90 ngày: sửa nền và thử, dồn lực vào kênh tốt, mở rộng và làm thành nếp](/media/articles/tu-van-chien-luoc-sprint/soho-tu-van-chien-luoc-sprint-steps-01.webp "1360x850")
+*Lộ trình 90 ngày chia ba chặng, mỗi chặng kết thúc bằng một lần quyết định.*
+
+### Ngày 1–30: sửa nền và bắt đầu thử
+
+Sửa những chỗ đang làm mất khách: đo lường sai, website thiếu thông tin, tin nhắn trả lời chậm. Bắt đầu một hai thử nghiệm với mức trần đã tính.
+
+### Ngày 31–60: dồn lực vào kênh tốt
+
+Kênh nào đạt mức trần thì tăng dần ngân sách. Kênh nào không đạt thì sửa một lần hoặc dừng. Bắt đầu các việc dài hạn như SEO, nội dung nếu phù hợp.
+
+### Ngày 61–90: mở rộng và làm thành nếp
+
+Mở rộng kênh đã chứng minh hiệu quả. Viết lại quy trình để đội ngũ tự làm được: ai đăng bài, ai trả lời khách, ai xem báo cáo. Lập kế hoạch cho 90 ngày tiếp theo.
+
+### Trong tài liệu bàn giao có gì
+
+- Tóm tắt hiện trạng: chỗ nào đang nghẽn, bằng chứng là gì.
+- Danh sách việc theo thứ tự ưu tiên, mỗi việc có người làm và hạn xong.
+- Chỉ tiêu cho từng chặng: số khách hỏi, chi phí mỗi khách hỏi, số đơn.
+- Mức trần chi phí và điều kiện dừng cho từng thử nghiệm.
+- Lịch rà soát 2 tuần một lần.
+
+Lộ trình không hứa doanh thu. Nó giúp mỗi đồng chi ra có lý do. Mỗi quyết định dựa trên số thật thay vì cảm giác.
 `
     },
     {
-      id: 'checklist-15-tieu-chi-growth-ready',
-      heading: '7. Bộ Checklist 15 tiêu chí đánh giá mức độ sẵn sàng tăng trưởng',
+      id: 'cau-hoi-thuong-gap',
+      heading: '7. Câu hỏi thường gặp',
       content: `
-Đánh giá xem doanh nghiệp của bạn đã sẵn sàng tăng tốc mở rộng quy mô hay chưa qua **15 câu hỏi chiến lược**:
+### Tư vấn lộ trình mất bao lâu?
 
-#### Nhóm 1: Sự Phù Hợp Sản Phẩm với Thị Trường (Product-Market Fit)
-- [ ] **1. Tỷ lệ khách hàng hài lòng và giới thiệu đạt chuẩn:** Khách hàng cũ sẵn sàng giới thiệu bạn bè hoặc có tỷ lệ mua lại ổn định.
-- [ ] **2. Lý do mua hàng rõ ràng:** Bạn biết chính xác vì sao khách hàng chọn bạn chứ không chọn đối thủ cạnh tranh lớn nhất.
-- [ ] **3. Năng lực cung ứng dịch vụ không bị nghẽn:** Nếu số lượng đơn hàng tăng gấp đôi vào tháng sau, đội ngũ vận hành của bạn vẫn đảm bảo chất lượng cam kết.
-- [ ] **4. Biên lợi nhuận gộp đủ dày:** Biên lợi nhuận gộp đạt tối thiểu từ 35% trở lên để có đủ không gian chi trả cho chi phí tiếp thị và bán hàng.
+Phần kiểm tra và lập lộ trình nhanh hay chậm tùy số kênh đang chạy và độ đầy đủ của số liệu. SOHO báo thời gian cụ thể sau buổi trao đổi đầu tiên. Lộ trình sau đó được thực hiện trong 30 đến 90 ngày.
 
-#### Nhóm 2: Sự Sẵn Sàng Về Mặt Dữ Liệu & Quy Trình (Data & Sales Alignment)
-- [ ] **5. Quy trình bán hàng (Sales Process) được chuẩn hóa:** Đội ngũ kinh doanh có kịch bản tư vấn rõ ràng, tỷ lệ chốt đơn trung bình được đo lường cụ thể.
-- [ ] **6. Hệ thống CRM quản lý khách hàng hoạt động ổn định:** Không có tình trạng thông tin khách hàng bị ghi chép phân mảnh trên sổ tay hay file Excel cá nhân.
-- [ ] **7. Thời gian phản hồi khách hàng dưới 15 phút:** Có cơ chế thông báo và phân bổ lead tự động cho nhân viên sales ngay khi có khách đăng ký.
-- [ ] **8. Dữ liệu Google Analytics 4 được cài đặt chuẩn xác:** Đo lường chính xác các điểm chạm và chi phí mua một khách hàng tiềm năng.
+### Có cần thuê SOHO làm luôn các kênh sau khi tư vấn không?
 
-#### Nhóm 3: Tư Duy Lãnh Đạo & Nguồn Lực Cam Kết (Mindset & Resources)
-- [ ] **9. Ban lãnh đạo đồng thuận 100% về mục tiêu ưu tiên:** Không có sự xung đột hay mâu thuẫn về mặt định hướng giữa các cổ đông sáng lập.
-- [ ] **10. Ngân sách tiếp thị được cam kết tối thiểu 6 tháng:** Doanh nghiệp có nguồn tài chính dự phòng ổn định, không bị áp lực phải có lãi ngay sau 2 tuần đầu tiên.
-- [ ] **11. Văn hóa thử nghiệm và chấp nhận sai lầm có kiểm soát:** Sẵn sàng thử nghiệm các ý tưởng mới và dám cắt bỏ các hoạt động kém hiệu quả.
-- [ ] **12. Có nhân sự nội bộ chuyên trách phối hợp:** Có ít nhất một nhân sự marketing hoặc trợ lý dự án làm đầu mối phối hợp hàng ngày cùng đội ngũ tư vấn.
-- [ ] **13. Sự minh bạch về mặt số liệu kinh doanh:** Sẵn sàng chia sẻ trung thực các số liệu về doanh thu, chi phí và lợi nhuận với chuyên gia tư vấn.
-- [ ] **14. Tốc độ ra quyết định nhanh chóng:** Các đề xuất cải tiến được phê duyệt và đưa vào thử nghiệm trong vòng không quá 48 giờ.
-- [ ] **15. Cam kết tuân thủ lộ trình Sprint:** Đội ngũ thực thi kiên trì bám sát kế hoạch hành động đã được thống nhất, không bị xao nhãng bởi các ý tưởng bộc phát giữa chừng.
-`
-    },
-    {
-      id: 'faq-growth-strategy-sprint',
-      heading: '8. Câu hỏi thường gặp (FAQ chuẩn Schema)',
-      content: `
-### Câu hỏi 1: Doanh nghiệp quy mô bao nhiêu thì nên tham gia chương trình Growth Strategy Sprint của SOHO?
-**Trả lời:** Chương trình được thiết kế tối ưu nhất cho 2 nhóm đối tượng:
-1. **Doanh nghiệp vừa và nhỏ (SME) đang tạo ra doanh thu từ 500 triệu đến 5 tỷ VNĐ/tháng:** Doanh nghiệp đã vượt qua giai đoạn khởi nghiệp ban đầu, có sản phẩm tốt nhưng đang bị chững lại về mặt doanh số và không biết làm cách nào để bứt phá lên quy mô tiếp theo.
-2. **Các doanh nghiệp truyền thống đang chuyển đổi số (Digital Transformation):** Doanh nghiệp trước đây chủ yếu sống bằng mối quan hệ cá nhân hoặc kênh đại lý offline, nay muốn xây dựng một hệ thống tiếp thị số bài bản để chủ động tìm kiếm khách hàng mới.
+Không bắt buộc. Lộ trình viết để đội ngũ của bạn hoặc bất kỳ đơn vị nào cũng làm theo được. Nếu muốn SOHO làm tiếp, từng kênh có trang dịch vụ riêng.
 
-### Câu hỏi 2: Sau khi hoàn thành bản chiến lược Sprint, SOHO có trực tiếp triển khai thực thi luôn không?
-**Trả lời:** **Có, đây chính là thế mạnh vượt trội của SOHO Agency!**
-* Khác với các công ty tư vấn thuần túy chỉ bán bản kế hoạch rồi rời đi, SOHO là một **Full-Service Growth Agency** sở hữu đầy đủ các đội ngũ chuyên gia thực chiến hàng đầu về: SEO Tổng Thể, Google Ads, Meta/TikTok Ads, Thiết kế Landing Page CRO và Quản trị Dữ liệu GA4.
-* Sau khi thống nhất lộ trình Sprint, doanh nghiệp có thể lựa chọn:
-  * Phương án 1: Để SOHO trực tiếp đảm nhận toàn bộ việc triển khai các hạng mục kỹ thuật cốt lõi theo bộ chỉ số đã thống nhất.
-  * Phương án 2: Để SOHO đóng vai trò cố vấn chuyên môn (Advisory Board) huấn luyện và giám sát đội ngũ marketing in-house của doanh nghiệp tự triển khai.
+### Ngân sách nhỏ có nên làm không?
 
-### Câu hỏi 3: Chi phí cho một chương trình Growth Strategy Sprint là bao nhiêu và thời gian hoàn vốn ước tính như thế nào?
-**Trả lời:** Chi phí tư vấn Sprint tại SOHO được tính toán dựa trên quy mô và mức độ phức tạp của mô hình kinh doanh của doanh nghiệp:
-* Khoản đầu tư này thường chỉ tương đương với mức lương 1 đến 2 tháng của một Giám đốc Tiếp thị (CMO) cấp cao, nhưng mang lại cho bạn sự phục vụ của một hội đồng chuyên gia đa ngành có hơn 10 năm kinh nghiệm thực chiến.
-* Về mặt hoàn vốn: SOHO không hứa trước thời gian hoàn vốn, vì nó phụ thuộc ngân sách, biên lợi nhuận và tốc độ triển khai của từng doanh nghiệp. Sau buổi khảo sát, SOHO chỉ ra những kênh đang tốn tiền mà chưa mang khách về, để bạn tự ước tính khoản có thể tiết kiệm.
+Ngân sách càng nhỏ, chọn sai kênh càng đau. Lộ trình giúp dồn tiền vào ít việc nhất mà có tác động lớn nhất. Nếu ngân sách quá nhỏ để thử bất kỳ kênh trả tiền nào, lộ trình sẽ tập trung vào việc ít tốn tiền: hồ sơ Google, website, nội dung, cách trả lời khách.
+
+### Doanh nghiệp chưa có số liệu thì làm thế nào?
+
+Vẫn làm được, nhưng chặng đầu sẽ dành nhiều hơn cho việc cài đo lường và ghi lại nguồn khách. Sau 30 ngày đầu có số thật, lộ trình được điều chỉnh lại.
+
+### Lộ trình khác gì một bản kế hoạch marketing năm?
+
+Kế hoạch năm thường dài, nhiều mục tiêu và khó cập nhật. Lộ trình 90 ngày ngắn hơn, ít việc hơn, có điều kiện dừng rõ và được rà lại mỗi 2 tuần. Hết 90 ngày, bạn có số thật để lập chặng tiếp theo.
 `
     }
   ]

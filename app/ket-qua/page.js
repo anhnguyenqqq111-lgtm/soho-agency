@@ -7,43 +7,43 @@ import PageHeader from '../../components/ui/PageHeader';
 import Section from '../../components/ui/Section';
 import CtaBand from '../../components/ui/CtaBand';
 import PartnerStrip from '../../components/proof/PartnerStrip';
-import {ResultsScatter, ProjectsSection, ReportExplainer, QuotesSection} from '../../components/sq/Blocks';
+import {ResultsScatter, ProjectsSection, ReportExplainer, ReportLive, QuotesSection} from '../../components/sq/Blocks';
 import {PAGE_CTA} from '../../components/data/contactVariants';
 import {clients} from '../../components/data/clients';
 import LogoMarquee from '../../components/proof/LogoMarquee';
 
 export const metadata = {
   alternates: {canonical: '/ket-qua/'},
-  title: 'Dự án SOHO đã làm và cách đo kết quả',
+  title: 'Dự án tiêu biểu và cách SOHO đo kết quả',
   description:
-    'Le Viva Resort, King Decor Luxury, Kronos Luxury Timepieces, Helen Bridal: bối cảnh, việc SOHO đã làm và kết quả. Cách SOHO đo từng kênh bằng đơn hàng và doanh thu.',
-  openGraph: {images: [{url: '/og/soho-projects-og.png', width: 1200, height: 630, alt: 'Dự án thật và kết quả SOHO đã công bố'}]}
+    'Dự án tiêu biểu của SOHO như Le Viva Resort, Studio 1 Nhà, Everest Logistics: bối cảnh, việc đã làm, kết quả có nguồn. Kèm cách SOHO đo từng kênh bằng đơn hàng và doanh thu.',
+  openGraph: {images: [{url: '/og/soho-projects-og.png', width: 1200, height: 630, alt: 'Dự án tiêu biểu và kết quả nổi bật của SOHO'}]}
 };
 
 // Bảng đo theo kênh: viết bằng tiếng Việt, thuật ngữ tiếng Anh (nếu cần) để trong ngoặc
 const channels = [
   {
     name: 'SEO',
-    weekly: 'Bạn hiện ra ở bao nhiêu câu tìm kiếm của người muốn mua, lỗi nào khiến Google không đọc được trang',
-    monthly: 'Số người để lại thông tin và doanh thu đến từ Google (không trả tiền)',
-    notKpi: 'Tổng lượt vào web, số bài viết, số đường dẫn từ web khác'
+    weekly: 'Website xuất hiện ở bao nhiêu từ khóa khách hay tìm khi muốn mua. Lỗi nào khiến Google không đọc được trang',
+    monthly: 'Số khách hàng tiềm năng và doanh thu đến từ Google tự nhiên (không qua quảng cáo)',
+    notKpi: 'Tổng lượt truy cập, số bài viết, số backlink (liên kết từ website khác)'
   },
   {
     name: 'Quảng cáo',
-    weekly: 'Tốn bao nhiêu cho mỗi người hỏi mua, bỏ ra bao nhiêu mang về bao nhiêu, từ khóa nào tốn tiền mà không ra khách',
-    monthly: 'Tốn bao nhiêu để có một khách mua, lãi theo từng chiến dịch',
-    notKpi: 'Giá mỗi lượt bấm, tỉ lệ bấm, số lần quảng cáo hiện ra'
+    weekly: 'Chi phí cho mỗi khách hàng tiềm năng, mỗi đồng quảng cáo mang về bao nhiêu doanh thu, từ khóa nào tốn tiền mà không ra khách',
+    monthly: 'Chi phí cho mỗi đơn hàng, lợi nhuận theo từng chiến dịch',
+    notKpi: 'Giá mỗi lượt nhấp, tỉ lệ nhấp, lượt hiển thị'
   },
   {
-    name: 'Trang bán hàng',
-    weekly: 'Trong 100 người vào trang, bao nhiêu người để lại số, chia theo trang và theo điện thoại hay máy tính',
-    monthly: 'Tăng bao nhiêu sau mỗi lần sửa thử',
-    notKpi: 'Thời gian khách ở lại trang'
+    name: 'Landing page',
+    weekly: 'Tỉ lệ chuyển đổi: cứ 100 lượt truy cập thì bao nhiêu người để lại thông tin. Xem riêng từng trang, trên điện thoại và máy tính',
+    monthly: 'Tỉ lệ chuyển đổi tăng bao nhiêu sau mỗi lần thử nghiệm',
+    notKpi: 'Thời gian ở lại trang'
   },
-  {name: 'Nội dung', weekly: 'Tiến độ đăng bài, bình luận và tin nhắn hỏi thật', monthly: 'Số khách đã đọc bài trước khi liên hệ', notKpi: 'Lượt xem, lượt thích'},
+  {name: 'Nội dung', weekly: 'Tiến độ đăng bài, số bình luận và tin nhắn hỏi thật về sản phẩm', monthly: 'Số khách đã đọc bài trước khi liên hệ', notKpi: 'Lượt xem, lượt thích'},
   {
     name: 'Đo lường',
-    weekly: 'Hành động nào bị đếm thiếu hoặc đếm hai lần',
+    weekly: 'Chỗ nào đang đếm thiếu hoặc đếm trùng (cuộc gọi, tin nhắn, đơn hàng)',
     monthly: 'Số của quảng cáo, Google Analytics và sổ bán hàng có khớp nhau không',
     notKpi: 'Số biểu đồ trên báo cáo'
   }
@@ -59,18 +59,18 @@ export default function ResultsPage() {
           crumbs={[{label: 'Dự án'}]}
           title={
             <>
-              Dự án SOHO đã làm, <span className="hl">kể bằng kết quả</span>
+              Dự án tiêu biểu của SOHO <span className="hl">và kết quả đạt được</span>
             </>
           }
-          tagline="Một khu nghỉ dưỡng, một đơn vị thi công quán cà phê và homestay, một nhà phân phối đồng hồ, một studio ảnh cưới, và một studio chụp ảnh xin giữ kín tên. Mỗi dự án kể bối cảnh, việc SOHO làm và kết quả có nguồn."
+          tagline="Từ khu nghỉ dưỡng, đơn vị thi công quán cà phê, nhà phân phối đồng hồ, studio ảnh cưới đến công ty logistics và xưởng may. Mỗi dự án ghi rõ bối cảnh, việc SOHO làm và kết quả, kèm nguồn số liệu."
           visual={<ResultsVisual />}
         />
         <PageHeader
           title="Đo bằng đơn hàng, không bằng lượt xem"
-          lead="Lượt truy cập và lượt bấm vẫn được theo dõi, nhưng không phải thước đo chính. SOHO nối số liệu quảng cáo với số đơn và doanh thu trong sổ bán hàng của bạn."
+          lead="Lượt truy cập và lượt nhấp vẫn được theo dõi, nhưng không phải thước đo chính. SOHO đối chiếu số liệu quảng cáo với số đơn và doanh thu trong sổ bán hàng của bạn."
         />
 
-        <ResultsScatter title="Ba con số khách đã cho phép công bố" showLink={false} />
+        <ResultsScatter title="Ba kết quả nổi bật" showLink={false} />
         <ProjectsSection all showLink={false} />
         <section className="bg-white" style={{paddingBottom: 'var(--space-sm)'}}>
           <div className={`container ${styles.partners}`}>
@@ -84,13 +84,13 @@ export default function ResultsPage() {
           decor="chart"
           title={
             <>
-              Mỗi kênh, SOHO <span className="hl">xem con số nào</span>
+              Mỗi kênh, SOHO <span className="hl">theo dõi chỉ số nào</span>
             </>
           }
           kicker="Cách SOHO đo"
-          intro="Cột cuối là những con số đẹp nhưng không nói lên doanh thu. SOHO vẫn theo dõi, chỉ không dùng để chấm điểm việc làm."
+          intro="Cột cuối là những con số đẹp nhưng không nói lên doanh thu. SOHO vẫn theo dõi, nhưng không dùng để đánh giá hiệu quả."
         >
-          <div className={styles.tableWrap} tabIndex={0} role="region" aria-label="Bảng con số theo kênh">
+          <div className={styles.tableWrap} tabIndex={0} role="region" aria-label="Bảng chỉ số theo kênh">
             <table className={styles.table}>
               <thead>
                 <tr>
@@ -117,6 +117,7 @@ export default function ResultsPage() {
         </Section>
 
         <ReportExplainer tone="white" />
+        <ReportLive tone="tint" idPrefix="rpk" />
         <QuotesSection tone="tint" />
 
         <CtaBand

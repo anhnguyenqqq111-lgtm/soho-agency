@@ -30,3 +30,10 @@ docs/redesign/figma/verify/
 
 # Log công cụ Figma (máy cục bộ)
 design/
+
+# Ảnh ứng viên tải từ Wikimedia Commons cho bài dịch vụ (nặng, tải lại được bằng tools/service-visuals/fetch.py)
+docs/articles/*/photos/
+
+# Ảnh sơ đồ render ra trong docs (tái tạo từ images/src/*.data.js bằng tools/soho-images)
+docs/articles/*/images/*.webp
+docs/articles/*/images/*.png

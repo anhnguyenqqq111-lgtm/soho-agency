@@ -1,205 +1,207 @@
 export const croLandingPageArticle = {
-  metaTitle: 'Tối Ưu Tỷ Lệ Chuyển Đổi (CRO) & Landing Page 2026: Biến Traffic Thành Doanh Thu Đột Phá | SOHO',
+  metaTitle: 'Tối ưu tỷ lệ chuyển đổi landing page | SOHO',
   metaDesc:
-    'Chiến lược tối ưu hóa tỷ lệ chuyển đổi (CRO) & thiết kế Landing Page chuyên sâu 2026. Phương pháp chẩn đoán điểm nghẽn, A/B Testing khoa học giúp nhân đôi doanh số trên lượng traffic sẵn có.',
-  readingTime: '17 phút đọc',
-  updatedDate: '04/10/2026',
-  author: {
-    name: 'Nguyễn Thế Tuấn Anh',
-    role: 'Head of Growth Strategy @ SOHO Agency'
+    'Tìm chỗ khách rời trang bằng GA4 và bản đồ nhiệt, sắp lại landing page, sửa form, tăng tốc trên điện thoại và chạy A/B test đủ mẫu, đủ thời gian.',
+  readingTime: '9 phút đọc',
+  updatedDate: '31/10/2026',
+  author: {name: 'Nguyễn Thế Tuấn Anh', role: 'Phụ trách chiến lược tăng trưởng, SOHO Agency'},
+  cover: {
+    src: '/media/articles/cro-landing-page/cro-landing-page-hero.webp',
+    alt: 'Bàn tay phác khung bố cục trang web trên giấy, ảnh đầu bài tối ưu tỷ lệ chuyển đổi landing page',
+    width: 1600,
+    height: 900
   },
+  credits: [
+    {text: 'Designer sketching Wireframes (Unsplash), Green Chameleon craftedbygc, Wikimedia Commons (CC0)', url: 'https://commons.wikimedia.org/wiki/File:Designer_sketching_Wireframes_(Unsplash).jpg'},
+    {text: 'Mobile optimization (Unsplash), NeONBRAND neonbrand, Wikimedia Commons (CC0)', url: 'https://commons.wikimedia.org/wiki/File:Mobile_optimization_(Unsplash).jpg'},
+    {text: 'Behind Doors (Unsplash), Luis Alfonso Orellana biotipografo, Wikimedia Commons (CC0)', url: 'https://commons.wikimedia.org/wiki/File:Behind_Doors_(Unsplash).jpg'}
+  ],
   toc: [
-    {id: 'tham-kich-cai-xo-thung-traffic', title: '1. Thực trạng: Bi kịch "Cái xô thủng", 98% người dùng rời đi không để lại dấu vết'},
-    {id: 'chi-phi-co-hoi-cro-kem', title: '2. Chi phí cơ hội: Đốt tiền mua thêm traffic trong khi trang đích rò rỉ chuyển đổi'},
-    {id: 'ban-chat-khoa-hoc-cro', title: '3. Bản chất Tối ưu Tỷ lệ Chuyển đổi (CRO) & Tâm lý học hành vi 2026'},
-    {id: '4-tru-cot-cro-landing-page', title: '4. 4 Trụ cột tối ưu hóa Landing Page chuyển đổi cao của SOHO'},
-    {id: 'quy-trinh-sprint-cro-testing', title: '5. Quy trình Sprint 5 bước chẩn đoán dữ liệu & A/B Testing thực chiến'},
-    {id: 'bang-so-sanh-cro-landing-page', title: '6. So sánh: Trang đích "Vẽ đẹp đơn thuần" vs Landing Page chuẩn CRO'},
-    {id: 'checklist-15-tieu-chi-cro', title: '7. Bộ Checklist 15 tiêu chí nghiệm thu Landing Page chuyển đổi cao'},
-    {id: 'faq-cro-landing-page', title: '8. Câu hỏi thường gặp (FAQ chuẩn Schema)'}
+    {id: 'khi-nao-nen-toi-uu', title: '1. Tối ưu chuyển đổi là gì, khi nào nên làm'},
+    {id: 'tim-cho-khach-roi-di', title: '2. Tìm chỗ khách rời đi trước khi sửa'},
+    {id: 'cau-truc-landing-page', title: '3. Cấu trúc một landing page dễ chuyển đổi'},
+    {id: 'form-va-nut-goi', title: '4. Form, nút gọi và trang cảm ơn'},
+    {id: 'toc-do-tren-dien-thoai', title: '5. Tốc độ trên điện thoại'},
+    {id: 'ab-test-dung-cach', title: '6. A/B test đúng cách'},
+    {id: 'cau-hoi-thuong-gap-cro', title: '7. Câu hỏi thường gặp về tối ưu chuyển đổi'}
   ],
   sections: [
     {
-      id: 'tham-kich-cai-xo-thung-traffic',
-      heading: '1. Thực trạng: Bi kịch "Cái xô thủng", 98% người dùng rời đi không để lại dấu vết',
+      id: 'khi-nao-nen-toi-uu',
+      heading: '1. Tối ưu chuyển đổi là gì, khi nào nên làm',
       content: `
-### 1.1. Thảm kịch tiếp thị phổ biến nhất: Đổ thêm nước vào chiếc xô thủng đáy
+Tỉ lệ chuyển đổi là phần trăm người vào trang rồi làm điều bạn mong: gửi form, gọi điện, nhắn tin, đặt hàng. Tối ưu chuyển đổi (CRO) là tăng tỉ lệ đó mà không cần thêm lượt truy cập.
 
-Hầu hết các nhà lãnh đạo doanh nghiệp khi thấy doanh số bán hàng trực tuyến không đạt kỳ vọng đều đưa ra cùng một phản xạ tự nhiên: *"Hãy chi thêm tiền chạy quảng cáo!"*, hoặc *"Hãy thuê thêm người viết bài SEO để kéo thêm traffic!"*.
+Một phép tính cho thấy vì sao việc này đáng làm. Ví dụ minh họa: mỗi tháng 2.000 lượt truy cập từ quảng cáo, tốn 20 triệu đồng, trang chuyển đổi 2%, tức 40 khách liên hệ. Chi phí mỗi khách là 500.000 đồng. Sửa trang để tỉ lệ lên 3%, cùng 20 triệu đồng ra 60 khách. Chi phí mỗi khách còn khoảng 333.000 đồng, không cần trả thêm đồng quảng cáo nào.
 
-Tuy nhiên, số liệu thực tế tại hơn 100 cuộc kiểm toán trang đích do SOHO thực hiện đã chỉ ra một sự thật cay đắng:
-* **Trung bình 97% đến 99% người truy cập vào website của bạn rời đi mà không bao giờ quay lại.**
-* Tỷ lệ chuyển đổi (Conversion Rate, CR) trung bình của các trang đích tại Việt Nam chỉ dao động ở mức từ **0.8% đến 1.5%**. Điều này đồng nghĩa với việc: Cứ mỗi 100 khách hàng tiềm năng mà bạn đã tốn tiền kéo vào website, có tới 99 người lặng lẽ bấm nút thoát trang.
+Nên làm khi:
 
-Nếu chiếc xô của bạn đang bị thủng hàng chục lỗ lớn dưới đáy, việc tiếp tục mở van xối thêm hàng trăm mét khối nước (mua thêm traffic) chỉ làm bạn tốn tiền nước hơn mà chiếc xô thì không bao giờ đầy. **Giải pháp thông minh duy nhất là phải vá chiếc xô trước khi bơm thêm nước**.
+- Đã có lượt truy cập đều từ Google, quảng cáo hoặc mạng xã hội.
+- Đang trả tiền quảng cáo và thấy chi phí mỗi khách cao dần.
+- Lượt truy cập không ít mà form, cuộc gọi về rất ít.
 
-### 1.2. 3 Điểm mù khiến người dùng thoát trang ngay trong 5 giây đầu tiên
+Chưa nên làm, hoặc làm việc khác trước, khi:
 
-1. **Khối Hero mơ hồ, nói quá nhiều về bản thân (Self-Centered Messaging):**
-   Người dùng bước vào trang web chỉ thấy những câu khẩu hiệu chung chung sáo rỗng: *"Đơn vị tiên phong hàng đầu...", "Uy tín, Tận tâm, Chuyên nghiệp..."*. Họ không tìm thấy câu trả lời cho câu hỏi ích kỷ quan trọng nhất của họ: *"Giải pháp này giải quyết được vấn đề gì cho tôi và tại sao tôi phải tin các bạn?"*.
-
-2. **Điểm ma sát trải nghiệm quá lớn (High Friction):**
-   Biểu mẫu đăng ký đòi hỏi quá nhiều thông tin không cần thiết (hỏi cả số CMND, địa chỉ nhà, ngân sách chi tiết khi khách còn chưa biết bạn là ai); nút bấm mờ nhạt khó tìm; trang bị giật lag trên điện thoại di động khiến người dùng bực mình thoát trang.
-
-3. **Thiếu bằng chứng xác thực (Zero Social Proof):**
-   Không có hình ảnh khách hàng thật, không có logo đối tác có thể kiểm chứng, không có số liệu case study thực tế. Trong một thế giới đầy rẫy sự hoài nghi và lừa đảo trực tuyến, việc thiếu bằng chứng thực tế đồng nghĩa với việc đánh mất hoàn toàn niềm tin của người mua hàng.
+- Trang chỉ có vài chục lượt truy cập mỗi tháng. Số liệu quá ít để biết thay đổi nào có tác dụng. Lúc này cần thêm lượt truy cập trước, xem [trang Google Ads và Shopping](/dich-vu/google-ads-shopping/) hoặc [trang Quảng cáo Facebook và TikTok](/dich-vu/meta-tiktok-ads/).
+- Giá hoặc sản phẩm không cạnh tranh. Trang tốt không bù được ưu đãi kém.
+- Cả website cũ, chậm, khó sửa. Khi đó nên làm lại website, xem [trang Thiết kế website](/dich-vu/thiet-ke-website/).
 `
     },
     {
-      id: 'chi-phi-co-hoi-cro-kem',
-      heading: '2. Chi phí cơ hội: Đốt tiền mua thêm traffic trong khi trang đích rò rỉ chuyển đổi',
+      id: 'tim-cho-khach-roi-di',
+      heading: '2. Tìm chỗ khách rời đi trước khi sửa',
       content: `
-### 2.1. Đòn bẩy tài chính kỳ diệu của Tối ưu Tỷ lệ Chuyển đổi (CRO)
+Lỗi hay gặp nhất là sửa theo cảm giác: đổi màu nút, thay ảnh nền, rồi chờ. Muốn sửa đúng chỗ, cần biết khách rời đi ở đâu và vì sao. Có ba nguồn bổ sung cho nhau.
 
-Hãy làm một phép tính kinh tế đơn giản để thấy được sức mạnh khổng lồ của CRO đối với sự sống còn của doanh nghiệp:
+### Phễu trong GA4: rời đi ở bước nào
 
-* **Trường hợp A (Không làm CRO, Chỉ tăng ngân sách Ads):**
-  * Lượng truy cập: 20.000 lượt/tháng.
-  * Tỷ lệ chuyển đổi hiện tại: **1.0%** -> Thu được **200 lead**.
-  * Để tăng gấp đôi số lead lên **400 lead**, bạn bắt buộc phải chi thêm gấp đôi tiền quảng cáo (tăng ngân sách từ 100 triệu lên 200 triệu VNĐ/tháng). Chi phí kinh doanh tăng vọt và rủi ro tài chính nhân đôi.
+Báo cáo khám phá phễu của GA4 cho bạn đặt các bước khách cần đi qua, tối đa 10 bước, rồi xem bao nhiêu người rơi ra ở mỗi bước ([Analytics Help](https://support.google.com/analytics/answer/9327974?hl=en)). Ví dụ: vào trang, cuộn tới bảng giá, mở form, gửi form. Bạn có thể chia phễu theo thiết bị để so điện thoại với máy tính. Chênh lệch lớn giữa hai loại thiết bị thường là manh mối đầu tiên.
 
-* **Trường hợp B (Đầu tư tối ưu CRO bài bản cùng SOHO):**
-  * Ngân sách quảng cáo giữ nguyên 100 triệu VNĐ (vẫn 20.000 lượt truy cập).
-  * SOHO tối ưu thông điệp, gỡ bỏ ma sát và tăng bằng chứng uy tín, giúp tỷ lệ chuyển đổi tăng từ **1.0% lên 2.5%**.
-  * Số lượng lead thu về tăng vọt từ 200 lên **500 lead/tháng** (tăng thêm 150% doanh số) mà **không tốn thêm một đồng ngân sách quảng cáo nào**.
-  * Chi phí trên mỗi khách hàng (CPA) giảm hơn một nửa, giúp biên lợi nhuận ròng của doanh nghiệp tăng trưởng bứt phá ngay lập tức.
+Phễu chỉ đọc được khi các hành động đã được đo. Cách cài sự kiện xem ở [trang Đo lường GA4 và Looker Studio](/dich-vu/ga4-looker-dashboard/).
+
+![Bốn bước tìm chỗ khách rời landing page: phễu GA4, bản đồ nhiệt, ghi phiên, hỏi nhân viên](/media/articles/cro-landing-page/soho-cro-landing-page-steps-01.webp "1360x850")
+*Phễu cho biết khách rời ở bước nào. Bản đồ nhiệt, ghi phiên và nhân viên bán hàng cho biết vì sao.*
+
+### Bản đồ nhiệt và ghi phiên: vì sao rời đi
+
+Bản đồ nhiệt cho thấy chỗ khách nhấp và họ cuộn tới đâu. Ghi phiên cho xem lại thao tác của từng người, đã che thông tin cá nhân. [Microsoft Clarity](https://learn.microsoft.com/en-us/clarity/setup-and-installation/about-clarity) là công cụ miễn phí có cả hai. Microsoft lưu ý không dùng Clarity cho website hay ứng dụng nhắm tới người dưới 18 tuổi.
+
+Những điều hay phát hiện khi xem ghi phiên:
+
+- Khách nhấp vào ảnh hoặc chữ tưởng là nút, nhưng không có gì xảy ra.
+- Phần lớn khách không cuộn tới phần bằng chứng hay bảng giá.
+- Khách mở form, điền nửa chừng rồi bỏ ở một ô cụ thể.
+
+### Hỏi người đang nói chuyện với khách
+
+Nhân viên bán hàng biết khách hỏi gì trước khi chốt, lo điều gì, so sánh với ai. Câu hỏi nào lặp lại nhiều mà trang chưa trả lời, đó là chỗ cần bổ sung. Đọc lại tin nhắn và ghi chú cuộc gọi cũ cũng cho kết quả tương tự.
 `
     },
     {
-      id: 'ban-chat-khoa-hoc-cro',
-      heading: '3. Bản chất Tối ưu Tỷ lệ Chuyển đổi (CRO) & Tâm lý học hành vi 2026',
+      id: 'cau-truc-landing-page',
+      heading: '3. Cấu trúc một landing page dễ chuyển đổi',
       content: `
-### 3.1. CRO là gì?
+Landing page là trang khách vào sau khi nhấp quảng cáo hay kết quả tìm kiếm. Nó có một việc duy nhất: giúp khách quyết định bước tiếp theo. Thứ tự dưới đây đi theo câu hỏi trong đầu khách.
 
-**Conversion Rate Optimization (CRO, Tối ưu hóa Tỷ lệ Chuyển đổi)** là phương pháp luận khoa học kết hợp giữa **phân tích dữ liệu hành vi người dùng (Data Analytics)** và **tâm lý học hành vi người tiêu dùng (Behavioral Psychology)** nhằm mục đích: loại bỏ các rào cản ngăn trở khách hàng và gia tăng tối đa tỷ lệ người truy cập thực hiện hành vi có giá trị kinh tế (điền form, gọi điện, đặt hàng, ký hợp đồng).
+![Danh sách sáu phần của một landing page theo thứ tự câu hỏi của khách](/media/articles/cro-landing-page/soho-cro-landing-page-checklist-01.webp "1360x1360")
+*Mỗi phần trả lời một câu hỏi. Thiếu phần nào, khách dừng ở đó.*
 
-### 3.2. Công thức chuyển đổi hành vi Fogg (BJ Fogg Behavior Model)
+1. **Phần đầu trang khớp với điều khách vừa tìm hay vừa xem.** Quảng cáo nói "chụp ảnh cưới trọn gói dưới 20 triệu" thì tiêu đề trang nói đúng điều đó, không mở bằng câu giới thiệu công ty. Nút liên hệ nằm ngay màn hình đầu.
+2. **Vấn đề của khách.** Hai ba câu mô tả tình huống họ đang gặp, bằng lời của họ.
+3. **Cách bạn giải quyết.** Gồm những gì, làm thế nào, mất bao lâu. Ngắn, cụ thể.
+4. **Bằng chứng.** Ảnh dự án thật, đánh giá của khách có tên, con số có nguồn, logo đối tác nếu được phép.
+5. **Giá hoặc cách tính giá.** Không công khai giá được thì nói giá phụ thuộc gì và bao lâu có báo giá.
+6. **Câu hỏi thường gặp và lời mời cuối trang.** Trả lời nỗi lo còn lại, rồi đặt nút liên hệ lần nữa.
 
-Tại SOHO Agency, mọi quyết định chỉnh sửa giao diện đều dựa trên mô hình khoa học Fogg: **Hành vi (Behavior) = Động lực (Motivation) x Khả năng thực hiện (Ability) x Lời nhắc nhở (Prompt)**.
-
-Để một khách hàng quyết định điền form trên trang đích của bạn:
-1. **Động lực phải đủ lớn (High Motivation):** Lời hứa giá trị (Value Proposition) phải gãi đúng nỗi đau lớn nhất và mang lại lợi ích không thể cưỡng lại.
-2. **Khả năng thực hiện phải cực kỳ dễ dàng (High Ability / Low Friction):** Trang phải tải nhanh như chớp, các bước thao tác đơn giản đến mức một người không rành công nghệ cũng có thể hoàn thành trong 15 giây.
-3. **Lời nhắc nhở phải đúng thời điểm (Timely Prompt):** Các nút kêu gọi hành động (CTA) xuất hiện đúng vào thời điểm khách hàng vừa đọc xong một bằng chứng thuyết phục nhất.
+Mỗi trang chỉ nên có một việc chính cho khách làm. Trang vừa mời đặt lịch, vừa mời tải tài liệu, vừa mời theo dõi fanpage sẽ chia nhỏ sự chú ý. Nếu chạy quảng cáo cho nhiều nhóm khách khác nhau, làm nhiều trang, mỗi trang khớp với một nhóm, thay vì một trang chung cho tất cả.
 `
     },
     {
-      id: '4-tru-cot-cro-landing-page',
-      heading: '4. 4 Trụ cột tối ưu hóa Landing Page chuyển đổi cao của SOHO',
+      id: 'form-va-nut-goi',
+      heading: '4. Form, nút gọi và trang cảm ơn',
       content: `
-SOHO kiến tạo các trang đích có tỷ lệ chuyển đổi vượt trội dựa trên **4 trụ cột thiết kế khoa học**:
+Khách đã muốn liên hệ mà vẫn bỏ đi thường vì bước cuối quá phiền.
 
-### Trụ cột 1: Kiến trúc Lời hứa Giá trị (Value Proposition Architecture)
-Khối đầu trang (Hero Section) quyết định 80% thành bại của trang đích:
-* **Tiêu đề đập tan nỗi đau (Headline Formula):** Nêu rõ kết quả mong muốn của khách hàng + Thời gian đạt được + Xóa bỏ rủi ro e ngại lớn nhất.
-* **Hình ảnh minh họa sản phẩm/giải pháp thực tế (Hero Visual Context):** Không dùng hình ảnh stock vô hồn; sử dụng mockup giao diện phần mềm thật, hình ảnh chuyên gia đang tư vấn, hoặc biểu đồ kết quả kinh doanh thực tế.
-* **Thanh bảo chứng xã hội ngay trên màn hình đầu tiên (Above-the-fold Social Proof):** Đặt logo các khách hàng tiêu biểu, điểm đánh giá 4.8/5 sao và các chứng nhận uy tín ngay dưới nút kêu gọi hành động chính.
+### Form: chỉ hỏi điều cần để gọi lại
 
-### Trụ cột 2: Hệ thống Giải tỏa Lo âu & Bằng chứng Xã hội (Anxiety Relief & Proof)
-Khách hàng không mua hàng vì họ lo sợ: sợ bị lừa, sợ mua hớ, sợ sản phẩm không dùng được, sợ bị lộ thông tin cá nhân. SOHO xóa bỏ hoàn toàn nỗi sợ này bằng:
-* **Huy hiệu bảo vệ rủi ro (Risk-Reversal Guarantees):** Cam kết hoàn tiền có điều kiện rõ ràng, cam kết bảo mật thông tin theo thỏa thuận NDA pháp lý.
-* **Case Study có chiều sâu:** Kể lại câu chuyện chuyển biến thực tế của khách hàng: *Thách thức ban đầu ➔ SOHO đã giải quyết ra sao ➔ Kết quả tăng trưởng đo lường bằng số liệu*.
-* **Lời nhận xét định danh minh bạch:** Bắt buộc có chân dung thật, tên đầy đủ, chức danh nghề nghiệp và tên công ty của người đánh giá.
+- Mỗi ô thêm vào là thêm một lý do để bỏ. Hỏi tên, số điện thoại và một câu về nhu cầu là đủ để bắt đầu. Ngân sách, địa chỉ, thời gian có thể hỏi khi gọi lại.
+- Nói rõ vì sao xin số điện thoại và khi nào sẽ được gọi: "Chúng tôi gọi lại trong giờ làm việc, không gửi tin quảng cáo."
+- Dùng đúng loại ô để điện thoại bật bàn phím số khi nhập số.
+- Báo lỗi ngay tại ô sai, bằng lời dễ hiểu, không xóa những gì khách đã điền.
 
-### Trụ cột 3: Thiết kế Biểu mẫu Tối giản Điểm Ma sát (Frictionless Form Design)
-* **Quy tắc "Chỉ hỏi điều tối cần thiết":** Trong giai đoạn đầu, chỉ yêu cầu 3 trường thông tin: Họ tên, Số điện thoại và Email công việc. Mỗi trường thông tin thừa thãi thêm vào sẽ làm giảm từ 10% đến 25% tỷ lệ hoàn tất form.
-* **Biểu mẫu đa bước thông minh (Multi-Step Form):** Đối với các dịch vụ B2B phức tạp, chia nhỏ form thành 2 bước nhẹ nhàng: Bước 1 chọn mục tiêu bài toán (rất dễ, kích thích tò mò), Bước 2 mới nhập thông tin liên hệ để nhận đề xuất chi tiết.
+### Nút bấm: nói điều sẽ xảy ra
 
-### Trụ cột 4: Tốc độ Tải trang & Trải nghiệm Di động Hoàn hảo (Mobile-First Performance)
-Hơn 75% lưu lượng truy cập hiện nay đến từ điện thoại di động:
-* **Điểm Google PageSpeed Mobile đạt trên 90 điểm:** Loại bỏ các hiệu ứng thừa thãi làm nặng máy, tối ưu mã nguồn CSS/JS và nén ảnh thế hệ mới WebP.
-* **Thiết kế thân thiện với ngón tay cái (Thumb-Zone Friendly):** Các nút bấm CTA có kích thước tối thiểu 48x48px, đặt ở vị trí ngón tay cái dễ dàng chạm tới mà không cần phải với tay lên đỉnh màn hình.
+"Gửi" không cho khách biết gì. "Nhận báo giá trong 24 giờ" hay "Giữ lịch tư vấn" rõ hơn nhiều. Trên điện thoại, một thanh nút cố định ở cạnh dưới màn hình với Gọi ngay, Nhắn Zalo hay Messenger giúp khách liên hệ lúc nào cũng được, không phải cuộn ngược lên.
+
+Có khách thích nhắn tin, có khách thích gọi, có khách chỉ muốn để lại số. Cho họ chọn kênh, đừng ép một kênh.
+
+### Trang cảm ơn: đừng để khách rơi vào khoảng trống
+
+Sau khi gửi form, đưa khách tới trang cảm ơn: nói rõ bước tiếp theo, bao lâu có người liên hệ, kèm vài bài hoặc dự án để xem trong lúc chờ. Trang cảm ơn riêng cũng giúp đo chuyển đổi chính xác hơn.
 `
     },
     {
-      id: 'quy-trinh-sprint-cro-testing',
-      heading: '5. Quy trình Sprint 5 bước chẩn đoán dữ liệu & A/B Testing thực chiến',
+      id: 'toc-do-tren-dien-thoai',
+      heading: '5. Tốc độ trên điện thoại',
       content: `
-Dự án tối ưu hóa CRO tại SOHO không dựa trên cảm tính của nhà thiết kế; chúng tôi vận hành theo phương pháp luận khoa học thực nghiệm:
+Khách từ quảng cáo Facebook, TikTok thường mở trang ngay trong ứng dụng trên điện thoại, nhiều khi bằng mạng di động. Trang trắng vài giây là họ quay lại lướt tiếp.
 
-### Bước 1: Thu Thập & Phân Tích Dữ Liệu Hành Vi Định Lượng (Quantitative Audit)
-* Cài đặt phần mềm ghi lại phiên người dùng và bản đồ nhiệt (Hotjar / Microsoft Clarity / Google Analytics 4).
-* Phân tích phễu chuyển đổi (Funnel Drop-off Analysis) để tìm ra chính xác màn hình hoặc vị trí nào đang có tỷ lệ người dùng bấm thoát trang cao nhất.
+![Bàn tay cầm điện thoại đang mở một trang web, minh họa khách đọc landing page trên di động](/media/articles/cro-landing-page/cro-landing-page-anh-01.webp "1200x800")
+*Khách từ quảng cáo mạng xã hội phần lớn mở trang trên điện thoại, nhiều khi bằng mạng di động.*
 
-### Bước 2: Nghiên Cứu Định Tính & Phỏng Vấn Rào Cản Tâm Lý (Qualitative Research)
-* Phân tích các cuộc gọi bán hàng và khảo sát ý kiến khách hàng vừa mua hàng để tìm hiểu lý do vì sao họ từng do dự trước khi quyết định.
-* Liệt kê danh sách 10 điểm ma sát (Friction Points) và sự bất an lớn nhất của người dùng trên trang hiện tại.
+### Ba chỉ số Google dùng để đo trải nghiệm
 
-### Bước 3: Thiết Lập Giả Thuyết Tăng Trưởng & Thiết Kế Biến Thể Thử Nghiệm
-* Đặt ra các giả thuyết có tính định lượng: *"Nếu chúng tôi đổi tiêu đề sang tập trung vào bài toán chi phí và thêm bảng so sánh 3 phương án, thì tỷ lệ điền form sẽ tăng tối thiểu 30%."*
-* Thiết kế phiên bản trang đích mới (Variant B) tối ưu hóa toàn diện cấu trúc thông điệp và trải nghiệm người dùng.
+Theo [web.dev](https://web.dev/articles/vitals), Core Web Vitals gồm ba chỉ số, kèm ngưỡng được xem là tốt:
 
-### Bước 4: Khởi Chạy Thử Nghiệm Phân Tách A/B Testing Chuẩn Khoa Học
-* Sử dụng công cụ phân bổ lưu lượng truy cập ngẫu nhiên 50/50 giữa trang gốc (Control A) và trang cải tiến (Variant B).
-* Đảm bảo thử nghiệm đạt mức ý nghĩa thống kê (Statistical Significance đạt trên 95%) để kết quả không bị ảnh hưởng bởi các yếu tố ngẫu nhiên hay mùa vụ.
+| Chỉ số | Đo điều gì | Ngưỡng tốt |
+|---|---|---|
+| LCP | Thời gian hiện phần nội dung lớn nhất | Từ 2,5 giây trở xuống |
+| INP | Độ nhanh khi khách chạm, nhấp | Từ 200 mili giây trở xuống |
+| CLS | Mức nội dung bị xô lệch khi đang tải | Từ 0,1 trở xuống |
 
-### Bước 5: Đúc Kết Bài Học & Triển Khai Nhân Rộng (Scale Winning Page)
-* Khi phiên bản thử nghiệm giành chiến thắng rõ ràng, áp dụng chính thức làm trang đích chính cho toàn bộ các chiến dịch quảng cáo và SEO.
-* Tiếp tục vòng lặp tối ưu hóa tiếp theo ở các thành phần sâu hơn (tiêu đề phụ, lời đề nghị ưu đãi, kịch bản form) để liên tục bứt phá trần doanh thu của doanh nghiệp.
+Ngưỡng được tính ở phân vị 75 của các lượt tải trang, tách riêng điện thoại và máy tính. Nghĩa là ít nhất ba phần tư lượt truy cập phải đạt. INP đã thay chỉ số FID cũ từ năm 2024. Bạn có thể kiểm tra trang của mình bằng [PageSpeed Insights](https://pagespeed.web.dev/).
+
+### Những thứ hay làm landing page chậm
+
+- Ảnh đầu trang dung lượng lớn, chưa nén, chưa đổi sang định dạng nhẹ như WebP.
+- Video tự chạy ngay màn hình đầu.
+- Quá nhiều mã theo dõi, khung chat, cửa sổ bật lên cùng tải một lúc.
+- Phông chữ tải từ nhiều nguồn.
+
+CLS cao thường thấy khi nút liên hệ bị đẩy xuống lúc ảnh hay quảng cáo tải xong. Khách định bấm nút thì bấm trúng thứ khác. Việc tối ưu tốc độ cho cả website, gồm hosting và nền tảng, thuộc [trang Thiết kế website](/dich-vu/thiet-ke-website/).
 `
     },
     {
-      id: 'bang-so-sanh-cro-landing-page',
-      heading: '6. So sánh: Trang đích "Vẽ đẹp đơn thuần" vs Landing Page chuẩn CRO',
+      id: 'ab-test-dung-cach',
+      heading: '6. A/B test đúng cách',
       content: `
-Bảng đối chiếu làm rõ sự khác biệt giữa một trang web được thiết kế chỉ để ngắm và một trang đích được chế tạo để bán hàng:
+A/B test là chạy hai bản trang song song, chia ngẫu nhiên khách vào từng bản, rồi giữ bản tốt hơn. Nghe đơn giản, nhưng rất dễ ra kết luận sai.
 
-| Tiêu chí đối chiếu | Trang Đích Thiết Kế Đẹp Đơn Thuần | Landing Page Khoa Học CRO @ SOHO |
-| :--- | :--- | :--- |
-| **Mục tiêu thiết kế** | Làm vừa lòng thẩm mỹ của chủ doanh nghiệp | **Tối đa hóa tỷ lệ khách hàng điền form và mua hàng** |
-| **Cơ sở ra quyết định** | Cảm tính, sở thích cá nhân của designer | **Dữ liệu bản đồ nhiệt (Heatmap), bản ghi người dùng và kiểm thử A/B** |
-| **Nội dung thông điệp** | Viết văn hoa, nói về quy mô và lịch sử công ty | **Gãi đúng nỗi đau, làm rõ giá trị mang lại và giải tỏa mọi rào cản e ngại** |
-| **Bằng chứng xã hội** | Để ở góc khuất chân trang hoặc không có | **Đặt nổi bật ngay màn hình đầu tiên, có định danh người thật việc thật** |
-| **Biểu mẫu liên hệ** | Dài dòng, hỏi nhiều thông tin gây nản lòng | **Tinh gọn, thiết kế đa bước thông minh, tỷ lệ hoàn tất cao vượt trội** |
-| **Tác động kinh doanh** | Traffic vào nhiều nhưng không tạo ra doanh thu | **Nhân đôi, nhân ba số lượng khách hàng tiềm năng trên cùng một mức ngân sách** |
+![Hai cánh cửa cạnh nhau, một đỏ một xanh, gợi hai bản trang chạy song song trong A/B test](/media/articles/cro-landing-page/cro-landing-page-anh-02.webp "1200x800")
+*Hai bản chỉ nên khác nhau ở một điểm, để biết chính điểm đó tạo ra kết quả.*
+
+### Bắt đầu từ một giả thuyết
+
+Giả thuyết tốt có dạng: "Khách trên điện thoại không cuộn tới bảng giá. Đưa khoảng giá lên đầu trang sẽ tăng số form gửi". Nó đến từ dữ liệu ở mục 2, không phải từ sở thích. Thử trước chỗ ảnh hưởng nhiều nhất: phần đầu trang, ưu đãi, form. Màu nút để sau.
+
+### Đủ mẫu và đủ thời gian
+
+Số người cần cho mỗi bản phụ thuộc ba thứ: tỉ lệ chuyển đổi hiện tại, mức chênh lệch nhỏ nhất bạn muốn phát hiện và độ tin cậy mong muốn. Chênh lệch càng nhỏ càng cần nhiều lượt truy cập ([Optimizely](https://support.optimizely.com/hc/en-us/articles/4410283969165-How-long-to-run-an-experiment)). Optimizely khuyên chạy tối thiểu một chu kỳ kinh doanh, tức 7 ngày, để có cả khách ngày thường và cuối tuần. Thời gian chạy nên làm tròn lên số tuần chẵn.
+
+Đừng dừng ngay khi một bản vượt lên trong vài ngày đầu. Kết quả sớm hay đảo chiều khi có thêm dữ liệu.
+
+### Lượng truy cập ít thì làm sao
+
+Trang chỉ vài trăm lượt mỗi tháng khó phát hiện chênh lệch nhỏ. Khi đó nên thử thay đổi lớn như viết lại cả phần đầu trang hay đổi ưu đãi. Sau đó so trước sau trong khoảng thời gian dài hơn, có ghi chú mùa vụ và ngân sách quảng cáo.
+
+### Công cụ và lưu ý SEO
+
+Google Optimize đã ngừng từ 30/09/2023 ([Google](https://support.google.com/optimize/answer/12979939?hl=en)), nên cần công cụ khác hoặc tách trang thủ công. Nếu trang thử có lượt truy cập từ Google tự nhiên, [Google Search Central](https://developers.google.com/search/docs/crawling-indexing/website-testing) khuyên: bản thử đặt thẻ canonical trỏ về bản gốc, chuyển hướng tạm thời 302 chứ không dùng 301, không cho Googlebot thấy nội dung khác người dùng. Có kết luận rồi thì gỡ bản thử ngay.
 `
     },
     {
-      id: 'checklist-15-tieu-chi-cro',
-      heading: '7. Bộ Checklist 15 tiêu chí nghiệm thu Landing Page chuyển đổi cao',
+      id: 'cau-hoi-thuong-gap-cro',
+      heading: '7. Câu hỏi thường gặp về tối ưu chuyển đổi',
       content: `
-Trước khi chi tiền đổ traffic vào bất kỳ trang đích nào, hãy rà soát kỹ lưỡng qua **Checklist 15 tiêu chuẩn chuyển đổi**:
+### Tỉ lệ chuyển đổi bao nhiêu là tốt?
 
-#### Nhóm 1: Màn hình Đầu tiên (Above the Fold / Hero Section)
-- [ ] **1. Tiêu đề chính (H1) trả lời được câu hỏi cốt lõi:** Người dùng hiểu ngay giải pháp này mang lại điều gì cho họ trong vòng 3 giây đầu tiên.
-- [ ] **2. Nút kêu gọi hành động (CTA) nổi bật thị giác:** Sử dụng màu sắc tương phản cao (như cam, vàng rực rỡ trên nền tối/sáng), kích thước to rõ ràng.
-- [ ] **3. Văn bản nút CTA mang tính hành động cụ thể:** Dùng *"Nhận đề xuất chiến lược 0đ"* hoặc *"Đăng ký tư vấn miễn phí"*, tránh dùng từ mờ nhạt như *"Gửi"* hoặc *"Click vào đây"*.
-- [ ] **4. Bằng chứng tin cậy hiển thị ngay màn hình 1:** Có dải logo khách hàng, đánh giá sao hoặc số lượng doanh nghiệp đã tin dùng.
+Không có con số chung đáng tin. Tỉ lệ khác nhau rất xa giữa ngành, giá sản phẩm, nguồn truy cập và cách tính chuyển đổi. So với chính trang của bạn tháng trước, hoặc giữa các nguồn truy cập của bạn, hữu ích hơn so với con số trung bình trên mạng.
 
-#### Nhóm 2: Nội dung & Thuyết phục Tâm lý (Copywriting & Proof)
-- [ ] **5. Nêu rõ vấn đề và nỗi đau của khách hàng:** Khách hàng thấy hình ảnh khó khăn của chính họ được phản ánh chính xác trong bài viết.
-- [ ] **6. Bảng so sánh "Trước & Sau" hoặc "Cách SOHO làm vs Cách cũ":** Giúp người đọc nhìn thấy ngay sự vượt trội của giải pháp.
-- [ ] **7. Tối thiểu 3 lời nhận xét (Testimonials) có định danh thực tế:** Có ảnh chân dung, tên, chức danh và tên công ty cụ thể.
-- [ ] **8. Khối giải tỏa rủi ro (Risk-Reversal):** Bổ sung cam kết chất lượng, bảo mật thông tin NDA và hỗ trợ đồng hành rõ ràng.
-- [ ] **9. Khối FAQ trả lời trực diện các thắc mắc lớn nhất:** Báo giá, thời gian triển khai, quy trình làm việc được minh bạch thấu đáo.
+### Bao lâu thì thấy kết quả?
 
-#### Nhóm 3: Trải nghiệm Người dùng & Kỹ thuật (UX & Performance)
-- [ ] **10. Tốc độ tải trang dưới 2 giây trên mạng 4G di động:** Không để khách hàng phải chờ đợi tải trang.
-- [ ] **11. Biểu mẫu liên hệ tối giản số trường:** Không hỏi quá 3 đến 4 câu hỏi ở bước tiếp cận đầu tiên.
-- [ ] **12. Trang cảm ơn (Thank You Page) rõ ràng:** Sau khi gửi form, hiển thị thông báo xác nhận thành công và thông báo chính xác khi nào chuyên viên sẽ liên hệ lại.
-- [ ] **13. Nút Hotline & Zalo/Messenger bám dính (Sticky CTA):** Luôn hiển thị ở góc dưới màn hình điện thoại để khách hàng có thể gọi ngay khi cần.
-- [ ] **14. Cài đặt đầy đủ mã đo lường Heatmap & Analytics:** Đảm bảo mọi click và hành vi cuộn trang đều được ghi nhận để phục vụ tối ưu hóa.
-- [ ] **15. Không có liên kết ngoài gây xao nhãng (No Navigation Leaks):** Loại bỏ thanh menu lộn xộn để người dùng tập trung 100% vào việc ra quyết định chuyển đổi.
-`
-    },
-    {
-      id: 'faq-cro-landing-page',
-      heading: '8. Câu hỏi thường gặp (FAQ chuẩn Schema)',
-      content: `
-### Câu hỏi 1: Dịch vụ tối ưu CRO của SOHO thường mang lại mức tăng trưởng tỷ lệ chuyển đổi bao nhiêu phần trăm?
-**Trả lời:** Tùy thuộc vào hiện trạng của trang đích trước khi tối ưu:
-* Đối với các trang web chưa từng được tối ưu CRO bài bản (giao diện lộn xộn, form phức tạp, thông điệp mơ hồ): Mức tăng trưởng tỷ lệ chuyển đổi thường đạt từ **50% đến 150%** chỉ sau chu kỳ tối ưu đầu tiên.
-* Đối với các trang web đã có nền tảng tương đối tốt: Việc thử nghiệm A/B Testing sâu trên các lời đề nghị (Offer) và cấu trúc form thường giúp cải thiện từ **20% đến 40%** tỷ lệ chuyển đổi, tương đương với việc mang về thêm hàng trăm triệu đồng doanh thu mỗi tháng cho doanh nghiệp.
+Những lỗi rõ như nút không bấm được, form hỏng trên điện thoại, trang tải chậm, sửa xong thường thấy khác biệt trong vài tuần. Một lần A/B test cần tối thiểu một tuần, thường lâu hơn tùy lượng truy cập. SOHO không hứa mức tăng cụ thể trước khi xem số liệu của trang.
 
-### Câu hỏi 2: Doanh nghiệp của tôi có lượng truy cập (traffic) ít thì có làm thử nghiệm A/B Testing được không?
-**Trả lời:** Đây là một băn khoăn rất thực tế! 
-* Thử nghiệm A/B Testing chuẩn thống kê thường đòi hỏi lượng traffic tối thiểu từ 5.000 đến 10.000 lượt truy cập/tháng để đạt kết quả nhanh chóng.
-* Tuy nhiên, nếu website của bạn có lượng traffic khiêm tốn, SOHO sẽ áp dụng phương pháp **Heuristic Evaluation & Qualitative Optimization (Tối ưu hóa chất lượng dựa trên nghiên cứu chuyên gia)**: Chúng tôi rà soát và sửa chữa ngay lập tức các lỗi trải nghiệm chí mạng, viết lại lời hứa giá trị, tái cấu trúc biểu mẫu và bổ sung bằng chứng uy tín. Phương pháp này mang lại hiệu quả tăng trưởng ngay lập tức mà không cần phải chờ đợi chạy A/B Testing dài ngày.
+### Có cần làm lại cả website không?
 
-### Câu hỏi 3: Chi phí triển khai dịch vụ thiết kế và tối ưu Landing Page CRO tại SOHO được tính như thế nào?
-**Trả lời:** Chúng tôi cung cấp hai hình thức hợp tác linh hoạt:
-1. **Gói Thiết Kế Landing Page Chuẩn CRO Trọn Gói:** Dành cho doanh nghiệp cần xây dựng mới một trang đích bán hàng hoàn hảo từ con số 0 (bao gồm nghiên cứu insight, viết copywriting thôi miên, thiết kế giao diện độc quyền, lập trình tối ưu tốc độ và cài đặt tracking chuyển đổi hoàn chỉnh).
-2. **Gói Tối Ưu CRO & A/B Testing Liên Tục Theo Tháng:** Dành cho các doanh nghiệp đang chi ngân sách quảng cáo lớn (trên 50 triệu/tháng) cần một đội ngũ chuyên gia liên tục theo dõi heatmap, phân tích dữ liệu và chạy các sprint thử nghiệm để tối đa hóa doanh số bán hàng trên từng đồng chi phí quảng cáo.
+Thường là không. Phần lớn việc tối ưu nằm ở vài trang nhận nhiều lượt truy cập nhất. Chỉ khi nền tảng quá chậm hoặc không sửa được nội dung, việc làm lại mới đáng cân nhắc.
+
+### Gắn công cụ ghi phiên có ảnh hưởng quyền riêng tư không?
+
+Có, nên cần làm cẩn thận. Bật chế độ che thông tin nhập vào form, nói rõ trong chính sách quyền riêng tư. Website có khách ở nơi pháp luật yêu cầu thì cần xin đồng ý cookie.
+
+### Làm landing page riêng hay dùng trang dịch vụ có sẵn?
+
+Nếu trang dịch vụ đã khớp với điều khách tìm và chuyển đổi tốt, dùng luôn. Khi chạy quảng cáo cho một ưu đãi hay một nhóm khách riêng, trang riêng thường dễ khớp thông điệp hơn và dễ đo hơn.
 `
     }
   ]
